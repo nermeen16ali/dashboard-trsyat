@@ -4676,9 +4676,10 @@ html[dir="rtl"] .select2-selection__choice__remove {
     width: 80px;
   }
 
+  /* 
   .auth-container {
     max-width: 100%;
-  }
+  } */
 
   .sign-right {
     min-height: 348px;
@@ -4930,9 +4931,15 @@ html[dir="rtl"] .select2-selection__choice__remove {
     margin-bottom: 10px;
   }
 
+  .verification-inputs {
+    width: min(90%, 500px);
+    margin-inline: auto;
+    gap: 12px;
+  }
+
   .verification-input {
     width: calc((100% - 24px) / 4);
-    height: 68px;
+    height: 58px;
   }
 }
 
