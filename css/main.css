@@ -483,7 +483,8 @@ h6 {
   width: 100%;
 }
 
-.filter-sidebar .tender-sections {
+.filter-sidebar .tender-sections,
+.filter-modal-container .tender-sections {
   border-radius: 12px;
   border: 1px solid rgba(0, 0, 0, 0.05);
   background: #fff;
@@ -4620,6 +4621,39 @@ html[dir="rtl"] .select2-selection__choice__remove {
     padding: 0;
   }
 
+  .filter-sidebar>*:not(.filter-header):not(.search-wrapper) {
+    display: none;
+  }
+
+  .filter-sidebar {
+    gap: 16px;
+    flex-direction: row-reverse;
+
+  }
+
+  .filter-sidebar .search-wrapper {
+    flex-grow: 1;
+  }
+
+  .filter-sidebar .filter-actions {
+    display: none !important;
+  }
+
+  /* Ensure Flatpickr calendar is above modal */
+  .flatpickr-calendar {
+    z-index: 10001 !important;
+  }
+
+  .modal-filter-content .filter-actions {
+    display: flex !important;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .sort-icon {
+    cursor: pointer;
+  }
+
   .filter-bar {
     flex-direction: column;
     align-items: start;
@@ -5212,4 +5246,65 @@ html[dir="rtl"] .select2-selection__choice__remove {
   .upgrade-table td:last-child {
     border-radius: 0 0 16px 16px;
   }
+}
+
+/* Filter Modal Styles */
+.filter-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.47);
+  backdrop-filter: blur(5px);
+  z-index: 9999;
+  display: none;
+  align-items: flex-end;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.filter-modal-overlay.show {
+  opacity: 1;
+}
+
+.filter-modal-container {
+  background-color: var(--white-color);
+  width: 100%;
+  max-height: 85vh;
+  border-radius: 12px 12px 0 0;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.3s ease-out;
+}
+
+.filter-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 14px 18px 14px;
+}
+
+.filter-modal-close {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-filter-content {
+  overflow-y: auto;
+  flex: 1;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modal-filter-content .tender-card {
+  margin-bottom: 0 !important;
 }

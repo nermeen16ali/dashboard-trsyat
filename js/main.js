@@ -369,3 +369,123 @@ if (document.querySelector('.chats-icon')) {
   initChatModal();
 }
 
+// Filter Sidebar Modal for Mobile
+function initFilterModal() {
+  const sortIcon = document.querySelector('.sort-icon');
+  const filterSidebar = document.querySelector('.filter-sidebar');
+
+  if (!sortIcon || !filterSidebar) return;
+
+  // Create modal overlay
+  const modalOverlay = document.createElement('div');
+  modalOverlay.className = 'filter-modal-overlay';
+  modalOverlay.style.display = 'none';
+
+  // Create modal container
+  const modalContainer = document.createElement('div');
+  modalContainer.className = 'filter-modal-container';
+
+  // Create modal header
+  const modalHeader = document.createElement('div');
+  modalHeader.className = 'filter-modal-header';
+
+  // Get the title from h6 (handle Arabic/English)
+  const existingTitle = filterSidebar.querySelector('.filter-header h6');
+  const title = existingTitle ? existingTitle.innerText : 'Filter and Search';
+
+  modalHeader.innerHTML = `
+    <div class="d-flex align-items-center gap-10">
+      <img src="images/sort.svg" alt="Sort">
+      <h6 class="black-text mb-0">${title}</h6>
+    </div>
+    <button class="filter-modal-close">
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+        <path d="M1.16667 11.6667L0 10.5L4.66667 5.83333L0 1.16667L1.16667 0L5.83333 4.66667L10.5 0L11.6667 1.16667L7 5.83333L11.6667 10.5L10.5 11.6667L5.83333 7L1.16667 11.6667Z" fill="black"/>
+      </svg>
+    </button>
+  `;
+
+  // Content container
+  const modalContent = document.createElement('div');
+  modalContent.className = 'modal-filter-content';
+
+  // Assemble modal
+  modalContainer.appendChild(modalHeader);
+  modalContainer.appendChild(modalContent);
+  modalOverlay.appendChild(modalContainer);
+  document.body.appendChild(modalOverlay);
+
+  // Open modal
+  function openModal() {
+    if (window.innerWidth < 992) {
+      // Clone all children of filter-sidebar except filter-header and search-wrapper
+      // We use innerHTML clone to match the support chat implementation style
+      const children = Array.from(filterSidebar.children);
+      modalContent.innerHTML = '';
+      children.forEach(child => {
+        if (!child.classList.contains('filter-header') && !child.classList.contains('search-wrapper')) {
+          const clone = child.cloneNode(true);
+          modalContent.appendChild(clone);
+        }
+      });
+
+      modalOverlay.style.display = 'flex';
+      modalOverlay.offsetHeight;
+      modalOverlay.classList.add('show');
+      document.body.style.overflow = 'hidden';
+
+      // Re-initialize Flatpickr on cloned inputs in the modal
+      const modalInputs = modalContent.querySelectorAll('.flatpickr-input');
+      const isLTR = document.documentElement.dir === 'ltr' || document.body.classList.contains('ltr');
+
+      modalInputs.forEach(input => {
+        // Remove existing flatpickr instance if any (cloned might have remnants)
+        if (input._flatpickr) {
+          input._flatpickr.destroy();
+        }
+
+        flatpickr(input, {
+          dateFormat: "Y-m-d",
+          locale: isLTR ? "en" : "ar",
+          disableMobile: true
+          // Ensure the calendar is appended to the modal or body and has high z-index
+        });
+      });
+    }
+  }
+
+  // Close modal
+  function closeModal() {
+    if (!modalOverlay.classList.contains('show')) return;
+
+    modalOverlay.classList.remove('show');
+    modalContainer.style.animation = 'slideDown 0.3s ease-in';
+
+    setTimeout(() => {
+      modalOverlay.style.display = 'none';
+      document.body.style.overflow = '';
+      modalContainer.style.animation = '';
+    }, 300);
+  }
+
+  // Event listeners
+  sortIcon.addEventListener('click', openModal);
+  const closeBtn = modalOverlay.querySelector('.filter-modal-close');
+  closeBtn.addEventListener('click', closeModal);
+
+  modalOverlay.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) closeModal();
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 992) {
+      closeModal();
+    }
+  });
+}
+
+// Initialize filter modal when DOM is ready
+if (document.querySelector('.sort-icon')) {
+  initFilterModal();
+}
+
