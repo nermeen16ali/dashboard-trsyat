@@ -1173,6 +1173,12 @@ h6 {
   font-size: 12px;
 }
 
+.btn-styles {
+  font-size: 14px;
+  font-weight: 500;
+  height: 44px;
+}
+
 .modal .btn-main,
 .filter-bar .btn-main {
   font-size: 14px;
@@ -4820,10 +4826,10 @@ html[dir="rtl"] .select2-selection__choice__remove {
     border-radius: 12px;
   }
 
-  /* 
-  .tender-card {
+
+  .tender-card:not(.p-0) {
     padding: 12px !important;
-  } */
+  }
 
   .chat-layout .col-lg-8 .tender-card {
     padding: 0 !important;
