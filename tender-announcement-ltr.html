@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="images/trsyat-logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tender Announcement</title>
+    <meta name="description"
+        content="We provide an intelligent environment to manage tenders, from discovery to submission. Our goal is to support your growth by simplifying access to opportunities and improving competitiveness." />
+
+    <!-- Bootstrap 5 LTR CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- DataTables CSS -->
+    <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.bootstrap5.min.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+    <!--Notification Modal-->
+    <div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="notificationLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content w-620">
+                <div class="modal-header">
+                    <div class="d-flex flex-column gap-10">
+                        <h4 class="modal-title fz-20" id="notificationLabel">
+                            Notifications
+                        </h4>
+                        <p class="text-gray fz-14">Stay updated with notifications</p>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="notification-tabs fw-medium">
+                        <button class="notification-tab active">All</button>
+                        <button class="notification-tab">Unread (12)</button>
+                        <a href="notifications-ltr.html" class="ms-auto colored">Mark all read</a>
+                    </div>
+                    <div class="notification-list">
+                        <!-- Today -->
+                        <div class="notification-item unread">
+                            <div class="notification-icon success">
+                                <img src="images/Tax-Law.svg" alt="icon">
+                            </div>
+                            <div class="notification-content">
+                                <h6 class="fz-14 fw-medium mb-10 black-text">Submission received</h6>
+                                <p class="fz-12 text-gray">Your tender submission was received successfully and is under
+                                    review.</p>
+                            </div>
+                            <div class="d-flex align-items-center gap-4">
+                                <span class="text-dark-gray fz-12 fw-medium">11:30 PM</span>
+                                <a href="#" class="icon-container gray-outline-btn">
+                                    <img src="images/arrow-next.svg" alt="Next">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="notification-item">
+                            <div class="notification-icon pending">
+                                <img src="images/game-icons-sands-of-time.svg" alt="icon">
+                            </div>
+                            <div class="notification-content">
+                                <div class="fz-14 fw-medium mb-10 black-text">Your request is under review</div>
+                                <div class="fz-12 text-gray">The tender request is currently being reviewed. You will be
+                                    notified of any action.</div>
+                            </div>
+                            <div class="d-flex align-items-center gap-4">
+                                <span class="text-dark-gray fz-12 fw-medium">11:30 PM</span>
+                                <a href="#" class="icon-container gray-outline-btn">
+                                    <img src="images/arrow-next.svg" alt="Next">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="notification-item">
+                            <div class="notification-icon rejected">
+                                <img src="images/ic-sharp-block.svg" alt="icon">
+                            </div>
+                            <div class="notification-content">
+                                <div class="fz-14 fw-medium mb-10 black-text">Request rejected</div>
+                                <div class="fz-12 text-gray">We regret to inform you that your tender request was
+                                    rejected. Please review the details for the reason.</div>
+                            </div>
+                            <div class="d-flex align-items-center gap-4">
+                                <span class="text-dark-gray fz-12 fw-medium">11:30 PM</span>
+                                <a href="#" class="icon-container gray-outline-btn">
+                                    <img src="images/arrow-next.svg" alt="Next">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="notification-item">
+                            <div class="notification-icon pending">
+                                <img src="images/tabler-edit.svg" alt="icon">
+                            </div>
+                            <div class="notification-content">
+                                <div class="fz-14 fw-medium mb-10 black-text">Edits required</div>
+                                <div class="fz-12 text-gray">Please make the required edits on your tender request to
+                                    continue the review.</div>
+                            </div>
+                            <div class="d-flex align-items-center gap-4">
+                                <span class="text-dark-gray fz-12 fw-medium">11:30 PM</span>
+                                <a href="#" class="icon-container gray-outline-btn">
+                                    <img src="images/arrow-next.svg" alt="Next">
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Yesterday -->
+                        <div class="black-text fw-medium mb-3">Yesterday</div>
+
+                        <div class="notification-item">
+                            <div class="notification-icon pending">
+                                <img src="images/carbon-close-outline.svg" alt="icon">
+                            </div>
+                            <div class="notification-content">
+                                <div class="fz-14 fw-medium mb-10 black-text">Tender closing soon</div>
+                                <div class="fz-12 text-gray">There is little time left to submit for this tender.</div>
+                            </div>
+                            <div class="d-flex align-items-center gap-4">
+                                <span class="text-dark-gray fz-12 fw-medium">11:30 PM</span>
+                                <a href="#" class="icon-container gray-outline-btn">
+                                    <img src="images/arrow-next.svg" alt="Next">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="notification-item">
+                            <div class="notification-icon success">
+                                <img src="images/report.svg" alt="icon">
+                            </div>
+                            <div class="notification-content">
+                                <div class="fz-14 fw-medium mb-10 black-text">Award announced</div>
+                                <div class="fz-12 text-gray">The award result for this tender has been announced. You
+                                    can view the details.</div>
+                            </div>
+                            <div class="d-flex align-items-center gap-4">
+                                <span class="text-dark-gray fz-12 fw-medium">11:30 PM</span>
+                                <a href="#" class="icon-container gray-outline-btn">
+                                    <img src="images/arrow-next.svg" alt="Next">
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Older -->
+                        <div class="black-text fw-medium mb-3">5 Nov 2025</div>
+
+                        <div class="notification-item">
+                            <div class="notification-icon success">
+                                <img src="images/Tax-Law.svg" alt="icon">
+                            </div>
+                            <div class="notification-content">
+                                <div class="fz-14 fw-medium mb-10 black-text">Price offer sent</div>
+                                <div class="fz-12 text-gray">Your price offer was sent successfully.</div>
+                            </div>
+                            <div class="d-flex align-items-center gap-4">
+                                <span class="text-dark-gray fz-12 fw-medium">11:30 PM</span>
+                                <a href="#" class="icon-container gray-outline-btn">
+                                    <img src="images/arrow-next.svg" alt="Next">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="notification-item">
+                            <div class="notification-icon info">
+                                <img src="images/Tax-Law.svg" alt="icon">
+                            </div>
+                            <div class="notification-content">
+                                <div class="fz-14 fw-medium mb-10 black-text">Response from admin</div>
+                                <div class="fz-12 text-gray">Administration added a note to your request. Please review
+                                    it.</div>
+                            </div>
+                            <div class="d-flex align-items-center gap-4">
+                                <span class="text-dark-gray fz-12 fw-medium">11:30 PM</span>
+                                <a href="#" class="icon-container gray-outline-btn">
+                                    <img src="images/arrow-next.svg" alt="Next">
+                                </a>
+                            </div>
+                        </div>
+                        <a href="notifications-ltr.html"
+                            class="d-block p-10 fz-14 fw-medium w-100 rounded-12 btn-primary text-center">
+                            View all notifications
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top Navigation Bar -->
+    <nav class="navbar navbar-dark top-navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand" href="index-ltr.html"><img src="images/trsyat-white-logo.svg" alt="Trsyat" /></a>
+            <span class="seperator d-none d-lg-inline-block"></span>
+            <!-- Hamburger toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Collapsible Menu -->
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <div class="navbar-nav gap-3 d-flex flex-lg-row flex-column w-100">
+                    <div class="search-box position-relative flex-grow-1">
+                        <input type="text" class="form-control" placeholder="Search dashboard" name="Search" />
+                        <span class="search-icon position-absolute">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                fill="none">
+                                <path
+                                    d="M9.58268 17.4993C13.9549 17.4993 17.4993 13.9549 17.4993 9.58268C17.4993 5.21043 13.9549 1.66602 9.58268 1.66602C5.21043 1.66602 1.66602 5.21043 1.66602 9.58268C1.66602 13.9549 5.21043 17.4993 9.58268 17.4993Z"
+                                    stroke="#C9C9C9" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path opacity="0.4" d="M18.3327 18.3327L16.666 16.666" stroke="#C9C9C9"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                    </div>
+                    <a href="tender-announcement-ltr.html" class="nav-link">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g opacity="0.4">
+                                <path d="M14.1582 7.4668H5.84155H14.1582Z" fill="currentColor" />
+                                <path d="M14.1582 7.4668H5.84155" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M10 6.06665V7.46664" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M12.0833 7.44995C12.0833 11.0333 9.28325 13.9333 5.83325 13.9333"
+                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M14.1669 13.9333C12.6669 13.9333 11.3336 13.1333 10.3752 11.875"
+                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </g>
+                            <path
+                                d="M10.0001 18.3334C14.6025 18.3334 18.3334 14.6025 18.3334 10.0001C18.3334 5.39771 14.6025 1.66675 10.0001 1.66675C5.39771 1.66675 1.66675 5.39771 1.66675 10.0001C1.66675 14.6025 5.39771 18.3334 10.0001 18.3334Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span>العربية</span>
+                    </a>
+
+                    <a href="#" type="button" class="nav-link" data-bs-toggle="modal"
+                        data-bs-target="#notificationModal">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.0167 2.42505C7.25841 2.42505 5.01674 4.66672 5.01674 7.42505V9.83338C5.01674 10.3417 4.80007 11.1167 4.54174 11.55L3.58341 13.1417C2.99174 14.125 3.40007 15.2167 4.48341 15.5834C8.07507 16.7834 11.9501 16.7834 15.5417 15.5834C16.5501 15.25 16.9917 14.0584 16.4417 13.1417L15.4834 11.55C15.2334 11.1167 15.0167 10.3417 15.0167 9.83338V7.42505C15.0167 4.67505 12.7667 2.42505 10.0167 2.42505Z"
+                                fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"
+                                stroke-linecap="round" />
+                            <path
+                                d="M11.5584 2.6667C11.3001 2.5917 11.0334 2.53337 10.7584 2.50003C9.95843 2.40003 9.19176 2.45837 8.4751 2.6667C8.71676 2.05003 9.31676 1.6167 10.0168 1.6167C10.7168 1.6167 11.3168 2.05003 11.5584 2.6667Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path opacity="0.4"
+                                d="M12.5166 15.8833C12.5166 17.2583 11.3916 18.3833 10.0166 18.3833C9.33327 18.3833 8.69993 18.1 8.24993 17.65C7.79993 17.2 7.5166 16.5666 7.5166 15.8833"
+                                stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" />
+                        </svg>
+                        <span>Notifications</span>
+                    </a>
+
+                    <a href="user-guide-ltr.html" class="nav-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M15.8926 15.8908C19.1509 12.6324 19.1509 7.35742 15.8926 4.10742"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M4.10781 4.10742C0.849479 7.36576 0.849479 12.6408 4.10781 15.8908"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M7.25 17.8418C8.14167 18.1501 9.06666 18.3002 9.99999 18.3002C10.9333 18.2918 11.8583 18.1501 12.75 17.8418"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M7.25 2.15759C8.14167 1.84926 9.06666 1.69922 9.99999 1.69922C10.9333 1.69922 11.8583 1.84926 12.75 2.15759"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path opacity="0.4"
+                                d="M7.2832 10.0008V8.60911C7.2832 6.87578 8.50822 6.16743 10.0082 7.0341L11.2165 7.73412L12.4249 8.4341C13.9249 9.30076 13.9249 10.7175 12.4249 11.5841L11.2165 12.2841L10.0082 12.9841C8.50822 13.8508 7.2832 13.1424 7.2832 11.4091V10.0008Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span>User guide</span>
+                    </a>
+
+                    <div class="dropdown">
+                        <button class="dropdown-toggle nav-link" type="button" id="dropdownMenuButtonheader"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="images/header-profile-user.png" class="user-avatar rounded-circle"
+                                alt="Header Avatar" />
+                            <span class="text-white">Rafat salah</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="9" viewBox="0 0 16 9"
+                                fill="none">
+                                <path
+                                    d="M14.6 1.45825L9.16669 6.89159C8.52502 7.53325 7.47503 7.53325 6.83336 6.89159L1.40002 1.45825"
+                                    stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <ul class="dropdown-menu main-menu" aria-labelledby="dropdownMenuButtonheader">
+                            <li>
+                                <a class="dropdown-item" href="profile-ltr.html">Profile</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="settings-ltr.html">Settings</a>
+                            </li>
+                            <hr class="m-0">
+                            <li>
+                                <a class="dropdown-item" href="logout-ltr.html">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="support-ltr.html" class="nav-link">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M18.3083 15.2751C18.3083 15.5751 18.2416 15.8834 18.1 16.1834C17.9583 16.4834 17.775 16.7667 17.5333 17.0334C17.125 17.4834 16.675 17.8084 16.1666 18.0168C15.6666 18.2251 15.125 18.3334 14.5416 18.3334C13.6916 18.3334 12.7833 18.1334 11.825 17.7251C10.8666 17.3167 9.90829 16.7667 8.95829 16.0751C7.99996 15.3751 7.09163 14.6001 6.22496 13.7417C5.36663 12.8751 4.59163 11.9667 3.89996 11.0167C3.21663 10.0667 2.66663 9.11675 2.26663 8.17508C1.86663 7.22508 1.66663 6.31675 1.66663 5.45008C1.66663 4.88341 1.76663 4.34175 1.96663 3.84175C2.16663 3.33341 2.48329 2.86675 2.92496 2.45008C3.45829 1.92508 4.04163 1.66675 4.65829 1.66675C4.89163 1.66675 5.12496 1.71675 5.33329 1.81675C5.54996 1.91675 5.74163 2.06675 5.89163 2.28341L7.82496 5.00841C7.97496 5.21675 8.08329 5.40841 8.15829 5.59175C8.23329 5.76675 8.27496 5.94175 8.27496 6.10008C8.27496 6.30008 8.21663 6.50008 8.09996 6.69175C7.99163 6.88341 7.83329 7.08341 7.63329 7.28341L6.99996 7.94175C6.90829 8.03341 6.86663 8.14175 6.86663 8.27508C6.86663 8.34175 6.87496 8.40008 6.89163 8.46675C6.91663 8.53341 6.94163 8.58341 6.95829 8.63341C7.10829 8.90841 7.36663 9.26675 7.73329 9.70008C8.10829 10.1334 8.50829 10.5751 8.94163 11.0167C9.39163 11.4584 9.82496 11.8667 10.2666 12.2417C10.7 12.6084 11.0583 12.8584 11.3416 13.0084C11.3833 13.0251 11.4333 13.0501 11.4916 13.0751C11.5583 13.1001 11.625 13.1084 11.7 13.1084C11.8416 13.1084 11.95 13.0584 12.0416 12.9667L12.675 12.3417C12.8833 12.1334 13.0833 11.9751 13.275 11.8751C13.4666 11.7584 13.6583 11.7001 13.8666 11.7001C14.025 11.7001 14.1916 11.7334 14.375 11.8084C14.5583 11.8834 14.75 11.9917 14.9583 12.1334L17.7166 14.0917C17.9333 14.2417 18.0833 14.4167 18.175 14.6251C18.2583 14.8334 18.3083 15.0417 18.3083 15.2751Z"
+                                fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" />
+                            <path opacity="0.4"
+                                d="M15.4167 7.49992C15.4167 6.99992 15.025 6.23325 14.4417 5.60825C13.9083 5.03325 13.2 4.58325 12.5 4.58325"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path opacity="0.4" d="M18.3333 7.50008C18.3333 4.27508 15.725 1.66675 12.5 1.66675"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+
+                        <span>Support</span>
+                    </a>
+
+                    <a href="upgrade-ltr.html" class="btn-primary-shadowed">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="position-absolute btn-shadow-top" width="79"
+                            height="20" viewBox="0 0 79 20" fill="none">
+                            <g filter="url(#filter0_f_4057_14007)">
+                                <ellipse cx="66" rx="49" ry="3" fill="white" />
+                            </g>
+                            <defs>
+                                <filter id="filter0_f_4057_14007" x="0" y="-20" width="132" height="40"
+                                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                                    <feGaussianBlur stdDeviation="8.5" result="effect1_foregroundBlur_4057_14007" />
+                                </filter>
+                            </defs>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="position-absolute btn-shadow-bottom" width="78"
+                            height="19" viewBox="0 0 78 19" fill="none">
+                            <g filter="url(#filter0_f_4057_14006)">
+                                <ellipse cx="12" cy="20" rx="49" ry="3" fill="white" />
+                            </g>
+                            <defs>
+                                <filter id="filter0_f_4057_14006" x="-54" y="0" width="132" height="40"
+                                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                                    <feGaussianBlur stdDeviation="8.5" result="effect1_foregroundBlur_4057_14006" />
+                                </filter>
+                            </defs>
+                        </svg>
+                        <img src="images/programming-arrow.svg" alt="upgrading" />
+                        Upgrade account
+                    </a>
+                </div>
+            </div>
+    </nav>
+
+    <!-- Main Tab Navigation -->
+    <div class="container-fluid main-content">
+        <nav class="nav-tabs">
+            <div class="nav page-tabs" id="tabsContainer">
+                <a href="index-ltr.html" class="nav-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                        <path opacity="0.4" d="M2.11108 14.6667H14.1111" stroke="#6F6F6F" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M3.8444 5.58667H2.77775C2.41108 5.58667 2.11108 5.88667 2.11108 6.25334V12C2.11108 12.3667 2.41108 12.6667 2.77775 12.6667H3.8444C4.21107 12.6667 4.51107 12.3667 4.51107 12V6.25334C4.51107 5.88667 4.21107 5.58667 3.8444 5.58667Z"
+                            stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M8.64445 3.45996H7.5778C7.21113 3.45996 6.91113 3.75996 6.91113 4.12663V12C6.91113 12.3666 7.21113 12.6666 7.5778 12.6666H8.64445C9.01112 12.6666 9.31112 12.3666 9.31112 12V4.12663C9.31112 3.75996 9.01112 3.45996 8.64445 3.45996Z"
+                            stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M13.4445 1.33325H12.3778C12.0112 1.33325 11.7112 1.63325 11.7112 1.99992V11.9999C11.7112 12.3666 12.0112 12.6666 12.3778 12.6666H13.4445C13.8112 12.6666 14.1112 12.3666 14.1112 11.9999V1.99992C14.1112 1.63325 13.8112 1.33325 13.4445 1.33325Z"
+                            stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span>Home</span>
+                </a>
+                <div class="dropdown">
+                    <button class="dropdown-toggle nav-link w-100" type="button" id="allTenders"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                            <path
+                                d="M11.92 6.92008V9.07341C11.92 10.8667 11.2 11.5868 9.40666 11.5868H7.25332C5.45999 11.5868 4.73999 10.8667 4.73999 9.07341V6.92008C4.73999 5.12675 5.45999 4.40674 7.25332 4.40674H9.40666C11.2067 4.4134 11.92 5.12675 11.92 6.92008Z"
+                                stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path opacity="0.4"
+                                d="M14.9998 3.84658V5.99992C14.9998 7.79325 14.2798 8.51324 12.4865 8.51324H11.9198V6.92659C11.9198 5.13326 11.1998 4.41325 9.40649 4.41325H7.81982V3.84658C7.81982 2.05324 8.53982 1.33325 10.3332 1.33325H12.4865C14.2798 1.33325 14.9998 2.05324 14.9998 3.84658Z"
+                                stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path opacity="0.4"
+                                d="M1.6665 12.1532V9.9999C1.6665 8.20656 2.3865 7.48657 4.17984 7.48657H4.7465V9.07322C4.7465 10.8666 5.4665 11.5866 7.25984 11.5866H8.8465V12.1532C8.8465 13.9466 8.1265 14.6666 6.33317 14.6666H4.17984C2.3865 14.6666 1.6665 13.9466 1.6665 12.1532Z"
+                                stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <span class="d-flex align-items-center gap-2">
+                            <span>All tenders</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                fill="none">
+                                <path
+                                    d="M16.6004 7.45898L11.1671 12.8923C10.5254 13.534 9.47539 13.534 8.83372 12.8923L3.40039 7.45898"
+                                    stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                    </button>
+                    <ul class="dropdown-menu main-menu" aria-labelledby="allTenders">
+                        <li>
+                            <a class="dropdown-item b-dash" href="trsyat-tenders-ltr.html">
+                                <img src="images/trsyat-logo.svg" alt="Trsyat">
+                                Trsyat tenders
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="etimated-tenders-ltr.html">
+                                <img src="images/Etimated-Logo.svg" alt="Etimated">
+                                Etimated tenders
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="forsa-tenders-ltr.html">
+                                <img src="images/Forsa-Logo.svg" alt="Forsa">
+                                Forsa tenders
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <a href="nominated-tenders-ltr.html" class="nav-link">Nominated tenders</a>
+                <a href="offers-consultations-ltr.html" class="nav-link">Offers & consultations</a>
+                <a href="tenders-results-ltr.html" class="nav-link">Tender results</a>
+                <a href="tender-announcement-ltr.html" class="nav-link active">Tender announcement</a>
+                <a href="tenders-pricing-ltr.html" class="nav-link">Tenders pricing</a>
+                <a href="tenders-management-ltr.html" class="nav-link">Tender management</a>
+
+                <div class="dropdown">
+                    <button id="moreMenuBtn" class="nav-link more-btn dropdown-toggle"
+                        style="display: none">More</button>
+                    <div id="moreMenu" class="dropdown-menu wrapped-dropdown"></div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page Header -->
+        <div class="page-header d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center gap-4">
+                <div class="page-breadcrumb">
+                    <span class="active">Tender announcement</span>
+                </div>
+                <button class="outline-primary-gray bordered-40 fz-10 d-flex align-items-center gap-10">
+                    <span>Tutorial video</span>
+                    <img src="images/play-cricle.svg" alt="Tutorial video">
+                </button>
+            </div>
+            <a href="new-raise-order-ltr.html" class="btn-base p-12-10 rounded-12 fz-12 fw-medium">
+                <span class="me-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <g opacity="0.4">
+                            <path d="M6.00033 11.3333V7.33325L4.66699 8.66659" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M6 7.33325L7.33333 8.66659" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                        </g>
+                        <path
+                            d="M14.6663 6.66659V9.99992C14.6663 13.3333 13.333 14.6666 9.99967 14.6666H5.99967C2.66634 14.6666 1.33301 13.3333 1.33301 9.99992V5.99992C1.33301 2.66659 2.66634 1.33325 5.99967 1.33325H9.33301"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        </path>
+                        <path
+                            d="M14.6663 6.66658H11.9997C9.99967 6.66658 9.33301 5.99992 9.33301 3.99992V1.33325L14.6663 6.66658Z"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        </path>
+                    </svg>
+                </span>
+                Announce tender
+            </a>
+        </div>
+
+        <!-- Sub Tabs -->
+        <div class="dash-widget">
+            <!-- Search and Filter Bar -->
+            <div class="filter-bar">
+                <div class="filter-btns d-flex align-items-center gap-3 ">
+                    <button class="active">All</button>
+                    <button>Rejected</button>
+                    <button>Accepted</button>
+                    <button>Expired</button>
+                    <button>Award announced</button>
+                    <button>Awarded</button>
+                    <button>Evaluation stage</button>
+                </div>
+                <div class="d-flex justify-content-between align-items-center w-100 search-filter-bar gap-3">
+                    <div class="search-box w-100 position-relative">
+                        <input type="text" class="form-control" id="tableSearch" placeholder="Search competitions"
+                            name="Search" />
+                        <span class="search-icon position-absolute">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                fill="none">
+                                <path
+                                    d="M9.58341 17.5001C13.9557 17.5001 17.5001 13.9557 17.5001 9.58341C17.5001 5.21116 13.9557 1.66675 9.58341 1.66675C5.21116 1.66675 1.66675 5.21116 1.66675 9.58341C1.66675 13.9557 5.21116 17.5001 9.58341 17.5001Z"
+                                    fill="white" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                </path>
+                                <path opacity="0.4" d="M18.3334 18.3334L16.6667 16.6667" stroke="#0C2030"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                </path>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <div class="table-responsive">
+                    <table class="table table-bordered align-middle competition-table">
+                        <thead>
+                            <tr>
+                                <th>Reference</th>
+                                <th>Tender title</th>
+                                <th>Main activity</th>
+                                <th>Documents price</th>
+                                <th>Time remaining</th>
+                                <th class="text-center">Status</th>
+                                <th class="text-center">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- sample rows (keep for design) -->
+                            <tr>
+                                <td><span class="ff-onest black-text fw-medium">250739020707</span></td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <span class="sm-logo">
+                                            <img src="images/folder-open.svg" alt="icon">
+                                        </span>
+                                        <span>Healthcare services</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <span class="sm-logo">
+                                            <img src="images/activity.svg" alt="activity">
+                                        </span>
+                                        <span class="black-text">Interior design & fittings</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="me-1 fw-medium ff-onest">100.23</span>
+                                    <span><img src="images/ryall.svg" alt="SAR" style="height:12px"></span>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <span class="sm-logo">
+                                            <img src="images/clock.svg" alt="clock">
+                                        </span>
+                                        <span class="fw-medium black-text"><span class="colored fz-14">12</span> days
+                                            <span class="colored fz-14">:20</span> hrs
+                                            <span class="colored fz-14">:20</span> mins</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="sm-ele fz-12 bordered-8 badge-evaluation">Evaluation stage</span>
+                                </td>
+                                <td>
+                                    <a href="raise-tender-details-ltr.html"
+                                        class="btn-primary sm-ele fz-12 bordered-40">
+                                        Details
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Repeat other states as in the original design -->
+                            <tr>
+                                <td><span class="ff-onest black-text fw-medium">250739020708</span></td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <span class="sm-logo">
+                                            <img src="images/folder-open.svg" alt="icon">
+                                        </span>
+                                        <span>Healthcare services</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <span class="sm-logo">
+                                            <img src="images/activity.svg" alt="activity">
+                                        </span>
+                                        <span class="black-text">Interior design & fittings</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="me-1 fw-medium ff-onest">0.00</span>
+                                    <span><img src="images/ryall.svg" alt="SAR" style="height:12px"></span>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <span class="sm-logo">
+                                            <img src="images/clock.svg" alt="clock">
+                                        </span>
+                                        <span class="fw-medium gray-text">00 days :00 hrs :00 mins</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="sm-ele fz-12 bordered-8 badge-rejected">Rejected</span>
+                                </td>
+                                <td>
+                                    <a href="raise-tender-details-ltr.html"
+                                        class="btn-primary sm-ele fz-12 bordered-40">
+                                        Details
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><span class="ff-onest black-text fw-medium">250739020709</span></td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <span class="sm-logo">
+                                            <img src="images/folder-open.svg" alt="icon">
+                                        </span>
+                                        <span>Healthcare services</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <span class="sm-logo">
+                                            <img src="images/activity.svg" alt="activity">
+                                        </span>
+                                        <span class="black-text">Interior design & fittings</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="me-1 fw-medium ff-onest">100.23</span>
+                                    <span><img src="images/ryall.svg" alt="SAR" style="height:12px"></span>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <span class="sm-logo">
+                                            <img src="images/clock.svg" alt="clock">
+                                        </span>
+                                        <span class="fw-medium gray-text"><span class="fz-14">00</span> days :<span
+                                                class="fz-14">00 </span>hours : <span class="fz-14">00</span>
+                                            minutes</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="sm-ele fz-12 bordered-8 badge-draft">Awarded</span>
+                                </td>
+                                <td>
+                                    <a href="raise-tender-details-ltr.html"
+                                        class="btn-primary sm-ele fz-12 bordered-40">
+                                        Details
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><span class="ff-onest black-text fw-medium">250739020710</span></td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <span class="sm-logo">
+                                            <img src="images/folder-open.svg" alt="icon">
+                                        </span>
+                                        <span>Healthcare services</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <span class="sm-logo">
+                                            <img src="images/activity.svg" alt="activity">
+                                        </span>
+                                        <span class="black-text">Interior design & fittings</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="me-1 fw-medium ff-onest">100.23</span>
+                                    <span><img src="images/ryall.svg" alt="SAR" style="height:12px"></span>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <span class="sm-logo">
+                                            <img src="images/clock.svg" alt="clock">
+                                        </span>
+                                        <span class="fw-medium gray-text"><span class="fz-14">00</span> days :<span
+                                                class="fz-14">00 </span>hours : <span class="fz-14">00</span>
+                                            minutes</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="sm-ele fz-12 bordered-8 badge-move">Ended</span>
+                                </td>
+                                <td>
+                                    <a href="raise-tender-details-ltr.html"
+                                        class="btn-primary sm-ele fz-12 bordered-40">
+                                        Details
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><span class="ff-onest black-text fw-medium">250739020711</span></td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <span class="sm-logo">
+                                            <img src="images/folder-open.svg" alt="icon">
+                                        </span>
+                                        <span>Healthcare services</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <span class="sm-logo">
+                                            <img src="images/activity.svg" alt="activity">
+                                        </span>
+                                        <span class="black-text">Interior design & fittings</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="me-1 fw-medium ff-onest">100.23</span>
+                                    <span><img src="images/ryall.svg" alt="SAR" style="height:12px"></span>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <span class="sm-logo">
+                                            <img src="images/clock.svg" alt="clock">
+                                        </span>
+                                        <span class="fw-medium gray-text"><span class="fz-14">00</span> days :<span
+                                                class="fz-14">00 </span>hours : <span class="fz-14">00</span>
+                                            minutes</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="sm-ele fz-12 bordered-8 badge-success">Award Announced</span>
+                                </td>
+                                <td>
+                                    <a href="raise-tender-details-ltr.html"
+                                        class="btn-primary sm-ele fz-12 bordered-40">
+                                        Details
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <!-- Last sample row -->
+                            <tr>
+                                <td><span class="ff-onest black-text fw-medium">250739020712</span></td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <span class="sm-logo">
+                                            <img src="images/folder-open.svg" alt="icon">
+                                        </span>
+                                        <span>Healthcare services</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <span class="sm-logo">
+                                            <img src="images/activity.svg" alt="activity">
+                                        </span>
+                                        <span class="black-text">Interior design & fittings</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="me-1 fw-medium ff-onest">100.23</span>
+                                    <span><img src="images/ryall.svg" alt="SAR" style="height:12px"></span>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <span class="sm-logo">
+                                            <img src="images/clock.svg" alt="clock">
+                                        </span>
+                                        <span class="fw-medium gray-text"><span class="fz-14">00</span> days :<span
+                                                class="fz-14">00 </span>hours : <span class="fz-14">00</span>
+                                            minutes</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="sm-ele fz-12 bordered-8 badge-reviewed">Under Review</span>
+                                </td>
+                                <td>
+                                    <a href="raise-tender-details-ltr.html"
+                                        class="btn-primary sm-ele fz-12 bordered-40">
+                                        Details
+                                    </a>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/responsive.bootstrap5.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js" defer></script>
+    <script src="js/dataTable.js" defer></script>
+</body>
+
+</html>

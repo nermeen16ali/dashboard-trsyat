@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="images/trsyat-logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>إنشاء حساب - ترسيات</title>
+    <meta name="description" content="أنشئ حسابك الآن وابدأ رحلتك نحو فرص أكبر ونمو أسرع." />
+
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 RTL CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/themes/material_blue.css" />
+    <!-- Intl Tel Input CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/css/intlTelInput.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body class="sign-page">
+
+    <div class="container-fluid p-0 overflow-hidden">
+        <div class="row g-0 h-100">
+            <!-- Right Side: Branding -->
+            <div class="col-lg-6">
+                <div class="sign-right">
+                    <div class="d-flex w-100 position-relative z-2 d-lg-none justify-content-end align-items-center">
+                        <!-- Language Button -->
+                        <a href="create-account-ltr.html" class="lang-btn text-white border-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                fill="none">
+                                <g opacity="0.4">
+                                    <path d="M14.1581 7.4668H5.84143H14.1581Z" fill="white" />
+                                    <path d="M14.1581 7.4668H5.84143" stroke="white" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M10 6.06665V7.46664" stroke="white" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M12.0834 7.44995C12.0834 11.0333 9.28337 13.9333 5.83337 13.9333"
+                                        stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M14.1668 13.9333C12.6668 13.9333 11.3335 13.1333 10.3751 11.875"
+                                        stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </g>
+                                <path
+                                    d="M9.99996 18.3334C14.6023 18.3334 18.3333 14.6025 18.3333 10.0001C18.3333 5.39771 14.6023 1.66675 9.99996 1.66675C5.39759 1.66675 1.66663 5.39771 1.66663 10.0001C1.66663 14.6025 5.39759 18.3334 9.99996 18.3334Z"
+                                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            English
+                        </a>
+                    </div>
+                    <div class="register-text">
+                        <div class="branding-icon-con">
+                            <img src="images/trsyat-white-logo.svg" alt="Trsyat">
+                        </div>
+                        <h1 class="register-title">نفتح لك أبواب المناقصات لتنمية أعمالك</h1>
+                        <p class="branding-desc">
+                            نوفر لك بيئة ذكية لإدارة المناقصات، من البحث وحتى التقديم. هدفنا دعم نموك عبر تسهيل الوصول
+                            إلى الفرص وتعزيز قدراتك التنافسية.
+                        </p>
+                    </div>
+                    <span class="glow position-absolute"></span>
+                    <span class="glow-sm position-absolute"></span>
+                    <span class="glow-lg position-absolute"></span>
+                </div>
+            </div>
+            <!-- Left Side: Login Form -->
+            <div class="col-lg-6">
+                <div class="sign-left position-relative">
+                    <div class="sign-top d-none d-lg-flex justify-content-between align-items-center">
+                        <!-- Logo -->
+                        <div>
+                            <img src="images/trsyat-logo.png" alt="Trsyat">
+                        </div>
+                        <!-- Language Button -->
+                        <a href="create-account-ltr.html" class="lang-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                fill="none">
+                                <g opacity="0.4">
+                                    <path d="M14.1584 7.4668H5.8418H14.1584Z" fill="#6BAFB8" />
+                                    <path d="M14.1584 7.4668H5.8418" stroke="#6BAFB8" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M10 6.06641V7.4664" stroke="#6BAFB8" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M12.084 7.44922C12.084 11.0326 9.28398 13.9325 5.83398 13.9325"
+                                        stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M14.1667 13.9333C12.6667 13.9333 11.3333 13.1333 10.375 11.875"
+                                        stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </g>
+                                <path
+                                    d="M9.99935 18.3327C14.6017 18.3327 18.3327 14.6017 18.3327 9.99935C18.3327 5.39698 14.6017 1.66602 9.99935 1.66602C5.39698 1.66602 1.66602 5.39698 1.66602 9.99935C1.66602 14.6017 5.39698 18.3327 9.99935 18.3327Z"
+                                    stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            English
+                        </a>
+                    </div>
+
+                    <div class="auth-container">
+                        <!-- Step 1 Content (Company Details) -->
+                        <div id="step-1-content">
+                            <div class="text-center">
+                                <h1 class="section-title">مرحبًا بك في ترسيات</h1>
+                                <h4 class="heading-4">إنشاء حساب</h4>
+                                <p class="fz-14 text-gray">أنشئ حسابك الآن وابدأ رحلتك نحو فرص أكبر ونمو أسرع.</p>
+                            </div>
+                            <!-- Stepper -->
+                            <div class="stepper">
+                                <div class="step-item active" id="s1-step1">
+                                    <div class="step-circle"></div>
+                                    <div class="step-label">ادخال بيانات الشركة</div>
+                                </div>
+                                <div class="step-item" id="s1-step2">
+                                    <div class="step-circle"></div>
+                                    <div class="step-label">ادخال بيانات الحساب</div>
+                                </div>
+                            </div>
+
+                            <form onsubmit="event.preventDefault(); goToStep(2);">
+                                <div class="mb-3">
+                                    <label class="form-label">اسم المستخدم</label>
+                                    <input type="text" class="form-control" placeholder="ادخل اسم المستخدم">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">اسم الشركة</label>
+                                    <input type="text" class="form-control" placeholder="ادخل اسم الشركة">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">رقم الموحد للسجل التجاري</label>
+                                    <input type="text" class="form-control" placeholder="ادخل رقم الموحد للسجل التجاري">
+                                </div>
+
+                                <div class="mb-4">
+                                    <label class="form-label">قطاع الشركة</label>
+                                    <div class="sector-tags">
+                                        <!-- Tags -->
+                                        <label class="sector-tag">
+                                            <input type="checkbox" class="form-check-input">
+                                            <span>تقنية المعلومات والاتصالات</span>
+                                        </label>
+                                        <label class="sector-tag">
+                                            <input type="checkbox" class="form-check-input">
+                                            <span>الصيانة والدعم الفني</span>
+                                        </label>
+                                        <label class="sector-tag">
+                                            <input type="checkbox" class="form-check-input">
+                                            <span>الخدمات الصناعية</span>
+                                        </label>
+                                        <label class="sector-tag">
+                                            <input type="checkbox" class="form-check-input">
+                                            <span>المقاولات والإنشاءات</span>
+                                        </label>
+                                        <label class="sector-tag">
+                                            <input type="checkbox" class="form-check-input" checked>
+                                            <span>الخدمات القانونية</span>
+                                        </label>
+                                        <label class="sector-tag">
+                                            <input type="checkbox" class="form-check-input">
+                                            <span>الدراسات والأبحاث</span>
+                                        </label>
+                                        <label class="sector-tag">
+                                            <input type="checkbox" class="form-check-input">
+                                            <span>التجهيزات الطبية</span>
+                                        </label>
+                                        <label class="sector-tag">
+                                            <input type="checkbox" class="form-check-input">
+                                            <span>الأمن والسلامة</span>
+                                        </label>
+                                        <label class="sector-tag">
+                                            <input type="checkbox" class="form-check-input" checked>
+                                            <span>الخدمات التعليمية والتدريب</span>
+                                        </label>
+                                        <label class="sector-tag">
+                                            <input type="checkbox" class="form-check-input">
+                                            <span>الاستشارات الإدارية والمالية والهندسية</span>
+                                        </label>
+                                        <label class="sector-tag">
+                                            <input type="checkbox" class="form-check-input">
+                                            <span>التوريدات والمشتريات العامة</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn-primary middle-btn w-100 mb-4">التالي</button>
+
+                                <div class="fz-12 text-gray text-center">
+                                    هل لديك حساب بالفعل؟ <a href="login.html" class="fw-medium colored">سجل الدخول
+                                        الآن
+                                    </a>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Step 2 Content (Account Details) -->
+                        <div id="step-2-content" style="display: none;">
+                            <div class="text-center mb-40">
+                                <h1 class="section-title">مرحبًا بك في ترسيات</h1>
+                                <h4 class="heading-4">إنشاء حساب</h4>
+                                <p class="fz-14 text-gray">أنشئ حسابك الآن وابدأ رحلتك نحو فرص أكبر ونمو أسرع.</p>
+                            </div>
+                            <!-- Stepper -->
+                            <div class="stepper">
+                                <div class="step-item completed" id="s2-step1" onclick="goToStep(1)">
+                                    <div class="step-circle"></div>
+                                    <div class="step-label">ادخال بيانات الشركة</div>
+                                </div>
+                                <div class="step-item active" id="s2-step2">
+                                    <div class="step-circle"></div>
+                                    <div class="step-label">ادخال بيانات الحساب</div>
+                                </div>
+                            </div>
+
+                            <form onsubmit="event.preventDefault(); goToVerification();">
+                                <div class="mb-3">
+                                    <label class="form-label">البريد الالكتروني</label>
+                                    <input type="email" class="form-control" placeholder="ادخل البريد الالكتروني">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">رقم الجوال</label>
+                                    <input type="tel" class="form-control intl-phone" placeholder="ادخل رقم الجوال">
+                                </div>
+                                <div class="mb-3 position-relative">
+                                    <label class="form-label">الرقم السري</label>
+                                    <div class="position-relative password-wrapper">
+                                        <input type="password" class="form-control password-input"
+                                            placeholder="ادخل الرقم السري">
+
+                                        <span class="password-toggle" role="button">
+                                            <i class="bi bi-eye" id="passwordIcon"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="mb-4 position-relative">
+                                    <label class="form-label">تاكيد الرقم السري</label>
+                                    <div class="position-relative password-wrapper">
+                                        <input type="password" class="form-control password-input"
+                                            placeholder="ادخل الرقم السري">
+
+                                        <span class="password-toggle" role="button">
+                                            <i class="bi bi-eye" id="passwordIcon"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <button type="button" class="prim-alt-btn middle-btn h-48"
+                                        onclick="goToStep(1)">السابق</button>
+                                    <button type="submit" class="btn-primary middle-btn h-48">التالي</button>
+                                </div>
+
+                                <div class="text-center mt-4 fz-14 text-gray">
+                                    هل لديك حساب بالفعل؟ <a href="login.html" class="colored fw-medium">سجل الدخول
+                                        الآن</a>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Verification Content -->
+                        <div id="verification-content" style="display: none;">
+                            <div class="text-center">
+                                <!-- Mail Icon -->
+                                <img src="images/gmail-illustration.svg" class="gmail mb-32" alt="Gmail">
+
+                                <h4 class="heading-4">تحقق من بريدك الإلكتروني للمتابعة</h4>
+                                <p class="fz-14 text-gray mb-12">
+                                    لقد أرسلنا للتو بريدا الكترونيا للعنوان التالي :
+                                    <span class="black-text" dir="ltr">Ayman555@gmail.com</span>
+                                </p>
+                                <p class="fz-14 text-gray mb-32"> يرجى التحقق من بريد الإلكتروني واختيار الرابط
+                                    المرفق
+                                    للتحقق من عنوانك</p>
+
+                                <div class="verification-inputs">
+                                    <input type="text" inputmode="numeric" class="verification-input" maxlength="1"
+                                        placeholder="4">
+                                    <input type="text" inputmode="numeric" class="verification-input" maxlength="1"
+                                        placeholder="3">
+                                    <input type="text" inputmode="numeric" class="verification-input" maxlength="1"
+                                        placeholder="2">
+                                    <input type="text" inputmode="numeric" class="verification-input" maxlength="1"
+                                        placeholder="1">
+                                </div>
+
+                                <button class="btn-primary middle-btn w-100 mb-4" onclick="goToSuccess()">تاكيد</button>
+
+                                <div class="sm-badge mx-auto fz-12 colored mb-4">
+                                    23 ثانية
+                                </div>
+                                <div class="fz-12 text-gray">
+                                    لم تصلك الرمز؟ <a href="#" class="colored fw-medium">انقر لإعادة الإرسال</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Success Content -->
+                        <div id="success-content" style="display: none;">
+                            <div class="text-center">
+                                <div class="success-icon-lg mx-auto position-relative">
+                                    <!-- Green Envelope with Check -->
+                                    <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+                                        <rect x="10" y="20" width="80" height="60" rx="8" fill="#00C853" />
+                                        <path d="M10 20 L50 55 L90 20" stroke="white" stroke-width="4"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <!-- Check Circle -->
+                                        <circle cx="75" cy="75" r="20" fill="#00C853" stroke="white" stroke-width="4" />
+                                        <path d="M68 75 L73 80 L82 70" stroke="white" stroke-width="4"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <h5 class="black-text mb-3 fs-4">تهانينا!! تم التحقق من حسابك</h5>
+                                <p class="text-gray fz-20 d-flex align-items-center justify-content-center gap-12">
+                                    <span class="spinner-svg">
+                                        <img src="images/svg-spinner.svg" alt="Spinner">
+                                    </span>
+                                    جاري اعادة توجيه بعد 3 ث ...
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!--  Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js"></script>
+    <!--  Arabic language support -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/l10n/ar.js"></script>
+    <!-- Intl Tel Input JS -->
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/js/intlTelInput.min.js"></script>
+    <script src="js/tele.js"></script>
+    <script>
+        /* =========================
+           STEP NAVIGATION
+        ========================= */
+
+        function hideAllSteps() {
+            document.getElementById('step-1-content').style.display = 'none';
+            document.getElementById('step-2-content').style.display = 'none';
+            document.getElementById('verification-content').style.display = 'none';
+            document.getElementById('success-content').style.display = 'none';
+        }
+
+        function goToStep(step) {
+            hideAllSteps();
+
+            if (step === 1) {
+                document.getElementById('step-1-content').style.display = 'block';
+            } else if (step === 2) {
+                document.getElementById('step-2-content').style.display = 'block';
+            }
+        }
+
+        function goToVerification() {
+            hideAllSteps();
+            document.getElementById('verification-content').style.display = 'block';
+
+            // Focus first verification input
+            setTimeout(() => {
+                const inputs = document.querySelectorAll('.verification-input');
+                if (inputs.length) {
+                    inputs[0].focus();
+                }
+            }, 100);
+        }
+
+        function goToSuccess() {
+            hideAllSteps();
+            document.getElementById('success-content').style.display = 'block';
+
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 30000);
+        }
+
+        /* =========================
+           VERIFICATION INPUT LOGIC
+        ========================= */
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const inputs = document.querySelectorAll('.verification-input');
+
+            inputs.forEach((input, index) => {
+
+                // Allow only numbers & move forward
+                input.addEventListener('input', () => {
+                    input.value = input.value.replace(/[^0-9]/g, '');
+
+                    if (input.value && index < inputs.length - 1) {
+                        inputs[index + 1].focus();
+                    }
+                });
+
+                // Move back on delete
+                input.addEventListener('keydown', (e) => {
+                    if (e.key === 'Backspace' && !input.value && index > 0) {
+                        inputs[index - 1].focus();
+                    }
+                });
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll(".password-toggle").forEach(toggle => {
+                toggle.addEventListener("click", function () {
+                    const wrapper = this.closest(".password-wrapper");
+                    const input = wrapper.querySelector(".password-input");
+                    const icon = this.querySelector("i");
+
+                    if (input.type === "password") {
+                        input.type = "text";
+                        icon.classList.replace("bi-eye", "bi-eye-slash");
+                    } else {
+                        input.type = "password";
+                        icon.classList.replace("bi-eye-slash", "bi-eye");
+                    }
+                });
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

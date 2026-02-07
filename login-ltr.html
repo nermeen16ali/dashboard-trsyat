@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="images/trsyat-logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Trsyat</title>
+    <meta name="description" content="Login to Trsyat platform for tender management." />
+
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 LTR CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body class="sign-page">
+
+    <div class="container-fluid p-0 overflow-hidden">
+        <div class="row g-0 h-100">
+            <!-- Right Side: Branding -->
+            <div class="col-lg-6">
+                <div class="sign-right">
+                    <div class="d-flex w-100 position-relative z-2 d-lg-none justify-content-end align-items-center">
+                        <!-- Language Button -->
+                        <a href="login-ltr.html" class="lang-btn text-white border-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                fill="none">
+                                <g opacity="0.4">
+                                    <path d="M14.1581 7.4668H5.84143H14.1581Z" fill="white" />
+                                    <path d="M14.1581 7.4668H5.84143" stroke="white" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M10 6.06665V7.46664" stroke="white" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M12.0834 7.44995C12.0834 11.0333 9.28337 13.9333 5.83337 13.9333"
+                                        stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M14.1668 13.9333C12.6668 13.9333 11.3335 13.1333 10.3751 11.875"
+                                        stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </g>
+                                <path
+                                    d="M9.99996 18.3334C14.6023 18.3334 18.3333 14.6025 18.3333 10.0001C18.3333 5.39771 14.6023 1.66675 9.99996 1.66675C5.39759 1.66675 1.66663 5.39771 1.66663 10.0001C1.66663 14.6025 5.39759 18.3334 9.99996 18.3334Z"
+                                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            العربية
+                        </a>
+                    </div>
+                    <div class="register-text">
+                        <div class="branding-icon-con">
+                            <img src="images/trsyat-white-logo.svg" alt="Trsyat">
+                        </div>
+                        <h1 class="register-title">We open the doors of tenders to grow your business</h1>
+                        <p class="branding-desc">
+                            We provide a smart environment for managing tenders, from search to submission. Our goal is
+                            to support your growth by facilitating access to opportunities and enhancing your
+                            competitive capabilities.
+                        </p>
+                    </div>
+                    <span class="glow position-absolute"></span>
+                    <span class="glow-sm position-absolute"></span>
+                    <span class="glow-lg position-absolute"></span>
+                </div>
+            </div>
+            <!-- Left Side: Login Form -->
+            <div class="col-lg-6">
+                <div class="sign-left position-relative">
+                    <div class="sign-top d-none d-lg-flex justify-content-between align-items-center">
+                        <!-- Logo -->
+                        <div>
+                            <img src="images/trsyat-logo.png" alt="Trsyat">
+                        </div>
+                        <!-- Language Button -->
+                        <a href="login-ltr.html" class="lang-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                fill="none">
+                                <g opacity="0.4">
+                                    <path d="M14.1584 7.4668H5.8418H14.1584Z" fill="#6BAFB8" />
+                                    <path d="M14.1584 7.4668H5.8418" stroke="#6BAFB8" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M10 6.06641V7.4664" stroke="#6BAFB8" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M12.084 7.44922C12.084 11.0326 9.28398 13.9325 5.83398 13.9325"
+                                        stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M14.1667 13.9333C12.6667 13.9333 11.3333 13.1333 10.375 11.875"
+                                        stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </g>
+                                <path
+                                    d="M9.99935 18.3327C14.6017 18.3327 18.3327 14.6017 18.3327 9.99935C18.3327 5.39698 14.6017 1.66602 9.99935 1.66602C5.39698 1.66602 1.66602 5.39698 1.66602 9.99935C1.66602 14.6017 5.39698 18.3327 9.99935 18.3327Z"
+                                    stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            العربية
+                        </a>
+                    </div>
+
+                    <div class="auth-container">
+                        <form class="auth-form" id="loginForm">
+                            <div class="text-center mb-40">
+                                <h1 class="section-title">Welcome to Trsyat</h1>
+                                <h4 class="heading-4">Login</h4>
+                                <p class="fz-14 text-gray">Enter to access all tenders and opportunities</p>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Email or Username</label>
+                                <input type="text" class="form-control" placeholder="Enter username">
+                            </div>
+
+                            <div class="mb-12">
+                                <label class="form-label">Password</label>
+
+                                <div class="position-relative password-wrapper">
+                                    <input type="password" class="form-control password-input"
+                                        placeholder="Enter password">
+
+                                    <span class="password-toggle" role="button">
+                                        <i class="bi bi-eye" id="passwordIcon"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-end align-items-center mb-40">
+                                <a href="#" class="colored fz-12"
+                                    onclick="showForm('forgotPasswordForm'); return false;">Forgot Password?</a>
+                            </div>
+
+                            <button type="submit" class="btn-primary middle-btn w-100 mb-4">Login</button>
+                            <div class="d-flex align-items-center gap-12 seperator-part fz-14 mb-4">
+                                <span></span>
+                                <p class="flex-shrink-0">Or through</p>
+                                <span></span>
+                            </div>
+                            <button class="google-register mb-4">
+                                <img src="images/google.svg" alt="Google">
+                                Sign in with Google
+                            </button>
+
+                            <div class="fz-12 text-gray text-center">
+                                Don't have an account? <a href="create-account-ltr.html"
+                                    class="fw-medium colored">Create your account
+                                    now!</a>
+                            </div>
+                        </form>
+                        <form class="auth-form" id="forgotPasswordForm" style="display: none;">
+                            <div class="text-center mb-40">
+                                <h1 class="section-title">Welcome to Trsyat</h1>
+                                <h4 class="heading-4">Reset Password</h4>
+                                <p class="fz-14 text-gray">Keep your account secure by setting a new password</p>
+                            </div>
+                            <div class="mb-32">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" class="form-control" placeholder="Enter email address">
+                            </div>
+                            <button type="button" class="btn-primary middle-btn w-100 mb-4"
+                                onclick="showForm('otpForm')">Receive Code</button>
+
+                            <div class="fz-12 text-gray text-center">
+                                Don't have an account? <a href="create-account-ltr.html"
+                                    class="fw-medium colored">Create your account
+                                    now!</a>
+                            </div>
+                        </form>
+                        <!-- Verification Content -->
+                        <form id="otpForm" class="text-center" style="display: none;">
+                            <!-- Mail Icon -->
+                            <div class="mb-32">
+                                <img src="images/gmail-illustration.svg" alt="Gmail">
+                            </div>
+
+                            <h4 class="mb-12 pt-1 black-text fs-4">Check your email to continue</h4>
+                            <p class="fz-14 text-gray mb-12">
+                                We just sent an email to:
+                                <span class="black-text" dir="ltr">Ayman555@gmail.com</span>
+                                <br>
+                                Please check your email and click the link to verify your address.
+                            </p>
+
+                            <div class="verification-inputs">
+                                <input type="text" inputmode="numeric" class="verification-input" maxlength="1"
+                                    placeholder="4">
+                                <input type="text" inputmode="numeric" class="verification-input" maxlength="1"
+                                    placeholder="3">
+                                <input type="text" inputmode="numeric" class="verification-input" maxlength="1"
+                                    placeholder="2">
+                                <input type="text" inputmode="numeric" class="verification-input" maxlength="1"
+                                    placeholder="1">
+                            </div>
+
+                            <button type="button" class="btn-primary middle-btn w-100 mb-4"
+                                onclick="showForm('newPasswordForm')">Confirm</button>
+
+                            <div class="sm-badge mx-auto fz-12 colored mb-4">
+                                23 sec
+                            </div>
+                            <div class="fz-12 text-gray">
+                                Didn't get the code? <a href="#" class="colored fw-medium">Click to resend</a>
+                            </div>
+                        </form>
+                        <form class="auth-form" id="newPasswordForm" style="display: none;">
+                            <div class="text-center mb-40">
+                                <h1 class="section-title">Welcome to Trsyat</h1>
+                                <h4 class="heading-4">New Password</h4>
+                                <p class="fz-14 text-gray">Keep your account secure by setting a new password</p>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Password</label>
+
+                                <div class="position-relative password-wrapper">
+                                    <input type="password" class="form-control password-input"
+                                        placeholder="Enter password">
+
+                                    <span class="password-toggle" role="button">
+                                        <i class="bi bi-eye" id="passwordIcon"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Confirm Password</label>
+
+                                <div class="position-relative password-wrapper">
+                                    <input type="password" class="form-control password-input"
+                                        placeholder="Confirm password">
+
+                                    <span class="password-toggle" role="button">
+                                        <i class="bi bi-eye" id="passwordIcon"></i>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <button type="button" class="btn-primary middle-btn w-100 mb-4"
+                                onclick="showForm('success-content')">Continue</button>
+
+                            <div class="fz-12 text-gray text-center">
+                                Don't have an account? <a href="create-account-ltr.html"
+                                    class="fw-medium colored">Create your account
+                                    now!</a>
+                            </div>
+                        </form>
+                        <!-- Congratulations Content -->
+                        <div id="success-content" style="display: none;">
+                            <div class="text-center">
+                                <div class="success-icon-lg mx-auto position-relative">
+                                    <img src="images/checked-green.svg" alt="Congratulations">
+                                </div>
+                                <h1 class="section-title">Congratulations</h1>
+                                <h4 class="heading-4">Password changed successfully</h4>
+                                <p class="fz-14 text-gray mb-32">You can now log in using the new password.</p>
+                                <button type="button" class="btn-primary middle-btn w-100"
+                                    onclick="showForm('loginForm')">Go to Login</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showForm(formId) {
+            const forms = ['loginForm', 'forgotPasswordForm', 'otpForm', 'newPasswordForm', 'success-content'];
+            forms.forEach(id => {
+                const form = document.getElementById(id);
+                if (form) form.style.display = 'none';
+            });
+            const formToShow = document.getElementById(formId);
+            if (formToShow) {
+                formToShow.style.display = 'block';
+
+                // Auto-focus first OTP input when OTP form appears
+                if (formId === 'otpForm') {
+                    setTimeout(() => {
+                        const firstOtpInput = formToShow.querySelector('.verification-input');
+                        if (firstOtpInput) firstOtpInput.focus();
+                    }, 100);
+                }
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Password Toggle
+            document.querySelectorAll(".password-toggle").forEach(toggle => {
+                toggle.addEventListener("click", function () {
+                    const wrapper = this.closest(".password-wrapper");
+                    const input = wrapper.querySelector(".password-input");
+                    const icon = this.querySelector("i");
+
+                    if (input.type === "password") {
+                        input.type = "text";
+                        icon.classList.replace("bi-eye", "bi-eye-slash");
+                    } else {
+                        input.type = "password";
+                        icon.classList.replace("bi-eye-slash", "bi-eye");
+                    }
+                });
+            });
+
+            // OTP Input Logic
+            const inputs = document.querySelectorAll('.verification-input');
+            inputs.forEach((input, index) => {
+                // Allow only numbers & move forward
+                input.addEventListener('input', () => {
+                    input.value = input.value.replace(/[^0-9]/g, '');
+                    if (input.value && index < inputs.length - 1) {
+                        inputs[index + 1].focus();
+                    }
+                });
+
+                // Move back on delete
+                input.addEventListener('keydown', (e) => {
+                    if (e.key === 'Backspace' && !input.value && index > 0) {
+                        inputs[index - 1].focus();
+                    }
+                });
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
