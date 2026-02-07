@@ -1076,7 +1076,6 @@ h6 {
 
 .filter-sidebar {
   display: flex;
-  width: 320px;
   padding: 24px 16px;
   flex-direction: column;
   justify-content: center;
@@ -4216,6 +4215,10 @@ a.colored:hover {
   .w-355 {
     width: 355px;
     margin-inline-start: auto;
+  }
+
+  .filter-sidebar {
+    width: 320px;
   }
 
   .dash-widget:not(.p-4) {
