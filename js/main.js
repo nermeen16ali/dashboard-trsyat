@@ -295,10 +295,9 @@ function initChatModal() {
   modalHeader.innerHTML = `
     <h6 class="black-text">${titleHTML}</h6>
     <button class="chat-modal-close">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <path d="M18 6L6 18" stroke="#6F6F6F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M6 6L18 18" stroke="#6F6F6F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+  <path d="M1.16667 11.6667L0 10.5L4.66667 5.83333L0 1.16667L1.16667 0L5.83333 4.66667L10.5 0L11.6667 1.16667L7 5.83333L11.6667 10.5L10.5 11.6667L5.83333 7L1.16667 11.6667Z" fill="black"/>
+</svg>
     </button>
   `;
 
@@ -321,14 +320,28 @@ function initChatModal() {
       modalChats.innerHTML = currentChats.innerHTML;
 
       modalOverlay.style.display = 'flex';
+      // Trigger reflow to ensure transition works
+      modalOverlay.offsetHeight;
+      modalOverlay.classList.add('show');
       document.body.style.overflow = 'hidden';
     }
   }
 
   // Close modal
   function closeModal() {
-    modalOverlay.style.display = 'none';
-    document.body.style.overflow = '';
+    const modalContainer = modalOverlay.querySelector('.chat-modal-container');
+
+    modalOverlay.classList.remove('show');
+    // Add slide-down animation
+    modalContainer.style.animation = 'slideDown 0.3s ease-in';
+
+    // Wait for animation to complete before hiding
+    setTimeout(() => {
+      modalOverlay.style.display = 'none';
+      document.body.style.overflow = '';
+      // Reset animation for next open
+      modalContainer.style.animation = '';
+    }, 300);
   }
 
   // Event listeners
