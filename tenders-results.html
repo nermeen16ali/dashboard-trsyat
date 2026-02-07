@@ -600,7 +600,7 @@
 
 
     <div class="d-lg-flex align-items-start gap-4">
-      <div class="filter-sidebar">
+      <div class="filter-sidebar sm-0">
         <!-- Filter Header -->
         <div class="filter-header d-flex align-items-center gap-10">
           <img src="images/sort.svg" alt="Sort">
@@ -774,7 +774,7 @@
           </button>
         </div>
       </div>
-      <div class="dash-widget flex-grow-1">
+      <div class="dash-widget results-widget sm-0 flex-grow-1">
         <div class="tender-card p-3 mb-4">
           <div class="tender-header d-flex align-items-center justify-content-between mb-3">
             <label class="form-check-label tender-number d-flex align-items-center">
@@ -790,27 +790,30 @@
           </div>
           <div class="tender-sections p-3 rounded-12 bg-white">
             <div class="tender-section position-relative">
-              <div class="row align-items-center">
-                <div class="col-md-4">
-                  <div class="d-flex align-items-center gap-10">
+              <div class="row align-items-md-center">
+                <div class="col-8 col-md-7">
+                  <div class="d-flex flex-column flex-md-row align-items-md-center gap-10">
                     <span class="tender-status me-3 flex-shrink-0">طلب تقديم العروض</span>
                     <span class="fz-12 gray-text flex-shrink-0">تاريخ النشر</span>
                     <span class="fz-14 black-text fw-medium flex-shrink-0">05-12-2025</span>
                   </div>
-
-                  <div class="tender-title">تجهيز المكاتب وأثاثها</div>
-                  <div class="tender-subtitle">وزارة الصحة</div>
-                </div>
-                <div class="col-md-5">
-                  <span class="fz-12 gray-text">النشاط الأساسي</span>
-                  <div class="fz-14 black-text">
-                    التصميم الداخلي والتجهيزات
+                  <div class="d-flex flex-column flex-lg-row justify-content-between">
+                    <div>
+                      <h6 class="tender-title">تجهيز المكاتب وأثاثها</h6>
+                      <div class="tender-subtitle">وزارة الصحة</div>
+                    </div>
+                    <div>
+                      <span class="fz-12 gray-text">النشاط الأساسي</span>
+                      <div class="fz-14 black-text">
+                        التصميم الداخلي والتجهيزات
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-4 col-md-5">
                   <div class="d-flex justify-content-end">
                     <div class="position-relative">
-                      <svg class="rotate-180" width="96" height="96">
+                      <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
                         <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none">
                         </circle>
                         <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4" fill="none"
@@ -827,7 +830,7 @@
               </div>
             </div>
             <div class="tender-section">
-              <div class="row">
+              <div class="row gy-3">
                 <div class="col-md-4">
                   <div class=" d-flex align-items-center">
                     <div class="sm-logo">
@@ -865,7 +868,7 @@
                   </div>
                 </div>
                 <div class="col-md-3">
-                  <div class="date-item  d-flex align-items-center justify-content-end">
+                  <div class="date-item d-flex align-items-center justify-content-md-end">
                     <div class="sm-logo">
                       <img src="images/clock.svg" alt="Clock">
                     </div>
@@ -919,7 +922,7 @@
                     <span class="fz-14 black-text fw-medium flex-shrink-0">05-12-2025</span>
                   </div>
 
-                  <div class="tender-title">تجهيز المكاتب وأثاثها</div>
+                  <h6 class="tender-title">تجهيز المكاتب وأثاثها</h6>
                   <div class="tender-subtitle">وزارة الصحة</div>
                 </div>
                 <div class="col-md-5">
@@ -931,7 +934,7 @@
                 <div class="col-md-3">
                   <div class="d-flex justify-content-end">
                     <div class="position-relative">
-                      <svg class="rotate-180" width="96" height="96">
+                      <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
                         <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none">
                         </circle>
                         <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4" fill="none"
@@ -986,7 +989,7 @@
                   </div>
                 </div>
                 <div class="col-md-3">
-                  <div class="date-item  d-flex align-items-center justify-content-end">
+                  <div class="date-item  d-flex align-items-center justify-content-md-end">
                     <div class="sm-logo">
                       <img src="images/clock.svg" alt="Clock">
                     </div>
@@ -1004,7 +1007,7 @@
                   </div>
                 </div>
                 <div class="col-md-2">
-                  <div class="tender-price d-flex justify-content-end">
+                  <div class="tender-price d-flex justify-content-md-end">
                     <div>
                       <span class="fz-12 gray-text d-block mb-2">سعر الوثائق</span>
                       <span class="fs-6 black-text fw-medium">200.50
@@ -1040,7 +1043,7 @@
                     <span class="fz-14 black-text fw-medium flex-shrink-0">05-12-2025</span>
                   </div>
 
-                  <div class="tender-title">تجهيز المكاتب وأثاثها</div>
+                  <h6 class="tender-title">تجهيز المكاتب وأثاثها</h6>
                   <div class="tender-subtitle">وزارة الصحة</div>
                 </div>
                 <div class="col-md-5">
@@ -1052,7 +1055,7 @@
                 <div class="col-md-3">
                   <div class="d-flex justify-content-end">
                     <div class="position-relative">
-                      <svg class="rotate-180" width="96" height="96">
+                      <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
                         <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none">
                         </circle>
                         <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4" fill="none"
@@ -1107,7 +1110,7 @@
                   </div>
                 </div>
                 <div class="col-md-3">
-                  <div class="date-item  d-flex align-items-center justify-content-end">
+                  <div class="date-item  d-flex align-items-center justify-content-md-end">
                     <div class="sm-logo">
                       <img src="images/clock.svg" alt="Clock">
                     </div>
@@ -1125,7 +1128,7 @@
                   </div>
                 </div>
                 <div class="col-md-2">
-                  <div class="tender-price d-flex justify-content-end">
+                  <div class="tender-price d-flex justify-content-md-end">
                     <div>
                       <span class="fz-12 gray-text d-block mb-2">سعر الوثائق</span>
                       <span class="fs-6 black-text fw-medium">200.50
@@ -1161,7 +1164,7 @@
                     <span class="fz-14 black-text fw-medium flex-shrink-0">05-12-2025</span>
                   </div>
 
-                  <div class="tender-title">تجهيز المكاتب وأثاثها</div>
+                  <h6 class="tender-title">تجهيز المكاتب وأثاثها</h6>
                   <div class="tender-subtitle">وزارة الصحة</div>
                 </div>
                 <div class="col-md-5">
@@ -1173,7 +1176,7 @@
                 <div class="col-md-3">
                   <div class="d-flex justify-content-end">
                     <div class="position-relative">
-                      <svg class="rotate-180" width="96" height="96">
+                      <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
                         <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none">
                         </circle>
                         <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4" fill="none"
@@ -1228,7 +1231,7 @@
                   </div>
                 </div>
                 <div class="col-md-3">
-                  <div class="date-item  d-flex align-items-center justify-content-end">
+                  <div class="date-item  d-flex align-items-center justify-content-md-end">
                     <div class="sm-logo">
                       <img src="images/clock.svg" alt="Clock">
                     </div>
@@ -1246,7 +1249,7 @@
                   </div>
                 </div>
                 <div class="col-md-2">
-                  <div class="tender-price d-flex justify-content-end">
+                  <div class="tender-price d-flex justify-content-md-end">
                     <div>
                       <span class="fz-12 gray-text d-block mb-2">سعر الوثائق</span>
                       <span class="fs-6 black-text fw-medium">200.50

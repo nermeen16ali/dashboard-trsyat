@@ -372,13 +372,13 @@ html[dir="rtl"] [type="url"] {
   }
 }
 
-h5 {
+/* h5 {
   font-size: 18px;
 }
 
 h6 {
   font-size: 16px;
-}
+} */
 
 .fz-32 {
   font-size: 32px;
@@ -1015,6 +1015,7 @@ h6 {
   color: var(--primary-color);
   border-radius: 30px;
   font-size: 12px;
+  width: fit-content;
   background-color: #6bafb830;
   /* line-height: 100%; */
 }
@@ -1086,8 +1087,8 @@ h6 {
 }
 
 .tender-title {
-  font-size: 16px;
-  font-weight: 500;
+  /* font-size: 16px;
+  font-weight: 500; */
   color: var(--primary-base-color);
   margin-block: 16px 12px;
   /* line-height: 16px; */
@@ -1406,6 +1407,18 @@ input[type="file"] {
   font-size: 15.75px;
   color: #0c2030;
   font-weight: 500;
+}
+
+.progress-svg {
+  width: 96px;
+  height: 96px;
+}
+
+@media (max-width: 991px) {
+  .progress-svg {
+    width: 84px;
+    height: 84px;
+  }
 }
 
 .w-fit-content .rotate-180+div {
@@ -2259,10 +2272,6 @@ span.flatpickr-weekday {
 .dash-widget {
   border: 1px solid #f2f2f2;
   border-radius: 20px;
-}
-
-.dash-widget:not(.p-4) {
-  padding: 16px;
 }
 
 @media (min-width: 768px) {
@@ -4209,6 +4218,10 @@ a.colored:hover {
     margin-inline-start: auto;
   }
 
+  .dash-widget:not(.p-4) {
+    padding: 16px;
+  }
+
   .navbar .search-box {
     margin-inline-start: 16px;
   }
@@ -4530,6 +4543,10 @@ html[dir="rtl"] .select2-selection__choice__remove {
     flex-wrap: wrap;
   }
 
+  .tender-title {
+    margin-block: 12px 8px;
+  }
+
   /* Bootstrap Modal Animations - Slide from Bottom */
   .modal.fade .modal-dialog {
     transform: translateY(100%);
@@ -4594,9 +4611,10 @@ html[dir="rtl"] .select2-selection__choice__remove {
     height: 400px;
   }
 
-  .tender-card.p-0 {
+  .sm-0 {
     border: none;
     background: unset;
+    padding: 0;
   }
 
   .filter-bar {
@@ -4631,9 +4649,9 @@ html[dir="rtl"] .select2-selection__choice__remove {
     min-width: 0;
   }
 
-  .dash-widget.p-0 {
+  /* .dash-widget.sm-0 {
     border: none;
-  }
+  } */
 
   .page-tabs .nav-link {
     flex-direction: row;
@@ -4828,8 +4846,22 @@ html[dir="rtl"] .select2-selection__choice__remove {
   }
 
 
-  .tender-card:not(.p-0) {
+  .tender-card:not(.sm-0) {
     padding: 12px !important;
+    position: relative;
+  }
+
+  .results-widget .tender-card {
+    padding-bottom: 64px !important;
+  }
+
+  .results-widget .btn-base {
+    position: absolute;
+    height: 36px;
+    bottom: 12px;
+    width: calc(100% - 24px);
+    border-radius: 12px;
+    inset-inline-start: 12px;
   }
 
   .chat-layout .col-lg-8 .tender-card {
@@ -4952,6 +4984,10 @@ html[dir="rtl"] .select2-selection__choice__remove {
 @media (max-width: 767px) {
   .competition-table thead {
     display: none;
+  }
+
+  .rotate-180+div {
+    font-size: 13.75px;
   }
 
   .notification-tabs>* {
