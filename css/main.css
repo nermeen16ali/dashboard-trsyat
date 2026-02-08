@@ -4385,151 +4385,84 @@ a.colored:hover {
 }
 
 /* ============================
-   Select2 Custom Styling (Image Match: Chips Below)
+   Select2 Custom Styling
    ============================ */
-.select2-container--default .select2-selection--multiple {
-  border: none !important;
-  background-color: transparent !important;
-  min-height: auto !important;
-  padding: 0 !important;
+.choices {
+  margin-bottom: 0;
 }
 
-/* Restructure the rendered list to stack search input on top of chips */
-.select2-container--default .select2-selection--multiple .select2-selection__rendered {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: wrap !important;
-  justify-content: flex-start !important;
-  gap: 12px !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  width: 100% !important;
-  list-style: none !important;
+.choices__inner {
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 10px 14px;
+  background: #fff;
+  min-height: 48px;
+  font-size: 14px;
 }
 
-/* Style the search field as the main input box */
-.select2-container--default .select2-search--inline {
-  order: -1 !important;
-  /* Move to top */
-  width: 100% !important;
-  margin: 0 !important;
-  position: relative !important;
-  margin-bottom: 12px !important;
+.choices__inner:hover {
+  border-color: var(--primary-color);
 }
 
-.select2-container--default .select2-search--inline .select2-search__field {
-  width: 100% !important;
-  height: 48px !important;
-  background-color: #fff !important;
-  border: 1px solid #f2f2f2 !important;
-  border-radius: 12px !important;
-  padding: 0 40px 0 16px !important;
-  /* Space for placeholder and icons */
-  margin: 0 !important;
-  font-family: "Expo Arabic", sans-serif !important;
-  font-size: 14px !important;
-  color: #333 !important;
-  transition: all 0.3s ease !important;
+.choices[data-type*="select-one"] .choices__inner {
+  padding-bottom: 10px;
 }
 
-/* Add the '+' icon to the search field */
-.select2-container--default .select2-search--inline::before {
-  content: "+" !important;
-  position: absolute !important;
-  left: 15px !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  color: var(--primary-base-color) !important;
-  font-size: 20px !important;
-  font-weight: 300 !important;
-  pointer-events: none !important;
+.choices__list--dropdown {
+  border-radius: 10px;
+  border: 1px solid #e5e5e5;
 }
 
-.select2-container--default.select2-container--focus .select2-search__field {
-  border-color: var(--primary-base-color) !important;
-  box-shadow: 0 0 0 0.2rem rgba(107, 175, 184, 0.05) !important;
-  outline: 0 !important;
+.choices__list--dropdown .choices__item--selectable.is-highlighted {
+  background-color: rgba(26, 154, 138, 0.1);
+  color: var(--primary-color);
 }
 
-/* The chips container (rendered list items that are NOT the search input) */
-.select2-container--default .select2-selection--multiple .select2-selection__choice {
-  background-color: #fff !important;
-  border: 1px solid #f2f2f2 !important;
-  border-radius: 12px !important;
-  padding: 8px 16px !important;
-  color: var(--primary-color) !important;
-  font-size: 14px !important;
-  margin: 0 !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 12px !important;
-  font-family: "Expo Arabic", sans-serif !important;
-  width: fit-content !important;
+.choices__placeholder {
+  color: #999;
+  opacity: 1;
 }
 
-/* Ensure chips stay side-by-side in a row below the search input */
-/* We need another container or flex alignment to keep chips in a row */
-.select2-container--default .select2-selection--multiple .select2-selection__rendered>li:not(.select2-search) {
-  /* These items are siblings of the search div, stacked by column. 
-       We must make them flow in a row. */
-  display: inline-flex !important;
+/* Hide selected items inside the multi-select */
+.choices[data-type*="select-multiple"] .choices__list--multiple {
+  display: none;
 }
 
-/* Style for the 'X' button in chips */
-.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
-  color: #333 !important;
-  margin: 0 !important;
-  border: none !important;
-  font-size: 14px !important;
-  order: 1 !important;
-  /* Move 'X' to the right side of text for RTL? No, left is cleaner */
+/* Selected tags container */
+.selected-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
 }
 
-/* Placeholder styling */
-.select2-container--default .select2-selection--multiple .select2-selection__placeholder {
-  display: none !important;
-  /* We use the search input's placeholder */
+.selected-tag {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
-/* Dropdown styling */
-.select2-dropdown {
-  border: 1px solid #f2f2f2 !important;
-  border-radius: 16px !important;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05) !important;
-  overflow: hidden !important;
-  z-index: 1060 !important;
-  margin-top: 8px !important;
+.selected-tag .remove-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.select2-results__option {
-  padding: 12px 20px !important;
-  font-size: 14px !important;
-  font-family: "Expo Arabic", sans-serif !important;
-  text-align: right !important;
-}
-
-.select2-container--default .select2-results__option--highlighted[aria-selected] {
-  background-color: #f7f7f7 !important;
-  color: var(--primary-base-color) !important;
-}
-
-/* RTL Optimizations */
-html[dir="rtl"] .select2-container {
-  direction: rtl !important;
-}
-
-html[dir="rtl"] .select2-search--inline .select2-search__field {
-  padding: 0 16px 0 40px !important;
-  text-align: right !important;
-}
-
-html[dir="rtl"] .select2-search--inline::before {
-  left: 15px !important;
-}
-
-html[dir="rtl"] .select2-selection__choice__remove {
-  margin-left: 8px !important;
-  order: -1 !important;
+.selected-tag .remove-btn:hover {
+  opacity: 1;
 }
 
 @media (max-width: 991px) {
@@ -4540,54 +4473,6 @@ html[dir="rtl"] .select2-selection__choice__remove {
   .tender-title {
     margin-block: 12px 8px;
   }
-
-  /* Bootstrap Modal Animations - Slide from Bottom */
-  .modal.fade .modal-dialog {
-    transform: translateY(100%);
-    transition: transform 0.3s ease-out;
-  }
-
-  .modal.show .modal-dialog {
-    transform: translateY(0);
-  }
-
-  .modal.fade:not(.show) .modal-dialog {
-    transform: translateY(100%);
-    transition: transform 0.3s ease-in;
-  }
-
-  /* Position modals at bottom on mobile */
-  .modal-dialog {
-    margin: 0;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    max-width: 100%;
-  }
-
-  .modal-dialog-centered {
-    align-items: flex-end;
-    min-height: auto;
-  }
-
-  .modal-content {
-    border-radius: 12px 12px 0 0;
-    border: none;
-    max-height: 85vh;
-    overflow-y: auto;
-  }
-
-  /* Backdrop fade animation */
-  .modal-backdrop.fade {
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .modal-backdrop.show {
-    opacity: 0.5;
-  }
-
 
   .login-wrapper {
     height: auto;
@@ -5014,6 +4899,11 @@ html[dir="rtl"] .select2-selection__choice__remove {
     display: none;
   }
 
+  .timeline-bar {
+    width: 2px;
+    height: 27px;
+  }
+
   .rotate-180+div {
     font-size: 13.75px;
   }
@@ -5303,6 +5193,57 @@ html[dir="rtl"] .select2-selection__choice__remove {
 @media (max-width: 576px) {
   .scrollable-row {
     scroll-snap-type: x mandatory;
+  }
+
+  .tender-footer>* {
+    width: 100%;
+  }
+
+  /* Bootstrap Modal Animations - Slide from Bottom */
+  .modal.fade .modal-dialog {
+    transform: translateY(100%);
+    transition: transform 0.3s ease-out;
+  }
+
+  .modal.show .modal-dialog {
+    transform: translateY(0);
+  }
+
+  .modal.fade:not(.show) .modal-dialog {
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in;
+  }
+
+  /* Position modals at bottom on mobile */
+  .modal-dialog {
+    margin: 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 100%;
+  }
+
+  .modal-dialog-centered {
+    align-items: flex-end;
+    min-height: auto;
+  }
+
+  .modal-content {
+    border-radius: 12px 12px 0 0;
+    border: none;
+    max-height: 85vh;
+    overflow-y: auto;
+  }
+
+  /* Backdrop fade animation */
+  .modal-backdrop.fade {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .modal-backdrop.show {
+    opacity: 0.5;
   }
 
   .progress-svg {

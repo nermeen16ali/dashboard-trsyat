@@ -9,12 +9,8 @@
     <meta name="description"
         content="We provide you with an intelligent environment for managing tenders—from search to submission. Our goal is to support your growth by simplifying access to opportunities and enhancing your competitive edge." />
 
-    <!-- Bootstrap 5 RTL CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
-    <!-- Flatpickr CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/themes/material_blue.css" />
-    <!-- Select2 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/main.css" />
 </head>
@@ -55,16 +51,16 @@
                                     <option value="3">مرفوضة</option>
                                 </select>
                             </div>
-                            <div>
+                            <div class="form-group">
                                 <label class="form-label">المناطق</label>
-                                <select class="form-select form-control select2-multi" multiple="multiple"
-                                    data-placeholder="اختر المناطق">
-                                    <option value="1">الرياض</option>
-                                    <option value="2">جدة</option>
-                                    <option value="3">مكة المكرمة</option>
-                                    <option value="4">المدينة المنورة</option>
-                                    <option value="5">الدمام</option>
+                                <select id="regions" class="form-select" multiple>
+                                    <option value="riyadh">الرياض</option>
+                                    <option value="jeddah">جدة</option>
+                                    <option value="dammam">الدمام</option>
+                                    <option value="makkah">مكة المكرمة</option>
+                                    <option value="madinah">المدينة المنورة</option>
                                 </select>
+                                <div id="regions-tags" class="selected-tags"></div>
                             </div>
                             <div>
                                 <label class="form-label">النشاط الأساسي</label>
@@ -1375,32 +1371,84 @@
             </nav>
         </div>
     </div>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- ✅ Flatpickr JS -->
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js"></script>
-    <!-- ✅ Arabic language support -->
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/l10n/ar.js"></script>
     <!-- Select2 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/calender.js"></script>
-
     <script>
-        $(document).ready(function () {
-            $('.select2-multi').each(function () {
-                $(this).select2({
-                    placeholder: $(this).data('placeholder'),
-                    allowClear: true,
-                    dir: "rtl",
-                    width: '100%',
-                    dropdownParent: $('#filterModal')
+        // حالة المنافسة
+        new Choices('#competition-status', {
+            searchEnabled: true,
+            searchPlaceholderValue: 'بحث...',
+            itemSelectText: '',
+            noResultsText: 'لا توجد نتائج',
+            shouldSort: false
+        });
+
+        // المناطق - Multi Select with external tags
+        const regionsSelect = new Choices('#regions', {
+            searchEnabled: true,
+            searchPlaceholderValue: 'بحث...',
+            removeItemButton: false,
+            itemSelectText: '',
+            noResultsText: 'لا توجد نتائج',
+            placeholderValue: 'اختر المناطق',
+            shouldSort: false
+        });
+
+        const regionsTagsContainer = document.getElementById('regions-tags');
+
+        function updateRegionsTags() {
+            const selectedValues = regionsSelect.getValue(true);
+            const selectedItems = regionsSelect.getValue();
+
+            regionsTagsContainer.innerHTML = '';
+
+            if (Array.isArray(selectedItems)) {
+                selectedItems.forEach(item => {
+                    const tag = document.createElement('span');
+                    tag.className = 'selected-tag';
+                    tag.innerHTML = `
+          ${item.label}
+          <button type="button" class="remove-btn" data-value="${item.value}">✕</button>
+        `;
+                    regionsTagsContainer.appendChild(tag);
                 });
-            });
+            }
+        }
+
+        // Listen for changes
+        document.getElementById('regions').addEventListener('change', updateRegionsTags);
+
+        // Remove tag on click
+        regionsTagsContainer.addEventListener('click', function (e) {
+            if (e.target.classList.contains('remove-btn')) {
+                const valueToRemove = e.target.getAttribute('data-value');
+                regionsSelect.removeActiveItemsByValue(valueToRemove);
+                updateRegionsTags();
+            }
+        });
+
+        // موقع التسليم
+        new Choices('#delivery-location', {
+            searchEnabled: true,
+            searchPlaceholderValue: 'بحث...',
+            itemSelectText: '',
+            noResultsText: 'لا توجد نتائج',
+            shouldSort: false
+        });
+
+        // النوع
+        new Choices('#type', {
+            searchEnabled: true,
+            searchPlaceholderValue: 'بحث...',
+            itemSelectText: '',
+            noResultsText: 'لا توجد نتائج',
+            shouldSort: false
         });
     </script>
+
 </body>
 
 </html>
