@@ -4189,6 +4189,12 @@ a.colored:hover {
   background: #f60;
 }
 
+.p-sm-absolute {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 @media (min-width: 1280px) {
   .package {
     min-height: 200px;
@@ -4200,6 +4206,7 @@ a.colored:hover {
     width: 355px;
     margin-inline-start: auto;
   }
+
 
   .filter-sidebar {
     width: 320px;
@@ -4872,13 +4879,17 @@ html[dir="rtl"] .select2-selection__choice__remove {
     padding-bottom: 64px !important;
   }
 
-  .results-widget .btn-base {
+  .p-sm-absolute {
     position: absolute;
-    height: 36px;
     bottom: 12px;
     width: calc(100% - 24px);
-    border-radius: 12px;
     inset-inline-start: 12px;
+  }
+
+  .p-sm-absolute>* {
+    height: 36px;
+    border-radius: 12px;
+    width: 100%;
   }
 
   .chat-layout .col-lg-8 .tender-card {
