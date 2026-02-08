@@ -1017,7 +1017,7 @@
                     </button>
                 </div>
             </div>
-            <div class="dash-widget flex-grow-1">
+            <div class="dash-widget results-widget sm-0 flex-grow-1">
                 <div class="row stats-row mb-4">
                     <div class="col-md-4">
                         <div class="stat-card stat-card-primary">
@@ -1107,18 +1107,22 @@
                             <span>Reference Number</span>
                             <span class="fz-14 black-text fw-medium">250739020709</span>
                         </label>
+
                         <div class="tender-actions">
-                            <a href="#" class="base-outlined-btn fz-12 btn-base-sm bordered-40 fz-12"
-                                data-bs-toggle="modal" data-bs-target="#CreateModal" data-offer-type="consultation">
-                                Consultation Request
-                            </a>
-                            <a href="#" class="btn-base btn-base-sm bordered-40  fz-12" data-bs-toggle="modal"
-                                data-bs-target="#CreateModal" data-offer-type="offer">
-                                Offer Request
-                            </a>
-                            <a href="etimad-tenders-details-ltr.html" class="btn-primary btn-base-sm fz-12 bordered-40">
-                                Details
-                            </a>
+                            <div class="p-sm-absolute">
+                                <a href="#" class="base-outlined-btn fz-12 btn-base-sm bordered-40"
+                                    data-bs-toggle="modal" data-bs-target="#CreateModal" data-offer-type="consultation">
+                                    Consultation
+                                </a>
+                                <a href="#" class="btn-base btn-base-sm bordered-40 fz-12" data-bs-toggle="modal"
+                                    data-bs-target="#CreateModal" data-offer-type="offer">
+                                    Offer
+                                </a>
+                                <a href="etimad-tenders-details.html" class="btn-primary btn-base-sm fz-12 bordered-40">
+                                    Details
+                                </a>
+                            </div>
+
                             <div class="dropdown">
                                 <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -1126,41 +1130,46 @@
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                     <li>
-                                        <a class="dropdown-item b-dash" href="#">option 1 </a>
+                                        <a class="dropdown-item b-dash" href="#">Option 1</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="#"> option 2 </a>
+                                        <a class="dropdown-item" href="#">Option 2</a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
+
                     <div class="tender-sections p-3 rounded-12 bg-white">
                         <div class="tender-section position-relative">
-                            <div class="row align-items-center">
-                                <div class="col-md-3">
-                                    <div class="d-flex align-items-center gap-10">
-                                        <span class="tender-status me-1 flex-shrink-0">Request for Proposals</span>
+                            <div class="row align-items-md-center">
+                                <div class="col-8 col-md-6">
+                                    <div class="d-flex flex-column flex-md-row align-items-md-center gap-10">
+                                        <span class="tender-status me-3 flex-shrink-0">Call for Bids</span>
                                         <span class="fz-12 gray-text flex-shrink-0">Publication Date</span>
                                         <span class="fz-14 black-text fw-medium flex-shrink-0">05-12-2025</span>
                                     </div>
 
-                                    <h6 class="tender-title">Office Equipment and Furniture</h6>
-                                    <div class="tender-subtitle">Ministry of Health</div>
-                                </div>
-                                <div class="col-md-6">
-                                    <span class="fz-12 gray-text">Main Activity</span>
-                                    <div class="fz-14 black-text">
-                                        Interior Design and Fitting
+                                    <div class="d-flex flex-column flex-lg-row gap-3 justify-content-between">
+                                        <div>
+                                            <h6 class="tender-title">Office Setup and Furnishing</h6>
+                                            <div class="tender-subtitle">Ministry of Health</div>
+                                        </div>
+                                        <div>
+                                            <span class="fz-12 gray-text">Main Activity</span>
+                                            <div class="fz-14 black-text">
+                                                Interior Design and Fit-Out
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+
+                                <div class="col-4 col-md-6">
                                     <div class="d-flex justify-content-end">
                                         <div class="position-relative">
-                                            <svg width="96" height="96">
+                                            <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
                                                 <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4"
-                                                    fill="none">
-                                                </circle>
+                                                    fill="none"></circle>
                                                 <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4"
                                                     fill="none" stroke-dasharray="134.6 125.6"></circle>
                                             </svg>
@@ -1174,67 +1183,213 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="tender-section">
-                            <div class="row">
+                            <div class="row gy-3">
                                 <div class="col-md-4">
-                                    <div class=" d-flex align-items-center">
+                                    <div class="d-flex align-items-center">
                                         <div class="sm-logo">
                                             <img src="images/clock.svg" alt="Clock">
                                         </div>
                                         <div>
-                                            <span class="fz-12 gray-text">Submission Deadline</span>
+                                            <span class="fz-12 gray-text">Bid Submission Deadline</span>
                                             <div>
-                                                <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                                                    04:30 pm
-                                                </span>
-                                                <span class="black-text fz-12 fw-medium">
-                                                    05-12-2025
-                                                </span>
+                                                <span class="black-text fz-12 fw-medium d-inline-block me-1">04:30
+                                                    pm</span>
+                                                <span class="black-text fz-12 fw-medium">05-12-2025</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="col-md-3">
-                                    <div class=" d-flex align-items-center">
+                                    <div class="d-flex align-items-center">
                                         <div class="sm-logo">
                                             <img src="images/clock.svg" alt="Clock">
                                         </div>
                                         <div>
                                             <span class="fz-12 gray-text">Discussion Meeting Date</span>
                                             <div>
-                                                <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                                                    01:00 pm
-                                                </span>
-                                                <span class="black-text fz-12 fw-medium">
-                                                    05-12-2025
-                                                </span>
+                                                <span class="black-text fz-12 fw-medium d-inline-block me-1">01:00
+                                                    pm</span>
+                                                <span class="black-text fz-12 fw-medium">05-12-2025</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="col-md-3">
-                                    <div class="date-item  d-flex align-items-center justify-content-end">
+                                    <div class="date-item d-flex align-items-center justify-content-md-end">
                                         <div class="sm-logo">
                                             <img src="images/clock.svg" alt="Clock">
                                         </div>
                                         <div>
                                             <span class="fz-12 gray-text">Results Announcement Date</span>
                                             <div>
-                                                <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                                                    09:00 am
-                                                </span>
-                                                <span class="black-text fz-12 fw-medium">
-                                                    12-12-2025
-                                                </span>
+                                                <span class="black-text fz-12 fw-medium d-inline-block me-1">09:00
+                                                    am</span>
+                                                <span class="black-text fz-12 fw-medium">12-12-2025</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="col-md-2">
                                     <div class="tender-price d-flex justify-content-end">
                                         <div>
                                             <span class="fz-12 gray-text d-block mb-2">Document Price</span>
-                                            <span class="fs-6 black-text fw-medium">200.50
+                                            <span class="fs-6 black-text fw-medium">
+                                                200.50
+                                                <img src="images/ryall.svg" alt="SAR">
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tender-card p-3 mb-4">
+                    <div class="tender-header d-flex align-items-center justify-content-between mb-3">
+                        <label class="form-check-label tender-number d-flex align-items-center">
+                            <input type="checkbox" class="form-check-input mt-0" />
+                            <span>Reference Number</span>
+                            <span class="fz-14 black-text fw-medium">250739020709</span>
+                        </label>
+
+                        <div class="tender-actions">
+                            <div class="p-sm-absolute">
+                                <a href="#" class="base-outlined-btn fz-12 btn-base-sm bordered-40"
+                                    data-bs-toggle="modal" data-bs-target="#CreateModal" data-offer-type="consultation">
+                                    Consultation
+                                </a>
+                                <a href="#" class="btn-base btn-base-sm bordered-40 fz-12" data-bs-toggle="modal"
+                                    data-bs-target="#CreateModal" data-offer-type="offer">
+                                    Offer
+                                </a>
+                                <a href="etimad-tenders-details.html" class="btn-primary btn-base-sm fz-12 bordered-40">
+                                    Details
+                                </a>
+                            </div>
+
+                            <div class="dropdown">
+                                <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton1"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="images/drop-bullets.svg" alt="menu">
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li>
+                                        <a class="dropdown-item b-dash" href="#">Option 1</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">Option 2</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tender-sections p-3 rounded-12 bg-white">
+                        <div class="tender-section position-relative">
+                            <div class="row align-items-md-center">
+                                <div class="col-8 col-md-6">
+                                    <div class="d-flex flex-column flex-md-row align-items-md-center gap-10">
+                                        <span class="tender-status me-3 flex-shrink-0">Call for Bids</span>
+                                        <span class="fz-12 gray-text flex-shrink-0">Publication Date</span>
+                                        <span class="fz-14 black-text fw-medium flex-shrink-0">05-12-2025</span>
+                                    </div>
+
+                                    <div class="d-flex flex-column flex-lg-row gap-3 justify-content-between">
+                                        <div>
+                                            <h6 class="tender-title">Office Setup and Furnishing</h6>
+                                            <div class="tender-subtitle">Ministry of Health</div>
+                                        </div>
+                                        <div>
+                                            <span class="fz-12 gray-text">Main Activity</span>
+                                            <div class="fz-14 black-text">
+                                                Interior Design and Fit-Out
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-4 col-md-6">
+                                    <div class="d-flex justify-content-end">
+                                        <div class="position-relative">
+                                            <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
+                                                <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4"
+                                                    fill="none"></circle>
+                                                <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4"
+                                                    fill="none" stroke-dasharray="134.6 125.6"></circle>
+                                            </svg>
+
+                                            <div class="position-absolute top-50 start-50 translate-middle text-center">
+                                                <div>200</div>
+                                                <div>Days</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tender-section">
+                            <div class="row gy-3">
+                                <div class="col-md-4">
+                                    <div class="d-flex align-items-center">
+                                        <div class="sm-logo">
+                                            <img src="images/clock.svg" alt="Clock">
+                                        </div>
+                                        <div>
+                                            <span class="fz-12 gray-text">Bid Submission Deadline</span>
+                                            <div>
+                                                <span class="black-text fz-12 fw-medium d-inline-block me-1">04:30
+                                                    pm</span>
+                                                <span class="black-text fz-12 fw-medium">05-12-2025</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="sm-logo">
+                                            <img src="images/clock.svg" alt="Clock">
+                                        </div>
+                                        <div>
+                                            <span class="fz-12 gray-text">Discussion Meeting Date</span>
+                                            <div>
+                                                <span class="black-text fz-12 fw-medium d-inline-block me-1">01:00
+                                                    pm</span>
+                                                <span class="black-text fz-12 fw-medium">05-12-2025</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="date-item d-flex align-items-center justify-content-md-end">
+                                        <div class="sm-logo">
+                                            <img src="images/clock.svg" alt="Clock">
+                                        </div>
+                                        <div>
+                                            <span class="fz-12 gray-text">Results Announcement Date</span>
+                                            <div>
+                                                <span class="black-text fz-12 fw-medium d-inline-block me-1">09:00
+                                                    am</span>
+                                                <span class="black-text fz-12 fw-medium">12-12-2025</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <div class="tender-price d-flex justify-content-end">
+                                        <div>
+                                            <span class="fz-12 gray-text d-block mb-2">Document Price</span>
+                                            <span class="fs-6 black-text fw-medium">
+                                                200.50
                                                 <img src="images/ryall.svg" alt="SAR">
                                             </span>
                                         </div>
@@ -1251,18 +1406,22 @@
                             <span>Reference Number</span>
                             <span class="fz-14 black-text fw-medium">250739020709</span>
                         </label>
+
                         <div class="tender-actions">
-                            <a href="#" class="base-outlined-btn fz-12 btn-base-sm bordered-40 fz-12"
-                                data-bs-toggle="modal" data-bs-target="#CreateModal" data-offer-type="consultation">
-                                Consultation Request
-                            </a>
-                            <a href="#" class="btn-base btn-base-sm bordered-40  fz-12" data-bs-toggle="modal"
-                                data-bs-target="#CreateModal" data-offer-type="offer">
-                                Offer Request
-                            </a>
-                            <a href="etimad-tenders-details-ltr.html" class="btn-primary btn-base-sm fz-12 bordered-40">
-                                Details
-                            </a>
+                            <div class="p-sm-absolute">
+                                <a href="#" class="base-outlined-btn fz-12 btn-base-sm bordered-40"
+                                    data-bs-toggle="modal" data-bs-target="#CreateModal" data-offer-type="consultation">
+                                    Consultation
+                                </a>
+                                <a href="#" class="btn-base btn-base-sm bordered-40 fz-12" data-bs-toggle="modal"
+                                    data-bs-target="#CreateModal" data-offer-type="offer">
+                                    Offer
+                                </a>
+                                <a href="etimad-tenders-details.html" class="btn-primary btn-base-sm fz-12 bordered-40">
+                                    Details
+                                </a>
+                            </div>
+
                             <div class="dropdown">
                                 <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -1270,41 +1429,46 @@
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                     <li>
-                                        <a class="dropdown-item b-dash" href="#">option 1 </a>
+                                        <a class="dropdown-item b-dash" href="#">Option 1</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="#"> option 2 </a>
+                                        <a class="dropdown-item" href="#">Option 2</a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
+
                     <div class="tender-sections p-3 rounded-12 bg-white">
                         <div class="tender-section position-relative">
-                            <div class="row align-items-center">
-                                <div class="col-md-3">
-                                    <div class="d-flex align-items-center gap-10">
-                                        <span class="tender-status me-1 flex-shrink-0">Request for Proposals</span>
+                            <div class="row align-items-md-center">
+                                <div class="col-8 col-md-6">
+                                    <div class="d-flex flex-column flex-md-row align-items-md-center gap-10">
+                                        <span class="tender-status me-3 flex-shrink-0">Call for Bids</span>
                                         <span class="fz-12 gray-text flex-shrink-0">Publication Date</span>
                                         <span class="fz-14 black-text fw-medium flex-shrink-0">05-12-2025</span>
                                     </div>
 
-                                    <h6 class="tender-title">Office Equipment and Furniture</h6>
-                                    <div class="tender-subtitle">Ministry of Health</div>
-                                </div>
-                                <div class="col-md-6">
-                                    <span class="fz-12 gray-text">Main Activity</span>
-                                    <div class="fz-14 black-text">
-                                        Interior Design and Fitting
+                                    <div class="d-flex flex-column flex-lg-row gap-3 justify-content-between">
+                                        <div>
+                                            <h6 class="tender-title">Office Setup and Furnishing</h6>
+                                            <div class="tender-subtitle">Ministry of Health</div>
+                                        </div>
+                                        <div>
+                                            <span class="fz-12 gray-text">Main Activity</span>
+                                            <div class="fz-14 black-text">
+                                                Interior Design and Fit-Out
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+
+                                <div class="col-4 col-md-6">
                                     <div class="d-flex justify-content-end">
                                         <div class="position-relative">
-                                            <svg width="96" height="96">
+                                            <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
                                                 <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4"
-                                                    fill="none">
-                                                </circle>
+                                                    fill="none"></circle>
                                                 <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4"
                                                     fill="none" stroke-dasharray="134.6 125.6"></circle>
                                             </svg>
@@ -1318,67 +1482,63 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="tender-section">
-                            <div class="row">
+                            <div class="row gy-3">
                                 <div class="col-md-4">
-                                    <div class=" d-flex align-items-center">
+                                    <div class="d-flex align-items-center">
                                         <div class="sm-logo">
                                             <img src="images/clock.svg" alt="Clock">
                                         </div>
                                         <div>
-                                            <span class="fz-12 gray-text">Submission Deadline</span>
+                                            <span class="fz-12 gray-text">Bid Submission Deadline</span>
                                             <div>
-                                                <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                                                    04:30 pm
-                                                </span>
-                                                <span class="black-text fz-12 fw-medium">
-                                                    05-12-2025
-                                                </span>
+                                                <span class="black-text fz-12 fw-medium d-inline-block me-1">04:30
+                                                    pm</span>
+                                                <span class="black-text fz-12 fw-medium">05-12-2025</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="col-md-3">
-                                    <div class=" d-flex align-items-center">
+                                    <div class="d-flex align-items-center">
                                         <div class="sm-logo">
                                             <img src="images/clock.svg" alt="Clock">
                                         </div>
                                         <div>
                                             <span class="fz-12 gray-text">Discussion Meeting Date</span>
                                             <div>
-                                                <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                                                    01:00 pm
-                                                </span>
-                                                <span class="black-text fz-12 fw-medium">
-                                                    05-12-2025
-                                                </span>
+                                                <span class="black-text fz-12 fw-medium d-inline-block me-1">01:00
+                                                    pm</span>
+                                                <span class="black-text fz-12 fw-medium">05-12-2025</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="col-md-3">
-                                    <div class="date-item  d-flex align-items-center justify-content-end">
+                                    <div class="date-item d-flex align-items-center justify-content-md-end">
                                         <div class="sm-logo">
                                             <img src="images/clock.svg" alt="Clock">
                                         </div>
                                         <div>
                                             <span class="fz-12 gray-text">Results Announcement Date</span>
                                             <div>
-                                                <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                                                    09:00 am
-                                                </span>
-                                                <span class="black-text fz-12 fw-medium">
-                                                    12-12-2025
-                                                </span>
+                                                <span class="black-text fz-12 fw-medium d-inline-block me-1">09:00
+                                                    am</span>
+                                                <span class="black-text fz-12 fw-medium">12-12-2025</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="col-md-2">
                                     <div class="tender-price d-flex justify-content-end">
                                         <div>
                                             <span class="fz-12 gray-text d-block mb-2">Document Price</span>
-                                            <span class="fs-6 black-text fw-medium">200.50
+                                            <span class="fs-6 black-text fw-medium">
+                                                200.50
                                                 <img src="images/ryall.svg" alt="SAR">
                                             </span>
                                         </div>
@@ -1395,18 +1555,22 @@
                             <span>Reference Number</span>
                             <span class="fz-14 black-text fw-medium">250739020709</span>
                         </label>
+
                         <div class="tender-actions">
-                            <a href="#" class="base-outlined-btn fz-12 btn-base-sm bordered-40 fz-12"
-                                data-bs-toggle="modal" data-bs-target="#CreateModal" data-offer-type="consultation">
-                                Consultation Request
-                            </a>
-                            <a href="#" class="btn-base btn-base-sm bordered-40  fz-12" data-bs-toggle="modal"
-                                data-bs-target="#CreateModal" data-offer-type="offer">
-                                Offer Request
-                            </a>
-                            <a href="etimad-tenders-details-ltr.html" class="btn-primary btn-base-sm fz-12 bordered-40">
-                                Details
-                            </a>
+                            <div class="p-sm-absolute">
+                                <a href="#" class="base-outlined-btn fz-12 btn-base-sm bordered-40"
+                                    data-bs-toggle="modal" data-bs-target="#CreateModal" data-offer-type="consultation">
+                                    Consultation
+                                </a>
+                                <a href="#" class="btn-base btn-base-sm bordered-40 fz-12" data-bs-toggle="modal"
+                                    data-bs-target="#CreateModal" data-offer-type="offer">
+                                    Offer
+                                </a>
+                                <a href="etimad-tenders-details.html" class="btn-primary btn-base-sm fz-12 bordered-40">
+                                    Details
+                                </a>
+                            </div>
+
                             <div class="dropdown">
                                 <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -1414,41 +1578,46 @@
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                     <li>
-                                        <a class="dropdown-item b-dash" href="#">option 1 </a>
+                                        <a class="dropdown-item b-dash" href="#">Option 1</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="#"> option 2 </a>
+                                        <a class="dropdown-item" href="#">Option 2</a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
+
                     <div class="tender-sections p-3 rounded-12 bg-white">
                         <div class="tender-section position-relative">
-                            <div class="row align-items-center">
-                                <div class="col-md-3">
-                                    <div class="d-flex align-items-center gap-10">
-                                        <span class="tender-status me-1 flex-shrink-0">Request for Proposals</span>
+                            <div class="row align-items-md-center">
+                                <div class="col-8 col-md-6">
+                                    <div class="d-flex flex-column flex-md-row align-items-md-center gap-10">
+                                        <span class="tender-status me-3 flex-shrink-0">Call for Bids</span>
                                         <span class="fz-12 gray-text flex-shrink-0">Publication Date</span>
                                         <span class="fz-14 black-text fw-medium flex-shrink-0">05-12-2025</span>
                                     </div>
 
-                                    <h6 class="tender-title">Office Equipment and Furniture</h6>
-                                    <div class="tender-subtitle">Ministry of Health</div>
-                                </div>
-                                <div class="col-md-6">
-                                    <span class="fz-12 gray-text">Main Activity</span>
-                                    <div class="fz-14 black-text">
-                                        Interior Design and Fitting
+                                    <div class="d-flex flex-column flex-lg-row gap-3 justify-content-between">
+                                        <div>
+                                            <h6 class="tender-title">Office Setup and Furnishing</h6>
+                                            <div class="tender-subtitle">Ministry of Health</div>
+                                        </div>
+                                        <div>
+                                            <span class="fz-12 gray-text">Main Activity</span>
+                                            <div class="fz-14 black-text">
+                                                Interior Design and Fit-Out
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+
+                                <div class="col-4 col-md-6">
                                     <div class="d-flex justify-content-end">
                                         <div class="position-relative">
-                                            <svg width="96" height="96">
+                                            <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
                                                 <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4"
-                                                    fill="none">
-                                                </circle>
+                                                    fill="none"></circle>
                                                 <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4"
                                                     fill="none" stroke-dasharray="134.6 125.6"></circle>
                                             </svg>
@@ -1462,67 +1631,63 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="tender-section">
-                            <div class="row">
+                            <div class="row gy-3">
                                 <div class="col-md-4">
-                                    <div class=" d-flex align-items-center">
+                                    <div class="d-flex align-items-center">
                                         <div class="sm-logo">
                                             <img src="images/clock.svg" alt="Clock">
                                         </div>
                                         <div>
-                                            <span class="fz-12 gray-text">Submission Deadline</span>
+                                            <span class="fz-12 gray-text">Bid Submission Deadline</span>
                                             <div>
-                                                <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                                                    04:30 pm
-                                                </span>
-                                                <span class="black-text fz-12 fw-medium">
-                                                    05-12-2025
-                                                </span>
+                                                <span class="black-text fz-12 fw-medium d-inline-block me-1">04:30
+                                                    pm</span>
+                                                <span class="black-text fz-12 fw-medium">05-12-2025</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="col-md-3">
-                                    <div class=" d-flex align-items-center">
+                                    <div class="d-flex align-items-center">
                                         <div class="sm-logo">
                                             <img src="images/clock.svg" alt="Clock">
                                         </div>
                                         <div>
                                             <span class="fz-12 gray-text">Discussion Meeting Date</span>
                                             <div>
-                                                <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                                                    01:00 pm
-                                                </span>
-                                                <span class="black-text fz-12 fw-medium">
-                                                    05-12-2025
-                                                </span>
+                                                <span class="black-text fz-12 fw-medium d-inline-block me-1">01:00
+                                                    pm</span>
+                                                <span class="black-text fz-12 fw-medium">05-12-2025</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="col-md-3">
-                                    <div class="date-item  d-flex align-items-center justify-content-end">
+                                    <div class="date-item d-flex align-items-center justify-content-md-end">
                                         <div class="sm-logo">
                                             <img src="images/clock.svg" alt="Clock">
                                         </div>
                                         <div>
                                             <span class="fz-12 gray-text">Results Announcement Date</span>
                                             <div>
-                                                <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                                                    09:00 am
-                                                </span>
-                                                <span class="black-text fz-12 fw-medium">
-                                                    12-12-2025
-                                                </span>
+                                                <span class="black-text fz-12 fw-medium d-inline-block me-1">09:00
+                                                    am</span>
+                                                <span class="black-text fz-12 fw-medium">12-12-2025</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="col-md-2">
                                     <div class="tender-price d-flex justify-content-end">
                                         <div>
                                             <span class="fz-12 gray-text d-block mb-2">Document Price</span>
-                                            <span class="fs-6 black-text fw-medium">200.50
+                                            <span class="fs-6 black-text fw-medium">
+                                                200.50
                                                 <img src="images/ryall.svg" alt="SAR">
                                             </span>
                                         </div>
@@ -1539,18 +1704,22 @@
                             <span>Reference Number</span>
                             <span class="fz-14 black-text fw-medium">250739020709</span>
                         </label>
+
                         <div class="tender-actions">
-                            <a href="#" class="base-outlined-btn fz-12 btn-base-sm bordered-40 fz-12"
-                                data-bs-toggle="modal" data-bs-target="#CreateModal" data-offer-type="consultation">
-                                Consultation Request
-                            </a>
-                            <a href="#" class="btn-base btn-base-sm bordered-40  fz-12" data-bs-toggle="modal"
-                                data-bs-target="#CreateModal" data-offer-type="offer">
-                                Offer Request
-                            </a>
-                            <a href="etimad-tenders-details-ltr.html" class="btn-primary btn-base-sm fz-12 bordered-40">
-                                Details
-                            </a>
+                            <div class="p-sm-absolute">
+                                <a href="#" class="base-outlined-btn fz-12 btn-base-sm bordered-40"
+                                    data-bs-toggle="modal" data-bs-target="#CreateModal" data-offer-type="consultation">
+                                    Consultation
+                                </a>
+                                <a href="#" class="btn-base btn-base-sm bordered-40 fz-12" data-bs-toggle="modal"
+                                    data-bs-target="#CreateModal" data-offer-type="offer">
+                                    Offer
+                                </a>
+                                <a href="etimad-tenders-details.html" class="btn-primary btn-base-sm fz-12 bordered-40">
+                                    Details
+                                </a>
+                            </div>
+
                             <div class="dropdown">
                                 <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -1558,41 +1727,46 @@
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                     <li>
-                                        <a class="dropdown-item b-dash" href="#">option 1 </a>
+                                        <a class="dropdown-item b-dash" href="#">Option 1</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="#"> option 2 </a>
+                                        <a class="dropdown-item" href="#">Option 2</a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
+
                     <div class="tender-sections p-3 rounded-12 bg-white">
                         <div class="tender-section position-relative">
-                            <div class="row align-items-center">
-                                <div class="col-md-3">
-                                    <div class="d-flex align-items-center gap-10">
-                                        <span class="tender-status me-1 flex-shrink-0">Request for Proposals</span>
+                            <div class="row align-items-md-center">
+                                <div class="col-8 col-md-6">
+                                    <div class="d-flex flex-column flex-md-row align-items-md-center gap-10">
+                                        <span class="tender-status me-3 flex-shrink-0">Call for Bids</span>
                                         <span class="fz-12 gray-text flex-shrink-0">Publication Date</span>
                                         <span class="fz-14 black-text fw-medium flex-shrink-0">05-12-2025</span>
                                     </div>
 
-                                    <h6 class="tender-title">Office Equipment and Furniture</h6>
-                                    <div class="tender-subtitle">Ministry of Health</div>
-                                </div>
-                                <div class="col-md-6">
-                                    <span class="fz-12 gray-text">Main Activity</span>
-                                    <div class="fz-14 black-text">
-                                        Interior Design and Fitting
+                                    <div class="d-flex flex-column flex-lg-row gap-3 justify-content-between">
+                                        <div>
+                                            <h6 class="tender-title">Office Setup and Furnishing</h6>
+                                            <div class="tender-subtitle">Ministry of Health</div>
+                                        </div>
+                                        <div>
+                                            <span class="fz-12 gray-text">Main Activity</span>
+                                            <div class="fz-14 black-text">
+                                                Interior Design and Fit-Out
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+
+                                <div class="col-4 col-md-6">
                                     <div class="d-flex justify-content-end">
                                         <div class="position-relative">
-                                            <svg width="96" height="96">
+                                            <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
                                                 <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4"
-                                                    fill="none">
-                                                </circle>
+                                                    fill="none"></circle>
                                                 <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4"
                                                     fill="none" stroke-dasharray="134.6 125.6"></circle>
                                             </svg>
@@ -1606,211 +1780,63 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="tender-section">
-                            <div class="row">
+                            <div class="row gy-3">
                                 <div class="col-md-4">
-                                    <div class=" d-flex align-items-center">
+                                    <div class="d-flex align-items-center">
                                         <div class="sm-logo">
                                             <img src="images/clock.svg" alt="Clock">
                                         </div>
                                         <div>
-                                            <span class="fz-12 gray-text">Submission Deadline</span>
+                                            <span class="fz-12 gray-text">Bid Submission Deadline</span>
                                             <div>
-                                                <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                                                    04:30 pm
-                                                </span>
-                                                <span class="black-text fz-12 fw-medium">
-                                                    05-12-2025
-                                                </span>
+                                                <span class="black-text fz-12 fw-medium d-inline-block me-1">04:30
+                                                    pm</span>
+                                                <span class="black-text fz-12 fw-medium">05-12-2025</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="col-md-3">
-                                    <div class=" d-flex align-items-center">
+                                    <div class="d-flex align-items-center">
                                         <div class="sm-logo">
                                             <img src="images/clock.svg" alt="Clock">
                                         </div>
                                         <div>
                                             <span class="fz-12 gray-text">Discussion Meeting Date</span>
                                             <div>
-                                                <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                                                    01:00 pm
-                                                </span>
-                                                <span class="black-text fz-12 fw-medium">
-                                                    05-12-2025
-                                                </span>
+                                                <span class="black-text fz-12 fw-medium d-inline-block me-1">01:00
+                                                    pm</span>
+                                                <span class="black-text fz-12 fw-medium">05-12-2025</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="col-md-3">
-                                    <div class="date-item  d-flex align-items-center justify-content-end">
+                                    <div class="date-item d-flex align-items-center justify-content-md-end">
                                         <div class="sm-logo">
                                             <img src="images/clock.svg" alt="Clock">
                                         </div>
                                         <div>
                                             <span class="fz-12 gray-text">Results Announcement Date</span>
                                             <div>
-                                                <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                                                    09:00 am
-                                                </span>
-                                                <span class="black-text fz-12 fw-medium">
-                                                    12-12-2025
-                                                </span>
+                                                <span class="black-text fz-12 fw-medium d-inline-block me-1">09:00
+                                                    am</span>
+                                                <span class="black-text fz-12 fw-medium">12-12-2025</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="col-md-2">
                                     <div class="tender-price d-flex justify-content-end">
                                         <div>
                                             <span class="fz-12 gray-text d-block mb-2">Document Price</span>
-                                            <span class="fs-6 black-text fw-medium">200.50
-                                                <img src="images/ryall.svg" alt="SAR">
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tender-card p-3 mb-4">
-                    <div class="tender-header d-flex align-items-center justify-content-between mb-3">
-                        <label class="form-check-label tender-number d-flex align-items-center">
-                            <input type="checkbox" class="form-check-input mt-0" />
-                            <span>Reference Number</span>
-                            <span class="fz-14 black-text fw-medium">250739020709</span>
-                        </label>
-                        <div class="tender-actions">
-                            <a href="#" class="base-outlined-btn fz-12 btn-base-sm bordered-40 fz-12"
-                                data-bs-toggle="modal" data-bs-target="#CreateModal" data-offer-type="consultation">
-                                Consultation Request
-                            </a>
-                            <a href="#" class="btn-base btn-base-sm bordered-40  fz-12" data-bs-toggle="modal"
-                                data-bs-target="#CreateModal" data-offer-type="offer">
-                                Offer Request
-                            </a>
-                            <a href="etimad-tenders-details-ltr.html" class="btn-primary btn-base-sm fz-12 bordered-40">
-                                Details
-                            </a>
-                            <div class="dropdown">
-                                <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton1"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    <img src="images/drop-bullets.svg" alt="menu">
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                    <li>
-                                        <a class="dropdown-item b-dash" href="#">option 1 </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#"> option 2 </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tender-sections p-3 rounded-12 bg-white">
-                        <div class="tender-section position-relative">
-                            <div class="row align-items-center">
-                                <div class="col-md-3">
-                                    <div class="d-flex align-items-center gap-10">
-                                        <span class="tender-status me-1 flex-shrink-0">Request for Proposals</span>
-                                        <span class="fz-12 gray-text flex-shrink-0">Publication Date</span>
-                                        <span class="fz-14 black-text fw-medium flex-shrink-0">05-12-2025</span>
-                                    </div>
-
-                                    <h6 class="tender-title">Office Equipment and Furniture</h6>
-                                    <div class="tender-subtitle">Ministry of Health</div>
-                                </div>
-                                <div class="col-md-6">
-                                    <span class="fz-12 gray-text">Main Activity</span>
-                                    <div class="fz-14 black-text">
-                                        Interior Design and Fitting
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="d-flex justify-content-end">
-                                        <div class="position-relative">
-                                            <svg width="96" height="96">
-                                                <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4"
-                                                    fill="none">
-                                                </circle>
-                                                <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4"
-                                                    fill="none" stroke-dasharray="134.6 125.6"></circle>
-                                            </svg>
-
-                                            <div class="position-absolute top-50 start-50 translate-middle text-center">
-                                                <div>200</div>
-                                                <div>Days</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tender-section">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class=" d-flex align-items-center">
-                                        <div class="sm-logo">
-                                            <img src="images/clock.svg" alt="Clock">
-                                        </div>
-                                        <div>
-                                            <span class="fz-12 gray-text">Submission Deadline</span>
-                                            <div>
-                                                <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                                                    04:30 pm
-                                                </span>
-                                                <span class="black-text fz-12 fw-medium">
-                                                    05-12-2025
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class=" d-flex align-items-center">
-                                        <div class="sm-logo">
-                                            <img src="images/clock.svg" alt="Clock">
-                                        </div>
-                                        <div>
-                                            <span class="fz-12 gray-text">Discussion Meeting Date</span>
-                                            <div>
-                                                <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                                                    01:00 pm
-                                                </span>
-                                                <span class="black-text fz-12 fw-medium">
-                                                    05-12-2025
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="date-item  d-flex align-items-center justify-content-end">
-                                        <div class="sm-logo">
-                                            <img src="images/clock.svg" alt="Clock">
-                                        </div>
-                                        <div>
-                                            <span class="fz-12 gray-text">Results Announcement Date</span>
-                                            <div>
-                                                <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                                                    09:00 am
-                                                </span>
-                                                <span class="black-text fz-12 fw-medium">
-                                                    12-12-2025
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <div class="tender-price d-flex justify-content-end">
-                                        <div>
-                                            <span class="fz-12 gray-text d-block mb-2">Document Price</span>
-                                            <span class="fs-6 black-text fw-medium">200.50
+                                            <span class="fs-6 black-text fw-medium">
+                                                200.50
                                                 <img src="images/ryall.svg" alt="SAR">
                                             </span>
                                         </div>
