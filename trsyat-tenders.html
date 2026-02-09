@@ -229,17 +229,30 @@
               </div>
               <div class="position-relative">
                 <label class="form-label">النشاط الأساسي</label>
-                <div class="custom-select-trigger" id="activityTrigger">
+                <div class="custom-select-trigger form-select d-flex align-items-center justify-content-between"
+                  id="activityTrigger">
                   <span class="customplaceholder">اختر النشاط الأساسي</span>
                   <div class="selected-count d-none">0</div>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="6 9 12 15 18 9"></polyline>
-                  </svg>
+                  </svg> -->
                 </div>
 
-                <div class="activity-dropdown-container d-none" id="activityDropdown">
-                  <div class="search-box p-2">
+                <div class="activity-dropdown-container mt-1 tender-card d-none" id="activityDropdown">
+                  <div class="search-wrapper position-relative">
+                    <div class="icon-box">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path
+                          d="M9.58335 17.5003C13.9556 17.5003 17.5 13.9559 17.5 9.58366C17.5 5.2114 13.9556 1.66699 9.58335 1.66699C5.2111 1.66699 1.66669 5.2114 1.66669 9.58366C1.66669 13.9559 5.2111 17.5003 9.58335 17.5003Z"
+                          stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path opacity="0.4" d="M18.3334 18.3337L16.6667 16.667" stroke="white" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </div>
+                    <input type="text" id="activitySearch" placeholder="ابحث عن النشاط الأساسي" class="form-control">
+                  </div>
+                  <!-- <div class="search-box p-2">
                     <div class="search-wrapper position-relative">
                       <input type="text" class="form-control" id="activitySearch" placeholder="ابحث عن النشاط الأساسي">
                       <div class="icon-box">
@@ -252,19 +265,19 @@
                         </svg>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
 
-                  <div class="selected-activities-section p-2">
-                    <div class="d-flex align-items-center justify-content-between mb-2">
-                      <span class="fz-14 fw-medium">تم اختيارها</span>
-                      <button type="button" class="btn-save-tags" id="saveActivitiesBtn">حفظ</button>
+                  <div class="selected-activities-section">
+                    <div class="d-flex align-items-center justify-content-between">
+                      <span class="fz-14 base-text">تم اختيارها</span>
+                      <button type="button" class="btn-save-tags btn-base" id="saveActivitiesBtn">حفظ</button>
                     </div>
                     <div class="selected-tags d-flex flex-wrap gap-2" id="selectedActivitiesContainer">
                       <!-- Selected tags will appear here -->
                     </div>
                   </div>
 
-                  <div class="available-activities-list p-2" id="availableActivitiesList">
+                  <div class="available-activities-list" id="availableActivitiesList">
                     <!-- Available items will be populated by JS -->
                   </div>
                 </div>
@@ -1671,7 +1684,7 @@
                       </div>
                     </td>
                     <td data-label="الحاله">
-                      <span class="sm-ele fz-12 bordered-8 badge-evaluation">مرحلة تقييم العروض</span>
+                      <span class="sm-ele fz-12 bordered-8 text-nowrap badge-evaluation">مرحلة تقييم العروض</span>
                     </td>
                     <td data-label="الاجراءات">
                       <a href="submitted-tenders-details.html" class="btn-primary sm-ele fz-12 bordered-40">
@@ -1732,7 +1745,7 @@
                       </div>
                     </td>
                     <td data-label="الحاله">
-                      <span class="sm-ele fz-12 bordered-8 badge-rejected">مرفوضه</span>
+                      <span class="sm-ele fz-12 bordered-8 text-nowrap badge-rejected">مرفوضه</span>
                     </td>
                     <td data-label="الاجراءات">
                       <a href="submitted-tenders-details.html" class="btn-primary sm-ele fz-12 bordered-40">
@@ -1793,7 +1806,7 @@
                       </div>
                     </td>
                     <td data-label="الحاله">
-                      <span class="sm-ele fz-12 bordered-8 badge-reviewed">يتم مراجعته</span>
+                      <span class="sm-ele fz-12 bordered-8 text-nowrap badge-reviewed">يتم مراجعته</span>
                     </td>
                     <td data-label="الاجراءات">
                       <a href="submitted-tenders-details.html" class="btn-primary sm-ele fz-12 bordered-40">
@@ -1865,7 +1878,7 @@
                       </div>
                     </td>
                     <td data-label="الحاله">
-                      <span class="sm-ele fz-12 bordered-8 badge-move">لم يتم اكماله</span>
+                      <span class="sm-ele fz-12 bordered-8 text-nowrap badge-move">لم يتم اكماله</span>
                     </td>
                     <td data-label="الاجراءات">
                       <a href="submitted-tenders-details.html" class="btn-primary sm-ele fz-12 bordered-40">
@@ -1926,7 +1939,7 @@
                       </div>
                     </td>
                     <td data-label="الحاله">
-                      <span class="sm-ele fz-12 bordered-8 badge-success">تم ارجاعه بملاحظة</span>
+                      <span class="sm-ele fz-12 bordered-8 text-nowrap badge-success">تم ارجاعه بملاحظة</span>
                     </td>
                     <td data-label="الاجراءات">
                       <a href="submitted-tenders-details.html" class="btn-primary sm-ele fz-12 bordered-40">
@@ -1987,7 +2000,7 @@
                       </div>
                     </td>
                     <td data-label="الحاله">
-                      <span class="sm-ele fz-12 bordered-8 prim-opacity-outlined">مقبولة</span>
+                      <span class="sm-ele fz-12 bordered-8 text-nowrap prim-opacity-outlined">مقبولة</span>
                     </td>
                     <td data-label="الاجراءات">
                       <a href="submitted-tenders-details.html" class="btn-primary sm-ele fz-12 bordered-40">
@@ -2048,7 +2061,7 @@
                       </div>
                     </td>
                     <td data-label="الحاله">
-                      <span class="sm-ele fz-12 bordered-8 badge-rejected">مرفوضه</span>
+                      <span class="sm-ele fz-12 bordered-8 text-nowrap badge-rejected">مرفوضه</span>
                     </td>
                     <td data-label="الاجراءات">
                       <a href="submitted-tenders-details.html" class="btn-primary sm-ele fz-12 bordered-40">
@@ -2109,7 +2122,7 @@
                       </div>
                     </td>
                     <td data-label="الحاله">
-                      <span class="sm-ele fz-12 bordered-8 prim-opacity-outlined">تقييم</span>
+                      <span class="sm-ele fz-12 bordered-8 text-nowrap prim-opacity-outlined">تقييم</span>
                     </td>
                     <td data-label="الاجراءات">
                       <a href="submitted-tenders-details.html" class="btn-primary sm-ele fz-12 bordered-40">
@@ -2170,7 +2183,7 @@
                       </div>
                     </td>
                     <td data-label="الحاله">
-                      <span class="sm-ele fz-12 bordered-8 badge-reviewed">يتم المراجعه</span>
+                      <span class="sm-ele fz-12 bordered-8 text-nowrap badge-reviewed">يتم المراجعه</span>
                     </td>
                     <td data-label="الاجراءات">
                       <a href="submitted-tenders-details.html" class="btn-primary sm-ele fz-12 bordered-40">
@@ -2231,7 +2244,7 @@
                       </div>
                     </td>
                     <td data-label="الحاله">
-                      <span class="sm-ele fz-12 bordered-8 badge-success">تم اعلان الترسية</span>
+                      <span class="sm-ele fz-12 bordered-8 text-nowrap badge-success">تم اعلان الترسية</span>
                     </td>
                     <td data-label="الاجراءات">
                       <a href="submitted-tenders-details.html" class="btn-primary sm-ele fz-12 bordered-40">

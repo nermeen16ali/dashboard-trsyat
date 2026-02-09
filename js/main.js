@@ -204,10 +204,10 @@ if (activityDropdown) {
     selectedContainer.innerHTML = "";
     selectedActivities.forEach(activity => {
       const tag = document.createElement("div");
-      tag.className = "tag";
+      tag.className = "selected-tag";
       tag.innerHTML = `
           <span>${activity}</span>
-          <span class="remove-btn">&times;</span>
+          <span class="remove-btn">✕</span>
         `;
 
       tag.querySelector(".remove-btn").addEventListener("click", (e) => {
