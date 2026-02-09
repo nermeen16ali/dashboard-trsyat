@@ -2830,6 +2830,7 @@ td input[type="number"]::placeholder {
   background: #6bafb8;
   display: flex;
   width: 40px;
+  flex-shrink: 0;
   height: 40px;
   padding: 8px;
   justify-content: center;
@@ -2875,10 +2876,6 @@ td input[type="number"]::placeholder {
       transparent 12px);
   z-index: 0;
   inset-inline-start: 18px;
-}
-
-.w-60 {
-  max-width: 60%;
 }
 
 /* ============================
@@ -4222,6 +4219,9 @@ a.colored:hover {
     margin-inline-start: auto;
   }
 
+  .w-60 {
+    max-width: 60%;
+  }
 
   .filter-sidebar {
     width: 320px;
@@ -4940,6 +4940,20 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     display: none;
   }
 
+  .lined-stepper::after {
+    top: 0;
+    bottom: 0;
+  }
+
+  .gap-40 {
+    gap: 12px;
+  }
+
+  /* .prim-box {
+    height: 28px;
+    width: 28px;
+  } */
+
   .stats-row {
     gap: 16px;
   }
@@ -5013,6 +5027,37 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     border-bottom: 0 !important;
   }
 
+  /* .table.supplier-table th,
+  .table.supplier-table td,
+  .table.supplier-table td .fz-14 {
+    font-size: 10px !important;
+  } */
+  .table td .ff-onest :not(.sm-logo) img {
+    height: 11px;
+  }
+
+  .table td .company-logo,
+  .prim-box {
+    width: 28px;
+    height: 28px;
+  }
+
+  .prim-box img {
+    height: 13px;
+  }
+
+  h6 {
+    font-size: 14px;
+  }
+
+  .table .bordered-badge,
+  .table.supplier-table td,
+  .table.supplier-table td .fz-14,
+  .table.table.supplier-table th,
+  .tender-status {
+    font-size: 10px;
+  }
+
   /* Cell Styling */
   .competition-table td {
     padding: 8px 16px;
@@ -5079,18 +5124,15 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
 
   .competition-table td:nth-of-type(3) {
     order: 4;
-    /* border-bottom: 1px solid #f9f9f9; */
   }
 
   .competition-table td:nth-of-type(4) {
     order: 5;
-    /* border-bottom: 1px solid #f9f9f9; */
   }
 
   /* Time (5) */
   .competition-table td:nth-of-type(5) {
     order: 6;
-    /* border-bottom: 1px solid #f9f9f9; */
   }
 
   /* Status (6) - Bottom Radius */
