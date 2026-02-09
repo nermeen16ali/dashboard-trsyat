@@ -5461,3 +5461,32 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     flex-shrink: 0;
   }
 }
+
+/* Fix scrollbar flicker when modal opens */
+body.modal-open {
+  padding-right: 0px !important;
+  overflow: hidden !important;
+}
+
+.modal {
+  padding-right: 0px !important;
+  overflow-y: hidden !important;
+}
+
+.modal.show {
+  overflow-y: auto !important;
+}
+
+/* "Grazy" Zoom animation for Desktop (Non-Mobile) */
+@media (min-width: 577px) {
+  .modal.fade .modal-dialog {
+    transform: scale(0.7);
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.34, 1.5, 0.64, 1), opacity 0.3s ease-out;
+  }
+
+  .modal.show .modal-dialog {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
