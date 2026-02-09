@@ -4940,6 +4940,10 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     display: none;
   }
 
+  table.dataTable {
+    border: 0 !important;
+  }
+
   .filter-btns button {
     height: 36px;
   }
