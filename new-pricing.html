@@ -904,7 +904,7 @@
             </button>
         </div>
         <div class="dash-widget sm-0 p-lg-3">
-            <div class="d-flex align-items-center justify-content-between mb-4">
+            <div class="d-flex flex-column flex-md-row gap-4 align-items-md-center justify-content-md-between mb-4">
                 <h6 class="fz-14 black-text">المنتجات المراد تسعيرها <span class="fz-12 colored">(20)</span></h6>
                 <div class="d-flex align-items-center gap-3">
                     <div class="gray-outline-btn lg-btn fz-12 p-12">
@@ -925,7 +925,8 @@
                 </div>
             </div>
             <div class="tender-card p-3 mb-4">
-                <div class="d-flex align-items-center justify-content-between mb-3">
+                <div
+                    class="d-flex flex-column flex-md-row gap-4 align-items-md-center justify-content-md-between mb-4 mb-md-3">
                     <div class="d-flex align-items-center gap-2">
                         <div class="bordered-badge bg-white">
                             <span>اسم التسعيرة:</span>
@@ -937,82 +938,48 @@
                         <span class="colored fw-medium fz-12">نوع التسعير</span>
                     </div>
                     <div class="d-flex align-items-center gap-3 fz-14">
-                        <button class="gray-outline-btn colored w-80">تعديل</button>
-                        <button class="gray-outline-btn red-colored w-80">حذف</button>
+                        <button class="gray-outline-btn colored w-80 w-sm-100">تعديل</button>
+                        <button class="gray-outline-btn red-colored w-80 w-sm-100">حذف</button>
                     </div>
                 </div>
                 <div class="tender-sections p-3 rounded-12 bg-white mb-3">
-                    <div class="row">
-                        <div class="col-md-1">
-                            <div class="bordered-badge mb-12">صورة المنتج</div>
-                            <div class="product-img">
-                                <img src="images/product-img.webp" class="img-fluid" alt="Product">
+                    <div class="row gy-4">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-6 col-md-4">
+                                    <div class="bordered-badge mb-12">صورة المنتج</div>
+                                    <div class="product-img">
+                                        <img src="images/product-img.webp" alt="Product">
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-8">
+                                    <div class="row gy-3">
+                                        <div class="col-12 col-md-6">
+                                            <div class="bordered-badge mb-12">اسم المنتج</div>
+                                            <p class="fz-14 black-text">اسمنت الممتاز</p>
+                                        </div>
+                                        <div class="col-12 col-md-6">
+                                            <div class="bordered-badge mb-12">الكميه المطلوبه</div>
+                                            <p class="fz-14 black-text">340 وحدة</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-2 mt-1 d-flex flex-column gap-12 align-items-center">
-                            <div class="bordered-badge">اسم المنتج</div>
-                            <p class="fz-14 black-text">اسمنت الممتاز</p>
-                        </div>
-                        <div class="col-md-2 mt-1">
-                            <div class="bordered-badge mb-12">الكميه المطلوبه</div>
-                            <p class="fz-14 black-text">340 وحدة</p>
-                        </div>
-                        <div class="col-md-2 mt-1">
+                        <div class="col-md-2">
                             <div class="bordered-badge mb-12">التوصيل و التركيب</div>
                             <p class="fz-14 black-text">نعم شامل</p>
                         </div>
-                        <div class="col-md-2 mt-1">
+                        <div class="col-md-2">
                             <div class="bordered-badge mb-12">مناطق التوريد</div>
-                            <p class="black-text fz-14">
+                            <p class="fz-14">
                                 الرياض - الدمام - الرياض
-                                <span class="colored fw-bold text-decoration-underline"> +3</span>
+                                <span class="colored fw-bold"> +3</span>
                             </p>
                         </div>
-                        <div class="col-md-2 mt-1">
+                        <div class="col-md-2">
                             <div class="bordered-badge mb-12">الوصف</div>
-                            <p class="black-text fz-14">
-                                تسعى شركة الراجحي من خلال هذه المناقصة إلى تحديث بنيتها
-                                التحتية
-                            </p>
-                        </div>
-                        <div class="col-md-1 mt-1">
-                            <div class="bordered-badge mb-12">عدد الموردين</div>
-                            <p class="black-text fz-14">
-                                10 موردين
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="tender-sections p-3 rounded-12 bg-white mb-3">
-                    <div class="row">
-                        <div class="col-md-1">
-                            <div class="bordered-badge mb-12">صورة المنتج</div>
-                            <div class="product-img">
-                                <img src="images/product-img.webp" class="img-fluid" alt="Product">
-                            </div>
-                        </div>
-                        <div class="col-md-2 mt-1 d-flex flex-column gap-12 align-items-center">
-                            <div class="bordered-badge">اسم المنتج</div>
-                            <p class="fz-14 black-text">اسمنت الممتاز</p>
-                        </div>
-                        <div class="col-md-2 mt-1">
-                            <div class="bordered-badge mb-12">الكميه المطلوبه</div>
-                            <p class="fz-14 black-text">340 وحدة</p>
-                        </div>
-                        <div class="col-md-2 mt-1">
-                            <div class="bordered-badge mb-12">التوصيل و التركيب</div>
-                            <p class="fz-14 black-text">نعم شامل</p>
-                        </div>
-                        <div class="col-md-2 mt-1">
-                            <div class="bordered-badge mb-12">مناطق التوريد</div>
-                            <p class="black-text fz-14">
-                                الرياض - الدمام - الرياض
-                                <span class="colored fw-bold text-decoration-underline"> +3</span>
-                            </p>
-                        </div>
-                        <div class="col-md-3 mt-1">
-                            <div class="bordered-badge mb-12">الوصف</div>
-                            <p class="black-text fz-14">
+                            <p class="fz-14">
                                 تسعى شركة الراجحي من خلال هذه المناقصة إلى تحديث بنيتها
                                 التحتية
                             </p>
@@ -1020,35 +987,43 @@
                     </div>
                 </div>
                 <div class="tender-sections p-3 rounded-12 bg-white mb-3">
-                    <div class="row">
-                        <div class="col-md-1">
-                            <div class="bordered-badge mb-12">صورة المنتج</div>
-                            <div class="product-img">
-                                <img src="images/product-img.webp" class="img-fluid" alt="Product">
+                    <div class="row gy-4">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-6 col-md-4">
+                                    <div class="bordered-badge mb-12">صورة المنتج</div>
+                                    <div class="product-img">
+                                        <img src="images/product-img.webp" alt="Product">
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-8">
+                                    <div class="row gy-3">
+                                        <div class="col-12 col-md-6">
+                                            <div class="bordered-badge mb-12">اسم المنتج</div>
+                                            <p class="fz-14 black-text">اسمنت الممتاز</p>
+                                        </div>
+                                        <div class="col-12 col-md-6">
+                                            <div class="bordered-badge mb-12">الكميه المطلوبه</div>
+                                            <p class="fz-14 black-text">340 وحدة</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-2 mt-1 d-flex flex-column gap-12 align-items-center">
-                            <div class="bordered-badge">اسم المنتج</div>
-                            <p class="fz-14 black-text">اسمنت الممتاز</p>
-                        </div>
-                        <div class="col-md-2 mt-1">
-                            <div class="bordered-badge mb-12">الكميه المطلوبه</div>
-                            <p class="fz-14 black-text">340 وحدة</p>
-                        </div>
-                        <div class="col-md-2 mt-1">
+                        <div class="col-md-2">
                             <div class="bordered-badge mb-12">التوصيل و التركيب</div>
                             <p class="fz-14 black-text">نعم شامل</p>
                         </div>
-                        <div class="col-md-2 mt-1">
+                        <div class="col-md-2">
                             <div class="bordered-badge mb-12">مناطق التوريد</div>
-                            <p class="black-text fz-14">
+                            <p class="fz-14">
                                 الرياض - الدمام - الرياض
-                                <span class="colored fw-bold text-decoration-underline"> +3</span>
+                                <span class="colored fw-bold"> +3</span>
                             </p>
                         </div>
-                        <div class="col-md-3 mt-1">
+                        <div class="col-md-2">
                             <div class="bordered-badge mb-12">الوصف</div>
-                            <p class="black-text fz-14">
+                            <p class="fz-14">
                                 تسعى شركة الراجحي من خلال هذه المناقصة إلى تحديث بنيتها
                                 التحتية
                             </p>
@@ -1056,35 +1031,87 @@
                     </div>
                 </div>
                 <div class="tender-sections p-3 rounded-12 bg-white mb-3">
-                    <div class="row">
-                        <div class="col-md-1">
-                            <div class="bordered-badge mb-12">صورة المنتج</div>
-                            <div class="product-img">
-                                <img src="images/product-img.webp" class="img-fluid" alt="Product">
+                    <div class="row gy-4">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-6 col-md-4">
+                                    <div class="bordered-badge mb-12">صورة المنتج</div>
+                                    <div class="product-img">
+                                        <img src="images/product-img.webp" alt="Product">
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-8">
+                                    <div class="row gy-3">
+                                        <div class="col-12 col-md-6">
+                                            <div class="bordered-badge mb-12">اسم المنتج</div>
+                                            <p class="fz-14 black-text">اسمنت الممتاز</p>
+                                        </div>
+                                        <div class="col-12 col-md-6">
+                                            <div class="bordered-badge mb-12">الكميه المطلوبه</div>
+                                            <p class="fz-14 black-text">340 وحدة</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-2 mt-1 d-flex flex-column gap-12 align-items-center">
-                            <div class="bordered-badge">اسم المنتج</div>
-                            <p class="fz-14 black-text">اسمنت الممتاز</p>
-                        </div>
-                        <div class="col-md-2 mt-1">
-                            <div class="bordered-badge mb-12">الكميه المطلوبه</div>
-                            <p class="fz-14 black-text">340 وحدة</p>
-                        </div>
-                        <div class="col-md-2 mt-1">
+                        <div class="col-md-2">
                             <div class="bordered-badge mb-12">التوصيل و التركيب</div>
                             <p class="fz-14 black-text">نعم شامل</p>
                         </div>
-                        <div class="col-md-2 mt-1">
+                        <div class="col-md-2">
                             <div class="bordered-badge mb-12">مناطق التوريد</div>
-                            <p class="black-text fz-14">
+                            <p class="fz-14">
                                 الرياض - الدمام - الرياض
-                                <span class="colored fw-bold text-decoration-underline"> +3</span>
+                                <span class="colored fw-bold"> +3</span>
                             </p>
                         </div>
-                        <div class="col-md-3 mt-1">
+                        <div class="col-md-2">
                             <div class="bordered-badge mb-12">الوصف</div>
-                            <p class="black-text fz-14">
+                            <p class="fz-14">
+                                تسعى شركة الراجحي من خلال هذه المناقصة إلى تحديث بنيتها
+                                التحتية
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tender-sections p-3 rounded-12 bg-white mb-3">
+                    <div class="row gy-4">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-6 col-md-4">
+                                    <div class="bordered-badge mb-12">صورة المنتج</div>
+                                    <div class="product-img">
+                                        <img src="images/product-img.webp" alt="Product">
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-8">
+                                    <div class="row gy-3">
+                                        <div class="col-12 col-md-6">
+                                            <div class="bordered-badge mb-12">اسم المنتج</div>
+                                            <p class="fz-14 black-text">اسمنت الممتاز</p>
+                                        </div>
+                                        <div class="col-12 col-md-6">
+                                            <div class="bordered-badge mb-12">الكميه المطلوبه</div>
+                                            <p class="fz-14 black-text">340 وحدة</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="bordered-badge mb-12">التوصيل و التركيب</div>
+                            <p class="fz-14 black-text">نعم شامل</p>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="bordered-badge mb-12">مناطق التوريد</div>
+                            <p class="fz-14">
+                                الرياض - الدمام - الرياض
+                                <span class="colored fw-bold"> +3</span>
+                            </p>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="bordered-badge mb-12">الوصف</div>
+                            <p class="fz-14">
                                 تسعى شركة الراجحي من خلال هذه المناقصة إلى تحديث بنيتها
                                 التحتية
                             </p>
