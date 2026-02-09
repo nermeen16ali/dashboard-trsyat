@@ -3172,8 +3172,9 @@ html[dir="ltr"] .send-btn svg {
 }
 
 .send-btn {
-  min-width: 50px;
+  width: 50px;
   height: 50px;
+  flex-shrink: 0;
   border-radius: 50px;
   border: 1px solid #f2f2f2;
   background: white;
@@ -4539,7 +4540,7 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
   .sm-0 {
     border: none;
     background: unset;
-    padding: 0;
+    padding: 0 !important;
   }
 
   .filter-sidebar>*:not(.filter-header):not(.search-wrapper) {
@@ -4948,6 +4949,11 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     height: 36px;
   }
 
+  .badge-rejected.btn-main {
+    font-size: 12px;
+    height: 40px;
+  }
+
   .lined-stepper::after {
     top: 0;
     bottom: 0;
@@ -5054,7 +5060,7 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     height: 13px;
   }
 
-  h6 {
+  h6:not(.modal-title) {
     font-size: 14px;
   }
 
@@ -5296,6 +5302,32 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
 
   .btn-main {
     padding-inline: 8px;
+    /* width: 100%; */
+  }
+
+  .w-sm-100 {
+    width: 100%;
+  }
+
+  .prim-opacity-outlined {
+    height: 36px;
+  }
+
+  .input-box,
+  .send-btn {
+    height: 44px;
+  }
+
+  .p-8-12 {
+    padding: 8px;
+  }
+
+  .send-btn {
+    width: 44px;
+  }
+
+  action-btn {
+    height: 18px;
   }
 
   .tender-footer>* {
@@ -5334,6 +5366,7 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
 
   .modal-content {
     border-radius: 12px 12px 0 0;
+    padding-inline: 16px;
     border: none;
     max-height: 85vh;
     overflow-y: auto;

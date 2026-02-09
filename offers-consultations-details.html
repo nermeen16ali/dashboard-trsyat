@@ -197,7 +197,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <div class="tender-card p-12">
+          <div class="tender-card p-12 sm-0">
             <div class="tender-sections p-3 rounded-12 bg-white">
               <div class="mb-20">
                 <label class="form-label">
@@ -245,7 +245,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body gap-4">
-          <div class="tender-card p-12">
+          <div class="tender-card p-12 sm-0">
             <div class="tender-sections p-3 bg-white d-flex flex-column gap-3 rounded-12">
               <div>
                 <label class="form-label">الاسم</label>
@@ -322,7 +322,7 @@
 
         <!-- Body -->
         <div class="modal-body gap-4">
-          <div class="tender-card p-12">
+          <div class="tender-card p-12 sm-0">
             <div class="tender-sections p-3 bg-white d-flex flex-column gap-3 rounded-12">
 
               <!-- اسم المشروع -->
@@ -1084,7 +1084,7 @@
     </div>
 
     <!-- Sub Tabs -->
-    <div class="dash-widget">
+    <div class="dash-widget sm-0 p-lg-3">
       <div class="sub-tabs mb-4 scrollable-row" id="sub-nav-tab" role="tablist">
         <button class="nav-link active" id="nav-uploaded-tab" data-bs-toggle="tab" data-bs-target="#nav-uploaded"
           type="button" role="tab" aria-controls="nav-uploaded" aria-selected="true">
@@ -1115,37 +1115,17 @@
           </div>
           <!-- Tender Cards Grid -->
           <div class="tender-card p-3 mb-4">
-            <div class="tender-header d-flex align-items-center justify-content-between mb-3">
+            <div class="tender-header mb-3">
               <label class="form-check-label tender-number d-flex align-items-center">
                 <input type="checkbox" class="form-check-input mt-0" />
                 <span>الرقم المرجعي</span>
                 <span class="fz-14 black-text ff-onest fw-medium">250739020709</span>
               </label>
-              <div class="tender-actions">
-                <a href="#" class="btn-base btn-base-sm bordered-40 p-10 fz-12">
-                  طلب عرض
-                </a>
-                <div class="dropdown">
-                  <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton1"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="images/drop-bullets.svg" alt="menu">
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li>
-                      <a class="dropdown-item b-dash" href="#">option 1
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#"> option 2 </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
             </div>
             <div class="tender-sections p-3 rounded-12 bg-white">
               <div class="tender-section position-relative">
-                <div class="row align-items-center">
-                  <div class="col-md-2">
+                <div class="row gy-3 align-items-md-center">
+                  <div class="col-8 col-md-2 order-1 order-md-2">
                     <div class="d-flex align-items-center gap-10">
                       <span class="fz-12 gray-text">تاريخ النشر</span>
                       <span class="fz-14 black-text fw-medium">05-12-2025</span>
@@ -1153,13 +1133,13 @@
                     <div class="tender-title">تجهيز المكاتب وأثاثها</div>
                     <div class="tender-subtitle">وزارة الصحة</div>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-3 order-4 order-md-2">
                     <span class="fz-12 gray-text">النشاط الأساسي</span>
                     <div class="fz-14 black-text">
                       التصميم الداخلي والتجهيزات
                     </div>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-3 order-5 order-md-3">
                     <div class="d-flex align-items-center">
                       <div class="sm-logo">
                         <img src="images/clock.svg" alt="clock">
@@ -1177,7 +1157,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-2">
+                  <div class="col-md-2 order-3 order-md-4">
                     <div>
                       <span class="fz-12 gray-text d-block mb-1">سعر الوثائق</span>
                       <span class="fz-14 black-text fw-medium">200.50
@@ -1204,7 +1184,7 @@
                       </span>
                     </div>
                   </div>
-                  <div class="col-md-2">
+                  <div class="col-4 col-md-2 order-2 order-md-5">
                     <div class="d-flex justify-content-end">
                       <div class="position-relative">
                         <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
@@ -1226,7 +1206,8 @@
           </div>
           <h6 class="fz-14 black-text mb-4">المحادثة</h6>
           <div class="tender-card p-3 d-flex flex-column h-100">
-            <div class="d-flex align-items-center justify-content-between mb-4">
+            <div
+              class="d-flex flex-column gap-3 flex-md-row align-items-md-center justify-content-md-between mb-3 mb-md-4">
               <div class="d-flex align-items-center gap-10">
                 <label class="form-check-label tender-number d-flex align-items-center">
                   <input type="checkbox" class="form-check-input mt-0">
@@ -1319,7 +1300,7 @@
                 <div class="input-wrapper d-flex align-items-center gap-10 p-8-12">
                   <div class="input-box d-flex align-items-center w-100 bg-white rounded-12">
                     <input type="text" class="form-control chat-input border-0" placeholder="ابدأ رسالة جديدة">
-                    <div class="d-flex align-items-center gap-3">
+                    <div class="d-flex align-items-center gap-2 gap-md-3">
                       <button class="action-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                           <path
@@ -1374,7 +1355,8 @@
                 </svg>
               </span>
             </div>
-            <button class="btn-main btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#addEmployee">
+            <button class="btn-main btn-primary w-sm-100" type="button" data-bs-toggle="modal"
+              data-bs-target="#addEmployee">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M8 3.33331V12.6666" stroke="white" stroke-width="1.33333" stroke-linecap="round"
                   stroke-linejoin="round" />
@@ -1386,7 +1368,7 @@
           </div>
           <div class="table-container">
             <div class="table-responsive">
-              <table class="table table-bordered align-middle competition-table">
+              <table class="table table-bordered align-middle competition-table large-table">
                 <thead>
                   <tr>
                     <th>رقم الموظف</th>
@@ -1855,7 +1837,8 @@
                 </svg>
               </span>
             </div>
-            <button class="btn-main btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#addContract">
+            <button class="btn-main btn-primary w-sm-100" type="button" data-bs-toggle="modal"
+              data-bs-target="#addContract">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M8 3.33331V12.6666" stroke="white" stroke-width="1.33333" stroke-linecap="round"
                   stroke-linejoin="round"></path>
@@ -1867,7 +1850,7 @@
           </div>
           <div class="table-container mb-5">
             <div class="table-responsive">
-              <table class="table table-bordered align-middle competition-table">
+              <table class="table table-bordered align-middle competition-table large-table">
                 <thead>
                   <tr>
                     <th>رقم الملف</th>
@@ -2358,8 +2341,9 @@
           </div>
         </div>
         <div class="tab-pane fade" id="nav-file" role="tabpanel" aria-labelledby="nav-file-tab">
-          <div class="d-flex justify-content-end mb-12">
-            <button class="btn-main btn-primary fz-14" type="button" data-bs-toggle="modal" data-bs-target="#addFile">
+          <div class="d-flex justify-content-end mb-4">
+            <button class="btn-main btn-primary fz-14 w-sm-100" type="button" data-bs-toggle="modal"
+              data-bs-target="#addFile">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M8 3.33331V12.6666" stroke="white" stroke-width="1.33333" stroke-linecap="round"
                   stroke-linejoin="round"></path>
