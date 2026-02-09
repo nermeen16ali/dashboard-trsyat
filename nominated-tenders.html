@@ -782,7 +782,7 @@
     </div>
     <div class="tab-content" id="Sub-nav-tabContent">
       <div class="tab-pane fade active show" id="nav-uploaded" role="tabpanel" aria-labelledby="nav-uploaded-tab">
-        <div class="dash-widget">
+        <div class="dash-widget sm-0 p-lg-3">
           <!-- Search and Filter Bar -->
           <div class="d-flex justify-content-between align-items-center search-filter-bar gap-2 gap-md-3 mb-4">
             <div class="search-box w-100 position-relative">
@@ -809,7 +809,7 @@
           </div>
           <!-- Tender Cards Grid -->
           <div class="row">
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-xxl-4">
               <div class="tender-card p-3 mb-4">
                 <div class="tender-header d-flex align-items-center justify-content-between mb-3">
                   <label class="form-check-label tender-number d-flex align-items-center">
@@ -962,7 +962,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-xxl-4">
               <div class="tender-card p-3 mb-4">
                 <div class="tender-header d-flex align-items-center justify-content-between mb-3">
                   <label class="form-check-label tender-number d-flex align-items-center">
@@ -1115,7 +1115,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-xxl-4">
               <div class="tender-card p-3 mb-4">
                 <div class="tender-header d-flex align-items-center justify-content-between mb-3">
                   <label class="form-check-label tender-number d-flex align-items-center">
@@ -1268,7 +1268,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-xxl-4">
               <div class="tender-card p-3 mb-4">
                 <div class="tender-header d-flex align-items-center justify-content-between mb-3">
                   <label class="form-check-label tender-number d-flex align-items-center">
@@ -1421,7 +1421,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-xxl-4">
               <div class="tender-card p-3 mb-4">
                 <div class="tender-header d-flex align-items-center justify-content-between mb-3">
                   <label class="form-check-label tender-number d-flex align-items-center">
@@ -1574,7 +1574,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-xxl-4">
               <div class="tender-card p-3 mb-4">
                 <div class="tender-header d-flex align-items-center justify-content-between mb-3">
                   <label class="form-check-label tender-number d-flex align-items-center">
@@ -1772,7 +1772,7 @@
         </div>
       </div>
       <div class="tab-pane fade" id="nav-tender" role="tabpanel" aria-labelledby="nav-tender-tab">
-        <div class="dash-widget">
+        <div class="dash-widget sm-0 p-lg-3 results-widget">
           <!-- Search and Filter Bar -->
           <div class="d-flex justify-content-between align-items-center search-filter-bar gap-2 gap-md-3 mb-4">
             <div class="search-box w-100 position-relative">
@@ -1801,19 +1801,23 @@
             <div class="tender-header d-flex align-items-center justify-content-between mb-3">
               <label class="form-check-label tender-number d-flex align-items-center">
                 <input type="checkbox" class="form-check-input mt-0" />
-                <span>رقم/رمز المناقصة </span>
-                <span class="fz-14 black-text fw-medium ff-onest">250739020709</span>
+                <span>الرقم المرجعي</span>
+                <span class="fz-14 black-text fw-medium">250739020709</span>
               </label>
               <div class="tender-actions">
-                <a href="#" class="base-outlined-btn fz-12 btn-base-sm bordered-40">
-                  طلب استشارة
-                </a>
-                <a href="#" class="btn-base btn-base-sm bordered-40 fz-12">
-                  طلب عرض
-                </a>
-                <a href="#" class="btn-primary sm-ele fz-12 bordered-40">
-                  التفاصيل
-                </a>
+                <div class="p-sm-absolute">
+                  <a href="#" class="base-outlined-btn fz-12 btn-base-sm bordered-40 fz-12" data-bs-toggle="modal"
+                    data-bs-target="#CreateModal" data-offer-type="consultation">
+                    طلب استشارة
+                  </a>
+                  <a href="#" class="btn-base btn-base-sm bordered-40  fz-12" data-bs-toggle="modal"
+                    data-bs-target="#CreateModal" data-offer-type="offer">
+                    طلب عرض
+                  </a>
+                  <a href="etimad-tenders-details.html" class="btn-primary btn-base-sm fz-12 bordered-40">
+                    التفاصيل
+                  </a>
+                </div>
                 <div class="dropdown">
                   <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton1"
                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -1832,29 +1836,32 @@
             </div>
             <div class="tender-sections p-3 rounded-12 bg-white">
               <div class="tender-section position-relative">
-                <div class="row align-items-center">
-                  <div class="col-md-3">
-                    <div class="d-lg-flex align-items-start tender-details gap-3">
-                      <span class="tender-status">طلب تقديم العروض</span>
+                <div class="row align-items-md-center">
+                  <div class="col-8 col-md-6">
+                    <div class="d-flex flex-column flex-md-row align-items-md-center gap-10">
+                      <span class="tender-status me-3 flex-shrink-0">طلب تقديم العروض</span>
+                      <span class="fz-12 gray-text flex-shrink-0">تاريخ النشر</span>
+                      <span class="fz-14 black-text fw-medium flex-shrink-0">05-12-2025</span>
+                    </div>
+                    <div class="d-flex flex-column flex-lg-row gap-3 justify-content-between">
                       <div>
-                        <span class="fz-12 gray-text me-2">تاريخ النشر</span>
-                        <span class="fz-14 black-text fw-medium">05-12-2025</span>
+                        <h6 class="tender-title">تجهيز المكاتب وأثاثها</h6>
+                        <div class="tender-subtitle">وزارة الصحة</div>
+                      </div>
+                      <div>
+                        <span class="fz-12 gray-text">النشاط الأساسي</span>
+                        <div class="fz-14 black-text">
+                          التصميم الداخلي والتجهيزات
+                        </div>
                       </div>
                     </div>
-                    <h6 class="tender-title">تجهيز المكاتب وأثاثها</h6>
-                    <div class="tender-subtitle">وزارة الصحة</div>
                   </div>
-                  <div class="col-md-6">
-                    <span class="fz-12 gray-text">النشاط الأساسي</span>
-                    <div class="fz-14 black-text">
-                      التصميم الداخلي والتجهيزات
-                    </div>
-                  </div>
-                  <div class="col-md-3">
+                  <div class="col-4 col-md-6">
                     <div class="d-flex justify-content-end">
                       <div class="position-relative">
                         <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
-                          <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none"></circle>
+                          <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none">
+                          </circle>
                           <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4" fill="none"
                             stroke-dasharray="134.6 125.6"></circle>
                         </svg>
@@ -1869,17 +1876,16 @@
                 </div>
               </div>
               <div class="tender-section">
-                <div class="row">
-                  <div class="col-md-3">
+                <div class="row gy-3">
+                  <div class="col-md-4">
                     <div class=" d-flex align-items-center">
                       <div class="sm-logo">
-                        <img src="images/clock.svg" alt="clock">
+                        <img src="images/clock.svg" alt="Clock">
                       </div>
                       <div>
-                        <span class="fz-12 gray-text">الموعد النهائي لتقديم
-                          العروض</span>
+                        <span class="fz-12 gray-text">الموعد النهائي لتقديم العروض</span>
                         <div>
-                          <span class="black-text fz-12 fw-medium d-inline-block me-1" dir="ltr">
+                          <span class="black-text fz-12 fw-medium d-inline-block me-1">
                             04:30 pm
                           </span>
                           <span class="black-text fz-12 fw-medium">
@@ -1892,13 +1898,12 @@
                   <div class="col-md-3">
                     <div class=" d-flex align-items-center">
                       <div class="sm-logo">
-                        <img src="images/clock.svg" alt="clock">
+                        <img src="images/clock.svg" alt="Clock">
                       </div>
                       <div>
-                        <span class="fz-12 gray-text">موعد اجتماع
-                          المناقشة</span>
+                        <span class="fz-12 gray-text">موعد اجتماع المناقشة</span>
                         <div>
-                          <span class="black-text fz-12 fw-medium d-inline-block me-1" dir="ltr">
+                          <span class="black-text fz-12 fw-medium d-inline-block me-1">
                             01:00 pm
                           </span>
                           <span class="black-text fz-12 fw-medium">
@@ -1909,15 +1914,14 @@
                     </div>
                   </div>
                   <div class="col-md-3">
-                    <div class=" d-flex align-items-center">
+                    <div class="date-item d-flex align-items-center justify-content-md-end">
                       <div class="sm-logo">
-                        <img src="images/clock.svg" alt="clock">
+                        <img src="images/clock.svg" alt="Clock">
                       </div>
                       <div>
-                        <span class="fz-12 gray-text">تاريخ الاعلان عن
-                          النتائج</span>
+                        <span class="fz-12 gray-text">تاريخ الاعلان عن النتائج</span>
                         <div>
-                          <span class="black-text fz-12 fw-medium d-inline-block me-1" dir="ltr">
+                          <span class="black-text fz-12 fw-medium d-inline-block me-1">
                             09:00 am
                           </span>
                           <span class="black-text fz-12 fw-medium">
@@ -1927,11 +1931,10 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-2">
                     <div class="tender-price d-flex justify-content-end">
                       <div>
-                        <span class="fz-12 gray-text d-block mb-2">سعر
-                          الوثائق</span>
+                        <span class="fz-12 gray-text d-block mb-2">سعر الوثائق</span>
                         <span class="fs-6 black-text fw-medium">200.50
                           <img src="images/ryall.svg" alt="ريال">
                         </span>
@@ -1946,19 +1949,23 @@
             <div class="tender-header d-flex align-items-center justify-content-between mb-3">
               <label class="form-check-label tender-number d-flex align-items-center">
                 <input type="checkbox" class="form-check-input mt-0" />
-                <span>رقم/رمز المناقصة </span>
-                <span class="fz-14 black-text fw-medium ff-onest">250739020709</span>
+                <span>الرقم المرجعي</span>
+                <span class="fz-14 black-text fw-medium">250739020709</span>
               </label>
               <div class="tender-actions">
-                <a href="#" class="base-outlined-btn fz-12 btn-base-sm bordered-40">
-                  طلب استشارة
-                </a>
-                <a href="#" class="btn-base btn-base-sm bordered-40 fz-12">
-                  طلب عرض
-                </a>
-                <a href="#" class="btn-primary sm-ele fz-12 bordered-40">
-                  التفاصيل
-                </a>
+                <div class="p-sm-absolute">
+                  <a href="#" class="base-outlined-btn fz-12 btn-base-sm bordered-40 fz-12" data-bs-toggle="modal"
+                    data-bs-target="#CreateModal" data-offer-type="consultation">
+                    طلب استشارة
+                  </a>
+                  <a href="#" class="btn-base btn-base-sm bordered-40  fz-12" data-bs-toggle="modal"
+                    data-bs-target="#CreateModal" data-offer-type="offer">
+                    طلب عرض
+                  </a>
+                  <a href="etimad-tenders-details.html" class="btn-primary btn-base-sm fz-12 bordered-40">
+                    التفاصيل
+                  </a>
+                </div>
                 <div class="dropdown">
                   <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton1"
                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -1977,29 +1984,32 @@
             </div>
             <div class="tender-sections p-3 rounded-12 bg-white">
               <div class="tender-section position-relative">
-                <div class="row align-items-center">
-                  <div class="col-md-3">
-                    <div class="d-lg-flex align-items-start tender-details gap-3">
-                      <span class="tender-status">طلب تقديم العروض</span>
+                <div class="row align-items-md-center">
+                  <div class="col-8 col-md-6">
+                    <div class="d-flex flex-column flex-md-row align-items-md-center gap-10">
+                      <span class="tender-status me-3 flex-shrink-0">طلب تقديم العروض</span>
+                      <span class="fz-12 gray-text flex-shrink-0">تاريخ النشر</span>
+                      <span class="fz-14 black-text fw-medium flex-shrink-0">05-12-2025</span>
+                    </div>
+                    <div class="d-flex flex-column flex-lg-row gap-3 justify-content-between">
                       <div>
-                        <span class="fz-12 gray-text me-2">تاريخ النشر</span>
-                        <span class="fz-14 black-text fw-medium">05-12-2025</span>
+                        <h6 class="tender-title">تجهيز المكاتب وأثاثها</h6>
+                        <div class="tender-subtitle">وزارة الصحة</div>
+                      </div>
+                      <div>
+                        <span class="fz-12 gray-text">النشاط الأساسي</span>
+                        <div class="fz-14 black-text">
+                          التصميم الداخلي والتجهيزات
+                        </div>
                       </div>
                     </div>
-                    <h6 class="tender-title">تجهيز المكاتب وأثاثها</h6>
-                    <div class="tender-subtitle">وزارة الصحة</div>
                   </div>
-                  <div class="col-md-6">
-                    <span class="fz-12 gray-text">النشاط الأساسي</span>
-                    <div class="fz-14 black-text">
-                      التصميم الداخلي والتجهيزات
-                    </div>
-                  </div>
-                  <div class="col-md-3">
+                  <div class="col-4 col-md-6">
                     <div class="d-flex justify-content-end">
                       <div class="position-relative">
                         <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
-                          <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none"></circle>
+                          <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none">
+                          </circle>
                           <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4" fill="none"
                             stroke-dasharray="134.6 125.6"></circle>
                         </svg>
@@ -2014,17 +2024,16 @@
                 </div>
               </div>
               <div class="tender-section">
-                <div class="row">
-                  <div class="col-md-3">
+                <div class="row gy-3">
+                  <div class="col-md-4">
                     <div class=" d-flex align-items-center">
                       <div class="sm-logo">
-                        <img src="images/clock.svg" alt="clock">
+                        <img src="images/clock.svg" alt="Clock">
                       </div>
                       <div>
-                        <span class="fz-12 gray-text">الموعد النهائي لتقديم
-                          العروض</span>
+                        <span class="fz-12 gray-text">الموعد النهائي لتقديم العروض</span>
                         <div>
-                          <span class="black-text fz-12 fw-medium d-inline-block me-1" dir="ltr">
+                          <span class="black-text fz-12 fw-medium d-inline-block me-1">
                             04:30 pm
                           </span>
                           <span class="black-text fz-12 fw-medium">
@@ -2037,13 +2046,12 @@
                   <div class="col-md-3">
                     <div class=" d-flex align-items-center">
                       <div class="sm-logo">
-                        <img src="images/clock.svg" alt="clock">
+                        <img src="images/clock.svg" alt="Clock">
                       </div>
                       <div>
-                        <span class="fz-12 gray-text">موعد اجتماع
-                          المناقشة</span>
+                        <span class="fz-12 gray-text">موعد اجتماع المناقشة</span>
                         <div>
-                          <span class="black-text fz-12 fw-medium d-inline-block me-1" dir="ltr">
+                          <span class="black-text fz-12 fw-medium d-inline-block me-1">
                             01:00 pm
                           </span>
                           <span class="black-text fz-12 fw-medium">
@@ -2054,15 +2062,14 @@
                     </div>
                   </div>
                   <div class="col-md-3">
-                    <div class=" d-flex align-items-center">
+                    <div class="date-item d-flex align-items-center justify-content-md-end">
                       <div class="sm-logo">
-                        <img src="images/clock.svg" alt="clock">
+                        <img src="images/clock.svg" alt="Clock">
                       </div>
                       <div>
-                        <span class="fz-12 gray-text">تاريخ الاعلان عن
-                          النتائج</span>
+                        <span class="fz-12 gray-text">تاريخ الاعلان عن النتائج</span>
                         <div>
-                          <span class="black-text fz-12 fw-medium d-inline-block me-1" dir="ltr">
+                          <span class="black-text fz-12 fw-medium d-inline-block me-1">
                             09:00 am
                           </span>
                           <span class="black-text fz-12 fw-medium">
@@ -2072,11 +2079,10 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-2">
                     <div class="tender-price d-flex justify-content-end">
                       <div>
-                        <span class="fz-12 gray-text d-block mb-2">سعر
-                          الوثائق</span>
+                        <span class="fz-12 gray-text d-block mb-2">سعر الوثائق</span>
                         <span class="fs-6 black-text fw-medium">200.50
                           <img src="images/ryall.svg" alt="ريال">
                         </span>
@@ -2091,19 +2097,23 @@
             <div class="tender-header d-flex align-items-center justify-content-between mb-3">
               <label class="form-check-label tender-number d-flex align-items-center">
                 <input type="checkbox" class="form-check-input mt-0" />
-                <span>رقم/رمز المناقصة </span>
-                <span class="fz-14 black-text fw-medium ff-onest">250739020709</span>
+                <span>الرقم المرجعي</span>
+                <span class="fz-14 black-text fw-medium">250739020709</span>
               </label>
               <div class="tender-actions">
-                <a href="#" class="base-outlined-btn fz-12 btn-base-sm bordered-40">
-                  طلب استشارة
-                </a>
-                <a href="#" class="btn-base btn-base-sm bordered-40 fz-12">
-                  طلب عرض
-                </a>
-                <a href="#" class="btn-primary sm-ele fz-12 bordered-40">
-                  التفاصيل
-                </a>
+                <div class="p-sm-absolute">
+                  <a href="#" class="base-outlined-btn fz-12 btn-base-sm bordered-40 fz-12" data-bs-toggle="modal"
+                    data-bs-target="#CreateModal" data-offer-type="consultation">
+                    طلب استشارة
+                  </a>
+                  <a href="#" class="btn-base btn-base-sm bordered-40  fz-12" data-bs-toggle="modal"
+                    data-bs-target="#CreateModal" data-offer-type="offer">
+                    طلب عرض
+                  </a>
+                  <a href="etimad-tenders-details.html" class="btn-primary btn-base-sm fz-12 bordered-40">
+                    التفاصيل
+                  </a>
+                </div>
                 <div class="dropdown">
                   <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton1"
                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -2122,29 +2132,32 @@
             </div>
             <div class="tender-sections p-3 rounded-12 bg-white">
               <div class="tender-section position-relative">
-                <div class="row align-items-center">
-                  <div class="col-md-3">
-                    <div class="d-lg-flex align-items-start tender-details gap-3">
-                      <span class="tender-status">طلب تقديم العروض</span>
+                <div class="row align-items-md-center">
+                  <div class="col-8 col-md-6">
+                    <div class="d-flex flex-column flex-md-row align-items-md-center gap-10">
+                      <span class="tender-status me-3 flex-shrink-0">طلب تقديم العروض</span>
+                      <span class="fz-12 gray-text flex-shrink-0">تاريخ النشر</span>
+                      <span class="fz-14 black-text fw-medium flex-shrink-0">05-12-2025</span>
+                    </div>
+                    <div class="d-flex flex-column flex-lg-row gap-3 justify-content-between">
                       <div>
-                        <span class="fz-12 gray-text me-2">تاريخ النشر</span>
-                        <span class="fz-14 black-text fw-medium">05-12-2025</span>
+                        <h6 class="tender-title">تجهيز المكاتب وأثاثها</h6>
+                        <div class="tender-subtitle">وزارة الصحة</div>
+                      </div>
+                      <div>
+                        <span class="fz-12 gray-text">النشاط الأساسي</span>
+                        <div class="fz-14 black-text">
+                          التصميم الداخلي والتجهيزات
+                        </div>
                       </div>
                     </div>
-                    <h6 class="tender-title">تجهيز المكاتب وأثاثها</h6>
-                    <div class="tender-subtitle">وزارة الصحة</div>
                   </div>
-                  <div class="col-md-6">
-                    <span class="fz-12 gray-text">النشاط الأساسي</span>
-                    <div class="fz-14 black-text">
-                      التصميم الداخلي والتجهيزات
-                    </div>
-                  </div>
-                  <div class="col-md-3">
+                  <div class="col-4 col-md-6">
                     <div class="d-flex justify-content-end">
                       <div class="position-relative">
                         <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
-                          <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none"></circle>
+                          <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none">
+                          </circle>
                           <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4" fill="none"
                             stroke-dasharray="134.6 125.6"></circle>
                         </svg>
@@ -2159,17 +2172,16 @@
                 </div>
               </div>
               <div class="tender-section">
-                <div class="row">
-                  <div class="col-md-3">
+                <div class="row gy-3">
+                  <div class="col-md-4">
                     <div class=" d-flex align-items-center">
                       <div class="sm-logo">
-                        <img src="images/clock.svg" alt="clock">
+                        <img src="images/clock.svg" alt="Clock">
                       </div>
                       <div>
-                        <span class="fz-12 gray-text">الموعد النهائي لتقديم
-                          العروض</span>
+                        <span class="fz-12 gray-text">الموعد النهائي لتقديم العروض</span>
                         <div>
-                          <span class="black-text fz-12 fw-medium d-inline-block me-1" dir="ltr">
+                          <span class="black-text fz-12 fw-medium d-inline-block me-1">
                             04:30 pm
                           </span>
                           <span class="black-text fz-12 fw-medium">
@@ -2182,13 +2194,12 @@
                   <div class="col-md-3">
                     <div class=" d-flex align-items-center">
                       <div class="sm-logo">
-                        <img src="images/clock.svg" alt="clock">
+                        <img src="images/clock.svg" alt="Clock">
                       </div>
                       <div>
-                        <span class="fz-12 gray-text">موعد اجتماع
-                          المناقشة</span>
+                        <span class="fz-12 gray-text">موعد اجتماع المناقشة</span>
                         <div>
-                          <span class="black-text fz-12 fw-medium d-inline-block me-1" dir="ltr">
+                          <span class="black-text fz-12 fw-medium d-inline-block me-1">
                             01:00 pm
                           </span>
                           <span class="black-text fz-12 fw-medium">
@@ -2199,15 +2210,14 @@
                     </div>
                   </div>
                   <div class="col-md-3">
-                    <div class=" d-flex align-items-center">
+                    <div class="date-item d-flex align-items-center justify-content-md-end">
                       <div class="sm-logo">
-                        <img src="images/clock.svg" alt="clock">
+                        <img src="images/clock.svg" alt="Clock">
                       </div>
                       <div>
-                        <span class="fz-12 gray-text">تاريخ الاعلان عن
-                          النتائج</span>
+                        <span class="fz-12 gray-text">تاريخ الاعلان عن النتائج</span>
                         <div>
-                          <span class="black-text fz-12 fw-medium d-inline-block me-1" dir="ltr">
+                          <span class="black-text fz-12 fw-medium d-inline-block me-1">
                             09:00 am
                           </span>
                           <span class="black-text fz-12 fw-medium">
@@ -2217,11 +2227,10 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-2">
                     <div class="tender-price d-flex justify-content-end">
                       <div>
-                        <span class="fz-12 gray-text d-block mb-2">سعر
-                          الوثائق</span>
+                        <span class="fz-12 gray-text d-block mb-2">سعر الوثائق</span>
                         <span class="fs-6 black-text fw-medium">200.50
                           <img src="images/ryall.svg" alt="ريال">
                         </span>
@@ -2236,19 +2245,23 @@
             <div class="tender-header d-flex align-items-center justify-content-between mb-3">
               <label class="form-check-label tender-number d-flex align-items-center">
                 <input type="checkbox" class="form-check-input mt-0" />
-                <span>رقم/رمز المناقصة </span>
-                <span class="fz-14 black-text fw-medium ff-onest">250739020709</span>
+                <span>الرقم المرجعي</span>
+                <span class="fz-14 black-text fw-medium">250739020709</span>
               </label>
               <div class="tender-actions">
-                <a href="#" class="base-outlined-btn fz-12 btn-base-sm bordered-40">
-                  طلب استشارة
-                </a>
-                <a href="#" class="btn-base btn-base-sm bordered-40 fz-12">
-                  طلب عرض
-                </a>
-                <a href="#" class="btn-primary sm-ele fz-12 bordered-40">
-                  التفاصيل
-                </a>
+                <div class="p-sm-absolute">
+                  <a href="#" class="base-outlined-btn fz-12 btn-base-sm bordered-40 fz-12" data-bs-toggle="modal"
+                    data-bs-target="#CreateModal" data-offer-type="consultation">
+                    طلب استشارة
+                  </a>
+                  <a href="#" class="btn-base btn-base-sm bordered-40  fz-12" data-bs-toggle="modal"
+                    data-bs-target="#CreateModal" data-offer-type="offer">
+                    طلب عرض
+                  </a>
+                  <a href="etimad-tenders-details.html" class="btn-primary btn-base-sm fz-12 bordered-40">
+                    التفاصيل
+                  </a>
+                </div>
                 <div class="dropdown">
                   <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton1"
                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -2267,29 +2280,32 @@
             </div>
             <div class="tender-sections p-3 rounded-12 bg-white">
               <div class="tender-section position-relative">
-                <div class="row align-items-center">
-                  <div class="col-md-3">
-                    <div class="d-lg-flex align-items-start tender-details gap-3">
-                      <span class="tender-status">طلب تقديم العروض</span>
+                <div class="row align-items-md-center">
+                  <div class="col-8 col-md-6">
+                    <div class="d-flex flex-column flex-md-row align-items-md-center gap-10">
+                      <span class="tender-status me-3 flex-shrink-0">طلب تقديم العروض</span>
+                      <span class="fz-12 gray-text flex-shrink-0">تاريخ النشر</span>
+                      <span class="fz-14 black-text fw-medium flex-shrink-0">05-12-2025</span>
+                    </div>
+                    <div class="d-flex flex-column flex-lg-row gap-3 justify-content-between">
                       <div>
-                        <span class="fz-12 gray-text me-2">تاريخ النشر</span>
-                        <span class="fz-14 black-text fw-medium">05-12-2025</span>
+                        <h6 class="tender-title">تجهيز المكاتب وأثاثها</h6>
+                        <div class="tender-subtitle">وزارة الصحة</div>
+                      </div>
+                      <div>
+                        <span class="fz-12 gray-text">النشاط الأساسي</span>
+                        <div class="fz-14 black-text">
+                          التصميم الداخلي والتجهيزات
+                        </div>
                       </div>
                     </div>
-                    <h6 class="tender-title">تجهيز المكاتب وأثاثها</h6>
-                    <div class="tender-subtitle">وزارة الصحة</div>
                   </div>
-                  <div class="col-md-6">
-                    <span class="fz-12 gray-text">النشاط الأساسي</span>
-                    <div class="fz-14 black-text">
-                      التصميم الداخلي والتجهيزات
-                    </div>
-                  </div>
-                  <div class="col-md-3">
+                  <div class="col-4 col-md-6">
                     <div class="d-flex justify-content-end">
                       <div class="position-relative">
                         <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
-                          <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none"></circle>
+                          <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none">
+                          </circle>
                           <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4" fill="none"
                             stroke-dasharray="134.6 125.6"></circle>
                         </svg>
@@ -2304,17 +2320,16 @@
                 </div>
               </div>
               <div class="tender-section">
-                <div class="row">
-                  <div class="col-md-3">
+                <div class="row gy-3">
+                  <div class="col-md-4">
                     <div class=" d-flex align-items-center">
                       <div class="sm-logo">
-                        <img src="images/clock.svg" alt="clock">
+                        <img src="images/clock.svg" alt="Clock">
                       </div>
                       <div>
-                        <span class="fz-12 gray-text">الموعد النهائي لتقديم
-                          العروض</span>
+                        <span class="fz-12 gray-text">الموعد النهائي لتقديم العروض</span>
                         <div>
-                          <span class="black-text fz-12 fw-medium d-inline-block me-1" dir="ltr">
+                          <span class="black-text fz-12 fw-medium d-inline-block me-1">
                             04:30 pm
                           </span>
                           <span class="black-text fz-12 fw-medium">
@@ -2327,13 +2342,12 @@
                   <div class="col-md-3">
                     <div class=" d-flex align-items-center">
                       <div class="sm-logo">
-                        <img src="images/clock.svg" alt="clock">
+                        <img src="images/clock.svg" alt="Clock">
                       </div>
                       <div>
-                        <span class="fz-12 gray-text">موعد اجتماع
-                          المناقشة</span>
+                        <span class="fz-12 gray-text">موعد اجتماع المناقشة</span>
                         <div>
-                          <span class="black-text fz-12 fw-medium d-inline-block me-1" dir="ltr">
+                          <span class="black-text fz-12 fw-medium d-inline-block me-1">
                             01:00 pm
                           </span>
                           <span class="black-text fz-12 fw-medium">
@@ -2344,15 +2358,14 @@
                     </div>
                   </div>
                   <div class="col-md-3">
-                    <div class=" d-flex align-items-center">
+                    <div class="date-item d-flex align-items-center justify-content-md-end">
                       <div class="sm-logo">
-                        <img src="images/clock.svg" alt="clock">
+                        <img src="images/clock.svg" alt="Clock">
                       </div>
                       <div>
-                        <span class="fz-12 gray-text">تاريخ الاعلان عن
-                          النتائج</span>
+                        <span class="fz-12 gray-text">تاريخ الاعلان عن النتائج</span>
                         <div>
-                          <span class="black-text fz-12 fw-medium d-inline-block me-1" dir="ltr">
+                          <span class="black-text fz-12 fw-medium d-inline-block me-1">
                             09:00 am
                           </span>
                           <span class="black-text fz-12 fw-medium">
@@ -2362,11 +2375,10 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-2">
                     <div class="tender-price d-flex justify-content-end">
                       <div>
-                        <span class="fz-12 gray-text d-block mb-2">سعر
-                          الوثائق</span>
+                        <span class="fz-12 gray-text d-block mb-2">سعر الوثائق</span>
                         <span class="fs-6 black-text fw-medium">200.50
                           <img src="images/ryall.svg" alt="ريال">
                         </span>
@@ -2381,19 +2393,23 @@
             <div class="tender-header d-flex align-items-center justify-content-between mb-3">
               <label class="form-check-label tender-number d-flex align-items-center">
                 <input type="checkbox" class="form-check-input mt-0" />
-                <span>رقم/رمز المناقصة </span>
-                <span class="fz-14 black-text fw-medium ff-onest">250739020709</span>
+                <span>الرقم المرجعي</span>
+                <span class="fz-14 black-text fw-medium">250739020709</span>
               </label>
               <div class="tender-actions">
-                <a href="#" class="base-outlined-btn fz-12 btn-base-sm bordered-40">
-                  طلب استشارة
-                </a>
-                <a href="#" class="btn-base btn-base-sm bordered-40 fz-12">
-                  طلب عرض
-                </a>
-                <a href="#" class="btn-primary sm-ele fz-12 bordered-40">
-                  التفاصيل
-                </a>
+                <div class="p-sm-absolute">
+                  <a href="#" class="base-outlined-btn fz-12 btn-base-sm bordered-40 fz-12" data-bs-toggle="modal"
+                    data-bs-target="#CreateModal" data-offer-type="consultation">
+                    طلب استشارة
+                  </a>
+                  <a href="#" class="btn-base btn-base-sm bordered-40  fz-12" data-bs-toggle="modal"
+                    data-bs-target="#CreateModal" data-offer-type="offer">
+                    طلب عرض
+                  </a>
+                  <a href="etimad-tenders-details.html" class="btn-primary btn-base-sm fz-12 bordered-40">
+                    التفاصيل
+                  </a>
+                </div>
                 <div class="dropdown">
                   <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton1"
                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -2412,29 +2428,32 @@
             </div>
             <div class="tender-sections p-3 rounded-12 bg-white">
               <div class="tender-section position-relative">
-                <div class="row align-items-center">
-                  <div class="col-md-3">
-                    <div class="d-lg-flex align-items-start tender-details gap-3">
-                      <span class="tender-status">طلب تقديم العروض</span>
+                <div class="row align-items-md-center">
+                  <div class="col-8 col-md-6">
+                    <div class="d-flex flex-column flex-md-row align-items-md-center gap-10">
+                      <span class="tender-status me-3 flex-shrink-0">طلب تقديم العروض</span>
+                      <span class="fz-12 gray-text flex-shrink-0">تاريخ النشر</span>
+                      <span class="fz-14 black-text fw-medium flex-shrink-0">05-12-2025</span>
+                    </div>
+                    <div class="d-flex flex-column flex-lg-row gap-3 justify-content-between">
                       <div>
-                        <span class="fz-12 gray-text me-2">تاريخ النشر</span>
-                        <span class="fz-14 black-text fw-medium">05-12-2025</span>
+                        <h6 class="tender-title">تجهيز المكاتب وأثاثها</h6>
+                        <div class="tender-subtitle">وزارة الصحة</div>
+                      </div>
+                      <div>
+                        <span class="fz-12 gray-text">النشاط الأساسي</span>
+                        <div class="fz-14 black-text">
+                          التصميم الداخلي والتجهيزات
+                        </div>
                       </div>
                     </div>
-                    <h6 class="tender-title">تجهيز المكاتب وأثاثها</h6>
-                    <div class="tender-subtitle">وزارة الصحة</div>
                   </div>
-                  <div class="col-md-6">
-                    <span class="fz-12 gray-text">النشاط الأساسي</span>
-                    <div class="fz-14 black-text">
-                      التصميم الداخلي والتجهيزات
-                    </div>
-                  </div>
-                  <div class="col-md-3">
+                  <div class="col-4 col-md-6">
                     <div class="d-flex justify-content-end">
                       <div class="position-relative">
                         <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
-                          <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none"></circle>
+                          <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none">
+                          </circle>
                           <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4" fill="none"
                             stroke-dasharray="134.6 125.6"></circle>
                         </svg>
@@ -2449,17 +2468,16 @@
                 </div>
               </div>
               <div class="tender-section">
-                <div class="row">
-                  <div class="col-md-3">
+                <div class="row gy-3">
+                  <div class="col-md-4">
                     <div class=" d-flex align-items-center">
                       <div class="sm-logo">
-                        <img src="images/clock.svg" alt="clock">
+                        <img src="images/clock.svg" alt="Clock">
                       </div>
                       <div>
-                        <span class="fz-12 gray-text">الموعد النهائي لتقديم
-                          العروض</span>
+                        <span class="fz-12 gray-text">الموعد النهائي لتقديم العروض</span>
                         <div>
-                          <span class="black-text fz-12 fw-medium d-inline-block me-1" dir="ltr">
+                          <span class="black-text fz-12 fw-medium d-inline-block me-1">
                             04:30 pm
                           </span>
                           <span class="black-text fz-12 fw-medium">
@@ -2472,13 +2490,12 @@
                   <div class="col-md-3">
                     <div class=" d-flex align-items-center">
                       <div class="sm-logo">
-                        <img src="images/clock.svg" alt="clock">
+                        <img src="images/clock.svg" alt="Clock">
                       </div>
                       <div>
-                        <span class="fz-12 gray-text">موعد اجتماع
-                          المناقشة</span>
+                        <span class="fz-12 gray-text">موعد اجتماع المناقشة</span>
                         <div>
-                          <span class="black-text fz-12 fw-medium d-inline-block me-1" dir="ltr">
+                          <span class="black-text fz-12 fw-medium d-inline-block me-1">
                             01:00 pm
                           </span>
                           <span class="black-text fz-12 fw-medium">
@@ -2489,15 +2506,14 @@
                     </div>
                   </div>
                   <div class="col-md-3">
-                    <div class=" d-flex align-items-center">
+                    <div class="date-item d-flex align-items-center justify-content-md-end">
                       <div class="sm-logo">
-                        <img src="images/clock.svg" alt="clock">
+                        <img src="images/clock.svg" alt="Clock">
                       </div>
                       <div>
-                        <span class="fz-12 gray-text">تاريخ الاعلان عن
-                          النتائج</span>
+                        <span class="fz-12 gray-text">تاريخ الاعلان عن النتائج</span>
                         <div>
-                          <span class="black-text fz-12 fw-medium d-inline-block me-1" dir="ltr">
+                          <span class="black-text fz-12 fw-medium d-inline-block me-1">
                             09:00 am
                           </span>
                           <span class="black-text fz-12 fw-medium">
@@ -2507,11 +2523,10 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-2">
                     <div class="tender-price d-flex justify-content-end">
                       <div>
-                        <span class="fz-12 gray-text d-block mb-2">سعر
-                          الوثائق</span>
+                        <span class="fz-12 gray-text d-block mb-2">سعر الوثائق</span>
                         <span class="fs-6 black-text fw-medium">200.50
                           <img src="images/ryall.svg" alt="ريال">
                         </span>
@@ -2566,7 +2581,7 @@
         </div>
       </div>
       <div class="tab-pane fade" id="nav-forsa" role="tabpanel" aria-labelledby="nav-forsa-tab">
-        <div class="dash-widget">
+        <div class="dash-widget sm-0 p-lg-3 results-widget">
           <!-- Search and Filter Bar -->
           <div class="d-flex justify-content-between align-items-center search-filter-bar gap-2 gap-md-3 mb-4">
             <div class="search-box w-100 position-relative">
@@ -2593,20 +2608,22 @@
           </div>
           <!-- Tender Cards Grid -->
           <div class="row">
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-xxl-4">
               <div class="tender-card p-3 mb-4">
                 <div class="tender-header d-flex align-items-center justify-content-between mb-3">
                   <label class="form-check-label tender-number d-flex align-items-center">
                     <input type="checkbox" class="form-check-input mt-0" />
-                    <span class="fz-14 black-text fw-medium ff-onest">250739020709</span>
+                    <span class="fz-14 black-text fw-medium">250739020709</span>
                   </label>
                   <div class="tender-actions">
-                    <a href="#" class="btn-base btn-base-sm bordered-40 p-10 fz-12">
-                      طلب عرض
-                    </a>
-                    <a href="#" class="base-outlined-btn fz-12 btn-base-sm bordered-40">
-                      طلب استشارة
-                    </a>
+                    <div class="p-sm-absolute">
+                      <a href="#" class="btn-base btn-base-sm bordered-40 p-10 fz-12">
+                        طلب عرض
+                      </a>
+                      <a href="#" class="base-outlined-btn fz-12 btn-base-sm bordered-40">
+                        طلب استشارة
+                      </a>
+                    </div>
                     <button class="smbtn-bg-wh fav-btn">
                       <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
                         <path
@@ -2655,11 +2672,11 @@
                   </div>
                   <div class="tender-section position-relative mb-3">
                     <div class="mb-3">
-                      <span class="fz-10 d-block mb-2 gray-text">النوع</span>
+                      <span class="d-block fz-10 gray-text mb-2">النوع</span>
                       <div class="fz-14 black-text">متناهيه الصغر</div>
                     </div>
                     <div>
-                      <span class="fz-10 d-block mb-2 gray-text">المكان</span>
+                      <span class="d-block mb-2 fz-10 gray-text">المكان</span>
                       <div class="fz-14 black-text">مكة المكرمة</div>
                     </div>
                   </div>
@@ -2667,15 +2684,7 @@
                     <span class="fz-10 gray-text me-4">الوقت المتبقي</span>
                     <div class="d-flex align-items-center">
                       <div class="sm-logo">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                          <path
-                            d="M14.6663 7.99992C14.6663 11.6799 11.6797 14.6666 7.99967 14.6666C4.31967 14.6666 1.33301 11.6799 1.33301 7.99992C1.33301 4.31992 4.31967 1.33325 7.99967 1.33325C11.6797 1.33325 14.6663 4.31992 14.6663 7.99992Z"
-                            fill="white" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                          <path opacity="0.4"
-                            d="M10.4732 10.1199L8.40651 8.88659C8.04651 8.67326 7.75317 8.15992 7.75317 7.73992V5.00659"
-                            stroke="#0C2030" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                        <img src="images/clock.svg" alt="icon">
                       </div>
                       <span class="fw-medium black-text fz-12"><span class="colored fz-14">12</span> يوم
                         <span class="colored fz-14">:20</span> ساعه
@@ -2685,20 +2694,22 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-xxl-4">
               <div class="tender-card p-3 mb-4">
                 <div class="tender-header d-flex align-items-center justify-content-between mb-3">
                   <label class="form-check-label tender-number d-flex align-items-center">
                     <input type="checkbox" class="form-check-input mt-0" />
-                    <span class="fz-14 black-text fw-medium ff-onest">250739020709</span>
+                    <span class="fz-14 black-text fw-medium">250739020709</span>
                   </label>
                   <div class="tender-actions">
-                    <a href="#" class="btn-base btn-base-sm bordered-40 p-10 fz-12">
-                      طلب عرض
-                    </a>
-                    <a href="#" class="base-outlined-btn fz-12 btn-base-sm bordered-40">
-                      طلب استشارة
-                    </a>
+                    <div class="p-sm-absolute">
+                      <a href="#" class="btn-base btn-base-sm bordered-40 p-10 fz-12">
+                        طلب عرض
+                      </a>
+                      <a href="#" class="base-outlined-btn fz-12 btn-base-sm bordered-40">
+                        طلب استشارة
+                      </a>
+                    </div>
                     <button class="smbtn-bg-wh fav-btn">
                       <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
                         <path
@@ -2747,11 +2758,11 @@
                   </div>
                   <div class="tender-section position-relative mb-3">
                     <div class="mb-3">
-                      <span class="fz-10 d-block mb-2 gray-text">النوع</span>
+                      <span class="d-block fz-10 gray-text mb-2">النوع</span>
                       <div class="fz-14 black-text">متناهيه الصغر</div>
                     </div>
                     <div>
-                      <span class="fz-10 d-block mb-2 gray-text">المكان</span>
+                      <span class="d-block mb-2 fz-10 gray-text">المكان</span>
                       <div class="fz-14 black-text">مكة المكرمة</div>
                     </div>
                   </div>
@@ -2759,15 +2770,7 @@
                     <span class="fz-10 gray-text me-4">الوقت المتبقي</span>
                     <div class="d-flex align-items-center">
                       <div class="sm-logo">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                          <path
-                            d="M14.6663 7.99992C14.6663 11.6799 11.6797 14.6666 7.99967 14.6666C4.31967 14.6666 1.33301 11.6799 1.33301 7.99992C1.33301 4.31992 4.31967 1.33325 7.99967 1.33325C11.6797 1.33325 14.6663 4.31992 14.6663 7.99992Z"
-                            fill="white" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                          <path opacity="0.4"
-                            d="M10.4732 10.1199L8.40651 8.88659C8.04651 8.67326 7.75317 8.15992 7.75317 7.73992V5.00659"
-                            stroke="#0C2030" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                        <img src="images/clock.svg" alt="icon">
                       </div>
                       <span class="fw-medium black-text fz-12"><span class="colored fz-14">12</span> يوم
                         <span class="colored fz-14">:20</span> ساعه
@@ -2777,20 +2780,22 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-xxl-4">
               <div class="tender-card p-3 mb-4">
                 <div class="tender-header d-flex align-items-center justify-content-between mb-3">
                   <label class="form-check-label tender-number d-flex align-items-center">
                     <input type="checkbox" class="form-check-input mt-0" />
-                    <span class="fz-14 black-text fw-medium ff-onest">250739020709</span>
+                    <span class="fz-14 black-text fw-medium">250739020709</span>
                   </label>
                   <div class="tender-actions">
-                    <a href="#" class="btn-base btn-base-sm bordered-40 p-10 fz-12">
-                      طلب عرض
-                    </a>
-                    <a href="#" class="base-outlined-btn fz-12 btn-base-sm bordered-40">
-                      طلب استشارة
-                    </a>
+                    <div class="p-sm-absolute">
+                      <a href="#" class="btn-base btn-base-sm bordered-40 p-10 fz-12">
+                        طلب عرض
+                      </a>
+                      <a href="#" class="base-outlined-btn fz-12 btn-base-sm bordered-40">
+                        طلب استشارة
+                      </a>
+                    </div>
                     <button class="smbtn-bg-wh fav-btn">
                       <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
                         <path
@@ -2839,11 +2844,11 @@
                   </div>
                   <div class="tender-section position-relative mb-3">
                     <div class="mb-3">
-                      <span class="fz-10 d-block mb-2 gray-text">النوع</span>
+                      <span class="d-block fz-10 gray-text mb-2">النوع</span>
                       <div class="fz-14 black-text">متناهيه الصغر</div>
                     </div>
                     <div>
-                      <span class="fz-10 d-block mb-2 gray-text">المكان</span>
+                      <span class="d-block mb-2 fz-10 gray-text">المكان</span>
                       <div class="fz-14 black-text">مكة المكرمة</div>
                     </div>
                   </div>
@@ -2851,15 +2856,7 @@
                     <span class="fz-10 gray-text me-4">الوقت المتبقي</span>
                     <div class="d-flex align-items-center">
                       <div class="sm-logo">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                          <path
-                            d="M14.6663 7.99992C14.6663 11.6799 11.6797 14.6666 7.99967 14.6666C4.31967 14.6666 1.33301 11.6799 1.33301 7.99992C1.33301 4.31992 4.31967 1.33325 7.99967 1.33325C11.6797 1.33325 14.6663 4.31992 14.6663 7.99992Z"
-                            fill="white" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                          <path opacity="0.4"
-                            d="M10.4732 10.1199L8.40651 8.88659C8.04651 8.67326 7.75317 8.15992 7.75317 7.73992V5.00659"
-                            stroke="#0C2030" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                        <img src="images/clock.svg" alt="icon">
                       </div>
                       <span class="fw-medium black-text fz-12"><span class="colored fz-14">12</span> يوم
                         <span class="colored fz-14">:20</span> ساعه
@@ -2869,20 +2866,22 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-xxl-4">
               <div class="tender-card p-3 mb-4">
                 <div class="tender-header d-flex align-items-center justify-content-between mb-3">
                   <label class="form-check-label tender-number d-flex align-items-center">
                     <input type="checkbox" class="form-check-input mt-0" />
-                    <span class="fz-14 black-text fw-medium ff-onest">250739020709</span>
+                    <span class="fz-14 black-text fw-medium">250739020709</span>
                   </label>
                   <div class="tender-actions">
-                    <a href="#" class="btn-base btn-base-sm bordered-40 p-10 fz-12">
-                      طلب عرض
-                    </a>
-                    <a href="#" class="base-outlined-btn fz-12 btn-base-sm bordered-40">
-                      طلب استشارة
-                    </a>
+                    <div class="p-sm-absolute">
+                      <a href="#" class="btn-base btn-base-sm bordered-40 p-10 fz-12">
+                        طلب عرض
+                      </a>
+                      <a href="#" class="base-outlined-btn fz-12 btn-base-sm bordered-40">
+                        طلب استشارة
+                      </a>
+                    </div>
                     <button class="smbtn-bg-wh fav-btn">
                       <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
                         <path
@@ -2931,11 +2930,11 @@
                   </div>
                   <div class="tender-section position-relative mb-3">
                     <div class="mb-3">
-                      <span class="fz-10 d-block mb-2 gray-text">النوع</span>
+                      <span class="d-block fz-10 gray-text mb-2">النوع</span>
                       <div class="fz-14 black-text">متناهيه الصغر</div>
                     </div>
                     <div>
-                      <span class="fz-10 d-block mb-2 gray-text">المكان</span>
+                      <span class="d-block mb-2 fz-10 gray-text">المكان</span>
                       <div class="fz-14 black-text">مكة المكرمة</div>
                     </div>
                   </div>
@@ -2943,15 +2942,7 @@
                     <span class="fz-10 gray-text me-4">الوقت المتبقي</span>
                     <div class="d-flex align-items-center">
                       <div class="sm-logo">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                          <path
-                            d="M14.6663 7.99992C14.6663 11.6799 11.6797 14.6666 7.99967 14.6666C4.31967 14.6666 1.33301 11.6799 1.33301 7.99992C1.33301 4.31992 4.31967 1.33325 7.99967 1.33325C11.6797 1.33325 14.6663 4.31992 14.6663 7.99992Z"
-                            fill="white" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                          <path opacity="0.4"
-                            d="M10.4732 10.1199L8.40651 8.88659C8.04651 8.67326 7.75317 8.15992 7.75317 7.73992V5.00659"
-                            stroke="#0C2030" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                        <img src="images/clock.svg" alt="icon">
                       </div>
                       <span class="fw-medium black-text fz-12"><span class="colored fz-14">12</span> يوم
                         <span class="colored fz-14">:20</span> ساعه
@@ -2961,20 +2952,22 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-xxl-4">
               <div class="tender-card p-3 mb-4">
                 <div class="tender-header d-flex align-items-center justify-content-between mb-3">
                   <label class="form-check-label tender-number d-flex align-items-center">
                     <input type="checkbox" class="form-check-input mt-0" />
-                    <span class="fz-14 black-text fw-medium ff-onest">250739020709</span>
+                    <span class="fz-14 black-text fw-medium">250739020709</span>
                   </label>
                   <div class="tender-actions">
-                    <a href="#" class="btn-base btn-base-sm bordered-40 p-10 fz-12">
-                      طلب عرض
-                    </a>
-                    <a href="#" class="base-outlined-btn fz-12 btn-base-sm bordered-40">
-                      طلب استشارة
-                    </a>
+                    <div class="p-sm-absolute">
+                      <a href="#" class="btn-base btn-base-sm bordered-40 p-10 fz-12">
+                        طلب عرض
+                      </a>
+                      <a href="#" class="base-outlined-btn fz-12 btn-base-sm bordered-40">
+                        طلب استشارة
+                      </a>
+                    </div>
                     <button class="smbtn-bg-wh fav-btn">
                       <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
                         <path
@@ -3023,11 +3016,11 @@
                   </div>
                   <div class="tender-section position-relative mb-3">
                     <div class="mb-3">
-                      <span class="fz-10 d-block mb-2 gray-text">النوع</span>
+                      <span class="d-block fz-10 gray-text mb-2">النوع</span>
                       <div class="fz-14 black-text">متناهيه الصغر</div>
                     </div>
                     <div>
-                      <span class="fz-10 d-block mb-2 gray-text">المكان</span>
+                      <span class="d-block mb-2 fz-10 gray-text">المكان</span>
                       <div class="fz-14 black-text">مكة المكرمة</div>
                     </div>
                   </div>
@@ -3035,15 +3028,7 @@
                     <span class="fz-10 gray-text me-4">الوقت المتبقي</span>
                     <div class="d-flex align-items-center">
                       <div class="sm-logo">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                          <path
-                            d="M14.6663 7.99992C14.6663 11.6799 11.6797 14.6666 7.99967 14.6666C4.31967 14.6666 1.33301 11.6799 1.33301 7.99992C1.33301 4.31992 4.31967 1.33325 7.99967 1.33325C11.6797 1.33325 14.6663 4.31992 14.6663 7.99992Z"
-                            fill="white" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                          <path opacity="0.4"
-                            d="M10.4732 10.1199L8.40651 8.88659C8.04651 8.67326 7.75317 8.15992 7.75317 7.73992V5.00659"
-                            stroke="#0C2030" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                        <img src="images/clock.svg" alt="icon">
                       </div>
                       <span class="fw-medium black-text fz-12"><span class="colored fz-14">12</span> يوم
                         <span class="colored fz-14">:20</span> ساعه
@@ -3053,20 +3038,22 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-xxl-4">
               <div class="tender-card p-3 mb-4">
                 <div class="tender-header d-flex align-items-center justify-content-between mb-3">
                   <label class="form-check-label tender-number d-flex align-items-center">
                     <input type="checkbox" class="form-check-input mt-0" />
-                    <span class="fz-14 black-text fw-medium ff-onest">250739020709</span>
+                    <span class="fz-14 black-text fw-medium">250739020709</span>
                   </label>
                   <div class="tender-actions">
-                    <a href="#" class="btn-base btn-base-sm bordered-40 p-10 fz-12">
-                      طلب عرض
-                    </a>
-                    <a href="#" class="base-outlined-btn fz-12 btn-base-sm bordered-40">
-                      طلب استشارة
-                    </a>
+                    <div class="p-sm-absolute">
+                      <a href="#" class="btn-base btn-base-sm bordered-40 p-10 fz-12">
+                        طلب عرض
+                      </a>
+                      <a href="#" class="base-outlined-btn fz-12 btn-base-sm bordered-40">
+                        طلب استشارة
+                      </a>
+                    </div>
                     <button class="smbtn-bg-wh fav-btn">
                       <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
                         <path
@@ -3115,11 +3102,11 @@
                   </div>
                   <div class="tender-section position-relative mb-3">
                     <div class="mb-3">
-                      <span class="fz-10 d-block mb-2 gray-text">النوع</span>
+                      <span class="d-block fz-10 gray-text mb-2">النوع</span>
                       <div class="fz-14 black-text">متناهيه الصغر</div>
                     </div>
                     <div>
-                      <span class="fz-10 d-block mb-2 gray-text">المكان</span>
+                      <span class="d-block mb-2 fz-10 gray-text">المكان</span>
                       <div class="fz-14 black-text">مكة المكرمة</div>
                     </div>
                   </div>
@@ -3127,15 +3114,7 @@
                     <span class="fz-10 gray-text me-4">الوقت المتبقي</span>
                     <div class="d-flex align-items-center">
                       <div class="sm-logo">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                          <path
-                            d="M14.6663 7.99992C14.6663 11.6799 11.6797 14.6666 7.99967 14.6666C4.31967 14.6666 1.33301 11.6799 1.33301 7.99992C1.33301 4.31992 4.31967 1.33325 7.99967 1.33325C11.6797 1.33325 14.6663 4.31992 14.6663 7.99992Z"
-                            fill="white" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                          <path opacity="0.4"
-                            d="M10.4732 10.1199L8.40651 8.88659C8.04651 8.67326 7.75317 8.15992 7.75317 7.73992V5.00659"
-                            stroke="#0C2030" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                        <img src="images/clock.svg" alt="icon">
                       </div>
                       <span class="fw-medium black-text fz-12"><span class="colored fz-14">12</span> يوم
                         <span class="colored fz-14">:20</span> ساعه

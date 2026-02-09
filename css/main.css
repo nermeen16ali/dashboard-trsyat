@@ -4798,7 +4798,7 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
   }
 
   .results-widget .tender-card {
-    padding-bottom: 64px !important;
+    padding-bottom: 58px !important;
   }
 
   .p-sm-absolute {
@@ -4934,6 +4934,10 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
 @media (max-width: 767px) {
   .competition-table thead {
     display: none;
+  }
+
+  .discount {
+    top: 40px;
   }
 
   .timeline-bar {
@@ -5230,6 +5234,10 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
 @media (max-width: 576px) {
   .scrollable-row {
     scroll-snap-type: x mandatory;
+  }
+
+  .btn-main {
+    padding-inline: 8px;
   }
 
   .tender-footer>* {
