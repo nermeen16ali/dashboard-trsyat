@@ -4576,7 +4576,7 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
   }
 
   .filter-bar {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: start;
   }
 
@@ -4938,6 +4938,10 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
 @media (max-width: 767px) {
   .competition-table thead {
     display: none;
+  }
+
+  .filter-btns button {
+    height: 36px;
   }
 
   .lined-stepper::after {
