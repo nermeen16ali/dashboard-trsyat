@@ -1149,6 +1149,7 @@ h6 {
   display: flex;
   align-items: center;
   margin-top: 16px;
+  gap: 16px;
 }
 
 .btn-main {
@@ -4517,6 +4518,10 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     flex-wrap: wrap;
   }
 
+  .mb-20 {
+    margin-bottom: 16px;
+  }
+
   .tender-title {
     margin-block: 12px 8px;
   }
@@ -4941,6 +4946,10 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     display: none;
   }
 
+  .fz-14 p {
+    font-size: 12px;
+  }
+
   table.dataTable {
     border: 0 !important;
   }
@@ -5166,7 +5175,7 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
   .competition-table tr td:not(:first-of-type):not(:last-of-type)::before {
     content: attr(data-label);
     font-size: 10px;
-    color: #6F6F6F;
+    color: #A1A1A1;
     margin-bottom: 8px;
     display: block;
     width: 100%;
@@ -5393,6 +5402,14 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
 
   .tender-footer>* {
     width: 100%;
+  }
+
+  .page-breadcrumb .active {
+    font-size: 17px;
+  }
+
+  .page-header {
+    gap: 16px;
   }
 
   /* Bootstrap Modal Animations - Slide from Bottom */
