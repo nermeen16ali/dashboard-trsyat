@@ -5234,7 +5234,7 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
   }
 
   /* First column: Feature description - acts as card header */
-  .upgrade-table td:first-child {
+  .competition-table.upgrade-table td:first-child {
     /* background: #f7f7f7;
     padding: 16px;
     font-weight: 500;
