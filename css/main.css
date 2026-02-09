@@ -5366,8 +5366,12 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     width: 100%;
   }
 
-  .prim-opacity-outlined {
+  /* .prim-opacity-outlined {
     height: 36px;
+  } */
+  .h-41.fz-14 {
+    height: 38px;
+    font-size: 12px;
   }
 
   .input-box,
