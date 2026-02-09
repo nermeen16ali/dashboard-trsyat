@@ -17,7 +17,7 @@
 
 <body>
     <!-- Filter Modal -->
-    <div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true">
+    <div class="modal fade" id="filterModal" aria-labelledby="filterModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content g-4 w-620">
                 <div class="modal-header brd-btm">
@@ -28,43 +28,39 @@
                     <div class="tender-card p-12">
                         <h6 class="black-text mb-3">المعلومات الاساسية</h6>
                         <div class="tender-card p-12 rounded-12 bg-white d-flex flex-column gap-3">
-                            <div class="search-wrapper position-relative">
-                                <div class="icon-box">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
-                                        fill="none">
-                                        <path
-                                            d="M9.58335 17.5003C13.9556 17.5003 17.5 13.9559 17.5 9.58366C17.5 5.2114 13.9556 1.66699 9.58335 1.66699C5.2111 1.66699 1.66669 5.2114 1.66669 9.58366C1.66669 13.9559 5.2111 17.5003 9.58335 17.5003Z"
-                                            stroke="white" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round"></path>
-                                        <path opacity="0.4" d="M18.3334 18.3337L16.6667 16.667" stroke="white"
-                                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    </svg>
-                                </div>
-                                <input type="text" placeholder="ادخل الرقم المرجعي" class="form-control">
-                            </div>
-                            <div>
+                            <div class="regions-wrapper">
                                 <label class="form-label">حالة المنافسة</label>
-                                <select class="form-select form-control select2-multi" multiple="multiple"
-                                    data-placeholder="اختر حاله المنافسه">
+                                <select id="competition-status" class="form-select filter-select form-control"
+                                    multiple="multiple" data-placeholder="اختر حاله المنافسه">
                                     <option value="1">متاحة</option>
                                     <option value="2">مقبولة</option>
                                     <option value="3">مرفوضة</option>
                                 </select>
+                                <div class="regions-tags selected-tags"></div>
                             </div>
-                            <div class="form-group">
+                            <div class="regions-wrapper">
                                 <label class="form-label">المناطق</label>
-                                <select id="regions" class="form-select" multiple>
+                                <select class="form-select filter-select" data-placeholder="اختر المناطق" multiple>
                                     <option value="riyadh">الرياض</option>
                                     <option value="jeddah">جدة</option>
                                     <option value="dammam">الدمام</option>
-                                    <option value="makkah">مكة المكرمة</option>
-                                    <option value="madinah">المدينة المنورة</option>
                                 </select>
-                                <div id="regions-tags" class="selected-tags"></div>
+                                <div class="regions-tags selected-tags"></div>
+                            </div>
+                            <div class="regions-wrapper">
+                                <label class="form-label">موقع التسليم</label>
+                                <select id="delivery-location" class="form-select filter-select form-control"
+                                    data-placeholder="اختر موقع التسليم" multiple>
+                                    <option value="" placeholder>اختر موقع التسليم</option>
+                                    <option value="location1">موقع التسليم 1</option>
+                                    <option value="location2">موقع التسليم 2</option>
+                                    <option value="location3">موقع التسليم 3</option>
+                                </select>
+                                <div class="regions-tags selected-tags"></div>
                             </div>
                             <div>
-                                <label class="form-label">النشاط الأساسي</label>
-                                <select class="form-select form-control select2-multi" multiple="multiple"
+                                <label class="form-label">النوع</label>
+                                <select id="type" class="form-select filter-select form-control"
                                     data-placeholder="اختر النشاط الأساسي">
                                     <option value="1">تجهيز مكاتب</option>
                                     <option value="2">أثاث</option>
@@ -1376,78 +1372,7 @@
     <!-- Select2 JS -->
     <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
     <script src="js/main.js"></script>
-    <script>
-        // حالة المنافسة
-        new Choices('#competition-status', {
-            searchEnabled: true,
-            searchPlaceholderValue: 'بحث...',
-            itemSelectText: '',
-            noResultsText: 'لا توجد نتائج',
-            shouldSort: false
-        });
-
-        // المناطق - Multi Select with external tags
-        const regionsSelect = new Choices('#regions', {
-            searchEnabled: true,
-            searchPlaceholderValue: 'بحث...',
-            removeItemButton: false,
-            itemSelectText: '',
-            noResultsText: 'لا توجد نتائج',
-            placeholderValue: 'اختر المناطق',
-            shouldSort: false
-        });
-
-        const regionsTagsContainer = document.getElementById('regions-tags');
-
-        function updateRegionsTags() {
-            const selectedValues = regionsSelect.getValue(true);
-            const selectedItems = regionsSelect.getValue();
-
-            regionsTagsContainer.innerHTML = '';
-
-            if (Array.isArray(selectedItems)) {
-                selectedItems.forEach(item => {
-                    const tag = document.createElement('span');
-                    tag.className = 'selected-tag';
-                    tag.innerHTML = `
-          ${item.label}
-          <button type="button" class="remove-btn" data-value="${item.value}">✕</button>
-        `;
-                    regionsTagsContainer.appendChild(tag);
-                });
-            }
-        }
-
-        // Listen for changes
-        document.getElementById('regions').addEventListener('change', updateRegionsTags);
-
-        // Remove tag on click
-        regionsTagsContainer.addEventListener('click', function (e) {
-            if (e.target.classList.contains('remove-btn')) {
-                const valueToRemove = e.target.getAttribute('data-value');
-                regionsSelect.removeActiveItemsByValue(valueToRemove);
-                updateRegionsTags();
-            }
-        });
-
-        // موقع التسليم
-        new Choices('#delivery-location', {
-            searchEnabled: true,
-            searchPlaceholderValue: 'بحث...',
-            itemSelectText: '',
-            noResultsText: 'لا توجد نتائج',
-            shouldSort: false
-        });
-
-        // النوع
-        new Choices('#type', {
-            searchEnabled: true,
-            searchPlaceholderValue: 'بحث...',
-            itemSelectText: '',
-            noResultsText: 'لا توجد نتائج',
-            shouldSort: false
-        });
-    </script>
+    <script src="js/multi-choices.js"></script>
 
 </body>
 

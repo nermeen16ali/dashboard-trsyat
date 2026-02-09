@@ -11,36 +11,106 @@
 
     <!-- Bootstrap 5 LTR CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- Flatpickr CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/themes/material_blue.css" />
+    <link href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/main.css" />
 </head>
 
 <body>
-    <div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="centeredModalLabel" aria-hidden="true">
+    <!-- Filter Modal -->
+    <div class="modal fade" id="filterModal" aria-labelledby="filterModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content w-620">
-                <div class="modal-header">
-                    <h1 class="modal-title fz-20" id="centeredModalLabel">
-                        Filter Tenders
-                    </h1>
+            <div class="modal-content g-4 w-620">
+                <div class="modal-header brd-btm">
+                    <h6 class="modal-title" id="filterModalLabel">Filter</h6>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+
                 <div class="modal-body">
-                    Filter options will appear here.
+                    <div class="tender-card p-12">
+                        <h6 class="black-text mb-3">Basic Information</h6>
+
+                        <div class="tender-card p-12 rounded-12 bg-white d-flex flex-column gap-3">
+                            <div class="regions-wrapper">
+                                <label class="form-label">Competition Status</label>
+                                <select id="competition-status" class="form-select filter-select form-control"
+                                    multiple="multiple" data-placeholder="Select competition status">
+                                    <option value="1">Available</option>
+                                    <option value="2">Accepted</option>
+                                    <option value="3">Rejected</option>
+                                </select>
+                                <div class="regions-tags selected-tags"></div>
+                            </div>
+
+                            <div class="regions-wrapper">
+                                <label class="form-label">Regions</label>
+                                <select class="form-select filter-select" data-placeholder="Select regions" multiple>
+                                    <option value="riyadh">Riyadh</option>
+                                    <option value="jeddah">Jeddah</option>
+                                    <option value="dammam">Dammam</option>
+                                </select>
+                                <div class="regions-tags selected-tags"></div>
+                            </div>
+
+                            <div class="regions-wrapper">
+                                <label class="form-label">Delivery Location</label>
+                                <select id="delivery-location" class="form-select filter-select form-control"
+                                    data-placeholder="Select delivery location" multiple>
+                                    <option value="" placeholder>Select delivery location</option>
+                                    <option value="location1">Delivery Location 1</option>
+                                    <option value="location2">Delivery Location 2</option>
+                                    <option value="location3">Delivery Location 3</option>
+                                </select>
+                                <div class="regions-tags selected-tags"></div>
+                            </div>
+
+                            <div>
+                                <label class="form-label">Type</label>
+                                <select id="type" class="form-select filter-select form-control"
+                                    data-placeholder="Select main activity">
+                                    <option value="1">Office Fit-out</option>
+                                    <option value="2">Furniture</option>
+                                    <option value="3">Information Technology</option>
+                                    <option value="4">Maintenance</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn-secondary" data-bs-dismiss="modal">
-                        Close
+
+                <div class="modal-footer pt-0 gap-3 flex-nowrap">
+                    <button type="button" class="btn-main h-41 btn-primary w-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path
+                                d="M9.58366 17.4993C13.9559 17.4993 17.5003 13.9549 17.5003 9.58268C17.5003 5.21043 13.9559 1.66602 9.58366 1.66602C5.2114 1.66602 1.66699 5.21043 1.66699 9.58268C1.66699 13.9549 5.2114 17.4993 9.58366 17.4993Z"
+                                stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path opacity="0.4" d="M18.3337 18.3327L16.667 16.666" stroke="white" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <span>Search</span>
                     </button>
-                    <button type="button" class="btn-primary">Save changes</button>
+
+                    <button type="button" class="btn-main h-41 btn-primary-outline w-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path
+                                d="M8.56641 16.875H14.1664C16.4664 16.875 18.3331 15.0083 18.3331 12.7083V7.29167C18.3331 4.99167 16.4664 3.125 14.1664 3.125H8.56641C7.39141 3.125 6.27474 3.61667 5.48307 4.49167L2.54141 7.725C1.36641 9.01667 1.36641 10.9833 2.54141 12.275L5.48307 15.5083C6.27474 16.3833 7.39141 16.875 8.56641 16.875Z"
+                                stroke="#397D86" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <g opacity="0.4">
+                                <path d="M13.3335 12.0581L9.2168 7.94141" stroke="#397D86" stroke-width="1.5"
+                                    stroke-linecap="round" />
+                                <path d="M9.2168 12.0581L13.3335 7.94141" stroke="#397D86" stroke-width="1.5"
+                                    stroke-linecap="round" />
+                            </g>
+                        </svg>
+                        <span>Clear</span>
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!--Notification Modal-->
+
+    <!-- Notification Modal -->
     <div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="centeredModalLabel8"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -50,16 +120,18 @@
                         <h4 class="modal-title fz-20" id="centeredModalLabel8">
                             Notifications
                         </h4>
-                        <p class="text-gray fz-14">Stay updated with notifications</p>
+                        <p class="text-gray fz-14">Stay up to date with notifications</p>
                     </div>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+
                 <div class="modal-body">
                     <div class="notification-tabs fw-medium">
                         <button class="notification-tab active">All</button>
                         <button class="notification-tab">Unread (12)</button>
-                        <a href="notifications-ltr.html" class="ms-auto colored">Read All</a>
+                        <a href="notifications.html" class="ms-auto colored">Mark all as read</a>
                     </div>
+
                     <div class="notification-list">
                         <!-- Today -->
                         <div class="notification-item unread">
@@ -68,8 +140,10 @@
                             </div>
                             <div class="notification-content">
                                 <h6 class="fz-14 fw-medium mb-10 black-text">Your request has been received</h6>
-                                <p class="fz-12 text-gray">The tender request has been successfully received and is
-                                    being reviewed by the administration.</p>
+                                <p class="fz-12 text-gray">
+                                    Your competition request has been received successfully and is currently under
+                                    review by the administration.
+                                </p>
                             </div>
                             <div class="d-flex align-items-center gap-4">
                                 <span class="text-dark-gray fz-12 fw-medium">11:30 PM</span>
@@ -85,8 +159,9 @@
                             </div>
                             <div class="notification-content">
                                 <div class="fz-14 fw-medium mb-10 black-text">Your request is under review</div>
-                                <div class="fz-12 text-gray">The tender request is currently being reviewed, and you
-                                    will be notified once action is taken.
+                                <div class="fz-12 text-gray">
+                                    Your competition request is currently being reviewed, and you will be notified once
+                                    an action is taken.
                                 </div>
                             </div>
                             <div class="d-flex align-items-center gap-4">
@@ -102,9 +177,11 @@
                                 <img src="images/ic-sharp-block.svg" alt="icon">
                             </div>
                             <div class="notification-content">
-                                <div class="fz-14 fw-medium mb-10 black-text">Request Rejected</div>
-                                <div class="fz-12 text-gray">We regret to inform you that your tender request has been
-                                    rejected. You can review the details to see the reason.</div>
+                                <div class="fz-14 fw-medium mb-10 black-text">Request rejected</div>
+                                <div class="fz-12 text-gray">
+                                    We regret to inform you that your competition request has been rejected. You can
+                                    review the details to know the reason.
+                                </div>
                             </div>
                             <div class="d-flex align-items-center gap-4">
                                 <span class="text-dark-gray fz-12 fw-medium">11:30 PM</span>
@@ -119,9 +196,10 @@
                                 <img src="images/tabler-edit.svg" alt="icon">
                             </div>
                             <div class="notification-content">
-                                <div class="fz-14 fw-medium mb-10 black-text">Action Required: Update Request</div>
-                                <div class="fz-12 text-gray">Please make the required adjustments to your tender request
-                                    to complete the review.
+                                <div class="fz-14 fw-medium mb-10 black-text">Modification required</div>
+                                <div class="fz-12 text-gray">
+                                    Please make the required modifications to your competition request to complete the
+                                    review.
                                 </div>
                             </div>
                             <div class="d-flex align-items-center gap-4">
@@ -140,9 +218,10 @@
                                 <img src="images/carbon-close-outline.svg" alt="icon">
                             </div>
                             <div class="notification-content">
-                                <div class="fz-14 fw-medium mb-10 black-text">Tender Closing Soon</div>
-                                <div class="fz-12 text-gray">There is little time left until the submission deadline for
-                                    this tender.</div>
+                                <div class="fz-14 fw-medium mb-10 black-text">Tender closing soon</div>
+                                <div class="fz-12 text-gray">
+                                    There is little time left before the submission deadline for this tender.
+                                </div>
                             </div>
                             <div class="d-flex align-items-center gap-4">
                                 <span class="text-dark-gray fz-12 fw-medium">11:30 PM</span>
@@ -157,9 +236,9 @@
                                 <img src="images/report.svg" alt="icon">
                             </div>
                             <div class="notification-content">
-                                <div class="fz-14 fw-medium mb-10 black-text">Award Announced</div>
-                                <div class="fz-12 text-gray">The award result for this tender has been announced. You
-                                    can view the details.
+                                <div class="fz-14 fw-medium mb-10 black-text">Award announcement published</div>
+                                <div class="fz-12 text-gray">
+                                    The award result for this tender has been announced. You can view the details.
                                 </div>
                             </div>
                             <div class="d-flex align-items-center gap-4">
@@ -171,15 +250,17 @@
                         </div>
 
                         <!-- Older -->
-                        <div class="black-text fw-medium mb-3">5 November 2025</div>
+                        <div class="black-text fw-medium mb-3">November 5, 2025</div>
 
                         <div class="notification-item">
                             <div class="notification-icon success">
                                 <img src="images/Tax-Law.svg" alt="icon">
                             </div>
                             <div class="notification-content">
-                                <div class="fz-14 fw-medium mb-10 black-text">Price Offer Sent</div>
-                                <div class="fz-12 text-gray">Your price offer has been sent successfully.</div>
+                                <div class="fz-14 fw-medium mb-10 black-text">Price quotation submitted</div>
+                                <div class="fz-12 text-gray">
+                                    Your price quotation has been submitted successfully.
+                                </div>
                             </div>
                             <div class="d-flex align-items-center gap-4">
                                 <span class="text-dark-gray fz-12 fw-medium">11:30 PM</span>
@@ -194,9 +275,10 @@
                                 <img src="images/Tax-Law.svg" alt="icon">
                             </div>
                             <div class="notification-content">
-                                <div class="fz-14 fw-medium mb-10 black-text">Response from Administration</div>
-                                <div class="fz-12 text-gray">The administration has added a note to your request. Please
-                                    review it.</div>
+                                <div class="fz-14 fw-medium mb-10 black-text">Response from administration</div>
+                                <div class="fz-12 text-gray">
+                                    The administration has added a note to your request. Please review it.
+                                </div>
                             </div>
                             <div class="d-flex align-items-center gap-4">
                                 <span class="text-dark-gray fz-12 fw-medium">11:30 PM</span>
@@ -205,15 +287,17 @@
                                 </a>
                             </div>
                         </div>
-                        <a href="notifications-ltr.html"
-                            class="d-block p-10 fz-14 fw-medium w-100 rounded-12 btn-primary w-100 text-center">
-                            View All Notifications
+
+                        <a href="notifications.html"
+                            class="d-block p-10 fz-14 fw-medium w-100 rounded-12 btn-primary text-center">
+                            View all notifications
                         </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 
     <!-- Top Navigation Bar -->
     <nav class="navbar navbar-dark top-navbar navbar-expand-lg">
@@ -701,7 +785,7 @@
                 </div>
             </div>
             <!-- Search and Filter Bar -->
-            <div class="d-flex justify-content-between align-items-center search-filter-bar gap-3 mb-4">
+            <div class="d-flex justify-content-between align-items-center search-filter-bar gap-2 gap-md-3 mb-4">
                 <div class="search-box w-100 position-relative">
                     <input type="text" class="form-control" placeholder="Search in Tenders" name="Search" />
                     <span class="search-icon position-absolute">
@@ -1303,15 +1387,13 @@
             </nav>
         </div>
     </div>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- ✅ Flatpickr JS -->
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js"></script>
+    <!-- Select2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
     <!-- Custom JS -->
     <script src="js/main.js"></script>
-    <script src="js/calender.js"></script>
+    <script src="js/multi-choices.js"></script>
 </body>
 
 </html>

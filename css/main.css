@@ -3669,6 +3669,16 @@ html[dir="ltr"] .notification-list .icon-container.gray-outline-btn {
   gap: 12px;
 }
 
+html[dir="rtl"] .choices[data-type*=select-one]::after {
+  right: unset;
+  left: 12px;
+}
+
+/* When a Choices dropdown is open, round only top corners */
+.choices.is-open .choices__inner {
+  border-radius: 8px 8px 0 0;
+}
+
 .activity-selection-modal .tag {
   display: flex;
   align-items: center;
@@ -4391,13 +4401,23 @@ a.colored:hover {
   margin-bottom: 0;
 }
 
+.choices__input {
+  margin: 0;
+  background: transparent;
+}
+
 .choices__inner {
   border: 1px solid #e5e5e5;
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 10px 14px;
-  background: #fff;
-  min-height: 48px;
+  height: 44px;
+  background-color: var(--white-color);
   font-size: 14px;
+}
+
+.choices__list--dropdown,
+.choices__list[aria-expanded] {
+  border-radius: 0 0 8px 8px;
 }
 
 .choices__inner:hover {
@@ -4428,6 +4448,23 @@ a.colored:hover {
   display: none;
 }
 
+/* Add + icon to multi-selects */
+.choices[data-type*="select-multiple"]::after {
+  content: "+";
+  position: absolute;
+  top: 54%;
+  transform: translateY(-50%);
+  color: #397D86;
+  font-size: 20px;
+  font-weight: 300;
+  right: 14px;
+  pointer-events: none;
+}
+
+html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
+  left: 14px;
+}
+
 /* Selected tags container */
 .selected-tags {
   display: flex;
@@ -4437,25 +4474,25 @@ a.colored:hover {
 }
 
 .selected-tag {
-  background-color: var(--primary-color);
-  color: #fff;
-  padding: 8px 14px;
-  border-radius: 20px;
+  color: #397D86;
+  background: var(--white-color);
+  padding: 8px 12px;
+  border-radius: 8px;
   font-size: 13px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  border: 1px solid #E8E8E8;
 }
 
 .selected-tag .remove-btn {
   background: none;
   border: none;
-  color: #fff;
+  color: #000;
   cursor: pointer;
   padding: 0;
-  font-size: 14px;
-  line-height: 1;
-  opacity: 0.8;
+  font-size: 12px;
+  line-height: 21px;
   display: flex;
   align-items: center;
   justify-content: center;
