@@ -675,6 +675,14 @@ h6 {
 .services-row .tender-card {
   border-color: #e8e8e8;
   padding: 21px;
+  transition: all 0.3s ease;
+}
+
+.services-row .tender-card:hover {
+  background-color: #6bafb84f;
+  border-color: #6bafb84f;
+  color: white;
+  transform: translateY(-5px);
 }
 
 .decleration-row {
