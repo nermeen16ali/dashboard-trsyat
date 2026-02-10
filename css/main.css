@@ -4957,6 +4957,10 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     display: none;
   }
 
+  h5 {
+    font-size: 16px;
+  }
+
   .fz-14 p {
     font-size: 12px;
   }
