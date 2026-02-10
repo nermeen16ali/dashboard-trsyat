@@ -809,7 +809,7 @@
               <img src="images/service-icon.svg" alt="Technical Proposal Preparation">
             </div>
             <h6 class="heading mb-12">Technical Proposal Preparation</h6>
-            <p class="text-gray fz-14 mb-4">Let our experts help you prepare professional technical proposals</p>
+            <p class="text-gray fz-12 mb-4">Let our experts help you prepare professional technical proposals</p>
             <a href="#" class="btn-otlined-prim">Request Service</a>
           </div>
         </div>
@@ -820,7 +820,7 @@
               <img src="images/service-icon2.svg" alt="Tender Consultation">
             </div>
             <h6 class="heading mb-12">Tender Consultation</h6>
-            <p class="text-gray fz-14 mb-4">Get specialized consultation to increase your winning chances</p>
+            <p class="text-gray fz-12 mb-4">Get specialized consultation to increase your winning chances</p>
             <a href="#" class="btn-otlined-prim">Request Service</a>
           </div>
         </div>
@@ -831,7 +831,7 @@
               <img src="images/service-icon3.svg" alt="Pricing Service">
             </div>
             <h6 class="heading mb-12">Pricing Service</h6>
-            <p class="text-gray fz-14 mb-4">Advanced analysis for competitive pricing</p>
+            <p class="text-gray fz-12 mb-4">Advanced analysis for competitive pricing</p>
             <a href="#" class="btn-otlined-prim">Request Service</a>
           </div>
         </div>
@@ -839,7 +839,7 @@
     </div>
     <!-- Declaration/Alerts Row -->
     <div class="decleration-row mb-4">
-      <div class="row gy-4">
+      <div class="row gy-4 align-items-lg-center">
         <div class="col-lg-3">
           <div class="d-flex align-items-center justify-content-start justify-content-lg-center gap-3">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -893,7 +893,7 @@
     </div>
 
     <!-- Recommended Tenders -->
-    <div class="dash-widget sm-0 p-lg-4 mb-4">
+    <div class="dash-widget results-widget sm-0 p-md-4 mb-4">
       <div class="d-flex align-items-center justify-content-between mb-32">
         <h5 class="heading">Recommended Tenders</h5>
         <a href="#" class="view-link">
@@ -907,53 +907,68 @@
         </a>
       </div>
       <div class="row">
-        <!-- Tender Card 1 -->
         <div class="col-md-6 mb-4">
           <div class="tender-card p-3">
             <div class="tender-header d-flex align-items-center justify-content-between mb-3">
               <label class="form-check-label tender-number d-flex align-items-center">
                 <input type="checkbox" class="form-check-input mt-0">
-                <span>Tender Number/Code </span>
+                <span>Tender No. / Code </span>
                 <span class="fz-14 black-text fw-medium">250739020709</span>
               </label>
               <div class="tender-actions">
-                <a href="#" class="btn-primary sm-ele fz-12 bordered-40"> Details </a>
+                <div class="p-sm-absolute">
+                  <a href="#" class="btn-primary sm-ele fz-12 bordered-40">
+                    Details
+                  </a>
+                </div>
                 <div class="dropdown">
                   <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton1"
                     data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="images/drop-bullets.svg" alt="options">
+                    <img src="images/drop-bullets.svg" alt="drop-bullets">
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item b-dash" href="#">Option 1</a></li>
-                    <li><a class="dropdown-item" href="#">Option 2</a></li>
+                    <li>
+                      <a class="dropdown-item b-dash" href="#">Option 1</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Option 2</a>
+                    </li>
                   </ul>
                 </div>
               </div>
             </div>
+
             <div class="tender-sections p-3 rounded-12 bg-white">
               <div class="tender-section position-relative">
-                <div class="row align-items-center">
-                  <div class="col-lg-5">
-                    <div class="d-flex align-items-center gap-10">
-                      <span class="tender-status me-3 flex-shrink-0">Request for Proposals</span>
+                <div class="row align-items-md-center">
+                  <div class="col-8">
+                    <div class="d-flex flex-column flex-md-row align-items-md-center gap-10">
+                      <span class="tender-status me-3 flex-shrink-0">Call for Bids</span>
                       <span class="fz-12 gray-text flex-shrink-0">Publication Date</span>
                       <span class="fz-14 black-text fw-medium flex-shrink-0">05-12-2025</span>
                     </div>
-                    <h6 class="tender-title">Office Equipment and Furniture</h6>
-                    <div class="tender-subtitle">Ministry of Health</div>
+                    <div class="d-flex flex-column flex-lg-row gap-3 justify-content-between">
+                      <div>
+                        <h6 class="tender-title">Office Preparation and Furnishing</h6>
+                        <div class="tender-subtitle">Ministry of Health</div>
+                      </div>
+                      <div>
+                        <span class="fz-12 gray-text">Main Activity</span>
+                        <div class="fz-14 black-text">
+                          Interior Design and Fit-Out
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="col-lg-4">
-                    <span class="fz-12 gray-text">Main Activity</span>
-                    <div class="fz-14 black-text">Interior Design and Fixtures</div>
-                  </div>
-                  <div class="col-lg-3">
+                  <div class="col-4">
                     <div class="d-flex justify-content-end">
                       <div class="position-relative">
-                        <svg class="progress-svg" viewBox="0 0 100 100">
+                        <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
                           <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none"></circle>
                           <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4" fill="none"
                             stroke-dasharray="134.6 125.6"></circle>
                         </svg>
+
                         <div class="position-absolute top-50 start-50 translate-middle text-center">
                           <div>200</div>
                           <div>Days</div>
@@ -963,92 +978,127 @@
                   </div>
                 </div>
               </div>
+
               <div class="tender-section">
-                <div class="row">
+                <div class="row gy-3">
                   <div class="col-lg-5">
                     <div class="d-flex align-items-center">
-                      <div class="sm-logo"><img src="images/clock.svg" alt="Clock"></div>
+                      <div class="sm-logo">
+                        <img src="images/clock.svg" alt="Clock">
+                      </div>
                       <div>
-                        <span class="fz-12 gray-text">Submission Deadline</span>
+                        <span class="fz-12 gray-text">Bid Submission Deadline</span>
                         <div>
-                          <span class="black-text fz-12 fw-medium d-inline-block me-1">04:30 PM</span>
-                          <span class="black-text fz-12 fw-medium">05-12-2025</span>
+                          <span class="black-text fz-12 fw-medium d-inline-block me-1" dir="ltr">
+                            04:30 pm
+                          </span>
+                          <span class="black-text fz-12 fw-medium">
+                            05-12-2025
+                          </span>
                         </div>
                       </div>
                     </div>
                   </div>
+
                   <div class="col-lg-4">
                     <div class="d-flex align-items-center">
-                      <div class="sm-logo"><img src="images/clock.svg" alt="Clock"></div>
+                      <div class="sm-logo">
+                        <img src="images/clock.svg" alt="Clock">
+                      </div>
                       <div>
                         <span class="fz-12 gray-text">Discussion Meeting Date</span>
                         <div>
-                          <span class="black-text fz-12 fw-medium d-inline-block me-1">01:00 PM</span>
-                          <span class="black-text fz-12 fw-medium">05-12-2025</span>
+                          <span class="black-text fz-12 fw-medium d-inline-block me-1" dir="ltr">
+                            01:00 pm
+                          </span>
+                          <span class="black-text fz-12 fw-medium">
+                            05-12-2025
+                          </span>
                         </div>
                       </div>
                     </div>
                   </div>
+
                   <div class="col-lg-3">
                     <div class="tender-price d-flex justify-content-end">
                       <div>
-                        <span class="fz-12 gray-text d-block mb-2">Documents Price</span>
-                        <span class="fs-6 black-text fw-medium">200.50 SAR</span>
+                        <span class="fz-12 gray-text d-block mb-2">Document Price</span>
+                        <span class="fs-6 black-text fw-medium">
+                          200.50
+                          <img src="images/ryall.svg" alt="Riyal">
+                        </span>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
-        <!-- Tender Card 2 (Duplicate for demo) -->
+
         <div class="col-md-6 mb-4">
           <div class="tender-card p-3">
             <div class="tender-header d-flex align-items-center justify-content-between mb-3">
               <label class="form-check-label tender-number d-flex align-items-center">
                 <input type="checkbox" class="form-check-input mt-0">
-                <span>Tender Number/Code </span>
+                <span>Tender No. / Code </span>
                 <span class="fz-14 black-text fw-medium">250739020709</span>
               </label>
               <div class="tender-actions">
-                <a href="#" class="btn-primary sm-ele fz-12 bordered-40"> Details </a>
+                <div class="p-sm-absolute">
+                  <a href="#" class="btn-primary sm-ele fz-12 bordered-40">
+                    Details
+                  </a>
+                </div>
                 <div class="dropdown">
                   <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton1"
                     data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="images/drop-bullets.svg" alt="options">
+                    <img src="images/drop-bullets.svg" alt="drop-bullets">
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item b-dash" href="#">Option 1</a></li>
-                    <li><a class="dropdown-item" href="#">Option 2</a></li>
+                    <li>
+                      <a class="dropdown-item b-dash" href="#">Option 1</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Option 2</a>
+                    </li>
                   </ul>
                 </div>
               </div>
             </div>
+
             <div class="tender-sections p-3 rounded-12 bg-white">
               <div class="tender-section position-relative">
-                <div class="row align-items-center">
-                  <div class="col-md-5">
-                    <div class="d-flex align-items-center gap-10">
-                      <span class="tender-status me-3 flex-shrink-0">Request for Proposals</span>
+                <div class="row align-items-md-center">
+                  <div class="col-8">
+                    <div class="d-flex flex-column flex-md-row align-items-md-center gap-10">
+                      <span class="tender-status me-3 flex-shrink-0">Call for Bids</span>
                       <span class="fz-12 gray-text flex-shrink-0">Publication Date</span>
                       <span class="fz-14 black-text fw-medium flex-shrink-0">05-12-2025</span>
                     </div>
-                    <h6 class="tender-title">Office Equipment and Furniture</h6>
-                    <div class="tender-subtitle">Ministry of Health</div>
+                    <div class="d-flex flex-column flex-lg-row gap-3 justify-content-between">
+                      <div>
+                        <h6 class="tender-title">Office Preparation and Furnishing</h6>
+                        <div class="tender-subtitle">Ministry of Health</div>
+                      </div>
+                      <div>
+                        <span class="fz-12 gray-text">Main Activity</span>
+                        <div class="fz-14 black-text">
+                          Interior Design and Fit-Out
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="col-md-4">
-                    <span class="fz-12 gray-text">Main Activity</span>
-                    <div class="fz-14 black-text">Interior Design and Fixtures</div>
-                  </div>
-                  <div class="col-md-3">
+                  <div class="col-4">
                     <div class="d-flex justify-content-end">
                       <div class="position-relative">
-                        <svg class="progress-svg" viewBox="0 0 100 100">
+                        <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
                           <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none"></circle>
                           <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4" fill="none"
                             stroke-dasharray="134.6 125.6"></circle>
                         </svg>
+
                         <div class="position-absolute top-50 start-50 translate-middle text-center">
                           <div>200</div>
                           <div>Days</div>
@@ -1058,53 +1108,73 @@
                   </div>
                 </div>
               </div>
+
               <div class="tender-section">
-                <div class="row">
+                <div class="row gy-3">
                   <div class="col-lg-5">
                     <div class="d-flex align-items-center">
-                      <div class="sm-logo"><img src="images/clock.svg" alt="Clock"></div>
+                      <div class="sm-logo">
+                        <img src="images/clock.svg" alt="Clock">
+                      </div>
                       <div>
-                        <span class="fz-12 gray-text">Submission Deadline</span>
+                        <span class="fz-12 gray-text">Bid Submission Deadline</span>
                         <div>
-                          <span class="black-text fz-12 fw-medium d-inline-block me-1">04:30 PM</span>
-                          <span class="black-text fz-12 fw-medium">05-12-2025</span>
+                          <span class="black-text fz-12 fw-medium d-inline-block me-1" dir="ltr">
+                            04:30 pm
+                          </span>
+                          <span class="black-text fz-12 fw-medium">
+                            05-12-2025
+                          </span>
                         </div>
                       </div>
                     </div>
                   </div>
+
                   <div class="col-lg-4">
                     <div class="d-flex align-items-center">
-                      <div class="sm-logo"><img src="images/clock.svg" alt="Clock"></div>
+                      <div class="sm-logo">
+                        <img src="images/clock.svg" alt="Clock">
+                      </div>
                       <div>
                         <span class="fz-12 gray-text">Discussion Meeting Date</span>
                         <div>
-                          <span class="black-text fz-12 fw-medium d-inline-block me-1">01:00 PM</span>
-                          <span class="black-text fz-12 fw-medium">05-12-2025</span>
+                          <span class="black-text fz-12 fw-medium d-inline-block me-1" dir="ltr">
+                            01:00 pm
+                          </span>
+                          <span class="black-text fz-12 fw-medium">
+                            05-12-2025
+                          </span>
                         </div>
                       </div>
                     </div>
                   </div>
+
                   <div class="col-lg-3">
                     <div class="tender-price d-flex justify-content-end">
                       <div>
-                        <span class="fz-12 gray-text d-block mb-2">Documents Price</span>
-                        <span class="fs-6 black-text fw-medium">200.50 SAR</span>
+                        <span class="fz-12 gray-text d-block mb-2">Document Price</span>
+                        <span class="fs-6 black-text fw-medium">
+                          200.50
+                          <img src="images/ryall.svg" alt="Riyal">
+                        </span>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
+
       </div>
     </div>
     <!-- Bottom Charts Row -->
-    <div class="row">
+    <div class="row gy-3">
       <!-- Request Status -->
       <div class="col-lg-4">
-        <div class="dash-widget p-4 h-100">
-          <div class="d-flex justify-content-between align-items-center">
+        <div class="dash-widget p-4">
+          <div class="d-flex justify-content-between align-items-center mb-5">
             <h5 class="heading">Request Status</h5>
             <a href="#" class="view-link">
               View <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -1115,7 +1185,7 @@
               </svg>
             </a>
           </div>
-          <div class="chart-container h-100">
+          <div class="chart-wrapper">
             <!-- Custom Progress Bars for Request Status -->
             <div class="d-flex flex-column justify-content-center h-100 gap-4">
               <div class="status-item">
