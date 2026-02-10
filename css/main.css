@@ -1563,7 +1563,8 @@ button.gray-outline-btn.red-colored:hover {
   transition: all 0.3s ease;
 }
 
-.prim-opacity-outlined:hover {
+button.prim-opacity-outlined:hover,
+a.prim-opacity-outlined:hover {
   background-color: var(--primary-color);
   color: var(--white-color);
 }
