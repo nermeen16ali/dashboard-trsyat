@@ -4553,6 +4553,7 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     border: none;
     background: unset;
     padding: 0 !important;
+    border-radius: 0;
   }
 
   .filter-sidebar>*:not(.filter-header):not(.search-wrapper) {
