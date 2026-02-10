@@ -67,6 +67,12 @@ ol {
   --font-secondary: "Onest", sans-serif;
 }
 
+/* RTL/LTR Orientation Utilities */
+html[dir="ltr"] .flip-ltr {
+  transform: scaleX(-1);
+  display: inline-block;
+}
+
 /* Default global usage */
 body {
   font-weight: 400;
