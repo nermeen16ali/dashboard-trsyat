@@ -87,11 +87,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     rtl: true,
                     labels: {
                         usePointStyle: true,
-                        boxWidth: 6,
-                        padding: 16,
+                        boxWidth: 20,
+                        padding: 20,
                         font: {
                             family: 'Expo Arabic',
-                            size: 14
+                            size: 10
                         },
                         generateLabels: (chart) =>
                             chart.data.datasets.map((dataset, i) => ({
@@ -100,8 +100,8 @@ document.addEventListener('DOMContentLoaded', function () {
                                 strokeStyle: dataset.borderColor,
                                 hidden: !chart.isDatasetVisible(i),
                                 index: i,
-                                pointStyle: 'circle',
-                                padding: 12   // 👈 SPACE between bullet and text
+                                pointStyle: 'line',
+                                padding: 16   // 👈 SPACE between bullet and text
                             }))
                     }
                 }
