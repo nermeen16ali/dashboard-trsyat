@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
             labels: ['Won', 'Lost', 'Under Review'],
             chart: {
                 type: 'pie',
-                height: 180, // Further reduced to leave room for labels
+                height: 250,
                 fontFamily: 'Inter, sans-serif',
                 animations: animationConfig,
                 toolbar: { show: false }
@@ -144,27 +144,36 @@ document.addEventListener('DOMContentLoaded', function () {
             colors: ['#6AB8C2', '#F55960', '#F7A62C'],
             dataLabels: {
                 enabled: true,
-                formatter: function (val, opts) {
-                    return opts.w.config.labels[opts.seriesIndex] + " " + Math.round(val) + "%";
-                },
                 style: {
-                    fontSize: '11px',
+                    fontSize: '12px',
                     fontFamily: 'Inter, sans-serif',
-                    fontWeight: 700,
-                    colors: ['#6AB8C2', '#F55960', '#F7A62C']
+                    fontWeight: 600,
                 },
                 dropShadow: { enabled: false },
-                background: { enabled: false }
             },
             plotOptions: {
                 pie: {
                     dataLabels: {
-                        offset: 15,
-                        minAngleToShowLabel: 10
+                        offset: -5,
                     }
                 }
             },
-            legend: { show: false },
+            legend: {
+                show: true,
+                position: 'bottom',
+                horizontalAlign: 'center',
+                fontSize: '14px',
+                fontFamily: 'Inter, sans-serif',
+                markers: {
+                    width: 10,
+                    height: 10,
+                    radius: 12,
+                },
+                itemMargin: {
+                    horizontal: 10,
+                    vertical: 5
+                }
+            },
             stroke: { show: true, width: 2, colors: ['#fff'] }
         };
     }
@@ -175,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function () {
             labels: ['Technical Proposals', 'Financial Proposals', 'Pricing', 'Consultations'],
             chart: {
                 type: 'donut',
-                height: 180, // Further reduced to leave room for labels
+                height: 250,
                 fontFamily: 'Inter, sans-serif',
                 animations: animationConfig,
                 toolbar: { show: false }
@@ -183,29 +192,47 @@ document.addEventListener('DOMContentLoaded', function () {
             colors: ['#0c2030', '#6bafb8', '#397D86', '#28736E'],
             dataLabels: {
                 enabled: true,
-                formatter: function (val, opts) {
-                    return opts.w.config.labels[opts.seriesIndex] + " " + Math.round(val) + "%";
-                },
                 style: {
-                    fontSize: '11px',
+                    fontSize: '12px',
                     fontFamily: 'Inter, sans-serif',
                     fontWeight: 500,
-                    colors: ['#0c2030', '#6bafb8', '#397D86', '#28736E']
                 },
-                background: { enabled: false },
                 dropShadow: { enabled: false }
             },
             plotOptions: {
                 pie: {
                     donut: {
                         size: '70%',
-                        labels: { show: false }
-                    },
-                    dataLabels: { offset: 15 }
+                        labels: {
+                            show: true,
+                            total: {
+                                show: true,
+                                label: 'Total',
+                                fontSize: '14px',
+                                fontFamily: 'Inter, sans-serif',
+                                color: '#6F6F6F'
+                            }
+                        }
+                    }
                 }
             },
-            legend: { show: false },
-            stroke: { show: true, width: 5, colors: ['#fff'] }
+            legend: {
+                show: true,
+                position: 'bottom',
+                horizontalAlign: 'center',
+                fontSize: '14px',
+                fontFamily: 'Inter, sans-serif',
+                markers: {
+                    width: 10,
+                    height: 10,
+                    radius: 12,
+                },
+                itemMargin: {
+                    horizontal: 10,
+                    vertical: 5
+                }
+            },
+            stroke: { show: true, width: 2, colors: ['#fff'] }
         };
     }
 

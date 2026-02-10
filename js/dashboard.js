@@ -136,35 +136,44 @@ document.addEventListener('DOMContentLoaded', function () {
             labels: ['فائزة', 'خاسرة', 'قيد المراجعة'],
             chart: {
                 type: 'pie',
-                height: 180, // Further reduced to leave room for labels
-                fontFamily: 'Tajawal, sans-serif',
+                height: 250,
+                fontFamily: 'Inter, Tajawal, sans-serif',
                 animations: animationConfig,
                 toolbar: { show: false }
             },
             colors: ['#6AB8C2', '#F55960', '#F7A62C'],
             dataLabels: {
                 enabled: true,
-                formatter: function (val, opts) {
-                    return opts.w.config.labels[opts.seriesIndex] + " " + Math.round(val) + "%";
-                },
                 style: {
-                    fontSize: '11px',
-                    fontFamily: 'Tajawal, sans-serif',
-                    fontWeight: 700,
-                    colors: ['#6AB8C2', '#F55960', '#F7A62C']
+                    fontSize: '12px',
+                    fontFamily: 'Inter, Tajawal, sans-serif',
+                    fontWeight: 600,
                 },
                 dropShadow: { enabled: false },
-                background: { enabled: false }
             },
             plotOptions: {
                 pie: {
                     dataLabels: {
-                        offset: 15,
-                        minAngleToShowLabel: 10
+                        offset: -5,
                     }
                 }
             },
-            legend: { show: false },
+            legend: {
+                show: true,
+                position: 'bottom',
+                horizontalAlign: 'center',
+                fontSize: '14px',
+                fontFamily: 'Inter, Tajawal, sans-serif',
+                markers: {
+                    width: 10,
+                    height: 10,
+                    radius: 12,
+                },
+                itemMargin: {
+                    horizontal: 10,
+                    vertical: 5
+                }
+            },
             stroke: { show: true, width: 2, colors: ['#fff'] }
         };
     }
@@ -175,37 +184,55 @@ document.addEventListener('DOMContentLoaded', function () {
             labels: ['عروض فنية', 'عروض مالية', 'تسعير', 'استشارات'],
             chart: {
                 type: 'donut',
-                height: 180, // Further reduced to leave room for labels
-                fontFamily: 'Tajawal, sans-serif',
+                height: 250,
+                fontFamily: 'Inter, Tajawal, sans-serif',
                 animations: animationConfig,
                 toolbar: { show: false }
             },
             colors: ['#0c2030', '#6bafb8', '#397D86', '#28736E'],
             dataLabels: {
                 enabled: true,
-                formatter: function (val, opts) {
-                    return opts.w.config.labels[opts.seriesIndex] + " " + Math.round(val) + "%";
-                },
                 style: {
-                    fontSize: '11px',
-                    fontFamily: 'Tajawal, sans-serif',
+                    fontSize: '12px',
+                    fontFamily: 'Inter, Tajawal, sans-serif',
                     fontWeight: 500,
-                    colors: ['#0c2030', '#6bafb8', '#397D86', '#28736E']
                 },
-                background: { enabled: false },
                 dropShadow: { enabled: false }
             },
             plotOptions: {
                 pie: {
                     donut: {
                         size: '70%',
-                        labels: { show: false }
-                    },
-                    dataLabels: { offset: 15 }
+                        labels: {
+                            show: true,
+                            total: {
+                                show: true,
+                                label: 'الإجمالي',
+                                fontSize: '14px',
+                                fontFamily: 'Inter, Tajawal, sans-serif',
+                                color: '#6F6F6F'
+                            }
+                        }
+                    }
                 }
             },
-            legend: { show: false },
-            stroke: { show: true, width: 5, colors: ['#fff'] }
+            legend: {
+                show: true,
+                position: 'bottom',
+                horizontalAlign: 'center',
+                fontSize: '14px',
+                fontFamily: 'Inter, Tajawal, sans-serif',
+                markers: {
+                    width: 10,
+                    height: 10,
+                    radius: 12,
+                },
+                itemMargin: {
+                    horizontal: 10,
+                    vertical: 5
+                }
+            },
+            stroke: { show: true, width: 2, colors: ['#fff'] }
         };
     }
 
