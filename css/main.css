@@ -67,12 +67,6 @@ ol {
   --font-secondary: "Onest", sans-serif;
 }
 
-/* RTL/LTR Orientation Utilities */
-html[dir="ltr"] .flip-ltr {
-  transform: scaleX(-1);
-  display: inline-block;
-}
-
 /* Default global usage */
 body {
   font-weight: 400;
@@ -2927,13 +2921,9 @@ td input[type="number"]::placeholder {
 }
 
 .play-btn:hover {
-  background: transparent;
-  border: 1px solid var(--primary-secondary);
+  background: #397d86d6;
+  border: 1px solid var(--primary-base-color);
   transform: translateY(-5px);
-}
-
-.play-btn:hover svg path {
-  stroke: var(--primary-secondary);
 }
 
 .master-img {
