@@ -890,10 +890,12 @@
                 <table class="table table-bordered align-middle competition-table" id="boqTable">
                     <thead>
                         <tr>
-                            <th class="text-center" style="width: 40px;">
-                                <input type="checkbox" class="form-check-input" id="selectAll">
+                            <th>
+                                <div class="d-flex align-items-center gap-2">
+                                    <input type="checkbox" class="form-check-input mt-0" id="selectAll">
+                                    <span>Product Code</span>
+                                </div>
                             </th>
-                            <th>Product Code</th>
                             <th>Product Name</th>
                             <th>Product Description</th>
                             <th>Quantity</th>
@@ -903,9 +905,13 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="text-center"><input type="checkbox" class="form-check-input"></td>
-                            <td><span class="ff-onest fz-12 fw-medium black-text">250739020713</span></td>
-                            <td>
+                            <td data-label="Product Code">
+                                <div class="d-flex align-items-center gap-2">
+                                    <input type="checkbox" class="form-check-input mt-0">
+                                    <span class="ff-onest fz-12 fw-medium black-text">250739020713</span>
+                                </div>
+                            </td>
+                            <td data-label="Product Name">
                                 <div class="d-flex align-items-center gap-2">
                                     <div class="sm-logo">
                                         <img src="images/shopping-cart.svg" alt="product">
@@ -913,17 +919,15 @@
                                     <span>Product name is written here</span>
                                 </div>
                             </td>
-                            <td>
+                            <td data-label="Product Description">
                                 <p class="text-gray ellipse-text">Al-Falah Company is working
-                                    on launching a new product in the market to increase diversity in its agricultural
-                                    products
                                     on launching a new product in the market to increase diversity in its agricultural
                                     products
                                 </p>
                             </td>
-                            <td><span class="ff-onest fw-medium">145</span></td>
-                            <td><span class="fw-medium ff-onest">KG.M^3</span></td>
-                            <td>
+                            <td data-label="Quantity"><span class="ff-onest fw-medium">145</span></td>
+                            <td data-label="Unit"><span class="fw-medium ff-onest">KG.M^3</span></td>
+                            <td data-label="Actions">
                                 <div class="d-flex align-items-center justify-content-center gap-2">
                                     <button class="t-action-btn edit-btn" data-bs-toggle="modal"
                                         data-bs-target="#editProduct">
@@ -962,12 +966,14 @@
                                 </div>
                             </td>
                         </tr>
-                        <!-- Repeat other rows as needed, minimal for demo or full if possible -->
-                        <!-- Row 2 -->
                         <tr>
-                            <td class="text-center"><input type="checkbox" class="form-check-input"></td>
-                            <td><span class="ff-onest fz-12 fw-medium black-text">250739020713</span></td>
-                            <td>
+                            <td data-label="Product Code">
+                                <div class="d-flex align-items-center gap-2">
+                                    <input type="checkbox" class="form-check-input mt-0">
+                                    <span class="ff-onest fz-12 fw-medium black-text">250739020713</span>
+                                </div>
+                            </td>
+                            <td data-label="Product Name">
                                 <div class="d-flex align-items-center gap-2">
                                     <div class="sm-logo">
                                         <img src="images/shopping-cart.svg" alt="product">
@@ -975,15 +981,139 @@
                                     <span>Product name is written here</span>
                                 </div>
                             </td>
-                            <td>
+                            <td data-label="Product Description">
                                 <p class="text-gray ellipse-text">Al-Falah Company is working
                                     on launching a new product in the market to increase diversity in its agricultural
                                     products
                                 </p>
                             </td>
-                            <td><span class="ff-onest fw-medium">145</span></td>
-                            <td><span class="fw-medium ff-onest">KG.M^3</span></td>
-                            <td>
+                            <td data-label="Quantity"><span class="ff-onest fw-medium">145</span></td>
+                            <td data-label="Unit"><span class="fw-medium ff-onest">KG.M^3</span></td>
+                            <td data-label="Actions">
+                                <div class="d-flex align-items-center justify-content-center gap-2">
+                                    <button class="t-action-btn edit-btn" data-bs-toggle="modal"
+                                        data-bs-target="#editProduct">
+                                        <span>Edit</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            viewBox="0 0 16 16" fill="none">
+                                            <g opacity="0.4">
+                                                <path
+                                                    d="M14.1267 5.35961L12.0067 3.23961C11.2067 2.43961 10.1067 2.47963 9.56672 3.33963L8.38672 5.20629L12.1667 8.98628L14.0334 7.80631C14.8401 7.29297 14.8867 6.11294 14.1267 5.35961Z"
+                                                    stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M12.1658 8.98047L12.3258 11.7271C12.4791 13.2605 11.9458 13.7938 10.4924 13.9671L4.6791 14.6538C3.45243 14.7938 2.57243 13.9138 2.7191 12.6938L3.37243 7.17383"
+                                                    stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M8.38542 5.20614L7.21875 5.13281" stroke="#6BAFB8"
+                                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M3.51953 13.8533L5.63954 11.7266" stroke="#6BAFB8"
+                                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            </g>
+                                            <path
+                                                d="M7.33203 4.33398C7.33203 4.60732 7.29203 4.88066 7.2187 5.13399C7.14537 5.40066 7.0387 5.64732 6.8987 5.88066C6.7387 6.14732 6.5387 6.38732 6.30537 6.58732C5.7787 7.05399 5.09203 7.33398 4.33203 7.33398C3.99203 7.33398 3.67203 7.28066 3.37203 7.17399C2.69203 6.94732 2.12536 6.48066 1.76536 5.88066C1.49203 5.42732 1.33203 4.89398 1.33203 4.33398C1.33203 3.38732 1.76537 2.54064 2.4587 1.99398C2.97203 1.58064 3.62536 1.33398 4.33203 1.33398C5.99203 1.33398 7.33203 2.67398 7.33203 4.33398Z"
+                                                stroke="#6BAFB8" stroke-width="1.5" stroke-miterlimit="10"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M4.34766 5.45288V3.21289" stroke="#6BAFB8" stroke-width="1.5"
+                                                stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M5.43922 4.33203H3.19922" stroke="#6BAFB8" stroke-width="1.5"
+                                                stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                    <button class="t-action-btn delete-btn" type="button" data-bs-toggle="modal"
+                                        data-bs-target="#DeleteModal">
+                                        <span>Delete</span>
+                                        <img src="images/trash.svg" alt="Delete">
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="Product Code">
+                                <div class="d-flex align-items-center gap-2">
+                                    <input type="checkbox" class="form-check-input mt-0">
+                                    <span class="ff-onest fz-12 fw-medium black-text">250739020713</span>
+                                </div>
+                            </td>
+                            <td data-label="Product Name">
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="sm-logo">
+                                        <img src="images/shopping-cart.svg" alt="product">
+                                    </div>
+                                    <span>Product name is written here</span>
+                                </div>
+                            </td>
+                            <td data-label="Product Description">
+                                <p class="text-gray ellipse-text">Al-Falah Company is working
+                                    on launching a new product in the market to increase diversity in its agricultural
+                                    products
+                                </p>
+                            </td>
+                            <td data-label="Quantity"><span class="ff-onest fw-medium">145</span></td>
+                            <td data-label="Unit"><span class="fw-medium ff-onest">KG.M^3</span></td>
+                            <td data-label="Actions">
+                                <div class="d-flex align-items-center justify-content-center gap-2">
+                                    <button class="t-action-btn edit-btn" data-bs-toggle="modal"
+                                        data-bs-target="#editProduct">
+                                        <span>Edit</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            viewBox="0 0 16 16" fill="none">
+                                            <g opacity="0.4">
+                                                <path
+                                                    d="M14.1267 5.35961L12.0067 3.23961C11.2067 2.43961 10.1067 2.47963 9.56672 3.33963L8.38672 5.20629L12.1667 8.98628L14.0334 7.80631C14.8401 7.29297 14.8867 6.11294 14.1267 5.35961Z"
+                                                    stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M12.1658 8.98047L12.3258 11.7271C12.4791 13.2605 11.9458 13.7938 10.4924 13.9671L4.6791 14.6538C3.45243 14.7938 2.57243 13.9138 2.7191 12.6938L3.37243 7.17383"
+                                                    stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M8.38542 5.20614L7.21875 5.13281" stroke="#6BAFB8"
+                                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M3.51953 13.8533L5.63954 11.7266" stroke="#6BAFB8"
+                                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            </g>
+                                            <path
+                                                d="M7.33203 4.33398C7.33203 4.60732 7.29203 4.88066 7.2187 5.13399C7.14537 5.40066 7.0387 5.64732 6.8987 5.88066C6.7387 6.14732 6.5387 6.38732 6.30537 6.58732C5.7787 7.05399 5.09203 7.33398 4.33203 7.33398C3.99203 7.33398 3.67203 7.28066 3.37203 7.17399C2.69203 6.94732 2.12536 6.48066 1.76536 5.88066C1.49203 5.42732 1.33203 4.89398 1.33203 4.33398C1.33203 3.38732 1.76537 2.54064 2.4587 1.99398C2.97203 1.58064 3.62536 1.33398 4.33203 1.33398C5.99203 1.33398 7.33203 2.67398 7.33203 4.33398Z"
+                                                stroke="#6BAFB8" stroke-width="1.5" stroke-miterlimit="10"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M4.34766 5.45288V3.21289" stroke="#6BAFB8" stroke-width="1.5"
+                                                stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M5.43922 4.33203H3.19922" stroke="#6BAFB8" stroke-width="1.5"
+                                                stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                    <button class="t-action-btn delete-btn" type="button" data-bs-toggle="modal"
+                                        data-bs-target="#DeleteModal">
+                                        <span>Delete</span>
+                                        <img src="images/trash.svg" alt="Delete">
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="Product Code">
+                                <div class="d-flex align-items-center gap-2">
+                                    <input type="checkbox" class="form-check-input mt-0">
+                                    <span class="ff-onest fz-12 fw-medium black-text">250739020713</span>
+                                </div>
+                            </td>
+                            <td data-label="Product Name">
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="sm-logo">
+                                        <img src="images/shopping-cart.svg" alt="product">
+                                    </div>
+                                    <span>Product name is written here</span>
+                                </div>
+                            </td>
+                            <td data-label="Product Description">
+                                <p class="text-gray ellipse-text">Al-Falah Company is working
+                                    on launching a new product in the market to increase diversity in its agricultural
+                                    products
+                                </p>
+                            </td>
+                            <td data-label="Quantity"><span class="ff-onest fw-medium">145</span></td>
+                            <td data-label="Unit"><span class="fw-medium ff-onest">KG.M^3</span></td>
+                            <td data-label="Actions">
                                 <div class="d-flex align-items-center justify-content-center gap-2">
                                     <button class="t-action-btn edit-btn" data-bs-toggle="modal"
                                         data-bs-target="#editProduct">
