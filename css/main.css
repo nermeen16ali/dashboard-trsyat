@@ -250,6 +250,7 @@ html[dir="rtl"] [type="url"] {
   border: 1px solid #53535338;
   border-radius: 50%;
   display: inline-flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
 }

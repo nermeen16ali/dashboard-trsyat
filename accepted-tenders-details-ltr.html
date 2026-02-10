@@ -623,7 +623,7 @@
         </div>
         <div class="dash-widget sm-0 results-widget">
             <nav class="d-flex flex-column flex-lg-row align-items-lg-center justify-content-lg-between mb-4 gap-4">
-                <div class="sub-tabs scrollable-row" role="tablist">
+                <div class="sub-tabs scrollable-row" id="sub-nav-tab" role="tablist">
                     <button class="nav-link active" id="nav-uploaded-tab" data-bs-toggle="tab"
                         data-bs-target="#nav-uploaded" type="button" role="tab">Basic Information</button>
                     <button class="nav-link" id="nav-tender-tab" data-bs-toggle="tab" data-bs-target="#nav-tender"
@@ -632,7 +632,7 @@
                         type="button" role="tab">Applicant List</button>
                 </div>
                 <div class="d-flex align-items-center gap-12 justify-content-end">
-                    <div class="d-flex align-items-center gap-4">
+                    <div class="d-flex align-items-center gap-4 d-none" id="votingControls">
                         <span class="fz-14 base-text">Vote on Tender</span>
                         <div class="d-flex align-items-center gap-10">
                             <button class="vote-btn"><span>12</span><img src="images/like.svg" alt="like"></button>
@@ -640,9 +640,11 @@
                                     alt="dislike"></button>
                         </div>
                     </div>
-                    <span class="sm-ele fz-12 bordered-8 text-nowrap prim-opacity-outlined">Accepted</span>
-                    <button class="btn-main btn-primary fz-14 fw-medium" data-bs-toggle="modal"
-                        data-bs-target="#editRequest">Send Edit Request</button>
+                    <div class="d-flex align-items-center gap-12" id="otherControls">
+                        <span class="sm-ele fz-12 bordered-8 text-nowrap prim-opacity-outlined">Accepted</span>
+                        <button class="btn-main btn-primary fz-14 fw-medium" data-bs-toggle="modal"
+                            data-bs-target="#editRequest">Send Edit Request</button>
+                    </div>
                 </div>
             </nav>
             <div class="tab-content" id="Sub-nav-tabContent">
@@ -1490,6 +1492,23 @@
                 // Toggle active for this button
                 if (!isActive) {
                     this.classList.add('active');
+                }
+            });
+        });
+
+        // Tab Visibility Logic
+        const votingControls = document.getElementById('votingControls');
+        const otherControls = document.getElementById('otherControls');
+        const tabButtons = document.querySelectorAll('#sub-nav-tab button[data-bs-toggle="tab"]');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('shown.bs.tab', function (event) {
+                if (event.target.id === 'nav-tender-tab') {
+                    votingControls.classList.remove('d-none');
+                    otherControls.classList.add('d-none');
+                } else {
+                    votingControls.classList.add('d-none');
+                    otherControls.classList.remove('d-none');
                 }
             });
         });
