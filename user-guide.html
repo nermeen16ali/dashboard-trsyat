@@ -20,7 +20,7 @@
   <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
   <link href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.bootstrap5.min.css" rel="stylesheet" />
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/main.css" id="main-css" />
+  <link rel="stylesheet" href="css/main.css" />
 </head>
 
 <body>
@@ -393,7 +393,7 @@
   </nav>
   <!-- Main Content -->
   <div class="container-fluid main-content">
-    <nav class="nav-tabs mb-32">
+    <nav class="nav-tabs">
       <div class="nav page-tabs" id="tabsContainer">
         <a href="index.html" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
@@ -564,354 +564,352 @@
         </div>
       </div>
     </nav>
-    <div class="d-flex flex-column gap-4">
-      <div class="page-breadcrumb">
-        <h2 class="active">مكتبة الفيديوهات التعليمية</h2>
+    <div class="page-breadcrumb page-header">
+      <h2 class="active">مكتبة الفيديوهات التعليمية</h2>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="filter-btns d-flex gap-2 mb-4">
+      <button class="active">الكل</button>
+      <button>جميع المناقصات</button>
+      <button>المناقصات المرشحة</button>
+      <button>العروض والاستشارات</button>
+      <button>نتائج المناقصات</button>
+      <button>الاعلان علي مناقصة</button>
+      <button>تسعيرات المناقصات</button>
+      <button>إدارة المناقصات</button>
+    </div>
+
+    <!-- Video Grid -->
+    <div class="row g-3">
+      <!-- Video Card 1 -->
+      <div class="col-xl-3 col-lg-4 col-md-6">
+        <div class="tender-card p-3 h-100 d-flex flex-column video-box">
+          <div class="position-relative mb-20">
+            <img src="images/Video-img.webp" class="video-img" alt="Video Thumbnail">
+            <div class="position-absolute top-50 start-50 translate-middle">
+              <a href="user-guide-details.html" class="play-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
+                  <path
+                    d="M0.75 9.27333V5.71333C0.75 1.29333 3.88 -0.516667 7.71 1.69333L10.8 3.47333L13.89 5.25333C17.72 7.46333 17.72 11.0833 13.89 13.2933L10.8 15.0733L7.71 16.8533C3.88 19.0633 0.75 17.2533 0.75 12.8333V9.27333Z"
+                    stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h5 class="black-text mb-2">تصفح جميع المناقصات المتاحة</h5>
+          <div class="d-flex align-items-center gap-2 text-gray mb-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M7.70833 1.6665C7.70833 1.32133 7.98816 1.0415 8.33333 1.0415H11.6667C12.0118 1.0415 12.2917 1.32133 12.2917 1.6665C12.2917 2.01168 12.0118 2.2915 11.6667 2.2915H8.33333C7.98816 2.2915 7.70833 2.01168 7.70833 1.6665ZM10 3.95817C6.20304 3.95817 3.125 7.03621 3.125 10.8332C3.125 14.6301 6.20304 17.7082 10 17.7082C13.797 17.7082 16.875 14.6301 16.875 10.8332C16.875 7.03621 13.797 3.95817 10 3.95817ZM1.875 10.8332C1.875 6.34586 5.51269 2.70817 10 2.70817C14.4873 2.70817 18.125 6.34586 18.125 10.8332C18.125 15.3205 14.4873 18.9582 10 18.9582C5.51269 18.9582 1.875 15.3205 1.875 10.8332ZM10 6.87484C10.3452 6.87484 10.625 7.15466 10.625 7.49984V10.8332C10.625 11.1783 10.3452 11.4582 10 11.4582C9.65482 11.4582 9.375 11.1783 9.375 10.8332V7.49984C9.375 7.15466 9.65482 6.87484 10 6.87484Z"
+                fill="#6F6F6F" />
+            </svg>
+            <span>15 دقيقة</span>
+          </div>
+          <p class="text-gray mb-3">
+            كيفية البحث والتصفية لإيجاد المناقصات المناسبة لك من بين آلاف المناقصات المتاحة
+          </p>
+          <a href="user-guide-details.html" class="d-flex align-items-center gap-2 fw-medium colored">
+            عرض المزيد
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                stroke="currentColor" stroke-width="1.5" />
+              <path d="M13.5 9L10.5 12L13.5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
       </div>
 
-      <!-- Filter Buttons -->
-      <div class="filter-btns d-flex flex-wrap gap-2">
-        <button class="active">الكل</button>
-        <button>جميع المناقصات</button>
-        <button>المناقصات المرشحة</button>
-        <button>العروض والاستشارات</button>
-        <button>نتائج المناقصات</button>
-        <button>الاعلان علي مناقصة</button>
-        <button>تسعيرات المناقصات</button>
-        <button>إدارة المناقصات</button>
+      <!-- Video Card 2 -->
+      <div class="col-xl-3 col-lg-4 col-md-6">
+        <div class="tender-card p-3 h-100 d-flex flex-column video-box">
+          <div class="position-relative mb-20">
+            <img src="images/Video-img.webp" class="video-img" alt="Video Thumbnail">
+            <div class="position-absolute top-50 start-50 translate-middle">
+              <a href="user-guide-details.html" class="play-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
+                  <path
+                    d="M0.75 9.27333V5.71333C0.75 1.29333 3.88 -0.516667 7.71 1.69333L10.8 3.47333L13.89 5.25333C17.72 7.46333 17.72 11.0833 13.89 13.2933L10.8 15.0733L7.71 16.8533C3.88 19.0633 0.75 17.2533 0.75 12.8333V9.27333Z"
+                    stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h5 class="black-text mb-2">تصفح جميع المناقصات المتاحة</h5>
+          <div class="d-flex align-items-center gap-2 text-gray mb-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M7.70833 1.6665C7.70833 1.32133 7.98816 1.0415 8.33333 1.0415H11.6667C12.0118 1.0415 12.2917 1.32133 12.2917 1.6665C12.2917 2.01168 12.0118 2.2915 11.6667 2.2915H8.33333C7.98816 2.2915 7.70833 2.01168 7.70833 1.6665ZM10 3.95817C6.20304 3.95817 3.125 7.03621 3.125 10.8332C3.125 14.6301 6.20304 17.7082 10 17.7082C13.797 17.7082 16.875 14.6301 16.875 10.8332C16.875 7.03621 13.797 3.95817 10 3.95817ZM1.875 10.8332C1.875 6.34586 5.51269 2.70817 10 2.70817C14.4873 2.70817 18.125 6.34586 18.125 10.8332C18.125 15.3205 14.4873 18.9582 10 18.9582C5.51269 18.9582 1.875 15.3205 1.875 10.8332ZM10 6.87484C10.3452 6.87484 10.625 7.15466 10.625 7.49984V10.8332C10.625 11.1783 10.3452 11.4582 10 11.4582C9.65482 11.4582 9.375 11.1783 9.375 10.8332V7.49984C9.375 7.15466 9.65482 6.87484 10 6.87484Z"
+                fill="#6F6F6F" />
+            </svg>
+            <span>15 دقيقة</span>
+          </div>
+          <p class="text-gray mb-3">
+            كيفية البحث والتصفية لإيجاد المناقصات المناسبة لك من بين آلاف المناقصات المتاحة
+          </p>
+          <a href="user-guide-details.html" class="d-flex align-items-center gap-2 fw-medium colored">
+            عرض المزيد
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                stroke="currentColor" stroke-width="1.5" />
+              <path d="M13.5 9L10.5 12L13.5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
       </div>
 
-      <!-- Video Grid -->
-      <div class="row g-3">
-        <!-- Video Card 1 -->
-        <div class="col-xl-3 col-lg-4 col-md-6">
-          <div class="tender-card p-3 h-100 d-flex flex-column video-box">
-            <div class="position-relative mb-20">
-              <img src="images/Video-img.webp" class="video-img" alt="Video Thumbnail">
-              <div class="position-absolute top-50 start-50 translate-middle">
-                <a href="user-guide-details.html" class="play-btn">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
-                    <path
-                      d="M0.75 9.27333V5.71333C0.75 1.29333 3.88 -0.516667 7.71 1.69333L10.8 3.47333L13.89 5.25333C17.72 7.46333 17.72 11.0833 13.89 13.2933L10.8 15.0733L7.71 16.8533C3.88 19.0633 0.75 17.2533 0.75 12.8333V9.27333Z"
-                      stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                </a>
-              </div>
+      <!-- Video Card 3 -->
+      <div class="col-xl-3 col-lg-4 col-md-6">
+        <div class="tender-card p-3 h-100 d-flex flex-column video-box">
+          <div class="position-relative mb-20">
+            <img src="images/Video-img.webp" class="video-img" alt="Video Thumbnail">
+            <div class="position-absolute top-50 start-50 translate-middle">
+              <a href="user-guide-details.html" class="play-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
+                  <path
+                    d="M0.75 9.27333V5.71333C0.75 1.29333 3.88 -0.516667 7.71 1.69333L10.8 3.47333L13.89 5.25333C17.72 7.46333 17.72 11.0833 13.89 13.2933L10.8 15.0733L7.71 16.8533C3.88 19.0633 0.75 17.2533 0.75 12.8333V9.27333Z"
+                    stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </a>
             </div>
-            <h5 class="black-text mb-2">تصفح جميع المناقصات المتاحة</h5>
-            <div class="d-flex align-items-center gap-2 text-gray mb-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M7.70833 1.6665C7.70833 1.32133 7.98816 1.0415 8.33333 1.0415H11.6667C12.0118 1.0415 12.2917 1.32133 12.2917 1.6665C12.2917 2.01168 12.0118 2.2915 11.6667 2.2915H8.33333C7.98816 2.2915 7.70833 2.01168 7.70833 1.6665ZM10 3.95817C6.20304 3.95817 3.125 7.03621 3.125 10.8332C3.125 14.6301 6.20304 17.7082 10 17.7082C13.797 17.7082 16.875 14.6301 16.875 10.8332C16.875 7.03621 13.797 3.95817 10 3.95817ZM1.875 10.8332C1.875 6.34586 5.51269 2.70817 10 2.70817C14.4873 2.70817 18.125 6.34586 18.125 10.8332C18.125 15.3205 14.4873 18.9582 10 18.9582C5.51269 18.9582 1.875 15.3205 1.875 10.8332ZM10 6.87484C10.3452 6.87484 10.625 7.15466 10.625 7.49984V10.8332C10.625 11.1783 10.3452 11.4582 10 11.4582C9.65482 11.4582 9.375 11.1783 9.375 10.8332V7.49984C9.375 7.15466 9.65482 6.87484 10 6.87484Z"
-                  fill="#6F6F6F" />
-              </svg>
-              <span>15 دقيقة</span>
-            </div>
-            <p class="text-gray mb-3">
-              كيفية البحث والتصفية لإيجاد المناقصات المناسبة لك من بين آلاف المناقصات المتاحة
-            </p>
-            <a href="user-guide-details.html" class="d-flex align-items-center gap-2 fw-medium colored">
-              عرض المزيد
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-                  stroke="#6BAFB8" stroke-width="1.5" />
-                <path d="M13.5 9L10.5 12L13.5 15" stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-            </a>
           </div>
-        </div>
-
-        <!-- Video Card 2 -->
-        <div class="col-xl-3 col-lg-4 col-md-6">
-          <div class="tender-card p-3 h-100 d-flex flex-column video-box">
-            <div class="position-relative mb-20">
-              <img src="images/Video-img.webp" class="video-img" alt="Video Thumbnail">
-              <div class="position-absolute top-50 start-50 translate-middle">
-                <a href="user-guide-details.html" class="play-btn">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
-                    <path
-                      d="M0.75 9.27333V5.71333C0.75 1.29333 3.88 -0.516667 7.71 1.69333L10.8 3.47333L13.89 5.25333C17.72 7.46333 17.72 11.0833 13.89 13.2933L10.8 15.0733L7.71 16.8533C3.88 19.0633 0.75 17.2533 0.75 12.8333V9.27333Z"
-                      stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <h5 class="black-text mb-2">تصفح جميع المناقصات المتاحة</h5>
-            <div class="d-flex align-items-center gap-2 text-gray mb-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M7.70833 1.6665C7.70833 1.32133 7.98816 1.0415 8.33333 1.0415H11.6667C12.0118 1.0415 12.2917 1.32133 12.2917 1.6665C12.2917 2.01168 12.0118 2.2915 11.6667 2.2915H8.33333C7.98816 2.2915 7.70833 2.01168 7.70833 1.6665ZM10 3.95817C6.20304 3.95817 3.125 7.03621 3.125 10.8332C3.125 14.6301 6.20304 17.7082 10 17.7082C13.797 17.7082 16.875 14.6301 16.875 10.8332C16.875 7.03621 13.797 3.95817 10 3.95817ZM1.875 10.8332C1.875 6.34586 5.51269 2.70817 10 2.70817C14.4873 2.70817 18.125 6.34586 18.125 10.8332C18.125 15.3205 14.4873 18.9582 10 18.9582C5.51269 18.9582 1.875 15.3205 1.875 10.8332ZM10 6.87484C10.3452 6.87484 10.625 7.15466 10.625 7.49984V10.8332C10.625 11.1783 10.3452 11.4582 10 11.4582C9.65482 11.4582 9.375 11.1783 9.375 10.8332V7.49984C9.375 7.15466 9.65482 6.87484 10 6.87484Z"
-                  fill="#6F6F6F" />
-              </svg>
-              <span>15 دقيقة</span>
-            </div>
-            <p class="text-gray mb-3">
-              كيفية البحث والتصفية لإيجاد المناقصات المناسبة لك من بين آلاف المناقصات المتاحة
-            </p>
-            <a href="user-guide-details.html" class="d-flex align-items-center gap-2 fw-medium colored">
-              عرض المزيد
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-                  stroke="#6BAFB8" stroke-width="1.5" />
-                <path d="M13.5 9L10.5 12L13.5 15" stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-            </a>
+          <h5 class="black-text mb-2">تصفح جميع المناقصات المتاحة</h5>
+          <div class="d-flex align-items-center gap-2 text-gray mb-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M7.70833 1.6665C7.70833 1.32133 7.98816 1.0415 8.33333 1.0415H11.6667C12.0118 1.0415 12.2917 1.32133 12.2917 1.6665C12.2917 2.01168 12.0118 2.2915 11.6667 2.2915H8.33333C7.98816 2.2915 7.70833 2.01168 7.70833 1.6665ZM10 3.95817C6.20304 3.95817 3.125 7.03621 3.125 10.8332C3.125 14.6301 6.20304 17.7082 10 17.7082C13.797 17.7082 16.875 14.6301 16.875 10.8332C16.875 7.03621 13.797 3.95817 10 3.95817ZM1.875 10.8332C1.875 6.34586 5.51269 2.70817 10 2.70817C14.4873 2.70817 18.125 6.34586 18.125 10.8332C18.125 15.3205 14.4873 18.9582 10 18.9582C5.51269 18.9582 1.875 15.3205 1.875 10.8332ZM10 6.87484C10.3452 6.87484 10.625 7.15466 10.625 7.49984V10.8332C10.625 11.1783 10.3452 11.4582 10 11.4582C9.65482 11.4582 9.375 11.1783 9.375 10.8332V7.49984C9.375 7.15466 9.65482 6.87484 10 6.87484Z"
+                fill="#6F6F6F" />
+            </svg>
+            <span>15 دقيقة</span>
           </div>
+          <p class="text-gray mb-3">
+            كيفية البحث والتصفية لإيجاد المناقصات المناسبة لك من بين آلاف المناقصات المتاحة
+          </p>
+          <a href="user-guide-details.html" class="d-flex align-items-center gap-2 fw-medium colored">
+            عرض المزيد
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                stroke="currentColor" stroke-width="1.5" />
+              <path d="M13.5 9L10.5 12L13.5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
         </div>
-
-        <!-- Video Card 3 -->
-        <div class="col-xl-3 col-lg-4 col-md-6">
-          <div class="tender-card p-3 h-100 d-flex flex-column video-box">
-            <div class="position-relative mb-20">
-              <img src="images/Video-img.webp" class="video-img" alt="Video Thumbnail">
-              <div class="position-absolute top-50 start-50 translate-middle">
-                <a href="user-guide-details.html" class="play-btn">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
-                    <path
-                      d="M0.75 9.27333V5.71333C0.75 1.29333 3.88 -0.516667 7.71 1.69333L10.8 3.47333L13.89 5.25333C17.72 7.46333 17.72 11.0833 13.89 13.2933L10.8 15.0733L7.71 16.8533C3.88 19.0633 0.75 17.2533 0.75 12.8333V9.27333Z"
-                      stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <h5 class="black-text mb-2">تصفح جميع المناقصات المتاحة</h5>
-            <div class="d-flex align-items-center gap-2 text-gray mb-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M7.70833 1.6665C7.70833 1.32133 7.98816 1.0415 8.33333 1.0415H11.6667C12.0118 1.0415 12.2917 1.32133 12.2917 1.6665C12.2917 2.01168 12.0118 2.2915 11.6667 2.2915H8.33333C7.98816 2.2915 7.70833 2.01168 7.70833 1.6665ZM10 3.95817C6.20304 3.95817 3.125 7.03621 3.125 10.8332C3.125 14.6301 6.20304 17.7082 10 17.7082C13.797 17.7082 16.875 14.6301 16.875 10.8332C16.875 7.03621 13.797 3.95817 10 3.95817ZM1.875 10.8332C1.875 6.34586 5.51269 2.70817 10 2.70817C14.4873 2.70817 18.125 6.34586 18.125 10.8332C18.125 15.3205 14.4873 18.9582 10 18.9582C5.51269 18.9582 1.875 15.3205 1.875 10.8332ZM10 6.87484C10.3452 6.87484 10.625 7.15466 10.625 7.49984V10.8332C10.625 11.1783 10.3452 11.4582 10 11.4582C9.65482 11.4582 9.375 11.1783 9.375 10.8332V7.49984C9.375 7.15466 9.65482 6.87484 10 6.87484Z"
-                  fill="#6F6F6F" />
-              </svg>
-              <span>15 دقيقة</span>
-            </div>
-            <p class="text-gray mb-3">
-              كيفية البحث والتصفية لإيجاد المناقصات المناسبة لك من بين آلاف المناقصات المتاحة
-            </p>
-            <a href="user-guide-details.html" class="d-flex align-items-center gap-2 fw-medium colored">
-              عرض المزيد
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-                  stroke="#6BAFB8" stroke-width="1.5" />
-                <path d="M13.5 9L10.5 12L13.5 15" stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Video Card 4 -->
-        <div class="col-xl-3 col-lg-4 col-md-6">
-          <div class="tender-card p-3 h-100 d-flex flex-column video-box">
-            <div class="position-relative mb-20">
-              <img src="images/Video-img.webp" class="video-img" alt="Video Thumbnail">
-              <div class="position-absolute top-50 start-50 translate-middle">
-                <a href="user-guide-details.html" class="play-btn">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
-                    <path
-                      d="M0.75 9.27333V5.71333C0.75 1.29333 3.88 -0.516667 7.71 1.69333L10.8 3.47333L13.89 5.25333C17.72 7.46333 17.72 11.0833 13.89 13.2933L10.8 15.0733L7.71 16.8533C3.88 19.0633 0.75 17.2533 0.75 12.8333V9.27333Z"
-                      stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <h5 class="black-text mb-2">تصفح جميع المناقصات المتاحة</h5>
-            <div class="d-flex align-items-center gap-2 text-gray mb-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M7.70833 1.6665C7.70833 1.32133 7.98816 1.0415 8.33333 1.0415H11.6667C12.0118 1.0415 12.2917 1.32133 12.2917 1.6665C12.2917 2.01168 12.0118 2.2915 11.6667 2.2915H8.33333C7.98816 2.2915 7.70833 2.01168 7.70833 1.6665ZM10 3.95817C6.20304 3.95817 3.125 7.03621 3.125 10.8332C3.125 14.6301 6.20304 17.7082 10 17.7082C13.797 17.7082 16.875 14.6301 16.875 10.8332C16.875 7.03621 13.797 3.95817 10 3.95817ZM1.875 10.8332C1.875 6.34586 5.51269 2.70817 10 2.70817C14.4873 2.70817 18.125 6.34586 18.125 10.8332C18.125 15.3205 14.4873 18.9582 10 18.9582C5.51269 18.9582 1.875 15.3205 1.875 10.8332ZM10 6.87484C10.3452 6.87484 10.625 7.15466 10.625 7.49984V10.8332C10.625 11.1783 10.3452 11.4582 10 11.4582C9.65482 11.4582 9.375 11.1783 9.375 10.8332V7.49984C9.375 7.15466 9.65482 6.87484 10 6.87484Z"
-                  fill="#6F6F6F" />
-              </svg>
-              <span>15 دقيقة</span>
-            </div>
-            <p class="text-gray mb-3">
-              كيفية البحث والتصفية لإيجاد المناقصات المناسبة لك من بين آلاف المناقصات المتاحة
-            </p>
-            <a href="user-guide-details.html" class="d-flex align-items-center gap-2 fw-medium colored">
-              عرض المزيد
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-                  stroke="#6BAFB8" stroke-width="1.5" />
-                <path d="M13.5 9L10.5 12L13.5 15" stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Video Card 5 -->
-        <div class="col-xl-3 col-lg-4 col-md-6">
-          <div class="tender-card p-3 h-100 d-flex flex-column video-box">
-            <div class="position-relative mb-20">
-              <img src="images/Video-img.webp" class="video-img" alt="Video Thumbnail">
-              <div class="position-absolute top-50 start-50 translate-middle">
-                <a href="user-guide-details.html" class="play-btn">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
-                    <path
-                      d="M0.75 9.27333V5.71333C0.75 1.29333 3.88 -0.516667 7.71 1.69333L10.8 3.47333L13.89 5.25333C17.72 7.46333 17.72 11.0833 13.89 13.2933L10.8 15.0733L7.71 16.8533C3.88 19.0633 0.75 17.2533 0.75 12.8333V9.27333Z"
-                      stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <h5 class="black-text mb-2">تصفح جميع المناقصات المتاحة</h5>
-            <div class="d-flex align-items-center gap-2 text-gray mb-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M7.70833 1.6665C7.70833 1.32133 7.98816 1.0415 8.33333 1.0415H11.6667C12.0118 1.0415 12.2917 1.32133 12.2917 1.6665C12.2917 2.01168 12.0118 2.2915 11.6667 2.2915H8.33333C7.98816 2.2915 7.70833 2.01168 7.70833 1.6665ZM10 3.95817C6.20304 3.95817 3.125 7.03621 3.125 10.8332C3.125 14.6301 6.20304 17.7082 10 17.7082C13.797 17.7082 16.875 14.6301 16.875 10.8332C16.875 7.03621 13.797 3.95817 10 3.95817ZM1.875 10.8332C1.875 6.34586 5.51269 2.70817 10 2.70817C14.4873 2.70817 18.125 6.34586 18.125 10.8332C18.125 15.3205 14.4873 18.9582 10 18.9582C5.51269 18.9582 1.875 15.3205 1.875 10.8332ZM10 6.87484C10.3452 6.87484 10.625 7.15466 10.625 7.49984V10.8332C10.625 11.1783 10.3452 11.4582 10 11.4582C9.65482 11.4582 9.375 11.1783 9.375 10.8332V7.49984C9.375 7.15466 9.65482 6.87484 10 6.87484Z"
-                  fill="#6F6F6F" />
-              </svg>
-              <span>15 دقيقة</span>
-            </div>
-            <p class="text-gray mb-3">
-              كيفية البحث والتصفية لإيجاد المناقصات المناسبة لك من بين آلاف المناقصات المتاحة
-            </p>
-            <a href="user-guide-details.html" class="d-flex align-items-center gap-2 fw-medium colored">
-              عرض المزيد
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-                  stroke="#6BAFB8" stroke-width="1.5" />
-                <path d="M13.5 9L10.5 12L13.5 15" stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Video Card 6 -->
-        <div class="col-xl-3 col-lg-4 col-md-6">
-          <div class="tender-card p-3 h-100 d-flex flex-column video-box">
-            <div class="position-relative mb-20">
-              <img src="images/Video-img.webp" class="video-img" alt="Video Thumbnail">
-              <div class="position-absolute top-50 start-50 translate-middle">
-                <a href="user-guide-details.html" class="play-btn">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
-                    <path
-                      d="M0.75 9.27333V5.71333C0.75 1.29333 3.88 -0.516667 7.71 1.69333L10.8 3.47333L13.89 5.25333C17.72 7.46333 17.72 11.0833 13.89 13.2933L10.8 15.0733L7.71 16.8533C3.88 19.0633 0.75 17.2533 0.75 12.8333V9.27333Z"
-                      stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <h5 class="black-text mb-2">تصفح جميع المناقصات المتاحة</h5>
-            <div class="d-flex align-items-center gap-2 text-gray mb-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M7.70833 1.6665C7.70833 1.32133 7.98816 1.0415 8.33333 1.0415H11.6667C12.0118 1.0415 12.2917 1.32133 12.2917 1.6665C12.2917 2.01168 12.0118 2.2915 11.6667 2.2915H8.33333C7.98816 2.2915 7.70833 2.01168 7.70833 1.6665ZM10 3.95817C6.20304 3.95817 3.125 7.03621 3.125 10.8332C3.125 14.6301 6.20304 17.7082 10 17.7082C13.797 17.7082 16.875 14.6301 16.875 10.8332C16.875 7.03621 13.797 3.95817 10 3.95817ZM1.875 10.8332C1.875 6.34586 5.51269 2.70817 10 2.70817C14.4873 2.70817 18.125 6.34586 18.125 10.8332C18.125 15.3205 14.4873 18.9582 10 18.9582C5.51269 18.9582 1.875 15.3205 1.875 10.8332ZM10 6.87484C10.3452 6.87484 10.625 7.15466 10.625 7.49984V10.8332C10.625 11.1783 10.3452 11.4582 10 11.4582C9.65482 11.4582 9.375 11.1783 9.375 10.8332V7.49984C9.375 7.15466 9.65482 6.87484 10 6.87484Z"
-                  fill="#6F6F6F" />
-              </svg>
-              <span>15 دقيقة</span>
-            </div>
-            <p class="text-gray mb-3">
-              كيفية البحث والتصفية لإيجاد المناقصات المناسبة لك من بين آلاف المناقصات المتاحة
-            </p>
-            <a href="user-guide-details.html" class="d-flex align-items-center gap-2 fw-medium colored">
-              عرض المزيد
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-                  stroke="#6BAFB8" stroke-width="1.5" />
-                <path d="M13.5 9L10.5 12L13.5 15" stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Video Card 7 -->
-        <div class="col-xl-3 col-lg-4 col-md-6">
-          <div class="tender-card p-3 h-100 d-flex flex-column video-box">
-            <div class="position-relative mb-20">
-              <img src="images/Video-img.webp" class="video-img" alt="Video Thumbnail">
-              <div class="position-absolute top-50 start-50 translate-middle">
-                <a href="user-guide-details.html" class="play-btn">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
-                    <path
-                      d="M0.75 9.27333V5.71333C0.75 1.29333 3.88 -0.516667 7.71 1.69333L10.8 3.47333L13.89 5.25333C17.72 7.46333 17.72 11.0833 13.89 13.2933L10.8 15.0733L7.71 16.8533C3.88 19.0633 0.75 17.2533 0.75 12.8333V9.27333Z"
-                      stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <h5 class="black-text mb-2">تصفح جميع المناقصات المتاحة</h5>
-            <div class="d-flex align-items-center gap-2 text-gray mb-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M7.70833 1.6665C7.70833 1.32133 7.98816 1.0415 8.33333 1.0415H11.6667C12.0118 1.0415 12.2917 1.32133 12.2917 1.6665C12.2917 2.01168 12.0118 2.2915 11.6667 2.2915H8.33333C7.98816 2.2915 7.70833 2.01168 7.70833 1.6665ZM10 3.95817C6.20304 3.95817 3.125 7.03621 3.125 10.8332C3.125 14.6301 6.20304 17.7082 10 17.7082C13.797 17.7082 16.875 14.6301 16.875 10.8332C16.875 7.03621 13.797 3.95817 10 3.95817ZM1.875 10.8332C1.875 6.34586 5.51269 2.70817 10 2.70817C14.4873 2.70817 18.125 6.34586 18.125 10.8332C18.125 15.3205 14.4873 18.9582 10 18.9582C5.51269 18.9582 1.875 15.3205 1.875 10.8332ZM10 6.87484C10.3452 6.87484 10.625 7.15466 10.625 7.49984V10.8332C10.625 11.1783 10.3452 11.4582 10 11.4582C9.65482 11.4582 9.375 11.1783 9.375 10.8332V7.49984C9.375 7.15466 9.65482 6.87484 10 6.87484Z"
-                  fill="#6F6F6F" />
-              </svg>
-              <span>15 دقيقة</span>
-            </div>
-            <p class="text-gray mb-3">
-              كيفية البحث والتصفية لإيجاد المناقصات المناسبة لك من بين آلاف المناقصات المتاحة
-            </p>
-            <a href="user-guide-details.html" class="d-flex align-items-center gap-2 fw-medium colored">
-              عرض المزيد
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-                  stroke="#6BAFB8" stroke-width="1.5" />
-                <path d="M13.5 9L10.5 12L13.5 15" stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Video Card 8 -->
-        <div class="col-xl-3 col-lg-4 col-md-6">
-          <div class="tender-card p-3 h-100 d-flex flex-column video-box">
-            <div class="position-relative mb-20">
-              <img src="images/Video-img.webp" class="video-img" alt="Video Thumbnail">
-              <div class="position-absolute top-50 start-50 translate-middle">
-                <a href="user-guide-details.html" class="play-btn">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
-                    <path
-                      d="M0.75 9.27333V5.71333C0.75 1.29333 3.88 -0.516667 7.71 1.69333L10.8 3.47333L13.89 5.25333C17.72 7.46333 17.72 11.0833 13.89 13.2933L10.8 15.0733L7.71 16.8533C3.88 19.0633 0.75 17.2533 0.75 12.8333V9.27333Z"
-                      stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <h5 class="black-text mb-2">تصفح جميع المناقصات المتاحة</h5>
-            <div class="d-flex align-items-center gap-2 text-gray mb-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M7.70833 1.6665C7.70833 1.32133 7.98816 1.0415 8.33333 1.0415H11.6667C12.0118 1.0415 12.2917 1.32133 12.2917 1.6665C12.2917 2.01168 12.0118 2.2915 11.6667 2.2915H8.33333C7.98816 2.2915 7.70833 2.01168 7.70833 1.6665ZM10 3.95817C6.20304 3.95817 3.125 7.03621 3.125 10.8332C3.125 14.6301 6.20304 17.7082 10 17.7082C13.797 17.7082 16.875 14.6301 16.875 10.8332C16.875 7.03621 13.797 3.95817 10 3.95817ZM1.875 10.8332C1.875 6.34586 5.51269 2.70817 10 2.70817C14.4873 2.70817 18.125 6.34586 18.125 10.8332C18.125 15.3205 14.4873 18.9582 10 18.9582C5.51269 18.9582 1.875 15.3205 1.875 10.8332ZM10 6.87484C10.3452 6.87484 10.625 7.15466 10.625 7.49984V10.8332C10.625 11.1783 10.3452 11.4582 10 11.4582C9.65482 11.4582 9.375 11.1783 9.375 10.8332V7.49984C9.375 7.15466 9.65482 6.87484 10 6.87484Z"
-                  fill="#6F6F6F" />
-              </svg>
-              <span>15 دقيقة</span>
-            </div>
-            <p class="text-gray mb-3">
-              كيفية البحث والتصفية لإيجاد المناقصات المناسبة لك من بين آلاف المناقصات المتاحة
-            </p>
-            <a href="user-guide-details.html" class="d-flex align-items-center gap-2 fw-medium colored">
-              عرض المزيد
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-                  stroke="#6BAFB8" stroke-width="1.5" />
-                <path d="M13.5 9L10.5 12L13.5 15" stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-            </a>
-          </div>
-        </div>
-
       </div>
+
+      <!-- Video Card 4 -->
+      <div class="col-xl-3 col-lg-4 col-md-6">
+        <div class="tender-card p-3 h-100 d-flex flex-column video-box">
+          <div class="position-relative mb-20">
+            <img src="images/Video-img.webp" class="video-img" alt="Video Thumbnail">
+            <div class="position-absolute top-50 start-50 translate-middle">
+              <a href="user-guide-details.html" class="play-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
+                  <path
+                    d="M0.75 9.27333V5.71333C0.75 1.29333 3.88 -0.516667 7.71 1.69333L10.8 3.47333L13.89 5.25333C17.72 7.46333 17.72 11.0833 13.89 13.2933L10.8 15.0733L7.71 16.8533C3.88 19.0633 0.75 17.2533 0.75 12.8333V9.27333Z"
+                    stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h5 class="black-text mb-2">تصفح جميع المناقصات المتاحة</h5>
+          <div class="d-flex align-items-center gap-2 text-gray mb-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M7.70833 1.6665C7.70833 1.32133 7.98816 1.0415 8.33333 1.0415H11.6667C12.0118 1.0415 12.2917 1.32133 12.2917 1.6665C12.2917 2.01168 12.0118 2.2915 11.6667 2.2915H8.33333C7.98816 2.2915 7.70833 2.01168 7.70833 1.6665ZM10 3.95817C6.20304 3.95817 3.125 7.03621 3.125 10.8332C3.125 14.6301 6.20304 17.7082 10 17.7082C13.797 17.7082 16.875 14.6301 16.875 10.8332C16.875 7.03621 13.797 3.95817 10 3.95817ZM1.875 10.8332C1.875 6.34586 5.51269 2.70817 10 2.70817C14.4873 2.70817 18.125 6.34586 18.125 10.8332C18.125 15.3205 14.4873 18.9582 10 18.9582C5.51269 18.9582 1.875 15.3205 1.875 10.8332ZM10 6.87484C10.3452 6.87484 10.625 7.15466 10.625 7.49984V10.8332C10.625 11.1783 10.3452 11.4582 10 11.4582C9.65482 11.4582 9.375 11.1783 9.375 10.8332V7.49984C9.375 7.15466 9.65482 6.87484 10 6.87484Z"
+                fill="#6F6F6F" />
+            </svg>
+            <span>15 دقيقة</span>
+          </div>
+          <p class="text-gray mb-3">
+            كيفية البحث والتصفية لإيجاد المناقصات المناسبة لك من بين آلاف المناقصات المتاحة
+          </p>
+          <a href="user-guide-details.html" class="d-flex align-items-center gap-2 fw-medium colored">
+            عرض المزيد
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                stroke="currentColor" stroke-width="1.5" />
+              <path d="M13.5 9L10.5 12L13.5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Video Card 5 -->
+      <div class="col-xl-3 col-lg-4 col-md-6">
+        <div class="tender-card p-3 h-100 d-flex flex-column video-box">
+          <div class="position-relative mb-20">
+            <img src="images/Video-img.webp" class="video-img" alt="Video Thumbnail">
+            <div class="position-absolute top-50 start-50 translate-middle">
+              <a href="user-guide-details.html" class="play-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
+                  <path
+                    d="M0.75 9.27333V5.71333C0.75 1.29333 3.88 -0.516667 7.71 1.69333L10.8 3.47333L13.89 5.25333C17.72 7.46333 17.72 11.0833 13.89 13.2933L10.8 15.0733L7.71 16.8533C3.88 19.0633 0.75 17.2533 0.75 12.8333V9.27333Z"
+                    stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h5 class="black-text mb-2">تصفح جميع المناقصات المتاحة</h5>
+          <div class="d-flex align-items-center gap-2 text-gray mb-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M7.70833 1.6665C7.70833 1.32133 7.98816 1.0415 8.33333 1.0415H11.6667C12.0118 1.0415 12.2917 1.32133 12.2917 1.6665C12.2917 2.01168 12.0118 2.2915 11.6667 2.2915H8.33333C7.98816 2.2915 7.70833 2.01168 7.70833 1.6665ZM10 3.95817C6.20304 3.95817 3.125 7.03621 3.125 10.8332C3.125 14.6301 6.20304 17.7082 10 17.7082C13.797 17.7082 16.875 14.6301 16.875 10.8332C16.875 7.03621 13.797 3.95817 10 3.95817ZM1.875 10.8332C1.875 6.34586 5.51269 2.70817 10 2.70817C14.4873 2.70817 18.125 6.34586 18.125 10.8332C18.125 15.3205 14.4873 18.9582 10 18.9582C5.51269 18.9582 1.875 15.3205 1.875 10.8332ZM10 6.87484C10.3452 6.87484 10.625 7.15466 10.625 7.49984V10.8332C10.625 11.1783 10.3452 11.4582 10 11.4582C9.65482 11.4582 9.375 11.1783 9.375 10.8332V7.49984C9.375 7.15466 9.65482 6.87484 10 6.87484Z"
+                fill="#6F6F6F" />
+            </svg>
+            <span>15 دقيقة</span>
+          </div>
+          <p class="text-gray mb-3">
+            كيفية البحث والتصفية لإيجاد المناقصات المناسبة لك من بين آلاف المناقصات المتاحة
+          </p>
+          <a href="user-guide-details.html" class="d-flex align-items-center gap-2 fw-medium colored">
+            عرض المزيد
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                stroke="currentColor" stroke-width="1.5" />
+              <path d="M13.5 9L10.5 12L13.5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Video Card 6 -->
+      <div class="col-xl-3 col-lg-4 col-md-6">
+        <div class="tender-card p-3 h-100 d-flex flex-column video-box">
+          <div class="position-relative mb-20">
+            <img src="images/Video-img.webp" class="video-img" alt="Video Thumbnail">
+            <div class="position-absolute top-50 start-50 translate-middle">
+              <a href="user-guide-details.html" class="play-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
+                  <path
+                    d="M0.75 9.27333V5.71333C0.75 1.29333 3.88 -0.516667 7.71 1.69333L10.8 3.47333L13.89 5.25333C17.72 7.46333 17.72 11.0833 13.89 13.2933L10.8 15.0733L7.71 16.8533C3.88 19.0633 0.75 17.2533 0.75 12.8333V9.27333Z"
+                    stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h5 class="black-text mb-2">تصفح جميع المناقصات المتاحة</h5>
+          <div class="d-flex align-items-center gap-2 text-gray mb-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M7.70833 1.6665C7.70833 1.32133 7.98816 1.0415 8.33333 1.0415H11.6667C12.0118 1.0415 12.2917 1.32133 12.2917 1.6665C12.2917 2.01168 12.0118 2.2915 11.6667 2.2915H8.33333C7.98816 2.2915 7.70833 2.01168 7.70833 1.6665ZM10 3.95817C6.20304 3.95817 3.125 7.03621 3.125 10.8332C3.125 14.6301 6.20304 17.7082 10 17.7082C13.797 17.7082 16.875 14.6301 16.875 10.8332C16.875 7.03621 13.797 3.95817 10 3.95817ZM1.875 10.8332C1.875 6.34586 5.51269 2.70817 10 2.70817C14.4873 2.70817 18.125 6.34586 18.125 10.8332C18.125 15.3205 14.4873 18.9582 10 18.9582C5.51269 18.9582 1.875 15.3205 1.875 10.8332ZM10 6.87484C10.3452 6.87484 10.625 7.15466 10.625 7.49984V10.8332C10.625 11.1783 10.3452 11.4582 10 11.4582C9.65482 11.4582 9.375 11.1783 9.375 10.8332V7.49984C9.375 7.15466 9.65482 6.87484 10 6.87484Z"
+                fill="#6F6F6F" />
+            </svg>
+            <span>15 دقيقة</span>
+          </div>
+          <p class="text-gray mb-3">
+            كيفية البحث والتصفية لإيجاد المناقصات المناسبة لك من بين آلاف المناقصات المتاحة
+          </p>
+          <a href="user-guide-details.html" class="d-flex align-items-center gap-2 fw-medium colored">
+            عرض المزيد
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                stroke="currentColor" stroke-width="1.5" />
+              <path d="M13.5 9L10.5 12L13.5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Video Card 7 -->
+      <div class="col-xl-3 col-lg-4 col-md-6">
+        <div class="tender-card p-3 h-100 d-flex flex-column video-box">
+          <div class="position-relative mb-20">
+            <img src="images/Video-img.webp" class="video-img" alt="Video Thumbnail">
+            <div class="position-absolute top-50 start-50 translate-middle">
+              <a href="user-guide-details.html" class="play-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
+                  <path
+                    d="M0.75 9.27333V5.71333C0.75 1.29333 3.88 -0.516667 7.71 1.69333L10.8 3.47333L13.89 5.25333C17.72 7.46333 17.72 11.0833 13.89 13.2933L10.8 15.0733L7.71 16.8533C3.88 19.0633 0.75 17.2533 0.75 12.8333V9.27333Z"
+                    stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h5 class="black-text mb-2">تصفح جميع المناقصات المتاحة</h5>
+          <div class="d-flex align-items-center gap-2 text-gray mb-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M7.70833 1.6665C7.70833 1.32133 7.98816 1.0415 8.33333 1.0415H11.6667C12.0118 1.0415 12.2917 1.32133 12.2917 1.6665C12.2917 2.01168 12.0118 2.2915 11.6667 2.2915H8.33333C7.98816 2.2915 7.70833 2.01168 7.70833 1.6665ZM10 3.95817C6.20304 3.95817 3.125 7.03621 3.125 10.8332C3.125 14.6301 6.20304 17.7082 10 17.7082C13.797 17.7082 16.875 14.6301 16.875 10.8332C16.875 7.03621 13.797 3.95817 10 3.95817ZM1.875 10.8332C1.875 6.34586 5.51269 2.70817 10 2.70817C14.4873 2.70817 18.125 6.34586 18.125 10.8332C18.125 15.3205 14.4873 18.9582 10 18.9582C5.51269 18.9582 1.875 15.3205 1.875 10.8332ZM10 6.87484C10.3452 6.87484 10.625 7.15466 10.625 7.49984V10.8332C10.625 11.1783 10.3452 11.4582 10 11.4582C9.65482 11.4582 9.375 11.1783 9.375 10.8332V7.49984C9.375 7.15466 9.65482 6.87484 10 6.87484Z"
+                fill="#6F6F6F" />
+            </svg>
+            <span>15 دقيقة</span>
+          </div>
+          <p class="text-gray mb-3">
+            كيفية البحث والتصفية لإيجاد المناقصات المناسبة لك من بين آلاف المناقصات المتاحة
+          </p>
+          <a href="user-guide-details.html" class="d-flex align-items-center gap-2 fw-medium colored">
+            عرض المزيد
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                stroke="currentColor" stroke-width="1.5" />
+              <path d="M13.5 9L10.5 12L13.5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Video Card 8 -->
+      <div class="col-xl-3 col-lg-4 col-md-6">
+        <div class="tender-card p-3 h-100 d-flex flex-column video-box">
+          <div class="position-relative mb-20">
+            <img src="images/Video-img.webp" class="video-img" alt="Video Thumbnail">
+            <div class="position-absolute top-50 start-50 translate-middle">
+              <a href="user-guide-details.html" class="play-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
+                  <path
+                    d="M0.75 9.27333V5.71333C0.75 1.29333 3.88 -0.516667 7.71 1.69333L10.8 3.47333L13.89 5.25333C17.72 7.46333 17.72 11.0833 13.89 13.2933L10.8 15.0733L7.71 16.8533C3.88 19.0633 0.75 17.2533 0.75 12.8333V9.27333Z"
+                    stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h5 class="black-text mb-2">تصفح جميع المناقصات المتاحة</h5>
+          <div class="d-flex align-items-center gap-2 text-gray mb-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M7.70833 1.6665C7.70833 1.32133 7.98816 1.0415 8.33333 1.0415H11.6667C12.0118 1.0415 12.2917 1.32133 12.2917 1.6665C12.2917 2.01168 12.0118 2.2915 11.6667 2.2915H8.33333C7.98816 2.2915 7.70833 2.01168 7.70833 1.6665ZM10 3.95817C6.20304 3.95817 3.125 7.03621 3.125 10.8332C3.125 14.6301 6.20304 17.7082 10 17.7082C13.797 17.7082 16.875 14.6301 16.875 10.8332C16.875 7.03621 13.797 3.95817 10 3.95817ZM1.875 10.8332C1.875 6.34586 5.51269 2.70817 10 2.70817C14.4873 2.70817 18.125 6.34586 18.125 10.8332C18.125 15.3205 14.4873 18.9582 10 18.9582C5.51269 18.9582 1.875 15.3205 1.875 10.8332ZM10 6.87484C10.3452 6.87484 10.625 7.15466 10.625 7.49984V10.8332C10.625 11.1783 10.3452 11.4582 10 11.4582C9.65482 11.4582 9.375 11.1783 9.375 10.8332V7.49984C9.375 7.15466 9.65482 6.87484 10 6.87484Z"
+                fill="#6F6F6F" />
+            </svg>
+            <span>15 دقيقة</span>
+          </div>
+          <p class="text-gray mb-3">
+            كيفية البحث والتصفية لإيجاد المناقصات المناسبة لك من بين آلاف المناقصات المتاحة
+          </p>
+          <a href="user-guide-details.html" class="d-flex align-items-center gap-2 fw-medium colored">
+            عرض المزيد
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                stroke="currentColor" stroke-width="1.5" />
+              <path d="M13.5 9L10.5 12L13.5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
     </div>
   </div>
 

@@ -17,7 +17,7 @@
   <!-- Bootstrap 5 RTL CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/main.css" id="main-css" />
+  <link rel="stylesheet" href="css/main.css" />
 </head>
 
 <body>
@@ -392,6 +392,177 @@
 
   <!-- Main Content -->
   <div class="container-fluid main-content">
+    <nav class="nav-tabs">
+      <div class="nav page-tabs" id="tabsContainer">
+        <a href="index.html" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+            <path opacity="0.4" d="M2.11108 14.6667H14.1111" stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path
+              d="M3.8444 5.58667H2.77775C2.41108 5.58667 2.11108 5.88667 2.11108 6.25334V12C2.11108 12.3667 2.41108 12.6667 2.77775 12.6667H3.8444C4.21107 12.6667 4.51107 12.3667 4.51107 12V6.25334C4.51107 5.88667 4.21107 5.58667 3.8444 5.58667Z"
+              stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path
+              d="M8.64445 3.45996H7.5778C7.21113 3.45996 6.91113 3.75996 6.91113 4.12663V12C6.91113 12.3666 7.21113 12.6666 7.5778 12.6666H8.64445C9.01112 12.6666 9.31112 12.3666 9.31112 12V4.12663C9.31112 3.75996 9.01112 3.45996 8.64445 3.45996Z"
+              stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path
+              d="M13.4445 1.33325H12.3778C12.0112 1.33325 11.7112 1.63325 11.7112 1.99992V11.9999C11.7112 12.3666 12.0112 12.6666 12.3778 12.6666H13.4445C13.8112 12.6666 14.1112 12.3666 14.1112 11.9999V1.99992C14.1112 1.63325 13.8112 1.33325 13.4445 1.33325Z"
+              stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span>الرئيسيه</span>
+        </a>
+        <div class="dropdown">
+          <button class="dropdown-toggle nav-link w-100" type="button" id="allTenders" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+              <path
+                d="M11.92 6.92008V9.07341C11.92 10.8667 11.2 11.5868 9.40666 11.5868H7.25332C5.45999 11.5868 4.73999 10.8667 4.73999 9.07341V6.92008C4.73999 5.12675 5.45999 4.40674 7.25332 4.40674H9.40666C11.2067 4.4134 11.92 5.12675 11.92 6.92008Z"
+                stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path opacity="0.4"
+                d="M14.9998 3.84658V5.99992C14.9998 7.79325 14.2798 8.51324 12.4865 8.51324H11.9198V6.92659C11.9198 5.13326 11.1998 4.41325 9.40649 4.41325H7.81982V3.84658C7.81982 2.05324 8.53982 1.33325 10.3332 1.33325H12.4865C14.2798 1.33325 14.9998 2.05324 14.9998 3.84658Z"
+                stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path opacity="0.4"
+                d="M1.6665 12.1532V9.9999C1.6665 8.20656 2.3865 7.48657 4.17984 7.48657H4.7465V9.07322C4.7465 10.8666 5.4665 11.5866 7.25984 11.5866H8.8465V12.1532C8.8465 13.9466 8.1265 14.6666 6.33317 14.6666H4.17984C2.3865 14.6666 1.6665 13.9466 1.6665 12.1532Z"
+                stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span class="d-flex align-items-center gap-2">
+              <span>جميع المنافسات</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M16.6004 7.45898L11.1671 12.8923C10.5254 13.534 9.47539 13.534 8.83372 12.8923L3.40039 7.45898"
+                  stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+          </button>
+          <ul class="dropdown-menu main-menu" aria-labelledby="allTenders">
+            <li>
+              <a class="dropdown-item b-dash" href="trsyat-tenders.html">
+                <img src="images/trsyat-logo.svg" alt="Trsyat">
+                مناقصات ترسيات
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="etimated-tenders.html">
+                <img src="images/Etimated-Logo.svg" alt="Etimated">
+                مناقصات اعتماد
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="forsa-tenders.html">
+                <img src="images/Forsa-Logo.svg" alt="Forsa">
+                مناقصات فرصة
+              </a>
+            </li>
+          </ul>
+        </div>
+        <a href="nominated-tenders.html" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path
+              d="M14.6673 8.66732V6.00065C14.6673 2.66732 13.334 1.33398 10.0007 1.33398H6.00065C2.66732 1.33398 1.33398 2.66732 1.33398 6.00065V10.0007C1.33398 13.334 2.66732 14.6673 6.00065 14.6673H8.66732"
+              stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path opacity="0.4" d="M10.666 12.954L11.7193 14.0007L13.9993 11.334" stroke="#292D32" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round" />
+            <path opacity="0.4" d="M4.66602 7V9" stroke="#292D32" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path opacity="0.4" d="M8 7V9" stroke="#292D32" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path opacity="0.4" d="M11.334 7V9" stroke="#292D32" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+          <span>المناقصات المرشحة</span>
+        </a>
+        <a href="offers-consultations.html" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+            <path opacity="0.4"
+              d="M12.6312 6.50663V8.59995C12.6312 8.73329 12.6245 8.86662 12.6112 8.99329C12.4912 10.4066 11.6578 11.1133 10.1245 11.1133H9.91783C9.78449 11.1133 9.65783 11.1733 9.58449 11.28L8.95782 12.12C8.67782 12.4933 8.23117 12.4933 7.95117 12.12L7.3245 11.28C7.25784 11.1933 7.1045 11.1133 6.99117 11.1133H6.78451C5.11117 11.1133 4.27783 10.7 4.27783 8.60663V6.51328C4.27783 4.97995 4.98449 4.14663 6.39783 4.02663C6.52449 4.0133 6.65782 4.00663 6.79116 4.00663H10.1445C11.7912 3.99996 12.6312 4.83996 12.6312 6.50663Z"
+              stroke="#6F6F6F" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path
+              d="M6.4445 14.6666H10.4445C13.7778 14.6666 15.1112 13.3333 15.1112 9.99992V5.99992C15.1112 2.66659 13.7778 1.33325 10.4445 1.33325H6.4445C3.11117 1.33325 1.77783 2.66659 1.77783 5.99992V9.99992C1.77783 13.3333 3.11117 14.6666 6.4445 14.6666Z"
+              stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span> العروض والاستشارات</span>
+        </a>
+        <a href="tenders-results.html" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+            <path d="M0.75 14.666H15.4167" stroke="#6F6F6F" stroke-width="1.5" stroke-miterlimit="10"
+              stroke-linecap="round" stroke-linejoin="round" />
+            <path opacity="0.4" d="M13.2715 14.6726V11.6992" stroke="#6F6F6F" stroke-width="1.5" stroke-miterlimit="10"
+              stroke-linecap="round" stroke-linejoin="round" />
+            <path
+              d="M13.2831 7.25977C12.4697 7.25977 11.8164 7.91311 11.8164 8.72644V10.2397C11.8164 11.0531 12.4697 11.7064 13.2831 11.7064C14.0964 11.7064 14.7498 11.0531 14.7498 10.2397V8.72644C14.7498 7.91311 14.0964 7.25977 13.2831 7.25977Z"
+              stroke="#6F6F6F" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path
+              d="M1.48438 14.6659V4.01921C1.48438 2.67921 2.15108 2.00586 3.47774 2.00586H7.63106C8.95773 2.00586 9.61772 2.67921 9.61772 4.01921V14.6659"
+              stroke="#6F6F6F" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path opacity="0.4" d="M3.95117 5.5H7.25118" stroke="#6F6F6F" stroke-width="1.5" stroke-miterlimit="10"
+              stroke-linecap="round" stroke-linejoin="round" />
+            <path opacity="0.4" d="M3.95117 8H7.25118" stroke="#6F6F6F" stroke-width="1.5" stroke-miterlimit="10"
+              stroke-linecap="round" stroke-linejoin="round" />
+            <path opacity="0.4" d="M5.58398 14.666V12.166" stroke="#6F6F6F" stroke-width="1.5" stroke-miterlimit="10"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span>نتائج المناقصات</span>
+        </a>
+        <a href="tender-announcement.html" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <g opacity="0.4">
+              <path d="M5.99996 11.334V7.33398L4.66663 8.66732" stroke="#6F6F6F" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M6 7.33398L7.33333 8.66732" stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </g>
+            <path
+              d="M14.6667 6.66732V10.0007C14.6667 13.334 13.3334 14.6673 10 14.6673H6.00004C2.66671 14.6673 1.33337 13.334 1.33337 10.0007V6.00065C1.33337 2.66732 2.66671 1.33398 6.00004 1.33398H9.33337"
+              stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M14.6667 6.66732H12C10 6.66732 9.33337 6.00065 9.33337 4.00065V1.33398L14.6667 6.66732Z"
+              stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span>الاعلان علي مناقصة</span>
+        </a>
+        <a href="tenders-pricing.html" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+            <path
+              d="M2.5555 13.6676C3.10884 14.2209 4.00217 14.2209 4.5555 13.6676L13.2222 5.00094C13.7755 4.4476 13.7755 3.55427 13.2222 3.00094C12.6688 2.4476 11.7755 2.4476 11.2222 3.00094L2.5555 11.6676C2.00217 12.2209 2.00217 13.1143 2.5555 13.6676Z"
+              stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path opacity="0.4" d="M12.2289 5.99414L10.2289 3.99414" stroke="#6F6F6F" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round" />
+            <path opacity="0.4"
+              d="M5.88879 1.62732L6.88879 1.33398L6.59546 2.33398L6.88879 3.33398L5.88879 3.04065L4.88879 3.33398L5.18213 2.33398L4.88879 1.33398L5.88879 1.62732Z"
+              stroke="#6F6F6F" stroke-linecap="round" stroke-linejoin="round" />
+            <path opacity="0.4"
+              d="M3.22217 5.62732L4.22217 5.33398L3.92883 6.33398L4.22217 7.33398L3.22217 7.04065L2.22217 7.33398L2.5155 6.33398L2.22217 5.33398L3.22217 5.62732Z"
+              stroke="#6F6F6F" stroke-linecap="round" stroke-linejoin="round" />
+            <path opacity="0.4"
+              d="M13.2222 8.95935L14.2222 8.66602L13.9288 9.66602L14.2222 10.666L13.2222 10.3727L12.2222 10.666L12.5155 9.66602L12.2222 8.66602L13.2222 8.95935Z"
+              stroke="#6F6F6F" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span>تسعيرات المناقصات</span>
+        </a>
+        <a href="tenders-management.html" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path
+              d="M11.5262 2.76065L11.4795 5.2873C11.4728 5.63397 11.6929 6.09398 11.9729 6.30065L13.6262 7.55396C14.6862 8.35396 14.5129 9.33397 13.2462 9.73397L11.0929 10.4073C10.7329 10.5206 10.3529 10.914 10.2595 11.2806L9.74619 13.2406C9.33952 14.7873 8.32618 14.9406 7.48618 13.5806L6.31284 11.6806C6.09951 11.334 5.59284 11.074 5.19284 11.094L2.9662 11.2073C1.37287 11.2873 0.919527 10.3673 1.95953 9.15398L3.27951 7.62063C3.52618 7.33397 3.63951 6.80064 3.52618 6.44064L2.85288 4.2873C2.45955 3.02063 3.1662 2.32064 4.4262 2.73397L6.39288 3.38064C6.72621 3.48731 7.2262 3.41397 7.5062 3.2073L9.55954 1.7273C10.6662 0.927301 11.5528 1.39398 11.5262 2.76065Z"
+              stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path opacity="0.4" d="M14.6059 14.6665L12.5859 12.6465" stroke="#6F6F6F" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span>إدارة المناقصات</span>
+        </a>
+        <!-- More Button (Ellipsis) -->
+        <div class="dropdown">
+          <button id="moreMenuBtn" class="nav-link more-btn dropdown-toggle" style="display: none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M3.39997 7.42505L8.83331 12.8584C9.47498 13.5 10.525 13.5 11.1666 12.8584L16.6 7.42505"
+                stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+          <div id="moreMenu" class="dropdown-menu wrapped-dropdown"></div>
+        </div>
+      </div>
+    </nav>
     <div class="page-header d-flex align-items-center">
       <a href="user-guide.html" class="icon-container gray-outline-btn">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -415,7 +586,7 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row gy-4">
       <!-- Main Video Section -->
       <div class="col-lg-9">
         <div class="tender-card p-3">
