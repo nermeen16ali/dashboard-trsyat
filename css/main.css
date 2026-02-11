@@ -4817,7 +4817,7 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     position: relative;
   }
 
-  .results-widget .tender-card {
+  .tender-card.abs-card {
     padding-bottom: 58px !important;
   }
 
