@@ -5376,6 +5376,11 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     scroll-snap-type: x mandatory;
   }
 
+  .icon-container.vote-btn {
+    width: 28px;
+    height: 28px;
+  }
+
   .master-img {
     height: 311px;
   }
