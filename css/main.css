@@ -2913,11 +2913,6 @@ td input[type="number"]::placeholder {
   transition: all 0.3s ease;
 }
 
-.master-img+div .play-btn {
-  width: 84px;
-  height: 84px;
-}
-
 .play-btn:hover {
   background: #397d86d6;
   border: 1px solid var(--primary-base-color);
@@ -4226,6 +4221,11 @@ a.colored:hover {
     margin-inline-start: auto;
   }
 
+  .master-img+div .play-btn {
+    width: 84px;
+    height: 84px;
+  }
+
   .w-60 {
     max-width: 60%;
   }
@@ -4986,11 +4986,6 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     gap: 12px;
   }
 
-  /* .prim-box {
-    height: 28px;
-    width: 28px;
-  } */
-
   .stats-row {
     gap: 16px;
   }
@@ -5008,7 +5003,8 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     font-size: 13.75px;
   }
 
-  .notification-tabs>* {
+  .notification-tabs>*,
+  .sidebar-videos {
     font-size: 14px;
   }
 
@@ -5377,6 +5373,10 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
 @media (max-width: 576px) {
   .scrollable-row {
     scroll-snap-type: x mandatory;
+  }
+
+  .master-img {
+    height: 311px;
   }
 
   .btn-main {
