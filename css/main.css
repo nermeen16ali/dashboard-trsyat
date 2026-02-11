@@ -652,7 +652,8 @@ h6 {
   gap: 10px;
 }
 
-.sort-btn:hover {
+.sort-btn:hover,
+.filter-btns button:hover {
   background: #f9f9f9;
 }
 
