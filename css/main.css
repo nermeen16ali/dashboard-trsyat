@@ -3378,6 +3378,7 @@ html[dir="ltr"] .send-btn svg {
   border: 1px solid rgba(217, 217, 217, 0.5);
   display: flex;
   padding: 12px;
+  gap: 10px;
   margin-bottom: 16px;
   justify-content: space-between;
   align-items: center;

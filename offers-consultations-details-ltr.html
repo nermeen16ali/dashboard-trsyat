@@ -5,15 +5,14 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="images/trsyat-logo.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Details - Submitted Tenders List</title>
+  <title>Offers & Consultations Details</title>
   <meta name="description"
-    content="We provide an intelligent environment for managing tenders, from search to submission. Our goal is to support your growth by easing access to opportunities and enhancing your competitiveness." />
+    content="We provide you with an intelligent environment for managing tenders—from search to submission. Our goal is to support your growth by simplifying access to opportunities and enhancing your competitive edge." />
 
   <!-- Bootstrap 5 LTR CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- DataTables CSS -->
-  <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
-  <link href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.bootstrap5.min.css" rel="stylesheet" />
+  <!-- Flatpickr CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/themes/material_blue.css" />
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/main.css" />
 </head>
@@ -36,7 +35,7 @@
           <div class="notification-tabs fw-medium">
             <button class="notification-tab active">All</button>
             <button class="notification-tab">Unread (12)</button>
-            <a href="notifications-ltr.html" class="ms-auto colored">View all</a>
+            <a href="notifications-ltr.html" class="ms-auto colored">Mark all read</a>
           </div>
           <div class="notification-list">
             <!-- Today -->
@@ -45,12 +44,11 @@
                 <img src="images/Tax-Law.svg" alt="icon">
               </div>
               <div class="notification-content">
-                <h6 class="fz-14 fw-medium mb-10 black-text">Your request has been received</h6>
-                <p class="fz-12 text-gray">Your tender submission has been received successfully and is under review by
-                  the administration.</p>
+                <h6 class="fz-14 fw-medium mb-10 black-text">Submission received</h6>
+                <p class="fz-12 text-gray">Your tender submission was received successfully and is under review.</p>
               </div>
               <div class="d-flex align-items-center gap-4">
-                <span class="text-dark-gray fz-12 fw-medium">11:30 PM</span>
+                <span class="text-dark-gray fz-12 fw-medium text-nowrap">11:30 PM</span>
                 <a href="#" class="icon-container gray-outline-btn">
                   <img src="images/arrow-next.svg" alt="Next">
                 </a>
@@ -63,11 +61,11 @@
               </div>
               <div class="notification-content">
                 <div class="fz-14 fw-medium mb-10 black-text">Your request is under review</div>
-                <div class="fz-12 text-gray">Your tender submission is currently being reviewed; you will be notified
-                  once an action is taken.</div>
+                <div class="fz-12 text-gray">The tender request is currently being reviewed. You will be notified of any
+                  action.</div>
               </div>
               <div class="d-flex align-items-center gap-4">
-                <span class="text-dark-gray fz-12 fw-medium">11:30 PM</span>
+                <span class="text-dark-gray fz-12 fw-medium text-nowrap">11:30 PM</span>
                 <a href="#" class="icon-container gray-outline-btn">
                   <img src="images/arrow-next.svg" alt="Next">
                 </a>
@@ -80,11 +78,11 @@
               </div>
               <div class="notification-content">
                 <div class="fz-14 fw-medium mb-10 black-text">Request rejected</div>
-                <div class="fz-12 text-gray">We regret to inform you that your tender submission was rejected. You can
-                  review the details to find out why.</div>
+                <div class="fz-12 text-gray">We regret to inform you that your tender request was rejected. Please
+                  review the details for the reason.</div>
               </div>
               <div class="d-flex align-items-center gap-4">
-                <span class="text-dark-gray fz-12 fw-medium">11:30 PM</span>
+                <span class="text-dark-gray fz-12 fw-medium text-nowrap">11:30 PM</span>
                 <a href="#" class="icon-container gray-outline-btn">
                   <img src="images/arrow-next.svg" alt="Next">
                 </a>
@@ -96,12 +94,12 @@
                 <img src="images/tabler-edit.svg" alt="icon">
               </div>
               <div class="notification-content">
-                <div class="fz-14 fw-medium mb-10 black-text">Modification required</div>
-                <div class="fz-12 text-gray">Please make the requested changes to your tender submission to complete the
+                <div class="fz-14 fw-medium mb-10 black-text">Edits required</div>
+                <div class="fz-12 text-gray">Please make the required edits on your tender request to continue the
                   review.</div>
               </div>
               <div class="d-flex align-items-center gap-4">
-                <span class="text-dark-gray fz-12 fw-medium">11:30 PM</span>
+                <span class="text-dark-gray fz-12 fw-medium text-nowrap">11:30 PM</span>
                 <a href="#" class="icon-container gray-outline-btn">
                   <img src="images/arrow-next.svg" alt="Next">
                 </a>
@@ -117,11 +115,10 @@
               </div>
               <div class="notification-content">
                 <div class="fz-14 fw-medium mb-10 black-text">Tender closing soon</div>
-                <div class="fz-12 text-gray">There is little time left before the submission deadline for this tender.
-                </div>
+                <div class="fz-12 text-gray">There is little time left to submit for this tender.</div>
               </div>
               <div class="d-flex align-items-center gap-4">
-                <span class="text-dark-gray fz-12 fw-medium">11:30 PM</span>
+                <span class="text-dark-gray fz-12 fw-medium text-nowrap">11:30 PM</span>
                 <a href="#" class="icon-container gray-outline-btn">
                   <img src="images/arrow-next.svg" alt="Next">
                 </a>
@@ -138,7 +135,7 @@
                   details.</div>
               </div>
               <div class="d-flex align-items-center gap-4">
-                <span class="text-dark-gray fz-12 fw-medium">11:30 PM</span>
+                <span class="text-dark-gray fz-12 fw-medium text-nowrap">11:30 PM</span>
                 <a href="#" class="icon-container gray-outline-btn">
                   <img src="images/arrow-next.svg" alt="Next">
                 </a>
@@ -146,18 +143,18 @@
             </div>
 
             <!-- Older -->
-            <div class="black-text fw-medium mb-3">5 November 2025</div>
+            <div class="black-text fw-medium mb-3">5 Nov 2025</div>
 
             <div class="notification-item">
               <div class="notification-icon success">
                 <img src="images/Tax-Law.svg" alt="icon">
               </div>
               <div class="notification-content">
-                <div class="fz-14 fw-medium mb-10 black-text">Pricing submission sent</div>
-                <div class="fz-12 text-gray">Your pricing submission has been sent successfully.</div>
+                <div class="fz-14 fw-medium mb-10 black-text">Price offer sent</div>
+                <div class="fz-12 text-gray">Your price offer was sent successfully.</div>
               </div>
               <div class="d-flex align-items-center gap-4">
-                <span class="text-dark-gray fz-12 fw-medium">11:30 PM</span>
+                <span class="text-dark-gray fz-12 fw-medium text-nowrap">11:30 PM</span>
                 <a href="#" class="icon-container gray-outline-btn">
                   <img src="images/arrow-next.svg" alt="Next">
                 </a>
@@ -169,18 +166,18 @@
                 <img src="images/Tax-Law.svg" alt="icon">
               </div>
               <div class="notification-content">
-                <div class="fz-14 fw-medium mb-10 black-text">Message from admin</div>
-                <div class="fz-12 text-gray">The administration added a note to your request. Please review it.</div>
+                <div class="fz-14 fw-medium mb-10 black-text">Response from admin</div>
+                <div class="fz-12 text-gray">Administration added a note to your request. Please review it.</div>
               </div>
               <div class="d-flex align-items-center gap-4">
-                <span class="text-dark-gray fz-12 fw-medium">11:30 PM</span>
+                <span class="text-dark-gray fz-12 fw-medium text-nowrap">11:30 PM</span>
                 <a href="#" class="icon-container gray-outline-btn">
                   <img src="images/arrow-next.svg" alt="Next">
                 </a>
               </div>
             </div>
             <a href="notifications-ltr.html"
-              class="d-block p-10 fz-14 fw-medium w-100 rounded-12 btn-primary w-100 text-center">
+              class="d-block p-10 fz-14 fw-medium w-100 rounded-12 btn-primary text-center">
               View all notifications
             </a>
           </div>
@@ -188,6 +185,540 @@
       </div>
     </div>
   </div>
+  <!-- Add File Modal -->
+  <div class="modal fade" id="addFile" tabindex="-1" aria-labelledby="centeredModalLabel8" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content w-620">
+        <div class="modal-header brd-btm">
+          <h6 class="modal-title" id="centeredModalLabel8">
+            Add File
+          </h6>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="tender-card p-12 sm-0">
+            <div class="tender-sections p-3 rounded-12 bg-white">
+              <div class="mb-20">
+                <label class="form-label">
+                  File Name
+                </label>
+                <input type="text" class="form-control" placeholder="File Name" required="">
+              </div>
+              <div class="upload-container">
+                <div class="upload-box uploadBox">
+                  <div class="upload-icon">
+                    <img src="images/document-download.svg" alt="Drag file here or browse">
+                  </div>
+                  <div class="d-flex flex-column gap-10">
+                    <div class="upload-title fz-10 black-text">Drag file here or browse</div>
+                    <div class="upload-subtitle fz-9 text-gray">Maximum size 500 MB</div>
+
+                    <input type="file" class="fileInput" />
+                    <div class="fz-10 colored d-none fileInfo"></div>
+                    <div class="red-colored fz-10 d-none errorMsg"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer pt-0 gap-3 flex-nowrap">
+          <button type="button" class="btn-main btn-primary w-100">
+            Add File
+          </button>
+          <button type="button" class="btn-main btn-primary-outline w-100" data-bs-dismiss="modal" aria-label="Close">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Employee Modal -->
+  <div class="modal fade" id="addEmployee" tabindex="-1" aria-labelledby="centeredModalLabel2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content w-620">
+        <div class="modal-header brd-btm">
+          <h6 class="modal-title" id="centeredModalLabel2">
+            Add Employee
+          </h6>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body gap-4">
+          <div class="tender-card p-12 sm-0">
+            <div class="tender-sections p-3 bg-white d-flex flex-column gap-3 rounded-12">
+
+              <div>
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" placeholder="Enter name">
+              </div>
+
+              <div>
+                <label class="form-label">Nationality</label>
+                <select class="form-select">
+                  <option selected="">Select Nationality</option>
+                  <option value="1">Field 1</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="form-label">Job Title</label>
+                <input type="text" class="form-control" placeholder="Enter job title">
+              </div>
+
+              <div>
+                <label class="form-label">Qualification</label>
+                <input type="text" class="form-control" placeholder="Enter qualification">
+              </div>
+
+              <div>
+                <label class="form-label">Years of Experience</label>
+                <input type="text" class="form-control" placeholder="Enter years of experience">
+              </div>
+
+              <div>
+                <label class="form-label">
+                  Skills and Summary
+                </label>
+                <div class="position-relative">
+                  <textarea class="form-control" placeholder="Enter skills and summary" maxlength="300"></textarea>
+                  <div class="char-count black-text fz-12">30/300</div>
+                </div>
+              </div>
+
+              <div class="upload-container">
+                <div class="upload-box uploadBox">
+                  <div class="upload-icon">
+                    <img src="images/document-download.svg" alt="Drag file here or browse">
+                  </div>
+                  <div class="d-flex flex-column gap-10">
+                    <div class="upload-title fz-10 black-text">Drag file here or browse</div>
+                    <div class="upload-subtitle fz-9 text-gray">Maximum size 500 MB</div>
+
+                    <input type="file" class="fileInput">
+                    <div class="fz-10 colored d-none fileInfo"></div>
+                    <div class="red-colored fz-10 d-none errorMsg"></div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-main btn-primary" data-bs-toggle="modal" data-bs-target="#SuccessModal">
+            Submit Offer
+          </button>
+          <button type="button" class="btn-main btn-primary-outline" data-bs-dismiss="modal">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Contract Modal -->
+  <div class="modal fade" id="addContract" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content w-620">
+
+        <!-- Header -->
+        <div class="modal-header brd-btm">
+          <h6 class="modal-title">Add Contract</h6>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Body -->
+        <div class="modal-body gap-4">
+          <div class="tender-card p-12 sm-0">
+            <div class="tender-sections p-3 bg-white d-flex flex-column gap-3 rounded-12">
+
+              <!-- Project Name -->
+              <div>
+                <label class="form-label">Project Name</label>
+                <input type="text" class="form-control" placeholder="Project Name">
+              </div>
+
+              <!-- Entity -->
+              <div>
+                <label class="form-label">Entity</label>
+                <input type="text" class="form-control" placeholder="Enter entity">
+              </div>
+
+              <!-- Description -->
+              <div>
+                <label class="form-label">Description</label>
+                <div class="position-relative">
+                  <textarea class="form-control" rows="4" placeholder="Enter description" maxlength="300"></textarea>
+                  <div class="char-count black-text fz-12">30/300</div>
+                </div>
+              </div>
+
+              <!-- Project Year -->
+              <div>
+                <label class="form-label">Project Year</label>
+                <select class="form-select">
+                  <option selected>Select Project Year</option>
+                  <option>2024</option>
+                  <option>2025</option>
+                </select>
+              </div>
+
+              <!-- Durations -->
+              <div class="d-flex flex-column flex-md-row gap-3">
+                <div class="flex-fill">
+                  <label class="form-label">Project Duration</label>
+                  <div class="d-flex gap-2">
+                    <select class="form-select w-auto">
+                      <option>Month</option>
+                    </select>
+                    <input type="text" class="form-control" placeholder="Enter project duration">
+                  </div>
+                </div>
+
+                <div class="flex-fill">
+                  <label class="form-label">Actual Delivery Duration</label>
+                  <div class="d-flex gap-2">
+                    <select class="form-select w-auto">
+                      <option>Month</option>
+                    </select>
+                    <input type="text" class="form-control" placeholder="Enter actual delivery duration">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project Cost -->
+              <div>
+                <label class="form-label">Project Cost</label>
+                <div class="input-group">
+                  <input type="number" class="form-control" placeholder="Enter project cost">
+                  <span class="input-group-text">
+                    <img src="images/ryall.svg" alt="SAR">
+                  </span>
+                </div>
+              </div>
+
+              <!-- Contract Attachment -->
+              <div>
+                <label class="form-label">Contract Attachment</label>
+
+                <div class="upload-container">
+                  <div class="upload-box uploadBox">
+                    <div class="upload-icon">
+                      <img src="images/document-download.svg" alt="Drag file here or browse">
+                    </div>
+                    <div class="d-flex flex-column gap-10">
+                      <div class="upload-title fz-10 black-text">
+                        Attach contract file — drag file here or browse
+                      </div>
+                      <div class="upload-subtitle fz-9 text-gray">
+                        Maximum size 500 MB
+                      </div>
+
+                      <input type="file" class="fileInput">
+                      <div class="fz-10 colored d-none fileInfo"></div>
+                      <div class="red-colored fz-10 d-none errorMsg"></div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn-main btn-primary">
+            Save Contract
+          </button>
+          <button type="button" class="btn-main btn-primary-outline" data-bs-dismiss="modal">
+            Cancel
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Contract Modal -->
+  <div class="modal fade" id="editContract" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content w-620">
+
+        <!-- Header -->
+        <div class="modal-header brd-btm">
+          <h6 class="modal-title">Edit Contract</h6>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Body -->
+        <div class="modal-body gap-4">
+          <div class="tender-card p-12 sm-0">
+            <div class="tender-sections p-3 bg-white d-flex flex-column gap-3 rounded-12">
+
+              <!-- Project Name -->
+              <div>
+                <label class="form-label">Project Name</label>
+                <input type="text" class="form-control" value="Project Name">
+              </div>
+
+              <!-- Entity -->
+              <div>
+                <label class="form-label">Entity</label>
+                <input type="text" class="form-control" value="Enter entity">
+              </div>
+
+              <!-- Description -->
+              <div>
+                <label class="form-label">Description</label>
+                <div class="position-relative">
+                  <textarea class="form-control" rows="4" placeholder="Enter description" maxlength="300"></textarea>
+                  <div class="char-count black-text fz-12">30/300</div>
+                </div>
+              </div>
+
+              <!-- Project Year -->
+              <div>
+                <label class="form-label">Project Year</label>
+                <select class="form-select">
+                  <option selected>Select Project Year</option>
+                  <option>2024</option>
+                  <option>2025</option>
+                </select>
+              </div>
+
+              <!-- Durations -->
+              <div class="d-flex gap-3">
+                <div class="flex-fill">
+                  <label class="form-label">Project Duration</label>
+                  <div class="d-flex gap-2">
+                    <select class="form-select w-auto">
+                      <option>Month</option>
+                    </select>
+                    <input type="text" class="form-control" value="Enter project duration">
+                  </div>
+                </div>
+
+                <div class="flex-fill">
+                  <label class="form-label">Actual Delivery Duration</label>
+                  <div class="d-flex gap-2">
+                    <select class="form-select w-auto">
+                      <option>Month</option>
+                    </select>
+                    <input type="text" class="form-control" value="Enter actual delivery duration">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project Cost -->
+              <div>
+                <label class="form-label">Project Cost</label>
+                <div class="input-group">
+                  <span class="input-group-text">
+                    <img src="images/ryall.svg" alt="SAR">
+                  </span>
+                  <input type="number" class="form-control" value="Enter project cost">
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn-main btn-primary">
+            Save Changes
+          </button>
+          <button type="button" class="btn-main btn-primary-outline" data-bs-dismiss="modal">
+            Cancel
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Edit Employee Modal -->
+  <div class="modal fade" id="editEmployee" tabindex="-1" aria-labelledby="centeredModalLabel2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content w-620">
+        <div class="modal-header brd-btm">
+          <h6 class="modal-title" id="centeredModalLabel2">
+            Edit Employee
+          </h6>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body gap-4">
+          <div class="tender-card p-12">
+            <div class="tender-sections p-3 bg-white d-flex flex-column gap-3 rounded-12">
+
+              <div>
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" value="Unit">
+              </div>
+
+              <div>
+                <label class="form-label">Nationality</label>
+                <select class="form-select">
+                  <option selected="">Select Nationality</option>
+                  <option value="1">Field 1</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="form-label">Job Title</label>
+                <input type="text" class="form-control" value="Enter job title">
+              </div>
+
+              <div>
+                <label class="form-label">Qualification</label>
+                <input type="text" class="form-control" value="Enter qualification">
+              </div>
+
+              <div>
+                <label class="form-label">Years of Experience</label>
+                <input type="text" class="form-control" value="Enter years of experience">
+              </div>
+
+              <div>
+                <label class="form-label">
+                  Skills and Summary
+                </label>
+                <div class="position-relative">
+                  <textarea class="form-control" placeholder="Enter skills and summary" maxlength="300"></textarea>
+                  <div class="char-count black-text fz-12">30/300</div>
+                </div>
+              </div>
+
+              <div class="upload-container">
+                <div class="upload-box uploadBox">
+                  <div class="upload-icon">
+                    <img src="images/document-download.svg" alt="Drag file here or browse">
+                  </div>
+                  <div class="d-flex flex-column gap-10">
+                    <div class="upload-title fz-10 black-text">Drag file here or browse</div>
+                    <div class="upload-subtitle fz-9 text-gray">Maximum size 500 MB</div>
+
+                    <input type="file" class="fileInput">
+                    <div class="fz-10 colored d-none fileInfo"></div>
+                    <div class="red-colored fz-10 d-none errorMsg"></div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn-main btn-primary">
+            Save Changes
+          </button>
+          <button type="button" class="btn-main btn-primary-outline" data-bs-dismiss="modal">
+            Cancel
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Modal -->
+  <div class="modal fade" id="SuccessModal" tabindex="-1" aria-labelledby="centeredModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content w-620">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <span class="d-block">
+            <svg xmlns="http://www.w3.org/2000/svg" width="77" height="77" viewBox="0 0 77 77" fill="none">
+              <path
+                d="M38.277 0C8.85524 0 -9.53336 31.85 5.17753 57.33C19.8884 82.81 56.6656 82.81 71.3765 57.33C74.731 51.5198 76.497 44.929 76.497 38.22C76.4747 17.1209 59.3761 0.0223031 38.277 0ZM55.0571 31.48L34.4771 52.0601C33.3286 53.2097 31.4654 53.2097 30.317 52.0601L21.497 43.2401C19.8957 41.6388 20.6284 38.9047 22.8157 38.3186C23.8308 38.0466 24.9139 38.3368 25.6571 39.08L32.397 45.8236L50.897 27.32C52.4982 25.7187 55.2323 26.4513 55.8184 28.6386C56.0904 29.6538 55.8002 30.7369 55.0571 31.48Z"
+                fill="#00D252" />
+            </svg>
+          </span>
+          <div>
+            <h4 class="black-text fz-20 mb-3">A New Employee Has Been Added Successfully</h4>
+            <p class="fz-14 text-gray">The new employee has been added successfully.</p>
+          </div>
+        </div>
+        <button type="button" class="btn-primary p-10 fz-14 bordered-8" data-bs-dismiss="modal">
+          Back to List
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete Modal -->
+  <div class="modal fade" id="DeleteModal" tabindex="-1" aria-labelledby="centeredModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content w-620 gap-32">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body text-center">
+          <span class="d-block">
+            <img src="images/delete-illustration.svg" alt="Delete illustration">
+          </span>
+          <div>
+            <h4 class="black-text fz-20 mb-3">Are you sure you want to delete the employee?</h4>
+            <p class="fz-14 text-gray">
+              The item will be deleted and you will not be able to recover the data again.
+            </p>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn-main btn-primary" data-bs-dismiss="modal" aria-label="Close">
+            No, Cancel
+          </button>
+          <button class="badge-rejected btn-main">
+            Yes, Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete Contract Modal -->
+  <div class="modal fade" id="DeleteContract" tabindex="-1" aria-labelledby="centeredModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content w-620">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body text-center">
+          <span class="d-block">
+            <img src="images/delete-illustration.svg" alt="Delete illustration">
+          </span>
+          <div>
+            <h4 class="black-text fz-20 mb-3">Are you sure you want to delete the contract?</h4>
+            <p class="fz-14 text-gray">
+              The item will be deleted and you will not be able to recover the data again.
+            </p>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn-main btn-primary" data-bs-dismiss="modal" aria-label="Close">
+            No, Cancel
+          </button>
+          <button class="badge-rejected btn-main">
+            Yes, Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <!-- Top Navigation Bar -->
   <nav class="navbar navbar-dark top-navbar navbar-expand-lg">
     <div class="container-fluid">
@@ -206,7 +737,7 @@
       <div class="collapse navbar-collapse" id="navbarContent">
         <div class="navbar-nav gap-3 d-flex flex-lg-row flex-column w-100">
           <div class="search-box position-relative flex-grow-1">
-            <input type="text" class="form-control" placeholder="Search dashboard" name="Search" />
+            <input type="text" class="form-control" placeholder="Search in Dashboard" name="Search" />
             <span class="search-icon position-absolute">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path
@@ -381,8 +912,8 @@
                 </filter>
               </defs>
             </svg>
-            <img src="images/programming-arrow.svg" alt="upgrading" />
-            Upgrade account
+            <img src="images/programming-arrow.svg" class="flip-ltr" alt="upgrading" />
+            Upgrade Account
             </button>
           </a>
         </div>
@@ -392,7 +923,7 @@
   <div class="container-fluid main-content">
     <nav class="nav-tabs">
       <div class="nav page-tabs" id="tabsContainer">
-        <a href="index-ltr.html" class="nav-link">
+        <a href="index-ltr.html" class="nav-link active">
           <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
             <path opacity="0.4" d="M2.11108 14.6667H14.1111" stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round"
               stroke-linejoin="round" />
@@ -423,7 +954,7 @@
                 stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
             <span class="d-flex align-items-center gap-2">
-              <span>All tenders</span>
+              <span>All Tenders</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path d="M16.6004 7.45898L11.1671 12.8923C10.5254 13.534 9.47539 13.534 8.83372 12.8923L3.40039 7.45898"
                   stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
@@ -441,7 +972,7 @@
             <li>
               <a class="dropdown-item" href="etimated-tenders-ltr.html">
                 <img src="images/Etimated-Logo.svg" alt="Etimated">
-                Etimated Tenders
+                Etimad Tenders
               </a>
             </li>
             <li>
@@ -468,7 +999,7 @@
           </svg>
           <span>Nominated Tenders</span>
         </a>
-        <a href="offers-consultations-ltr.html" class="nav-link active">
+        <a href="offers-consultations-ltr.html" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
             <path opacity="0.4"
               d="M12.6312 6.50663V8.59995C12.6312 8.73329 12.6245 8.86662 12.6112 8.99329C12.4912 10.4066 11.6578 11.1133 10.1245 11.1133H9.91783C9.78449 11.1133 9.65783 11.1733 9.58449 11.28L8.95782 12.12C8.67782 12.4933 8.23117 12.4933 7.95117 12.12L7.3245 11.28C7.25784 11.1933 7.1045 11.1133 6.99117 11.1133H6.78451C5.11117 11.1133 4.27783 10.7 4.27783 8.60663V6.51328C4.27783 4.97995 4.98449 4.14663 6.39783 4.02663C6.52449 4.0133 6.65782 4.00663 6.79116 4.00663H10.1445C11.7912 3.99996 12.6312 4.83996 12.6312 6.50663Z"
@@ -478,7 +1009,7 @@
               d="M6.4445 14.6666H10.4445C13.7778 14.6666 15.1112 13.3333 15.1112 9.99992V5.99992C15.1112 2.66659 13.7778 1.33325 10.4445 1.33325H6.4445C3.11117 1.33325 1.77783 2.66659 1.77783 5.99992V9.99992C1.77783 13.3333 3.11117 14.6666 6.4445 14.6666Z"
               stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          <span>Offers & Consultations</span>
+          <span>Offers and Consultations</span>
         </a>
         <a href="tenders-results-ltr.html" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
@@ -517,7 +1048,7 @@
             <path d="M14.6667 6.66732H12C10 6.66732 9.33337 6.00065 9.33337 4.00065V1.33398L14.6667 6.66732Z"
               stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          <span>Announce a Tender</span>
+          <span>Tender Announcement</span>
         </a>
         <a href="tenders-pricing-ltr.html" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
@@ -541,7 +1072,7 @@
         <a href="tenders-management-ltr.html" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path
-              d="M11.5262 2.76065L11.4795 5.2873C11.4728 5.63397 11.6929 6.09398 11.9729 6.30065L13.6262 7.55396C14.6862 8.35396 14.5129 9.33397 13.2462 9.73397L11.0929 10.4073C10.7329 10.5206 10.3529 10.914 10.2595 11.2806L9.74619 13.2406C9.33952 14.7873 8.32618 14.9406 7.48618 13.5806L6.31284 11.6806C6.09951 11.334 5.59284 11.074 5.19284 11.094L2.9662 11.2073C1.37287 11.2873 0.919527 10.3673 1.95953 9.15398L3.27951 7.62063C3.52618 7.33397 3.63951 6.80064 3.52618 6.44064L2.85288 4.2873C2.45955 3.02063 3.1662 2.32064 4.4262 2.73397L6.39288 3.38064C6.72621 3.48731 7.2262 3.41397 7.5062 3.2073L9.55954 1.7273C10.6662 0.927301 11.5528 1.39398 11.5262 2.76065Z"
+              d="M11.5262 2.76065L11.4795 5.2873C11.4728 5.63397 11.6929 6.09398 11.9729 6.30065L13.6262 7.55396C14.6862 8.35396 14.5129 9.33397 13.2462 9.73397L11.0929 10.4073C10.7329 10.5206 10.3529 10.914 10.2595 11.2806L9.74619 13.2406C9.33952 14.7873 8.32618 14.9406 7.48618 13.5806L6.31284 11.6806C6.09951 11.334 5.59284 11.074 5.19284 11.094L2.9662 11.2073C1.37287 11.2873 0.919527 10.3673 1.95953 9.15398L3.27951 7.62063C3.52618 7.33397 3.63951 6.80064 3.52618 6.44064L2.85288 4.2873C2.45955 3.02063 3.1662 2.32064 4.4262 2.73397L6.39288 3.38064C6.72621 3.48731 7.22620 3.41397 7.50620 3.2073L9.55954 1.7273C10.6662 0.927301 11.5528 1.39398 11.5262 2.76065Z"
               stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
             <path opacity="0.4" d="M14.6059 14.6665L12.5859 12.6465" stroke="#6F6F6F" stroke-width="1.5"
               stroke-linecap="round" stroke-linejoin="round" />
@@ -562,766 +1093,630 @@
       </div>
     </nav>
     <!-- Page Header -->
-    <div class="page-header d-flex align-items-center">
-      <a href="trsyat-tenders-ltr.html" class="icon-container gray-outline-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-          <path d="M12.025 15.0583L17.0834 9.99998L12.025 4.94165" fill="none"></path>
-          <path d="M12.025 15.0583L17.0834 9.99998L12.025 4.94165" stroke="#0C2030" stroke-width="1.5"
-            stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
-          <path opacity="0.4" d="M2.91669 10H16.9417" stroke="#0C2030" stroke-width="1.5" stroke-miterlimit="10"
-            stroke-linecap="round" stroke-linejoin="round"></path>
-        </svg>
-      </a>
-      <div class="page-breadcrumb">
-        <a href="trsyat-tenders.html">Trsyat Tenders</a>
-        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="15" viewBox="0 0 8 15" fill="none">
-          <path d="M6.66504 0.750196L1.23171 6.18353C0.590038 6.8252 0.590038 7.8752 1.23171 8.51686L6.66504 13.9502"
-            fill="white" />
-          <path d="M6.66504 0.750196L1.23171 6.18353C0.590038 6.8252 0.590038 7.8752 1.23171 8.51686L6.66504 13.9502"
-            stroke="#A1A1A1" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-        <a href="trsyat-tenders.html">Submitted tenders list</a>
-        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="15" viewBox="0 0 8 15" fill="none">
-          <path d="M6.66461 0.74995L1.23128 6.18328C0.589611 6.82495 0.589611 7.87495 1.23128 8.51662L6.66461 13.95"
-            fill="white"></path>
-          <path d="M6.66461 0.74995L1.23128 6.18328C0.589611 6.82495 0.589611 7.87495 1.23128 8.51662L6.66461 13.95"
-            stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round">
-          </path>
-        </svg>
-        <span class="active">Details</span>
+    <div class="page-header">
+      <div class="d-flex align-items-center gap-3">
+        <div class="page-breadcrumb">
+          <h2 class="active">Home</h2>
+        </div>
+        <button class="outline-primary-gray bordered-40 fz-10 d-flex align-items-center gap-10">
+          <span>Explainer Video</span>
+          <img src="images/play-cricle.svg" alt="Explainer Video">
+        </button>
       </div>
-      <button class="outline-primary-gray bordered-40 fz-10 d-flex align-items-center gap-10">
-        <span>How-to Video</span>
-        <img src="images/play-cricle.svg" alt="How-to Video">
-      </button>
     </div>
 
     <!-- Sub Tabs -->
     <div class="dash-widget sm-0 p-lg-3">
-      <nav
-        class="d-flex align-items-end align-items-md-center justify-content-between mb-4 flex-column flex-md-row gap-4">
-        <div class="sub-tabs scrollable-row" id="sub-nav-tab" role="tablist">
-          <button class="nav-link" id="nav-uploaded-tab" data-bs-toggle="tab" data-bs-target="#nav-uploaded"
-            type="button" role="tab" aria-controls="nav-uploaded" aria-selected="true">
-            Basic Information
-          </button>
-          <button class="nav-link" id="nav-tender-tab" data-bs-toggle="tab" data-bs-target="#nav-tender" type="button"
-            role="tab" aria-controls="nav-tender" aria-selected="false">
-            Applicants' Questions
-          </button>
-          <button class="nav-link active" id="nav-submit-tab" data-bs-toggle="tab" data-bs-target="#nav-submit"
-            type="button" role="tab" aria-controls="nav-submit" aria-selected="false">
-            View Submission Data
-          </button>
-          <button class="nav-link" id="nav-details-tab" data-bs-toggle="tab" data-bs-target="#nav-details" type="button"
-            role="tab" aria-controls="nav-details" aria-selected="false">
-            Award Details
-          </button>
-        </div>
-        <div>
-          <span class="sm-ele fz-12 bordered-8 text-nowrap badge-reviewed">Under review</span>
-          <span class="sm-ele fz-12 bordered-8 text-nowrap prim-opacity-outlined d-none">You were accepted</span>
-        </div>
-      </nav>
+      <div class="sub-tabs mb-4 scrollable-row" id="sub-nav-tab" role="tablist">
+        <button class="nav-link active" id="nav-uploaded-tab" data-bs-toggle="tab" data-bs-target="#nav-uploaded"
+          type="button" role="tab" aria-controls="nav-uploaded" aria-selected="true">
+          Conversation
+        </button>
+
+        <button class="nav-link" id="nav-tender-tab" data-bs-toggle="tab" data-bs-target="#nav-tender" type="button"
+          role="tab" aria-controls="nav-tender" aria-selected="false">
+          Team Members
+        </button>
+
+        <button class="nav-link" id="nav-submit-tab" data-bs-toggle="tab" data-bs-target="#nav-submit" type="button"
+          role="tab" aria-controls="nav-submit" aria-selected="false">
+          Previous Contracts
+        </button>
+
+        <button class="nav-link" id="nav-file-tab" data-bs-toggle="tab" data-bs-target="#nav-file" type="button"
+          role="tab" aria-controls="nav-file" aria-selected="false">
+          Other Files
+        </button>
+
+        <button class="nav-link" id="nav-final-tab" data-bs-toggle="tab" data-bs-target="#nav-final" type="button"
+          role="tab" aria-controls="nav-final" aria-selected="false">
+          Final Files
+        </button>
+      </div>
+
       <div class="tab-content" id="Sub-nav-tabContent">
-        <div class="tab-pane fade" id="nav-uploaded" role="tabpanel" aria-labelledby="nav-uploaded-tab">
+        <div class="tab-pane fade active show" id="nav-uploaded" role="tabpanel" aria-labelledby="nav-uploaded-tab">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <h6 class="fz-14 black-text">Selected Tender</h6>
+            <span class="sm-ele fz-12 bordered-8 text-nowrap badge-reviewed">Under Review</span>
+          </div>
+
           <!-- Tender Cards Grid -->
           <div class="tender-card p-3 mb-4">
-            <div class="tender-header d-flex align-items-center justify-content-between mb-3">
+            <div class="tender-header mb-3">
               <label class="form-check-label tender-number d-flex align-items-center">
                 <input type="checkbox" class="form-check-input mt-0" />
-                <span>Tender code / reference </span>
-                <span class="fz-14 black-text fw-medium">250739020709</span>
+                <span>Reference Number</span>
+                <span class="fz-14 black-text ff-onest fw-medium">250739020709</span>
               </label>
-              <div class="tender-actions">
-                <a href="#" class="btn-base btn-base-sm bordered-40 p-10 fz-12">
-                  Request a quote
-                </a>
-                <div class="dropdown">
-                  <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton1"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="images/drop-bullets.svg" alt="menu">
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li>
-                      <a class="dropdown-item b-dash" href="#">option 1
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#"> option 2 </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
             </div>
+
             <div class="tender-sections p-3 rounded-12 bg-white">
-              <div class="tender-section row position-relative">
-                <div class="col-md-3">
-                  <div class="d-lg-flex align-items-start tender-details gap-3">
-                    <span class="tender-status mb-3">Available</span>
-                    <div>
-                      <span class="fz-12 gray-text">Publish date</span>
+              <div class="tender-section position-relative">
+                <div class="row gy-3 align-items-md-center">
+
+                  <div class="col-8 col-md-2 order-1 order-md-2">
+                    <div class="d-flex align-items-center gap-10">
+                      <span class="fz-12 gray-text">Publish Date</span>
                       <span class="fz-14 black-text fw-medium">05-12-2025</span>
                     </div>
+                    <div class="tender-title">Office Setup and Furnishing</div>
+                    <div class="tender-subtitle">Ministry of Health</div>
                   </div>
 
-                  <h6 class="tender-title">Office furnishing and equipment</h6>
-                  <div class="tender-subtitle">Rabet Al-Nomou Platform</div>
-                </div>
-
-                <div class="col-md-3">
-                  <div class="gap-12 d-flex align-items-center">
-                    <img src="images/company-logo.png" class="company-logo" alt="company" />
-                    <div>
-                      <span class="fz-12 gray-text">Issuing entity</span>
-                      <div class="fz-14 black-text">Al Rajhi Company</div>
+                  <div class="col-md-3 order-4 order-md-2">
+                    <span class="fz-12 gray-text">Main Activity</span>
+                    <div class="fz-14 black-text">
+                      Interior Design and Fit-Out
                     </div>
                   </div>
-                </div>
-                <div class="col-md-3">
-                  <span class="fz-12 gray-text">Main activity</span>
-                  <div class="fz-14 black-text">
-                    Interior design & fittings
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="d-flex justify-content-end">
-                    <div class="position-relative">
-                      <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
-                        <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none"></circle>
-                        <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4" fill="none"
-                          stroke-dasharray="134.6 125.6"></circle>
-                      </svg>
 
-                      <div class="position-absolute top-50 start-50 translate-middle text-center">
-                        <div>200</div>
-                        <div>days</div>
+                  <div class="col-md-3 order-5 order-md-3">
+                    <div class="d-flex align-items-center">
+                      <div class="sm-logo">
+                        <img src="images/clock.svg" alt="clock">
                       </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="tender-section row">
-                <div class="col-md-3">
-                  <div class=" d-flex align-items-center">
-                    <div class="sm-logo">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <path
-                          d="M14.6663 7.99992C14.6663 11.6799 11.6797 14.6666 7.99967 14.6666C4.31967 14.6666 1.33301 11.6799 1.33301 7.99992C1.33301 4.31992 4.31967 1.33325 7.99967 1.33325C11.6797 1.33325 14.6663 4.31992 14.6663 7.99992Z"
-                          fill="white" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round"
-                          stroke-linejoin="round" />
-                        <path opacity="0.4"
-                          d="M10.4732 10.1199L8.40651 8.88659C8.04651 8.67326 7.75317 8.15992 7.75317 7.73992V5.00659"
-                          stroke="#0C2030" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
-                    </div>
-                    <div>
-                      <span class="fz-12 gray-text">Submission deadline</span>
                       <div>
-                        <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                          04:30 PM
-                        </span>
-                        <span class="black-text fz-12 fw-medium">
-                          05-12-2025
-                        </span>
+                        <span class="fz-12 gray-text">Bid Submission Deadline</span>
+                        <div>
+                          <span class="black-text fz-12 fw-medium d-inline-block me-1">
+                            04:30 pm
+                          </span>
+                          <span class="black-text fz-12 fw-medium">
+                            05-12-2025
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="col-md-3">
-                  <div class=" d-flex align-items-center">
-                    <div class="sm-logo">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <path
-                          d="M14.6663 7.99992C14.6663 11.6799 11.6797 14.6666 7.99967 14.6666C4.31967 14.6666 1.33301 11.6799 1.33301 7.99992C1.33301 4.31992 4.31967 1.33325 7.99967 1.33325C11.6797 1.33325 14.6663 4.31992 14.6663 7.99992Z"
-                          fill="white" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round"
-                          stroke-linejoin="round" />
-                        <path opacity="0.4"
-                          d="M10.4732 10.1199L8.40651 8.88659C8.04651 8.67326 7.75317 8.15992 7.75317 7.73992V5.00659"
-                          stroke="#0C2030" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
-                    </div>
+
+                  <div class="col-md-2 order-3 order-md-4">
                     <div>
-                      <span class="fz-12 gray-text">Results announcement date</span>
-                      <div>
-                        <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                          09:00 AM
-                        </span>
-                        <span class="black-text fz-12 fw-medium">
-                          12-12-2025
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="tender-price d-flex justify-content-end">
-                    <div>
-                      <span class="fz-10 gray-text d-block mb-2">Documents price</span>
-                      <span class="fz-14 black-text fw-medium">200.50
-                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17" fill="none">
-                          <path
-                            d="M7.52626 3.01847C8.06877 2.36599 8.40218 2.07305 9.05702 1.7027V12.5678L7.52626 12.9067V3.01847Z"
-                            fill="black" />
-                          <path
-                            d="M12.4172 8.48092C12.7346 7.76323 12.7719 7.44425 12.8569 6.708L1.12319 9.43785C0.84494 10.1019 0.755374 10.4731 0.712494 11.1324L12.4172 8.48092Z"
-                            fill="black" />
-                          <path
-                            d="M12.4172 11.8088C12.7346 11.0912 12.7719 10.7722 12.8569 10.0359L7.58226 11.2321C7.54493 11.89 7.58781 12.2275 7.54493 12.8868L12.4172 11.8088Z"
-                            fill="black" />
-                          <path
-                            d="M12.4172 15.1363C12.7346 14.4186 12.7719 14.0996 12.8569 13.3634L8.04896 14.4816C7.80628 14.8405 7.65694 15.4386 7.54493 16.2142L12.4172 15.1363Z"
-                            fill="black" />
-                          <path
-                            d="M4.78209 14.0032C5.24879 13.3852 5.73415 12.6077 6.07017 11.9697L0.410452 13.2841C0.132202 13.9482 0.0426358 14.3194 -0.000244141 14.9787L4.78209 14.0032Z"
-                            fill="black" />
-                          <path
-                            d="M4.53941 2.10142C5.08192 1.44893 5.41532 1.156 6.07017 0.785645V12.0096L4.53941 12.3485V2.10142Z"
-                            fill="black" />
-                        </svg>
+                      <span class="fz-12 gray-text d-block mb-1">Document Price</span>
+                      <span class="fz-14 black-text fw-medium">
+                        200.50
                       </span>
                     </div>
                   </div>
+
+                  <div class="col-4 col-md-2 order-2 order-md-5">
+                    <div class="d-flex justify-content-end">
+                      <div class="position-relative">
+                        <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
+                          <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none"></circle>
+                          <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4" fill="none"
+                            stroke-dasharray="134.6 125.6"></circle>
+                        </svg>
+                        <div class="position-absolute top-50 start-50 translate-middle text-center">
+                          <div>200</div>
+                          <div>Days</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="tender-card p-3 mb-4">
-            <div class="tender-sections p-3 rounded-12 bg-white mb-3">
-              <h6 class="mb-3">Description</h6>
-              <p class="fz-14 text-gray">
-                Al Rajhi Company aims through this tender to update its IT infrastructure by supplying and installing a
-                complete set of desktop and laptop computers. The process aims to meet the needs of various departments,
-                improve staff efficiency, and ensure compatibility of devices with the latest systems and applications
-                used within the company. The scope also includes equipping devices with all required components and
-                essential software.<br />
-                The tender also requires the winning supplier to provide routine maintenance and <span>technical
-                  support</span> for two years, including emergency repairs, supplying original spare parts, and
-                providing periodic performance reports to the IT department. The supplier is also expected to adhere to
-                a specified delivery and installation schedule and to train internal staff on optimal device usage to
-                ensure solution sustainability and operational efficiency.
-              </p>
+          <h6 class="fz-14 black-text mb-4">Conversation</h6>
+
+          <div class="tender-card p-3 d-flex flex-column h-100">
+            <div
+              class="d-flex flex-column gap-3 flex-md-row align-items-md-center justify-content-md-between mb-3 mb-md-4">
+              <div class="d-flex align-items-center gap-10">
+                <label class="form-check-label tender-number d-flex align-items-center">
+                  <input type="checkbox" class="form-check-input mt-0">
+                  <span>Conversation Number</span>
+                </label>
+                <span class="fz-14 black-text fw-medium">250739020709</span>
+              </div>
+
+              <div class="d-flex align-items-center gap-12">
+                <button class="sort-btn fav-btn">
+                  Add to Favorites
+                </button>
+                <button class="sort-btn">
+                  Archive
+                </button>
+              </div>
             </div>
-            <div class="tender-sections p-3 rounded-12 bg-white mb-3">
-              <h6 class="mb-3">Attachments</h6>
-              <ul class="styled-list">
-                <li class="d-flex align-items-center gap-12">
-                  <span class="text-decoration-underline">Bill of Quantities (BOQ) – PDF</span>
-                  <span class="icon-container">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                      <g opacity="0.4">
-                        <path d="M6 7.33325V11.3333L7.33333 9.99992" fill="#6BAFB8" />
-                        <path d="M6 7.33325V11.3333L7.33333 9.99992" stroke="#6BAFB8" stroke-width="1.5"
-                          stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M6.00002 11.3333L4.66669 10" stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round"
-                          stroke-linejoin="round" />
-                      </g>
+
+            <div class="chat-main">
+              <div class="chat-messages mb-32">
+
+                <!-- Received Messages -->
+                <div class="d-flex flex-column gap-10">
+                  <div class="message-group received">
+                    <div class="message-bubble">
+                      Next time you'll be awake at this time — why not now?
+                    </div>
+                  </div>
+
+                  <div class="message-group received">
+                    <div class="message-bubble">
+                      Didn’t I tell you not to charge your phone just because it’s the weekend?
+                    </div>
+                    <span class="message-time">Sat 5:10 AM</span>
+                  </div>
+                </div>
+
+                <!-- Sent Messages -->
+                <div class="d-flex flex-column gap-10">
+                  <div class="message-group sent">
+                    <div class="message-bubble">
+                      I woke up calmly, put the phone on charge. It was off beside me.
+                      I took it out while sleeping. I slept early, around 3.
+                    </div>
+                  </div>
+
+                  <div class="message-group sent">
+                    <div class="message-bubble">
+                      When you win in love, you keep winning in other things.
+                    </div>
+                    <span class="message-time">Sat 5:15 AM</span>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Chat Input -->
+              <div class="chat-input-area">
+                <div class="input-wrapper d-flex align-items-center gap-10 p-8-12">
+                  <div class="input-box d-flex align-items-center w-100 bg-white rounded-12">
+                    <input type="text" class="form-control chat-input border-0" placeholder="Start a new message">
+                    <div class="d-flex align-items-center gap-2 gap-md-3">
+                      <button class="action-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <path
+                            d="M21.6698 14.3L21.2698 19.3C21.1198 20.83 20.9998 22 18.2898 22H5.70977C2.99977 22 2.87977 20.83 2.72977 19.3L2.32977 14.3C2.24977 13.47 2.50977 12.7 2.97977 12.11C2.98977 12.1 2.98977 12.1 2.99977 12.09C3.54977 11.42 4.37977 11 5.30977 11H18.6898C19.6198 11 20.4398 11.42 20.9798 12.07C20.9898 12.08 20.9998 12.09 20.9998 12.1C21.4898 12.69 21.7598 13.46 21.6698 14.3Z"
+                            stroke="#6F6F6F" stroke-width="1.5" stroke-miterlimit="10" />
+                          <path opacity="0.4"
+                            d="M3.5 11.4293V6.2793C3.5 2.8793 4.35 2.0293 7.75 2.0293H9.02C10.29 2.0293 10.58 2.4093 11.06 3.0493L12.33 4.7493C12.65 5.1693 12.84 5.4293 13.69 5.4293H16.24C19.64 5.4293 20.49 6.2793 20.49 9.6793V11.4693"
+                            stroke="#6F6F6F" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                          <path opacity="0.4" d="M9.43018 17H14.5702" stroke="#6F6F6F" stroke-width="1.5"
+                            stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </button>
+                      <button class="action-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                          <rect x="0.5" y="0.5" width="21" height="21" rx="3.5" stroke="black" stroke-opacity="0.19" />
+                          <path
+                            d="M19.8732 15.5473L17.004 8.84648C16.0323 6.57315 14.2448 6.48148 13.044 8.64481L11.3115 11.7706C10.4315 13.3565 8.79068 13.494 7.65402 12.0731L7.45235 11.8165C6.26985 10.3315 4.60152 10.5148 3.74902 12.2106L2.17235 15.3731C1.06318 17.5731 2.66735 20.1673 5.12402 20.1673H16.8207C19.204 20.1673 20.8082 17.7381 19.8732 15.5473Z"
+                            stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          <path opacity="0.4"
+                            d="M6.38916 7.33398C7.90794 7.33398 9.13916 6.10277 9.13916 4.58398C9.13916 3.0652 7.90794 1.83398 6.38916 1.83398C4.87038 1.83398 3.63916 3.0652 3.63916 4.58398C3.63916 6.10277 4.87038 7.33398 6.38916 7.33398Z"
+                            stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <button class="send-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                       <path
-                        d="M14.6666 6.66659V9.99992C14.6666 13.3333 13.3333 14.6666 9.99998 14.6666H5.99998C2.66665 14.6666 1.33331 13.3333 1.33331 9.99992V5.99992C1.33331 2.66659 2.66665 1.33325 5.99998 1.33325H9.33331"
-                        stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                      <path
-                        d="M14.6666 6.66658H12C9.99998 6.66658 9.33331 5.99992 9.33331 3.99992V1.33325L14.6666 6.66658Z"
-                        stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        d="M0.400948 9.3371L17.9169 0.0871053C18.2069 -0.0648947 18.5569 -0.0148948 18.7899 0.213105C19.0199 0.439105 19.0829 0.790105 18.9399 1.08111L14.5779 10.0011L18.9399 18.9211C19.0829 19.2131 19.0199 19.5641 18.7899 19.7891C18.6449 19.9291 18.4569 20.0011 18.2669 20.0011C18.1469 20.0011 18.0269 19.9731 17.9169 19.9141L0.399946 10.6641C0.154945 10.5341 -5.34058e-05 10.2781 -5.34058e-05 10.0001C-5.34058e-05 9.72211 0.154945 9.46811 0.399946 9.33811L0.400948 9.3371ZM16.5829 2.48911L3.77895 9.25111H13.2759L16.5829 2.49111V2.48911ZM13.2759 10.7491H3.77795L16.5829 17.5141L13.2759 10.7511V10.7491Z"
+                        fill="#6BAFB8" />
                     </svg>
-                  </span>
-                </li>
-                <li class="d-flex align-items-center gap-12">
-                  <span class="text-decoration-underline">Terms of Reference (TOR) – Word</span>
-                  <span class="icon-container">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                      <g opacity="0.4">
-                        <path d="M6 7.33325V11.3333L7.33333 9.99992" fill="#6BAFB8" />
-                        <path d="M6 7.33325V11.3333L7.33333 9.99992" stroke="#6BAFB8" stroke-width="1.5"
-                          stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M6.00002 11.3333L4.66669 10" stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round"
-                          stroke-linejoin="round" />
-                      </g>
-                      <path
-                        d="M14.6666 6.66659V9.99992C14.6666 13.3333 13.3333 14.6666 9.99998 14.6666H5.99998C2.66665 14.6666 1.33331 13.3333 1.33331 9.99992V5.99992C1.33331 2.66659 2.66665 1.33325 5.99998 1.33325H9.33331"
-                        stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                      <path
-                        d="M14.6666 6.66658H12C9.99998 6.66658 9.33331 5.99992 9.33331 3.99992V1.33325L14.6666 6.66658Z"
-                        stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </span>
-                </li>
-              </ul>
-            </div>
-            <div class="tender-sections p-3 rounded-12 bg-white mb-4">
-              <h6 class="mb-3">Basic qualification requirements</h6>
-              <p class="fz-14 text-gray">
-                Valid commercial registration in the IT field. <br />
-                Approved classification from the Ministry of Finance in the appropriate category.<br />
-                Proven experience in executing at least 3 similar projects in the last 5 years. <br />
-                Submission of an initial bank guarantee equal to 2% of the bid value.
-              </p>
-            </div>
-            <div class="tender-footer gap-3 w-fit">
-              <a href="trsyat-tenders.html" class="btn-main btn-primary-outline">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M12.025 15.0586L17.0833 10.0002L12.025 4.94189" stroke="#6BAFB8" stroke-width="1.5"
-                    stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                  <path opacity="0.4" d="M2.91667 10H16.9417" stroke="#6BAFB8" stroke-width="1.5" stroke-miterlimit="10"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <span>Back to tenders list</span>
-              </a>
-              <button class="btn-main btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#applyModal">
-                <span> Apply for tender</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M7.97501 15.0586L2.91667 10.0002L7.97501 4.94189" stroke="white" stroke-width="1.5"
-                    stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                  <path opacity="0.4" d="M17.0833 10H3.05834" stroke="white" stroke-width="1.5" stroke-miterlimit="10"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </button>
+                  </button>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
 
         <div class="tab-pane fade" id="nav-tender" role="tabpanel" aria-labelledby="nav-tender-tab">
-          <div class="vote-section d-flex align-items-center gap-4 mb-4">
-            <span class="fz-14 base-text">Tender voting</span>
-            <!-- Voting buttons -->
-            <div class="vote-buttons d-flex align-items-center gap-10">
-              <button class="bordered-40 fz-10 outline-primary-gray d-flex align-items-center gap-10">
-                <span>12</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path opacity="0.4"
-                    d="M4.98669 12.2334L7.05336 13.8334C7.32003 14.1001 7.92003 14.2334 8.32003 14.2334H10.8534C11.6534 14.2334 12.52 13.6334 12.72 12.8334L14.32 7.96673C14.6534 7.03339 14.0534 6.23339 13.0534 6.23339H10.3867C9.98669 6.23339 9.65336 5.90006 9.72003 5.43339L10.0534 3.30006C10.1867 2.70006 9.78669 2.03339 9.18669 1.83339C8.65336 1.63339 7.98669 1.90006 7.72003 2.30006L4.98669 6.36673"
-                    stroke="#6BAFB8" stroke-width="1.5" stroke-miterlimit="10" />
+          <!-- Search and Filter Bar -->
+          <div class="filter-bar">
+            <div class="search-box w-100 position-relative">
+              <input type="text" class="form-control" id="tableSearch" placeholder="Search Competitions"
+                name="Search" />
+              <span class="search-icon position-absolute">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                   <path
-                    d="M1.58667 12.2333V5.70002C1.58667 4.76668 1.98667 4.43335 2.92 4.43335H3.58667C4.52 4.43335 4.92 4.76668 4.92 5.70002V12.2333C4.92 13.1667 4.52 13.5 3.58667 13.5H2.92C1.98667 13.5 1.58667 13.1667 1.58667 12.2333Z"
-                    stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    d="M9.58341 17.5001C13.9557 17.5001 17.5001 13.9557 17.5001 9.58341C17.5001 5.21116 13.9557 1.66675 9.58341 1.66675C5.21116 1.66675 1.66675 5.21116 1.66675 9.58341C1.66675 13.9557 5.21116 17.5001 9.58341 17.5001Z"
+                    fill="white" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  </path>
+                  <path opacity="0.4" d="M18.3334 18.3334L16.6667 16.6667" stroke="#0C2030" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round"></path>
                 </svg>
-              </button>
-              <button class="bordered-40 fz-10 outline-primary-gray d-flex align-items-center gap-10">
-                <span>12</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path opacity="0.4"
-                    d="M4.98669 3.76661L7.05336 2.16661C7.32003 1.89994 7.92003 1.76661 8.32003 1.76661H10.8534C11.6534 1.76661 12.52 2.36661 12.72 3.16661L14.32 8.03327C14.6534 8.96661 14.0534 9.76661 13.0534 9.76661H10.3867C9.98669 9.76661 9.65336 10.0999 9.72003 10.5666L10.0534 12.6999C10.1867 13.2999 9.78669 13.9666 9.18669 14.1666C8.65336 14.3666 7.98669 14.0999 7.72003 13.6999L4.98669 9.63327"
-                    stroke="#6BAFB8" stroke-width="1.5" stroke-miterlimit="10" />
-                  <path
-                    d="M1.58667 3.76665V10.3C1.58667 11.2333 1.98667 11.5667 2.92 11.5667H3.58667C4.52 11.5667 4.92 11.2333 4.92 10.3V3.76665C4.92 2.83332 4.52 2.49998 3.58667 2.49998H2.92C1.98667 2.49998 1.58667 2.83332 1.58667 3.76665Z"
-                    stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </button>
+              </span>
             </div>
+            <button class="btn-main btn-primary w-sm-100" type="button" data-bs-toggle="modal"
+              data-bs-target="#addEmployee">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M8 3.33331V12.6666" stroke="white" stroke-width="1.33333" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M3.33331 8H12.6666" stroke="white" stroke-width="1.33333" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              <span>Add Employee</span>
+            </button>
           </div>
-          <!-- Add question button -->
-          <button class="btn-base p-10 bordered-8 fz-12 mb-4" type="button" data-bs-toggle="modal"
-            data-bs-target="#addQuestionModal">
-            <span>Add question</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M8 3.33325V12.6666" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round"
-                stroke-linejoin="round" />
-              <path d="M3.33337 8H12.6667" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </button>
-
-          <div class="tender-card p-3 mb-4">
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="d-flex align-items-center gap-10 mb-3">
-                <span class="qa-num fz-14 text-gray fw-medium">1</span>
-                <p class="fz-14 black-text fw-medium">
-                  Are devices from different brands allowed, or must all devices be from the same manufacturer?
-                </p>
-              </div>
-              <div class="d-flex align-items-center gap-1">
-                <span class="fz-12 gray-text">Question date</span>
-                <div>
-                  <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                    09:00 AM
-                  </span>
-                  <span class="black-text fz-12 fw-medium">
-                    12-12-2025
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="tender-sections p-3 rounded-12 bg-white">
-              <p class="fz-14 text-gray mb-3">
-                Al Rajhi Company aims through this tender to update its IT infrastructure by supplying and installing a
-                complete set of desktop and laptop computers. The process aims to meet the needs of various departments,
-                improve staff efficiency, and ensure compatibility of devices with the latest systems and applications
-                used within the company. The scope also includes equipping devices with all required components and
-                essential software. <br />The tender also requires the winning supplier to provide routine maintenance
-                and <span>Support</span> for two years, including emergency repairs, supplying original spare
-                parts, and providing periodic performance reports to the IT department. The supplier is also expected to
-                adhere to a specified delivery and installation schedule and to train internal staff on optimal device
-                usage to ensure solution sustainability and operational efficiency.
-              </p>
-              <div class="d-flex align-items-center gap-1">
-                <span class="fz-12 gray-text">Response date</span>
-                <div>
-                  <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                    09:00 AM
-                  </span>
-                  <span class="black-text fz-12 fw-medium">
-                    12-12-2025
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="tender-card p-3 mb-4">
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="d-flex align-items-center gap-10 mb-3">
-                <span class="qa-num fz-14 text-gray fw-medium">2</span>
-                <p class="fz-14 black-text fw-medium">
-                  Is it allowed to submit additional supporting documents with the offers?
-                </p>
-              </div>
-              <div class="d-flex align-items-center gap-1">
-                <span class="fz-12 gray-text">Question date</span>
-                <div>
-                  <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                    09:00 AM
-                  </span>
-                  <span class="black-text fz-12 fw-medium">
-                    12-12-2025
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="tender-sections p-3 rounded-12 bg-white">
-              <p class="fz-14 text-gray mb-3">
-                The tender requires submission of a comprehensive package of documents including technical data,
-                warranty certificates, and CVs of the relevant technicians. Additional supporting documents that
-                strengthen the offers are welcome, as they help evaluate bids comprehensively and reflect the supplier's
-                commitment to quality and required standards.
-              </p>
-              <div class="d-flex align-items-center gap-1">
-                <span class="fz-12 gray-text">Response date</span>
-                <div>
-                  <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                    09:00 AM
-                  </span>
-                  <span class="black-text fz-12 fw-medium">
-                    12-12-2025
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="tender-card p-3 mb-4">
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="d-flex align-items-center gap-10 mb-3">
-                <span class="qa-num fz-14 text-gray fw-medium">3</span>
-                <p class="fz-14 black-text fw-medium">
-                  What are the requirements to ensure routine maintenance of the devices?
-                </p>
-              </div>
-              <div class="d-flex align-items-center gap-1">
-                <span class="fz-12 gray-text">Question date</span>
-                <div>
-                  <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                    09:00 AM
-                  </span>
-                  <span class="black-text fz-12 fw-medium">
-                    12-12-2025
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="tender-sections p-3 rounded-12 bg-white">
-              <p class="fz-14 text-gray mb-3">
-                The tender emphasizes providing comprehensive Support services, including periodic device
-                performance checks and maintaining an adequate stock of spare parts. The supplier must provide a
-                detailed plan outlining preventive maintenance strategies and define response times for emergency faults
-                to ensure uninterrupted operations and device effectiveness.
-              </p>
-              <div class="d-flex align-items-center gap-1">
-                <span class="fz-12 gray-text">Response date</span>
-                <div>
-                  <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                    09:00 AM
-                  </span>
-                  <span class="black-text fz-12 fw-medium">
-                    12-12-2025
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="tab-pane fade active show" id="nav-submit" role="tabpanel" aria-labelledby="nav-submit-tab">
-          <h6 class="black-text mb-4">Bill of Quantities</h6>
-          <div class="table-container mb-5">
+          <div class="table-container">
             <div class="table-responsive">
-              <table class="table table-bordered align-middle competition-table">
+              <table class="table table-bordered align-middle competition-table large-table">
                 <thead>
                   <tr>
-                    <th>Product code</th>
-                    <th>Product name</th>
-                    <th>Product description</th>
-                    <th>Quantity</th>
-                    <th>Unit</th>
-                    <th>Unit price</th>
-                    <th>Rate</th>
-                    <th>Tax</th>
-                    <th>Total price (with tax)</th>
-                    <th>Attachments</th>
+                    <th>Employee ID</th>
+                    <th>Name</th>
+                    <th>Nationality</th>
+                    <th>Job Title</th>
+                    <th>Degree</th>
+                    <th>Years of Experience</th>
+                    <th>Skills & Summary</th>
+                    <th>View CV</th>
+                    <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td class="fw-medium black-text">250739020707</td>
-                    <td>
+                    <td data-label="Employee ID"><span class="fw-medium black-text">250739020707</span></td>
+                    <td data-label="Name">
+                      <span class="text-dark-gray fw-medium">Ahmed Mohammed Ali</span>
+                    </td>
+                    <td data-label="Nationality">
+                      <span class="text-dark-gray fw-medium">Saudi</span>
+                    </td>
+                    <td data-label="Job Title">
+                      <span class="black-text fw-medium">Civil Engineer</span>
+                    </td>
+                    <td data-label="Degree">
+                      <span class="text-dark-gray fw-medium">Bachelor's in Civil Engineering</span>
+                    </td>
+                    <td data-label="Years of Experience">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
-                          <img src="images/shopping-cart.svg" alt="shopping-cart">
+                          <img src="images/timer.svg" alt="timer">
                         </span>
-                        <span>Al Mumtaz Cement</span>
+                        <span class="fw-medium black-text">30 months</span>
                       </div>
                     </td>
-                    <td>
-                      <span class="text-gray">Al Rajhi Company aims through this tender to update its IT infrastructure
-                        by supplying and installing a set of devices</span>
-                    </td>
-                    <td>
-                      <span class="fw-medium">120</span>
-                    </td>
-                    <td>
-                      KG.M^3
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center gap-2">
-                        <input type="number" placeholder="Enter price">
-                        <img src="images/ryall.svg" alt="SAR">
+                    <td data-label="Skills & Summary">
+                      <div class="d-flex align-items-end">
+                        <p class="ellipse-text">
+                          Al Rajhi Company seeks, through this tender, to upgrade its technical infrastructure. Al Rajhi
+                          Company seeks to upgrade its technical infrastructure through this tender.
+                        </p>
+                        <a href="#" class="colored text-decoration-underline fz-12 text-nowrap">View More</a>
                       </div>
                     </td>
-                    <td>
-                      <span class="percentage">14%</span>
-                    </td>
-                    <td>
-                      <div class="dropdown">
-                        <button class="dropdown-toggle colored-toggle" type="button" id="tax" data-bs-toggle="dropdown"
-                          aria-expanded="false">
-                          <span class="me-2">Tax excluded</span>
-                          <svg xmlns="http://www.w3.org/2000/svg" width="9" height="5" viewBox="0 0 9 5" fill="none">
-                            <path
-                              d="M8.14648 0.146484C8.34175 -0.0487725 8.65825 -0.048775 8.85352 0.146484C9.04877 0.341745 9.04877 0.658253 8.85352 0.853516L4.85352 4.85352C4.65825 5.04877 4.34174 5.04877 4.14648 4.85352L0.146484 0.853516C-0.0487624 0.658254 -0.0487706 0.341742 0.146484 0.146484C0.341743 -0.0487522 0.658259 -0.0487571 0.853516 0.146484L4.5 3.79297L8.14648 0.146484Z"
-                              fill="black" />
-                          </svg>
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="tax">
-                          <li>
-                            <a class="dropdown-item b-dash" href="#">1</a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item" href="#">2</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </td>
-                    <td>
-                      <span class="me-1 fw-medium">100.23</span>
-                      <img src="images/ryall.svg" alt="SAR">
-                    </td>
-                    <td>
+                    <td data-label="View CV">
                       <a href="#" class="display-link">
                         <img src="images/outlined-File.svg" alt="">
                         View
                       </a>
                     </td>
+                    <td data-label="Actions">
+                      <div class="dropdown">
+                        <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton1"
+                          data-bs-toggle="dropdown" aria-expanded="false">
+                          <img src="images/drop-bullets.svg" alt="dropdown">
+                        </button>
+                        <ul class="dropdown-menu main-menu" aria-labelledby="dropdownMenuButton1">
+                          <li>
+                            <button class="dropdown-item colored" type="button" data-bs-toggle="modal"
+                              data-bs-target="#editEmployee">
+                              <img src="images/edit-pen.svg" alt="Edit">
+                              Edit
+                            </button>
+                          </li>
+                          <li>
+                            <button class="dropdown-item red-colored" type="button" data-bs-toggle="modal"
+                              data-bs-target="#DeleteModal">
+                              <img src="images/trash.svg" alt="Delete">
+                              Delete
+                            </button>
+                          </li>
+                        </ul>
+                      </div>
+                    </td>
                   </tr>
-
-                  <!-- Additional rows translated similarly -->
                 </tbody>
               </table>
             </div>
           </div>
+        </div>
 
-          <div class="tender-card p-3">
-            <h6 class="black-text mb-3">Attachments</h6>
-            <div class="tender-section bg-white p-3 rounded-12">
-              <p class="fz-14 black-text mb-12">Bill of Quantities (BOQ) – PDF</p>
-              <div class="outer-file-card mb-4">
-                <div class="file-card">
-                  <div class="d-flex align-items-center gap-12">
-                    <img src="images/attach-circle.svg" alt="pdf">
-                    <span class="fz-12 black-text">wwweweweir.pdf</span>
-                  </div>
-                  <div class="d-flex align-items-center gap-12">
-                    <span class="text-gray fz-12" dir="ltr">34.8 MB</span>
-                    <a href="./pdfs/pdf.pdf" download="">
-                      <img src="images/document-download.svg" alt="download pdf">
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <p class="fz-14 black-text mb-12">Terms of Reference (TOR) – Word</p>
-              <div class="outer-file-card mb-4">
-                <div class="file-card">
-                  <div class="d-flex align-items-center gap-12">
-                    <img src="images/attach-circle.svg" alt="word">
-                    <span class="fz-12 black-text">wwweweweir.pdf</span>
-                  </div>
-                  <div class="d-flex align-items-center gap-12">
-                    <span class="text-gray fz-12" dir="ltr">34.8 MB</span>
-                    <a href="./pdfs/pdf.pdf" download="">
-                      <img src="images/document-download.svg" alt="download doc">
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="tender-footer w-fit">
-                <a href="trsyat-tenders.html" class="btn-main btn-primary-outline mt-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <path d="M12.025 15.0586L17.0833 10.0002L12.025 4.94189" stroke="#6BAFB8" stroke-width="1.5"
-                      stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
-                    <path opacity="0.4" d="M2.91667 10H16.9417" stroke="#6BAFB8" stroke-width="1.5"
-                      stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <span>Back to tenders list</span>
-                </a>
-              </div>
+        <div class="tab-pane fade" id="nav-submit" role="tabpanel" aria-labelledby="nav-submit-tab">
+          <div class="filter-bar">
+            <div class="search-box w-100 position-relative">
+              <input type="text" class="form-control" id="tableSearch" placeholder="Search Competitions" name="Search">
+              <span class="search-icon position-absolute">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path
+                    d="M9.58341 17.5001C13.9557 17.5001 17.5001 13.9557 17.5001 9.58341C17.5001 5.21116 13.9557 1.66675 9.58341 1.66675C5.21116 1.66675 1.66675 5.21116 1.66675 9.58341C1.66675 13.9557 5.21116 17.5001 9.58341 17.5001Z"
+                    fill="white" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  </path>
+                  <path opacity="0.4" d="M18.3334 18.3334L16.6667 16.6667" stroke="#0C2030" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </span>
+            </div>
+            <button class="btn-main btn-primary w-sm-100" type="button" data-bs-toggle="modal"
+              data-bs-target="#addContract">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M8 3.33331V12.6666" stroke="white" stroke-width="1.33333" stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+                <path d="M3.33331 8H12.6666" stroke="white" stroke-width="1.33333" stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+              <span>Add Contract</span>
+            </button>
+          </div>
+          <div class="table-container mb-5">
+            <div class="table-responsive">
+              <table class="table table-bordered align-middle competition-table large-table">
+                <thead>
+                  <tr>
+                    <th>File Number</th>
+                    <th>Project Name</th>
+                    <th>Organization</th>
+                    <th>Project Details</th>
+                    <th>Project Year</th>
+                    <th>Project Duration</th>
+                    <th>Delivery Time</th>
+                    <th>Project Cost</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td data-label="File Number"><span class="fw-medium ff-onest">250739020707</span></td>
+                    <td data-label="Project Name"><span class="text-dark-gray fw-medium">Project Name</span></td>
+                    <td data-label="Organization"><span class="text-dark-gray fw-medium">Organization</span></td>
+                    <td data-label="Project Details">
+                      <div class="d-flex align-items-end text-dark-gray">
+                        <p class="ellipse-text">
+                          Al Rajhi Company aims through this tender to update its technical infrastructure. Al Rajhi
+                          Company aims through this tender to update its technical infrastructure.
+                        </p>
+                        <a href="#" class="colored text-decoration-underline fz-12 text-nowrap">View More</a>
+                      </div>
+                    </td>
+                    <td data-label="Project Year">
+                      <div class="d-flex align-items-center">
+                        <span class="sm-logo">
+                          <img src="images/calendar.svg" alt="icon">
+                        </span>
+                        <span class="fw-medium black-text">12-12-2025</span>
+                      </div>
+                    </td>
+                    <td data-label="Project Duration">
+                      <div class="d-flex align-items-center">
+                        <span class="sm-logo">
+                          <img src="images/clock.svg" alt="icon">
+                        </span>
+                        <span class="fw-medium black-text">30 months</span>
+                      </div>
+                    </td>
+                    <td data-label="Delivery Time">
+                      <div class="d-flex align-items-center">
+                        <span class="sm-logo">
+                          <img src="images/clock.svg" alt="icon">
+                        </span>
+                        <span class="fw-medium black-text">30 months</span>
+                      </div>
+                    </td>
+                    <td data-label="Project Cost">
+                      <div class="d-flex align-items-center gap-1">
+                        <span class="fw-medium black-text">200,000.50</span>
+                        <img src="images/ryall.svg" alt="Riyal">
+                      </div>
+                    </td>
+                    <td data-label="Actions">
+                      <div class="dropdown">
+                        <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton1"
+                          data-bs-toggle="dropdown" aria-expanded="false">
+                          <img src="images/drop-bullets.svg" alt="dropdown">
+                        </button>
+                        <ul class="dropdown-menu main-menu" aria-labelledby="dropdownMenuButton1">
+                          <li>
+                            <button class="dropdown-item colored" type="button" data-bs-toggle="modal"
+                              data-bs-target="#editContract">
+                              <img src="images/edit-pen.svg" alt="Edit">
+                              Edit
+                            </button>
+                          </li>
+                          <li>
+                            <button class="dropdown-item red-colored" type="button" data-bs-toggle="modal"
+                              data-bs-target="#DeleteContract">
+                              <img src="images/trash.svg" alt="Delete">
+                              Delete
+                            </button>
+                          </li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- Repeat other rows as needed, same structure -->
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
+        <div class="tab-pane fade" id="nav-file" role="tabpanel" aria-labelledby="nav-file-tab">
+          <div class="d-flex justify-content-end mb-4">
+            <button class="btn-main btn-primary fz-14 w-sm-100" type="button" data-bs-toggle="modal"
+              data-bs-target="#addFile">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M8 3.33331V12.6666" stroke="white" stroke-width="1.33333" stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+                <path d="M3.33331 8H12.6666" stroke="white" stroke-width="1.33333" stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+              <span>Add File</span>
+            </button>
+          </div>
 
-        <div class="tab-pane fade" id="nav-details" role="tabpanel" aria-labelledby="nav-details-tab">
-          <h6 class="black-text mb-4">Submitted companies</h6>
-          <div class="tender-card p-3 mb-4 prim">
-            <div class="row mb-3 align-items-center">
-              <div class="col-md-4">
-                <div class="d-flex align-items-center gap-10">
-                  <span class="big-num">1</span>
-                  <img src="images/company-logo.png" class="company-logo" alt="company">
-                  <span class="fz-14 black-text fw-medium">Al Rajhi Company</span>
-                  <span class="fz-12 text-gray">( you )</span>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="d-flex align-items-center gap-10">
-                  <span class="fz-14 black-text">Technical proposal</span>
-                  <img src="images/checked-green.svg" class="w-24" alt="approved">
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="d-flex align-items-center gap-10">
-                  <span class="fz-14 black-text">Financial proposal</span>
-                  <img src="images/checked-green.svg" class="w-24" alt="approved">
-                </div>
-              </div>
-              <div class="col-md-2">
-                <div class="d-flex align-items-center gap-10 fz-12 black-text">
-                  <span>Total price</span>
-                  <span class="fw-medium">100.999 <img src="images/ryall.svg" class="ms-1" alt="SAR"></span>
-                  <img src="images/checked-green.svg" class="w-24" alt="approved">
-                </div>
-              </div>
+          <div class="mb-4">
+            <div class="d-flex align-items-center gap-10 mb-12">
+              <p class="fz-14 black-text">Technical Proposal Attachment</p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path
+                  d="M9.99935 18.3334C14.5827 18.3334 18.3327 14.5834 18.3327 10C18.3327 5.41669 14.5827 1.66669 9.99935 1.66669C5.41602 1.66669 1.66602 5.41669 1.66602 10C1.66602 14.5834 5.41602 18.3334 9.99935 18.3334Z"
+                  fill="white" stroke="#A1A1A1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path opacity="0.34" d="M10 6.66669V10.8334" stroke="#A1A1A1" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path opacity="0.34" d="M9.99609 13.3333H10.0036" stroke="#292D32" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
             </div>
-            <div class="tender-section bg-white p-3 rounded-12">
-              <h6 class="fz-14 black-text mb-3">Notes</h6>
-              <p class="text-gray fz-14">The tender requires submission of a comprehensive package of documents
-                including technical data, warranty certificates, and CVs of the relevant technicians. Additional
-                supporting documents that strengthen the offers are welcome, as they help evaluate bids comprehensively
-                and reflect the supplier's commitment to quality and required standards.</p>
+            <div class="outer-file-card">
+              <div class="file-card ps-3 pe-1 py-1">
+                <div class="d-flex align-items-center gap-12">
+                  <img src="images/attach-circle.svg" alt="pdf">
+                  <span class="fz-12 black-text">wwweweweir.pdf</span>
+                </div>
+                <div class="d-flex align-items-center gap-12">
+                  <span class="text-gray fz-12" dir="ltr">34.8 MB</span>
+                  <a href="./pdfs/pdf.pdf" download="">
+                    <img src="images/document-download.svg" alt="download pdf">
+                  </a>
+                  <a href="#" class="prim-opacity-outlined btn-main fw-medium">View File</a>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="tender-card p-3 mb-4">
-            <div class="row mb-3 align-items-center">
-              <div class="col-md-4">
-                <div class="d-flex align-items-center gap-10">
-                  <span class="big-num">2</span>
-                  <img src="images/company-logo.png" class="company-logo" alt="company">
-                  <span class="fz-14 black-text fw-medium">Al Rajhi Company</span>
-                  <span class="fz-12 text-gray">( you )</span>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="d-flex align-items-center gap-10">
-                  <span class="fz-14 black-text">Technical proposal</span>
-                  <img src="images/close-red.svg" class="w-24" alt="rejected">
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="d-flex align-items-center gap-10">
-                  <span class="fz-14 black-text">Financial proposal</span>
-                  <img src="images/checked-green.svg" class="w-24" alt="approved">
-                </div>
-              </div>
-              <div class="col-md-2">
-                <div class="d-flex align-items-center gap-10 fz-12 black-text">
-                  <span>Total price</span>
-                  <span class="fw-medium">100.999 <img src="images/ryall.svg" class="ms-1" alt="SAR"></span>
-                  <img src="images/close-red.svg" class="w-24" alt="rejected">
-                </div>
-              </div>
+          <!-- Repeat similar blocks for other attachments -->
+          <div class="mb-4">
+            <div class="d-flex align-items-center gap-10 mb-12">
+              <p class="fz-14 black-text">Technical Proposal Attachment</p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path
+                  d="M9.99935 18.3334C14.5827 18.3334 18.3327 14.5834 18.3327 10C18.3327 5.41669 14.5827 1.66669 9.99935 1.66669C5.41602 1.66669 1.66602 5.41669 1.66602 10C1.66602 14.5834 5.41602 18.3334 9.99935 18.3334Z"
+                  fill="white" stroke="#A1A1A1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path opacity="0.34" d="M10 6.66669V10.8334" stroke="#A1A1A1" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path opacity="0.34" d="M9.99609 13.3333H10.0036" stroke="#292D32" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
             </div>
-            <div class="tender-section bg-white p-3 rounded-12">
-              <h6 class="fz-14 black-text mb-3">Notes</h6>
-              <p class="text-gray fz-14">The tender requires submission of a comprehensive package of documents
-                including technical data, warranty certificates, and CVs of the relevant technicians. Additional
-                supporting documents that strengthen the offers are welcome, as they help evaluate bids comprehensively
-                and reflect the supplier's commitment to quality and required standards.</p>
+            <div class="outer-file-card">
+              <div class="file-card ps-3 pe-1 py-1">
+                <div class="d-flex align-items-center gap-12">
+                  <img src="images/attach-circle.svg" alt="pdf">
+                  <span class="fz-12 black-text">wwweweweir.pdf</span>
+                </div>
+                <div class="d-flex align-items-center gap-12">
+                  <span class="text-gray fz-12" dir="ltr">34.8 MB</span>
+                  <a href="./pdfs/pdf.pdf" download="">
+                    <img src="images/document-download.svg" alt="download pdf">
+                  </a>
+                  <a href="#" class="prim-opacity-outlined btn-main fw-medium">View File</a>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="tender-card p-3 mb-4">
-            <div class="row mb-3 align-items-center">
-              <div class="col-md-4">
-                <div class="d-flex align-items-center gap-10">
-                  <span class="big-num">3</span>
-                  <img src="images/company-logo.png" class="company-logo" alt="company">
-                  <span class="fz-14 black-text fw-medium">Al Rajhi Company</span>
-                  <span class="fz-12 text-gray">( you )</span>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="d-flex align-items-center gap-10">
-                  <span class="fz-14 black-text">Technical proposal</span>
-                  <img src="images/close-red.svg" class="w-24" alt="rejected">
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="d-flex align-items-center gap-10">
-                  <span class="fz-14 black-text">Financial proposal</span>
-                  <img src="images/checked-green.svg" class="w-24" alt="approved">
-                </div>
-              </div>
-              <div class="col-md-2">
-                <div class="d-flex align-items-center gap-10 fz-12 black-text">
-                  <span>Total price</span>
-                  <span class="fw-medium">100.999 <img src="images/ryall.svg" class="ms-1" alt="SAR"></span>
-                  <img src="images/close-red.svg" class="w-24" alt="rejected">
-                </div>
-              </div>
-            </div>
-            <div class="tender-section bg-white p-3 rounded-12">
-              <h6 class="fz-14 black-text mb-3">Notes</h6>
-              <p class="text-gray fz-14">The tender requires submission of a comprehensive package of documents
-                including technical data, warranty certificates, and CVs of the relevant technicians. Additional
-                supporting documents that strengthen the offers are welcome, as they help evaluate bids comprehensively
-                and reflect the supplier's commitment to quality and required standards.</p>
-            </div>
-          </div>
+          <!-- Additional attachment blocks can be translated similarly -->
         </div>
+
+        <div class="tab-pane fade" id="nav-final" role="tabpanel" aria-labelledby="nav-final-tab">
+          <div class="mb-4">
+            <div class="d-flex align-items-center gap-10 mb-12">
+              <p class="fz-14 black-text">Technical Proposal Attachment</p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path
+                  d="M9.99935 18.3334C14.5827 18.3334 18.3327 14.5834 18.3327 10C18.3327 5.41669 14.5827 1.66669 9.99935 1.66669C5.41602 1.66669 1.66602 5.41669 1.66602 10C1.66602 14.5834 5.41602 18.3334 9.99935 18.3334Z"
+                  fill="white" stroke="#A1A1A1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path opacity="0.34" d="M10 6.66669V10.8334" stroke="#A1A1A1" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path opacity="0.34" d="M9.99609 13.3333H10.0036" stroke="#292D32" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="outer-file-card">
+              <div class="file-card ps-3 pe-1 py-1">
+                <div class="d-flex align-items-center gap-12">
+                  <img src="images/attach-circle.svg" alt="pdf">
+                  <span class="fz-12 black-text">wwweweweir.pdf</span>
+                </div>
+                <div class="d-flex align-items-center gap-12">
+                  <span class="text-gray fz-12" dir="ltr">34.8 MB</span>
+                  <a href="./pdfs/pdf.pdf" download="">
+                    <img src="images/document-download.svg" alt="download pdf">
+                  </a>
+                  <a href="#" class="prim-opacity-outlined btn-main fw-medium">View File</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Repeat the same block for additional attachments -->
+          <div class="mb-4">
+            <div class="d-flex align-items-center gap-10 mb-12">
+              <p class="fz-14 black-text">Technical Proposal Attachment</p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path
+                  d="M9.99935 18.3334C14.5827 18.3334 18.3327 14.5834 18.3327 10C18.3327 5.41669 14.5827 1.66669 9.99935 1.66669C5.41602 1.66669 1.66602 5.41669 1.66602 10C1.66602 14.5834 5.41602 18.3334 9.99935 18.3334Z"
+                  fill="white" stroke="#A1A1A1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path opacity="0.34" d="M10 6.66669V10.8334" stroke="#A1A1A1" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path opacity="0.34" d="M9.99609 13.3333H10.0036" stroke="#292D32" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="outer-file-card">
+              <div class="file-card ps-3 pe-1 py-1">
+                <div class="d-flex align-items-center gap-12">
+                  <img src="images/attach-circle.svg" alt="pdf">
+                  <span class="fz-12 black-text">wwweweweir.pdf</span>
+                </div>
+                <div class="d-flex align-items-center gap-12">
+                  <span class="text-gray fz-12" dir="ltr">34.8 MB</span>
+                  <a href="./pdfs/pdf.pdf" download="">
+                    <img src="images/document-download.svg" alt="download pdf">
+                  </a>
+                  <a href="#" class="prim-opacity-outlined btn-main fw-medium">View File</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Repeat as needed for other attachments -->
+        </div>
+
       </div>
     </div>
-  </div>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- DataTables JS -->
-  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
-  <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
-  <script src="https://cdn.datatables.net/responsive/2.5.0/js/responsive.bootstrap5.min.js"></script>
-  <!-- Custom JS -->
-  <script src="js/main.js" defer></script>
-  <script src="js/dataTable.js" defer></script>
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/responsive.bootstrap5.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/dataTable.js"></script>
+    <script src="js/upload-file.js"></script>
 </body>
 
 </html>
