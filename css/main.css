@@ -1877,6 +1877,7 @@ table.table-bordered.dataTable {
   gap: 6px;
   height: 38px;
   border-radius: 32px;
+  width: fit-content;
   border: 1px solid rgba(0, 0, 0, 0.11);
   padding: 4.2px 4px;
   padding-inline-start: 12px;
