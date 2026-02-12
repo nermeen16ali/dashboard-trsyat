@@ -1177,17 +1177,17 @@ h6 {
   font-size: 12px;
 }
 
+.modal .btn-main,
+.filter-bar .btn-main,
 .btn-styles {
   font-size: 14px;
   font-weight: 500;
+  min-height: 44px;
   height: 44px;
 }
 
 .modal .btn-main,
 .filter-bar .btn-main {
-  font-size: 14px;
-  font-weight: 500;
-  height: 44px;
   margin: 0;
 }
 
@@ -4545,6 +4545,11 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     flex-wrap: wrap;
   }
 
+  .lined-stepper::after {
+    top: 0;
+    bottom: 0;
+  }
+
   .mb-20 {
     margin-bottom: 16px;
   }
@@ -5004,11 +5009,6 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
   .badge-rejected.btn-main {
     font-size: 12px;
     height: 40px;
-  }
-
-  .lined-stepper::after {
-    top: 0;
-    bottom: 0;
   }
 
   .gap-40 {
