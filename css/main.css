@@ -201,17 +201,11 @@ html[dir="rtl"] [type="url"] {
 
 .styled-list:not(.text-gray) li {
   padding-inline-start: 25px;
-}
-
-.styled-list.text-gray li {
-  padding-inline-start: 14px;
-}
-
-.styled-list:not(.text-gray) li {
   color: var(--black-color);
 }
 
 .styled-list.text-gray li {
+  padding-inline-start: 14px;
   color: var(--text-gray-color);
 }
 
@@ -4532,13 +4526,6 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
   font-size: 12px;
   font-weight: 600;
 }
-
-/* 
-
-
-.selected-tag .remove-btn:hover {
-  opacity: 1;
-} */
 
 @media (max-width: 991px) {
   .custom-tabs {
