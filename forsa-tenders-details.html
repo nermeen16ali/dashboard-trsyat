@@ -634,7 +634,7 @@
         </div>
 
         <!-- Sub Tabs -->
-        <div class="dash-widget">
+        <div class="dash-widget sm-0">
             <div class="tab-content" id="Sub-nav-tabContent">
                 <div class="tab-pane fade active show" id="nav-uploaded" role="tabpanel"
                     aria-labelledby="nav-uploaded-tab">
@@ -642,21 +642,28 @@
                     <div class="tender-card p-3 mb-4">
                         <div class="tender-sections p-3 rounded-12 bg-white">
                             <nav
-                                class="d-flex flex-column-reverse flex-wrap flex-md-row gap-4 align-items-md-center justify-content-md-between mb-4">
+                                class="d-flex align-items-md-center justify-content-between mb-4 flex-column-reverse flex-md-row gap-4">
                                 <div class="text-center text-md-start">
                                     <h4 class="heading-4">تفاصيل المناقصه</h4>
                                     <p class="gray-text fz-12">نص تفاصيل المناقصه</p>
                                 </div>
-                                <div class="d-flex align-items-center gap-10 flex-wrap">
-                                    <a href="#" class="btn-base btn-main fw-medium px-4 fz-14 h-41 flex-grow-1">
-                                        طلب عرض
-                                    </a>
-                                    <a href="#" class="base-outlined-btn h-41 flex-grow-1">
-                                        طلب استشارة
-                                    </a>
-                                    <button class="btn-main btn-primary fz-14 h-41 flex-grow-1" type="button"
+                                <div
+                                    class="d-flex flex-column-reverse flex-md-row align-items-md-center justify-content-md-end gap-10 w-sm-100">
+                                    <div class="d-flex align-items-center gap-10">
+                                        <a href="#" class="btn-base btn-main px-4 fw-medium fz-14 h-41 w-sm-100"
+                                            data-bs-toggle="modal" data-bs-target="#CreateModal"
+                                            data-offer-type="offer">
+                                            طلب عرض
+                                        </a>
+                                        <a href="#" class="base-outlined-btn btn-main h-41 fz-14 fw-medium w-sm-100"
+                                            data-bs-toggle="modal" data-bs-target="#CreateModal"
+                                            data-offer-type="consultation">
+                                            طلب استشارة
+                                        </a>
+                                    </div>
+                                    <button class="btn-main btn-primary h-41 fz-14 fw-medium" type="button"
                                         data-bs-toggle="modal" data-bs-target="#applyModal">
-                                        التقديم من خلال منصة فرصة
+                                        التقديم علي المناقصه
                                         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21"
                                             viewBox="0 0 21 21" fill="none">
                                             <path d="M8.47485 15.5583L3.41652 10.5L8.47485 5.44165" stroke="#fff"
@@ -772,7 +779,7 @@
                             </div>
                         </div>
                         <div class="tender-footer w-fit">
-                            <a href="forsa-tenders.html" class="btn-main btn-primary-outline fz-14">
+                            <a href="forsa-tenders.html" class="btn-main outline-primary-gray fz-14 fw-medium h-41">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
                                     fill="none">
                                     <path d="M12.025 15.0586L17.0833 10.0002L12.025 4.94189" stroke="#6BAFB8"

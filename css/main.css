@@ -378,7 +378,7 @@ h6 {
   font-size: 9px;
 }
 
-.base-outlined-btn {
+/* .base-outlined-btn {
   border: 1px solid #0c2030;
   padding: 12px;
   color: #0c2030;
@@ -390,6 +390,12 @@ h6 {
   border-radius: 12px;
   background: rgba(12, 32, 48, 0.04);
   transition: all 0.3s ease;
+} */
+
+.base-outlined-btn {
+  border: 1px solid #0c2030;
+  color: #0c2030;
+  background: rgba(12, 32, 48, 0.04);
 }
 
 .base-outlined-btn:hover {
@@ -816,6 +822,7 @@ h6 {
   display: flex;
   align-items: center;
   gap: 12px;
+  width: -webkit-fill-available;
 }
 
 .sub-tabs .nav-link {
@@ -4951,6 +4958,14 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     display: none;
   }
 
+  .tender-footer>* {
+    width: 100%;
+  }
+
+  .w-sm-100 {
+    width: 100%;
+  }
+
   .styled-list:not(.text-gray) li {
     padding-inline-start: 16px;
   }
@@ -5039,7 +5054,6 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
 
   .competition-table tr {
     margin-bottom: 16px;
-    /* Transparent wrapper */
     border-radius: 16px;
     border: 1px solid #F2F2F2;
     background: #F7F7F7 !important;
@@ -5049,7 +5063,6 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     position: relative;
   }
 
-  /* Remove default border from last child if any */
   .competition-table tr:last-child {
     margin-bottom: 0;
   }
@@ -5122,7 +5135,7 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
   }
 
   /* Shared Styles for the Card Group (all middle cells) */
-  .competition-table tr td:not(:first-of-type):not(:last-of-type) {
+  .competition-table:not(.boq-table) tr td:not(:first-of-type):not(:last-of-type) {
     background: #fff;
     width: 100%;
     display: flex;
@@ -5149,23 +5162,18 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     margin-bottom: 0;
   }
 
-  .competition-table:not(.boq-table) tr td:not(:first-of-type):not(:last-of-type),
-  .competition-table.boq-table tr td:not(:first-of-type) {
+  .competition-table:not(.boq-table) tr td:not(:first-of-type):not(:last-of-type) {
     order: 3;
   }
 
   /* First Item in Card -> Top Radius & Border */
-  .competition-table td:nth-of-type(2) {
+  .competition-table:not(.boq-table) td:nth-of-type(2) {
     order: 3;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
     margin-top: 4px;
     padding-top: 24px;
     position: relative;
-  }
-
-  .competition-table.boq-table tr td:nth-last-of-type(-n+4) {
-    width: 50%;
   }
 
   /* Before-last cell in the row */
@@ -5213,6 +5221,39 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
   .upgrade-table td:last-child {
     border-radius: 0 0 16px 16px;
   }
+}
+
+/* ========================= */
+/* BOQ TABLE MOBILE FIX */
+/* ========================= */
+
+@media (max-width: 767px) {
+
+  /* Keep flex row */
+  .competition-table.boq-table tr {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  /* Reset default 100% width */
+  .competition-table.boq-table td {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* First 6 cells = full width */
+  .competition-table.boq-table tr td:nth-of-type(-n+6) {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  /* Last 4 cells (7,8,9,10) = 50% each */
+  /* .competition-table.boq-table tr td:nth-of-type(n+7) {
+    flex: 0 0 50%;
+    max-width: 50%;
+  } */
+
 }
 
 /* Filter Modal Styles */
@@ -5295,10 +5336,6 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     /* width: 100%; */
   }
 
-  .w-sm-100 {
-    width: 100%;
-  }
-
   /* .prim-opacity-outlined {
     height: 36px;
   } */
@@ -5322,10 +5359,6 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
 
   action-btn {
     height: 18px;
-  }
-
-  .tender-footer>* {
-    width: 100%;
   }
 
   .page-breadcrumb .active {
