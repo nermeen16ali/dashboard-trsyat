@@ -1,4 +1,5 @@
 // $(document).ready(function () {
+
 //   const table = $("#competitionTable").DataTable({
 //     responsive: true,
 //     paging: true,
@@ -47,4 +48,31 @@ $(document).ready(function () {
   $(".table-search").on("keyup", function () {
     table.search(this.value).draw();
   });
+
+  // Select All Checkbox Logic for Pricing Table
+  const selectAllPricing = document.getElementById("selectAllPricing");
+  if (selectAllPricing) {
+    const pricingCheckboxes = document.querySelectorAll(".pricing-checkbox");
+
+    // Header checkbox change event
+    selectAllPricing.addEventListener("change", function () {
+      pricingCheckboxes.forEach((checkbox) => {
+        checkbox.checked = this.checked;
+      });
+    });
+
+    // Individual checkbox change event
+    pricingCheckboxes.forEach((checkbox) => {
+      checkbox.addEventListener("change", function () {
+        if (!this.checked) {
+          selectAllPricing.checked = false;
+        } else {
+          const allChecked = Array.from(pricingCheckboxes).every(
+            (cb) => cb.checked
+          );
+          selectAllPricing.checked = allChecked;
+        }
+      });
+    });
+  }
 });

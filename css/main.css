@@ -5108,9 +5108,13 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     background: transparent;
     padding: 0 0 12px 0;
     margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    order: 1;
   }
 
-  .competition-table:not(.boq-table):not(.upgrade-table) tr td:first-of-type {
+  .competition-table:not(.upgrade-table) tr td:first-of-type {
     display: flex;
     align-items: center;
     width: 50%;
@@ -5119,7 +5123,7 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
   }
 
   /* Last column (always the last td in the row) */
-  .competition-table:not(.boq-table):not(.upgrade-table) tr td:last-of-type {
+  .competition-table:not(.upgrade-table) tr td:last-of-type {
     order: 2;
     width: 50%;
     display: flex;
@@ -5134,7 +5138,7 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
   }
 
   /* Shared Styles for the Card Group (all middle cells) */
-  .competition-table:not(.boq-table) tr td:not(:first-of-type):not(:last-of-type) {
+  .competition-table tr td:not(:first-of-type):not(:last-of-type) {
     background: #fff;
     width: 100%;
     display: flex;
@@ -5147,8 +5151,6 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
   /* Labels */
 
   .competition-table tr td:not(:first-of-type):not(:last-of-type)::before,
-  .boq-table tr td:first-of-type::before,
-  .boq-table tr td:last-of-type::before,
   .upgrade-table tr td:first-of-type::before,
   .upgrade-table tr td:last-of-type::before {
     content: attr(data-label);
@@ -5159,16 +5161,16 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     /* width: 100%; */
   }
 
-  .boq-table tr td:first-of-type::before {
+  /* .boq-table tr td:first-of-type::before {
     margin-bottom: 0;
-  }
+  } */
 
-  .competition-table:not(.boq-table) tr td:not(:first-of-type):not(:last-of-type) {
+  .competition-table tr td:not(:first-of-type):not(:last-of-type) {
     order: 3;
   }
 
   /* First Item in Card -> Top Radius & Border */
-  .competition-table:not(.boq-table) td:nth-of-type(2) {
+  .competition-table td:nth-of-type(2) {
     order: 3;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
@@ -5224,39 +5226,6 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     border-radius: 0 0 16px 16px;
     background-color: var(--white-color);
   }
-}
-
-/* ========================= */
-/* BOQ TABLE MOBILE FIX */
-/* ========================= */
-
-@media (max-width: 767px) {
-
-  /* Keep flex row */
-  .competition-table.boq-table tr {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  /* Reset default 100% width */
-  .competition-table.boq-table td {
-    width: auto;
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* First 6 cells = full width */
-  .competition-table.boq-table tr td:nth-of-type(-n+6) {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-
-  /* Last 4 cells (7,8,9,10) = 50% each */
-  /* .competition-table.boq-table tr td:nth-of-type(n+7) {
-    flex: 0 0 50%;
-    max-width: 50%;
-  } */
-
 }
 
 /* Filter Modal Styles */

@@ -731,7 +731,12 @@
                     <table class="table table-bordered align-middle competition-table">
                         <thead>
                             <tr>
-                                <th>Pricing number</th>
+                                <th>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <input class="form-check-input mt-0" type="checkbox" value="" id="selectAll">
+                                        Pricing number
+                                    </div>
+                                </th>
                                 <th>Pricing type</th>
                                 <th>Number of products</th>
                                 <th>Required suppliers</th>
@@ -742,8 +747,13 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td data-label="Pricing number"><span
-                                        class="ff-onest black-text fw-medium">250739020707</span></td>
+                                <td data-label="Pricing number">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <input class="form-check-input mt-0 pricing-checkbox" type="checkbox" value=""
+                                            aria-label="Checkbox for following text input">
+                                        <span class="ff-onest black-text fw-medium">250739020707</span>
+                                    </div>
+                                </td>
                                 <td data-label="Pricing type">
                                     <div class="d-flex align-items-center">
                                         <span class="sm-logo">
@@ -795,8 +805,13 @@
                             </tr>
 
                             <tr>
-                                <td data-label="Pricing number"><span
-                                        class="ff-onest black-text fw-medium">250739020707</span></td>
+                                <td data-label="Pricing number">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <input class="form-check-input mt-0 pricing-checkbox" type="checkbox" value=""
+                                            aria-label="Checkbox for following text input">
+                                        <span class="ff-onest black-text fw-medium">250739020707</span>
+                                    </div>
+                                </td>
                                 <td data-label="Pricing type">
                                     <div class="d-flex align-items-center">
                                         <span class="sm-logo">
@@ -847,8 +862,13 @@
                             </tr>
 
                             <tr>
-                                <td data-label="Pricing number"><span
-                                        class="ff-onest black-text fw-medium">250739020707</span></td>
+                                <td data-label="Pricing number">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <input class="form-check-input mt-0 pricing-checkbox" type="checkbox" value=""
+                                            aria-label="Checkbox for following text input">
+                                        <span class="ff-onest black-text fw-medium">250739020707</span>
+                                    </div>
+                                </td>
                                 <td data-label="Pricing type">
                                     <div class="d-flex align-items-center">
                                         <span class="sm-logo">
@@ -899,8 +919,13 @@
                             </tr>
 
                             <tr>
-                                <td data-label="Pricing number"><span
-                                        class="ff-onest black-text fw-medium">250739020707</span></td>
+                                <td data-label="Pricing number">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <input class="form-check-input mt-0 pricing-checkbox" type="checkbox" value=""
+                                            aria-label="Checkbox for following text input">
+                                        <span class="ff-onest black-text fw-medium">250739020707</span>
+                                    </div>
+                                </td>
                                 <td data-label="Pricing type">
                                     <div class="d-flex align-items-center">
                                         <span class="sm-logo">
@@ -952,8 +977,13 @@
                             </tr>
 
                             <tr>
-                                <td data-label="Pricing number"><span
-                                        class="ff-onest black-text fw-medium">250739020707</span></td>
+                                <td data-label="Pricing number">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <input class="form-check-input mt-0 pricing-checkbox" type="checkbox" value=""
+                                            aria-label="Checkbox for following text input">
+                                        <span class="ff-onest black-text fw-medium">250739020707</span>
+                                    </div>
+                                </td>
                                 <td data-label="Pricing type">
                                     <div class="d-flex align-items-center">
                                         <span class="sm-logo">
@@ -1027,6 +1057,14 @@
     <script src="js/main.js"></script>
     <script src="js/dataTable.js"></script>
     <script src="js/calender.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#selectAll').on('click', function () {
+                var isChecked = $(this).is(':checked');
+                $('.competition-table tbody input[type="checkbox"]').prop('checked', isChecked);
+            });
+        });
+    </script>
 </body>
 
 </html>
