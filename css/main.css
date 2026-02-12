@@ -5304,7 +5304,8 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     gap: 6px;
   }
 
-  .icon-container.vote-btn {
+  .icon-container.vote-btn,
+  .company-logo:not(.sm-logo) {
     width: 28px;
     height: 28px;
   }
