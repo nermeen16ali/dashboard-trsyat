@@ -4967,6 +4967,10 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     display: none;
   }
 
+  .table tfoot {
+    display: none;
+  }
+
   .tender-footer>* {
     width: 100%;
   }
