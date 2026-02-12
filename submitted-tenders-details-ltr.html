@@ -247,7 +247,7 @@
               </svg>
             </span>
           </div>
-          <a href="index-ltr.html" class="nav-link">
+          <a href="submitted-tenders-details.html" class="nav-link">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g opacity="0.4">
                 <path d="M14.1582 7.4668H5.84155H14.1582Z" fill="currentColor" />
@@ -264,7 +264,7 @@
                 d="M10.0001 18.3334C14.6025 18.3334 18.3334 14.6025 18.3334 10.0001C18.3334 5.39771 14.6025 1.66675 10.0001 1.66675C5.39771 1.66675 1.66675 5.39771 1.66675 10.0001C1.66675 14.6025 5.39771 18.3334 10.0001 18.3334Z"
                 stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
-            <span>English</span>
+            <span>العربية</span>
           </a>
 
           <a href="#" type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#notificationModal">
@@ -627,7 +627,7 @@
     </div>
 
     <!-- Sub Tabs -->
-    <div class="dash-widget">
+    <div class="dash-widget sm-0">
       <nav
         class="d-flex align-items-end align-items-md-center justify-content-between mb-4 flex-column flex-md-row gap-4">
         <div class="sub-tabs scrollable-row" id="sub-nav-tab" role="tablist">
@@ -656,7 +656,7 @@
       <div class="tab-content" id="Sub-nav-tabContent">
         <div class="tab-pane fade" id="nav-uploaded" role="tabpanel" aria-labelledby="nav-uploaded-tab">
           <!-- Tender Cards Grid -->
-          <div class="tender-card p-3 mb-4">
+          <div class="tender-card p-3 mb-4 abs-card">
             <div class="tender-header d-flex align-items-center justify-content-between mb-3">
               <label class="form-check-label tender-number d-flex align-items-center">
                 <input type="checkbox" class="form-check-input mt-0" />
@@ -664,9 +664,11 @@
                 <span class="fz-14 black-text fw-medium">250739020709</span>
               </label>
               <div class="tender-actions">
-                <a href="#" class="btn-base btn-base-sm bordered-40 p-10 fz-12">
-                  Request a quote
-                </a>
+                <div class="p-sm-absolute">
+                  <a href="#" class="btn-base btn-base-sm bordered-40 p-10 fz-12">
+                    Request a quote
+                  </a>
+                </div>
                 <div class="dropdown">
                   <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton1"
                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -685,136 +687,123 @@
               </div>
             </div>
             <div class="tender-sections p-3 rounded-12 bg-white">
-              <div class="tender-section row position-relative">
-                <div class="col-md-3">
-                  <div class="d-lg-flex align-items-start tender-details gap-3">
-                    <span class="tender-status mb-3">Available</span>
-                    <div>
-                      <span class="fz-12 gray-text">Publish date</span>
-                      <span class="fz-14 black-text fw-medium">05-12-2025</span>
+              <div class="tender-section position-relative">
+                <div class="row align-items-md-center">
+                  <div class="col-8">
+                    <div class="d-flex flex-column flex-md-row align-items-md-center gap-10">
+                      <span class="tender-status me-3 flex-shrink-0">Call for Proposals</span>
+                      <span class="fz-12 gray-text flex-shrink-0">Publication Date</span>
+                      <span class="fz-14 black-text fw-medium flex-shrink-0">05-12-2025</span>
+                    </div>
+                    <div class="d-flex flex-column flex-lg-row gap-3 justify-content-between">
+                      <div>
+                        <h6 class="tender-title">Office Equipment and Furniture</h6>
+                        <div class="tender-subtitle">Ministry of Health</div>
+                      </div>
+                      <div class="gap-12 d-flex align-items-center">
+                        <img src="images/company-logo.png" class="company-logo" alt="company" />
+                        <div>
+                          <span class="fz-12 gray-text">Announcing Entity</span>
+                          <div class="fz-14 black-text">Al Rajhi Company</div>
+                        </div>
+                      </div>
+                      <div>
+                        <span class="fz-12 gray-text">Main Activity</span>
+                        <div class="fz-14 black-text">
+                          Interior Design and Furnishing
+                        </div>
+                      </div>
                     </div>
                   </div>
+                  <div class="col-4">
+                    <div class="d-flex justify-content-end">
+                      <div class="position-relative">
+                        <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
+                          <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none"></circle>
+                          <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4" fill="none"
+                            stroke-dasharray="134.6 125.6"></circle>
+                        </svg>
 
-                  <h6 class="tender-title">Office furnishing and equipment</h6>
-                  <div class="tender-subtitle">Rabet Al-Nomou Platform</div>
-                </div>
-
-                <div class="col-md-3">
-                  <div class="gap-12 d-flex align-items-center">
-                    <img src="images/company-logo.png" class="company-logo" alt="company" />
-                    <div>
-                      <span class="fz-12 gray-text">Issuing entity</span>
-                      <div class="fz-14 black-text">Al Rajhi Company</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <span class="fz-12 gray-text">Main activity</span>
-                  <div class="fz-14 black-text">
-                    Interior design & fittings
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="d-flex justify-content-end">
-                    <div class="position-relative">
-                      <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
-                        <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none"></circle>
-                        <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4" fill="none"
-                          stroke-dasharray="134.6 125.6"></circle>
-                      </svg>
-
-                      <div class="position-absolute top-50 start-50 translate-middle text-center">
-                        <div>200</div>
-                        <div>days</div>
+                        <div class="position-absolute top-50 start-50 translate-middle text-center">
+                          <div>200</div>
+                          <div>Days</div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="tender-section row">
-                <div class="col-md-3">
-                  <div class=" d-flex align-items-center">
-                    <div class="sm-logo">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <path
-                          d="M14.6663 7.99992C14.6663 11.6799 11.6797 14.6666 7.99967 14.6666C4.31967 14.6666 1.33301 11.6799 1.33301 7.99992C1.33301 4.31992 4.31967 1.33325 7.99967 1.33325C11.6797 1.33325 14.6663 4.31992 14.6663 7.99992Z"
-                          fill="white" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round"
-                          stroke-linejoin="round" />
-                        <path opacity="0.4"
-                          d="M10.4732 10.1199L8.40651 8.88659C8.04651 8.67326 7.75317 8.15992 7.75317 7.73992V5.00659"
-                          stroke="#0C2030" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
-                    </div>
-                    <div>
-                      <span class="fz-12 gray-text">Submission deadline</span>
-                      <div>
-                        <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                          04:30 PM
-                        </span>
-                        <span class="black-text fz-12 fw-medium">
-                          05-12-2025
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class=" d-flex align-items-center">
-                    <div class="sm-logo">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <path
-                          d="M14.6663 7.99992C14.6663 11.6799 11.6797 14.6666 7.99967 14.6666C4.31967 14.6666 1.33301 11.6799 1.33301 7.99992C1.33301 4.31992 4.31967 1.33325 7.99967 1.33325C11.6797 1.33325 14.6663 4.31992 14.6663 7.99992Z"
-                          fill="white" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round"
-                          stroke-linejoin="round" />
-                        <path opacity="0.4"
-                          d="M10.4732 10.1199L8.40651 8.88659C8.04651 8.67326 7.75317 8.15992 7.75317 7.73992V5.00659"
-                          stroke="#0C2030" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
-                    </div>
-                    <div>
-                      <span class="fz-12 gray-text">Results announcement date</span>
-                      <div>
-                        <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                          09:00 AM
-                        </span>
-                        <span class="black-text fz-12 fw-medium">
-                          12-12-2025
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="tender-price d-flex justify-content-end">
-                    <div>
-                      <span class="fz-10 gray-text d-block mb-2">Documents price</span>
-                      <span class="fz-14 black-text fw-medium">200.50
-                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17" fill="none">
+
+              <div class="tender-section">
+                <div class="row gy-3">
+                  <div class="col-md-3">
+                    <div class="d-flex align-items-center">
+                      <div class="sm-logo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                           <path
-                            d="M7.52626 3.01847C8.06877 2.36599 8.40218 2.07305 9.05702 1.7027V12.5678L7.52626 12.9067V3.01847Z"
-                            fill="black" />
-                          <path
-                            d="M12.4172 8.48092C12.7346 7.76323 12.7719 7.44425 12.8569 6.708L1.12319 9.43785C0.84494 10.1019 0.755374 10.4731 0.712494 11.1324L12.4172 8.48092Z"
-                            fill="black" />
-                          <path
-                            d="M12.4172 11.8088C12.7346 11.0912 12.7719 10.7722 12.8569 10.0359L7.58226 11.2321C7.54493 11.89 7.58781 12.2275 7.54493 12.8868L12.4172 11.8088Z"
-                            fill="black" />
-                          <path
-                            d="M12.4172 15.1363C12.7346 14.4186 12.7719 14.0996 12.8569 13.3634L8.04896 14.4816C7.80628 14.8405 7.65694 15.4386 7.54493 16.2142L12.4172 15.1363Z"
-                            fill="black" />
-                          <path
-                            d="M4.78209 14.0032C5.24879 13.3852 5.73415 12.6077 6.07017 11.9697L0.410452 13.2841C0.132202 13.9482 0.0426358 14.3194 -0.000244141 14.9787L4.78209 14.0032Z"
-                            fill="black" />
-                          <path
-                            d="M4.53941 2.10142C5.08192 1.44893 5.41532 1.156 6.07017 0.785645V12.0096L4.53941 12.3485V2.10142Z"
-                            fill="black" />
+                            d="M14.6663 7.99992C14.6663 11.6799 11.6797 14.6666 7.99967 14.6666C4.31967 14.6666 1.33301 11.6799 1.33301 7.99992C1.33301 4.31992 4.31967 1.33325 7.99967 1.33325C11.6797 1.33325 14.6663 4.31992 14.6663 7.99992Z"
+                            fill="white" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                          <path opacity="0.4"
+                            d="M10.4732 10.1199L8.40651 8.88659C8.04651 8.67326 7.75317 8.15992 7.75317 7.73992V5.00659"
+                            stroke="#0C2030" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
-                      </span>
+                      </div>
+                      <div>
+                        <span class="fz-12 gray-text">Proposal Submission Deadline</span>
+                        <div>
+                          <span class="black-text fz-12 fw-medium d-inline-block me-1" dir="ltr">
+                            04:30 pm
+                          </span>
+                          <span class="black-text fz-12 fw-medium">
+                            05-12-2025
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-3">
+                    <div class="d-flex align-items-center">
+                      <div class="sm-logo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                          <path
+                            d="M14.6663 7.99992C14.6663 11.6799 11.6797 14.6666 7.99967 14.6666C4.31967 14.6666 1.33301 11.6799 1.33301 7.99992C1.33301 4.31992 4.31967 1.33325 7.99967 1.33325C11.6797 1.33325 14.6663 4.31992 14.6663 7.99992Z"
+                            fill="white" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                          <path opacity="0.4"
+                            d="M10.4732 10.1199L8.40651 8.88659C8.04651 8.67326 7.75317 8.15992 7.75317 7.73992V5.00659"
+                            stroke="#0C2030" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </div>
+                      <div>
+                        <span class="fz-12 gray-text">Results Announcement Date</span>
+                        <div>
+                          <span class="black-text fz-12 fw-medium d-inline-block me-1" dir="ltr">
+                            09:00 am
+                          </span>
+                          <span class="black-text fz-12 fw-medium">
+                            12-12-2025
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="tender-price d-flex justify-content-end">
+                      <div>
+                        <span class="fz-12 gray-text d-block mb-2">Document Price</span>
+                        <span class="fs-6 black-text fw-medium">200.50
+                          <img src="images/ryall.svg" alt="Ryall">
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+
           </div>
 
           <div class="tender-card p-3 mb-4">
@@ -888,24 +877,15 @@
               </p>
             </div>
             <div class="tender-footer gap-3 w-fit">
-              <a href="trsyat-tenders.html" class="btn-main btn-primary-outline">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M12.025 15.0586L17.0833 10.0002L12.025 4.94189" stroke="#6BAFB8" stroke-width="1.5"
-                    stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                  <path opacity="0.4" d="M2.91667 10H16.9417" stroke="#6BAFB8" stroke-width="1.5" stroke-miterlimit="10"
-                    stroke-linecap="round" stroke-linejoin="round" />
+              <a href="trsyat-tenders.html" class="btn-main outline-primary-gray fz-14 fw-medium h-41" <svg
+                xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M12.025 15.0586L17.0833 10.0002L12.025 4.94189" stroke="#6BAFB8" stroke-width="1.5"
+                  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                <path opacity="0.4" d="M2.91667 10H16.9417" stroke="#6BAFB8" stroke-width="1.5" stroke-miterlimit="10"
+                  stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
                 <span>Back to tenders list</span>
               </a>
-              <button class="btn-main btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#applyModal">
-                <span> Apply for tender</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M7.97501 15.0586L2.91667 10.0002L7.97501 4.94189" stroke="white" stroke-width="1.5"
-                    stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                  <path opacity="0.4" d="M17.0833 10H3.05834" stroke="white" stroke-width="1.5" stroke-miterlimit="10"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </button>
             </div>
           </div>
         </div>
@@ -940,7 +920,7 @@
             </div>
           </div>
           <!-- Add question button -->
-          <button class="btn-base p-10 bordered-8 fz-12 mb-4" type="button" data-bs-toggle="modal"
+          <button class="btn-outlined-base btn-main mb-4" type="button" data-bs-toggle="modal"
             data-bs-target="#addQuestionModal">
             <span>Add question</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -952,8 +932,8 @@
           </button>
 
           <div class="tender-card p-3 mb-4">
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="d-flex align-items-center gap-10 mb-3">
+            <div class="d-flex flex-column gap-10 flex-md-row justify-content-md-between align-items-md-center mb-3">
+              <div class="d-flex align-items-center gap-10">
                 <span class="qa-num fz-14 text-gray fw-medium">1</span>
                 <p class="fz-14 black-text fw-medium">
                   Are devices from different brands allowed, or must all devices be from the same manufacturer?
@@ -998,8 +978,8 @@
           </div>
 
           <div class="tender-card p-3 mb-4">
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="d-flex align-items-center gap-10 mb-3">
+            <div class="d-flex flex-column gap-10 flex-md-row justify-content-md-between align-items-md-center mb-3">
+              <div class="d-flex align-items-center gap-10">
                 <span class="qa-num fz-14 text-gray fw-medium">2</span>
                 <p class="fz-14 black-text fw-medium">
                   Is it allowed to submit additional supporting documents with the offers?
@@ -1039,8 +1019,8 @@
           </div>
 
           <div class="tender-card p-3 mb-4">
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="d-flex align-items-center gap-10 mb-3">
+            <div class="d-flex flex-column gap-10 flex-md-row justify-content-md-between align-items-md-center mb-3">
+              <div class="d-flex align-items-center gap-10">
                 <span class="qa-num fz-14 text-gray fw-medium">3</span>
                 <p class="fz-14 black-text fw-medium">
                   What are the requirements to ensure routine maintenance of the devices?
@@ -1111,7 +1091,8 @@
                       </div>
                     </td>
                     <td>
-                      <span class="text-gray">Al Rajhi Company aims through this tender to update its IT infrastructure
+                      <span class="text-gray ellipse-text">Al Rajhi Company aims through this tender to update its IT
+                        infrastructure
                         by supplying and installing a set of devices</span>
                     </td>
                     <td>
@@ -1219,7 +1200,7 @@
         <div class="tab-pane fade" id="nav-details" role="tabpanel" aria-labelledby="nav-details-tab">
           <h6 class="black-text mb-4">Submitted companies</h6>
           <div class="tender-card p-3 mb-4 prim">
-            <div class="row mb-3 align-items-center">
+            <div class="row gy-3 mb-3 align-items-center">
               <div class="col-md-4">
                 <div class="d-flex align-items-center gap-10">
                   <span class="big-num">1</span>
@@ -1228,13 +1209,13 @@
                   <span class="fz-12 text-gray">( you )</span>
                 </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-6 col-md-3">
                 <div class="d-flex align-items-center gap-10">
                   <span class="fz-14 black-text">Technical proposal</span>
                   <img src="images/checked-green.svg" class="w-24" alt="approved">
                 </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-6 col-md-3">
                 <div class="d-flex align-items-center gap-10">
                   <span class="fz-14 black-text">Financial proposal</span>
                   <img src="images/checked-green.svg" class="w-24" alt="approved">
@@ -1258,7 +1239,7 @@
           </div>
 
           <div class="tender-card p-3 mb-4">
-            <div class="row mb-3 align-items-center">
+            <div class="row gy-3 mb-3 align-items-center">
               <div class="col-md-4">
                 <div class="d-flex align-items-center gap-10">
                   <span class="big-num">2</span>
@@ -1267,13 +1248,13 @@
                   <span class="fz-12 text-gray">( you )</span>
                 </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-6 col-md-3">
                 <div class="d-flex align-items-center gap-10">
                   <span class="fz-14 black-text">Technical proposal</span>
                   <img src="images/close-red.svg" class="w-24" alt="rejected">
                 </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-6 col-md-3">
                 <div class="d-flex align-items-center gap-10">
                   <span class="fz-14 black-text">Financial proposal</span>
                   <img src="images/checked-green.svg" class="w-24" alt="approved">
@@ -1297,7 +1278,7 @@
           </div>
 
           <div class="tender-card p-3 mb-4">
-            <div class="row mb-3 align-items-center">
+            <div class="row gy-3 mb-3 align-items-center">
               <div class="col-md-4">
                 <div class="d-flex align-items-center gap-10">
                   <span class="big-num">3</span>
@@ -1306,13 +1287,13 @@
                   <span class="fz-12 text-gray">( you )</span>
                 </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-6 col-md-3">
                 <div class="d-flex align-items-center gap-10">
                   <span class="fz-14 black-text">Technical proposal</span>
                   <img src="images/close-red.svg" class="w-24" alt="rejected">
                 </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-6 col-md-3">
                 <div class="d-flex align-items-center gap-10">
                   <span class="fz-14 black-text">Financial proposal</span>
                   <img src="images/checked-green.svg" class="w-24" alt="approved">
