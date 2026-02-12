@@ -1821,9 +1821,11 @@ button:focus:not(:focus-visible) {
   padding: 14px 10px;
 }
 
-/* .table tbody tr td:nth-last-child(-n+2) {
-  text-align: center;
-} */
+html[dir="ltr"] table.dataTable thead>tr>th.sorting:before,
+html[dir="ltr"] table.dataTable thead>tr>th.sorting:after {
+  font-size: 16px;
+  line-height: 2px !important;
+}
 
 html[dir="rtl"] table.dataTable thead th,
 html[dir="rtl"] table.dataTable thead td,
