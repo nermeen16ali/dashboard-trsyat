@@ -3545,7 +3545,8 @@ html[dir="ltr"] .notification-list .icon-container.gray-outline-btn {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 300px;
+  /* max-width: 300px; */
+  max-width: 196px;
 }
 
 /* ============================
