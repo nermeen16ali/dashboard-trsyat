@@ -1269,7 +1269,7 @@ h6 {
   stroke: var(--white-color);
 }
 
-.btn-base-outlined {
+/* .btn-base-outlined {
   border: 1px solid #e8e8e8;
   background: #fff;
   color: #0c2030;
@@ -1278,7 +1278,7 @@ h6 {
 .btn-base-outlined:hover {
   background: var(--primary-secondary);
   color: var(--white-color);
-}
+} */
 
 .badge-opacity-prim {
   border-radius: 60px;
