@@ -5325,6 +5325,11 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     scroll-snap-type: x mandatory;
   }
 
+  .tender-number {
+    font-size: 11px;
+    gap: 6px;
+  }
+
   .icon-container.vote-btn {
     width: 28px;
     height: 28px;
