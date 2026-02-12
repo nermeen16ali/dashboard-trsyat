@@ -613,6 +613,12 @@ h6 {
   padding: 12px;
   border-radius: 16px;
   background: #f2f2f2;
+  visibility: hidden;
+  /* Hide initially to prevent layout shift */
+}
+
+.page-tabs.initialized {
+  visibility: visible;
 }
 
 .services-row .tender-card {

@@ -82,6 +82,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     }
+
+    // Mark as initialized to show the tabs
+    container.classList.add("initialized");
   }
 
   // function handleTabOverflow() {
@@ -154,6 +157,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Ensure it runs on load and resize
   window.addEventListener("resize", handleTabOverflow);
   window.addEventListener("load", handleTabOverflow);
+
+  // Initial call to prevent layout glitch
+  handleTabOverflow();
 });
 
 // Custom Activity Multiselect Logic
