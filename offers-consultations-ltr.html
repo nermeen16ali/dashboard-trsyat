@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="images/trsyat-logo.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>العروض والاستشارات</title>
+  <title>Offers & Consultations Details</title>
   <meta name="description"
     content="We provide you with an intelligent environment for managing tenders—from search to submission. Our goal is to support your growth by simplifying access to opportunities and enhancing your competitive edge." />
 
-  <!-- Bootstrap 5 RTL CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+  <!-- Bootstrap 5 LTR CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Flatpickr CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/themes/material_blue.css" />
   <!-- DataTables CSS -->
   <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
   <link href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.bootstrap5.min.css" rel="stylesheet" />
@@ -26,17 +28,17 @@
         <div class="modal-header">
           <div class="d-flex flex-column gap-10">
             <h4 class="modal-title fz-20" id="centeredModalLabel8">
-              الإشعارات
+              Notifications
             </h4>
-            <p class="text-gray fz-14">ابقي علي الأطلاع بالإشعارات</p>
+            <p class="text-gray fz-14">Stay updated with notifications</p>
           </div>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <div class="notification-tabs fw-medium">
-            <button class="notification-tab active">الكل</button>
-            <button class="notification-tab">غير مقروءة (12)</button>
-            <a href="notifications.html" class="ms-auto colored">قراءة الكل</a>
+            <button class="notification-tab active">All</button>
+            <button class="notification-tab">Unread (12)</button>
+            <a href="notifications-ltr.html" class="ms-auto colored">Mark all read</a>
           </div>
           <div class="notification-list">
             <!-- Today -->
@@ -45,11 +47,11 @@
                 <img src="images/Tax-Law.svg" alt="icon">
               </div>
               <div class="notification-content">
-                <h6 class="fz-14 fw-medium mb-10 black-text">تم استلام طلبك</h6>
-                <p class="fz-12 text-gray">تم استلام طلب المنافسة بنجاح، وجار مراجعته من قبل الإدارة.</p>
+                <h6 class="fz-14 fw-medium mb-10 black-text">Submission received</h6>
+                <p class="fz-12 text-gray">Your tender submission was received successfully and is under review.</p>
               </div>
               <div class="d-flex align-items-center gap-4">
-                <span class="text-dark-gray fz-12 fw-medium">11:30 مساءً</span>
+                <span class="text-dark-gray fz-12 fw-medium text-nowrap">11:30 PM</span>
                 <a href="#" class="icon-container gray-outline-btn">
                   <img src="images/arrow-next.svg" alt="Next">
                 </a>
@@ -61,12 +63,12 @@
                 <img src="images/game-icons-sands-of-time.svg" alt="icon">
               </div>
               <div class="notification-content">
-                <div class="fz-14 fw-medium mb-10 black-text">طلبك قيد المراجعة</div>
-                <div class="fz-12 text-gray">يتم حاليا مراجعة طلب المنافسة، وسيتم إشعارك فور اتخاذ إجراء.
-                </div>
+                <div class="fz-14 fw-medium mb-10 black-text">Your request is under review</div>
+                <div class="fz-12 text-gray">The tender request is currently being reviewed. You will be notified of any
+                  action.</div>
               </div>
               <div class="d-flex align-items-center gap-4">
-                <span class="text-dark-gray fz-12 fw-medium">11:30 مساءً</span>
+                <span class="text-dark-gray fz-12 fw-medium text-nowrap">11:30 PM</span>
                 <a href="#" class="icon-container gray-outline-btn">
                   <img src="images/arrow-next.svg" alt="Next">
                 </a>
@@ -78,12 +80,12 @@
                 <img src="images/ic-sharp-block.svg" alt="icon">
               </div>
               <div class="notification-content">
-                <div class="fz-14 fw-medium mb-10 black-text">تم رفض الطلب</div>
-                <div class="fz-12 text-gray">نأسف لإبلاغك بأنه تم رفض طلب المنافسة. يمكنك مراجعة التفاصيل
-                  لمعرفة السبب.</div>
+                <div class="fz-14 fw-medium mb-10 black-text">Request rejected</div>
+                <div class="fz-12 text-gray">We regret to inform you that your tender request was rejected. Please
+                  review the details for the reason.</div>
               </div>
               <div class="d-flex align-items-center gap-4">
-                <span class="text-dark-gray fz-12 fw-medium">11:30 مساءً</span>
+                <span class="text-dark-gray fz-12 fw-medium text-nowrap">11:30 PM</span>
                 <a href="#" class="icon-container gray-outline-btn">
                   <img src="images/arrow-next.svg" alt="Next">
                 </a>
@@ -95,12 +97,12 @@
                 <img src="images/tabler-edit.svg" alt="icon">
               </div>
               <div class="notification-content">
-                <div class="fz-14 fw-medium mb-10 black-text">مطلوب تعديل على الطلب</div>
-                <div class="fz-12 text-gray">يرجى إجراء التعديلات المطلوبة على طلب المنافسة لاستكمال المراجعة.
-                </div>
+                <div class="fz-14 fw-medium mb-10 black-text">Edits required</div>
+                <div class="fz-12 text-gray">Please make the required edits on your tender request to continue the
+                  review.</div>
               </div>
               <div class="d-flex align-items-center gap-4">
-                <span class="text-dark-gray fz-12 fw-medium">11:30 مساءً</span>
+                <span class="text-dark-gray fz-12 fw-medium text-nowrap">11:30 PM</span>
                 <a href="#" class="icon-container gray-outline-btn">
                   <img src="images/arrow-next.svg" alt="Next">
                 </a>
@@ -108,18 +110,18 @@
             </div>
 
             <!-- Yesterday -->
-            <div class="black-text fw-medium mb-3">أمس</div>
+            <div class="black-text fw-medium mb-3">Yesterday</div>
 
             <div class="notification-item">
               <div class="notification-icon pending">
                 <img src="images/carbon-close-outline.svg" alt="icon">
               </div>
               <div class="notification-content">
-                <div class="fz-14 fw-medium mb-10 black-text">مناقصة على وشك الإغلاق</div>
-                <div class="fz-12 text-gray">تبقى وقت قليل على انتهاء موعد التقديم لهذه المناقصة.</div>
+                <div class="fz-14 fw-medium mb-10 black-text">Tender closing soon</div>
+                <div class="fz-12 text-gray">There is little time left to submit for this tender.</div>
               </div>
               <div class="d-flex align-items-center gap-4">
-                <span class="text-dark-gray fz-12 fw-medium">11:30 مساءً</span>
+                <span class="text-dark-gray fz-12 fw-medium text-nowrap">11:30 PM</span>
                 <a href="#" class="icon-container gray-outline-btn">
                   <img src="images/arrow-next.svg" alt="Next">
                 </a>
@@ -131,12 +133,12 @@
                 <img src="images/report.svg" alt="icon">
               </div>
               <div class="notification-content">
-                <div class="fz-14 fw-medium mb-10 black-text">تم إعلان الترسية</div>
-                <div class="fz-12 text-gray">تم إعلان نتيجة الترسية لهذه المناقصة. يمكنك الاطلاع على التفاصيل.
-                </div>
+                <div class="fz-14 fw-medium mb-10 black-text">Award announced</div>
+                <div class="fz-12 text-gray">The award result for this tender has been announced. You can view the
+                  details.</div>
               </div>
               <div class="d-flex align-items-center gap-4">
-                <span class="text-dark-gray fz-12 fw-medium">11:30 مساءً</span>
+                <span class="text-dark-gray fz-12 fw-medium text-nowrap">11:30 PM</span>
                 <a href="#" class="icon-container gray-outline-btn">
                   <img src="images/arrow-next.svg" alt="Next">
                 </a>
@@ -144,18 +146,18 @@
             </div>
 
             <!-- Older -->
-            <div class="black-text fw-medium mb-3">5 نوفمبر 2025</div>
+            <div class="black-text fw-medium mb-3">5 Nov 2025</div>
 
             <div class="notification-item">
               <div class="notification-icon success">
                 <img src="images/Tax-Law.svg" alt="icon">
               </div>
               <div class="notification-content">
-                <div class="fz-14 fw-medium mb-10 black-text">تم إرسال عرض التسعير</div>
-                <div class="fz-12 text-gray">تم إرسال عرض التسعير الخاص بك بنجاح.</div>
+                <div class="fz-14 fw-medium mb-10 black-text">Price offer sent</div>
+                <div class="fz-12 text-gray">Your price offer was sent successfully.</div>
               </div>
               <div class="d-flex align-items-center gap-4">
-                <span class="text-dark-gray fz-12 fw-medium">11:30 مساءً</span>
+                <span class="text-dark-gray fz-12 fw-medium text-nowrap">11:30 PM</span>
                 <a href="#" class="icon-container gray-outline-btn">
                   <img src="images/arrow-next.svg" alt="Next">
                 </a>
@@ -167,19 +169,19 @@
                 <img src="images/Tax-Law.svg" alt="icon">
               </div>
               <div class="notification-content">
-                <div class="fz-14 fw-medium mb-10 black-text">رد من الإدارة</div>
-                <div class="fz-12 text-gray">قامت الإدارة بإضافة ملاحظة على طلبك. يرجى الاطلاع عليها.</div>
+                <div class="fz-14 fw-medium mb-10 black-text">Response from admin</div>
+                <div class="fz-12 text-gray">Administration added a note to your request. Please review it.</div>
               </div>
               <div class="d-flex align-items-center gap-4">
-                <span class="text-dark-gray fz-12 fw-medium">11:30 مساءً</span>
+                <span class="text-dark-gray fz-12 fw-medium text-nowrap">11:30 PM</span>
                 <a href="#" class="icon-container gray-outline-btn">
                   <img src="images/arrow-next.svg" alt="Next">
                 </a>
               </div>
             </div>
-            <a href="notifications.html"
-              class="d-block p-10 fz-14 fw-medium w-100 rounded-12 btn-primary w-100 text-center">
-              عرض جميع الإشعارات
+            <a href="notifications-ltr.html"
+              class="d-block p-10 fz-14 fw-medium w-100 rounded-12 btn-primary text-center">
+              View all notifications
             </a>
           </div>
         </div>
@@ -192,7 +194,7 @@
       <div class="modal-content w-620">
         <div class="modal-header brd-btm">
           <h6 class="modal-title" id="centeredModalLabel2">
-            انشاء عرض
+            Create Offer
           </h6>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
@@ -200,16 +202,16 @@
           <div class="tender-card p-12">
             <div class="d-flex flex-column gap-12 flex-md-row align-items-md-center justify-content-md-between mb-4">
               <div>
-                <h6 class="black-text mb-10">اختر نوع العرض</h6>
-                <p class="fz-12 text-gray">اختر الخيار الذي يناسب</p>
+                <h6 class="black-text mb-10">Select Offer Type</h6>
+                <p class="fz-12 text-gray">Choose the option that suits you</p>
               </div>
               <div class="add-time justify-content-between">
-                <span class="fz-12 fw-medium">23 : 02 :14 ساعه</span>
+                <span class="fz-12 fw-medium">23 : 02 :14 Hours</span>
                 <div class="progress">
                   <div class="progress-bar bg-prim" style="width: 30%"></div>
                 </div>
                 <a href="#" class="btn-primary sm-ele fz-12 bordered-40">
-                  إضافة وقت
+                  Add Time
                 </a>
               </div>
             </div>
@@ -217,43 +219,43 @@
               <div class="form-check">
                 <input class="form-check-input d-none" checked type="radio" name="type" id="type1">
                 <label class="w-100" for="type1">
-                  عرض جديد
+                  New Offer
                 </label>
               </div>
               <div class="form-check">
                 <input class="form-check-input d-none" type="radio" name="type" id="type2">
                 <label class="w-100" for="type2">
-                  استشاره
+                  Consultation
                 </label>
               </div>
             </div>
             <div class="d-none" id="types-choices">
-              <span class="fz-14 fw-medium black-text d-block mb-3">حدد النوع</span>
+              <span class="fz-14 fw-medium black-text d-block mb-3">Select Type</span>
               <div
                 class="p-3 bg-white rounded-4 d-flex flex-column flex-md-row gap-10 align-items-md-center justify-content-md-between mb-4">
                 <div class="form-check">
                   <input class="form-check-input" type="radio" name="proposal" id="proposal1" />
                   <label class="form-check-label fz-12 black-text" for="proposal1">
-                    عرض مالي فقط
+                    Financial Offer Only
                   </label>
                 </div>
                 <div class="form-check">
                   <input class="form-check-input" type="radio" name="proposal" id="proposal2" checked />
                   <label class="form-check-label fz-12 black-text" for="proposal2">
-                    عرض فني فقط
+                    Technical Offer Only
                   </label>
                 </div>
                 <div class="form-check">
                   <input class="form-check-input" type="radio" name="proposal" id="proposal3" checked />
                   <label class="form-check-label fz-12 black-text" for="proposal3">
-                    عرض مالي و فني
+                    Financial & Technical Offer
                   </label>
                 </div>
               </div>
             </div>
-            <h6 class="black-text fw-normal mb-12">الرقم المرجعي</h6>
+            <h6 class="black-text fw-normal mb-12">Reference Number</h6>
             <p class="fz-12 text-gray mb-4">
-              اختر الخيار الذي يناسب كيفية استخدامك للمنصة.
+              Choose the option that suits how you use the platform.
             </p>
             <div class="search-wrapper position-relative">
               <div class="icon-box">
@@ -265,14 +267,14 @@
                     stroke-linecap="round" stroke-linejoin="round"></path>
                 </svg>
               </div>
-              <input type="text" placeholder="ادخل الرقم المرجعي" class="form-control">
+              <input type="text" placeholder="Enter Reference Number" class="form-control">
             </div>
           </div>
           <div>
-            <span class="d-block fz-12 black-text fw-medium mb-3">نتائج البحث</span>
+            <span class="d-block fz-12 black-text fw-medium mb-3">Search Results</span>
             <div class="d-flex align-items-center gap-12">
-              <div class="badge-rejected btn-main flex-grow-1">المناقصة غير متاحة لباقتك</div>
-              <a href="upgrade.html" class="btn-primary-shadowed">
+              <div class="badge-rejected btn-main flex-grow-1">Tender is not available for your package</div>
+              <a href="upgrade-ltr.html" class="btn-primary-shadowed">
                 <svg xmlns="http://www.w3.org/2000/svg" class="position-absolute btn-shadow-top" width="79" height="20"
                   viewBox="0 0 79 20" fill="none">
                   <g filter="url(#filter0_f_4057_14007)">
@@ -301,8 +303,8 @@
                     </filter>
                   </defs>
                 </svg>
-                <img src="images/programming-arrow.svg" alt="upgrading">
-                ترقية الحساب
+                <img src="images/programming-arrow.svg" alt="upgrading" class="flip-ltr">
+                Upgrade Account
               </a>
             </div>
           </div>
@@ -311,7 +313,7 @@
             <div class="tender-header d-flex align-items-center justify-content-between mb-3">
               <label class="form-check-label tender-number d-flex align-items-center">
                 <input type="checkbox" class="form-check-input mt-0" />
-                <span>رقم/رمز المناقصة </span>
+                <span>Tender Number/Code </span>
                 <span class="fz-14 black-text fw-medium">250739020709</span>
               </label>
             </div>
@@ -319,14 +321,14 @@
               <div class="tender-section d-flex align-items-start justify-content-between position-relative">
                 <div>
                   <div>
-                    <span class="fz-10 gray-text">تاريخ النشر</span>
+                    <span class="fz-10 gray-text">Publish Date</span>
                     <span class="fz-14 black-text fw-medium">05-12-2025</span>
                   </div>
 
-                  <h6 class="tender-title">تجهيز المكاتب وأثاثها</h6>
-                  <div class="tender-subtitle mb-3">منصة رابط النمو</div>
+                  <h6 class="tender-title">Office Setup and Furnishing</h6>
+                  <div class="tender-subtitle mb-3">Growth Link Platform</div>
                   <div class="tender-price">
-                    <span class="fz-10 d-block mb-1 gray-text">سعر الوثائق</span>
+                    <span class="fz-10 d-block mb-1 gray-text">Document Price</span>
                     <span class="fz-14 black-text fw-medium">200.50
                       <img src="images/ryall.svg" alt="Ryall">
                     </span>
@@ -343,7 +345,7 @@
 
                     <div class="position-absolute top-50 start-50 translate-middle text-center">
                       <div>200</div>
-                      <div>يوم</div>
+                      <div>Days</div>
                     </div>
                   </div>
                 </div>
@@ -353,14 +355,14 @@
                 <div class="gap-12 d-flex align-items-center">
                   <img src="images/company-logo.png" class="company-logo" alt="company" />
                   <div>
-                    <span class="fz-10 gray-text">الجهة المعلنة</span>
-                    <div class="fz-14 black-text">شركة الراجحي</div>
+                    <span class="fz-10 gray-text">Entity</span>
+                    <div class="fz-14 black-text">Al Rajhi Company</div>
                   </div>
                 </div>
                 <div class="pe-md-1">
-                  <span class="fz-10 gray-text">النشاط الأساسي</span>
+                  <span class="fz-10 gray-text">Main Activity</span>
                   <div class="fz-14 black-text">
-                    التصميم الداخلي والتجهيزات
+                    Interior Design and Fit-Outs
                   </div>
                 </div>
               </div>
@@ -379,7 +381,7 @@
                     </svg>
                   </div>
                   <div>
-                    <span class="fz-10 gray-text">الموعد النهائي لتقديم العروض</span>
+                    <span class="fz-10 gray-text">Submission Deadline</span>
                     <div>
                       <span class="black-text fz-12 fw-medium d-inline-block me-1">
                         04:30 pm
@@ -403,7 +405,7 @@
                     </svg>
                   </div>
                   <div>
-                    <span class="fz-10 gray-text">تاريخ الاعلان عن النتائج</span>
+                    <span class="fz-10 gray-text">Results Announcement</span>
                     <div>
                       <span class="black-text fz-12 fw-medium d-inline-block me-1">
                         09:00 am
@@ -418,18 +420,18 @@
             </div>
           </div>
           <div class="d-flex flex-column gap-10 flex-md-row align-items-md-center justify-content-md-between">
-            <p class="fz-14 text-gray">هل هذه المناقصه التي تريدها ؟</p>
+            <p class="fz-14 text-gray">Is this the tender you want?</p>
             <div class="d-flex align-items-center gap-10">
               <div class="form-check qns-btn">
                 <input class="form-check-input yes" type="radio" name="agreement" id="yes" checked />
                 <label class="form-check-label" for="yes">
-                  نعم
+                  Yes
                 </label>
               </div>
               <div class="form-check qns-btn">
                 <input class="form-check-input" type="radio" name="agreement" id="no" />
                 <label class="form-check-label" for="no">
-                  لا
+                  No
                 </label>
               </div>
             </div>
@@ -438,16 +440,15 @@
         <div class="modal-footer">
           <button type="button" class="btn-main btn-primary" type="button" data-bs-toggle="modal"
             data-bs-target="#SuccessModal">
-            ارسال العرض
+            Submit Offer
           </button>
           <button type="button" class="btn-main btn-primary-outline" data-bs-dismiss="modal">
-            تراجع
+            Cancel
           </button>
         </div>
       </div>
     </div>
   </div>
-
   <!--Success Modal-->
   <div class="modal fade" id="SuccessModal" tabindex="-1" aria-labelledby="centeredModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -457,24 +458,26 @@
         </div>
         <div class="modal-body text-center">
           <span>
-            <img src="images/checked-green.svg" alt="تم بنجاح">
+            <img src="images/checked-green.svg" alt="Success">
           </span>
           <div>
-            <h4 class="black-text fz-20 mb-3">تم إرسال طلب العرض المالي بنجاح</h4>
-            <p class="fz-14 text-gray">سيتم مراجعته والتواصل معك عبر المحادثات قريبًا.</p>
+            <h4 class="black-text fz-20 mb-3">Financial Offer Submitted Successfully</h4>
+            <p class="fz-14 text-gray">It will be reviewed and you will be contacted via chat shortly.</p>
           </div>
         </div>
         <button type="button" class="btn-primary p-10 fz-14 bordered-8" data-bs-dismiss="modal">
-          العوده الي القائمه
+          Back to List
         </button>
       </div>
     </div>
   </div>
+
+
   <!-- Top Navigation Bar -->
   <nav class="navbar navbar-dark top-navbar navbar-expand-lg">
     <div class="container-fluid">
       <!-- Logo -->
-      <a class="navbar-brand" href="index.html"><img src="images/trsyat-white-logo.svg" alt="Trsyat" /></a>
+      <a class="navbar-brand" href="index-ltr.html"><img src="images/trsyat-white-logo.svg" alt="Trsyat" /></a>
       <span class="seperator d-none d-lg-inline-block"></span>
       <!-- Hamburger toggle -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
@@ -488,7 +491,7 @@
       <div class="collapse navbar-collapse" id="navbarContent">
         <div class="navbar-nav gap-3 d-flex flex-lg-row flex-column w-100">
           <div class="search-box position-relative flex-grow-1">
-            <input type="text" class="form-control" placeholder="البحث في الداشبورد" name="Search" />
+            <input type="text" class="form-control" placeholder="Search in Dashboard" name="Search" />
             <span class="search-icon position-absolute">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path
@@ -499,7 +502,7 @@
               </svg>
             </span>
           </div>
-          <a href="offers-consultations-ltr.html" class="nav-link">
+          <a href="offers-consultations.html" class="nav-link">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g opacity="0.4">
                 <path d="M14.1582 7.4668H5.84155H14.1582Z" fill="currentColor" />
@@ -516,7 +519,7 @@
                 d="M10.0001 18.3334C14.6025 18.3334 18.3334 14.6025 18.3334 10.0001C18.3334 5.39771 14.6025 1.66675 10.0001 1.66675C5.39771 1.66675 1.66675 5.39771 1.66675 10.0001C1.66675 14.6025 5.39771 18.3334 10.0001 18.3334Z"
                 stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
-            <span>English</span>
+            <span>العربية</span>
           </a>
 
           <a href="#" type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#notificationModal">
@@ -533,10 +536,10 @@
                 d="M12.5166 15.8833C12.5166 17.2583 11.3916 18.3833 10.0166 18.3833C9.33327 18.3833 8.69993 18.1 8.24993 17.65C7.79993 17.2 7.5166 16.5666 7.5166 15.8833"
                 stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" />
             </svg>
-            <span>الاشعارات</span>
+            <span>Notifications</span>
           </a>
 
-          <a href="user-guide.html" class="nav-link">
+          <a href="user-guide-ltr.html" class="nav-link">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
               <path d="M15.8926 15.8908C19.1509 12.6324 19.1509 7.35742 15.8926 4.10742" stroke="currentColor"
                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -553,7 +556,7 @@
                 stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
                 stroke-linejoin="round" />
             </svg>
-            <span>دليل الأستخدام</span>
+            <span>User Guide</span>
           </a>
           <div class="dropdown">
             <button class="dropdown-toggle nav-link" type="button" id="dropdownMenuButtonheader"
@@ -568,7 +571,7 @@
             </button>
             <ul class="dropdown-menu main-menu" aria-labelledby="dropdownMenuButtonheader">
               <li>
-                <a class="dropdown-item" href="profile.html">
+                <a class="dropdown-item" href="profile-ltr.html">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path opacity="0.4"
                       d="M12.1207 12.7805C12.0507 12.7705 11.9607 12.7705 11.8807 12.7805C10.1207 12.7205 8.7207 11.2805 8.7207 9.51047C8.7207 7.70047 10.1807 6.23047 12.0007 6.23047C13.8107 6.23047 15.2807 7.70047 15.2807 9.51047C15.2707 11.2805 13.8807 12.7205 12.1207 12.7805Z"
@@ -580,11 +583,11 @@
                       d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
                       stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
-                  الملف الشخصي
+                  Profile
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="settings.html">
+                <a class="dropdown-item" href="settings-ltr.html">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path opacity="0.34"
                       d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
@@ -595,12 +598,12 @@
                       stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
                       stroke-linejoin="round" />
                   </svg>
-                  الأعدادت
+                  Settings
                 </a>
               </li>
               <hr class="m-0">
               <li>
-                <a class="dropdown-item" href="logout.html">
+                <a class="dropdown-item" href="logout-ltr.html">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path
                       d="M15.0996 7.56023C14.7896 3.96023 12.9396 2.49023 8.88961 2.49023H8.75961C4.28961 2.49023 2.49961 4.28023 2.49961 8.75023V15.2702C2.49961 19.7402 4.28961 21.5302 8.75961 21.5302H8.88961C12.9096 21.5302 14.7596 20.0802 15.0896 16.5402"
@@ -615,12 +618,12 @@
                         stroke-linecap="round" stroke-linejoin="round" />
                     </g>
                   </svg>
-                  الخروج
+                  Logout
                 </a>
               </li>
             </ul>
           </div>
-          <a href="support.html" class="nav-link">
+          <a href="support-ltr.html" class="nav-link">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M18.3083 15.2751C18.3083 15.5751 18.2416 15.8834 18.1 16.1834C17.9583 16.4834 17.775 16.7667 17.5333 17.0334C17.125 17.4834 16.675 17.8084 16.1666 18.0168C15.6666 18.2251 15.125 18.3334 14.5416 18.3334C13.6916 18.3334 12.7833 18.1334 11.825 17.7251C10.8666 17.3167 9.90829 16.7667 8.95829 16.0751C7.99996 15.3751 7.09163 14.6001 6.22496 13.7417C5.36663 12.8751 4.59163 11.9667 3.89996 11.0167C3.21663 10.0667 2.66663 9.11675 2.26663 8.17508C1.86663 7.22508 1.66663 6.31675 1.66663 5.45008C1.66663 4.88341 1.76663 4.34175 1.96663 3.84175C2.16663 3.33341 2.48329 2.86675 2.92496 2.45008C3.45829 1.92508 4.04163 1.66675 4.65829 1.66675C4.89163 1.66675 5.12496 1.71675 5.33329 1.81675C5.54996 1.91675 5.74163 2.06675 5.89163 2.28341L7.82496 5.00841C7.97496 5.21675 8.08329 5.40841 8.15829 5.59175C8.23329 5.76675 8.27496 5.94175 8.27496 6.10008C8.27496 6.30008 8.21663 6.50008 8.09996 6.69175C7.99163 6.88341 7.83329 7.08341 7.63329 7.28341L6.99996 7.94175C6.90829 8.03341 6.86663 8.14175 6.86663 8.27508C6.86663 8.34175 6.87496 8.40008 6.89163 8.46675C6.91663 8.53341 6.94163 8.58341 6.95829 8.63341C7.10829 8.90841 7.36663 9.26675 7.73329 9.70008C8.10829 10.1334 8.50829 10.5751 8.94163 11.0167C9.39163 11.4584 9.82496 11.8667 10.2666 12.2417C10.7 12.6084 11.0583 12.8584 11.3416 13.0084C11.3833 13.0251 11.4333 13.0501 11.4916 13.0751C11.5583 13.1001 11.625 13.1084 11.7 13.1084C11.8416 13.1084 11.95 13.0584 12.0416 12.9667L12.675 12.3417C12.8833 12.1334 13.0833 11.9751 13.275 11.8751C13.4666 11.7584 13.6583 11.7001 13.8666 11.7001C14.025 11.7001 14.1916 11.7334 14.375 11.8084C14.5583 11.8834 14.75 11.9917 14.9583 12.1334L17.7166 14.0917C17.9333 14.2417 18.0833 14.4167 18.175 14.6251C18.2583 14.8334 18.3083 15.0417 18.3083 15.2751Z"
@@ -632,9 +635,9 @@
                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
 
-            <span>الدعم الفني</span>
+            <span>Support</span>
           </a>
-          <a href="upgrade.html" class="btn-primary-shadowed">
+          <a href="upgrade-ltr.html" class="btn-primary-shadowed">
             <svg xmlns="http://www.w3.org/2000/svg" class="position-absolute btn-shadow-top" width="79" height="20"
               viewBox="0 0 79 20" fill="none">
               <g filter="url(#filter0_f_4057_14007)">
@@ -663,8 +666,8 @@
                 </filter>
               </defs>
             </svg>
-            <img src="images/programming-arrow.svg" alt="upgrading" />
-            ترقية الحساب
+            <img src="images/programming-arrow.svg" class="flip-ltr" alt="upgrading" />
+            Upgrade Account
             </button>
           </a>
         </div>
@@ -674,7 +677,7 @@
   <div class="container-fluid main-content">
     <nav class="nav-tabs">
       <div class="nav page-tabs" id="tabsContainer">
-        <a href="index.html" class="nav-link">
+        <a href="index-ltr.html" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
             <path opacity="0.4" d="M2.11108 14.6667H14.1111" stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round"
               stroke-linejoin="round" />
@@ -688,7 +691,7 @@
               d="M13.4445 1.33325H12.3778C12.0112 1.33325 11.7112 1.63325 11.7112 1.99992V11.9999C11.7112 12.3666 12.0112 12.6666 12.3778 12.6666H13.4445C13.8112 12.6666 14.1112 12.3666 14.1112 11.9999V1.99992C14.1112 1.63325 13.8112 1.33325 13.4445 1.33325Z"
               stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          <span>الرئيسيه</span>
+          <span>Home</span>
         </a>
         <div class="dropdown">
           <button class="dropdown-toggle nav-link w-100" type="button" id="allTenders" data-bs-toggle="dropdown"
@@ -705,7 +708,7 @@
                 stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
             <span class="d-flex align-items-center gap-2">
-              <span>جميع المنافسات</span>
+              <span>All Tenders</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path d="M16.6004 7.45898L11.1671 12.8923C10.5254 13.534 9.47539 13.534 8.83372 12.8923L3.40039 7.45898"
                   stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
@@ -715,26 +718,26 @@
           </button>
           <ul class="dropdown-menu main-menu" aria-labelledby="allTenders">
             <li>
-              <a class="dropdown-item b-dash" href="trsyat-tenders.html">
+              <a class="dropdown-item b-dash" href="trsyat-tenders-ltr.html">
                 <img src="images/trsyat-logo.svg" alt="Trsyat">
-                مناقصات ترسيات
+                Trsyat Tenders
               </a>
             </li>
             <li>
-              <a class="dropdown-item" href="etimated-tenders.html">
+              <a class="dropdown-item" href="etimated-tenders-ltr.html">
                 <img src="images/Etimated-Logo.svg" alt="Etimated">
-                مناقصات اعتماد
+                Etimad Tenders
               </a>
             </li>
             <li>
-              <a class="dropdown-item" href="forsa-tenders.html">
+              <a class="dropdown-item" href="forsa-tenders-ltr.html">
                 <img src="images/Forsa-Logo.svg" alt="Forsa">
-                مناقصات فرصة
+                Forsa Tenders
               </a>
             </li>
           </ul>
         </div>
-        <a href="nominated-tenders.html" class="nav-link">
+        <a href="nominated-tenders-ltr.html" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path
               d="M14.6673 8.66732V6.00065C14.6673 2.66732 13.334 1.33398 10.0007 1.33398H6.00065C2.66732 1.33398 1.33398 2.66732 1.33398 6.00065V10.0007C1.33398 13.334 2.66732 14.6673 6.00065 14.6673H8.66732"
@@ -748,9 +751,9 @@
             <path opacity="0.4" d="M11.334 7V9" stroke="#292D32" stroke-width="1.5" stroke-linecap="round"
               stroke-linejoin="round" />
           </svg>
-          <span>المناقصات المرشحة</span>
+          <span>Nominated Tenders</span>
         </a>
-        <a href="offers-consultations.html" class="nav-link active">
+        <a href="offers-consultations-ltr.html" class="nav-link active">
           <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
             <path opacity="0.4"
               d="M12.6312 6.50663V8.59995C12.6312 8.73329 12.6245 8.86662 12.6112 8.99329C12.4912 10.4066 11.6578 11.1133 10.1245 11.1133H9.91783C9.78449 11.1133 9.65783 11.1733 9.58449 11.28L8.95782 12.12C8.67782 12.4933 8.23117 12.4933 7.95117 12.12L7.3245 11.28C7.25784 11.1933 7.1045 11.1133 6.99117 11.1133H6.78451C5.11117 11.1133 4.27783 10.7 4.27783 8.60663V6.51328C4.27783 4.97995 4.98449 4.14663 6.39783 4.02663C6.52449 4.0133 6.65782 4.00663 6.79116 4.00663H10.1445C11.7912 3.99996 12.6312 4.83996 12.6312 6.50663Z"
@@ -760,9 +763,9 @@
               d="M6.4445 14.6666H10.4445C13.7778 14.6666 15.1112 13.3333 15.1112 9.99992V5.99992C15.1112 2.66659 13.7778 1.33325 10.4445 1.33325H6.4445C3.11117 1.33325 1.77783 2.66659 1.77783 5.99992V9.99992C1.77783 13.3333 3.11117 14.6666 6.4445 14.6666Z"
               stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          <span> العروض والاستشارات</span>
+          <span>Offers and Consultations</span>
         </a>
-        <a href="tenders-results.html" class="nav-link">
+        <a href="tenders-results-ltr.html" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
             <path d="M0.75 14.666H15.4167" stroke="#6F6F6F" stroke-width="1.5" stroke-miterlimit="10"
               stroke-linecap="round" stroke-linejoin="round" />
@@ -783,9 +786,9 @@
             <path opacity="0.4" d="M5.58398 14.666V12.166" stroke="#6F6F6F" stroke-width="1.5" stroke-miterlimit="10"
               stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          <span>نتائج المناقصات</span>
+          <span>Tender Results</span>
         </a>
-        <a href="tender-announcement.html" class="nav-link">
+        <a href="tender-announcement-ltr.html" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
             <g opacity="0.4">
               <path d="M5.99996 11.334V7.33398L4.66663 8.66732" stroke="#6F6F6F" stroke-width="1.5"
@@ -799,9 +802,9 @@
             <path d="M14.6667 6.66732H12C10 6.66732 9.33337 6.00065 9.33337 4.00065V1.33398L14.6667 6.66732Z"
               stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          <span>الاعلان علي مناقصة</span>
+          <span>Tender Announcement</span>
         </a>
-        <a href="tenders-pricing.html" class="nav-link">
+        <a href="tenders-pricing-ltr.html" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
             <path
               d="M2.5555 13.6676C3.10884 14.2209 4.00217 14.2209 4.5555 13.6676L13.2222 5.00094C13.7755 4.4476 13.7755 3.55427 13.2222 3.00094C12.6688 2.4476 11.7755 2.4476 11.2222 3.00094L2.5555 11.6676C2.00217 12.2209 2.00217 13.1143 2.5555 13.6676Z"
@@ -818,17 +821,17 @@
               d="M13.2222 8.95935L14.2222 8.66602L13.9288 9.66602L14.2222 10.666L13.2222 10.3727L12.2222 10.666L12.5155 9.66602L12.2222 8.66602L13.2222 8.95935Z"
               stroke="#6F6F6F" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          <span>تسعيرات المناقصات</span>
+          <span>Tender Pricing</span>
         </a>
-        <a href="tenders-management.html" class="nav-link">
+        <a href="tenders-management-ltr.html" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path
-              d="M11.5262 2.76065L11.4795 5.2873C11.4728 5.63397 11.6929 6.09398 11.9729 6.30065L13.6262 7.55396C14.6862 8.35396 14.5129 9.33397 13.2462 9.73397L11.0929 10.4073C10.7329 10.5206 10.3529 10.914 10.2595 11.2806L9.74619 13.2406C9.33952 14.7873 8.32618 14.9406 7.48618 13.5806L6.31284 11.6806C6.09951 11.334 5.59284 11.074 5.19284 11.094L2.9662 11.2073C1.37287 11.2873 0.919527 10.3673 1.95953 9.15398L3.27951 7.62063C3.52618 7.33397 3.63951 6.80064 3.52618 6.44064L2.85288 4.2873C2.45955 3.02063 3.1662 2.32064 4.4262 2.73397L6.39288 3.38064C6.72621 3.48731 7.2262 3.41397 7.5062 3.2073L9.55954 1.7273C10.6662 0.927301 11.5528 1.39398 11.5262 2.76065Z"
+              d="M11.5262 2.76065L11.4795 5.2873C11.4728 5.63397 11.6929 6.09398 11.9729 6.30065L13.6262 7.55396C14.6862 8.35396 14.5129 9.33397 13.2462 9.73397L11.0929 10.4073C10.7329 10.5206 10.3529 10.914 10.2595 11.2806L9.74619 13.2406C9.33952 14.7873 8.32618 14.9406 7.48618 13.5806L6.31284 11.6806C6.09951 11.334 5.59284 11.074 5.19284 11.094L2.9662 11.2073C1.37287 11.2873 0.919527 10.3673 1.95953 9.15398L3.27951 7.62063C3.52618 7.33397 3.63951 6.80064 3.52618 6.44064L2.85288 4.2873C2.45955 3.02063 3.1662 2.32064 4.4262 2.73397L6.39288 3.38064C6.72621 3.48731 7.22620 3.41397 7.50620 3.2073L9.55954 1.7273C10.6662 0.927301 11.5528 1.39398 11.5262 2.76065Z"
               stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
             <path opacity="0.4" d="M14.6059 14.6665L12.5859 12.6465" stroke="#6F6F6F" stroke-width="1.5"
               stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          <span>إدارة المناقصات</span>
+          <span>Tender Management</span>
         </a>
         <!-- More Button (Ellipsis) -->
         <div class="dropdown">
@@ -843,40 +846,41 @@
         </div>
       </div>
     </nav>
+    <!-- Page Header -->
     <div class="page-header d-flex align-items-center">
       <div class="page-breadcrumb">
-        <a href="index.html" class="active fw-medium black-text">العروض والاستشارات</a>
+        <a href="index-ltr.html" class="active fw-medium black-text">Offers and Consultations</a>
       </div>
       <button class="outline-primary-gray bordered-40 fz-10 d-flex align-items-center gap-10">
-        <span>فيديو شرح</span>
-        <img src="images/play-cricle.svg" alt="فيديو شرح">
+        <span>Video Tutorial</span>
+        <img src="images/play-cricle.svg" alt="Video Tutorial">
       </button>
     </div>
     <nav class="d-md-flex align-items-center justify-content-between mb-4 mb-md-0">
       <div class="sub-nav-tabs" id="sub-nav-tab" role="tablist">
         <button class="nav-link active" id="nav-offers-tab" data-bs-toggle="tab" data-bs-target="#nav-offers"
           type="button" role="tab" aria-controls="nav-offers" aria-selected="true">
-          العروض
+          Offers
         </button>
         <button class="nav-link" id="nav-consult-tab" data-bs-toggle="tab" data-bs-target="#nav-consult" type="button"
           role="tab" aria-controls="nav-consult" aria-selected="false" tabindex="-1">
-          الاستشارات
+          Consultations
         </button>
       </div>
       <div class="d-flex align-items-center gap-12">
-        <div class="add-time flex-grow-1 justify-content-between">
-          <span class=" fz-12 fw-medium">23 : 02 :14 ساعه</span>
+        <div class="add-time flex-grow-1 justify-content-between ">
+          <span class="fz-12 fw-medium">23 : 02 :14 Hours</span>
           <div class="progress d-none d-md-flex">
             <div class="progress-bar bg-prim" style="width: 30%"></div>
           </div>
           <a href="#" class="btn-primary sm-ele fz-12 bordered-40">
-            إضافة وقت
+            Add Time
           </a>
         </div>
         <button class="btn-base create-btn" type="button" data-bs-toggle="modal" data-bs-target="#CreateModal">
-          <span>انشاء عرض </span>
+          <span>Create Offer</span>
           <span class="btn-primary sm-ele fz-12 bordered-40 border-white">
-            متاح
+            Available
           </span>
         </button>
       </div>
@@ -887,15 +891,15 @@
           <!-- Search and Filter Bar -->
           <div class="filter-bar">
             <div class="filter-btns d-flex align-items-center gap-3 ">
-              <button class="active">الكل</button>
-              <button>مرسله</button>
-              <button>يتم مراجعتها</button>
-              <button>مسودة</button>
-              <button>ملغاه</button>
+              <button class="active">All</button>
+              <button>Sent</button>
+              <button>Under Review</button>
+              <button>Draft</button>
+              <button>Cancelled</button>
             </div>
             <div class="d-flex justify-content-between align-items-center w-100 search-filter-bar gap-3">
               <div class="search-box w-100 position-relative">
-                <input type="text" class="form-control" id="tableSearch" placeholder="البحث في المسابقات"
+                <input type="text" class="form-control" id="tableSearch" placeholder="Search Competitions"
                   name="Search" />
                 <span class="search-icon position-absolute">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -916,7 +920,7 @@
                   <path d="M8.33337 14.1667H11.6667" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round">
                   </path>
                 </svg>
-                <span>تصفية</span>
+                <span>Filter</span>
               </button>
             </div>
           </div>
@@ -925,54 +929,54 @@
               <table class="table table-bordered align-middle competition-table">
                 <thead>
                   <tr>
-                    <th>رقم العرض</th>
-                    <th>عنوان المنافسة</th>
-                    <th>النشاط الأساسي</th>
-                    <th>سعر الوثائق</th>
-                    <th>النوع</th>
-                    <th>الحاله</th>
-                    <th class="text-center">الاجراءات</th>
+                    <th>Offer Number</th>
+                    <th>Competition Title</th>
+                    <th>Main Activity</th>
+                    <th>Document Price</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                    <th class="text-center">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td data-label="رقم العرض"><span class="ff-onest black-text fw-medium">250739020707</span></td>
-                    <td data-label="عنوان المنافسة">
+                    <td data-label="Offer Number"><span class="ff-onest black-text fw-medium">250739020707</span></td>
+                    <td data-label="Competition Title">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-open.svg" alt="icon">
                         </span>
-                        <span>خدمات الرعاية الصحية</span>
+                        <span>Healthcare Services</span>
                       </div>
                     </td>
-                    <td data-label="النشاط الأساسي">
+                    <td data-label="Main Activity">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/activity.svg" alt="icon">
                         </span>
-                        <span class="black-text">التصميم الداخلي والتجهيزات</span>
+                        <span class="black-text">Interior Design and Fit-out</span>
                       </div>
                     </td>
-                    <td data-label="سعر الوثائق">
+                    <td data-label="Document Price">
                       <span class="fw-medium ff-onest">100.23
                         <img src="images/ryall.svg" class="ms-1" alt="Ryall">
                       </span>
                     </td>
-                    <td data-label="النوع">
+                    <td data-label="Type">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-cloud.svg" alt="folder-cloud">
                         </span>
-                        <span class="prim-sec">استشاره فنيه</span>
+                        <span class="prim-sec">Technical Consultation</span>
                       </div>
                     </td>
-                    <td data-label="الحاله">
-                      <span class="sm-ele fz-12 bordered-8 text-nowrap prim-opacity-outlined">مرسله</span>
+                    <td data-label="Status">
+                      <span class="sm-ele fz-12 bordered-8 text-nowrap prim-opacity-outlined">Sent</span>
                     </td>
-                    <td data-label="الاجراءات">
+                    <td data-label="Actions">
                       <div class="d-flex align-items-center justify-content-center gap-12">
-                        <a href="offers-consultations-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                          التفاصيل
+                        <a href="offers-consultations-details-ltr.html" class="btn-primary sm-ele fz-12 bordered-40">
+                          Details
                         </a>
                         <div class="dropdown">
                           <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton1"
@@ -995,43 +999,43 @@
                     </td>
                   </tr>
                   <tr>
-                    <td data-label="رقم العرض"><span class="ff-onest black-text fw-medium">250739020707</span></td>
-                    <td data-label="عنوان المنافسة">
+                    <td data-label="Offer Number"><span class="ff-onest black-text fw-medium">250739020707</span></td>
+                    <td data-label="Competition Title">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-open.svg" alt="icon">
                         </span>
-                        <span>خدمات الرعاية الصحية</span>
+                        <span>Healthcare Services</span>
                       </div>
                     </td>
-                    <td data-label="النشاط الأساسي">
+                    <td data-label="Main Activity">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/activity.svg" alt="icon">
                         </span>
-                        <span class="black-text">التصميم الداخلي والتجهيزات</span>
+                        <span class="black-text">Interior Design and Fit-out</span>
                       </div>
                     </td>
-                    <td data-label="سعر الوثائق">
+                    <td data-label="Document Price">
                       <span class="fw-medium ff-onest">100.23
                         <img src="images/ryall.svg" class="ms-1" alt="Ryall">
                       </span>
                     </td>
-                    <td data-label="النوع">
+                    <td data-label="Type">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-cloud.svg" alt="folder-cloud">
                         </span>
-                        <span class="prim-sec">استشاره فنيه</span>
+                        <span class="prim-sec">Technical Consultation</span>
                       </div>
                     </td>
-                    <td data-label="الحاله">
-                      <span class="sm-ele fz-12 bordered-8 text-nowrap prim-opacity-outlined">مرسله</span>
+                    <td data-label="Status">
+                      <span class="sm-ele fz-12 bordered-8 text-nowrap prim-opacity-outlined">Sent</span>
                     </td>
-                    <td data-label="الاجراءات">
+                    <td data-label="Actions">
                       <div class="d-flex align-items-center justify-content-center gap-12">
-                        <a href="offers-consultations-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                          التفاصيل
+                        <a href="offers-consultations-details-ltr.html" class="btn-primary sm-ele fz-12 bordered-40">
+                          Details
                         </a>
                         <div class="dropdown">
                           <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton2"
@@ -1054,43 +1058,43 @@
                     </td>
                   </tr>
                   <tr>
-                    <td data-label="رقم العرض"><span class="ff-onest black-text fw-medium">250739020707</span></td>
-                    <td data-label="عنوان المنافسة">
+                    <td data-label="Offer Number"><span class="ff-onest black-text fw-medium">250739020707</span></td>
+                    <td data-label="Competition Title">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-open.svg" alt="icon">
                         </span>
-                        <span>خدمات الرعاية الصحية</span>
+                        <span>Healthcare Services</span>
                       </div>
                     </td>
-                    <td data-label="النشاط الأساسي">
+                    <td data-label="Main Activity">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/activity.svg" alt="icon">
                         </span>
-                        <span class="black-text">التصميم الداخلي والتجهيزات</span>
+                        <span class="black-text">Interior Design and Fit-out</span>
                       </div>
                     </td>
-                    <td data-label="سعر الوثائق">
+                    <td data-label="Document Price">
                       <span class="fw-medium ff-onest">100.23
                         <img src="images/ryall.svg" class="ms-1" alt="Ryall">
                       </span>
                     </td>
-                    <td data-label="النوع">
+                    <td data-label="Type">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-cloud.svg" alt="folder-cloud">
                         </span>
-                        <span class="prim-sec">استشاره فنيه</span>
+                        <span class="prim-sec">Technical Consultation</span>
                       </div>
                     </td>
-                    <td data-label="الحاله">
-                      <span class="sm-ele fz-12 bordered-8 text-nowrap badge-draft">مسودة</span>
+                    <td data-label="Status">
+                      <span class="sm-ele fz-12 bordered-8 text-nowrap badge-draft">Draft</span>
                     </td>
-                    <td data-label="الاجراءات">
+                    <td data-label="Actions">
                       <div class="d-flex align-items-center justify-content-center gap-12">
-                        <a href="offers-consultations-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                          التفاصيل
+                        <a href="offers-consultations-details-ltr.html" class="btn-primary sm-ele fz-12 bordered-40">
+                          Details
                         </a>
                         <div class="dropdown">
                           <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton3"
@@ -1113,43 +1117,43 @@
                     </td>
                   </tr>
                   <tr>
-                    <td data-label="رقم العرض"><span class="ff-onest black-text fw-medium">250739020707</span></td>
-                    <td data-label="عنوان المنافسة">
+                    <td data-label="Offer Number"><span class="ff-onest black-text fw-medium">250739020707</span></td>
+                    <td data-label="Competition Title">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-open.svg" alt="icon">
                         </span>
-                        <span>خدمات الرعاية الصحية</span>
+                        <span>Healthcare Services</span>
                       </div>
                     </td>
-                    <td data-label="النشاط الأساسي">
+                    <td data-label="Main Activity">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/activity.svg" alt="icon">
                         </span>
-                        <span class="black-text">التصميم الداخلي والتجهيزات</span>
+                        <span class="black-text">Interior Design and Fit-out</span>
                       </div>
                     </td>
-                    <td data-label="سعر الوثائق">
+                    <td data-label="Document Price">
                       <span class="fw-medium ff-onest">100.23
                         <img src="images/ryall.svg" class="ms-1" alt="Ryall">
                       </span>
                     </td>
-                    <td data-label="النوع">
+                    <td data-label="Type">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-cloud.svg" alt="folder-cloud">
                         </span>
-                        <span class="prim-sec">استشاره فنيه</span>
+                        <span class="prim-sec">Technical Consultation</span>
                       </div>
                     </td>
-                    <td data-label="الحاله">
-                      <span class="sm-ele fz-12 bordered-8 text-nowrap badge-reviewed">يتم المراجعه</span>
+                    <td data-label="Status">
+                      <span class="sm-ele fz-12 bordered-8 text-nowrap badge-reviewed">Under Review</span>
                     </td>
-                    <td data-label="الاجراءات">
+                    <td data-label="Actions">
                       <div class="d-flex align-items-center justify-content-center gap-12">
-                        <a href="offers-consultations-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                          التفاصيل
+                        <a href="offers-consultations-details-ltr.html" class="btn-primary sm-ele fz-12 bordered-40">
+                          Details
                         </a>
                         <div class="dropdown">
                           <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton4"
@@ -1172,43 +1176,43 @@
                     </td>
                   </tr>
                   <tr>
-                    <td data-label="رقم العرض"><span class="ff-onest black-text fw-medium">250739020707</span></td>
-                    <td data-label="عنوان المنافسة">
+                    <td data-label="Offer Number"><span class="ff-onest black-text fw-medium">250739020707</span></td>
+                    <td data-label="Competition Title">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-open.svg" alt="icon">
                         </span>
-                        <span>خدمات الرعاية الصحية</span>
+                        <span>Healthcare Services</span>
                       </div>
                     </td>
-                    <td data-label="النشاط الأساسي">
+                    <td data-label="Main Activity">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/activity.svg" alt="icon">
                         </span>
-                        <span class="black-text">التصميم الداخلي والتجهيزات</span>
+                        <span class="black-text">Interior Design and Fit-out</span>
                       </div>
                     </td>
-                    <td data-label="سعر الوثائق">
+                    <td data-label="Document Price">
                       <span class="fw-medium ff-onest">100.23
                         <img src="images/ryall.svg" class="ms-1" alt="Ryall">
                       </span>
                     </td>
-                    <td data-label="النوع">
+                    <td data-label="Type">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-cloud.svg" alt="folder-cloud">
                         </span>
-                        <span class="prim-sec">استشاره فنيه</span>
+                        <span class="prim-sec">Technical Consultation</span>
                       </div>
                     </td>
-                    <td data-label="الحاله">
-                      <span class="sm-ele fz-12 bordered-8 text-nowrap badge-success">تم ارجاعها بملاحظة</span>
+                    <td data-label="Status">
+                      <span class="sm-ele fz-12 bordered-8 text-nowrap badge-success">Returned with Note</span>
                     </td>
-                    <td data-label="الاجراءات">
+                    <td data-label="Actions">
                       <div class="d-flex align-items-center justify-content-center gap-12">
-                        <a href="offers-consultations-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                          التفاصيل
+                        <a href="offers-consultations-details-ltr.html" class="btn-primary sm-ele fz-12 bordered-40">
+                          Details
                         </a>
                         <div class="dropdown">
                           <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton5"
@@ -1231,43 +1235,43 @@
                     </td>
                   </tr>
                   <tr>
-                    <td data-label="رقم العرض"><span class="ff-onest black-text fw-medium">250739020707</span></td>
-                    <td data-label="عنوان المنافسة">
+                    <td data-label="Offer Number"><span class="ff-onest black-text fw-medium">250739020707</span></td>
+                    <td data-label="Competition Title">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-open.svg" alt="icon">
                         </span>
-                        <span>خدمات الرعاية الصحية</span>
+                        <span>Healthcare Services</span>
                       </div>
                     </td>
-                    <td data-label="النشاط الأساسي">
+                    <td data-label="Main Activity">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/activity.svg" alt="icon">
                         </span>
-                        <span class="black-text">التصميم الداخلي والتجهيزات</span>
+                        <span class="black-text">Interior Design and Fit-out</span>
                       </div>
                     </td>
-                    <td data-label="سعر الوثائق">
+                    <td data-label="Document Price">
                       <span class="fw-medium ff-onest">100.23
                         <img src="images/ryall.svg" class="ms-1" alt="Ryall">
                       </span>
                     </td>
-                    <td data-label="النوع">
+                    <td data-label="Type">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-cloud.svg" alt="folder-cloud">
                         </span>
-                        <span class="prim-sec">استشاره فنيه</span>
+                        <span class="prim-sec">Technical Consultation</span>
                       </div>
                     </td>
-                    <td data-label="الحاله">
-                      <span class="sm-ele fz-12 bordered-8 text-nowrap prim-opacity-outlined">مرسله</span>
+                    <td data-label="Status">
+                      <span class="sm-ele fz-12 bordered-8 text-nowrap prim-opacity-outlined">Sent</span>
                     </td>
-                    <td data-label="الاجراءات">
+                    <td data-label="Actions">
                       <div class="d-flex align-items-center justify-content-center gap-12">
-                        <a href="offers-consultations-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                          التفاصيل
+                        <a href="offers-consultations-details-ltr.html" class="btn-primary sm-ele fz-12 bordered-40">
+                          Details
                         </a>
                         <div class="dropdown">
                           <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton6"
@@ -1290,43 +1294,43 @@
                     </td>
                   </tr>
                   <tr>
-                    <td data-label="رقم العرض"><span class="ff-onest black-text fw-medium">250739020707</span></td>
-                    <td data-label="عنوان المنافسة">
+                    <td data-label="Offer Number"><span class="ff-onest black-text fw-medium">250739020707</span></td>
+                    <td data-label="Competition Title">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-open.svg" alt="icon">
                         </span>
-                        <span>خدمات الرعاية الصحية</span>
+                        <span>Healthcare Services</span>
                       </div>
                     </td>
-                    <td data-label="النشاط الأساسي">
+                    <td data-label="Main Activity">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/activity.svg" alt="icon">
                         </span>
-                        <span class="black-text">التصميم الداخلي والتجهيزات</span>
+                        <span class="black-text">Interior Design and Fit-out</span>
                       </div>
                     </td>
-                    <td data-label="سعر الوثائق">
+                    <td data-label="Document Price">
                       <span class="fw-medium ff-onest">100.23
                         <img src="images/ryall.svg" class="ms-1" alt="Ryall">
                       </span>
                     </td>
-                    <td data-label="النوع">
+                    <td data-label="Type">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-cloud.svg" alt="folder-cloud">
                         </span>
-                        <span class="prim-sec">استشاره فنيه</span>
+                        <span class="prim-sec">Technical Consultation</span>
                       </div>
                     </td>
-                    <td data-label="الحاله">
-                      <span class="sm-ele fz-12 bordered-8 text-nowrap prim-opacity-outlined">مرسله</span>
+                    <td data-label="Status">
+                      <span class="sm-ele fz-12 bordered-8 text-nowrap prim-opacity-outlined">Sent</span>
                     </td>
-                    <td data-label="الاجراءات">
+                    <td data-label="Actions">
                       <div class="d-flex align-items-center justify-content-center gap-12">
-                        <a href="offers-consultations-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                          التفاصيل
+                        <a href="offers-consultations-details-ltr.html" class="btn-primary sm-ele fz-12 bordered-40">
+                          Details
                         </a>
                         <div class="dropdown">
                           <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton7"
@@ -1349,43 +1353,43 @@
                     </td>
                   </tr>
                   <tr>
-                    <td data-label="رقم العرض"><span class="ff-onest black-text fw-medium">250739020707</span></td>
-                    <td data-label="عنوان المنافسة">
+                    <td data-label="Offer Number"><span class="ff-onest black-text fw-medium">250739020707</span></td>
+                    <td data-label="Competition Title">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-open.svg" alt="icon">
                         </span>
-                        <span>خدمات الرعاية الصحية</span>
+                        <span>Healthcare Services</span>
                       </div>
                     </td>
-                    <td data-label="النشاط الأساسي">
+                    <td data-label="Main Activity">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/activity.svg" alt="icon">
                         </span>
-                        <span class="black-text">التصميم الداخلي والتجهيزات</span>
+                        <span class="black-text">Interior Design and Fit-out</span>
                       </div>
                     </td>
-                    <td data-label="سعر الوثائق">
+                    <td data-label="Document Price">
                       <span class="fw-medium ff-onest">100.23
                         <img src="images/ryall.svg" class="ms-1" alt="Ryall">
                       </span>
                     </td>
-                    <td data-label="النوع">
+                    <td data-label="Type">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-cloud.svg" alt="folder-cloud">
                         </span>
-                        <span class="prim-sec">استشاره فنيه</span>
+                        <span class="prim-sec">Technical Consultation</span>
                       </div>
                     </td>
-                    <td data-label="الحاله">
-                      <span class="sm-ele fz-12 bordered-8 text-nowrap badge-draft">مسودة</span>
+                    <td data-label="Status">
+                      <span class="sm-ele fz-12 bordered-8 text-nowrap badge-draft">Draft</span>
                     </td>
-                    <td data-label="الاجراءات">
+                    <td data-label="Actions">
                       <div class="d-flex align-items-center justify-content-center gap-12">
-                        <a href="offers-consultations-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                          التفاصيل
+                        <a href="offers-consultations-details-ltr.html" class="btn-primary sm-ele fz-12 bordered-40">
+                          Details
                         </a>
                         <div class="dropdown">
                           <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton8"
@@ -1408,43 +1412,43 @@
                     </td>
                   </tr>
                   <tr>
-                    <td data-label="رقم العرض"><span class="ff-onest black-text fw-medium">250739020707</span></td>
-                    <td data-label="عنوان المنافسة">
+                    <td data-label="Offer Number"><span class="ff-onest black-text fw-medium">250739020707</span></td>
+                    <td data-label="Competition Title">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-open.svg" alt="icon">
                         </span>
-                        <span>خدمات الرعاية الصحية</span>
+                        <span>Healthcare Services</span>
                       </div>
                     </td>
-                    <td data-label="النشاط الأساسي">
+                    <td data-label="Main Activity">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/activity.svg" alt="icon">
                         </span>
-                        <span class="black-text">التصميم الداخلي والتجهيزات</span>
+                        <span class="black-text">Interior Design and Fit-out</span>
                       </div>
                     </td>
-                    <td data-label="سعر الوثائق">
+                    <td data-label="Document Price">
                       <span class="fw-medium ff-onest">100.23
                         <img src="images/ryall.svg" class="ms-1" alt="Ryall">
                       </span>
                     </td>
-                    <td data-label="النوع">
+                    <td data-label="Type">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-cloud.svg" alt="folder-cloud">
                         </span>
-                        <span class="prim-sec">استشاره فنيه</span>
+                        <span class="prim-sec">Technical Consultation</span>
                       </div>
                     </td>
-                    <td data-label="الحاله">
-                      <span class="sm-ele fz-12 bordered-8 text-nowrap badge-reviewed">يتم المراجعه</span>
+                    <td data-label="Status">
+                      <span class="sm-ele fz-12 bordered-8 text-nowrap badge-reviewed">Under Review</span>
                     </td>
-                    <td data-label="الاجراءات">
+                    <td data-label="Actions">
                       <div class="d-flex align-items-center justify-content-center gap-12">
-                        <a href="offers-consultations-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                          التفاصيل
+                        <a href="offers-consultations-details-ltr.html" class="btn-primary sm-ele fz-12 bordered-40">
+                          Details
                         </a>
                         <div class="dropdown">
                           <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton9"
@@ -1467,43 +1471,43 @@
                     </td>
                   </tr>
                   <tr>
-                    <td data-label="رقم العرض"><span class="ff-onest black-text fw-medium">250739020707</span></td>
-                    <td data-label="عنوان المنافسة">
+                    <td data-label="Offer Number"><span class="ff-onest black-text fw-medium">250739020707</span></td>
+                    <td data-label="Competition Title">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-open.svg" alt="icon">
                         </span>
-                        <span>خدمات الرعاية الصحية</span>
+                        <span>Healthcare Services</span>
                       </div>
                     </td>
-                    <td data-label="النشاط الأساسي">
+                    <td data-label="Main Activity">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/activity.svg" alt="icon">
                         </span>
-                        <span class="black-text">التصميم الداخلي والتجهيزات</span>
+                        <span class="black-text">Interior Design and Fit-out</span>
                       </div>
                     </td>
-                    <td data-label="سعر الوثائق">
+                    <td data-label="Document Price">
                       <span class="fw-medium ff-onest">100.23
                         <img src="images/ryall.svg" class="ms-1" alt="Ryall">
                       </span>
                     </td>
-                    <td data-label="النوع">
+                    <td data-label="Type">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-cloud.svg" alt="folder-cloud">
                         </span>
-                        <span class="prim-sec">استشاره فنيه</span>
+                        <span class="prim-sec">Technical Consultation</span>
                       </div>
                     </td>
-                    <td data-label="الحاله">
-                      <span class="sm-ele fz-12 bordered-8 text-nowrap badge-success">تم ارجاعها بملاحظة</span>
+                    <td data-label="Status">
+                      <span class="sm-ele fz-12 bordered-8 text-nowrap badge-success">Returned with Note</span>
                     </td>
-                    <td data-label="الاجراءات">
+                    <td data-label="Actions">
                       <div class="d-flex align-items-center justify-content-center gap-12">
-                        <a href="offers-consultations-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                          التفاصيل
+                        <a href="offers-consultations-details-ltr.html" class="btn-primary sm-ele fz-12 bordered-40">
+                          Details
                         </a>
                         <div class="dropdown">
                           <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton10"
@@ -1536,15 +1540,15 @@
           <!-- Search and Filter Bar -->
           <div class="filter-bar">
             <div class="filter-btns d-flex align-items-center gap-3 ">
-              <button class="active">الكل</button>
-              <button>مرسله</button>
-              <button>يتم مراجعتها</button>
-              <button>مسودة</button>
-              <button>ملغاه</button>
+              <button class="active">All</button>
+              <button>Sent</button>
+              <button>Under Review</button>
+              <button>Draft</button>
+              <button>Cancelled</button>
             </div>
             <div class="d-flex justify-content-between align-items-center w-100 search-filter-bar gap-3">
               <div class="search-box w-100 position-relative">
-                <input type="text" class="form-control" id="tableSearch" placeholder="البحث في المسابقات"
+                <input type="text" class="form-control" id="tableSearch" placeholder="Search Competitions"
                   name="Search" />
                 <span class="search-icon position-absolute">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -1565,7 +1569,7 @@
                   <path d="M8.33337 14.1667H11.6667" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round">
                   </path>
                 </svg>
-                <span>تصفية</span>
+                <span>Filter</span>
               </button>
             </div>
           </div>
@@ -1577,61 +1581,61 @@
                     <th>
                       <div class="d-flex align-items-center gap-2">
                         <input type="checkbox" class="form-check-input" id="selectAll">
-                        <span class="black-text">رقم العرض</span>
+                        <span class="black-text">Offer Number</span>
                       </div>
                     </th>
-                    <th>عنوان المنافسة</th>
-                    <th>النشاط الأساسي</th>
-                    <th>سعر الوثائق</th>
-                    <th>النوع</th>
-                    <th>الحاله</th>
-                    <th class="text-center">الاجراءات</th>
+                    <th>Competition Title</th>
+                    <th>Main Activity</th>
+                    <th>Document Price</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                    <th class="text-center">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td data-label="رقم العرض">
+                    <td data-label="Offer Number">
                       <div class="d-flex align-items-center gap-2">
                         <input type="checkbox" class="form-check-input mt-0">
                         <span class="ff-onest fw-medium black-text">250739020713</span>
                       </div>
                     </td>
-                    <td data-label="عنوان المنافسة">
+                    <td data-label="Competition Title">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-open.svg" alt="icon">
                         </span>
-                        <span>خدمات الرعاية الصحية</span>
+                        <span>Healthcare Services</span>
                       </div>
                     </td>
-                    <td data-label="النشاط الأساسي">
+                    <td data-label="Main Activity">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/activity.svg" alt="icon">
                         </span>
-                        <span class="black-text">التصميم الداخلي والتجهيزات</span>
+                        <span class="black-text">Interior Design and Fit-out</span>
                       </div>
                     </td>
-                    <td data-label="سعر الوثائق">
+                    <td data-label="Document Price">
                       <span class="fw-medium ff-onest">100.23
                         <img src="images/ryall.svg" class="ms-1" alt="Ryall">
                       </span>
                     </td>
-                    <td data-label="النوع">
+                    <td data-label="Type">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-cloud.svg" alt="folder-cloud">
                         </span>
-                        <span class="prim-sec">استشاره فنيه</span>
+                        <span class="prim-sec">Technical Consultation</span>
                       </div>
                     </td>
-                    <td data-label="الحاله">
-                      <span class="sm-ele fz-12 bordered-8 text-nowrap prim-opacity-outlined">مرسله</span>
+                    <td data-label="Status">
+                      <span class="sm-ele fz-12 bordered-8 text-nowrap prim-opacity-outlined">Sent</span>
                     </td>
-                    <td data-label="الاجراءات">
+                    <td data-label="Actions">
                       <div class="d-flex align-items-center justify-content-center gap-12">
-                        <a href="offers-consultations-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                          التفاصيل
+                        <a href="offers-consultations-details-ltr.html" class="btn-primary sm-ele fz-12 bordered-40">
+                          Details
                         </a>
                         <div class="dropdown">
                           <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton2"
@@ -1654,48 +1658,48 @@
                     </td>
                   </tr>
                   <tr>
-                    <td data-label="رقم العرض">
+                    <td data-label="Offer Number">
                       <div class="d-flex align-items-center gap-2">
                         <input type="checkbox" class="form-check-input mt-0">
                         <span class="ff-onest fw-medium black-text">250739020713</span>
                       </div>
                     </td>
-                    <td data-label="عنوان المنافسة">
+                    <td data-label="Competition Title">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-open.svg" alt="icon">
                         </span>
-                        <span>خدمات الرعاية الصحية</span>
+                        <span>Healthcare Services</span>
                       </div>
                     </td>
-                    <td data-label="النشاط الأساسي">
+                    <td data-label="Main Activity">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/activity.svg" alt="icon">
                         </span>
-                        <span class="black-text">التصميم الداخلي والتجهيزات</span>
+                        <span class="black-text">Interior Design and Fit-out</span>
                       </div>
                     </td>
-                    <td data-label="سعر الوثائق">
+                    <td data-label="Document Price">
                       <span class="fw-medium ff-onest">100.23
                         <img src="images/ryall.svg" class="ms-1" alt="Ryall">
                       </span>
                     </td>
-                    <td data-label="النوع">
+                    <td data-label="Type">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-cloud.svg" alt="folder-cloud">
                         </span>
-                        <span class="prim-sec">استشاره فنيه</span>
+                        <span class="prim-sec">Technical Consultation</span>
                       </div>
                     </td>
-                    <td data-label="الحاله">
-                      <span class="sm-ele fz-12 bordered-8 text-nowrap prim-opacity-outlined">مرسله</span>
+                    <td data-label="Status">
+                      <span class="sm-ele fz-12 bordered-8 text-nowrap prim-opacity-outlined">Sent</span>
                     </td>
-                    <td data-label="الاجراءات">
+                    <td data-label="Actions">
                       <div class="d-flex align-items-center justify-content-center gap-12">
-                        <a href="offers-consultations-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                          التفاصيل
+                        <a href="offers-consultations-details-ltr.html" class="btn-primary sm-ele fz-12 bordered-40">
+                          Details
                         </a>
                         <div class="dropdown">
                           <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton2"
@@ -1718,48 +1722,48 @@
                     </td>
                   </tr>
                   <tr>
-                    <td data-label="رقم العرض">
+                    <td data-label="Offer Number">
                       <div class="d-flex align-items-center gap-2">
                         <input type="checkbox" class="form-check-input mt-0">
                         <span class="ff-onest fw-medium black-text">250739020713</span>
                       </div>
                     </td>
-                    <td data-label="عنوان المنافسة">
+                    <td data-label="Competition Title">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-open.svg" alt="icon">
                         </span>
-                        <span>خدمات الرعاية الصحية</span>
+                        <span>Healthcare Services</span>
                       </div>
                     </td>
-                    <td data-label="النشاط الأساسي">
+                    <td data-label="Main Activity">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/activity.svg" alt="icon">
                         </span>
-                        <span class="black-text">التصميم الداخلي والتجهيزات</span>
+                        <span class="black-text">Interior Design and Fit-out</span>
                       </div>
                     </td>
-                    <td data-label="سعر الوثائق">
+                    <td data-label="Document Price">
                       <span class="fw-medium ff-onest">100.23
                         <img src="images/ryall.svg" class="ms-1" alt="Ryall">
                       </span>
                     </td>
-                    <td data-label="النوع">
+                    <td data-label="Type">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-cloud.svg" alt="folder-cloud">
                         </span>
-                        <span class="prim-sec">استشاره فنيه</span>
+                        <span class="prim-sec">Technical Consultation</span>
                       </div>
                     </td>
-                    <td data-label="الحاله">
-                      <span class="sm-ele fz-12 bordered-8 text-nowrap badge-draft">مسودة</span>
+                    <td data-label="Status">
+                      <span class="sm-ele fz-12 bordered-8 text-nowrap badge-draft">Draft</span>
                     </td>
-                    <td data-label="الاجراءات">
+                    <td data-label="Actions">
                       <div class="d-flex align-items-center justify-content-center gap-12">
-                        <a href="offers-consultations-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                          التفاصيل
+                        <a href="offers-consultations-details-ltr.html" class="btn-primary sm-ele fz-12 bordered-40">
+                          Details
                         </a>
                         <div class="dropdown">
                           <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton3"
@@ -1782,48 +1786,48 @@
                     </td>
                   </tr>
                   <tr>
-                    <td data-label="رقم العرض">
+                    <td data-label="Offer Number">
                       <div class="d-flex align-items-center gap-2">
                         <input type="checkbox" class="form-check-input mt-0">
                         <span class="ff-onest fw-medium black-text">250739020713</span>
                       </div>
                     </td>
-                    <td data-label="عنوان المنافسة">
+                    <td data-label="Competition Title">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-open.svg" alt="icon">
                         </span>
-                        <span>خدمات الرعاية الصحية</span>
+                        <span>Healthcare Services</span>
                       </div>
                     </td>
-                    <td data-label="النشاط الأساسي">
+                    <td data-label="Main Activity">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/activity.svg" alt="icon">
                         </span>
-                        <span class="black-text">التصميم الداخلي والتجهيزات</span>
+                        <span class="black-text">Interior Design and Fit-out</span>
                       </div>
                     </td>
-                    <td data-label="سعر الوثائق">
+                    <td data-label="Document Price">
                       <span class="fw-medium ff-onest">100.23
                         <img src="images/ryall.svg" class="ms-1" alt="Ryall">
                       </span>
                     </td>
-                    <td data-label="النوع">
+                    <td data-label="Type">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-cloud.svg" alt="folder-cloud">
                         </span>
-                        <span class="prim-sec">استشاره فنيه</span>
+                        <span class="prim-sec">Technical Consultation</span>
                       </div>
                     </td>
-                    <td data-label="الحاله">
-                      <span class="sm-ele fz-12 bordered-8 text-nowrap badge-reviewed">يتم المراجعه</span>
+                    <td data-label="Status">
+                      <span class="sm-ele fz-12 bordered-8 text-nowrap badge-reviewed">Under Review</span>
                     </td>
-                    <td data-label="الاجراءات">
+                    <td data-label="Actions">
                       <div class="d-flex align-items-center justify-content-center gap-12">
-                        <a href="offers-consultations-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                          التفاصيل
+                        <a href="offers-consultations-details-ltr.html" class="btn-primary sm-ele fz-12 bordered-40">
+                          Details
                         </a>
                         <div class="dropdown">
                           <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton4"
@@ -1846,48 +1850,48 @@
                     </td>
                   </tr>
                   <tr>
-                    <td data-label="رقم العرض">
+                    <td data-label="Offer Number">
                       <div class="d-flex align-items-center gap-2">
                         <input type="checkbox" class="form-check-input mt-0">
                         <span class="ff-onest fw-medium black-text">250739020713</span>
                       </div>
                     </td>
-                    <td data-label="عنوان المنافسة">
+                    <td data-label="Competition Title">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-open.svg" alt="icon">
                         </span>
-                        <span>خدمات الرعاية الصحية</span>
+                        <span>Healthcare Services</span>
                       </div>
                     </td>
-                    <td data-label="النشاط الأساسي">
+                    <td data-label="Main Activity">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/activity.svg" alt="icon">
                         </span>
-                        <span class="black-text">التصميم الداخلي والتجهيزات</span>
+                        <span class="black-text">Interior Design and Fit-out</span>
                       </div>
                     </td>
-                    <td data-label="سعر الوثائق">
+                    <td data-label="Document Price">
                       <span class="fw-medium ff-onest">100.23
                         <img src="images/ryall.svg" class="ms-1" alt="Ryall">
                       </span>
                     </td>
-                    <td data-label="النوع">
+                    <td data-label="Type">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-cloud.svg" alt="folder-cloud">
                         </span>
-                        <span class="prim-sec">استشاره فنيه</span>
+                        <span class="prim-sec">Technical Consultation</span>
                       </div>
                     </td>
-                    <td data-label="الحاله">
-                      <span class="sm-ele fz-12 bordered-8 text-nowrap badge-success">تم ارجاعها بملاحظة</span>
+                    <td data-label="Status">
+                      <span class="sm-ele fz-12 bordered-8 text-nowrap badge-success">Returned with Note</span>
                     </td>
-                    <td data-label="الاجراءات">
+                    <td data-label="Actions">
                       <div class="d-flex align-items-center justify-content-center gap-12">
-                        <a href="offers-consultations-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                          التفاصيل
+                        <a href="offers-consultations-details-ltr.html" class="btn-primary sm-ele fz-12 bordered-40">
+                          Details
                         </a>
                         <div class="dropdown">
                           <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton5"
@@ -1910,48 +1914,48 @@
                     </td>
                   </tr>
                   <tr>
-                    <td data-label="رقم العرض">
+                    <td data-label="Offer Number">
                       <div class="d-flex align-items-center gap-2">
                         <input type="checkbox" class="form-check-input mt-0">
                         <span class="ff-onest fw-medium black-text">250739020713</span>
                       </div>
                     </td>
-                    <td data-label="عنوان المنافسة">
+                    <td data-label="Competition Title">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-open.svg" alt="icon">
                         </span>
-                        <span>خدمات الرعاية الصحية</span>
+                        <span>Healthcare Services</span>
                       </div>
                     </td>
-                    <td data-label="النشاط الأساسي">
+                    <td data-label="Main Activity">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/activity.svg" alt="icon">
                         </span>
-                        <span class="black-text">التصميم الداخلي والتجهيزات</span>
+                        <span class="black-text">Interior Design and Fit-out</span>
                       </div>
                     </td>
-                    <td data-label="سعر الوثائق">
+                    <td data-label="Document Price">
                       <span class="fw-medium ff-onest">100.23
                         <img src="images/ryall.svg" class="ms-1" alt="Ryall">
                       </span>
                     </td>
-                    <td data-label="النوع">
+                    <td data-label="Type">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-cloud.svg" alt="folder-cloud">
                         </span>
-                        <span class="prim-sec">استشاره فنيه</span>
+                        <span class="prim-sec">Technical Consultation</span>
                       </div>
                     </td>
-                    <td data-label="الحاله">
-                      <span class="sm-ele fz-12 bordered-8 text-nowrap prim-opacity-outlined">مرسله</span>
+                    <td data-label="Status">
+                      <span class="sm-ele fz-12 bordered-8 text-nowrap prim-opacity-outlined">Sent</span>
                     </td>
-                    <td data-label="الاجراءات">
+                    <td data-label="Actions">
                       <div class="d-flex align-items-center justify-content-center gap-12">
-                        <a href="offers-consultations-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                          التفاصيل
+                        <a href="offers-consultations-details-ltr.html" class="btn-primary sm-ele fz-12 bordered-40">
+                          Details
                         </a>
                         <div class="dropdown">
                           <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton6"
@@ -1974,112 +1978,48 @@
                     </td>
                   </tr>
                   <tr>
-                    <td data-label="رقم العرض">
+                    <td data-label="Offer Number">
                       <div class="d-flex align-items-center gap-2">
                         <input type="checkbox" class="form-check-input mt-0">
                         <span class="ff-onest fw-medium black-text">250739020713</span>
                       </div>
                     </td>
-                    <td data-label="عنوان المنافسة">
+                    <td data-label="Competition Title">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-open.svg" alt="icon">
                         </span>
-                        <span>خدمات الرعاية الصحية</span>
+                        <span>Healthcare Services</span>
                       </div>
                     </td>
-                    <td data-label="النشاط الأساسي">
+                    <td data-label="Main Activity">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/activity.svg" alt="icon">
                         </span>
-                        <span class="black-text">التصميم الداخلي والتجهيزات</span>
+                        <span class="black-text">Interior Design and Fit-out</span>
                       </div>
                     </td>
-                    <td data-label="سعر الوثائق">
+                    <td data-label="Document Price">
                       <span class="fw-medium ff-onest">100.23
                         <img src="images/ryall.svg" class="ms-1" alt="Ryall">
                       </span>
                     </td>
-                    <td data-label="النوع">
+                    <td data-label="Type">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-cloud.svg" alt="folder-cloud">
                         </span>
-                        <span class="prim-sec">استشاره فنيه</span>
+                        <span class="prim-sec">Technical Consultation</span>
                       </div>
                     </td>
-                    <td data-label="الحاله">
-                      <span class="sm-ele fz-12 bordered-8 text-nowrap prim-opacity-outlined">مرسله</span>
+                    <td data-label="Status">
+                      <span class="sm-ele fz-12 bordered-8 text-nowrap badge-draft">Draft</span>
                     </td>
-                    <td data-label="الاجراءات">
+                    <td data-label="Actions">
                       <div class="d-flex align-items-center justify-content-center gap-12">
-                        <a href="offers-consultations-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                          التفاصيل
-                        </a>
-                        <div class="dropdown">
-                          <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton7"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="images/drop-bullets.svg" alt="menu">
-                          </button>
-                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton7">
-                            <li>
-                              <a class="dropdown-item b-dash" href="#">option 1
-                              </a>
-                            </li>
-                            <li>
-                              <a class="dropdown-item" href="#">
-                                option 2
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td data-label="رقم العرض">
-                      <div class="d-flex align-items-center gap-2">
-                        <input type="checkbox" class="form-check-input mt-0">
-                        <span class="ff-onest fw-medium black-text">250739020713</span>
-                      </div>
-                    </td>
-                    <td data-label="عنوان المنافسة">
-                      <div class="d-flex align-items-center">
-                        <span class="sm-logo">
-                          <img src="images/folder-open.svg" alt="icon">
-                        </span>
-                        <span>خدمات الرعاية الصحية</span>
-                      </div>
-                    </td>
-                    <td data-label="النشاط الأساسي">
-                      <div class="d-flex align-items-center">
-                        <span class="sm-logo">
-                          <img src="images/activity.svg" alt="icon">
-                        </span>
-                        <span class="black-text">التصميم الداخلي والتجهيزات</span>
-                      </div>
-                    </td>
-                    <td data-label="سعر الوثائق">
-                      <span class="fw-medium ff-onest">100.23
-                        <img src="images/ryall.svg" class="ms-1" alt="Ryall">
-                      </span>
-                    </td>
-                    <td data-label="النوع">
-                      <div class="d-flex align-items-center">
-                        <span class="sm-logo">
-                          <img src="images/folder-cloud.svg" alt="folder-cloud">
-                        </span>
-                        <span class="prim-sec">استشاره فنيه</span>
-                      </div>
-                    </td>
-                    <td data-label="الحاله">
-                      <span class="sm-ele fz-12 bordered-8 text-nowrap badge-draft">مسودة</span>
-                    </td>
-                    <td data-label="الاجراءات">
-                      <div class="d-flex align-items-center justify-content-center gap-12">
-                        <a href="offers-consultations-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                          التفاصيل
+                        <a href="offers-consultations-details-ltr.html" class="btn-primary sm-ele fz-12 bordered-40">
+                          Details
                         </a>
                         <div class="dropdown">
                           <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton8"
@@ -2102,48 +2042,48 @@
                     </td>
                   </tr>
                   <tr>
-                    <td data-label="رقم العرض">
+                    <td data-label="Offer Number">
                       <div class="d-flex align-items-center gap-2">
                         <input type="checkbox" class="form-check-input mt-0">
                         <span class="ff-onest fw-medium black-text">250739020713</span>
                       </div>
                     </td>
-                    <td data-label="عنوان المنافسة">
+                    <td data-label="Competition Title">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-open.svg" alt="icon">
                         </span>
-                        <span>خدمات الرعاية الصحية</span>
+                        <span>Healthcare Services</span>
                       </div>
                     </td>
-                    <td data-label="النشاط الأساسي">
+                    <td data-label="Main Activity">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/activity.svg" alt="icon">
                         </span>
-                        <span class="black-text">التصميم الداخلي والتجهيزات</span>
+                        <span class="black-text">Interior Design and Fit-out</span>
                       </div>
                     </td>
-                    <td data-label="سعر الوثائق">
+                    <td data-label="Document Price">
                       <span class="fw-medium ff-onest">100.23
                         <img src="images/ryall.svg" class="ms-1" alt="Ryall">
                       </span>
                     </td>
-                    <td data-label="النوع">
+                    <td data-label="Type">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-cloud.svg" alt="folder-cloud">
                         </span>
-                        <span class="prim-sec">استشاره فنيه</span>
+                        <span class="prim-sec">Technical Consultation</span>
                       </div>
                     </td>
-                    <td data-label="الحاله">
-                      <span class="sm-ele fz-12 bordered-8 text-nowrap badge-reviewed">يتم المراجعه</span>
+                    <td data-label="Status">
+                      <span class="sm-ele fz-12 bordered-8 text-nowrap badge-reviewed">Under Review</span>
                     </td>
-                    <td data-label="الاجراءات">
+                    <td data-label="Actions">
                       <div class="d-flex align-items-center justify-content-center gap-12">
-                        <a href="offers-consultations-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                          التفاصيل
+                        <a href="offers-consultations-details-ltr.html" class="btn-primary sm-ele fz-12 bordered-40">
+                          Details
                         </a>
                         <div class="dropdown">
                           <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton9"
@@ -2166,48 +2106,48 @@
                     </td>
                   </tr>
                   <tr>
-                    <td data-label="رقم العرض">
+                    <td data-label="Offer Number">
                       <div class="d-flex align-items-center gap-2">
                         <input type="checkbox" class="form-check-input mt-0">
                         <span class="ff-onest fw-medium black-text">250739020713</span>
                       </div>
                     </td>
-                    <td data-label="عنوان المنافسة">
+                    <td data-label="Competition Title">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-open.svg" alt="icon">
                         </span>
-                        <span>خدمات الرعاية الصحية</span>
+                        <span>Healthcare Services</span>
                       </div>
                     </td>
-                    <td data-label="النشاط الأساسي">
+                    <td data-label="Main Activity">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/activity.svg" alt="icon">
                         </span>
-                        <span class="black-text">التصميم الداخلي والتجهيزات</span>
+                        <span class="black-text">Interior Design and Fit-out</span>
                       </div>
                     </td>
-                    <td data-label="سعر الوثائق">
+                    <td data-label="Document Price">
                       <span class="fw-medium ff-onest">100.23
                         <img src="images/ryall.svg" class="ms-1" alt="Ryall">
                       </span>
                     </td>
-                    <td data-label="النوع">
+                    <td data-label="Type">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
                           <img src="images/folder-cloud.svg" alt="folder-cloud">
                         </span>
-                        <span class="prim-sec">استشاره فنيه</span>
+                        <span class="prim-sec">Technical Consultation</span>
                       </div>
                     </td>
-                    <td data-label="الحاله">
-                      <span class="sm-ele fz-12 bordered-8 text-nowrap badge-success">تم ارجاعها بملاحظة</span>
+                    <td data-label="Status">
+                      <span class="sm-ele fz-12 bordered-8 text-nowrap badge-success">Returned with Note</span>
                     </td>
-                    <td data-label="الاجراءات">
+                    <td data-label="Actions">
                       <div class="d-flex align-items-center justify-content-center gap-12">
-                        <a href="offers-consultations-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                          التفاصيل
+                        <a href="offers-consultations-details-ltr.html" class="btn-primary sm-ele fz-12 bordered-40">
+                          Details
                         </a>
                         <div class="dropdown">
                           <button class="dropdown-toggle smbtn-bg-wh" type="button" id="dropdownMenuButton10"
@@ -2236,49 +2176,47 @@
         </div>
       </div>
     </div>
-  </div>
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- DataTables JS -->
-  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
-  <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
-  <script src="https://cdn.datatables.net/responsive/2.5.0/js/responsive.bootstrap5.min.js"></script>
-  <!-- Custom JS -->
-  <script src="js/main.js" defer></script>
-  <script src="js/dataTable.js" defer></script>
-  <script>
-    $(document).ready(function () {
-      $('#selectAll').on('click', function () {
-        var isChecked = $(this).is(':checked');
-        $('.competition-table tbody input[type="checkbox"]').prop('checked', isChecked);
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/responsive.bootstrap5.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/dataTable.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('#selectAll').on('click', function () {
+          var isChecked = $(this).is(':checked');
+          $('.competition-table tbody input[type="checkbox"]').prop('checked', isChecked);
+        });
       });
-    });
-  </script>
-  <script>
-    const type1 = document.getElementById("type1");
-    const type2 = document.getElementById("type2");
-    const typesChoices = document.getElementById("types-choices");
+    </script>
+    <script>
+      const type1 = document.getElementById("type1");
+      const type2 = document.getElementById("type2");
+      const typesChoices = document.getElementById("types-choices");
 
-    function toggleTypes() {
-      if (type1.checked) {
-        typesChoices.classList.remove("d-none");
-      } else {
-        typesChoices.classList.add("d-none");
+      function toggleTypes() {
+        if (type1.checked) {
+          typesChoices.classList.remove("d-none");
+        } else {
+          typesChoices.classList.add("d-none");
+        }
       }
-    }
 
-    // Initial check
-    toggleTypes();
+      // Initial check
+      toggleTypes();
 
-    // Listen for changes
-    type1.addEventListener("change", toggleTypes);
-    type2.addEventListener("change", toggleTypes);
-  </script>
-
+      // Listen for changes
+      type1.addEventListener("change", toggleTypes);
+      type2.addEventListener("change", toggleTypes);
+    </script>
 </body>
 
 </html>

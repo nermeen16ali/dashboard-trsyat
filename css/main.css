@@ -1564,7 +1564,6 @@ button.gray-outline-btn.red-colored:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 62px;
 }
 
 .prim-opacity-outlined {
@@ -1883,7 +1882,8 @@ table.table-bordered.dataTable {
   height: 38px;
   border-radius: 32px;
   border: 1px solid rgba(0, 0, 0, 0.11);
-  padding: 4.2px 12px 4.2px 4px;
+  padding: 4.2px 4px;
+  padding-inline-start: 12px;
   background-color: var(--white-color);
 }
 
@@ -2283,6 +2283,10 @@ span.flatpickr-weekday {
 @media (min-width: 768px) {
   .tender-section:first-child:after {
     width: 100%;
+  }
+
+  .btn-primary.sm-ele {
+    min-width: 62px;
   }
 
   .w-btn {
