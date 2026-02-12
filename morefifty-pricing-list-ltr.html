@@ -1,19 +1,17 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="images/trsyat-logo.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>تسعيرات المنافسة - تسعيرات أكثر من 50 منتج</title>
+  <title>Home</title>
   <meta name="description"
     content="We provide you with an intelligent environment for managing tenders—from search to submission. Our goal is to support your growth by simplifying access to opportunities and enhancing your competitive edge." />
 
-  <!-- Bootstrap 5 RTL CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
-  <!-- DataTables CSS -->
-  <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
-  <link href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.bootstrap5.min.css" rel="stylesheet" />
+  <!-- Bootstrap 5 LTR CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <!-- Flatpickr CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/themes/material_blue.css" />
   <!-- Intl Tel Input CSS -->
@@ -30,17 +28,17 @@
         <div class="modal-header">
           <div class="d-flex flex-column gap-10">
             <h4 class="modal-title fz-20" id="centeredModalLabel8">
-              الإشعارات
+              Notifications
             </h4>
-            <p class="text-gray fz-14">ابقي علي الأطلاع بالإشعارات</p>
+            <p class="text-gray fz-14">Stay updated with notifications</p>
           </div>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <div class="notification-tabs fw-medium">
-            <button class="notification-tab active">الكل</button>
-            <button class="notification-tab">غير مقروءة (12)</button>
-            <a href="notifications.html" class="ms-auto colored">قراءة الكل</a>
+            <button class="notification-tab active">All</button>
+            <button class="notification-tab">Unread (12)</button>
+            <a href="notifications-ltr.html" class="ms-auto colored">Mark all read</a>
           </div>
           <div class="notification-list">
             <!-- Today -->
@@ -49,11 +47,11 @@
                 <img src="images/Tax-Law.svg" alt="icon">
               </div>
               <div class="notification-content">
-                <h6 class="fz-14 fw-medium mb-10 black-text">تم استلام طلبك</h6>
-                <p class="fz-12 text-gray">تم استلام طلب المنافسة بنجاح، وجار مراجعته من قبل الإدارة.</p>
+                <h6 class="fz-14 fw-medium mb-10 black-text">Submission received</h6>
+                <p class="fz-12 text-gray">Your tender submission was received successfully and is under review.</p>
               </div>
               <div class="d-flex align-items-center gap-4">
-                <span class="text-dark-gray fz-12 fw-medium">11:30 مساءً</span>
+                <span class="text-dark-gray fz-12 fw-medium text-nowrap">11:30 PM</span>
                 <a href="#" class="icon-container gray-outline-btn">
                   <img src="images/arrow-next.svg" alt="Next">
                 </a>
@@ -65,12 +63,12 @@
                 <img src="images/game-icons-sands-of-time.svg" alt="icon">
               </div>
               <div class="notification-content">
-                <div class="fz-14 fw-medium mb-10 black-text">طلبك قيد المراجعة</div>
-                <div class="fz-12 text-gray">يتم حاليا مراجعة طلب المنافسة، وسيتم إشعارك فور اتخاذ إجراء.
-                </div>
+                <div class="fz-14 fw-medium mb-10 black-text">Your request is under review</div>
+                <div class="fz-12 text-gray">The tender request is currently being reviewed. You will be notified of any
+                  action.</div>
               </div>
               <div class="d-flex align-items-center gap-4">
-                <span class="text-dark-gray fz-12 fw-medium">11:30 مساءً</span>
+                <span class="text-dark-gray fz-12 fw-medium text-nowrap">11:30 PM</span>
                 <a href="#" class="icon-container gray-outline-btn">
                   <img src="images/arrow-next.svg" alt="Next">
                 </a>
@@ -82,12 +80,12 @@
                 <img src="images/ic-sharp-block.svg" alt="icon">
               </div>
               <div class="notification-content">
-                <div class="fz-14 fw-medium mb-10 black-text">تم رفض الطلب</div>
-                <div class="fz-12 text-gray">نأسف لإبلاغك بأنه تم رفض طلب المنافسة. يمكنك مراجعة التفاصيل
-                  لمعرفة السبب.</div>
+                <div class="fz-14 fw-medium mb-10 black-text">Request rejected</div>
+                <div class="fz-12 text-gray">We regret to inform you that your tender request was rejected. Please
+                  review the details for the reason.</div>
               </div>
               <div class="d-flex align-items-center gap-4">
-                <span class="text-dark-gray fz-12 fw-medium">11:30 مساءً</span>
+                <span class="text-dark-gray fz-12 fw-medium text-nowrap">11:30 PM</span>
                 <a href="#" class="icon-container gray-outline-btn">
                   <img src="images/arrow-next.svg" alt="Next">
                 </a>
@@ -99,12 +97,12 @@
                 <img src="images/tabler-edit.svg" alt="icon">
               </div>
               <div class="notification-content">
-                <div class="fz-14 fw-medium mb-10 black-text">مطلوب تعديل على الطلب</div>
-                <div class="fz-12 text-gray">يرجى إجراء التعديلات المطلوبة على طلب المنافسة لاستكمال المراجعة.
-                </div>
+                <div class="fz-14 fw-medium mb-10 black-text">Edits required</div>
+                <div class="fz-12 text-gray">Please make the required edits on your tender request to continue the
+                  review.</div>
               </div>
               <div class="d-flex align-items-center gap-4">
-                <span class="text-dark-gray fz-12 fw-medium">11:30 مساءً</span>
+                <span class="text-dark-gray fz-12 fw-medium text-nowrap">11:30 PM</span>
                 <a href="#" class="icon-container gray-outline-btn">
                   <img src="images/arrow-next.svg" alt="Next">
                 </a>
@@ -112,18 +110,18 @@
             </div>
 
             <!-- Yesterday -->
-            <div class="black-text fw-medium mb-3">أمس</div>
+            <div class="black-text fw-medium mb-3">Yesterday</div>
 
             <div class="notification-item">
               <div class="notification-icon pending">
                 <img src="images/carbon-close-outline.svg" alt="icon">
               </div>
               <div class="notification-content">
-                <div class="fz-14 fw-medium mb-10 black-text">مناقصة على وشك الإغلاق</div>
-                <div class="fz-12 text-gray">تبقى وقت قليل على انتهاء موعد التقديم لهذه المناقصة.</div>
+                <div class="fz-14 fw-medium mb-10 black-text">Tender closing soon</div>
+                <div class="fz-12 text-gray">There is little time left to submit for this tender.</div>
               </div>
               <div class="d-flex align-items-center gap-4">
-                <span class="text-dark-gray fz-12 fw-medium">11:30 مساءً</span>
+                <span class="text-dark-gray fz-12 fw-medium text-nowrap">11:30 PM</span>
                 <a href="#" class="icon-container gray-outline-btn">
                   <img src="images/arrow-next.svg" alt="Next">
                 </a>
@@ -135,12 +133,12 @@
                 <img src="images/report.svg" alt="icon">
               </div>
               <div class="notification-content">
-                <div class="fz-14 fw-medium mb-10 black-text">تم إعلان الترسية</div>
-                <div class="fz-12 text-gray">تم إعلان نتيجة الترسية لهذه المناقصة. يمكنك الاطلاع على التفاصيل.
-                </div>
+                <div class="fz-14 fw-medium mb-10 black-text">Award announced</div>
+                <div class="fz-12 text-gray">The award result for this tender has been announced. You can view the
+                  details.</div>
               </div>
               <div class="d-flex align-items-center gap-4">
-                <span class="text-dark-gray fz-12 fw-medium">11:30 مساءً</span>
+                <span class="text-dark-gray fz-12 fw-medium text-nowrap">11:30 PM</span>
                 <a href="#" class="icon-container gray-outline-btn">
                   <img src="images/arrow-next.svg" alt="Next">
                 </a>
@@ -148,18 +146,18 @@
             </div>
 
             <!-- Older -->
-            <div class="black-text fw-medium mb-3">5 نوفمبر 2025</div>
+            <div class="black-text fw-medium mb-3">5 Nov 2025</div>
 
             <div class="notification-item">
               <div class="notification-icon success">
                 <img src="images/Tax-Law.svg" alt="icon">
               </div>
               <div class="notification-content">
-                <div class="fz-14 fw-medium mb-10 black-text">تم إرسال عرض التسعير</div>
-                <div class="fz-12 text-gray">تم إرسال عرض التسعير الخاص بك بنجاح.</div>
+                <div class="fz-14 fw-medium mb-10 black-text">Price offer sent</div>
+                <div class="fz-12 text-gray">Your price offer was sent successfully.</div>
               </div>
               <div class="d-flex align-items-center gap-4">
-                <span class="text-dark-gray fz-12 fw-medium">11:30 مساءً</span>
+                <span class="text-dark-gray fz-12 fw-medium text-nowrap">11:30 PM</span>
                 <a href="#" class="icon-container gray-outline-btn">
                   <img src="images/arrow-next.svg" alt="Next">
                 </a>
@@ -171,19 +169,19 @@
                 <img src="images/Tax-Law.svg" alt="icon">
               </div>
               <div class="notification-content">
-                <div class="fz-14 fw-medium mb-10 black-text">رد من الإدارة</div>
-                <div class="fz-12 text-gray">قامت الإدارة بإضافة ملاحظة على طلبك. يرجى الاطلاع عليها.</div>
+                <div class="fz-14 fw-medium mb-10 black-text">Response from admin</div>
+                <div class="fz-12 text-gray">Administration added a note to your request. Please review it.</div>
               </div>
               <div class="d-flex align-items-center gap-4">
-                <span class="text-dark-gray fz-12 fw-medium">11:30 مساءً</span>
+                <span class="text-dark-gray fz-12 fw-medium text-nowrap">11:30 PM</span>
                 <a href="#" class="icon-container gray-outline-btn">
                   <img src="images/arrow-next.svg" alt="Next">
                 </a>
               </div>
             </div>
-            <a href="notifications.html"
-              class="d-block p-10 fz-14 fw-medium w-100 rounded-12 btn-primary w-100 text-center">
-              عرض جميع الإشعارات
+            <a href="notifications-ltr.html"
+              class="d-block p-10 fz-14 fw-medium w-100 rounded-12 btn-primary text-center">
+              View all notifications
             </a>
           </div>
         </div>
@@ -195,77 +193,78 @@
       <div class="modal-content w-620">
         <div class="modal-header brd-btm">
           <h6 class="modal-title" id="centeredModalLabel2">
-            ارسال طلب تسعير اكثر 50 منتج
+            Request Pricing > 50 Products
           </h6>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body gap-4">
-          <h6 class="black-text">معلوماتك</h6>
+          <h6 class="black-text">Your Information</h6>
           <div class="row">
             <div class="col-12 mb-3">
               <label class="form-label">
-                اسم الشركة
+                Company Name
               </label>
-              <input type="text" class="form-control" placeholder="ادخل اسم الشركة" required="" />
+              <input type="text" class="form-control" placeholder="Enter Company Name" required="" />
             </div>
             <div class="col-md-6 mb-3">
-              <label class="form-label">حجم الشركة</label>
+              <label class="form-label">Company Size</label>
               <select class="form-select">
-                <option selected="">اختر حجم الشركة</option>
-                <option value="1">صغيرة</option>
-                <option value="2">متوسطة</option>
-                <option value="3">كبيرة</option>
+                <option selected="">Select Company Size</option>
+                <option value="1">Small</option>
+                <option value="2">Medium</option>
+                <option value="3">Large</option>
               </select>
             </div>
             <div class="col-md-6 mb-3">
-              <label class="form-label">مجالات الشركة</label>
+              <label class="form-label">Company Fields</label>
               <select class="form-select">
-                <option selected="">اختر مجالات الشركة</option>
-                <option value="1">مجال 1</option>
+                <option selected="">Select Company Fields</option>
+                <option value="1">Field 1</option>
               </select>
             </div>
             <div class="col-6 mb-3">
               <label class="form-label">
-                السجل التجاري
+                Commercial Registration
               </label>
-              <input type="text" class="form-control" placeholder="ادخل السجل التجاري" required="" />
+              <input type="text" class="form-control" placeholder="Enter Commercial Registration" required="" />
             </div>
             <div class="col-6 mb-3">
               <label class="form-label">
-                الرقم الضريبي
+                VAT Number
               </label>
-              <input type="text" class="form-control" placeholder="ادخل الرقم الضريبي" required="" />
+              <input type="text" class="form-control" placeholder="Enter VAT Number" required="" />
             </div>
             <div class="col-md-6">
-              <label class="form-label">رقم الجوال للحساب</label>
-              <input type="tel" class="form-control intl-phone" placeholder="ادخل رقم الجوال">
+              <label class="form-label">Account Mobile Number</label>
+              <input type="tel" class="form-control intl-phone" placeholder="Enter Mobile Number">
             </div>
             <div class="col-md-6">
-              <label class="form-label">العنوان</label>
-              <input type="text" class="form-control" placeholder="ادخل العنوان">
+              <label class="form-label">Address</label>
+              <input type="text" class="form-control" placeholder="Enter Address">
             </div>
           </div>
-          <h6 class="black-text">عن التسعير</h6>
+          <h6 class="black-text">About Pricing</h6>
           <div class="row">
             <div class="col-md-12 mb-3">
-              <label class="form-label">اختر نوع التسعير <span class="colored ms-2">*متعدد الاختيارات</span></label>
+              <label class="form-label">Select Pricing Type <span class="colored ms-2">*Multiple
+                  Selections</span></label>
               <select class="form-select" required="">
-                <option value="" selected="">اختر النشاط الاساسي</option>
-                <option value="1">نشاط 1</option>
-                <option value="2">نشاط 2</option>
-                <option value="3">نشاط 3</option>
+                <option value="" selected="">Select Pricing Type</option>
+                <option value="1">Activity 1</option>
+                <option value="2">Activity 2</option>
+                <option value="3">Activity 3</option>
               </select>
             </div>
             <div class="col-12 mb-3">
-              <label class="form-label">عدد المنتجات</label>
-              <input type="number" class="form-control" placeholder="ادخل عدد المنتجات">
+              <label class="form-label">Number of Products</label>
+              <input type="number" class="form-control" placeholder="Enter Number of Products">
             </div>
             <div class="col-12 mb-3">
               <div class="d-flex align-items-center justify-content-between mb-2">
-                <label class="form-label mb-0">الملف</label>
+                <label class="form-label mb-0">File</label>
                 <a href="./pdfs/pdf.pdf" download
                   class="outline-primary-gray bordered-40 fz-10 d-flex align-items-center gap-10">
-                  <span>تحميل الملف</span>
+                  <span>Download File</span>
                   <span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                       <g clip-path="url(#clip0_10434_214352)">
@@ -300,7 +299,7 @@
                     d="M10.2087 2.36168H11.2087V1.51727L10.3762 1.37582L10.2087 2.36168ZM4.7652 2.40806L4.63255 1.4169V1.4169L4.7652 2.40806ZM3.08525 3.0848L2.37814 2.37769L2.37814 2.37769L3.08525 3.0848ZM2.40846 4.75892L1.41738 4.62567L2.40846 4.75892ZM2.40846 15.2408L1.41738 15.3741H1.41738L2.40846 15.2408ZM3.08524 16.915L3.79235 16.2079L3.79235 16.2079L3.08524 16.915ZM4.75937 17.5917L4.89261 16.6007H4.89261L4.75937 17.5917ZM15.2413 17.5917L15.108 16.6007V16.6007L15.2413 17.5917ZM17.5922 15.2408L16.6011 15.1076V15.1076L17.5922 15.2408ZM17.5638 8.95821L18.5224 8.6734L18.3099 7.95821H17.5638V8.95821ZM14.9556 8.95821V7.95821H14.9556L14.9556 8.95821ZM12.6311 8.87637L12.4978 9.86745V9.86745L12.6311 8.87637ZM11.0019 8.16496L10.2948 8.87207V8.87207L11.0019 8.16496ZM10.2905 6.53581L9.29942 6.66906V6.66906L10.2905 6.53581ZM10.2087 4.21129L11.2087 4.21131V4.21129H10.2087ZM11.4587 3.00775L12.094 2.23553L10.4587 0.890038V3.00775H11.4587ZM11.5294 6.36925L10.5383 6.5025V6.5025L11.5294 6.36925ZM12.7976 7.63751L12.9309 6.64643H12.9309L12.7976 7.63751ZM16.6832 7.70821V8.70821H19.1503L17.3795 6.99043L16.6832 7.70821ZM15.7087 6.81156L15.0397 7.55485L15.0397 7.55485L15.7087 6.81156ZM12.4097 3.84248L13.0786 3.09918V3.09918L12.4097 3.84248ZM11.0653 1.3043L11.4235 0.370678V0.370678L11.0653 1.3043ZM8.47987 1.04152L8.48014 2.04152V2.04152L8.47987 1.04152ZM13.1564 2.8328L12.4872 3.57591L12.4872 3.57592L13.1564 2.8328ZM13.2459 2.91336L12.5769 3.65665L12.5769 3.65665L13.2459 2.91336ZM16.5449 5.88244L15.8759 6.62574L15.8759 6.62574L16.5449 5.88244ZM16.6489 5.97608L17.3177 5.23258L17.3177 5.23258L16.6489 5.97608ZM18.6163 8.20735L17.7028 8.61419V8.61419L18.6163 8.20735ZM18.9587 11.1623L19.9587 11.1626V11.1626L18.9587 11.1623ZM18.9587 11.7136H17.9587V11.7136L18.9587 11.7136ZM18.831 15.4074L17.84 15.2742V15.2742L18.831 15.4074ZM17.7993 17.7988L17.0922 17.0917L17.0922 17.0917L17.7993 17.7988ZM15.4078 18.8306L15.2746 17.8395H15.2746L15.4078 18.8306ZM11.714 18.9582L11.714 17.9582H11.714V18.9582ZM8.28665 18.9582V17.9582H8.28664L8.28665 18.9582ZM4.59281 18.8306L4.72605 17.8395H4.72605L4.59281 18.8306ZM2.20136 17.7988L2.90847 17.0917L2.90847 17.0917L2.20136 17.7988ZM1.1696 15.4074L2.16069 15.2742V15.2742L1.1696 15.4074ZM1.04199 11.7136L2.04199 11.7136V11.7136H1.04199ZM1.04199 8.2862H2.04199V8.28619L1.04199 8.2862ZM1.1696 4.59236L2.16069 4.72561L1.1696 4.59236ZM2.20136 2.20092L2.90847 2.90802V2.90802L2.20136 2.20092ZM4.59938 1.16911L4.46673 0.177946L4.59938 1.16911ZM8.31159 1.04155L8.31158 2.04155H8.31158L8.31159 1.04155ZM8.35849 1.04155L8.35848 2.04155H8.35849V1.04155ZM6.6562 10.7939L5.97225 10.0644H5.97225L6.6562 10.7939ZM7.51112 10.7939L6.82718 11.5235V11.5235L7.51112 10.7939ZM4.98953 12.3564L5.67347 13.086H5.67347L4.98953 12.3564ZM4.96103 13.2398L4.23149 13.9238L4.23149 13.9238L4.96103 13.2398ZM5.84446 13.2683L6.5284 13.9979L6.5284 13.9979L5.84446 13.2683ZM6.45866 12.6925H7.45866L7.45866 10.3843L5.77472 11.963L6.45866 12.6925ZM6.45866 15.4165H7.45866V15.4165H6.45866ZM7.08366 16.0415V17.0415V16.0415ZM7.70866 15.4165H8.70866V15.4165L7.70866 15.4165ZM7.70866 12.6925L8.3926 11.963L6.70866 10.3843L6.70866 12.6925L7.70866 12.6925ZM8.32286 13.2683L9.0068 12.5388V12.5388L8.32286 13.2683ZM9.20629 13.2398L9.93582 13.9238H9.93582L9.20629 13.2398ZM9.17779 12.3564L9.86173 11.6269V11.6269L9.17779 12.3564ZM8.35849 2.29155V3.29155C9.33797 3.29155 9.7605 3.29987 10.0411 3.34755L10.2087 2.36168L10.3762 1.37582C9.88947 1.29311 9.26597 1.29155 8.35849 1.29155V2.29155ZM4.7652 2.40806L4.89786 3.39922C5.67674 3.29498 6.73267 3.29155 8.35849 3.29155V2.29155V1.29155C6.78983 1.29155 5.57515 1.29074 4.63255 1.4169L4.7652 2.40806ZM3.08525 3.0848L3.79235 3.79191C3.9272 3.65705 4.16485 3.49733 4.89786 3.39922L4.7652 2.40806L4.63255 1.4169C3.67908 1.54451 2.94766 1.80817 2.37814 2.37769L3.08525 3.0848ZM2.40846 4.75892L3.39954 4.89217C3.49729 4.16511 3.65623 3.92803 3.79235 3.79191L3.08525 3.0848L2.37814 2.37769C1.80891 2.94692 1.54507 3.67592 1.41738 4.62567L2.40846 4.75892ZM2.29199 8.33321H3.29199C3.29199 6.71552 3.29546 5.66634 3.39954 4.89217L2.40846 4.75892L1.41738 4.62567C1.29118 5.56428 1.29199 6.77288 1.29199 8.33321H2.29199ZM2.29199 11.6665H3.29199V8.33321H2.29199H1.29199V11.6665H2.29199ZM2.40846 15.2408L3.39954 15.1076C3.29546 14.3334 3.29199 13.2842 3.29199 11.6665H2.29199H1.29199C1.29199 13.2269 1.29118 14.4355 1.41738 15.3741L2.40846 15.2408ZM3.08524 16.915L3.79235 16.2079C3.65623 16.0717 3.49729 15.8347 3.39954 15.1076L2.40846 15.2408L1.41738 15.3741C1.54507 16.3238 1.80891 17.0528 2.37814 17.6221L3.08524 16.915ZM4.75937 17.5917L4.89261 16.6007C4.16556 16.5029 3.92848 16.344 3.79235 16.2079L3.08524 16.915L2.37814 17.6221C2.94736 18.1913 3.67636 18.4551 4.62612 18.5828L4.75937 17.5917ZM8.33366 17.7082V16.7082C6.71596 16.7082 5.66678 16.7048 4.89261 16.6007L4.75937 17.5917L4.62612 18.5828C5.56472 18.709 6.77332 18.7082 8.33366 18.7082V17.7082ZM11.667 17.7082V16.7082H8.33366V17.7082V18.7082H11.667V17.7082ZM15.2413 17.5917L15.108 16.6007C14.3339 16.7048 13.2847 16.7082 11.667 16.7082V17.7082V18.7082C13.2273 18.7082 14.4359 18.709 15.3745 18.5828L15.2413 17.5917ZM16.9154 16.915L16.2083 16.2079C16.0722 16.344 15.8351 16.5029 15.108 16.6007L15.2413 17.5917L15.3745 18.5828C16.3243 18.4551 17.0533 18.1913 17.6225 17.6221L16.9154 16.915ZM17.5922 15.2408L16.6011 15.1076C16.5034 15.8347 16.3444 16.0717 16.2083 16.2079L16.9154 16.915L17.6225 17.6221C18.1917 17.0528 18.4556 16.3238 18.5833 15.3741L17.5922 15.2408ZM17.7087 11.6665H16.7087C16.7087 13.2842 16.7052 14.3334 16.6011 15.1076L17.5922 15.2408L18.5833 15.3741C18.7095 14.4355 18.7087 13.2269 18.7087 11.6665H17.7087ZM17.7087 11.3023H16.7087V11.6665H17.7087H18.7087V11.3023H17.7087ZM17.5638 8.95821L16.6052 9.24302C16.6895 9.52662 16.7087 9.95505 16.7087 11.3023H17.7087H18.7087C18.7087 10.0895 18.7099 9.30437 18.5224 8.6734L17.5638 8.95821ZM12.6311 8.87637L12.4978 9.86745C13.1884 9.96029 14.0372 9.95823 14.9556 9.95821L14.9556 8.95821L14.9556 7.95821C13.9859 7.95823 13.2919 7.95621 12.7643 7.88528L12.6311 8.87637ZM11.0019 8.16496L10.2948 8.87207C10.9524 9.52963 11.7508 9.76701 12.4978 9.86745L12.6311 8.87637L12.7643 7.88528C12.2381 7.81454 11.9326 7.68145 11.709 7.45785L11.0019 8.16496ZM10.2905 6.53581L9.29942 6.66906C9.39986 7.41612 9.63724 8.21451 10.2948 8.87207L11.0019 8.16496L11.709 7.45785C11.4854 7.23426 11.3523 6.92876 11.2816 6.40256L10.2905 6.53581ZM10.2087 4.21129L9.20866 4.21126C9.20864 5.12963 9.20658 5.97849 9.29942 6.66906L10.2905 6.53581L11.2816 6.40256C11.2107 5.87502 11.2086 5.181 11.2087 4.21131L10.2087 4.21129ZM11.4587 4.16655H12.4587V3.00775H11.4587H10.4587V4.16655H11.4587ZM11.5294 6.36925L12.5204 6.236C12.4621 5.80228 12.4587 5.19525 12.4587 4.16655H11.4587H10.4587C10.4587 5.13737 10.4578 5.90423 10.5383 6.5025L11.5294 6.36925ZM11.8858 7.28108L12.5929 6.57397C12.6041 6.58519 12.6044 6.59348 12.5937 6.56737C12.5776 6.52836 12.547 6.43343 12.5204 6.236L11.5294 6.36925L10.5383 6.5025C10.6203 7.11226 10.7927 7.6022 11.1787 7.98818L11.8858 7.28108ZM12.7976 7.63751L12.9309 6.64643C12.7334 6.61989 12.6385 6.58926 12.5995 6.57319C12.5734 6.56244 12.5817 6.56275 12.5929 6.57397L11.8858 7.28108L11.1787 7.98818C11.5647 8.37416 12.0546 8.54661 12.6644 8.62859L12.7976 7.63751ZM15.0003 7.70821V6.70821C13.9716 6.70821 13.3646 6.70474 12.9309 6.64643L12.7976 7.63751L12.6644 8.62859C13.2626 8.70903 14.0295 8.70821 15.0003 8.70821V7.70821ZM16.6832 7.70821V6.70821H15.0003V7.70821V8.70821H16.6832V7.70821ZM15.7087 6.81156L15.0397 7.55485C15.4532 7.92698 15.7556 8.20159 15.9869 8.42599L16.6832 7.70821L17.3795 6.99043C17.1168 6.73559 16.7862 6.43598 16.3776 6.06826L15.7087 6.81156ZM12.4097 3.84248L11.7407 4.58577L15.0397 7.55485L15.7087 6.81156L16.3776 6.06827L13.0786 3.09918L12.4097 3.84248ZM11.4587 3.00775L10.8233 3.77998C11.0485 3.96524 11.3325 4.21837 11.7407 4.58577L12.4097 3.84248L13.0786 3.09918C12.6779 2.73851 12.3598 2.45422 12.094 2.23553L11.4587 3.00775ZM11.0653 1.3043L11.4235 0.370678C10.5282 0.0271223 9.57487 0.0412319 8.47961 0.0415246L8.47987 1.04152L8.48014 2.04152C9.69254 2.0412 10.2301 2.05491 10.707 2.23792L11.0653 1.3043ZM13.1564 2.8328L13.8256 2.08968C13.0152 1.35998 12.3187 0.714173 11.4235 0.370678L11.0653 1.3043L10.707 2.23792C11.184 2.42098 11.5907 2.7686 12.4872 3.57591L13.1564 2.8328ZM13.2459 2.91336L13.9148 2.17007C13.8848 2.14299 13.855 2.11623 13.8256 2.08968L13.1564 2.8328L12.4872 3.57592C12.5167 3.60243 12.5466 3.62937 12.5769 3.65665L13.2459 2.91336ZM16.5449 5.88244L17.2138 5.13915L13.9148 2.17007L13.2459 2.91336L12.5769 3.65665L15.8759 6.62574L16.5449 5.88244ZM16.6489 5.97608L17.3177 5.23258C17.2834 5.20175 17.2488 5.17063 17.2138 5.13914L16.5449 5.88244L15.8759 6.62574C15.9111 6.65746 15.9459 6.68876 15.9802 6.71958L16.6489 5.97608ZM18.6163 8.20735L19.5298 7.80051C19.082 6.7951 18.253 6.07388 17.3177 5.23258L16.6489 5.97608L15.9802 6.71958C17.0176 7.65269 17.4644 8.07887 17.7028 8.61419L18.6163 8.20735ZM18.9587 11.1623L19.9587 11.1626C19.9591 9.90455 19.9775 8.80592 19.5298 7.80051L18.6163 8.20735L17.7028 8.61419C17.9412 9.14951 17.9591 9.76665 17.9587 11.162L18.9587 11.1623ZM18.9587 11.3023H19.9587C19.9587 11.2552 19.9587 11.2087 19.9587 11.1626L18.9587 11.1623L17.9587 11.162C17.9587 11.208 17.9587 11.2549 17.9587 11.3023H18.9587ZM18.831 15.4074L19.8221 15.5406C19.9608 14.5096 19.9587 13.2184 19.9587 11.7135L18.9587 11.7136L17.9587 11.7136C17.9587 13.2716 17.9566 14.4065 17.84 15.2742L18.831 15.4074ZM17.7993 17.7988L18.5064 18.506C19.3469 17.6654 19.6759 16.6282 19.8221 15.5406L18.831 15.4074L17.84 15.2742C17.7235 16.1406 17.4989 16.685 17.0922 17.0917L17.7993 17.7988ZM15.4078 18.8306L15.5411 19.8217C16.6287 19.6755 17.6658 19.3465 18.5064 18.506L17.7993 17.7988L17.0922 17.0917C16.6855 17.4985 16.141 17.723 15.2746 17.8395L15.4078 18.8306ZM11.714 18.9582L11.714 19.9582C13.2189 19.9582 14.51 19.9603 15.5411 19.8217L15.4078 18.8306L15.2746 17.8395C14.407 17.9562 13.2721 17.9582 11.714 17.9582L11.714 18.9582ZM4.59281 18.8306L4.45956 19.8217C5.49064 19.9603 6.78179 19.9582 8.28666 19.9582L8.28665 18.9582L8.28664 17.9582C6.72858 17.9582 5.59367 17.9562 4.72605 17.8395L4.59281 18.8306ZM2.20136 17.7988L1.49425 18.506C2.33481 19.3465 3.37196 19.6755 4.45956 19.8217L4.59281 18.8306L4.72605 17.8395C3.85961 17.723 3.31519 17.4985 2.90847 17.0917L2.20136 17.7988ZM1.1696 15.4074L0.178522 15.5406C0.324745 16.6282 0.653703 17.6654 1.49426 18.506L2.20136 17.7988L2.90847 17.0917C2.50175 16.685 2.27718 16.1406 2.16069 15.2742L1.1696 15.4074ZM1.04199 11.7136L0.0419924 11.7136C0.0419794 13.2184 0.0398973 14.5096 0.178522 15.5406L1.1696 15.4074L2.16069 15.2742C2.04404 14.4065 2.04198 13.2716 2.04199 11.7136L1.04199 11.7136ZM1.1696 4.59236L0.178522 4.45911C0.0398973 5.49019 0.0419794 6.78134 0.0419924 8.28621L1.04199 8.2862L2.04199 8.28619C2.04198 6.72813 2.04404 5.59322 2.16069 4.72561L1.1696 4.59236ZM2.20136 2.20092L1.49426 1.49381C0.653703 2.33436 0.324745 3.37152 0.178522 4.45911L1.1696 4.59236L2.16069 4.72561C2.27718 3.85917 2.50175 3.31474 2.90847 2.90802L2.20136 2.20092ZM4.59938 1.16911L4.46673 0.177946C3.3768 0.323818 2.33607 0.651992 1.49426 1.49381L2.20136 2.20092L2.90847 2.90802C3.3149 2.50159 3.86105 2.27684 4.73204 2.16027L4.59938 1.16911ZM8.31159 1.04155L8.3116 0.0415459C6.79828 0.0415331 5.50141 0.0394681 4.46673 0.177946L4.59938 1.16911L4.73204 2.16027C5.60395 2.04358 6.74521 2.04153 8.31158 2.04155L8.31159 1.04155ZM8.35849 1.04155L8.35849 0.0415462L8.3116 0.0415459L8.31159 1.04155L8.31158 2.04155L8.35848 2.04155L8.35849 1.04155ZM8.47987 1.04152L8.47961 0.0415246C8.43962 0.0415354 8.39929 0.0415462 8.35849 0.0415462V1.04155V2.04155C8.3996 2.04155 8.44019 2.04154 8.48014 2.04152L8.47987 1.04152ZM14.9556 8.95821V9.95821H17.5638V8.95821V7.95821H14.9556V8.95821ZM10.2087 2.36168H9.20866V4.21129H10.2087H11.2087V2.36168H10.2087ZM18.9587 11.7136H19.9587V11.3023H18.9587H17.9587V11.7136H18.9587ZM8.28665 18.9582V19.9582H11.714V18.9582V17.9582H8.28665V18.9582ZM1.04199 8.2862H0.0419924V11.7136H1.04199H2.04199V8.2862H1.04199ZM6.6562 10.7939L7.34014 11.5235C7.19589 11.6587 6.97143 11.6587 6.82718 11.5235L7.51112 10.7939L8.19506 10.0644C7.56999 9.47838 6.59732 9.47838 5.97225 10.0644L6.6562 10.7939ZM4.98953 12.3564L5.67347 13.086L7.34014 11.5235L6.6562 10.7939L5.97225 10.0644L4.30559 11.6269L4.98953 12.3564ZM4.96103 13.2398L5.69057 12.5559C5.83222 12.707 5.82456 12.9443 5.67347 13.086L4.98953 12.3564L4.30559 11.6269C3.65085 12.2407 3.61768 13.2691 4.23149 13.9238L4.96103 13.2398ZM5.84446 13.2683L5.16051 12.5388C5.31161 12.3972 5.54892 12.4048 5.69057 12.5559L4.96103 13.2398L4.23149 13.9238C4.84531 14.5785 5.87366 14.6117 6.5284 13.9979L5.84446 13.2683ZM6.45866 12.6925L5.77472 11.963L5.16051 12.5388L5.84446 13.2683L6.5284 13.9979L7.1426 13.4221L6.45866 12.6925ZM6.45866 15.4165H7.45866L7.45866 12.6925H6.45866L5.45866 12.6925L5.45866 15.4165H6.45866ZM7.08366 16.0415V15.0415C7.29077 15.0415 7.45866 15.2094 7.45866 15.4165H6.45866H5.45866C5.45866 16.314 6.1862 17.0415 7.08366 17.0415V16.0415ZM7.70866 15.4165H6.70866C6.70866 15.2094 6.87655 15.0415 7.08366 15.0415V16.0415V17.0415C7.98112 17.0415 8.70866 16.314 8.70866 15.4165H7.70866ZM7.70866 12.6925L6.70866 12.6925L6.70866 15.4165H7.70866L8.70866 15.4165L8.70866 12.6925H7.70866ZM8.32286 13.2683L9.0068 12.5388L8.3926 11.963L7.70866 12.6925L7.02472 13.4221L7.63892 13.9979L8.32286 13.2683ZM9.20629 13.2398L8.47675 12.5559C8.6184 12.4048 8.85571 12.3972 9.0068 12.5388L8.32286 13.2683L7.63892 13.9979C8.29365 14.6117 9.32201 14.5785 9.93582 13.9238L9.20629 13.2398ZM9.17779 12.3564L8.49385 13.086C8.34276 12.9443 8.3351 12.707 8.47675 12.5559L9.20629 13.2398L9.93582 13.9238C10.5496 13.2691 10.5165 12.2407 9.86173 11.6269L9.17779 12.3564ZM7.51112 10.7939L6.82718 11.5235L8.49385 13.086L9.17779 12.3564L9.86173 11.6269L8.19506 10.0644L7.51112 10.7939Z"
                     fill="#6BAFB8" mask="url(#path-1-inside-1_10434_214361)" />
                 </svg>
-                <span class="text-gray fz-12">رفع الملف</span>
+                <span class="text-gray fz-12">Upload File</span>
 
                 <input type="file" id="fileInput" onchange="uploadFile(this)">
               </label>
@@ -309,10 +308,10 @@
             </div>
             <div class="col-md-12">
               <label class="form-label">
-                ملاحظة
+                Note
               </label>
               <div class="position-relative">
-                <textarea class="form-control" placeholder="ادخل الشروط الأساسية للتأهل" maxlength="300"></textarea>
+                <textarea class="form-control" placeholder="Enter Note" maxlength="300"></textarea>
                 <div class="char-count black-text fz-12">30/300</div>
               </div>
             </div>
@@ -321,10 +320,10 @@
         <div class="modal-footer d-flex align-items-center gap-3">
           <button type="button" class="p-10 fz-14 fw-medium flex-grow-1 rounded-3 btn-primary-outline"
             data-bs-dismiss="modal">
-            تراجع
+            Cancel
           </button>
           <button type="button" class="p-10 fz-14 fw-medium flex-grow-1 rounded-3 btn-primary">
-            حفظ
+            Save
           </button>
         </div>
       </div>
@@ -334,7 +333,7 @@
   <nav class="navbar navbar-dark top-navbar navbar-expand-lg">
     <div class="container-fluid">
       <!-- Logo -->
-      <a class="navbar-brand" href="index.html"><img src="images/trsyat-white-logo.svg" alt="Trsyat" /></a>
+      <a class="navbar-brand" href="index-ltr.html"><img src="images/trsyat-white-logo.svg" alt="Trsyat" /></a>
       <span class="seperator d-none d-lg-inline-block"></span>
       <!-- Hamburger toggle -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
@@ -348,7 +347,7 @@
       <div class="collapse navbar-collapse" id="navbarContent">
         <div class="navbar-nav gap-3 d-flex flex-lg-row flex-column w-100">
           <div class="search-box position-relative flex-grow-1">
-            <input type="text" class="form-control" placeholder="البحث في الداشبورد" name="Search" />
+            <input type="text" class="form-control" placeholder="Search in Dashboard" name="Search" />
             <span class="search-icon position-absolute">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path
@@ -359,7 +358,7 @@
               </svg>
             </span>
           </div>
-          <a href="morefifty-pricing-list-ltr.html" class="nav-link">
+          <a href="morefifty-pricing-list.html" class="nav-link">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g opacity="0.4">
                 <path d="M14.1582 7.4668H5.84155H14.1582Z" fill="currentColor" />
@@ -376,7 +375,7 @@
                 d="M10.0001 18.3334C14.6025 18.3334 18.3334 14.6025 18.3334 10.0001C18.3334 5.39771 14.6025 1.66675 10.0001 1.66675C5.39771 1.66675 1.66675 5.39771 1.66675 10.0001C1.66675 14.6025 5.39771 18.3334 10.0001 18.3334Z"
                 stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
-            <span>English</span>
+            <span>العربية</span>
           </a>
 
           <a href="#" type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#notificationModal">
@@ -393,10 +392,10 @@
                 d="M12.5166 15.8833C12.5166 17.2583 11.3916 18.3833 10.0166 18.3833C9.33327 18.3833 8.69993 18.1 8.24993 17.65C7.79993 17.2 7.5166 16.5666 7.5166 15.8833"
                 stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" />
             </svg>
-            <span>الاشعارات</span>
+            <span>Notifications</span>
           </a>
 
-          <a href="user-guide.html" class="nav-link">
+          <a href="user-guide-ltr.html" class="nav-link">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
               <path d="M15.8926 15.8908C19.1509 12.6324 19.1509 7.35742 15.8926 4.10742" stroke="currentColor"
                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -413,7 +412,7 @@
                 stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
                 stroke-linejoin="round" />
             </svg>
-            <span>دليل الأستخدام</span>
+            <span>User Guide</span>
           </a>
           <div class="dropdown">
             <button class="dropdown-toggle nav-link" type="button" id="dropdownMenuButtonheader"
@@ -428,7 +427,7 @@
             </button>
             <ul class="dropdown-menu main-menu" aria-labelledby="dropdownMenuButtonheader">
               <li>
-                <a class="dropdown-item" href="profile.html">
+                <a class="dropdown-item" href="profile-ltr.html">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path opacity="0.4"
                       d="M12.1207 12.7805C12.0507 12.7705 11.9607 12.7705 11.8807 12.7805C10.1207 12.7205 8.7207 11.2805 8.7207 9.51047C8.7207 7.70047 10.1807 6.23047 12.0007 6.23047C13.8107 6.23047 15.2807 7.70047 15.2807 9.51047C15.2707 11.2805 13.8807 12.7205 12.1207 12.7805Z"
@@ -440,11 +439,11 @@
                       d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
                       stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
-                  الملف الشخصي
+                  Profile
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="settings.html">
+                <a class="dropdown-item" href="settings-ltr.html">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path opacity="0.34"
                       d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
@@ -455,12 +454,12 @@
                       stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
                       stroke-linejoin="round" />
                   </svg>
-                  الأعدادت
+                  Settings
                 </a>
               </li>
               <hr class="m-0">
               <li>
-                <a class="dropdown-item" href="logout.html">
+                <a class="dropdown-item" href="logout-ltr.html">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path
                       d="M15.0996 7.56023C14.7896 3.96023 12.9396 2.49023 8.88961 2.49023H8.75961C4.28961 2.49023 2.49961 4.28023 2.49961 8.75023V15.2702C2.49961 19.7402 4.28961 21.5302 8.75961 21.5302H8.88961C12.9096 21.5302 14.7596 20.0802 15.0896 16.5402"
@@ -475,12 +474,12 @@
                         stroke-linecap="round" stroke-linejoin="round" />
                     </g>
                   </svg>
-                  الخروج
+                  Logout
                 </a>
               </li>
             </ul>
           </div>
-          <a href="support.html" class="nav-link">
+          <a href="support-ltr.html" class="nav-link">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M18.3083 15.2751C18.3083 15.5751 18.2416 15.8834 18.1 16.1834C17.9583 16.4834 17.775 16.7667 17.5333 17.0334C17.125 17.4834 16.675 17.8084 16.1666 18.0168C15.6666 18.2251 15.125 18.3334 14.5416 18.3334C13.6916 18.3334 12.7833 18.1334 11.825 17.7251C10.8666 17.3167 9.90829 16.7667 8.95829 16.0751C7.99996 15.3751 7.09163 14.6001 6.22496 13.7417C5.36663 12.8751 4.59163 11.9667 3.89996 11.0167C3.21663 10.0667 2.66663 9.11675 2.26663 8.17508C1.86663 7.22508 1.66663 6.31675 1.66663 5.45008C1.66663 4.88341 1.76663 4.34175 1.96663 3.84175C2.16663 3.33341 2.48329 2.86675 2.92496 2.45008C3.45829 1.92508 4.04163 1.66675 4.65829 1.66675C4.89163 1.66675 5.12496 1.71675 5.33329 1.81675C5.54996 1.91675 5.74163 2.06675 5.89163 2.28341L7.82496 5.00841C7.97496 5.21675 8.08329 5.40841 8.15829 5.59175C8.23329 5.76675 8.27496 5.94175 8.27496 6.10008C8.27496 6.30008 8.21663 6.50008 8.09996 6.69175C7.99163 6.88341 7.83329 7.08341 7.63329 7.28341L6.99996 7.94175C6.90829 8.03341 6.86663 8.14175 6.86663 8.27508C6.86663 8.34175 6.87496 8.40008 6.89163 8.46675C6.91663 8.53341 6.94163 8.58341 6.95829 8.63341C7.10829 8.90841 7.36663 9.26675 7.73329 9.70008C8.10829 10.1334 8.50829 10.5751 8.94163 11.0167C9.39163 11.4584 9.82496 11.8667 10.2666 12.2417C10.7 12.6084 11.0583 12.8584 11.3416 13.0084C11.3833 13.0251 11.4333 13.0501 11.4916 13.0751C11.5583 13.1001 11.625 13.1084 11.7 13.1084C11.8416 13.1084 11.95 13.0584 12.0416 12.9667L12.675 12.3417C12.8833 12.1334 13.0833 11.9751 13.275 11.8751C13.4666 11.7584 13.6583 11.7001 13.8666 11.7001C14.025 11.7001 14.1916 11.7334 14.375 11.8084C14.5583 11.8834 14.75 11.9917 14.9583 12.1334L17.7166 14.0917C17.9333 14.2417 18.0833 14.4167 18.175 14.6251C18.2583 14.8334 18.3083 15.0417 18.3083 15.2751Z"
@@ -492,9 +491,9 @@
                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
 
-            <span>الدعم الفني</span>
+            <span>Support</span>
           </a>
-          <a href="upgrade.html" class="btn-primary-shadowed">
+          <a href="upgrade-ltr.html" class="btn-primary-shadowed">
             <svg xmlns="http://www.w3.org/2000/svg" class="position-absolute btn-shadow-top" width="79" height="20"
               viewBox="0 0 79 20" fill="none">
               <g filter="url(#filter0_f_4057_14007)">
@@ -523,8 +522,8 @@
                 </filter>
               </defs>
             </svg>
-            <img src="images/programming-arrow.svg" alt="upgrading" />
-            ترقية الحساب
+            <img src="images/programming-arrow.svg" class="flip-ltr" alt="upgrading" />
+            Upgrade Account
             </button>
           </a>
         </div>
@@ -534,7 +533,7 @@
   <div class="container-fluid main-content">
     <nav class="nav-tabs">
       <div class="nav page-tabs" id="tabsContainer">
-        <a href="index.html" class="nav-link">
+        <a href="index-ltr.html" class="nav-link active">
           <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
             <path opacity="0.4" d="M2.11108 14.6667H14.1111" stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round"
               stroke-linejoin="round" />
@@ -548,7 +547,7 @@
               d="M13.4445 1.33325H12.3778C12.0112 1.33325 11.7112 1.63325 11.7112 1.99992V11.9999C11.7112 12.3666 12.0112 12.6666 12.3778 12.6666H13.4445C13.8112 12.6666 14.1112 12.3666 14.1112 11.9999V1.99992C14.1112 1.63325 13.8112 1.33325 13.4445 1.33325Z"
               stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          <span>الرئيسيه</span>
+          <span>Home</span>
         </a>
         <div class="dropdown">
           <button class="dropdown-toggle nav-link w-100" type="button" id="allTenders" data-bs-toggle="dropdown"
@@ -565,7 +564,7 @@
                 stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
             <span class="d-flex align-items-center gap-2">
-              <span>جميع المنافسات</span>
+              <span>All Tenders</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path d="M16.6004 7.45898L11.1671 12.8923C10.5254 13.534 9.47539 13.534 8.83372 12.8923L3.40039 7.45898"
                   stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
@@ -575,26 +574,26 @@
           </button>
           <ul class="dropdown-menu main-menu" aria-labelledby="allTenders">
             <li>
-              <a class="dropdown-item b-dash" href="trsyat-tenders.html">
+              <a class="dropdown-item b-dash" href="trsyat-tenders-ltr.html">
                 <img src="images/trsyat-logo.svg" alt="Trsyat">
-                مناقصات ترسيات
+                Trsyat Tenders
               </a>
             </li>
             <li>
-              <a class="dropdown-item" href="etimated-tenders.html">
+              <a class="dropdown-item" href="etimated-tenders-ltr.html">
                 <img src="images/Etimated-Logo.svg" alt="Etimated">
-                مناقصات اعتماد
+                Etimad Tenders
               </a>
             </li>
             <li>
-              <a class="dropdown-item" href="forsa-tenders.html">
+              <a class="dropdown-item" href="forsa-tenders-ltr.html">
                 <img src="images/Forsa-Logo.svg" alt="Forsa">
-                مناقصات فرصة
+                Forsa Tenders
               </a>
             </li>
           </ul>
         </div>
-        <a href="nominated-tenders.html" class="nav-link">
+        <a href="nominated-tenders-ltr.html" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path
               d="M14.6673 8.66732V6.00065C14.6673 2.66732 13.334 1.33398 10.0007 1.33398H6.00065C2.66732 1.33398 1.33398 2.66732 1.33398 6.00065V10.0007C1.33398 13.334 2.66732 14.6673 6.00065 14.6673H8.66732"
@@ -608,9 +607,9 @@
             <path opacity="0.4" d="M11.334 7V9" stroke="#292D32" stroke-width="1.5" stroke-linecap="round"
               stroke-linejoin="round" />
           </svg>
-          <span>المناقصات المرشحة</span>
+          <span>Nominated Tenders</span>
         </a>
-        <a href="offers-consultations.html" class="nav-link">
+        <a href="offers-consultations-ltr.html" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
             <path opacity="0.4"
               d="M12.6312 6.50663V8.59995C12.6312 8.73329 12.6245 8.86662 12.6112 8.99329C12.4912 10.4066 11.6578 11.1133 10.1245 11.1133H9.91783C9.78449 11.1133 9.65783 11.1733 9.58449 11.28L8.95782 12.12C8.67782 12.4933 8.23117 12.4933 7.95117 12.12L7.3245 11.28C7.25784 11.1933 7.1045 11.1133 6.99117 11.1133H6.78451C5.11117 11.1133 4.27783 10.7 4.27783 8.60663V6.51328C4.27783 4.97995 4.98449 4.14663 6.39783 4.02663C6.52449 4.0133 6.65782 4.00663 6.79116 4.00663H10.1445C11.7912 3.99996 12.6312 4.83996 12.6312 6.50663Z"
@@ -620,9 +619,9 @@
               d="M6.4445 14.6666H10.4445C13.7778 14.6666 15.1112 13.3333 15.1112 9.99992V5.99992C15.1112 2.66659 13.7778 1.33325 10.4445 1.33325H6.4445C3.11117 1.33325 1.77783 2.66659 1.77783 5.99992V9.99992C1.77783 13.3333 3.11117 14.6666 6.4445 14.6666Z"
               stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          <span> العروض والاستشارات</span>
+          <span>Offers and Consultations</span>
         </a>
-        <a href="tenders-results.html" class="nav-link">
+        <a href="tenders-results-ltr.html" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
             <path d="M0.75 14.666H15.4167" stroke="#6F6F6F" stroke-width="1.5" stroke-miterlimit="10"
               stroke-linecap="round" stroke-linejoin="round" />
@@ -643,9 +642,9 @@
             <path opacity="0.4" d="M5.58398 14.666V12.166" stroke="#6F6F6F" stroke-width="1.5" stroke-miterlimit="10"
               stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          <span>نتائج المناقصات</span>
+          <span>Tender Results</span>
         </a>
-        <a href="tender-announcement.html" class="nav-link">
+        <a href="tender-announcement-ltr.html" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
             <g opacity="0.4">
               <path d="M5.99996 11.334V7.33398L4.66663 8.66732" stroke="#6F6F6F" stroke-width="1.5"
@@ -659,9 +658,9 @@
             <path d="M14.6667 6.66732H12C10 6.66732 9.33337 6.00065 9.33337 4.00065V1.33398L14.6667 6.66732Z"
               stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          <span>الاعلان علي مناقصة</span>
+          <span>Tender Announcement</span>
         </a>
-        <a href="tenders-pricing.html" class="nav-link active">
+        <a href="tenders-pricing-ltr.html" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
             <path
               d="M2.5555 13.6676C3.10884 14.2209 4.00217 14.2209 4.5555 13.6676L13.2222 5.00094C13.7755 4.4476 13.7755 3.55427 13.2222 3.00094C12.6688 2.4476 11.7755 2.4476 11.2222 3.00094L2.5555 11.6676C2.00217 12.2209 2.00217 13.1143 2.5555 13.6676Z"
@@ -678,17 +677,17 @@
               d="M13.2222 8.95935L14.2222 8.66602L13.9288 9.66602L14.2222 10.666L13.2222 10.3727L12.2222 10.666L12.5155 9.66602L12.2222 8.66602L13.2222 8.95935Z"
               stroke="#6F6F6F" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          <span>تسعيرات المناقصات</span>
+          <span>Tender Pricing</span>
         </a>
-        <a href="tenders-management.html" class="nav-link">
+        <a href="tenders-management-ltr.html" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path
-              d="M11.5262 2.76065L11.4795 5.2873C11.4728 5.63397 11.6929 6.09398 11.9729 6.30065L13.6262 7.55396C14.6862 8.35396 14.5129 9.33397 13.2462 9.73397L11.0929 10.4073C10.7329 10.5206 10.3529 10.914 10.2595 11.2806L9.74619 13.2406C9.33952 14.7873 8.32618 14.9406 7.48618 13.5806L6.31284 11.6806C6.09951 11.334 5.59284 11.074 5.19284 11.094L2.9662 11.2073C1.37287 11.2873 0.919527 10.3673 1.95953 9.15398L3.27951 7.62063C3.52618 7.33397 3.63951 6.80064 3.52618 6.44064L2.85288 4.2873C2.45955 3.02063 3.1662 2.32064 4.4262 2.73397L6.39288 3.38064C6.72621 3.48731 7.2262 3.41397 7.5062 3.2073L9.55954 1.7273C10.6662 0.927301 11.5528 1.39398 11.5262 2.76065Z"
+              d="M11.5262 2.76065L11.4795 5.2873C11.4728 5.63397 11.6929 6.09398 11.9729 6.30065L13.6262 7.55396C14.6862 8.35396 14.5129 9.33397 13.2462 9.73397L11.0929 10.4073C10.7329 10.5206 10.3529 10.914 10.2595 11.2806L9.74619 13.2406C9.33952 14.7873 8.32618 14.9406 7.48618 13.5806L6.31284 11.6806C6.09951 11.334 5.59284 11.074 5.19284 11.094L2.9662 11.2073C1.37287 11.2873 0.919527 10.3673 1.95953 9.15398L3.27951 7.62063C3.52618 7.33397 3.63951 6.80064 3.52618 6.44064L2.85288 4.2873C2.45955 3.02063 3.1662 2.32064 4.4262 2.73397L6.39288 3.38064C6.72621 3.48731 7.22620 3.41397 7.50620 3.2073L9.55954 1.7273C10.6662 0.927301 11.5528 1.39398 11.5262 2.76065Z"
               stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
             <path opacity="0.4" d="M14.6059 14.6665L12.5859 12.6465" stroke="#6F6F6F" stroke-width="1.5"
               stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          <span>إدارة المناقصات</span>
+          <span>Tender Management</span>
         </a>
         <!-- More Button (Ellipsis) -->
         <div class="dropdown">
@@ -706,7 +705,7 @@
     <!-- Page Header -->
     <div class="page-header d-flex flex-column flex-md-row align-items-md-center justify-content-md-between">
       <div class="d-flex align-items-center gap-3">
-        <a href="tenders-pricing.html" class="icon-container gray-outline-btn">
+        <a href="tenders-pricing-ltr.html" class="icon-container gray-outline-btn">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
             <path d="M12.025 15.0583L17.0834 9.99998L12.025 4.94165" fill="none"></path>
             <path d="M12.025 15.0583L17.0834 9.99998L12.025 4.94165" stroke="#0C2030" stroke-width="1.5"
@@ -716,7 +715,7 @@
           </svg>
         </a>
         <div class="page-breadcrumb">
-          <a href="tenders-pricing.html">تسعيرات المنافسه</a>
+          <a href="tenders-pricing-ltr.html">Tender Pricing</a>
           <svg xmlns="http://www.w3.org/2000/svg" width="8" height="15" viewBox="0 0 8 15" fill="none">
             <path d="M6.66461 0.74995L1.23128 6.18328C0.589611 6.82495 0.589611 7.87495 1.23128 8.51662L6.66461 13.95"
               fill="white"></path>
@@ -724,31 +723,32 @@
               stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round">
             </path>
           </svg>
-          <span class="active">تسعيرات أكثر من 50 منتج</span>
+          <span class="active">Pricing for More Than 50 Products</span>
         </div>
         <button class="outline-primary-gray bordered-40 fz-10 d-flex align-items-center gap-10">
-          <span>فيديو شرح</span>
-          <img src="images/play-cricle.svg" alt="فيديو شرح">
+          <span>Explainer Video</span>
+          <img src="images/play-cricle.svg" alt="Explainer Video">
         </button>
       </div>
       <button class="btn-base-alt text-white btn-main" type="button" data-bs-toggle="modal"
         data-bs-target="#orderModal">
-        طلب تسعير أكثر من ٥٠ منتج
+        Request Pricing for More Than 50 Products
       </button>
     </div>
+
 
     <div class="dash-widget sm-0 p-lg-3">
       <!-- Search and Filter Bar -->
       <div class="filter-bar">
         <div class="filter-btns d-flex align-items-center gap-3 ">
-          <button class="active">الكل</button>
-          <button>مقبولة</button>
-          <button>يتم مراجعتها</button>
-          <button>مسودة</button>
+          <button class="active">All</button>
+          <button>Accepted</button>
+          <button>Under Review</button>
+          <button>Draft</button>
         </div>
         <div class="d-flex justify-content-between align-items-center w-100 search-filter-bar gap-3">
           <div class="search-box w-100 position-relative">
-            <input type="text" class="form-control" id="tableSearch" placeholder="البحث في المسابقات" name="Search" />
+            <input type="text" class="form-control" id="tableSearch" placeholder="Search Tenders" name="Search" />
             <span class="search-icon position-absolute">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path
@@ -767,7 +767,7 @@
               <path opacity="0.34" d="M5 10H15" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round"></path>
               <path d="M8.33337 14.1667H11.6667" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round"></path>
             </svg>
-            <span>تصفية</span>
+            <span>Filter</span>
           </button>
         </div>
       </div>
@@ -776,27 +776,27 @@
           <table class="table table-bordered align-middle competition-table">
             <thead>
               <tr>
-                <th>رقم التسعير</th>
-                <th>نوع التسعير</th>
-                <th>عدد المنتجات</th>
-                <th>عدد الموردين المطلوب</th>
-                <th>تاريخ الانشاء</th>
-                <th class="text-center">الحاله</th>
-                <th class="text-center">الاجراءات</th>
+                <th>Pricing ID</th>
+                <th>Pricing Type</th>
+                <th>Number of Products</th>
+                <th>Required Suppliers</th>
+                <th>Creation Date</th>
+                <th class="text-center">Status</th>
+                <th class="text-center">Actions</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td data-label="رقم التسعير"><span class="ff-onest black-text fw-medium">250739020707</span></td>
-                <td data-label="نوع التسعير">
+                <td data-label="Pricing ID"><span class="ff-onest black-text fw-medium">250739020707</span></td>
+                <td data-label="Pricing Type">
                   <div class="d-flex align-items-center">
                     <span class="sm-logo">
-                      <img src="images/dollar-square.svg" alt="نوع التسعير">
+                      <img src="images/dollar-square.svg" alt="Pricing Type">
                     </span>
-                    <span>نوع التسعير</span>
+                    <span>Pricing Type</span>
                   </div>
                 </td>
-                <td data-label="عدد المنتجات">
+                <td data-label="Number of Products">
                   <div class="d-flex align-items-center">
                     <span class="sm-logo">
                       <img src="images/shopping-cart.svg" alt="Shopping cart">
@@ -804,7 +804,7 @@
                     <span class="fw-medium black-text">12</span>
                   </div>
                 </td>
-                <td data-label="عدد الموردين المطلوب">
+                <td data-label="Required Suppliers">
                   <div class="d-flex align-items-center">
                     <span class="sm-logo">
                       <img src="images/shop-add.svg" alt="shop Add">
@@ -812,7 +812,7 @@
                     <span class="fw-medium black-text">12</span>
                   </div>
                 </td>
-                <td data-label="تاريخ الانشاء">
+                <td data-label="Creation Date">
                   <div class="d-flex align-items-center">
                     <div class="sm-logo">
                       <img src="images/clock.svg" alt="clock">
@@ -827,26 +827,26 @@
                     </div>
                   </div>
                 </td>
-                <td data-label="الحاله">
-                  <span class="sm-ele fz-12 bordered-8 text-nowrap badge-reviewed">يتم المراجعه</span>
+                <td data-label="Status">
+                  <span class="sm-ele fz-12 bordered-8 text-nowrap badge-reviewed">Under Review</span>
                 </td>
-                <td data-label="الاجراءات">
+                <td data-label="Actions">
                   <a href="tenders-pricing-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                    التفاصيل
+                    Details
                   </a>
                 </td>
               </tr>
               <tr>
-                <td data-label="رقم التسعير"><span class="ff-onest black-text fw-medium">250739020707</span></td>
-                <td data-label="نوع التسعير">
+                <td data-label="Pricing ID"><span class="ff-onest black-text fw-medium">250739020707</span></td>
+                <td data-label="Pricing Type">
                   <div class="d-flex align-items-center">
                     <span class="sm-logo">
-                      <img src="images/dollar-square.svg" alt="نوع التسعير">
+                      <img src="images/dollar-square.svg" alt="Pricing Type">
                     </span>
-                    <span>نوع التسعير</span>
+                    <span>Pricing Type</span>
                   </div>
                 </td>
-                <td data-label="عدد المنتجات">
+                <td data-label="Number of Products">
                   <div class="d-flex align-items-center">
                     <span class="sm-logo">
                       <img src="images/shopping-cart.svg" alt="Shopping cart">
@@ -854,7 +854,7 @@
                     <span class="fw-medium black-text">12</span>
                   </div>
                 </td>
-                <td data-label="عدد الموردين المطلوب">
+                <td data-label="Required Suppliers">
                   <div class="d-flex align-items-center">
                     <span class="sm-logo">
                       <img src="images/shop-add.svg" alt="shop Add">
@@ -862,7 +862,7 @@
                     <span class="fw-medium black-text">12</span>
                   </div>
                 </td>
-                <td data-label="تاريخ الانشاء">
+                <td data-label="Creation Date">
                   <div class="d-flex align-items-center">
                     <div class="sm-logo">
                       <img src="images/clock.svg" alt="clock">
@@ -877,26 +877,26 @@
                     </div>
                   </div>
                 </td>
-                <td data-label="الحاله">
-                  <span class="sm-ele fz-12 bordered-8 text-nowrap badge-rejected">مرفوضه</span>
+                <td data-label="Status">
+                  <span class="sm-ele fz-12 bordered-8 text-nowrap badge-rejected">Rejected</span>
                 </td>
-                <td data-label="الاجراءات">
+                <td data-label="Actions">
                   <a href="tenders-pricing-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                    التفاصيل
+                    Details
                   </a>
                 </td>
               </tr>
               <tr>
-                <td data-label="رقم التسعير"><span class="ff-onest black-text fw-medium">250739020707</span></td>
-                <td data-label="نوع التسعير">
+                <td data-label="Pricing ID"><span class="ff-onest black-text fw-medium">250739020707</span></td>
+                <td data-label="Pricing Type">
                   <div class="d-flex align-items-center">
                     <span class="sm-logo">
-                      <img src="images/dollar-square.svg" alt="نوع التسعير">
+                      <img src="images/dollar-square.svg" alt="Pricing Type">
                     </span>
-                    <span>نوع التسعير</span>
+                    <span>Pricing Type</span>
                   </div>
                 </td>
-                <td data-label="عدد المنتجات">
+                <td data-label="Number of Products">
                   <div class="d-flex align-items-center">
                     <span class="sm-logo">
                       <img src="images/shopping-cart.svg" alt="Shopping cart">
@@ -904,7 +904,7 @@
                     <span class="fw-medium black-text">12</span>
                   </div>
                 </td>
-                <td data-label="عدد الموردين المطلوب">
+                <td data-label="Required Suppliers">
                   <div class="d-flex align-items-center">
                     <span class="sm-logo">
                       <img src="images/shop-add.svg" alt="shop Add">
@@ -912,7 +912,7 @@
                     <span class="fw-medium black-text">12</span>
                   </div>
                 </td>
-                <td data-label="تاريخ الانشاء">
+                <td data-label="Creation Date">
                   <div class="d-flex align-items-center">
                     <div class="sm-logo">
                       <img src="images/clock.svg" alt="clock">
@@ -927,26 +927,26 @@
                     </div>
                   </div>
                 </td>
-                <td data-label="الحاله">
-                  <span class="sm-ele fz-12 bordered-8 text-nowrap badge-draft">مسودة</span>
+                <td data-label="Status">
+                  <span class="sm-ele fz-12 bordered-8 text-nowrap badge-draft">Draft</span>
                 </td>
-                <td data-label="الاجراءات">
+                <td data-label="Actions">
                   <a href="tenders-pricing-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                    التفاصيل
+                    Details
                   </a>
                 </td>
               </tr>
               <tr>
-                <td data-label="رقم التسعير"><span class="ff-onest black-text fw-medium">250739020707</span></td>
-                <td data-label="نوع التسعير">
+                <td data-label="Pricing ID"><span class="ff-onest black-text fw-medium">250739020707</span></td>
+                <td data-label="Pricing Type">
                   <div class="d-flex align-items-center">
                     <span class="sm-logo">
-                      <img src="images/dollar-square.svg" alt="نوع التسعير">
+                      <img src="images/dollar-square.svg" alt="Pricing Type">
                     </span>
-                    <span>نوع التسعير</span>
+                    <span>Pricing Type</span>
                   </div>
                 </td>
-                <td data-label="عدد المنتجات">
+                <td data-label="Number of Products">
                   <div class="d-flex align-items-center">
                     <span class="sm-logo">
                       <img src="images/shopping-cart.svg" alt="Shopping cart">
@@ -954,7 +954,7 @@
                     <span class="fw-medium black-text">12</span>
                   </div>
                 </td>
-                <td data-label="عدد الموردين المطلوب">
+                <td data-label="Required Suppliers">
                   <div class="d-flex align-items-center">
                     <span class="sm-logo">
                       <img src="images/shop-add.svg" alt="shop Add">
@@ -962,7 +962,7 @@
                     <span class="fw-medium black-text">12</span>
                   </div>
                 </td>
-                <td data-label="تاريخ الانشاء">
+                <td data-label="Creation Date">
                   <div class="d-flex align-items-center">
                     <div class="sm-logo">
                       <img src="images/clock.svg" alt="clock">
@@ -977,26 +977,26 @@
                     </div>
                   </div>
                 </td>
-                <td data-label="الحاله">
-                  <span class="sm-ele fz-12 bordered-8 text-nowrap badge-reviewed">يتم المراجعه</span>
+                <td data-label="Status">
+                  <span class="sm-ele fz-12 bordered-8 text-nowrap badge-reviewed">Under Review</span>
                 </td>
-                <td data-label="الاجراءات">
+                <td data-label="Actions">
                   <a href="tenders-pricing-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                    التفاصيل
+                    Details
                   </a>
                 </td>
               </tr>
               <tr>
-                <td data-label="رقم التسعير"><span class="ff-onest black-text fw-medium">250739020707</span></td>
-                <td data-label="نوع التسعير">
+                <td data-label="Pricing ID"><span class="ff-onest black-text fw-medium">250739020707</span></td>
+                <td data-label="Pricing Type">
                   <div class="d-flex align-items-center">
                     <span class="sm-logo">
-                      <img src="images/dollar-square.svg" alt="نوع التسعير">
+                      <img src="images/dollar-square.svg" alt="Pricing Type">
                     </span>
-                    <span>نوع التسعير</span>
+                    <span>Pricing Type</span>
                   </div>
                 </td>
-                <td data-label="عدد المنتجات">
+                <td data-label="Number of Products">
                   <div class="d-flex align-items-center">
                     <span class="sm-logo">
                       <img src="images/shopping-cart.svg" alt="Shopping cart">
@@ -1004,7 +1004,7 @@
                     <span class="fw-medium black-text">12</span>
                   </div>
                 </td>
-                <td data-label="عدد الموردين المطلوب">
+                <td data-label="Required Suppliers">
                   <div class="d-flex align-items-center">
                     <span class="sm-logo">
                       <img src="images/shop-add.svg" alt="shop Add">
@@ -1012,7 +1012,7 @@
                     <span class="fw-medium black-text">12</span>
                   </div>
                 </td>
-                <td data-label="تاريخ الانشاء">
+                <td data-label="Creation Date">
                   <div class="d-flex align-items-center">
                     <div class="sm-logo">
                       <img src="images/clock.svg" alt="clock">
@@ -1027,26 +1027,26 @@
                     </div>
                   </div>
                 </td>
-                <td data-label="الحاله">
-                  <span class="sm-ele fz-12 bordered-8 text-nowrap badge-success">تم ارجاعها بملاحظة</span>
+                <td data-label="Status">
+                  <span class="sm-ele fz-12 bordered-8 text-nowrap badge-success">Returned with Note</span>
                 </td>
-                <td data-label="الاجراءات">
+                <td data-label="Actions">
                   <a href="tenders-pricing-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                    التفاصيل
+                    Details
                   </a>
                 </td>
               </tr>
               <tr>
-                <td data-label="رقم التسعير"><span class="ff-onest black-text fw-medium">250739020707</span></td>
-                <td data-label="نوع التسعير">
+                <td data-label="Pricing ID"><span class="ff-onest black-text fw-medium">250739020707</span></td>
+                <td data-label="Pricing Type">
                   <div class="d-flex align-items-center">
                     <span class="sm-logo">
-                      <img src="images/dollar-square.svg" alt="نوع التسعير">
+                      <img src="images/dollar-square.svg" alt="Pricing Type">
                     </span>
-                    <span>نوع التسعير</span>
+                    <span>Pricing Type</span>
                   </div>
                 </td>
-                <td data-label="عدد المنتجات">
+                <td data-label="Number of Products">
                   <div class="d-flex align-items-center">
                     <span class="sm-logo">
                       <img src="images/shopping-cart.svg" alt="Shopping cart">
@@ -1054,7 +1054,7 @@
                     <span class="fw-medium black-text">12</span>
                   </div>
                 </td>
-                <td data-label="عدد الموردين المطلوب">
+                <td data-label="Required Suppliers">
                   <div class="d-flex align-items-center">
                     <span class="sm-logo">
                       <img src="images/shop-add.svg" alt="shop Add">
@@ -1062,7 +1062,7 @@
                     <span class="fw-medium black-text">12</span>
                   </div>
                 </td>
-                <td data-label="تاريخ الانشاء">
+                <td data-label="Creation Date">
                   <div class="d-flex align-items-center">
                     <div class="sm-logo">
                       <img src="images/clock.svg" alt="clock">
@@ -1077,26 +1077,26 @@
                     </div>
                   </div>
                 </td>
-                <td data-label="الحاله">
-                  <span class="sm-ele fz-12 bordered-8 text-nowrap prim-opacity-outlined">مقبولة</span>
+                <td data-label="Status">
+                  <span class="sm-ele fz-12 bordered-8 text-nowrap prim-opacity-outlined">Accepted</span>
                 </td>
-                <td data-label="الاجراءات">
+                <td data-label="Actions">
                   <a href="tenders-pricing-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                    التفاصيل
+                    Details
                   </a>
                 </td>
               </tr>
               <tr>
-                <td data-label="رقم التسعير"><span class="ff-onest black-text fw-medium">250739020707</span></td>
-                <td data-label="نوع التسعير">
+                <td data-label="Pricing ID"><span class="ff-onest black-text fw-medium">250739020707</span></td>
+                <td data-label="Pricing Type">
                   <div class="d-flex align-items-center">
                     <span class="sm-logo">
-                      <img src="images/dollar-square.svg" alt="نوع التسعير">
+                      <img src="images/dollar-square.svg" alt="Pricing Type">
                     </span>
-                    <span>نوع التسعير</span>
+                    <span>Pricing Type</span>
                   </div>
                 </td>
-                <td data-label="عدد المنتجات">
+                <td data-label="Number of Products">
                   <div class="d-flex align-items-center">
                     <span class="sm-logo">
                       <img src="images/shopping-cart.svg" alt="Shopping cart">
@@ -1104,7 +1104,7 @@
                     <span class="fw-medium black-text">12</span>
                   </div>
                 </td>
-                <td data-label="عدد الموردين المطلوب">
+                <td data-label="Required Suppliers">
                   <div class="d-flex align-items-center">
                     <span class="sm-logo">
                       <img src="images/shop-add.svg" alt="shop Add">
@@ -1112,7 +1112,7 @@
                     <span class="fw-medium black-text">12</span>
                   </div>
                 </td>
-                <td data-label="تاريخ الانشاء">
+                <td data-label="Creation Date">
                   <div class="d-flex align-items-center">
                     <div class="sm-logo">
                       <img src="images/clock.svg" alt="clock">
@@ -1304,8 +1304,6 @@
   <script src="https://cdn.datatables.net/responsive/2.5.0/js/responsive.bootstrap5.min.js"></script>
   <!--  Flatpickr JS -->
   <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js"></script>
-  <!--  Arabic language support -->
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/l10n/ar.js"></script>
   <!-- Intl Tel Input JS -->
   <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/js/intlTelInput.min.js"></script>
   <!-- Custom JS -->
@@ -1330,11 +1328,11 @@
         .then(response => response.json())
         .then(data => {
           console.log('Upload success:', data);
-          alert('تم رفع الملف بنجاح');
+          alert('File uploaded successfully');
         })
         .catch(error => {
           console.error('Upload error:', error);
-          alert('حدث خطأ أثناء رفع الملف');
+          alert('An error occurred while uploading the file');
         });
     }
 
