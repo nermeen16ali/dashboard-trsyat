@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function () {
             dataLabels: {
                 enabled: true,
                 style: {
-                    fontSize: '12px',
+                    fontSize: '10px',
                     fontFamily: 'Inter, sans-serif',
                     fontWeight: 500,
                 },
@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function () {
             plotOptions: {
                 pie: {
                     donut: {
-                        size: '70%',
+                        size: '60%',
                         labels: {
                             show: true,
                             total: {
@@ -252,25 +252,15 @@ document.addEventListener('DOMContentLoaded', function () {
             const isVisible = entry.isIntersecting;
             const id = entry.target.id;
 
-            // Small delay to prevent jitter and ensure user sees start of animation
-            // Only apply delay on ENTER, exit should be instant cleanup
-
             if (isVisible) {
                 if (id === 'rateChart' && !rateChart) {
                     rateChart = new ApexCharts(document.querySelector("#rateChart"), getRateOptions());
                     rateChart.render();
+                    chartObserver.unobserve(entry.target);
                 } else if (id === 'typesChart' && !typesChart) {
                     typesChart = new ApexCharts(document.querySelector("#typesChart"), getTypesOptions());
                     typesChart.render();
-                }
-            } else {
-                // Destroy chart to reset animation when scrolling away
-                if (id === 'rateChart' && rateChart) {
-                    rateChart.destroy();
-                    rateChart = null;
-                } else if (id === 'typesChart' && typesChart) {
-                    typesChart.destroy();
-                    typesChart = null;
+                    chartObserver.unobserve(entry.target);
                 }
             }
         });
