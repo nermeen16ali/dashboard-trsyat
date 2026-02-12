@@ -5110,7 +5110,7 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     margin-bottom: 0;
   }
 
-  .competition-table:not(.boq-table) tr td:first-of-type {
+  .competition-table:not(.boq-table):not(.upgrade-table) tr td:first-of-type {
     display: flex;
     align-items: center;
     width: 50%;
@@ -5119,7 +5119,7 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
   }
 
   /* Last column (always the last td in the row) */
-  .competition-table:not(.boq-table) tr td:last-of-type {
+  .competition-table:not(.boq-table):not(.upgrade-table) tr td:last-of-type {
     order: 2;
     width: 50%;
     display: flex;
@@ -5148,7 +5148,9 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
 
   .competition-table tr td:not(:first-of-type):not(:last-of-type)::before,
   .boq-table tr td:first-of-type::before,
-  .boq-table tr td:last-of-type::before {
+  .boq-table tr td:last-of-type::before,
+  .upgrade-table tr td:first-of-type::before,
+  .upgrade-table tr td:last-of-type::before {
     content: attr(data-label);
     font-size: 10px;
     color: #A1A1A1;
@@ -5176,7 +5178,8 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
   }
 
   /* Before-last cell in the row */
-  .competition-table tr td:nth-last-of-type(2) {
+  .competition-table:not(.upgrade-table) tr td:nth-last-of-type(2),
+  .upgrade-table tr td:last-of-type {
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
     padding-bottom: 24px;
@@ -5219,6 +5222,7 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
   /* Remove border from last cell */
   .upgrade-table td:last-child {
     border-radius: 0 0 16px 16px;
+    background-color: var(--white-color);
   }
 }
 
