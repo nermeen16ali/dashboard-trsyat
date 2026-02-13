@@ -730,33 +730,6 @@ h6 {
   width: fit-content;
 }
 
-/* Enable scrolling only on screens below md breakpoint (767px) */
-
-/* On larger screens, prevent scrolling and use normal flex layout */
-/* @media (min-width: 992px) {
-  .sub-nav-tabs {
-    overflow-x: visible;
-    flex-wrap: wrap;
-  }
-} */
-/* 
-.sub-nav-tabs::-webkit-scrollbar {
-  height: 4px;
-}
-
-.sub-nav-tabs::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.sub-nav-tabs::-webkit-scrollbar-thumb {
-  background: #ddd;
-  border-radius: 2px;
-}
-
-.sub-nav-tabs::-webkit-scrollbar-thumb:hover {
-  background: #999;
-} */
-
 .modal .sub-nav-tabs {
   border: none;
   background: none;
@@ -3459,6 +3432,7 @@ html[dir="ltr"] .notification-list .icon-container.gray-outline-btn {
   border-radius: 20px;
   background-color: var(--white-color);
   border: 1px solid #e8e8e8;
+  height: 100%;
 }
 
 .summary-title {
@@ -4242,23 +4216,12 @@ a.colored:hover {
   gap: 16px;
 }
 
-/* .activity-dropdown-container .search-box .form-control {
-  padding-inline-start: 12px;
-  background: #f7f7f7;
-  border: 1px solid #f2f2f2;
-} */
-
 .selected-activities-section,
 .available-activities-list {
   background: var(--white-color);
   padding: 12px;
   border-radius: 12px;
 }
-
-/* .activity-dropdown-container .icon-box {
-  background: transparent;
-  pointer-events: none;
-} */
 
 .btn-save-tags {
   padding: 8px 12px;
@@ -4267,82 +4230,15 @@ a.colored:hover {
   line-height: normal;
 }
 
-/* .selected-tags .tag {
-  background: rgba(107, 175, 184, 0.1);
-  color: #397d86;
-  padding: 4px 10px;
-  border-radius: 6px;
-  font-size: 12px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  border: 1px solid rgba(107, 175, 184, 0.2);
-} */
-
 .selected-tags .tag .remove-btn {
   cursor: pointer;
   font-size: 16px;
   line-height: 1;
 }
 
-/* .available-activities-list .available-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px 12px;
-  border-bottom: 1px solid #f2f2f2;
-  font-size: 14px;
-}
-
-.available-activities-list .available-item:last-child {
-  border-bottom: none;
-} */
-
-/* .available-activities-list .available-item .add-btn {
-  width: 24px;
-  height: 24px;
-  background: rgba(107, 175, 184, 0.1);
-  color: #397d86;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: bold;
-} */
-
 .available-activities-list .available-item:hover {
   background-color: #f9f9f9;
 }
-
-/* .custom-select-trigger {
-  cursor: pointer;
-  padding: 10px 12px;
-  border: 1px solid #f2f2f2;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #fff;
-}
-
-.custom-select-trigger .placeholder {
-  color: #6f6f6f;
-  font-size: 14px;
-}
-
-.custom-select-trigger .selected-count {
-  background: var(--primary-base-color);
-  color: #fff;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-} */
 
 /* Custom SweetAlert Toast */
 .swal2-toast-custom {
@@ -4536,6 +4432,11 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
 @media (max-width: 991px) {
   .custom-tabs {
     flex-wrap: wrap;
+  }
+
+  .home-row>.col-6 {
+    width: fit-content;
+    min-width: 153px;
   }
 
   .lined-stepper::after {
