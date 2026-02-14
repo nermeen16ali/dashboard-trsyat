@@ -286,28 +286,6 @@ html[dir="rtl"] [type="url"] {
   display: none;
 }
 
-/* 
-.scrollable-row::-webkit-scrollbar-track {
-  background: transparent;
-} */
-/* 
-.scrollable-row::-webkit-scrollbar-thumb {
-  background: #ddd;
-  border-radius: 2px;
-}
-
-.scrollable-row::-webkit-scrollbar-thumb:hover {
-  background: #999;
-} */
-
-/* h5 {
-  font-size: 18px;
-}
-
-h6 {
-  font-size: 16px;
-} */
-
 .fz-32 {
   font-size: 32px;
 }
@@ -510,7 +488,7 @@ h6 {
 .btn-primary-shadowed:hover {
   transform: translateY(-2px);
   /* box-shadow: 0 16px 40px rgb(100 154 161); */
-  box-shadow: 0 5px 40px rgb(100 154 161);
+  box-shadow: 0 5px 40px rgb(100 154 161 / 40%);
 }
 
 .btn-shadow-top {
@@ -843,13 +821,6 @@ h6 {
 .lh-normal {
   line-height: normal;
 }
-
-/* .tender-card .form-check-input:not(.switch-control) {
-  width: 16px;
-  height: 16px;
-  border-radius: 4px;
-  border: 1px solid #e7e7e7;
-} */
 
 .form-check .form-check-input[type="radio"] {
   border-radius: 50%;
