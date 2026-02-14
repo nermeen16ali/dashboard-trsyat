@@ -436,23 +436,6 @@ html[dir="rtl"] [type="url"] {
   opacity: 0.34;
 }
 
-/* 
-.navbar-toggler span:nth-child(2) {
-  border-color: gray;
-}
-
-.navbar-toggler[aria-expanded="true"] span:nth-child(1) {
-  transform: rotate(45deg) translate(6px, 8px);
-}
-
-.navbar-toggler[aria-expanded="true"] span:nth-child(2) {
-  opacity: 0;
-}
-
-.navbar-toggler[aria-expanded="true"] span:nth-child(3) {
-  transform: rotate(-45deg) translate(3px, -4px);
-} */
-
 .dropdown-toggle::after {
   display: none;
 }
@@ -1296,6 +1279,7 @@ input[type="file"] {
   width: 36px;
   height: 36px;
   margin-inline: 13px;
+  padding-inline: 0;
 }
 
 .pagination .page-link:hover {
