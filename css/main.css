@@ -3686,7 +3686,7 @@ html[dir="rtl"] .choices[data-type*=select-one]::after {
 }
 
  */
-.custom-select-trigger .selected-count {
+/* .custom-select-trigger .selected-count {
   background: var(--primary-base-color);
   color: var(--white-color);
   border-radius: 50%;
@@ -3696,7 +3696,7 @@ html[dir="rtl"] .choices[data-type*=select-one]::after {
   align-items: center;
   justify-content: center;
   font-size: 12px;
-}
+} */
 
 .colored {
   color: var(--primary-base-color);
@@ -4214,6 +4214,29 @@ a.colored:hover {
   cursor: pointer;
   font-size: 16px;
   line-height: 1;
+}
+
+.custom-select-trigger {
+  min-height: 44px;
+  height: auto !important;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 6px 12px !important;
+}
+
+.trigger-tag {
+  margin: 2px 4px;
+  padding: 4px 8px !important;
+  font-size: 12px !important;
+  gap: 8px !important;
+}
+
+.customplaceholder {
+  color: #6f6f6f;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
 }
 
 .available-activities-list .available-item:hover {

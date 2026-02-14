@@ -229,12 +229,33 @@ if (activityDropdown) {
   function updateTrigger() {
     const count = selectedActivities.size;
     if (count > 0) {
-      selectedCountBadge.textContent = count;
-      selectedCountBadge.classList.remove("d-none");
-      customplaceholder.textContent = "تم اختيار " + count;
+      // Clear placeholder and count badge
+      selectedCountBadge.classList.add("d-none");
+      customplaceholder.innerHTML = "";
+      customplaceholder.classList.remove("customplaceholder"); // Optional: remove placeholder style
+
+      // Render tags into the trigger
+      selectedActivities.forEach(activity => {
+        const tag = document.createElement("div");
+        tag.className = "selected-tag trigger-tag";
+        tag.innerHTML = `
+          <span>${activity}</span>
+          <span class="remove-btn">✕</span>
+        `;
+
+        tag.querySelector(".remove-btn").addEventListener("click", (e) => {
+          e.stopPropagation();
+          selectedActivities.delete(activity);
+          renderAll();
+          updateTrigger();
+        });
+
+        customplaceholder.appendChild(tag);
+      });
     } else {
       selectedCountBadge.classList.add("d-none");
-      customplaceholder.textContent = "اختر النشاط الأساسي";
+      customplaceholder.innerHTML = "اختر النشاط الأساسي";
+      customplaceholder.classList.add("customplaceholder");
     }
   }
 
