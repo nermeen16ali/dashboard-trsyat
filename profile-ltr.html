@@ -302,7 +302,16 @@
 
       <!-- Collapsible Menu -->
       <div class="collapse navbar-collapse" id="navbarContent">
-        <div class="navbar-nav gap-3 d-flex flex-lg-row flex-column w-100">
+        <button class="btn-close-navbar d-lg-none" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <div class="navbar-nav gap-4 gap-lg-3 d-flex flex-lg-row flex-column w-100">
           <div class="search-box position-relative flex-grow-1">
             <input type="text" class="form-control" placeholder="Search dashboard" name="Search" />
             <span class="search-icon position-absolute">

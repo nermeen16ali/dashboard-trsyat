@@ -182,6 +182,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initial call to prevent layout glitch
   handleTabOverflow();
+
+  // Close navbar when clicking on backdrop (shadow area)
+  document.addEventListener("click", (e) => {
+    const navbarCollapse = document.querySelector(".navbar-collapse.show");
+
+    // Check if navbar is open and click is on the pseudo-element backdrop
+    // Since the backdrop is inside the navbar-collapse (as ::before), 
+    // we check if the click target is exactly the navbar-collapse itself
+    // and not any of its children.
+    if (navbarCollapse && e.target === navbarCollapse) {
+      const toggle = document.querySelector(`[data-bs-target="#${navbarCollapse.id}"]`);
+      if (toggle) {
+        // Bootstrap 5 collapse toggle
+        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+        if (bsCollapse) {
+          bsCollapse.hide();
+        } else {
+          toggle.click();
+        }
+      }
+    }
+  });
 });
 
 // Custom Activity Multiselect Logic

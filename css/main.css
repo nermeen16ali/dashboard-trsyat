@@ -4540,6 +4540,10 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     padding: 16px 12px 10px;
   }
 
+  .navbar-nav {
+    align-items: center;
+  }
+
   /* Mobile sidebar menu */
   .navbar-collapse {
     position: fixed;
@@ -4577,12 +4581,43 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    background-color: rgb(12 32 48 / 50%);
     z-index: -1;
   }
 
   .navbar-collapse .nav-link {
     width: fit-content;
+    min-width: 156px;
+  }
+
+  /* Close button for mobile menu */
+  .btn-close-navbar {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    padding: 0;
+    margin-bottom: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    transition: opacity 0.3s ease;
+  }
+
+  .btn-close-navbar:hover {
+    opacity: 0.7;
+  }
+
+  html[dir="rtl"] .btn-close-navbar {
+    margin-right: auto;
+  }
+
+  html[dir="ltr"] .btn-close-navbar {
+    margin-left: auto;
   }
 
   .navbar-brand img {
