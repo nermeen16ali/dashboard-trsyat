@@ -4401,6 +4401,10 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
   border-radius: 16px;
 }
 
+.table tbody td img[src="images/ryall.svg"] {
+  height: 13px;
+}
+
 @media (max-width: 991px) {
   .custom-tabs {
     flex-wrap: wrap;
