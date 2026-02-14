@@ -5276,6 +5276,15 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     scroll-snap-type: x mandatory;
   }
 
+  .add-time {
+    height: 34px;
+    gap: 4px;
+  }
+
+  .add-time .fz-12 {
+    font-size: 9px;
+  }
+
   .tender-number {
     font-size: 11px;
     gap: 6px;
