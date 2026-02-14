@@ -500,6 +500,14 @@ html[dir="rtl"] [type="url"] {
   inset-inline-end: 0;
 }
 
+html[dir="ltr"] .btn-shadow-top {
+  inset-inline-start: -15px;
+}
+
+html[dir="ltr"] .btn-shadow-bottom {
+  inset-inline-end: -15px;
+}
+
 .main-content {
   background-color: var(--white-color);
   margin-top: 86px;
