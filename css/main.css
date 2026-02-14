@@ -4850,7 +4850,8 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     width: 16px;
   }
 
-  .date-info {
+  .date-info,
+  .message-bubble {
     font-size: 12px;
   }
 
@@ -5204,20 +5205,16 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
 
   .btn-main {
     padding-inline: 8px;
-    /* width: 100%; */
   }
-
-  /* .prim-opacity-outlined {
-    height: 36px;
-  } */
-  /* .h-41.fz-14 {
-    height: 38px;
-    font-size: 12px;
-  } */
 
   .input-box,
   .send-btn {
     height: 44px;
+  }
+
+  .chat-input {
+    height: 36px;
+    padding-inline: 8px;
   }
 
   .p-8-12 {
@@ -5226,6 +5223,10 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
 
   .send-btn {
     width: 44px;
+  }
+
+  .send-btn svg {
+    width: 18px;
   }
 
   action-btn {
