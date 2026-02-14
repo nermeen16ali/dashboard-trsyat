@@ -409,7 +409,7 @@ html[dir="rtl"] [type="url"] {
 
 .navbar-toggler {
   width: 40px;
-  height: 30px;
+  height: 40px;
   position: relative;
   border: none;
   background: transparent;
@@ -419,17 +419,24 @@ html[dir="rtl"] [type="url"] {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
+  border-radius: 12px;
+  border: 1px solid #F7F7F7;
 }
 
 .navbar-toggler span {
   display: block;
   width: 20px;
   height: 0;
-  border: 1.5px solid var(--text-white, #ffffff);
+  border: 1.5px solid #ffffff;
   border-radius: 1px;
 }
 
+.navbar-toggler span:nth-child(2) {
+  opacity: 0.34;
+}
+
+/* 
 .navbar-toggler span:nth-child(2) {
   border-color: gray;
 }
@@ -444,7 +451,7 @@ html[dir="rtl"] [type="url"] {
 
 .navbar-toggler[aria-expanded="true"] span:nth-child(3) {
   transform: rotate(-45deg) translate(3px, -4px);
-}
+} */
 
 .dropdown-toggle::after {
   display: none;
