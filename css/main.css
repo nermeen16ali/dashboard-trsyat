@@ -4405,6 +4405,55 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
   height: 13px;
 }
 
+.btn-shadow-top {
+  position: absolute;
+  width: 79px;
+  height: 20px;
+  pointer-events: none;
+}
+
+.btn-shadow-top::before {
+  content: "";
+  position: absolute;
+  left: 17px;
+  /* approximate cx=66 offset */
+  top: 0;
+  width: 98px;
+  /* 49 * 2 */
+  height: 6px;
+  /* 3 * 2 */
+  background: white;
+  border-radius: 50%;
+  filter: blur(8.5px);
+}
+
+.btn-shadow-bottom {
+  position: absolute;
+  width: 78px;
+  height: 19px;
+  pointer-events: none;
+}
+
+.btn-shadow-bottom::before {
+  content: "";
+  position: absolute;
+
+  /* Match ellipse size */
+  width: 98px;
+  height: 6px;
+
+  background: white;
+  border-radius: 50%;
+
+  /* Position like cx="12" cy="20" */
+  left: -37px;
+  /* 12 - 49 (center minus radius) */
+  top: 17px;
+  /* 20 - 3  (center minus radius) */
+
+  filter: blur(8.5px);
+}
+
 @media (max-width: 991px) {
   .custom-tabs {
     flex-wrap: wrap;
