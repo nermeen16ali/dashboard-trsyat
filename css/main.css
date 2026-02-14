@@ -4939,7 +4939,8 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
   }
 
   .date-info,
-  .message-bubble {
+  .message-bubble,
+  .fz-sm-12 {
     font-size: 12px;
   }
 
