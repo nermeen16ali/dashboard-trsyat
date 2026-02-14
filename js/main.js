@@ -68,11 +68,30 @@ document.addEventListener("DOMContentLoaded", () => {
     if (hiddenTabs.length > 0) {
       moreBtn.style.display = "inline-flex";
       hiddenTabs.forEach((tab) => {
-        let dropdownItem = document.createElement("a");
-        dropdownItem.className = "dropdown-item";
-        dropdownItem.innerHTML = tab.innerHTML;
-        dropdownItem.href = tab.href;
-        dropdownMenu.appendChild(dropdownItem);
+        // Check if the tab is a dropdown container
+        const parentDropdown = tab.closest('.dropdown');
+
+        if (parentDropdown) {
+          // Clone the entire dropdown structure
+          const clonedDropdown = parentDropdown.cloneNode(true);
+          const clonedButton = clonedDropdown.querySelector('button, a');
+
+          // Convert to dropdown-item style for the More menu
+          if (clonedButton) {
+            clonedButton.classList.remove('nav-link', 'w-100');
+            clonedButton.classList.add('dropdown-item', 'dropdown-toggle');
+            clonedButton.style.display = 'flex';
+          }
+
+          dropdownMenu.appendChild(clonedDropdown);
+        } else {
+          // Regular link - create simple dropdown item
+          let dropdownItem = document.createElement("a");
+          dropdownItem.className = "dropdown-item";
+          dropdownItem.innerHTML = tab.innerHTML;
+          dropdownItem.href = tab.href;
+          dropdownMenu.appendChild(dropdownItem);
+        }
       });
 
       moreBtn.onclick = function () {

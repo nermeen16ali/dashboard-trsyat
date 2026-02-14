@@ -2706,7 +2706,8 @@ td input[type="number"]::placeholder {
   align-items: center;
 }
 
-.main-menu {
+.main-menu,
+.wrapped-dropdown {
   padding: 12px;
   gap: 16px;
   border-radius: 12px !important;
@@ -2767,6 +2768,18 @@ td input[type="number"]::placeholder {
 
 .view-link:hover {
   color: var(--primary-color);
+}
+
+.view-link svg {
+  transition: all 0.3s ease;
+}
+
+html[dir="rtl"] .view-link:hover svg {
+  transform: translateX(-5px);
+}
+
+html[dir="ltr"] .view-link:hover svg {
+  transform: translateX(5px);
 }
 
 .heading {
@@ -5476,4 +5489,28 @@ body.modal-open {
     transform: scale(1);
     opacity: 1;
   }
+}
+
+/* Nested dropdown support for More menu */
+.wrapped-dropdown .dropdown {
+  position: relative;
+}
+
+.wrapped-dropdown .dropdown .dropdown-menu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-top: 0;
+  margin-left: 0.125rem;
+}
+
+html[dir="rtl"] .wrapped-dropdown .dropdown .dropdown-menu {
+  left: auto;
+  right: 100%;
+  margin-left: 0;
+  margin-right: 0.125rem;
+}
+
+.wrapped-dropdown .dropdown-toggle::after {
+  margin-left: auto;
 }
