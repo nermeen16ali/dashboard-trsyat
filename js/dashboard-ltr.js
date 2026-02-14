@@ -285,9 +285,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 const bar = entry.target;
                 const value = bar.getAttribute('aria-valuenow');
                 bar.style.width = value + '%';
-            } else {
-                // Reset width to 0 when scrolled away to replay animation
-                entry.target.style.width = '0%';
+                // Stop observing after the first animation
+                progressObserver.unobserve(entry.target);
             }
         });
     }, progressObserverOptions);
