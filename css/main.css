@@ -364,20 +364,6 @@ html[dir="rtl"] [type="url"] {
   gap: 10px;
 }
 
-.navbar .search-box .form-control {
-  background: transparent;
-  border: 1px solid #ffffff0d;
-  color: #c9c9c9;
-}
-
-.navbar .search-box .form-control::placeholder {
-  color: #c9c9c9;
-}
-
-.navbar .search-box .form-control:focus {
-  border-color: #c9c9c9;
-}
-
 .search-wrapper .form-control {
   border: 1px solid #e8e8e8;
   padding: 4px 12px;
@@ -1279,7 +1265,15 @@ input[type="file"] {
   width: 36px;
   height: 36px;
   margin-inline: 13px;
-  padding-inline: 0;
+  padding: 4px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination .page-link svg {
+  width: 20px;
+  height: 20px;
 }
 
 .pagination .page-link:hover {
@@ -4175,6 +4169,20 @@ a.colored:hover {
     margin-inline-start: auto;
   }
 
+  .navbar .search-box .form-control {
+    background: transparent;
+    border: 1px solid #ffffff0d;
+    color: #c9c9c9;
+  }
+
+  .navbar .search-box .form-control::placeholder {
+    color: #c9c9c9;
+  }
+
+  .navbar .search-box .form-control:focus {
+    border-color: #c9c9c9;
+  }
+
   .master-img+div .play-btn {
     width: 84px;
     height: 84px;
@@ -4580,10 +4588,16 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     background-color: var(--white-color);
     color: var(--primary-secondary);
     font-size: 12px;
+    border: 1px solid var(--primary-secondary);
   }
 
-  .navbar .search-box svg path,
   .navbar .search-box .form-control::placeholder {
+    color: var(--primary-secondary);
+    opacity: 0.8;
+    font-size: 10px;
+  }
+
+  .navbar .search-box svg path {
     stroke: var(--primary-secondary);
   }
 
@@ -5049,6 +5063,11 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
 @media (max-width: 767px) {
   .competition-table thead {
     display: none;
+  }
+
+  .pagination .page-link svg {
+    width: 16px;
+    height: 16px;
   }
 
   .action-btn svg {
