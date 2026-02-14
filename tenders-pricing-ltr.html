@@ -21,6 +21,125 @@
 </head>
 
 <body>
+    <!-- Filter Modal -->
+    <div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content g-4 w-620">
+                <div class="modal-header brd-btm">
+                    <h6 class="modal-title" id="filterModalLabel">Filter</h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="tender-card p-12">
+                        <h6 class="black-text mb-3">Basic Information</h6>
+                        <div class="tender-card p-12 rounded-12 bg-white d-flex flex-column gap-3">
+                            <div class="search-wrapper position-relative">
+                                <div class="icon-box">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                        fill="none">
+                                        <path
+                                            d="M9.58335 17.5003C13.9556 17.5003 17.5 13.9559 17.5 9.58366C17.5 5.2114 13.9556 1.66699 9.58335 1.66699C5.2111 1.66699 1.66669 5.2114 1.66669 9.58366C1.66669 13.9559 5.2111 17.5003 9.58335 17.5003Z"
+                                            stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                        <path opacity="0.4" d="M18.3334 18.3337L16.6667 16.667" stroke="white"
+                                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </div>
+                                <input type="text" placeholder="Enter reference number" class="form-control">
+                            </div>
+                            <div>
+                                <label class="form-label">Competition Status</label>
+                                <select class="form-select form-control">
+                                    <option selected disabled>Select competition status</option>
+                                    <option value="1">Available</option>
+                                    <option value="2">Accepted</option>
+                                    <option value="3">Rejected</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="form-label">Regions</label>
+                                <select class="form-select form-control">
+                                    <option selected disabled>Select region</option>
+                                    <option value="1">Riyadh</option>
+                                    <option value="2">Jeddah</option>
+                                </select>
+                            </div>
+                            <div class="position-relative">
+                                <label class="form-label">Main Activity</label>
+                                <div class="custom-select-trigger form-select d-flex align-items-center justify-content-between"
+                                    id="activityTrigger">
+                                    <span class="customplaceholder">Select main activity</span>
+                                    <div class="selected-count d-none">0</div>
+                                </div>
+
+                                <div class="activity-dropdown-container mt-1 tender-card d-none" id="activityDropdown">
+                                    <div class="search-wrapper position-relative">
+                                        <div class="icon-box">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 20 20" fill="none">
+                                                <path
+                                                    d="M9.58335 17.5003C13.9556 17.5003 17.5 13.9559 17.5 9.58366C17.5 5.2114 13.9556 1.66699 9.58335 1.66699C5.2111 1.66699 1.66669 5.2114 1.66669 9.58366C1.66669 13.9559 5.2111 17.5003 9.58335 17.5003Z"
+                                                    stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                                <path opacity="0.4" d="M18.3334 18.3337L16.6667 16.667" stroke="white"
+                                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <input type="text" id="activitySearch" placeholder="Search for main activity"
+                                            class="form-control">
+                                    </div>
+
+                                    <div class="selected-activities-section">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <span class="fz-14 base-text">Selected</span>
+                                            <button type="button" class="btn-save-tags btn-base"
+                                                id="saveActivitiesBtn">Save</button>
+                                        </div>
+                                        <div class="selected-tags d-flex flex-wrap gap-2"
+                                            id="selectedActivitiesContainer">
+                                            <!-- Selected tags will appear here -->
+                                        </div>
+                                    </div>
+
+                                    <div class="available-activities-list" id="availableActivitiesList">
+                                        <!-- Available items will be populated by JS -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer pt-0 gap-3 flex-nowrap">
+                    <button type="button" class="btn-main h-41 btn-primary w-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path
+                                d="M9.58366 17.4993C13.9559 17.4993 17.5003 13.9549 17.5003 9.58268C17.5003 5.21043 13.9559 1.66602 9.58366 1.66602C5.2114 1.66602 1.66699 5.21043 1.66699 9.58268C1.66699 13.9549 5.2114 17.4993 9.58366 17.4993Z"
+                                stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path opacity="0.4" d="M18.3337 18.3327L16.667 16.666" stroke="white" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <span>Search</span>
+                    </button>
+                    <button type="button" class="btn-main h-41 btn-primary-outline w-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path
+                                d="M8.56641 16.875H14.1664C16.4664 16.875 18.3331 15.0083 18.3331 12.7083V7.29167C18.3331 4.99167 16.4664 3.125 14.1664 3.125H8.56641C7.39141 3.125 6.27474 3.61667 5.48307 4.49167L2.54141 7.725C1.36641 9.01667 1.36641 10.9833 2.54141 12.275L5.48307 15.5083C6.27474 16.3833 7.39141 16.875 8.56641 16.875Z"
+                                stroke="#397D86" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <g opacity="0.4">
+                                <path d="M13.3335 12.0581L9.2168 7.94141" stroke="#397D86" stroke-width="1.5"
+                                    stroke-linecap="round" />
+                                <path d="M9.2168 12.0581L13.3335 7.94141" stroke="#397D86" stroke-width="1.5"
+                                    stroke-linecap="round" />
+                            </g>
+                        </svg>
+                        <span>Clear</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!--Notification Modal-->
     <div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="centeredModalLabel8"
         aria-hidden="true">
@@ -764,7 +883,8 @@
                                         class="sm-ele fz-12 bordered-8 text-nowrap prim-opacity-outlined">Accepted</span>
                                 </td>
                                 <td data-label="Actions">
-                                    <a href="tenders-pricing-details.html" class="btn-primary sm-ele fz-12 bordered-40">
+                                    <a href="tenders-pricing-details-ltr.html"
+                                        class="btn-primary sm-ele fz-12 bordered-40">
                                         Details
                                     </a>
                                 </td>
@@ -820,7 +940,8 @@
                                     <span class="sm-ele fz-12 bordered-8 text-nowrap badge-rejected">Rejected</span>
                                 </td>
                                 <td data-label="Actions">
-                                    <a href="tenders-pricing-details.html" class="btn-primary sm-ele fz-12 bordered-40">
+                                    <a href="tenders-pricing-details-ltr.html"
+                                        class="btn-primary sm-ele fz-12 bordered-40">
                                         Details
                                     </a>
                                 </td>
@@ -876,7 +997,8 @@
                                     <span class="sm-ele fz-12 bordered-8 text-nowrap badge-draft">Draft</span>
                                 </td>
                                 <td data-label="Actions">
-                                    <a href="tenders-pricing-details.html" class="btn-primary sm-ele fz-12 bordered-40">
+                                    <a href="tenders-pricing-details-ltr.html"
+                                        class="btn-primary sm-ele fz-12 bordered-40">
                                         Details
                                     </a>
                                 </td>
@@ -933,7 +1055,8 @@
                                         class="sm-ele fz-12 bordered-8 text-nowrap prim-opacity-outlined">Accepted</span>
                                 </td>
                                 <td data-label="Actions">
-                                    <a href="tenders-pricing-details.html" class="btn-primary sm-ele fz-12 bordered-40">
+                                    <a href="tenders-pricing-details-ltr.html"
+                                        class="btn-primary sm-ele fz-12 bordered-40">
                                         Details
                                     </a>
                                 </td>
@@ -990,7 +1113,8 @@
                                         with note</span>
                                 </td>
                                 <td data-label="Actions">
-                                    <a href="tenders-pricing-details.html" class="btn-primary sm-ele fz-12 bordered-40">
+                                    <a href="tenders-pricing-details-ltr.html"
+                                        class="btn-primary sm-ele fz-12 bordered-40">
                                         Details
                                     </a>
                                 </td>

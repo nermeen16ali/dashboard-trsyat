@@ -4490,6 +4490,10 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     flex-wrap: wrap;
   }
 
+  .navbar-brand img {
+    width: 28px;
+  }
+
   .home-row>.col-6 {
     width: fit-content;
     min-width: 153px;
