@@ -2747,6 +2747,11 @@ td input[type="number"]::placeholder {
   align-items: center;
   gap: 9px;
   font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.view-link:hover {
+  color: var(--primary-color);
 }
 
 .heading {
@@ -3984,6 +3989,25 @@ a.colored:hover {
 .features-table tbody tr:nth-child(odd),
 .video-box {
   background-color: #f3f5f7;
+}
+
+.video-box h5,
+.sidebar-videos h6 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.video-box p,
+.sidebar-videos p {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .features-table::-webkit-scrollbar {
