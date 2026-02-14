@@ -1292,7 +1292,8 @@ input[type="file"] {
   stroke: var(--white-color);
 }
 
-.rotate-180 {
+.rotate-180,
+html[dir="ltr"] .notification-list .icon-container.gray-outline-btn {
   transform: rotate(180deg);
 }
 
@@ -3374,10 +3375,6 @@ html[dir="ltr"] .send-btn svg {
 
 #notificationModal .notification-list {
   padding-inline: 24px;
-}
-
-html[dir="ltr"] .notification-list .icon-container.gray-outline-btn {
-  transform: rotate(180deg);
 }
 
 .view-all-notifications-btn {
