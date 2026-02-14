@@ -4540,9 +4540,9 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     padding: 16px 12px 10px;
   }
 
-  .navbar-nav {
+  /* .navbar-nav {
     align-items: center;
-  }
+  } */
 
   /* Mobile sidebar menu */
   .navbar-collapse {
@@ -4588,7 +4588,15 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
 
   .navbar-collapse .nav-link {
     width: fit-content;
-    min-width: 156px;
+    /* min-width: 156px; */
+  }
+
+  .navbar .search-box .form-control {
+    background-color: var(--white-color);
+  }
+
+  .navbar .search-box svg path {
+    stroke: var(--primary-secondary);
   }
 
   /* Close button for mobile menu */
