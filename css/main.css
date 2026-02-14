@@ -469,6 +469,14 @@ html[dir="rtl"] [type="url"] {
   height: 28px;
 }
 
+/* Mobile navbar padding */
+@media (max-width: 991px) {
+  .navbar {
+    padding: 16px 12px 10px;
+  }
+}
+
+
 .wrapped-dropdown {
   position: absolute;
   inset-inline-end: 0;

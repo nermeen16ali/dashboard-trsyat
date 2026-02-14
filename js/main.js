@@ -19,10 +19,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   document.addEventListener("scroll", () => {
     const navbar = document.querySelector(".navbar");
+    const isMobile = window.innerWidth < 992;
+
     if (window.scrollY > 64) {
       navbar.style.padding = "12px 12px 10px";
     } else {
-      navbar.style.padding = "24px 12px 10px";
+      // Use 16px for mobile, 24px for desktop
+      navbar.style.padding = isMobile ? "16px 12px 10px" : "24px 12px 10px";
     }
   });
 
