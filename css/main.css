@@ -4172,6 +4172,11 @@ a.colored:hover {
     margin-inline-start: auto;
   }
 
+  .competition-table td:last-child {
+    display: flex;
+    justify-content: center;
+  }
+
   .navbar .search-box .form-control {
     background: transparent;
     border: 1px solid #ffffff0d;
@@ -4509,20 +4514,12 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
 .btn-shadow-bottom::before {
   content: "";
   position: absolute;
-
-  /* Match ellipse size */
   width: 98px;
   height: 6px;
-
   background: white;
   border-radius: 50%;
-
-  /* Position like cx="12" cy="20" */
   left: -37px;
-  /* 12 - 49 (center minus radius) */
   top: 17px;
-  /* 20 - 3  (center minus radius) */
-
   filter: blur(8.5px);
 }
 
