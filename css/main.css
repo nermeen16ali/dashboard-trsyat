@@ -2178,6 +2178,10 @@ span.flatpickr-weekday {
     width: 100%;
   }
 
+  body.swal2-toast-shown .swal2-container {
+    width: 50vw !important;
+  }
+
   .btn-primary.sm-ele {
     min-width: 62px;
   }
@@ -4299,11 +4303,9 @@ a.colored:hover {
   border-radius: 12px !important;
   padding: 8px 12px !important;
   height: 44px !important;
-  width: 50vw !important;
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
-  direction: rtl !important;
 }
 
 .swal2-toast-custom .swal2-html-container {
@@ -5063,6 +5065,11 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
 @media (max-width: 767px) {
   .competition-table thead {
     display: none;
+  }
+
+  .swal2-toast-custom {
+    min-width: 80%;
+    font-size: 14px;
   }
 
   .pagination .page-link svg {
