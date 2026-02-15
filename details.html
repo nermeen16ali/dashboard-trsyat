@@ -1768,7 +1768,7 @@
             position: 'top',
             width: '50vw',
             showConfirmButton: false,
-            timer: 3000,
+            timer: 300000,
             timerProgressBar: false,
             customClass: {
               popup: 'swal2-toast-custom'
@@ -1796,9 +1796,7 @@
       voteBtns.forEach(btn => {
         btn.addEventListener('click', function () {
           const isActive = this.classList.contains('active');
-          // Remove active from all siblings in the same group
           this.parentElement.querySelectorAll('.vote-btn').forEach(b => b.classList.remove('active'));
-          // Toggle active for this button
           if (!isActive) {
             this.classList.add('active');
           }
