@@ -3440,7 +3440,7 @@ html[dir="ltr"] .send-btn svg {
 
   .table thead th,
   .table tbody td {
-    white-space: normal;
+    /* white-space: normal; */
     min-width: auto;
   }
 
