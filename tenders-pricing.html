@@ -425,11 +425,10 @@
               data-bs-toggle="dropdown" aria-expanded="false">
               <img src="images/header-profile-user.png" class="user-avatar rounded-circle" alt="Header Avatar" />
               <span class="text-white">Rafat salah</span>
-              <svg xmlns="http://www.w3.org/2000/svg" class="rotate-180 progress-svg" viewBox="0 0 100 100" width="16"
-                height="9" fill="none">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="9" viewBox="0 0 16 9" fill="none">
                 <path d="M14.6 1.45825L9.16669 6.89159C8.52502 7.53325 7.47503 7.53325 6.83336 6.89159L1.40002 1.45825"
                   stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
-                  stroke-linejoin="round" />
+                  stroke-linejoin="round"></path>
               </svg>
             </button>
             <ul class="dropdown-menu main-menu" aria-labelledby="dropdownMenuButtonheader">
@@ -717,7 +716,8 @@
         </div>
         <div class="d-flex justify-content-between align-items-center w-100 search-filter-bar gap-3">
           <div class="search-box w-100 position-relative">
-            <input type="text" class="form-control" id="tableSearch" placeholder="البحث في المسابقات" name="Search" />
+            <input type="text" class="form-control table-search" id="tableSearch" placeholder="البحث في المسابقات"
+              name="Search" />
             <span class="search-icon position-absolute">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path
@@ -1328,6 +1328,7 @@
   <script src="https://cdn.datatables.net/responsive/2.5.0/js/responsive.bootstrap5.min.js"></script>
   <!-- Custom JS -->
   <script src="js/main.js"></script>
+  <script src="js/filtering.js" defer></script>
   <script src="js/dataTable.js"></script>
   <script src="js/upload-file.js"></script>
   <script>
