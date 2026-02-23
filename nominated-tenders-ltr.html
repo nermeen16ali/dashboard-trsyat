@@ -877,11 +877,11 @@
                 </div>
 
                 <div class="tender-footer gap-12">
-                  <a href="forsa-tenders-details-ltr.html" class="btn-main btn-primary flex-grow-1 h-36">Details</a>
+                  <a href="details-ltr.html?view=details" class="btn-main btn-primary flex-grow-1 h-36">Details</a>
                   <a href="#" class="base-outlined-btn btn-main h-36">
                     Consultation
                   </a>
-                  <a href="#" class="btn-base btn-main h-36">
+                  <a href="details-ltr.html" class="btn-base btn-main h-36">
                     Apply for Tender
                   </a>
                 </div>
@@ -1012,11 +1012,11 @@
                 </div>
 
                 <div class="tender-footer gap-12">
-                  <a href="forsa-tenders-details-ltr.html" class="btn-main btn-primary flex-grow-1 h-36">Details</a>
+                  <a href="details-ltr.html?view=details" class="btn-main btn-primary flex-grow-1 h-36">Details</a>
                   <a href="#" class="base-outlined-btn btn-main h-36">
                     Consultation
                   </a>
-                  <a href="#" class="btn-base btn-main h-36">
+                  <a href="details-ltr.html" class="btn-base btn-main h-36">
                     Apply for Tender
                   </a>
                 </div>
@@ -1147,11 +1147,11 @@
                 </div>
 
                 <div class="tender-footer gap-12">
-                  <a href="forsa-tenders-details-ltr.html" class="btn-main btn-primary flex-grow-1 h-36">Details</a>
+                  <a href="details-ltr.html?view=details" class="btn-main btn-primary flex-grow-1 h-36">Details</a>
                   <a href="#" class="base-outlined-btn btn-main h-36">
                     Consultation
                   </a>
-                  <a href="#" class="btn-base btn-main h-36">
+                  <a href="details-ltr.html" class="btn-base btn-main h-36">
                     Apply for Tender
                   </a>
                 </div>
@@ -1282,11 +1282,11 @@
                 </div>
 
                 <div class="tender-footer gap-12">
-                  <a href="forsa-tenders-details-ltr.html" class="btn-main btn-primary flex-grow-1 h-36">Details</a>
+                  <a href="details-ltr.html?view=details" class="btn-main btn-primary flex-grow-1 h-36">Details</a>
                   <a href="#" class="base-outlined-btn btn-main h-36">
                     Consultation
                   </a>
-                  <a href="#" class="btn-base btn-main h-36">
+                  <a href="details-ltr.html" class="btn-base btn-main h-36">
                     Apply for Tender
                   </a>
                 </div>
@@ -1417,11 +1417,11 @@
                 </div>
 
                 <div class="tender-footer gap-12">
-                  <a href="forsa-tenders-details-ltr.html" class="btn-main btn-primary flex-grow-1 h-36">Details</a>
+                  <a href="details-ltr.html?view=details" class="btn-main btn-primary flex-grow-1 h-36">Details</a>
                   <a href="#" class="base-outlined-btn btn-main h-36">
                     Consultation
                   </a>
-                  <a href="#" class="btn-base btn-main h-36">
+                  <a href="details-ltr.html" class="btn-base btn-main h-36">
                     Apply for Tender
                   </a>
                 </div>
@@ -1552,11 +1552,11 @@
                 </div>
 
                 <div class="tender-footer gap-12">
-                  <a href="forsa-tenders-details-ltr.html" class="btn-main btn-primary flex-grow-1 h-36">Details</a>
+                  <a href="details-ltr.html?view=details" class="btn-main btn-primary flex-grow-1 h-36">Details</a>
                   <a href="#" class="base-outlined-btn btn-main h-36">
                     Consultation
                   </a>
-                  <a href="#" class="btn-base btn-main h-36">
+                  <a href="details-ltr.html" class="btn-base btn-main h-36">
                     Apply for Tender
                   </a>
                 </div>
@@ -2342,6 +2342,42 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/filtering.js"></script>
+    <script>
+      const type1 = document.getElementById("type1");
+      const type2 = document.getElementById("type2");
+      const typesChoices = document.getElementById("types-choices");
+
+      function toggleTypes() {
+        if (type1.checked) {
+          typesChoices.classList.remove("d-none");
+        } else {
+          typesChoices.classList.add("d-none");
+        }
+      }
+
+      // Initial check
+      toggleTypes();
+
+      // Listen for changes
+      type1.addEventListener("change", toggleTypes);
+      type2.addEventListener("change", toggleTypes);
+
+      // Modal event listener
+      const myModalEl = document.getElementById('CreateModal');
+      if (myModalEl) {
+        myModalEl.addEventListener('show.bs.modal', function (event) {
+          const button = event.relatedTarget;
+          const offerType = button.getAttribute('data-offer-type');
+
+          if (offerType === 'consultation') {
+            type2.checked = true;
+          } else if (offerType === 'offer') {
+            type1.checked = true;
+          }
+          toggleTypes();
+        });
+      }
+    </script>
 </body>
 
 </html>
