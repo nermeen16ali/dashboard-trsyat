@@ -18,29 +18,6 @@
 </head>
 
 <body>
-    <div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="centeredModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content w-620">
-                <div class="modal-header">
-                    <h1 class="modal-title fz-20" id="centeredModalLabel">
-                        Centered Modal
-                    </h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    This modal is vertically centered using
-                    <code>.modal-dialog-centered</code>.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn-secondary" data-bs-dismiss="modal">
-                        Close
-                    </button>
-                    <button type="button" class="btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!--Notification Modal-->
     <div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="centeredModalLabel8"
         aria-hidden="true">
@@ -1132,7 +1109,7 @@
                                     <span class="fz-14 black-text fw-medium">250739020709</span>
                                 </div>
                                 <div class="tender-actions p-sm-absolute">
-                                    <a href="#" class="base-outlined-btn btn-main fz-12 btn-base-sm bordered-40 fz-12"
+                                    <a href="#" class="base-outlined-btn btn-main btn-base-sm bordered-40"
                                         data-bs-toggle="modal" data-bs-target="#CreateModal"
                                         data-offer-type="consultation">
                                         طلب استشارة
@@ -1267,7 +1244,7 @@
                                     <span class="fz-14 black-text fw-medium">250739020709</span>
                                 </div>
                                 <div class="tender-actions p-sm-absolute">
-                                    <a href="#" class="base-outlined-btn btn-main fz-12 btn-base-sm bordered-40 fz-12"
+                                    <a href="#" class="base-outlined-btn btn-main btn-base-sm bordered-40"
                                         data-bs-toggle="modal" data-bs-target="#CreateModal"
                                         data-offer-type="consultation">
                                         طلب استشارة
@@ -1402,7 +1379,7 @@
                                     <span class="fz-14 black-text fw-medium">250739020709</span>
                                 </div>
                                 <div class="tender-actions p-sm-absolute">
-                                    <a href="#" class="base-outlined-btn btn-main fz-12 btn-base-sm bordered-40 fz-12"
+                                    <a href="#" class="base-outlined-btn btn-main btn-base-sm bordered-40"
                                         data-bs-toggle="modal" data-bs-target="#CreateModal"
                                         data-offer-type="consultation">
                                         طلب استشارة
@@ -1537,7 +1514,7 @@
                                     <span class="fz-14 black-text fw-medium">250739020709</span>
                                 </div>
                                 <div class="tender-actions p-sm-absolute">
-                                    <a href="#" class="base-outlined-btn btn-main fz-12 btn-base-sm bordered-40 fz-12"
+                                    <a href="#" class="base-outlined-btn btn-main btn-base-sm bordered-40"
                                         data-bs-toggle="modal" data-bs-target="#CreateModal"
                                         data-offer-type="consultation">
                                         طلب استشارة
@@ -1712,20 +1689,22 @@
                             </ul>
                         </nav>
                     </div>
-                </div>
-                <div class="tab-pane fade" id="awarded-tenders" role="tabpanel" aria-labelledby="awarded-tenders-tab">
-                    <div class="dash-widget sm-0 p-lg-3">
-                        <div class="text-center py-5">
-                            <h5 class="black-text">لا توجد منافسات تم ترسيتها بعد</h5>
-                            <p class="text-gray">ستظهر هنا المنافسات التي يتم ترسيتها عليك.</p>
+                    <div class="tab-pane fade" id="awarded-tenders" role="tabpanel"
+                        aria-labelledby="awarded-tenders-tab">
+                        <div class="dash-widget sm-0 p-lg-3">
+                            <div class="text-center py-5">
+                                <h5 class="black-text">لا توجد منافسات تم ترسيتها بعد</h5>
+                                <p class="text-gray">ستظهر هنا المنافسات التي يتم ترسيتها عليك.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="tab-pane fade" id="submitted-offers" role="tabpanel" aria-labelledby="submitted-offers-tab">
-                    <div class="dash-widget sm-0 p-lg-3">
-                        <div class="text-center py-5">
-                            <h5 class="black-text">لا توجد عروض مقدمة بعد</h5>
-                            <p class="text-gray">ستظهر هنا العروض التي قمت بتقديمها.</p>
+                    <div class="tab-pane fade" id="submitted-offers" role="tabpanel"
+                        aria-labelledby="submitted-offers-tab">
+                        <div class="dash-widget sm-0 p-lg-3">
+                            <div class="text-center py-5">
+                                <h5 class="black-text">لا توجد عروض مقدمة بعد</h5>
+                                <p class="text-gray">ستظهر هنا العروض التي قمت بتقديمها.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1743,6 +1722,7 @@
         <script src="js/main.js"></script>
         <script src="js/dataTable.js"></script>
         <script src="js/calender.js"></script>
+        <script src="js/filtering.js"></script>
         <script>
             const type1 = document.getElementById("type1");
             const type2 = document.getElementById("type2");
