@@ -5610,4 +5610,23 @@ html[dir="rtl"] .wrapped-dropdown .dropdown .dropdown-menu {
 
 .wrapped-dropdown .dropdown-toggle::after {
   margin-left: auto;
+
+  /* ============================
+   SortableJS Kanban Styles
+   ============================ */
+  .sortable-ghost {
+    opacity: 0.4;
+    background-color: var(--primary-opacity) !important;
+    border: 2px dashed var(--primary-base-color) !important;
+  }
+
+  .sortable-drag {
+    opacity: 0.9;
+    cursor: grabbing !important;
+  }
+
+  .kanban-column {
+    min-height: 200px;
+    /* Ensure columns are droppable even when empty */
+  }
 }
