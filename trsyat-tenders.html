@@ -698,863 +698,894 @@
     <div class="tab-content" id="Sub-nav-tabContent">
       <div class="tab-pane fade active show" id="nav-uploaded" role="tabpanel" aria-labelledby="nav-uploaded-tab">
         <!-- Stats Cards -->
-        <div class="row stats-row mb-4">
-          <div class="col-md-4">
-            <div class="stat-card stat-card-primary">
+        <!-- Stats Cards Tabs -->
+        <div class="row stats-row mb-4 nav nav-tabs border-0" id="statsTab" role="tablist">
+          <div class="col-md-4 nav-item" role="presentation">
+            <button class="stat-card stat-card-primary active w-100 border-0 p-0" id="active-tenders-tab"
+              data-bs-toggle="tab" data-bs-target="#active-tenders" type="button" role="tab"
+              aria-controls="active-tenders" aria-selected="true">
               <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
                 <path
                   d="M8.33333 18.8334H13.3333C17.5 18.8334 19.1667 17.1667 19.1667 13.0001V8.00008C19.1667 3.83341 17.5 2.16675 13.3333 2.16675H8.33333C4.16667 2.16675 2.5 3.83341 2.5 8.00008V13.0001C2.5 17.1667 4.16667 18.8334 8.33333 18.8334Z"
-                  stroke="#397D86" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  stroke="#397D86" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                 <g opacity="0.4">
                   <path
                     d="M15.8333 6.95841V12.5834C15.8333 11.6667 15.0833 10.9167 14.1666 10.9167H7.49992C6.58325 10.9167 5.83325 11.6667 5.83325 12.5834V6.95841C5.83325 6.04175 6.58325 5.29175 7.49992 5.29175H14.1666C15.0833 5.29175 15.8333 6.04175 15.8333 6.95841Z"
-                    stroke="#C9C9C9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    stroke="#C9C9C9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                   <path d="M16.6666 13.625H15.8333" stroke="#C9C9C9" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
+                    stroke-linejoin="round"></path>
                   <path d="M5.83333 13.625H5" stroke="#397D86" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
+                    stroke-linejoin="round"></path>
                   <path
                     d="M15.8333 12.1667V9.66667C15.8333 8.75 15.0833 8 14.1666 8H7.49992C6.58325 8 5.83325 8.75 5.83325 9.66667V12.1667"
-                    stroke="#397D86" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    stroke="#397D86" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                   <path
                     d="M15.8333 12.5834V13.6251H12.9166C12.9166 14.7751 11.9833 15.7084 10.8333 15.7084C9.68325 15.7084 8.74992 14.7751 8.74992 13.6251H5.83325V12.5834C5.83325 11.6667 6.58325 10.9167 7.49992 10.9167H14.1666C15.0833 10.9167 15.8333 11.6667 15.8333 12.5834Z"
-                    stroke="#397D86" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    stroke="#397D86" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                 </g>
               </svg>
               <span class="stat-label">منافسات نشطة</span>
               <span class="stat-value">12123</span>
-            </div>
+            </button>
           </div>
-          <div class="col-md-4">
-            <div class="stat-card">
+          <div class="col-md-4 nav-item" role="presentation">
+            <button class="stat-card w-100 border-0 p-0" id="awarded-tenders-tab" data-bs-toggle="tab"
+              data-bs-target="#awarded-tenders" type="button" role="tab" aria-controls="awarded-tenders"
+              aria-selected="false">
               <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
                 <path d="M2.33325 7.58325H11.9166" stroke="#C9C9C9" stroke-width="1.5" stroke-miterlimit="10"
-                  stroke-linecap="round" stroke-linejoin="round" />
+                  stroke-linecap="round" stroke-linejoin="round"></path>
                 <path opacity="0.4" d="M5.66663 14.25H7.33329" stroke="#C9C9C9" stroke-width="1.5"
-                  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
                 <path opacity="0.4" d="M9.41663 14.25H12.75" stroke="#C9C9C9" stroke-width="1.5" stroke-miterlimit="10"
-                  stroke-linecap="round" stroke-linejoin="round" />
+                  stroke-linecap="round" stroke-linejoin="round"></path>
                 <path
                   d="M18.9999 10.5251V13.9251C18.9999 16.8501 18.2583 17.5834 15.2999 17.5834H6.03325C3.07492 17.5834 2.33325 16.8501 2.33325 13.9251V7.07508C2.33325 4.15008 3.07492 3.41675 6.03325 3.41675H11.9166"
-                  stroke="#397D86" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  stroke="#397D86" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                 <g opacity="0.4">
-                  <path d="M14.4166 5.70825H19" stroke="#397D86" stroke-width="1.5" stroke-linecap="round" />
-                  <path d="M16.7083 8.00008V3.41675" stroke="#397D86" stroke-width="1.5" stroke-linecap="round" />
+                  <path d="M14.4166 5.70825H19" stroke="#397D86" stroke-width="1.5" stroke-linecap="round"></path>
+                  <path d="M16.7083 8.00008V3.41675" stroke="#397D86" stroke-width="1.5" stroke-linecap="round"></path>
                 </g>
               </svg>
               <span class="stat-label">منافسات تم ترسيتها</span>
               <span class="stat-value">12123</span>
-            </div>
+            </button>
           </div>
-          <div class="col-md-4">
-            <div class="stat-card">
+          <div class="col-md-4 nav-item" role="presentation">
+            <button class="stat-card w-100 border-0 p-0" id="submitted-offers-tab" data-bs-toggle="tab"
+              data-bs-target="#submitted-offers" type="button" role="tab" aria-controls="submitted-offers"
+              aria-selected="false">
               <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
                 <path
                   d="M8.33333 18.8334H13.3333C17.5 18.8334 19.1667 17.1667 19.1667 13.0001V8.00008C19.1667 3.83341 17.5 2.16675 13.3333 2.16675H8.33333C4.16667 2.16675 2.5 3.83341 2.5 8.00008V13.0001C2.5 17.1667 4.16667 18.8334 8.33333 18.8334Z"
-                  stroke="#397D86" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  stroke="#397D86" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                 <g opacity="0.4">
                   <path
                     d="M15.8333 6.95841V12.5834C15.8333 11.6667 15.0833 10.9167 14.1666 10.9167H7.49992C6.58325 10.9167 5.83325 11.6667 5.83325 12.5834V6.95841C5.83325 6.04175 6.58325 5.29175 7.49992 5.29175H14.1666C15.0833 5.29175 15.8333 6.04175 15.8333 6.95841Z"
-                    stroke="#C9C9C9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    stroke="#C9C9C9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                   <path d="M16.6666 13.625H15.8333" stroke="#C9C9C9" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
+                    stroke-linejoin="round"></path>
                   <path d="M5.83333 13.625H5" stroke="#397D86" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
+                    stroke-linejoin="round"></path>
                   <path
                     d="M15.8333 12.1667V9.66667C15.8333 8.75 15.0833 8 14.1666 8H7.49992C6.58325 8 5.83325 8.75 5.83325 9.66667V12.1667"
-                    stroke="#397D86" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    stroke="#397D86" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                   <path
                     d="M15.8333 12.5834V13.6251H12.9166C12.9166 14.7751 11.9833 15.7084 10.8333 15.7084C9.68325 15.7084 8.74992 14.7751 8.74992 13.6251H5.83325V12.5834C5.83325 11.6667 6.58325 10.9167 7.49992 10.9167H14.1666C15.0833 10.9167 15.8333 11.6667 15.8333 12.5834Z"
-                    stroke="#397D86" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    stroke="#397D86" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                 </g>
               </svg>
               <span class="stat-label">عرض مقدم</span>
               <span class="stat-value">12123</span>
-            </div>
-          </div>
-        </div>
-        <div class="dash-widget sm-0 p-lg-3">
-          <!-- Search and Filter Bar -->
-          <div class="d-flex justify-content-between align-items-center search-filter-bar gap-2 gap-md-3 mb-4">
-            <div class="search-box w-100 position-relative">
-              <input type="text" class="form-control table-search" placeholder="البحث في المسابقات" name="Search" />
-              <span class="search-icon position-absolute">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path
-                    d="M9.58341 17.5001C13.9557 17.5001 17.5001 13.9557 17.5001 9.58341C17.5001 5.21116 13.9557 1.66675 9.58341 1.66675C5.21116 1.66675 1.66675 5.21116 1.66675 9.58341C1.66675 13.9557 5.21116 17.5001 9.58341 17.5001Z"
-                    fill="white" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path opacity="0.4" d="M18.3334 18.3334L16.6667 16.6667" stroke="#0C2030" stroke-width="1.5"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </span>
-            </div>
-            <button class="sort-btn h-44" type="button" data-bs-toggle="modal" data-bs-target="#filterModal">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M2.5 5.83325H17.5H2.5Z" fill="white" />
-                <path d="M2.5 5.83325H17.5" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round" />
-                <path opacity="0.34" d="M5 10H15" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round" />
-                <path d="M8.33337 14.1667H11.6667" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round" />
-              </svg>
-              <span>تصفية</span>
             </button>
           </div>
-          <!-- Tender Cards Grid -->
-          <div class="row">
-            <div class="col-md-6 col-xxl-4">
-              <div class="tender-card p-3 mb-4">
-                <div class="tender-header d-flex align-items-center justify-content-between mb-3">
-                  <label class="form-check-label tender-number d-flex align-items-center">
-                    <input type="checkbox" class="form-check-input mt-0" />
-                    <span>رقم/رمز المناقصة </span>
-                    <span class="fz-14 black-text fw-medium">250739020709</span>
-                  </label>
-                  <button class="smbtn-bg-wh fav-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+        </div>
+
+        <div class="tab-content" id="statsTabContent">
+          <div class="tab-pane fade show active" id="active-tenders" role="tabpanel"
+            aria-labelledby="active-tenders-tab">
+            <div class="dash-widget sm-0 p-lg-3">
+              <!-- Search and Filter Bar -->
+              <div class="d-flex justify-content-between align-items-center search-filter-bar gap-2 gap-md-3 mb-4">
+                <div class="search-box w-100 position-relative">
+                  <input type="text" class="form-control table-search" placeholder="البحث في المسابقات" name="Search" />
+                  <span class="search-icon position-absolute">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                       <path
-                        d="M9.07976 13.8733C8.85309 13.9533 8.47976 13.9533 8.25309 13.8733C6.31976 13.2133 1.99976 10.46 1.99976 5.79332C1.99976 3.73332 3.65976 2.06665 5.70642 2.06665C6.91976 2.06665 7.99309 2.65332 8.66642 3.55998C9.33976 2.65332 10.4198 2.06665 11.6264 2.06665C13.6731 2.06665 15.3331 3.73332 15.3331 5.79332C15.3331 10.46 11.0131 13.2133 9.07976 13.8733Z"
-                        stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        d="M9.58341 17.5001C13.9557 17.5001 17.5001 13.9557 17.5001 9.58341C17.5001 5.21116 13.9557 1.66675 9.58341 1.66675C5.21116 1.66675 1.66675 5.21116 1.66675 9.58341C1.66675 13.9557 5.21116 17.5001 9.58341 17.5001Z"
+                        fill="white" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path opacity="0.4" d="M18.3334 18.3334L16.6667 16.6667" stroke="#0C2030" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
-                  </button>
+                  </span>
                 </div>
-                <div class="tender-sections p-3 rounded-12 bg-white">
-                  <div class="tender-section d-flex align-items-start justify-content-between position-relative">
-                    <div>
-                      <div class="d-lg-flex align-items-start tender-details gap-3">
-                        <span class="tender-status mb-3">متاحه</span>
-                        <div>
-                          <span class="fz-10 gray-text">تاريخ النشر</span>
-                          <span class="fz-14 black-text fw-medium">05-12-2025</span>
-                        </div>
-                      </div>
-
-                      <h6 class="tender-title">تجهيز المكاتب وأثاثها</h6>
-                      <div class="tender-subtitle mb-3">منصة رابط النمو</div>
-                      <div class="tender-price">
-                        <span class="fz-10 d-block mb-2 gray-text">سعر الوثائق</span>
-                        <span class="fs-6 black-text fw-medium">200.50
-                          <img src="images/ryall.svg" alt="ريال">
-                        </span>
-                      </div>
-                    </div>
-
-                    <div class="d-flex justify-content-center">
-                      <div class="position-relative">
-                        <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
-                          <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none"></circle>
-                          <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4" fill="none"
-                            stroke-dasharray="134.6 125.6"></circle>
+                <button class="sort-btn h-44" type="button" data-bs-toggle="modal" data-bs-target="#filterModal">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M2.5 5.83325H17.5H2.5Z" fill="white" />
+                    <path d="M2.5 5.83325H17.5" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round" />
+                    <path opacity="0.34" d="M5 10H15" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round" />
+                    <path d="M8.33337 14.1667H11.6667" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round" />
+                  </svg>
+                  <span>تصفية</span>
+                </button>
+              </div>
+              <!-- Tender Cards Grid -->
+              <div class="row">
+                <div class="col-md-6 col-xxl-4">
+                  <div class="tender-card p-3 mb-4">
+                    <div class="tender-header d-flex align-items-center justify-content-between mb-3">
+                      <label class="form-check-label tender-number d-flex align-items-center">
+                        <input type="checkbox" class="form-check-input mt-0" />
+                        <span>رقم/رمز المناقصة </span>
+                        <span class="fz-14 black-text fw-medium">250739020709</span>
+                      </label>
+                      <button class="smbtn-bg-wh fav-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                          <path
+                            d="M9.07976 13.8733C8.85309 13.9533 8.47976 13.9533 8.25309 13.8733C6.31976 13.2133 1.99976 10.46 1.99976 5.79332C1.99976 3.73332 3.65976 2.06665 5.70642 2.06665C6.91976 2.06665 7.99309 2.65332 8.66642 3.55998C9.33976 2.65332 10.4198 2.06665 11.6264 2.06665C13.6731 2.06665 15.3331 3.73332 15.3331 5.79332C15.3331 10.46 11.0131 13.2133 9.07976 13.8733Z"
+                            stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
-                        <div class="position-absolute top-50 start-50 translate-middle text-center">
-                          <div>200</div>
-                          <div>يوم</div>
-                        </div>
-                      </div>
+                      </button>
                     </div>
-                  </div>
-                  <div
-                    class="tender-section d-flex flex-column flex-md-row gap-3 align-items-md-center justify-content-md-between position-relative company-details">
-                    <div class="gap-12 d-flex align-items-center">
-                      <img src="images/company-logo.png" class="company-logo" alt="company" />
-                      <div>
-                        <span class="fz-10 gray-text">الجهة المعلنة</span>
-                        <div class="fz-14 black-text">شركة الراجحي</div>
-                      </div>
-                    </div>
-                    <div class="pe-md-1">
-                      <span class="fz-10 gray-text">النشاط الأساسي</span>
-                      <div class="fz-14 black-text">
-                        التصميم الداخلي والتجهيزات
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="tender-section d-flex flex-column flex-md-row gap-3 align-items-md-center justify-content-md-between">
-                    <div class=" d-flex align-items-center">
-                      <div class="sm-logo">
-                        <img src="images/clock.svg" alt="icon">
-                      </div>
-                      <div>
-                        <span class="fz-10 gray-text">الموعد النهائي لتقديم العروض</span>
+                    <div class="tender-sections p-3 rounded-12 bg-white">
+                      <div class="tender-section d-flex align-items-start justify-content-between position-relative">
                         <div>
-                          <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                            04:30 pm
-                          </span>
-                          <span class="black-text fz-12 fw-medium">
-                            05-12-2025
-                          </span>
+                          <div class="d-lg-flex align-items-start tender-details gap-3">
+                            <span class="tender-status mb-3">متاحه</span>
+                            <div>
+                              <span class="fz-10 gray-text">تاريخ النشر</span>
+                              <span class="fz-14 black-text fw-medium">05-12-2025</span>
+                            </div>
+                          </div>
+
+                          <h6 class="tender-title">تجهيز المكاتب وأثاثها</h6>
+                          <div class="tender-subtitle mb-3">منصة رابط النمو</div>
+                          <div class="tender-price">
+                            <span class="fz-10 d-block mb-2 gray-text">سعر الوثائق</span>
+                            <span class="fs-6 black-text fw-medium">200.50
+                              <img src="images/ryall.svg" alt="ريال">
+                            </span>
+                          </div>
+                        </div>
+
+                        <div class="d-flex justify-content-center">
+                          <div class="position-relative">
+                            <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
+                              <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none"></circle>
+                              <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4" fill="none"
+                                stroke-dasharray="134.6 125.6"></circle>
+                            </svg>
+                            <div class="position-absolute top-50 start-50 translate-middle text-center">
+                              <div>200</div>
+                              <div>يوم</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="tender-section d-flex flex-column flex-md-row gap-3 align-items-md-center justify-content-md-between position-relative company-details">
+                        <div class="gap-12 d-flex align-items-center">
+                          <img src="images/company-logo.png" class="company-logo" alt="company" />
+                          <div>
+                            <span class="fz-10 gray-text">الجهة المعلنة</span>
+                            <div class="fz-14 black-text">شركة الراجحي</div>
+                          </div>
+                        </div>
+                        <div class="pe-md-1">
+                          <span class="fz-10 gray-text">النشاط الأساسي</span>
+                          <div class="fz-14 black-text">
+                            التصميم الداخلي والتجهيزات
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="tender-section d-flex flex-column flex-md-row gap-3 align-items-md-center justify-content-md-between">
+                        <div class=" d-flex align-items-center">
+                          <div class="sm-logo">
+                            <img src="images/clock.svg" alt="icon">
+                          </div>
+                          <div>
+                            <span class="fz-10 gray-text">الموعد النهائي لتقديم العروض</span>
+                            <div>
+                              <span class="black-text fz-12 fw-medium d-inline-block me-1">
+                                04:30 pm
+                              </span>
+                              <span class="black-text fz-12 fw-medium">
+                                05-12-2025
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class=" d-flex align-items-center">
+                          <div class="sm-logo">
+                            <img src="images/clock.svg" alt="icon">
+                          </div>
+                          <div>
+                            <span class="fz-10 gray-text">تاريخ الاعلان عن النتائج</span>
+                            <div>
+                              <span class="black-text fz-12 fw-medium d-inline-block me-1">
+                                09:00 am
+                              </span>
+                              <span class="black-text fz-12 fw-medium">
+                                12-12-2025
+                              </span>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div class=" d-flex align-items-center">
-                      <div class="sm-logo">
-                        <img src="images/clock.svg" alt="icon">
-                      </div>
-                      <div>
-                        <span class="fz-10 gray-text">تاريخ الاعلان عن النتائج</span>
-                        <div>
-                          <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                            09:00 am
-                          </span>
-                          <span class="black-text fz-12 fw-medium">
-                            12-12-2025
-                          </span>
-                        </div>
-                      </div>
+
+                    <div class="tender-footer gap-3">
+                      <a href="details.html" class="btn-main h-41 btn-primary w-100">التفاصيل</a>
+                      <a href="details.html" class="btn-main h-41 btn-primary-outline w-100">
+                        <span>التقديم علي المناقصة</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+                          <path d="M8.47485 15.5583L3.41652 10.5L8.47485 5.44165" stroke="#6BAFB8" stroke-width="1.5"
+                            stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                          <path opacity="0.4" d="M17.583 10.5H3.55801" stroke="#6BAFB8" stroke-width="1.5"
+                            stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </a>
                     </div>
                   </div>
                 </div>
+                <div class="col-md-6 col-xxl-4">
+                  <div class="tender-card p-3 mb-4">
+                    <div class="tender-header d-flex align-items-center justify-content-between mb-3">
+                      <label class="form-check-label tender-number d-flex align-items-center">
+                        <input type="checkbox" class="form-check-input mt-0" id="tender-card p-3 mb-4-two" />
+                        <span>رقم/رمز المناقصة </span>
+                        <span class="fz-14 black-text fw-medium">250739020709</span>
+                      </label>
+                      <button class="smbtn-bg-wh fav-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                          <path
+                            d="M9.07976 13.8733C8.85309 13.9533 8.47976 13.9533 8.25309 13.8733C6.31976 13.2133 1.99976 10.46 1.99976 5.79332C1.99976 3.73332 3.65976 2.06665 5.70642 2.06665C6.91976 2.06665 7.99309 2.65332 8.66642 3.55998C9.33976 2.65332 10.4198 2.06665 11.6264 2.06665C13.6731 2.06665 15.3331 3.73332 15.3331 5.79332C15.3331 10.46 11.0131 13.2133 9.07976 13.8733Z"
+                            stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="tender-sections p-3 rounded-12 bg-white">
+                      <div class="tender-section d-flex align-items-start justify-content-between position-relative">
+                        <div>
+                          <div class="d-lg-flex align-items-start tender-details gap-3">
+                            <span class="tender-status mb-3">متاحه</span>
+                            <div>
+                              <span class="fz-10 gray-text">تاريخ النشر</span>
+                              <span class="fz-14 black-text fw-medium">05-12-2025</span>
+                            </div>
+                          </div>
 
-                <div class="tender-footer gap-3">
-                  <a href="details.html" class="btn-main h-41 btn-primary w-100">التفاصيل</a>
-                  <a href="details.html" class="btn-main h-41 btn-primary-outline w-100">
-                    <span>التقديم علي المناقصة</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
-                      <path d="M8.47485 15.5583L3.41652 10.5L8.47485 5.44165" stroke="#6BAFB8" stroke-width="1.5"
-                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                      <path opacity="0.4" d="M17.583 10.5H3.55801" stroke="#6BAFB8" stroke-width="1.5"
-                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </a>
+                          <h6 class="tender-title">تجهيز المكاتب وأثاثها</h6>
+                          <div class="tender-subtitle mb-3">منصة رابط النمو</div>
+                          <div class="tender-price">
+                            <span class="fz-10 d-block mb-2 gray-text">سعر الوثائق</span>
+                            <span class="fs-6 black-text fw-medium">200.50
+                              <img src="images/ryall.svg" alt="ريال">
+                            </span>
+                          </div>
+                        </div>
+
+                        <div class="d-flex justify-content-center">
+                          <div class="position-relative">
+                            <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
+                              <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none"></circle>
+                              <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4" fill="none"
+                                stroke-dasharray="134.6 125.6"></circle>
+                            </svg>
+                            <div class="position-absolute top-50 start-50 translate-middle text-center">
+                              <div>200</div>
+                              <div>يوم</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="tender-section d-flex flex-column flex-md-row gap-3 align-items-md-center justify-content-md-between position-relative company-details">
+                        <div class="gap-12 d-flex align-items-center">
+                          <img src="images/company-logo.png" class="company-logo" alt="company" />
+                          <div>
+                            <span class="fz-10 gray-text">الجهة المعلنة</span>
+                            <div class="fz-14 black-text">شركة الراجحي</div>
+                          </div>
+                        </div>
+                        <div class="pe-md-1">
+                          <span class="fz-10 gray-text">النشاط الأساسي</span>
+                          <div class="fz-14 black-text">
+                            التصميم الداخلي والتجهيزات
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="tender-section d-flex flex-column flex-md-row gap-3 align-items-md-center justify-content-md-between">
+                        <div class=" d-flex align-items-center">
+                          <div class="sm-logo">
+                            <img src="images/clock.svg" alt="icon">
+                          </div>
+                          <div>
+                            <span class="fz-10 gray-text">الموعد النهائي لتقديم العروض</span>
+                            <div>
+                              <span class="black-text fz-12 fw-medium d-inline-block me-1">
+                                04:30 pm
+                              </span>
+                              <span class="black-text fz-12 fw-medium">
+                                05-12-2025
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class=" d-flex align-items-center">
+                          <div class="sm-logo">
+                            <img src="images/clock.svg" alt="icon">
+                          </div>
+                          <div>
+                            <span class="fz-10 gray-text">تاريخ الاعلان عن النتائج</span>
+                            <div>
+                              <span class="black-text fz-12 fw-medium d-inline-block me-1">
+                                09:00 am
+                              </span>
+                              <span class="black-text fz-12 fw-medium">
+                                12-12-2025
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="tender-footer gap-3">
+                      <a href="details.html" class="btn-main h-41 btn-primary w-100">التفاصيل</a>
+                      <button class="btn-main h-41 purchased w-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <path
+                            d="M12.0089 0C2.77822 0 -2.99097 10 1.62439 18C6.23974 26 17.7781 26 22.3935 18C23.4459 16.1758 24 14.1064 24 12C23.993 5.37548 18.6285 0.00700255 12.0089 0ZM17.2735 9.88384L10.8168 16.3454C10.4565 16.7064 9.87187 16.7064 9.51158 16.3454L6.74441 13.5762C6.24204 13.0734 6.47189 12.215 7.15813 12.031C7.47662 11.9456 7.81644 12.0367 8.04959 12.27L10.1642 14.3873L15.9683 8.57769C16.4707 8.07495 17.3285 8.30497 17.5123 8.99172C17.5977 9.31045 17.5066 9.65052 17.2735 9.88384Z"
+                            fill="#00D252" />
+                        </svg>
+                        <span>تم شراء المناقصه</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xxl-4">
+                  <div class="tender-card p-3 mb-4">
+                    <div class="tender-header d-flex align-items-center justify-content-between mb-3">
+                      <label class="form-check-label tender-number d-flex align-items-center"
+                        for="tender-card p-3 mb-4-three">
+                        <input type="checkbox" class="form-check-input mt-0" id="tender-card p-3 mb-4-three" />
+                        <span>رقم/رمز المناقصة </span>
+                        <span class="fz-14 black-text fw-medium">250739020709</span>
+                      </label>
+                      <button class="smbtn-bg-wh fav-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                          <path
+                            d="M9.07976 13.8733C8.85309 13.9533 8.47976 13.9533 8.25309 13.8733C6.31976 13.2133 1.99976 10.46 1.99976 5.79332C1.99976 3.73332 3.65976 2.06665 5.70642 2.06665C6.91976 2.06665 7.99309 2.65332 8.66642 3.55998C9.33976 2.65332 10.4198 2.06665 11.6264 2.06665C13.6731 2.06665 15.3331 3.73332 15.3331 5.79332C15.3331 10.46 11.0131 13.2133 9.07976 13.8733Z"
+                            stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="tender-sections p-3 rounded-12 bg-white">
+                      <div class="tender-section d-flex align-items-start justify-content-between position-relative">
+                        <div>
+                          <div class="d-lg-flex align-items-start tender-details gap-3">
+                            <span class="tender-status mb-3">متاحه</span>
+                            <div>
+                              <span class="fz-10 gray-text">تاريخ النشر</span>
+                              <span class="fz-14 black-text fw-medium">05-12-2025</span>
+                            </div>
+                          </div>
+
+                          <h6 class="tender-title">تجهيز المكاتب وأثاثها</h6>
+                          <div class="tender-subtitle mb-3">منصة رابط النمو</div>
+                          <div class="tender-price">
+                            <span class="fz-10 d-block mb-2 gray-text">سعر الوثائق</span>
+                            <span class="fs-6 black-text fw-medium">200.50
+                              <img src="images/ryall.svg" alt="ريال">
+                            </span>
+                          </div>
+                        </div>
+
+                        <div class="d-flex justify-content-center">
+                          <div class="position-relative">
+                            <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
+                              <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none"></circle>
+                              <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4" fill="none"
+                                stroke-dasharray="134.6 125.6"></circle>
+                            </svg>
+                            <div class="position-absolute top-50 start-50 translate-middle text-center">
+                              <div>200</div>
+                              <div>يوم</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="tender-section d-flex flex-column flex-md-row gap-3 align-items-md-center justify-content-md-between position-relative company-details">
+                        <div class="gap-12 d-flex align-items-center">
+                          <img src="images/company-logo.png" class="company-logo" alt="company" />
+                          <div>
+                            <span class="fz-10 gray-text">الجهة المعلنة</span>
+                            <div class="fz-14 black-text">شركة الراجحي</div>
+                          </div>
+                        </div>
+                        <div class="pe-md-1">
+                          <span class="fz-10 gray-text">النشاط الأساسي</span>
+                          <div class="fz-14 black-text">
+                            التصميم الداخلي والتجهيزات
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="tender-section d-flex flex-column flex-md-row gap-3 align-items-md-center justify-content-md-between">
+                        <div class=" d-flex align-items-center">
+                          <div class="sm-logo">
+                            <img src="images/clock.svg" alt="icon">
+                          </div>
+                          <div>
+                            <span class="fz-10 gray-text">الموعد النهائي لتقديم العروض</span>
+                            <div>
+                              <span class="black-text fz-12 fw-medium d-inline-block me-1">
+                                04:30 pm
+                              </span>
+                              <span class="black-text fz-12 fw-medium">
+                                05-12-2025
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class=" d-flex align-items-center">
+                          <div class="sm-logo">
+                            <img src="images/clock.svg" alt="icon">
+                          </div>
+                          <div>
+                            <span class="fz-10 gray-text">تاريخ الاعلان عن النتائج</span>
+                            <div>
+                              <span class="black-text fz-12 fw-medium d-inline-block me-1">
+                                09:00 am
+                              </span>
+                              <span class="black-text fz-12 fw-medium">
+                                12-12-2025
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="tender-footer gap-3">
+                      <a href="details.html" class="btn-main h-41 btn-primary w-100">التفاصيل</a>
+                      <a href="details.html" class="btn-main h-41 btn-primary-outline w-100">
+                        <span>التقديم علي المناقصة</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+                          <path d="M8.47485 15.5583L3.41652 10.5L8.47485 5.44165" stroke="#6BAFB8" stroke-width="1.5"
+                            stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                          <path opacity="0.4" d="M17.583 10.5H3.55801" stroke="#6BAFB8" stroke-width="1.5"
+                            stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xxl-4">
+                  <div class="tender-card p-3 mb-4">
+                    <div class="tender-header d-flex align-items-center justify-content-between mb-3">
+                      <label class="form-check-label tender-number d-flex align-items-center"
+                        for="tender-card p-3 mb-4-four">
+                        <input type="checkbox" class="form-check-input mt-0" id="tender-card p-3 mb-4-four" />
+                        <span>رقم/رمز المناقصة </span>
+                        <span class="fz-14 black-text fw-medium">250739020709</span>
+                      </label>
+                      <button class="smbtn-bg-wh fav-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                          <path
+                            d="M9.07976 13.8733C8.85309 13.9533 8.47976 13.9533 8.25309 13.8733C6.31976 13.2133 1.99976 10.46 1.99976 5.79332C1.99976 3.73332 3.65976 2.06665 5.70642 2.06665C6.91976 2.06665 7.99309 2.65332 8.66642 3.55998C9.33976 2.65332 10.4198 2.06665 11.6264 2.06665C13.6731 2.06665 15.3331 3.73332 15.3331 5.79332C15.3331 10.46 11.0131 13.2133 9.07976 13.8733Z"
+                            stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="tender-sections p-3 rounded-12 bg-white">
+                      <div class="tender-section d-flex align-items-start justify-content-between position-relative">
+                        <div>
+                          <div class="d-lg-flex align-items-start tender-details gap-3">
+                            <span class="tender-status mb-3">متاحه</span>
+                            <div>
+                              <span class="fz-10 gray-text">تاريخ النشر</span>
+                              <span class="fz-14 black-text fw-medium">05-12-2025</span>
+                            </div>
+                          </div>
+
+                          <h6 class="tender-title">تجهيز المكاتب وأثاثها</h6>
+                          <div class="tender-subtitle mb-3">منصة رابط النمو</div>
+                          <div class="tender-price">
+                            <span class="fz-10 d-block mb-2 gray-text">سعر الوثائق</span>
+                            <span class="fs-6 black-text fw-medium">200.50
+                              <img src="images/ryall.svg" alt="ريال">
+                            </span>
+                          </div>
+                        </div>
+
+                        <div class="d-flex justify-content-center">
+                          <div class="position-relative">
+                            <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
+                              <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none"></circle>
+                              <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4" fill="none"
+                                stroke-dasharray="134.6 125.6"></circle>
+                            </svg>
+                            <div class="position-absolute top-50 start-50 translate-middle text-center">
+                              <div>200</div>
+                              <div>يوم</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="tender-section d-flex flex-column flex-md-row gap-3 align-items-md-center justify-content-md-between position-relative company-details">
+                        <div class="gap-12 d-flex align-items-center">
+                          <img src="images/company-logo.png" class="company-logo" alt="company" />
+                          <div>
+                            <span class="fz-10 gray-text">الجهة المعلنة</span>
+                            <div class="fz-14 black-text">شركة الراجحي</div>
+                          </div>
+                        </div>
+                        <div class="pe-md-1">
+                          <span class="fz-10 gray-text">النشاط الأساسي</span>
+                          <div class="fz-14 black-text">
+                            التصميم الداخلي والتجهيزات
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="tender-section d-flex flex-column flex-md-row gap-3 align-items-md-center justify-content-md-between">
+                        <div class=" d-flex align-items-center">
+                          <div class="sm-logo">
+                            <img src="images/clock.svg" alt="icon">
+                          </div>
+                          <div>
+                            <span class="fz-10 gray-text">الموعد النهائي لتقديم العروض</span>
+                            <div>
+                              <span class="black-text fz-12 fw-medium d-inline-block me-1">
+                                04:30 pm
+                              </span>
+                              <span class="black-text fz-12 fw-medium">
+                                05-12-2025
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class=" d-flex align-items-center">
+                          <div class="sm-logo">
+                            <img src="images/clock.svg" alt="icon">
+                          </div>
+                          <div>
+                            <span class="fz-10 gray-text">تاريخ الاعلان عن النتائج</span>
+                            <div>
+                              <span class="black-text fz-12 fw-medium d-inline-block me-1">
+                                09:00 am
+                              </span>
+                              <span class="black-text fz-12 fw-medium">
+                                12-12-2025
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="tender-footer gap-3">
+                      <a href="details.html" class="btn-main h-41 btn-primary w-100">التفاصيل</a>
+                      <a href="details.html" class="btn-main h-41 btn-primary-outline w-100">
+                        <span>التقديم علي المناقصة</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+                          <path d="M8.47485 15.5583L3.41652 10.5L8.47485 5.44165" stroke="#6BAFB8" stroke-width="1.5"
+                            stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                          <path opacity="0.4" d="M17.583 10.5H3.55801" stroke="#6BAFB8" stroke-width="1.5"
+                            stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xxl-4">
+                  <div class="tender-card p-3 mb-4">
+                    <div class="tender-header d-flex align-items-center justify-content-between mb-3">
+                      <label class="form-check-label tender-number d-flex align-items-center"
+                        for="tender-card p-3 mb-4-five">
+                        <input type="checkbox" class="form-check-input mt-0" id="tender-card p-3 mb-4-five" />
+                        <span>رقم/رمز المناقصة </span>
+                        <span class="fz-14 black-text fw-medium">250739020709</span>
+                      </label>
+                      <button class="smbtn-bg-wh fav-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                          <path
+                            d="M9.07976 13.8733C8.85309 13.9533 8.47976 13.9533 8.25309 13.8733C6.31976 13.2133 1.99976 10.46 1.99976 5.79332C1.99976 3.73332 3.65976 2.06665 5.70642 2.06665C6.91976 2.06665 7.99309 2.65332 8.66642 3.55998C9.33976 2.65332 10.4198 2.06665 11.6264 2.06665C13.6731 2.06665 15.3331 3.73332 15.3331 5.79332C15.3331 10.46 11.0131 13.2133 9.07976 13.8733Z"
+                            stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="tender-sections p-3 rounded-12 bg-white">
+                      <div class="tender-section d-flex align-items-start justify-content-between position-relative">
+                        <div>
+                          <div class="d-lg-flex align-items-start tender-details gap-3">
+                            <span class="tender-status mb-3">متاحه</span>
+                            <div>
+                              <span class="fz-10 gray-text">تاريخ النشر</span>
+                              <span class="fz-14 black-text fw-medium">05-12-2025</span>
+                            </div>
+                          </div>
+
+                          <h6 class="tender-title">تجهيز المكاتب وأثاثها</h6>
+                          <div class="tender-subtitle mb-3">منصة رابط النمو</div>
+                          <div class="tender-price">
+                            <span class="fz-10 d-block mb-2 gray-text">سعر الوثائق</span>
+                            <span class="fs-6 black-text fw-medium">200.50
+                              <img src="images/ryall.svg" alt="ريال">
+                            </span>
+                          </div>
+                        </div>
+
+                        <div class="d-flex justify-content-center">
+                          <div class="position-relative">
+                            <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
+                              <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none"></circle>
+                              <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4" fill="none"
+                                stroke-dasharray="134.6 125.6"></circle>
+                            </svg>
+                            <div class="position-absolute top-50 start-50 translate-middle text-center">
+                              <div>200</div>
+                              <div>يوم</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="tender-section d-flex flex-column flex-md-row gap-3 align-items-md-center justify-content-md-between position-relative company-details">
+                        <div class="gap-12 d-flex align-items-center">
+                          <img src="images/company-logo.png" class="company-logo" alt="company" />
+                          <div>
+                            <span class="fz-10 gray-text">الجهة المعلنة</span>
+                            <div class="fz-14 black-text">شركة الراجحي</div>
+                          </div>
+                        </div>
+                        <div class="pe-md-1">
+                          <span class="fz-10 gray-text">النشاط الأساسي</span>
+                          <div class="fz-14 black-text">
+                            التصميم الداخلي والتجهيزات
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="tender-section d-flex flex-column flex-md-row gap-3 align-items-md-center justify-content-md-between">
+                        <div class=" d-flex align-items-center">
+                          <div class="sm-logo">
+                            <img src="images/clock.svg" alt="icon">
+                          </div>
+                          <div>
+                            <span class="fz-10 gray-text">الموعد النهائي لتقديم العروض</span>
+                            <div>
+                              <span class="black-text fz-12 fw-medium d-inline-block me-1">
+                                04:30 pm
+                              </span>
+                              <span class="black-text fz-12 fw-medium">
+                                05-12-2025
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class=" d-flex align-items-center">
+                          <div class="sm-logo">
+                            <img src="images/clock.svg" alt="icon">
+                          </div>
+                          <div>
+                            <span class="fz-10 gray-text">تاريخ الاعلان عن النتائج</span>
+                            <div>
+                              <span class="black-text fz-12 fw-medium d-inline-block me-1">
+                                09:00 am
+                              </span>
+                              <span class="black-text fz-12 fw-medium">
+                                12-12-2025
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="tender-footer gap-3">
+                      <a href="details.html" class="btn-main h-41 btn-primary w-100">التفاصيل</a>
+                      <button class="btn-main h-41 purchased w-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <path
+                            d="M12.0089 0C2.77822 0 -2.99097 10 1.62439 18C6.23974 26 17.7781 26 22.3935 18C23.4459 16.1758 24 14.1064 24 12C23.993 5.37548 18.6285 0.00700255 12.0089 0ZM17.2735 9.88384L10.8168 16.3454C10.4565 16.7064 9.87187 16.7064 9.51158 16.3454L6.74441 13.5762C6.24204 13.0734 6.47189 12.215 7.15813 12.031C7.47662 11.9456 7.81644 12.0367 8.04959 12.27L10.1642 14.3873L15.9683 8.57769C16.4707 8.07495 17.3285 8.30497 17.5123 8.99172C17.5977 9.31045 17.5066 9.65052 17.2735 9.88384Z"
+                            fill="#00D252"></path>
+                        </svg>
+                        <span>تم شراء المناقصه</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xxl-4">
+                  <div class="tender-card p-3 mb-4">
+                    <div class="tender-header d-flex align-items-center justify-content-between mb-3">
+                      <label class="form-check-label tender-number d-flex align-items-center"
+                        for="tender-card p-3 mb-4-sex">
+                        <input type="checkbox" class="form-check-input mt-0" id="tender-card p-3 mb-4-sex" />
+                        <span>رقم/رمز المناقصة </span>
+                        <span class="fz-14 black-text fw-medium">250739020709</span>
+                      </label>
+                      <button class="smbtn-bg-wh fav-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                          <path
+                            d="M9.07976 13.8733C8.85309 13.9533 8.47976 13.9533 8.25309 13.8733C6.31976 13.2133 1.99976 10.46 1.99976 5.79332C1.99976 3.73332 3.65976 2.06665 5.70642 2.06665C6.91976 2.06665 7.99309 2.65332 8.66642 3.55998C9.33976 2.65332 10.4198 2.06665 11.6264 2.06665C13.6731 2.06665 15.3331 3.73332 15.3331 5.79332C15.3331 10.46 11.0131 13.2133 9.07976 13.8733Z"
+                            stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="tender-sections p-3 rounded-12 bg-white">
+                      <div class="tender-section d-flex align-items-start justify-content-between position-relative">
+                        <div>
+                          <div class="d-lg-flex align-items-start tender-details gap-3">
+                            <span class="tender-status mb-3">متاحه</span>
+                            <div>
+                              <span class="fz-10 gray-text">تاريخ النشر</span>
+                              <span class="fz-14 black-text fw-medium">05-12-2025</span>
+                            </div>
+                          </div>
+
+                          <h6 class="tender-title">تجهيز المكاتب وأثاثها</h6>
+                          <div class="tender-subtitle mb-3">منصة رابط النمو</div>
+                          <div class="tender-price">
+                            <span class="fz-10 d-block mb-2 gray-text">سعر الوثائق</span>
+                            <span class="fs-6 black-text fw-medium">200.50
+                              <img src="images/ryall.svg" alt="ريال">
+                            </span>
+                          </div>
+                        </div>
+
+                        <div class="d-flex justify-content-center">
+                          <div class="position-relative">
+                            <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
+                              <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none"></circle>
+                              <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4" fill="none"
+                                stroke-dasharray="134.6 125.6"></circle>
+                            </svg>
+                            <div class="position-absolute top-50 start-50 translate-middle text-center">
+                              <div>200</div>
+                              <div>يوم</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="tender-section d-flex flex-column flex-md-row gap-3 align-items-md-center justify-content-md-between position-relative company-details">
+                        <div class="gap-12 d-flex align-items-center">
+                          <img src="images/company-logo.png" class="company-logo" alt="company" />
+                          <div>
+                            <span class="fz-10 gray-text">الجهة المعلنة</span>
+                            <div class="fz-14 black-text">شركة الراجحي</div>
+                          </div>
+                        </div>
+                        <div class="pe-md-1">
+                          <span class="fz-10 gray-text">النشاط الأساسي</span>
+                          <div class="fz-14 black-text">
+                            التصميم الداخلي والتجهيزات
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="tender-section d-flex flex-column flex-md-row gap-3 align-items-md-center justify-content-md-between">
+                        <div class=" d-flex align-items-center">
+                          <div class="sm-logo">
+                            <img src="images/clock.svg" alt="icon">
+                          </div>
+                          <div>
+                            <span class="fz-10 gray-text">الموعد النهائي لتقديم العروض</span>
+                            <div>
+                              <span class="black-text fz-12 fw-medium d-inline-block me-1">
+                                04:30 pm
+                              </span>
+                              <span class="black-text fz-12 fw-medium">
+                                05-12-2025
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class=" d-flex align-items-center">
+                          <div class="sm-logo">
+                            <img src="images/clock.svg" alt="icon">
+                          </div>
+                          <div>
+                            <span class="fz-10 gray-text">تاريخ الاعلان عن النتائج</span>
+                            <div>
+                              <span class="black-text fz-12 fw-medium d-inline-block me-1">
+                                09:00 am
+                              </span>
+                              <span class="black-text fz-12 fw-medium">
+                                12-12-2025
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="tender-footer gap-3">
+                      <a href="details.html" class="btn-main h-41 btn-primary w-100">التفاصيل</a>
+                      <a href="details.html" class="btn-main h-41 btn-primary-outline w-100">
+                        <span>التقديم علي المناقصة</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+                          <path d="M8.47485 15.5583L3.41652 10.5L8.47485 5.44165" stroke="#6BAFB8" stroke-width="1.5"
+                            stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                          <path opacity="0.4" d="M17.583 10.5H3.55801" stroke="#6BAFB8" stroke-width="1.5"
+                            stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-6 col-xxl-4">
-              <div class="tender-card p-3 mb-4">
-                <div class="tender-header d-flex align-items-center justify-content-between mb-3">
-                  <label class="form-check-label tender-number d-flex align-items-center"
-                    for="tender-card p-3 mb-4-two">
-                    <input type="checkbox" class="form-check-input mt-0" id="tender-card p-3 mb-4-two" />
-                    <span>رقم/رمز المناقصة </span>
-                    <span class="fz-14 black-text fw-medium">250739020709</span>
-                  </label>
-                  <button class="smbtn-bg-wh fav-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
-                      <path
-                        d="M9.07976 13.8733C8.85309 13.9533 8.47976 13.9533 8.25309 13.8733C6.31976 13.2133 1.99976 10.46 1.99976 5.79332C1.99976 3.73332 3.65976 2.06665 5.70642 2.06665C6.91976 2.06665 7.99309 2.65332 8.66642 3.55998C9.33976 2.65332 10.4198 2.06665 11.6264 2.06665C13.6731 2.06665 15.3331 3.73332 15.3331 5.79332C15.3331 10.46 11.0131 13.2133 9.07976 13.8733Z"
-                        stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </button>
-                </div>
-                <div class="tender-sections p-3 rounded-12 bg-white">
-                  <div class="tender-section d-flex align-items-start justify-content-between position-relative">
-                    <div>
-                      <div class="d-lg-flex align-items-start tender-details gap-3">
-                        <span class="tender-status mb-3">متاحه</span>
-                        <div>
-                          <span class="fz-10 gray-text">تاريخ النشر</span>
-                          <span class="fz-14 black-text fw-medium">05-12-2025</span>
-                        </div>
-                      </div>
-
-                      <h6 class="tender-title">تجهيز المكاتب وأثاثها</h6>
-                      <div class="tender-subtitle mb-3">منصة رابط النمو</div>
-                      <div class="tender-price">
-                        <span class="fz-10 d-block mb-2 gray-text">سعر الوثائق</span>
-                        <span class="fs-6 black-text fw-medium">200.50
-                          <img src="images/ryall.svg" alt="ريال">
-                        </span>
-                      </div>
-                    </div>
-
-                    <div class="d-flex justify-content-center">
-                      <div class="position-relative">
-                        <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
-                          <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none"></circle>
-                          <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4" fill="none"
-                            stroke-dasharray="134.6 125.6"></circle>
+              <!-- Pagination -->
+              <nav aria-label="Page navigation" class="d-flex justify-content-center">
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                      <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="20"
+                          viewBox="0 0 21 20" fill="none">
+                          <path d="M12.5249 15.0586L17.5832 10.0002L12.5249 4.94189" stroke="#0C2030" stroke-width="1.5"
+                            stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                          <path opacity="0.4" d="M3.41675 10H17.4417" stroke="#0C2030" stroke-width="1.5"
+                            stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
-                        <div class="position-absolute top-50 start-50 translate-middle text-center">
-                          <div>200</div>
-                          <div>يوم</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="tender-section d-flex flex-column flex-md-row gap-3 align-items-md-center justify-content-md-between position-relative company-details">
-                    <div class="gap-12 d-flex align-items-center">
-                      <img src="images/company-logo.png" class="company-logo" alt="company" />
-                      <div>
-                        <span class="fz-10 gray-text">الجهة المعلنة</span>
-                        <div class="fz-14 black-text">شركة الراجحي</div>
-                      </div>
-                    </div>
-                    <div class="pe-md-1">
-                      <span class="fz-10 gray-text">النشاط الأساسي</span>
-                      <div class="fz-14 black-text">
-                        التصميم الداخلي والتجهيزات
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="tender-section d-flex flex-column flex-md-row gap-3 align-items-md-center justify-content-md-between">
-                    <div class=" d-flex align-items-center">
-                      <div class="sm-logo">
-                        <img src="images/clock.svg" alt="icon">
-                      </div>
-                      <div>
-                        <span class="fz-10 gray-text">الموعد النهائي لتقديم العروض</span>
-                        <div>
-                          <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                            04:30 pm
-                          </span>
-                          <span class="black-text fz-12 fw-medium">
-                            05-12-2025
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class=" d-flex align-items-center">
-                      <div class="sm-logo">
-                        <img src="images/clock.svg" alt="icon">
-                      </div>
-                      <div>
-                        <span class="fz-10 gray-text">تاريخ الاعلان عن النتائج</span>
-                        <div>
-                          <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                            09:00 am
-                          </span>
-                          <span class="black-text fz-12 fw-medium">
-                            12-12-2025
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="tender-footer gap-3">
-                  <a href="details.html" class="btn-main h-41 btn-primary w-100">التفاصيل</a>
-                  <button class="btn-main h-41 purchased w-100">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                      <path
-                        d="M12.0089 0C2.77822 0 -2.99097 10 1.62439 18C6.23974 26 17.7781 26 22.3935 18C23.4459 16.1758 24 14.1064 24 12C23.993 5.37548 18.6285 0.00700255 12.0089 0ZM17.2735 9.88384L10.8168 16.3454C10.4565 16.7064 9.87187 16.7064 9.51158 16.3454L6.74441 13.5762C6.24204 13.0734 6.47189 12.215 7.15813 12.031C7.47662 11.9456 7.81644 12.0367 8.04959 12.27L10.1642 14.3873L15.9683 8.57769C16.4707 8.07495 17.3285 8.30497 17.5123 8.99172C17.5977 9.31045 17.5066 9.65052 17.2735 9.88384Z"
-                        fill="#00D252" />
-                    </svg>
-                    <span>تم شراء المناقصه</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-xxl-4">
-              <div class="tender-card p-3 mb-4">
-                <div class="tender-header d-flex align-items-center justify-content-between mb-3">
-                  <label class="form-check-label tender-number d-flex align-items-center"
-                    for="tender-card p-3 mb-4-three">
-                    <input type="checkbox" class="form-check-input mt-0" id="tender-card p-3 mb-4-three" />
-                    <span>رقم/رمز المناقصة </span>
-                    <span class="fz-14 black-text fw-medium">250739020709</span>
-                  </label>
-                  <button class="smbtn-bg-wh fav-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
-                      <path
-                        d="M9.07976 13.8733C8.85309 13.9533 8.47976 13.9533 8.25309 13.8733C6.31976 13.2133 1.99976 10.46 1.99976 5.79332C1.99976 3.73332 3.65976 2.06665 5.70642 2.06665C6.91976 2.06665 7.99309 2.65332 8.66642 3.55998C9.33976 2.65332 10.4198 2.06665 11.6264 2.06665C13.6731 2.06665 15.3331 3.73332 15.3331 5.79332C15.3331 10.46 11.0131 13.2133 9.07976 13.8733Z"
-                        stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </button>
-                </div>
-                <div class="tender-sections p-3 rounded-12 bg-white">
-                  <div class="tender-section d-flex align-items-start justify-content-between position-relative">
-                    <div>
-                      <div class="d-lg-flex align-items-start tender-details gap-3">
-                        <span class="tender-status mb-3">متاحه</span>
-                        <div>
-                          <span class="fz-10 gray-text">تاريخ النشر</span>
-                          <span class="fz-14 black-text fw-medium">05-12-2025</span>
-                        </div>
-                      </div>
-
-                      <h6 class="tender-title">تجهيز المكاتب وأثاثها</h6>
-                      <div class="tender-subtitle mb-3">منصة رابط النمو</div>
-                      <div class="tender-price">
-                        <span class="fz-10 d-block mb-2 gray-text">سعر الوثائق</span>
-                        <span class="fs-6 black-text fw-medium">200.50
-                          <img src="images/ryall.svg" alt="ريال">
-                        </span>
-                      </div>
-                    </div>
-
-                    <div class="d-flex justify-content-center">
-                      <div class="position-relative">
-                        <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
-                          <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none"></circle>
-                          <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4" fill="none"
-                            stroke-dasharray="134.6 125.6"></circle>
+                      </span>
+                    </a>
+                  </li>
+                  <li class="page-item">
+                    <span class="page-link">...</span>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">3</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">2</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                      <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="20"
+                          viewBox="0 0 21 20" fill="none">
+                          <path d="M8.4751 15.0586L3.41676 10.0002L8.4751 4.94189" stroke="#0C2030" stroke-width="1.5"
+                            stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                          <path opacity="0.4" d="M17.5833 10H3.55825" stroke="#0C2030" stroke-width="1.5"
+                            stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
                         </svg>
-                        <div class="position-absolute top-50 start-50 translate-middle text-center">
-                          <div>200</div>
-                          <div>يوم</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="tender-section d-flex flex-column flex-md-row gap-3 align-items-md-center justify-content-md-between position-relative company-details">
-                    <div class="gap-12 d-flex align-items-center">
-                      <img src="images/company-logo.png" class="company-logo" alt="company" />
-                      <div>
-                        <span class="fz-10 gray-text">الجهة المعلنة</span>
-                        <div class="fz-14 black-text">شركة الراجحي</div>
-                      </div>
-                    </div>
-                    <div class="pe-md-1">
-                      <span class="fz-10 gray-text">النشاط الأساسي</span>
-                      <div class="fz-14 black-text">
-                        التصميم الداخلي والتجهيزات
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="tender-section d-flex flex-column flex-md-row gap-3 align-items-md-center justify-content-md-between">
-                    <div class=" d-flex align-items-center">
-                      <div class="sm-logo">
-                        <img src="images/clock.svg" alt="icon">
-                      </div>
-                      <div>
-                        <span class="fz-10 gray-text">الموعد النهائي لتقديم العروض</span>
-                        <div>
-                          <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                            04:30 pm
-                          </span>
-                          <span class="black-text fz-12 fw-medium">
-                            05-12-2025
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class=" d-flex align-items-center">
-                      <div class="sm-logo">
-                        <img src="images/clock.svg" alt="icon">
-                      </div>
-                      <div>
-                        <span class="fz-10 gray-text">تاريخ الاعلان عن النتائج</span>
-                        <div>
-                          <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                            09:00 am
-                          </span>
-                          <span class="black-text fz-12 fw-medium">
-                            12-12-2025
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div> <!-- closes dash-widget -->
+          </div> <!-- closes active-tenders tab-pane -->
+          <div class="tab-pane fade" id="awarded-tenders" role="tabpanel" aria-labelledby="awarded-tenders-tab">
+            <div class="dash-widget sm-0 p-lg-3">
+              <div class="text-center py-5">
 
-                <div class="tender-footer gap-3">
-                  <a href="details.html" class="btn-main h-41 btn-primary w-100">التفاصيل</a>
-                  <a href="details.html" class="btn-main h-41 btn-primary-outline w-100">
-                    <span>التقديم علي المناقصة</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
-                      <path d="M8.47485 15.5583L3.41652 10.5L8.47485 5.44165" stroke="#6BAFB8" stroke-width="1.5"
-                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                      <path opacity="0.4" d="M17.583 10.5H3.55801" stroke="#6BAFB8" stroke-width="1.5"
-                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-xxl-4">
-              <div class="tender-card p-3 mb-4">
-                <div class="tender-header d-flex align-items-center justify-content-between mb-3">
-                  <label class="form-check-label tender-number d-flex align-items-center"
-                    for="tender-card p-3 mb-4-four">
-                    <input type="checkbox" class="form-check-input mt-0" id="tender-card p-3 mb-4-four" />
-                    <span>رقم/رمز المناقصة </span>
-                    <span class="fz-14 black-text fw-medium">250739020709</span>
-                  </label>
-                  <button class="smbtn-bg-wh fav-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
-                      <path
-                        d="M9.07976 13.8733C8.85309 13.9533 8.47976 13.9533 8.25309 13.8733C6.31976 13.2133 1.99976 10.46 1.99976 5.79332C1.99976 3.73332 3.65976 2.06665 5.70642 2.06665C6.91976 2.06665 7.99309 2.65332 8.66642 3.55998C9.33976 2.65332 10.4198 2.06665 11.6264 2.06665C13.6731 2.06665 15.3331 3.73332 15.3331 5.79332C15.3331 10.46 11.0131 13.2133 9.07976 13.8733Z"
-                        stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </button>
-                </div>
-                <div class="tender-sections p-3 rounded-12 bg-white">
-                  <div class="tender-section d-flex align-items-start justify-content-between position-relative">
-                    <div>
-                      <div class="d-lg-flex align-items-start tender-details gap-3">
-                        <span class="tender-status mb-3">متاحه</span>
-                        <div>
-                          <span class="fz-10 gray-text">تاريخ النشر</span>
-                          <span class="fz-14 black-text fw-medium">05-12-2025</span>
-                        </div>
-                      </div>
-
-                      <h6 class="tender-title">تجهيز المكاتب وأثاثها</h6>
-                      <div class="tender-subtitle mb-3">منصة رابط النمو</div>
-                      <div class="tender-price">
-                        <span class="fz-10 d-block mb-2 gray-text">سعر الوثائق</span>
-                        <span class="fs-6 black-text fw-medium">200.50
-                          <img src="images/ryall.svg" alt="ريال">
-                        </span>
-                      </div>
-                    </div>
-
-                    <div class="d-flex justify-content-center">
-                      <div class="position-relative">
-                        <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
-                          <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none"></circle>
-                          <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4" fill="none"
-                            stroke-dasharray="134.6 125.6"></circle>
-                        </svg>
-                        <div class="position-absolute top-50 start-50 translate-middle text-center">
-                          <div>200</div>
-                          <div>يوم</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="tender-section d-flex flex-column flex-md-row gap-3 align-items-md-center justify-content-md-between position-relative company-details">
-                    <div class="gap-12 d-flex align-items-center">
-                      <img src="images/company-logo.png" class="company-logo" alt="company" />
-                      <div>
-                        <span class="fz-10 gray-text">الجهة المعلنة</span>
-                        <div class="fz-14 black-text">شركة الراجحي</div>
-                      </div>
-                    </div>
-                    <div class="pe-md-1">
-                      <span class="fz-10 gray-text">النشاط الأساسي</span>
-                      <div class="fz-14 black-text">
-                        التصميم الداخلي والتجهيزات
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="tender-section d-flex flex-column flex-md-row gap-3 align-items-md-center justify-content-md-between">
-                    <div class=" d-flex align-items-center">
-                      <div class="sm-logo">
-                        <img src="images/clock.svg" alt="icon">
-                      </div>
-                      <div>
-                        <span class="fz-10 gray-text">الموعد النهائي لتقديم العروض</span>
-                        <div>
-                          <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                            04:30 pm
-                          </span>
-                          <span class="black-text fz-12 fw-medium">
-                            05-12-2025
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class=" d-flex align-items-center">
-                      <div class="sm-logo">
-                        <img src="images/clock.svg" alt="icon">
-                      </div>
-                      <div>
-                        <span class="fz-10 gray-text">تاريخ الاعلان عن النتائج</span>
-                        <div>
-                          <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                            09:00 am
-                          </span>
-                          <span class="black-text fz-12 fw-medium">
-                            12-12-2025
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="tender-footer gap-3">
-                  <a href="details.html" class="btn-main h-41 btn-primary w-100">التفاصيل</a>
-                  <a href="details.html" class="btn-main h-41 btn-primary-outline w-100">
-                    <span>التقديم علي المناقصة</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
-                      <path d="M8.47485 15.5583L3.41652 10.5L8.47485 5.44165" stroke="#6BAFB8" stroke-width="1.5"
-                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                      <path opacity="0.4" d="M17.583 10.5H3.55801" stroke="#6BAFB8" stroke-width="1.5"
-                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-xxl-4">
-              <div class="tender-card p-3 mb-4">
-                <div class="tender-header d-flex align-items-center justify-content-between mb-3">
-                  <label class="form-check-label tender-number d-flex align-items-center"
-                    for="tender-card p-3 mb-4-five">
-                    <input type="checkbox" class="form-check-input mt-0" id="tender-card p-3 mb-4-five" />
-                    <span>رقم/رمز المناقصة </span>
-                    <span class="fz-14 black-text fw-medium">250739020709</span>
-                  </label>
-                  <button class="smbtn-bg-wh fav-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
-                      <path
-                        d="M9.07976 13.8733C8.85309 13.9533 8.47976 13.9533 8.25309 13.8733C6.31976 13.2133 1.99976 10.46 1.99976 5.79332C1.99976 3.73332 3.65976 2.06665 5.70642 2.06665C6.91976 2.06665 7.99309 2.65332 8.66642 3.55998C9.33976 2.65332 10.4198 2.06665 11.6264 2.06665C13.6731 2.06665 15.3331 3.73332 15.3331 5.79332C15.3331 10.46 11.0131 13.2133 9.07976 13.8733Z"
-                        stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </button>
-                </div>
-                <div class="tender-sections p-3 rounded-12 bg-white">
-                  <div class="tender-section d-flex align-items-start justify-content-between position-relative">
-                    <div>
-                      <div class="d-lg-flex align-items-start tender-details gap-3">
-                        <span class="tender-status mb-3">متاحه</span>
-                        <div>
-                          <span class="fz-10 gray-text">تاريخ النشر</span>
-                          <span class="fz-14 black-text fw-medium">05-12-2025</span>
-                        </div>
-                      </div>
-
-                      <h6 class="tender-title">تجهيز المكاتب وأثاثها</h6>
-                      <div class="tender-subtitle mb-3">منصة رابط النمو</div>
-                      <div class="tender-price">
-                        <span class="fz-10 d-block mb-2 gray-text">سعر الوثائق</span>
-                        <span class="fs-6 black-text fw-medium">200.50
-                          <img src="images/ryall.svg" alt="ريال">
-                        </span>
-                      </div>
-                    </div>
-
-                    <div class="d-flex justify-content-center">
-                      <div class="position-relative">
-                        <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
-                          <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none"></circle>
-                          <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4" fill="none"
-                            stroke-dasharray="134.6 125.6"></circle>
-                        </svg>
-                        <div class="position-absolute top-50 start-50 translate-middle text-center">
-                          <div>200</div>
-                          <div>يوم</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="tender-section d-flex flex-column flex-md-row gap-3 align-items-md-center justify-content-md-between position-relative company-details">
-                    <div class="gap-12 d-flex align-items-center">
-                      <img src="images/company-logo.png" class="company-logo" alt="company" />
-                      <div>
-                        <span class="fz-10 gray-text">الجهة المعلنة</span>
-                        <div class="fz-14 black-text">شركة الراجحي</div>
-                      </div>
-                    </div>
-                    <div class="pe-md-1">
-                      <span class="fz-10 gray-text">النشاط الأساسي</span>
-                      <div class="fz-14 black-text">
-                        التصميم الداخلي والتجهيزات
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="tender-section d-flex flex-column flex-md-row gap-3 align-items-md-center justify-content-md-between">
-                    <div class=" d-flex align-items-center">
-                      <div class="sm-logo">
-                        <img src="images/clock.svg" alt="icon">
-                      </div>
-                      <div>
-                        <span class="fz-10 gray-text">الموعد النهائي لتقديم العروض</span>
-                        <div>
-                          <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                            04:30 pm
-                          </span>
-                          <span class="black-text fz-12 fw-medium">
-                            05-12-2025
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class=" d-flex align-items-center">
-                      <div class="sm-logo">
-                        <img src="images/clock.svg" alt="icon">
-                      </div>
-                      <div>
-                        <span class="fz-10 gray-text">تاريخ الاعلان عن النتائج</span>
-                        <div>
-                          <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                            09:00 am
-                          </span>
-                          <span class="black-text fz-12 fw-medium">
-                            12-12-2025
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="tender-footer gap-3">
-                  <a href="details.html" class="btn-main h-41 btn-primary w-100">التفاصيل</a>
-                  <button class="btn-main h-41 purchased w-100">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                      <path
-                        d="M12.0089 0C2.77822 0 -2.99097 10 1.62439 18C6.23974 26 17.7781 26 22.3935 18C23.4459 16.1758 24 14.1064 24 12C23.993 5.37548 18.6285 0.00700255 12.0089 0ZM17.2735 9.88384L10.8168 16.3454C10.4565 16.7064 9.87187 16.7064 9.51158 16.3454L6.74441 13.5762C6.24204 13.0734 6.47189 12.215 7.15813 12.031C7.47662 11.9456 7.81644 12.0367 8.04959 12.27L10.1642 14.3873L15.9683 8.57769C16.4707 8.07495 17.3285 8.30497 17.5123 8.99172C17.5977 9.31045 17.5066 9.65052 17.2735 9.88384Z"
-                        fill="#00D252"></path>
-                    </svg>
-                    <span>تم شراء المناقصه</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-xxl-4">
-              <div class="tender-card p-3 mb-4">
-                <div class="tender-header d-flex align-items-center justify-content-between mb-3">
-                  <label class="form-check-label tender-number d-flex align-items-center"
-                    for="tender-card p-3 mb-4-sex">
-                    <input type="checkbox" class="form-check-input mt-0" id="tender-card p-3 mb-4-sex" />
-                    <span>رقم/رمز المناقصة </span>
-                    <span class="fz-14 black-text fw-medium">250739020709</span>
-                  </label>
-                  <button class="smbtn-bg-wh fav-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
-                      <path
-                        d="M9.07976 13.8733C8.85309 13.9533 8.47976 13.9533 8.25309 13.8733C6.31976 13.2133 1.99976 10.46 1.99976 5.79332C1.99976 3.73332 3.65976 2.06665 5.70642 2.06665C6.91976 2.06665 7.99309 2.65332 8.66642 3.55998C9.33976 2.65332 10.4198 2.06665 11.6264 2.06665C13.6731 2.06665 15.3331 3.73332 15.3331 5.79332C15.3331 10.46 11.0131 13.2133 9.07976 13.8733Z"
-                        stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </button>
-                </div>
-                <div class="tender-sections p-3 rounded-12 bg-white">
-                  <div class="tender-section d-flex align-items-start justify-content-between position-relative">
-                    <div>
-                      <div class="d-lg-flex align-items-start tender-details gap-3">
-                        <span class="tender-status mb-3">متاحه</span>
-                        <div>
-                          <span class="fz-10 gray-text">تاريخ النشر</span>
-                          <span class="fz-14 black-text fw-medium">05-12-2025</span>
-                        </div>
-                      </div>
-
-                      <h6 class="tender-title">تجهيز المكاتب وأثاثها</h6>
-                      <div class="tender-subtitle mb-3">منصة رابط النمو</div>
-                      <div class="tender-price">
-                        <span class="fz-10 d-block mb-2 gray-text">سعر الوثائق</span>
-                        <span class="fs-6 black-text fw-medium">200.50
-                          <img src="images/ryall.svg" alt="ريال">
-                        </span>
-                      </div>
-                    </div>
-
-                    <div class="d-flex justify-content-center">
-                      <div class="position-relative">
-                        <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
-                          <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none"></circle>
-                          <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4" fill="none"
-                            stroke-dasharray="134.6 125.6"></circle>
-                        </svg>
-                        <div class="position-absolute top-50 start-50 translate-middle text-center">
-                          <div>200</div>
-                          <div>يوم</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="tender-section d-flex flex-column flex-md-row gap-3 align-items-md-center justify-content-md-between position-relative company-details">
-                    <div class="gap-12 d-flex align-items-center">
-                      <img src="images/company-logo.png" class="company-logo" alt="company" />
-                      <div>
-                        <span class="fz-10 gray-text">الجهة المعلنة</span>
-                        <div class="fz-14 black-text">شركة الراجحي</div>
-                      </div>
-                    </div>
-                    <div class="pe-md-1">
-                      <span class="fz-10 gray-text">النشاط الأساسي</span>
-                      <div class="fz-14 black-text">
-                        التصميم الداخلي والتجهيزات
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="tender-section d-flex flex-column flex-md-row gap-3 align-items-md-center justify-content-md-between">
-                    <div class=" d-flex align-items-center">
-                      <div class="sm-logo">
-                        <img src="images/clock.svg" alt="icon">
-                      </div>
-                      <div>
-                        <span class="fz-10 gray-text">الموعد النهائي لتقديم العروض</span>
-                        <div>
-                          <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                            04:30 pm
-                          </span>
-                          <span class="black-text fz-12 fw-medium">
-                            05-12-2025
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class=" d-flex align-items-center">
-                      <div class="sm-logo">
-                        <img src="images/clock.svg" alt="icon">
-                      </div>
-                      <div>
-                        <span class="fz-10 gray-text">تاريخ الاعلان عن النتائج</span>
-                        <div>
-                          <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                            09:00 am
-                          </span>
-                          <span class="black-text fz-12 fw-medium">
-                            12-12-2025
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="tender-footer gap-3">
-                  <a href="details.html" class="btn-main h-41 btn-primary w-100">التفاصيل</a>
-                  <a href="details.html" class="btn-main h-41 btn-primary-outline w-100">
-                    <span>التقديم علي المناقصة</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
-                      <path d="M8.47485 15.5583L3.41652 10.5L8.47485 5.44165" stroke="#6BAFB8" stroke-width="1.5"
-                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                      <path opacity="0.4" d="M17.583 10.5H3.55801" stroke="#6BAFB8" stroke-width="1.5"
-                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </a>
-                </div>
+                <h5 class="black-text">لا توجد منافسات تم ترسيتها بعد</h5>
+                <p class="text-gray">ستظهر هنا المنافسات التي يتم ترسيتها عليك.</p>
               </div>
             </div>
           </div>
-          <!-- Pagination -->
-          <nav aria-label="Page navigation" class="d-flex justify-content-center">
-            <ul class="pagination">
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                  <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="20"
-                      viewBox="0 0 21 20" fill="none">
-                      <path d="M12.5249 15.0586L17.5832 10.0002L12.5249 4.94189" stroke="#0C2030" stroke-width="1.5"
-                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                      <path opacity="0.4" d="M3.41675 10H17.4417" stroke="#0C2030" stroke-width="1.5"
-                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </span>
-                </a>
-              </li>
-              <li class="page-item">
-                <span class="page-link">...</span>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#">3</a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#">2</a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#">1</a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="20"
-                      viewBox="0 0 21 20" fill="none">
-                      <path d="M8.4751 15.0586L3.41676 10.0002L8.4751 4.94189" stroke="#0C2030" stroke-width="1.5"
-                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
-                      <path opacity="0.4" d="M17.5833 10H3.55825" stroke="#0C2030" stroke-width="1.5"
-                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg>
-                  </span>
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
+          <div class="tab-pane fade" id="submitted-offers" role="tabpanel" aria-labelledby="submitted-offers-tab">
+            <div class="dash-widget sm-0 p-lg-3">
+              <div class="text-center py-5">
+
+                <h5 class="black-text">لا توجد عروض مقدمة بعد</h5>
+                <p class="text-gray">ستظهر هنا العروض التي قمت بتقديمها.</p>
+              </div>
+            </div>
+          </div>
+        </div> <!-- closes statsTabContent -->
+      </div> <!-- closes nav-uploaded -->
       <div class="tab-pane fade" id="nav-tender" role="tabpanel" aria-labelledby="nav-tender-tab">
         <div class="dash-widget sm-0 p-lg-3">
           <!-- Search and Filter Bar -->
@@ -1610,7 +1641,8 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td data-label="الرقم المرجعي"><span class="ff-onest black-text fw-medium">250739020707</span></td>
+                    <td data-label="الرقم المرجعي"><span class="ff-onest black-text fw-medium">250739020707</span>
+                    </td>
                     <td data-label="عنوان المنافسة">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
@@ -1672,7 +1704,8 @@
                     </td>
                   </tr>
                   <tr>
-                    <td data-label="الرقم المرجعي"><span class="ff-onest black-text fw-medium">250739020707</span></td>
+                    <td data-label="الرقم المرجعي"><span class="ff-onest black-text fw-medium">250739020707</span>
+                    </td>
                     <td data-label="عنوان المنافسة">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
@@ -1733,7 +1766,8 @@
                     </td>
                   </tr>
                   <tr>
-                    <td data-label="الرقم المرجعي"><span class="ff-onest black-text fw-medium">250739020707</span></td>
+                    <td data-label="الرقم المرجعي"><span class="ff-onest black-text fw-medium">250739020707</span>
+                    </td>
                     <td data-label="عنوان المنافسة">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
@@ -1794,7 +1828,8 @@
                     </td>
                   </tr>
                   <tr>
-                    <td data-label="الرقم المرجعي"><span class="ff-onest black-text fw-medium">250739020707</span></td>
+                    <td data-label="الرقم المرجعي"><span class="ff-onest black-text fw-medium">250739020707</span>
+                    </td>
                     <td data-label="عنوان المنافسة">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
@@ -1866,7 +1901,8 @@
                     </td>
                   </tr>
                   <tr>
-                    <td data-label="الرقم المرجعي"><span class="ff-onest black-text fw-medium">250739020707</span></td>
+                    <td data-label="الرقم المرجعي"><span class="ff-onest black-text fw-medium">250739020707</span>
+                    </td>
                     <td data-label="عنوان المنافسة">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
@@ -1927,7 +1963,8 @@
                     </td>
                   </tr>
                   <tr>
-                    <td data-label="الرقم المرجعي"><span class="ff-onest black-text fw-medium">250739020707</span></td>
+                    <td data-label="الرقم المرجعي"><span class="ff-onest black-text fw-medium">250739020707</span>
+                    </td>
                     <td data-label="عنوان المنافسة">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
@@ -1988,7 +2025,8 @@
                     </td>
                   </tr>
                   <tr>
-                    <td data-label="الرقم المرجعي"><span class="ff-onest black-text fw-medium">250739020707</span></td>
+                    <td data-label="الرقم المرجعي"><span class="ff-onest black-text fw-medium">250739020707</span>
+                    </td>
                     <td data-label="عنوان المنافسة">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
@@ -2049,7 +2087,8 @@
                     </td>
                   </tr>
                   <tr>
-                    <td data-label="الرقم المرجعي"><span class="ff-onest black-text fw-medium">250739020707</span></td>
+                    <td data-label="الرقم المرجعي"><span class="ff-onest black-text fw-medium">250739020707</span>
+                    </td>
                     <td data-label="عنوان المنافسة">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
@@ -2110,7 +2149,8 @@
                     </td>
                   </tr>
                   <tr>
-                    <td data-label="الرقم المرجعي"><span class="ff-onest black-text fw-medium">250739020707</span></td>
+                    <td data-label="الرقم المرجعي"><span class="ff-onest black-text fw-medium">250739020707</span>
+                    </td>
                     <td data-label="عنوان المنافسة">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">
@@ -2171,7 +2211,8 @@
                     </td>
                   </tr>
                   <tr>
-                    <td data-label="الرقم المرجعي"><span class="ff-onest black-text fw-medium">250739020707</span></td>
+                    <td data-label="الرقم المرجعي"><span class="ff-onest black-text fw-medium">250739020707</span>
+                    </td>
                     <td data-label="عنوان المنافسة">
                       <div class="d-flex align-items-center">
                         <span class="sm-logo">

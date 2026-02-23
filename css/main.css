@@ -772,21 +772,21 @@ html[dir="ltr"] .btn-shadow-bottom {
   border-radius: 12px;
   line-height: 20px;
   font-size: 12px;
-  padding: 18px 6px;
+  padding: 18px 6px !important;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  border: 1px solid #f2f2f2;
+  border: 1px solid #f2f2f2 !important;
+}
+
+.stat-card.active {
+  background: #e3f0f2 !important;
 }
 
 .stat-value {
   font-size: 18px;
   font-weight: 500;
-}
-
-.stat-card-primary {
-  background: #e3f0f2 !important;
 }
 
 .tender-card {
