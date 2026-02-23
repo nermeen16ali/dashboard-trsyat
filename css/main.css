@@ -883,6 +883,8 @@ html[dir="ltr"] .btn-shadow-bottom {
 .tender-number {
   color: var(--text-gray-color);
   font-size: 12px;
+  display: flex;
+  align-items: center;
   gap: 10px;
 }
 
