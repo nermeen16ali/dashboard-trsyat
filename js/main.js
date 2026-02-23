@@ -562,3 +562,61 @@ if (document.querySelector('.sort-icon')) {
 
 
 
+
+// Video Explanation Popup Logic
+document.addEventListener("click", (e) => {
+  const videoBtn = e.target.closest(".outline-primary-gray.bordered-40");
+  if (!videoBtn) return;
+
+  const btnText = videoBtn.querySelector("span")?.textContent.trim();
+  if (btnText === "فيديو شرح" || btnText === "Explanation Video") {
+    e.preventDefault();
+
+    // Create Modal
+    const modalOverlay = document.createElement("div");
+    modalOverlay.className = "video-popup-overlay";
+
+    const modalContainer = document.createElement("div");
+    modalContainer.className = "video-popup-container";
+
+    const closeBtn = document.createElement("button");
+    closeBtn.className = "video-popup-close";
+    closeBtn.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    `;
+
+    const videoWrapper = document.createElement("div");
+    videoWrapper.className = "video-popup-wrapper";
+    videoWrapper.innerHTML = `
+      <iframe src="https://www.youtube.com/embed/1RfFNjc-9Yk?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    `;
+
+    modalContainer.appendChild(closeBtn);
+    modalContainer.appendChild(videoWrapper);
+    modalOverlay.appendChild(modalContainer);
+    document.body.appendChild(modalOverlay);
+
+    // Prevent scrolling
+    document.body.style.overflow = "hidden";
+
+    // Close Logic
+    const closePopup = () => {
+      modalOverlay.classList.remove("show");
+      setTimeout(() => {
+        document.body.removeChild(modalOverlay);
+        document.body.style.overflow = "";
+      }, 300);
+    };
+
+    closeBtn.addEventListener("click", closePopup);
+    modalOverlay.addEventListener("click", (event) => {
+      if (event.target === modalOverlay) closePopup();
+    });
+
+    // Trigger animation
+    setTimeout(() => modalOverlay.classList.add("show"), 10);
+  }
+});
