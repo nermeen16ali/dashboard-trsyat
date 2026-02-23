@@ -1475,6 +1475,22 @@
       const votingControls = document.getElementById('votingControls');
       const reviewBadge = document.getElementById('reviewBadge');
 
+      // Check for URL parameter to control tab visibility
+      const urlParams = new URLSearchParams(window.location.search);
+      const view = urlParams.get('view');
+
+      if (view === 'details') {
+        const submitTab = document.getElementById('nav-submit-tab');
+        if (submitTab) {
+          submitTab.style.display = 'none';
+        }
+        const firstTab = document.getElementById('nav-uploaded-tab');
+        if (firstTab) {
+          const bsTab = new bootstrap.Tab(firstTab);
+          bsTab.show();
+        }
+      }
+
       function updateVisibility(activeTabId) {
         // Hide relative elements by default
         if (applyBtn) applyBtn.classList.add('d-none');
