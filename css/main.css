@@ -313,6 +313,10 @@ img[src="images/trsyat-white-logo.svg"] {
   width: 132px;
 }
 
+.dropdown-item img[src="images/trsyat-logo.svg"] {
+  width: 32px;
+}
+
 .navbar-brand img[src="images/trsyat-white-logo.svg"] {
   width: 80px;
 }
