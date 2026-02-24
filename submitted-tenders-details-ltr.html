@@ -1321,6 +1321,37 @@
       }
     });
   </script>
+  <script>
+    (function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const tabParam = urlParams.get('tab');
+      const detailsTab = document.getElementById('nav-details-tab');
+      const detailsPane = document.getElementById('nav-details');
+
+      if (tabParam === 'details') {
+        // Show the tab and its pane
+        if (detailsTab) {
+          detailsTab.style.display = 'block';
+          // Optional: auto-activate the tab if needed
+          const bsTab = new bootstrap.Tab(detailsTab);
+          bsTab.show();
+        }
+      } else {
+        // Hide the tab and its pane
+        if (detailsTab) {
+          detailsTab.style.display = 'none';
+        }
+        // If the details tab was active by default (it shouldn't be), switch to another
+        if (detailsTab && detailsTab.classList.contains('active')) {
+          const firstTab = document.getElementById('nav-uploaded-tab');
+          if (firstTab) {
+            const bsTab = new bootstrap.Tab(firstTab);
+            bsTab.show();
+          }
+        }
+      }
+    })();
+  </script>
 </body>
 
 </html>
