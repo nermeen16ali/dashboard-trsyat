@@ -855,19 +855,20 @@
     <!-- Custom JS -->
     <script src="js/main.js"></script>
     <script>
-        // Vote Button Logic
-        const voteBtns = document.querySelectorAll('.vote-btn');
-        voteBtns.forEach(btn => {
-            btn.addEventListener('click', function () {
-                const isActive = this.classList.contains('active');
-                // Remove active from all siblings in the same group
-                this.parentElement.querySelectorAll('.vote-btn').forEach(b => b.classList.remove('active'));
-                // Toggle active for this button
-                if (!isActive) {
-                    this.classList.add('active');
-                }
-            });
-        });
+        // Badge Sync Logic
+        const storedStatus = sessionStorage.getItem('selectedTenderStatus');
+        const storedClass = sessionStorage.getItem('selectedTenderClass');
+        const statusBadge = document.querySelector('.dash-widget .sm-ele');
+        if (storedStatus && statusBadge) {
+            statusBadge.textContent = storedStatus;
+            if (storedClass) {
+                statusBadge.className = storedClass;
+            }
+
+            // Hide Tabs for Rejected Tenders
+            const tabsContainer = document.getElementById('tabsContainer');
+            if (tabsContainer) tabsContainer.style.setProperty('display', 'none', 'important');
+        }
     </script>
 </body>
 

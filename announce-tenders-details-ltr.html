@@ -743,7 +743,7 @@
             </div>
         </nav>
         <div class="page-header d-flex align-items-center">
-            <a href="tenders-results-ltr.html" class="icon-container gray-outline-btn">
+            <a href="tender-announcement-ltr.html" class="icon-container gray-outline-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                     <path d="M7.975 15.0583L2.916 10L7.975 4.941" stroke="#0C2030" stroke-width="1.5"
                         stroke-linecap="round" stroke-linejoin="round"></path>
@@ -752,7 +752,7 @@
                 </svg>
             </a>
             <div class="page-breadcrumb">
-                <a href="tenders-results-ltr.html">Tender Results</a>
+                <a href="tender-announcement-ltr.html">Tender Results</a>
                 <svg xmlns="http://www.w3.org/2000/svg" width="8" height="15" viewBox="0 0 8 15" fill="none">
                     <path d="M1.334 0.75L6.768 6.183C7.409 6.825 7.409 7.875 6.768 8.516L1.334 13.95" stroke="#A1A1A1"
                         stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -774,20 +774,36 @@
                     <button class="nav-link" id="nav-submit-tab" data-bs-toggle="tab" data-bs-target="#nav-submit"
                         type="button" role="tab">Applicant List</button>
                 </div>
-                <div class="d-flex align-items-center gap-12 justify-content-end">
-                    <div class="d-flex align-items-center gap-3 gap-lg-4 d-none" id="votingControls">
-                        <span class="fz-14 base-text">Vote on Tender</span>
-                        <div class="d-flex align-items-center gap-10">
-                            <button class="vote-btn"><span>12</span><img src="images/like.svg" alt="like"></button>
-                            <button class="vote-btn"><span>12</span><img src="images/dislike.svg"
-                                    alt="dislike"></button>
-                        </div>
+                <div class="d-flex align-items-center gap-3 gap-lg-4 d-none" id="votingControls">
+                    <span class="fz-14 base-text">Vote on Tender</span>
+                    <div class="d-flex align-items-center gap-10">
+                        <button class="vote-btn"><span>12</span><img src="images/like.svg" alt="like"></button>
+                        <button class="vote-btn"><span>12</span><img src="images/dislike.svg" alt="dislike"></button>
                     </div>
-                    <div class="d-flex align-items-center gap-12" id="otherControls">
-                        <span class="sm-ele fz-12 bordered-8 text-nowrap prim-opacity-outlined">Accepted</span>
-                        <button class="btn-main btn-primary fz-14 fw-medium" data-bs-toggle="modal"
-                            data-bs-target="#editRequest">Send Edit Request</button>
-                    </div>
+                </div>
+                <div class="d-flex align-items-center w-100 justify-content-end gap-12 d-none"
+                    id="rejectionBadgeAndSupport">
+                    <span class="sm-ele fz-12 bordered-8 text-nowrap badge-rejected">Rejected</span>
+                    <a href="support-ltr.html" class="btn-main btn-primary fz-14 fw-medium">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <g clip-path="url(#clip0_10456_73202)">
+                                <path
+                                    d="M9.59372 8.09146L8.85237 8.28982C8.15859 8.47545 7.52388 7.84074 7.70951 7.14697L7.90787 6.40561C7.90791 6.40498 7.90795 6.40342 7.90762 6.40079C7.90692 6.39519 7.90468 6.38592 7.89895 6.37439C7.64261 5.85976 7.49868 5.27963 7.49868 4.66732C7.49868 2.55023 9.21492 0.833984 11.332 0.833984C13.4491 0.833984 15.1653 2.55023 15.1653 4.66732C15.1653 6.78441 13.4491 8.50065 11.332 8.50065C10.7197 8.50065 10.1396 8.35672 9.62494 8.10039C9.61341 8.09465 9.60415 8.09241 9.59854 8.09171C9.59592 8.09139 9.59436 8.09142 9.59372 8.09146ZM9.59372 8.09146C9.59311 8.09151 9.59277 8.09171 9.59372 8.09146ZM9.59372 8.09146L9.59438 8.09129M14.1653 4.66732C14.1653 3.10251 12.8968 1.83398 11.332 1.83398C9.76721 1.83398 8.49868 3.10251 8.49868 4.66732C8.49868 5.12146 8.60516 5.5493 8.79406 5.92856C8.90006 6.14138 8.94397 6.40214 8.87406 6.66342L8.70535 7.29398L9.33591 7.12527C9.59719 7.05536 9.85795 7.09927 10.0708 7.20527C10.45 7.39417 10.8779 7.50065 11.332 7.50065C12.8968 7.50065 14.1653 6.23212 14.1653 4.66732ZM5.79368 4.63443C5.01381 3.23702 3.12371 3.15187 2.00366 4.27192C1.40456 4.87103 0.87223 5.66764 0.836741 6.60377C0.784149 7.99106 1.14241 10.2945 3.4236 12.5757C5.70479 14.8569 8.00828 15.2152 9.39556 15.1626C10.3317 15.1271 11.1283 14.5948 11.7274 13.9957C12.8475 12.8756 12.7623 10.9855 11.3649 10.2056L10.5896 9.77297C9.67707 9.2637 8.52569 9.48072 7.77104 10.2262C7.75742 10.2362 7.68073 10.2888 7.54675 10.2954C7.3758 10.3037 6.98066 10.2428 6.36858 9.63075C5.75629 9.01847 5.6956 8.62328 5.70397 8.4524C5.71052 8.31853 5.76315 8.2419 5.77308 8.2283C6.51861 7.47365 6.73564 6.32227 6.22636 5.40972L5.79368 4.63443ZM2.71077 4.97903C3.44799 4.24181 4.52112 4.4062 4.92047 5.12176L5.35314 5.89705C5.62229 6.37932 5.53046 7.05677 5.05491 7.53232C5.00848 7.57875 4.731 7.87582 4.70517 8.4035C4.67872 8.94372 4.92133 9.59772 5.66147 10.3379C6.40137 11.0778 7.05519 11.3205 7.59533 11.2942C8.12298 11.2685 8.42034 10.9911 8.46705 10.9444C8.9426 10.4689 9.62001 10.377 10.1023 10.6462L10.8776 11.0789C11.5931 11.4782 11.7575 12.5513 11.0203 13.2886C10.5034 13.8055 9.93287 14.1663C8.20079 14.2072 6.18361 13.9215 4.1307 11.8686C2.07779 9.81572 1.79217 7.79855 1.83602 6.64165C1.85783 6.06647 2.19387 5.49592 2.71077 4.97903Z"
+                                    stroke="white" stroke-width="0.5" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_10456_73202">
+                                    <rect width="16" height="16" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        Talk to Technical Support
+                    </a>
+                </div>
+                <div class="d-flex align-items-center gap-12" id="otherControls">
+                    <span class="sm-ele fz-12 bordered-8 text-nowrap prim-opacity-outlined">Accepted</span>
+                    <button class="btn-main btn-primary fz-14 fw-medium" data-bs-toggle="modal"
+                        data-bs-target="#editRequest">Send Edit Request</button>
                 </div>
             </nav>
             <div class="tab-content" id="Sub-nav-tabContent">
@@ -1677,22 +1693,98 @@ The tender also requires the selected supplier to provide periodic maintenance a
                 if (event.target.id === 'nav-tender-tab') {
                     votingControls.classList.remove('d-none');
                     otherControls.classList.add('d-none');
+                    const rejectionBadgeAndSupport = document.getElementById('rejectionBadgeAndSupport');
+                    if (rejectionBadgeAndSupport) rejectionBadgeAndSupport.classList.add('d-none');
                 } else {
                     votingControls.classList.add('d-none');
                     otherControls.classList.remove('d-none');
+                    const storedStatus = sessionStorage.getItem('selectedTenderStatus');
+                    if (storedStatus && (storedStatus.includes('Rejected') || storedStatus.includes('مرفوض'))) {
+                        const rejectionBadgeAndSupport = document.getElementById('rejectionBadgeAndSupport');
+                        if (rejectionBadgeAndSupport) rejectionBadgeAndSupport.classList.remove('d-none');
+                        otherControls.classList.add('d-none');
+                    }
                 }
             });
         });
 
+        // Rejection Section Logic
+        const rejectionSectionHTML = `
+            <div class="tender-card p-3 mb-4 d-none" id="rejectionReasonSection">
+                <h6 class="mb-3 red-colored-2">Reason for Rejection</h6>
+                <div class="tender-sections p-3 rounded-12 bg-white mb-3">
+                    <p class="fz-14 text-gray">
+                        Al-Rajhi Company seeks through this tender to modernize its technical infrastructure
+                        by supplying and installing an integrated set of desktop and laptop computers.
+                        The process aims to meet the needs of various departments, improve employee efficiency,
+                        and ensure device compatibility with the latest systems and applications used within the company.
+                        The scope of work also includes equipping devices with all basic components and software necessary for operation.<br>
+                        The tender also includes the winning supplier's commitment to provide periodic maintenance services
+                        and <span>technical support</span> for two years, including addressing emergency failures,
+                        providing original spare parts, and submitting periodic performance reports to the technical management.
+                        The supplier is also expected to adhere to a specific schedule for delivery and installation,
+                        while training the internal team on the optimal use of the devices, to ensure the sustainability of
+                        technical solutions and enhance the company's operational efficiency.
+                    </p>
+                </div>
+            </div>`;
+
+        // Insert rejection section before the first tender-card after tabs
+        const firstCard = document.querySelector('.dash-widget .tender-card');
+        if (firstCard) {
+            firstCard.insertAdjacentHTML('beforebegin', rejectionSectionHTML);
+        }
+
         // Badge Sync Logic
         const storedStatus = sessionStorage.getItem('selectedTenderStatus');
         const storedClass = sessionStorage.getItem('selectedTenderClass');
-        if (storedStatus && otherControls) {
+
+        if (storedStatus) {
+            const rejectionBadgeAndSupport = document.getElementById('rejectionBadgeAndSupport');
+            const rejectionReasonSection = document.getElementById('rejectionReasonSection');
             const statusBadge = otherControls.querySelector('.sm-ele');
-            if (statusBadge) {
-                statusBadge.textContent = storedStatus;
-                if (storedClass) {
-                    statusBadge.className = storedClass;
+
+            if (storedStatus.includes('Rejected') || storedStatus.includes('مرفوض')) {
+                // Show rejection-specific elements
+                if (rejectionBadgeAndSupport) rejectionBadgeAndSupport.classList.remove('d-none');
+                if (rejectionReasonSection) rejectionReasonSection.classList.remove('d-none');
+
+                // Update badge in rejection area
+                const rejBadge = rejectionBadgeAndSupport.querySelector('.sm-ele');
+                if (rejBadge) {
+                    rejBadge.textContent = storedStatus;
+                    if (storedClass) rejBadge.className = storedClass;
+                }
+
+                // Hide default otherControls
+                if (otherControls) otherControls.classList.add('d-none');
+
+                // Hide Tabs for Rejected Tenders
+                const tabsContainer = document.getElementById('tabsContainer');
+                if (tabsContainer) tabsContainer.style.setProperty('display', 'none', 'important');
+
+                const subNavTabs = document.getElementById('sub-nav-tab');
+                if (subNavTabs) subNavTabs.style.setProperty('display', 'none', 'important');
+
+                // Show first tab content (nav-uploaded) and hide third tab content (nav-submit)
+                const firstTab = document.getElementById('nav-uploaded-tab');
+                const thirdTab = document.getElementById('nav-submit-tab');
+                const firstPane = document.getElementById('nav-uploaded');
+                const thirdPane = document.getElementById('nav-submit');
+
+                if (firstTab && thirdTab && firstPane && thirdPane) {
+                    thirdTab.classList.remove('active');
+                    firstTab.classList.add('active');
+                    thirdPane.classList.remove('show', 'active');
+                    firstPane.classList.add('show', 'active');
+                }
+            } else {
+                // Default sync
+                if (statusBadge) {
+                    statusBadge.textContent = storedStatus;
+                    if (storedClass) {
+                        statusBadge.className = storedClass;
+                    }
                 }
             }
         }

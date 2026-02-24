@@ -1754,7 +1754,8 @@
                       <span class="sm-ele fz-12 bordered-8 text-nowrap badge-rejected">مرفوضه</span>
                     </td>
                     <td data-label="الاجراءات">
-                      <a href="rejected-tenders-details.html" class="btn-primary sm-ele fz-12 bordered-40">
+                      <a href="submitted-tenders-details.html?status=badge-rejected&text=مرفوضه"
+                        class="btn-primary sm-ele fz-12 bordered-40">
                         التفاصيل
                       </a>
                     </td>
@@ -2378,6 +2379,27 @@
         // Only fly when adding to favorites (not removing)
         if (!wasFavorited) {
           flyHeart(btn);
+        }
+      });
+
+      // Capture status for details pages
+      document.addEventListener('click', function (e) {
+        const link = e.target.closest('a[href*="details.html"]');
+        if (!link) return;
+
+        const row = link.closest('tr');
+        const card = link.closest('.tender-card');
+        let badge;
+
+        if (row) {
+          badge = row.querySelector('.sm-ele');
+        } else if (card) {
+          badge = card.querySelector('.tender-status');
+        }
+
+        if (badge) {
+          sessionStorage.setItem('selectedTenderStatus', badge.textContent.trim());
+          sessionStorage.setItem('selectedTenderClass', badge.className);
         }
       });
     })();

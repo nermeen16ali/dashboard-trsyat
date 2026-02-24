@@ -788,53 +788,67 @@
                         قائمة المتقدمين
                     </button>
                 </div>
-                <div class="d-flex align-items-center gap-12">
-                    <div class="d-flex align-items-center gap-4 d-none" id="votingControls">
-                        <span class="fz-14 base-text">التصويت على المناقصة</span>
-                        <!-- Voting buttons -->
-                        <div class="d-flex align-items-center gap-10">
-                            <button class="vote-btn">
-                                <span>12</span>
-                                <img src="images/like.svg" alt="like">
-                            </button>
-                            <button class="vote-btn">
-                                <span>12</span>
-                                <img src="images/dislike.svg" alt="like">
-                            </button>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center gap-12" id="otherControls">
-                        <span class="sm-ele fz-12 bordered-8 text-nowrap prim-opacity-outlined">تم قبولها</span>
-                        <button class="btn-main btn-primary fz-14 fw-medium" data-bs-toggle="modal"
-                            data-bs-target="#editRequest">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-                                fill="none">
-                                <g opacity="0.4">
-                                    <path
-                                        d="M14.1267 5.35961L12.0067 3.23961C11.2067 2.43961 10.1067 2.47963 9.56672 3.33963L8.38672 5.20629L12.1667 8.98628L14.0334 7.80631C14.8401 7.29297 14.8867 6.11294 14.1267 5.35961Z"
-                                        stroke="white" stroke-width="1.5" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path
-                                        d="M12.1658 8.98047L12.3258 11.7271C12.4791 13.2605 11.9458 13.7938 10.4924 13.9671L4.6791 14.6538C3.45243 14.7938 2.57243 13.9138 2.7191 12.6938L3.37243 7.17383"
-                                        stroke="white" stroke-width="1.5" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path d="M8.38542 5.20614L7.21875 5.13281" stroke="white" stroke-width="1.5"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M3.51953 13.8533L5.63954 11.7266" stroke="white" stroke-width="1.5"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </g>
-                                <path
-                                    d="M7.33203 4.33398C7.33203 4.60732 7.29203 4.88066 7.2187 5.13399C7.14537 5.40066 7.0387 5.64732 6.8987 5.88066C6.7387 6.14732 6.5387 6.38732 6.30537 6.58732C5.7787 7.05399 5.09203 7.33398 4.33203 7.33398C3.99203 7.33398 3.67203 7.28066 3.37203 7.17399C2.69203 6.94732 2.12536 6.48066 1.76536 5.88066C1.49203 5.42732 1.33203 4.89398 1.33203 4.33398C1.33203 3.38732 1.76537 2.54064 2.4587 1.99398C2.97203 1.58064 3.62536 1.33398 4.33203 1.33398C5.99203 1.33398 7.33203 2.67398 7.33203 4.33398Z"
-                                    stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                                <path d="M4.34766 5.45288V3.21289" stroke="white" stroke-width="1.5"
-                                    stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M5.43922 4.33203H3.19922" stroke="white" stroke-width="1.5"
-                                    stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                            ارسال طلب تعديل
+                <div class="d-flex align-items-center gap-4 d-none" id="votingControls">
+                    <span class="fz-14 base-text">التصويت على المناقصة</span>
+                    <!-- Voting buttons -->
+                    <div class="d-flex align-items-center gap-10">
+                        <button class="vote-btn">
+                            <span>12</span>
+                            <img src="images/like.svg" alt="like">
+                        </button>
+                        <button class="vote-btn">
+                            <span>12</span>
+                            <img src="images/dislike.svg" alt="like">
                         </button>
                     </div>
+                </div>
+                <div class="d-flex align-items-center gap-12 w-100 justify-content-end d-none"
+                    id="rejectionBadgeAndSupport">
+                    <span class="sm-ele fz-12 bordered-8 text-nowrap badge-rejected">مرفوضه</span>
+                    <a href="support.html" class="btn-main btn-primary fz-14 fw-medium">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <g clip-path="url(#clip0_10456_73202)">
+                                <path
+                                    d="M9.59372 8.09146L8.85237 8.28982C8.15859 8.47545 7.52388 7.84074 7.70951 7.14697L7.90787 6.40561C7.90791 6.40498 7.90795 6.40342 7.90762 6.40079C7.90692 6.39519 7.90468 6.38592 7.89895 6.37439C7.64261 5.85976 7.49868 5.27963 7.49868 4.66732C7.49868 2.55023 9.21492 0.833984 11.332 0.833984C13.4491 0.833984 15.1653 2.55023 15.1653 4.66732C15.1653 6.78441 13.4491 8.50065 11.332 8.50065C10.7197 8.50065 10.1396 8.35672 9.62494 8.10039C9.61341 8.09465 9.60415 8.09241 9.59854 8.09171C9.59592 8.09139 9.59436 8.09142 9.59372 8.09146ZM9.59372 8.09146C9.59311 8.09151 9.59277 8.09171 9.59372 8.09146ZM9.59372 8.09146L9.59438 8.09129M14.1653 4.66732C14.1653 3.10251 12.8968 1.83398 11.332 1.83398C9.76721 1.83398 8.49868 3.10251 8.49868 4.66732C8.49868 5.12146 8.60516 5.5493 8.79406 5.92856C8.90006 6.14138 8.94397 6.40214 8.87406 6.66342L8.70535 7.29398L9.33591 7.12527C9.59719 7.05536 9.85795 7.09927 10.0708 7.20527C10.45 7.39417 10.8779 7.50065 11.332 7.50065C12.8968 7.50065 14.1653 6.23212 14.1653 4.66732ZM5.79368 4.63443C5.01381 3.23702 3.12371 3.15187 2.00366 4.27192C1.40456 4.87103 0.87223 5.66764 0.836741 6.60377C0.784149 7.99106 1.14241 10.2945 3.4236 12.5757C5.70479 14.8569 8.00828 15.2152 9.39556 15.1626C10.3317 15.1271 11.1283 14.5948 11.7274 13.9957C12.8475 12.8756 12.7623 10.9855 11.3649 10.2056L10.5896 9.77297C9.67707 9.2637 8.52569 9.48072 7.77104 10.2262C7.75742 10.2362 7.68073 10.2888 7.54675 10.2954C7.3758 10.3037 6.98066 10.2428 6.36858 9.63075C5.75629 9.01847 5.6956 8.62328 5.70397 8.4524C5.71052 8.31853 5.76315 8.2419 5.77308 8.2283C6.51861 7.47365 6.73564 6.32227 6.22636 5.40972L5.79368 4.63443ZM2.71077 4.97903C3.44799 4.24181 4.52112 4.4062 4.92047 5.12176L5.35314 5.89705C5.62229 6.37932 5.53046 7.05677 5.05491 7.53232C5.00848 7.57875 4.731 7.87582 4.70517 8.4035C4.67872 8.94372 4.92133 9.59772 5.66147 10.3379C6.40137 11.0778 7.05519 11.3205 7.59533 11.2942C8.12298 11.2685 8.42034 10.9911 8.46705 10.9444C8.9426 10.4689 9.62001 10.377 10.1023 10.6462L10.8776 11.0789C11.5931 11.4782 11.7575 12.5513 11.0203 13.2886C10.5034 13.8055 9.93287 14.1663C8.20079 14.2072 6.18361 13.9215 4.1307 11.8686C2.07779 9.81572 1.79217 7.79855 1.83602 6.64165C1.85783 6.06647 2.19387 5.49592 2.71077 4.97903Z"
+                                    stroke="white" stroke-width="0.5" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_10456_73202">
+                                    <rect width="16" height="16" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        التحدث مع الدعم الفني
+                    </a>
+                </div>
+                <div class="d-flex align-items-center gap-12" id="otherControls">
+                    <span class="sm-ele fz-12 bordered-8 text-nowrap prim-opacity-outlined">تم قبولها</span>
+                    <button class="btn-main btn-primary fz-14 fw-medium" data-bs-toggle="modal"
+                        data-bs-target="#editRequest">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <g opacity="0.4">
+                                <path
+                                    d="M14.1267 5.35961L12.0067 3.23961C11.2067 2.43961 10.1067 2.47963 9.56672 3.33963L8.38672 5.20629L12.1667 8.98628L14.0334 7.80631C14.8401 7.29297 14.8867 6.11294 14.1267 5.35961Z"
+                                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M12.1658 8.98047L12.3258 11.7271C12.4791 13.2605 11.9458 13.7938 10.4924 13.9671L4.6791 14.6538C3.45243 14.7938 2.57243 13.9138 2.7191 12.6938L3.37243 7.17383"
+                                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M8.38542 5.20614L7.21875 5.13281" stroke="white" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M3.51953 13.8533L5.63954 11.7266" stroke="white" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                            <path
+                                d="M7.33203 4.33398C7.33203 4.60732 7.29203 4.88066 7.2187 5.13399C7.14537 5.40066 7.0387 5.64732 6.8987 5.88066C6.7387 6.14732 6.5387 6.38732 6.30537 6.58732C5.7787 7.05399 5.09203 7.33398 4.33203 7.33398C3.99203 7.33398 3.67203 7.28066 3.37203 7.17399C2.69203 6.94732 2.12536 6.48066 1.76536 5.88066C1.49203 5.42732 1.33203 4.89398 1.33203 4.33398C1.33203 3.38732 1.76537 2.54064 2.4587 1.99398C2.97203 1.58064 3.62536 1.33398 4.33203 1.33398C5.99203 1.33398 7.33203 2.67398 7.33203 4.33398Z"
+                                stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M4.34766 5.45288V3.21289" stroke="white" stroke-width="1.5" stroke-miterlimit="10"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M5.43922 4.33203H3.19922" stroke="white" stroke-width="1.5" stroke-miterlimit="10"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        ارسال طلب تعديل
+                    </button>
                 </div>
             </nav>
             <div class="tab-content" id="Sub-nav-tabContent">
@@ -1799,22 +1813,103 @@
                 if (event.target.id === 'nav-tender-tab') {
                     votingControls.classList.remove('d-none');
                     otherControls.classList.add('d-none');
+                    // Add this line to handle rejection badge
+                    const rejectionBadgeAndSupport = document.getElementById('rejectionBadgeAndSupport');
+                    if (rejectionBadgeAndSupport) rejectionBadgeAndSupport.classList.add('d-none');
                 } else {
                     votingControls.classList.add('d-none');
                     otherControls.classList.remove('d-none');
+                    // Add this logic to handle rejection badge restoration
+                    const storedStatus = sessionStorage.getItem('selectedTenderStatus');
+                    if (storedStatus && storedStatus.includes('مرفوض')) {
+                        const rejectionBadgeAndSupport = document.getElementById('rejectionBadgeAndSupport');
+                        if (rejectionBadgeAndSupport) rejectionBadgeAndSupport.classList.remove('d-none');
+                        otherControls.classList.add('d-none');
+                    }
                 }
             });
         });
 
+        // Rejection Section Logic
+        const rejectionSectionHTML = `
+            <div class="tender-card p-3 mb-4 d-none" id="rejectionReasonSection">
+                <h6 class="mb-3 red-colored-2">سبب الرفض</h6>
+                <div class="tender-sections p-3 rounded-12 bg-white mb-3">
+                    <p class="fz-14 text-gray">
+                        تسعى شركة الراجحي من خلال هذه المناقصة إلى تحديث بنيتها
+                        التحتية التقنية عبر توريد وتركيب مجموعة متكاملة من أجهزة
+                        الحاسب الآلي المكتبية والمحمولة. تهدف العملية إلى تلبية
+                        احتياجات الإدارات المختلفة، وتحسين كفاءة الموظفين، وضمان
+                        توافق الأجهزة مع أحدث الأنظمة والتطبيقات المستخدمة داخل
+                        الشركة. ويشمل نطاق العمل كذلك تجهيز الأجهزة بجميع
+                        المكوّنات والبرامج الأساسية اللازمة للتشغيل.<br>
+                        كما تتضمن المناقصة التزام المورد الفائز بتقديم خدمات
+                        الصيانة الدورية و<span>الدعم الفني</span> لمدة عامين، بما يشمل معالجة
+                        الأعطال الطارئة، وتوفير قطع الغيار الأصلية، وتقديم تقارير
+                        أداء دورية للإدارة التقنية. ويُتوقّع من المورد أيضًا
+                        الالتزام بجدول زمني محدد للتسليم والتركيب، مع تدريب فريق
+                        العمل الداخلي على الاستخدام الأمثل للأجهزة، وذلك لضمان
+                        استدامة الحلول التقنية وتعزيز الكفاءة التشغيلية للشركة.
+                    </p>
+                </div>
+            </div>`;
+
+        // Insert rejection section before the first tender-card after tabs
+        const firstCard = document.querySelector('.dash-widget .tender-card');
+        if (firstCard) {
+            firstCard.insertAdjacentHTML('beforebegin', rejectionSectionHTML);
+        }
+
         // Badge Sync Logic
         const storedStatus = sessionStorage.getItem('selectedTenderStatus');
         const storedClass = sessionStorage.getItem('selectedTenderClass');
-        if (storedStatus && otherControls) {
+
+        if (storedStatus) {
+            const rejectionBadgeAndSupport = document.getElementById('rejectionBadgeAndSupport');
+            const rejectionReasonSection = document.getElementById('rejectionReasonSection');
             const statusBadge = otherControls.querySelector('.sm-ele');
-            if (statusBadge) {
-                statusBadge.textContent = storedStatus;
-                if (storedClass) {
-                    statusBadge.className = storedClass;
+
+            if (storedStatus.includes('مرفوض')) {
+                // Show rejection-specific elements
+                if (rejectionBadgeAndSupport) rejectionBadgeAndSupport.classList.remove('d-none');
+                if (rejectionReasonSection) rejectionReasonSection.classList.remove('d-none');
+
+                // Update badge in rejection area
+                const rejBadge = rejectionBadgeAndSupport.querySelector('.sm-ele');
+                if (rejBadge) {
+                    rejBadge.textContent = storedStatus;
+                    if (storedClass) rejBadge.className = storedClass;
+                }
+
+                // Hide default otherControls
+                if (otherControls) otherControls.classList.add('d-none');
+
+                // Hide Tabs for Rejected Tenders
+                const tabsContainer = document.getElementById('tabsContainer');
+                if (tabsContainer) tabsContainer.style.setProperty('display', 'none', 'important');
+
+                const subNavTabs = document.getElementById('sub-nav-tab');
+                if (subNavTabs) subNavTabs.style.setProperty('display', 'none', 'important');
+
+                // Show first tab content (nav-uploaded) and hide third tab content (nav-submit)
+                const firstTab = document.getElementById('nav-uploaded-tab');
+                const thirdTab = document.getElementById('nav-submit-tab');
+                const firstPane = document.getElementById('nav-uploaded');
+                const thirdPane = document.getElementById('nav-submit');
+
+                if (firstTab && thirdTab && firstPane && thirdPane) {
+                    thirdTab.classList.remove('active');
+                    firstTab.classList.add('active');
+                    thirdPane.classList.remove('show', 'active');
+                    firstPane.classList.add('show', 'active');
+                }
+            } else {
+                // Default sync
+                if (statusBadge) {
+                    statusBadge.textContent = storedStatus;
+                    if (storedClass) {
+                        statusBadge.className = storedClass;
+                    }
                 }
             }
         }
