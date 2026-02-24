@@ -5744,3 +5744,79 @@ html[dir="rtl"] .coming-soon-text {
 .video-popup-close:hover {
   transform: rotate(90deg);
 }
+
+/* ============================
+   Fav-btn Flying Heart Animation
+   ============================ */
+
+/* The flying heart particle */
+.flying-heart {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center;
+  animation: flyToTarget var(--fly-duration, 0.85s) cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.flying-heart svg {
+  width: 22px;
+  height: 22px;
+  filter: drop-shadow(0 0 4px rgba(218, 30, 30, 0.5));
+}
+
+.flying-heart svg path {
+  stroke: #da1e1e;
+  fill: #da1e1e;
+}
+
+@keyframes flyToTarget {
+  0% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  90% {
+    opacity: 0.6;
+    transform: scale(0.7);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+}
+
+/* Fav-btn active/favorited state */
+.fav-btn.is-favorited svg path {
+  fill: #da1e1e;
+  stroke: #da1e1e;
+}
+
+/* Pulse animation on the target nav link */
+@keyframes navLinkPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(107, 175, 184, 0.6);
+  }
+
+  50% {
+    box-shadow: 0 0 0 8px rgba(107, 175, 184, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(107, 175, 184, 0);
+  }
+}
+
+.fav-target-pulse {
+  animation: navLinkPulse 0.6s ease-out !important;
+}

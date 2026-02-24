@@ -2289,6 +2289,90 @@
   <script src="js/main.js"></script>
   <script src="js/dataTable.js"></script>
   <script src="js/filtering.js"></script>
+
+  <!-- Fav-btn Flying Heart Animation -->
+  <script>
+    (function () {
+      // The heart SVG markup (filled red)
+      var heartSVG = '<svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none"><path d="M9.07976 13.8733C8.85309 13.9533 8.47976 13.9533 8.25309 13.8733C6.31976 13.2133 1.99976 10.46 1.99976 5.79332C1.99976 3.73332 3.65976 2.06665 5.70642 2.06665C6.91976 2.06665 7.99309 2.65332 8.66642 3.55998C9.33976 2.65332 10.4198 2.06665 11.6264 2.06665C13.6731 2.06665 15.3331 3.73332 15.3331 5.79332C15.3331 10.46 11.0131 13.2133 9.07976 13.8733Z" stroke="#da1e1e" stroke-width="1.5" fill="#da1e1e" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+      function flyHeart(btn) {
+        // Find the tenders-management nav link as the target
+        var targetLink = document.querySelector('a[href="tenders-management.html"].nav-link');
+        if (!targetLink) return;
+
+        var btnRect = btn.getBoundingClientRect();
+        var targetRect = targetLink.getBoundingClientRect();
+
+        // Starting position: center of the fav-btn
+        var startX = btnRect.left + btnRect.width / 2 - 11;
+        var startY = btnRect.top + btnRect.height / 2 - 11;
+
+        // Ending position: center of the target nav link
+        var endX = targetRect.left + targetRect.width / 2 - 11;
+        var endY = targetRect.top + targetRect.height / 2 - 11;
+
+        // Create the flying heart element
+        var heart = document.createElement('div');
+        heart.className = 'flying-heart';
+        heart.innerHTML = heartSVG;
+        heart.style.left = startX + 'px';
+        heart.style.top = startY + 'px';
+        document.body.appendChild(heart);
+
+        // Calculate distance to set duration proportionally
+        var dx = endX - startX;
+        var dy = endY - startY;
+        var dist = Math.sqrt(dx * dx + dy * dy);
+        var duration = Math.max(0.6, Math.min(1.1, dist / 500));
+        heart.style.setProperty('--fly-duration', duration + 's');
+
+        // Use Web Animations API to move from start to end with a curve
+        // We add a slight arc (bezier-like arc via midpoint offset)
+        var midX = startX + dx * 0.5 - dy * 0.15;
+        var midY = startY + dy * 0.5 + Math.abs(dx) * 0.05;
+
+        heart.animate(
+          [
+            { left: startX + 'px', top: startY + 'px', opacity: 1, transform: 'scale(1.5)' },
+            { left: midX + 'px', top: midY + 'px', opacity: 1, transform: 'scale(1.1)', offset: 0.5 },
+            { left: endX + 'px', top: endY + 'px', opacity: 0, transform: 'scale(0.4)' }
+          ],
+          {
+            duration: duration * 1000,
+            easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+            fill: 'forwards'
+          }
+        ).onfinish = function () {
+          // Pulse the target nav link
+          targetLink.classList.remove('fav-target-pulse');
+          void targetLink.offsetWidth; // reflow to restart animation
+          targetLink.classList.add('fav-target-pulse');
+          setTimeout(function () {
+            targetLink.classList.remove('fav-target-pulse');
+          }, 700);
+
+          // Remove the flying element
+          if (heart.parentNode) heart.parentNode.removeChild(heart);
+        };
+      }
+
+      // Delegate click to all fav-btn elements
+      document.addEventListener('click', function (e) {
+        var btn = e.target.closest('.fav-btn');
+        if (!btn) return;
+
+        // Toggle favorited state
+        var wasFavorited = btn.classList.contains('is-favorited');
+        btn.classList.toggle('is-favorited');
+
+        // Only fly when adding to favorites (not removing)
+        if (!wasFavorited) {
+          flyHeart(btn);
+        }
+      });
+    })();
+  </script>
 </body>
 
 </html>
