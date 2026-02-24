@@ -569,7 +569,7 @@
     <div class="container-fluid main-content">
         <nav class="nav-tabs">
             <div class="nav page-tabs" id="tabsContainer">
-                <a href="index-ltr.html" class="nav-link active">
+                <a href="index-ltr.html" class="nav-link">
                     <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
                         <path opacity="0.4" d="M2.11108 14.6667H14.1111" stroke="#6F6F6F" stroke-width="1.5"
                             stroke-linecap="round" stroke-linejoin="round" />
@@ -797,7 +797,7 @@
                                 </clipPath>
                             </defs>
                         </svg>
-                        Talk to Technical Support
+                        Contact Support
                     </a>
                 </div>
                 <div class="d-flex align-items-center gap-12" id="otherControls">
@@ -1759,10 +1759,7 @@ The tender also requires the selected supplier to provide periodic maintenance a
                 // Hide default otherControls
                 if (otherControls) otherControls.classList.add('d-none');
 
-                // Hide Tabs for Rejected Tenders
-                const tabsContainer = document.getElementById('tabsContainer');
-                if (tabsContainer) tabsContainer.style.setProperty('display', 'none', 'important');
-
+                // Hide Sub-navigation Tabs for Rejected Tenders (Keep tabsContainer visible)
                 const subNavTabs = document.getElementById('sub-nav-tab');
                 if (subNavTabs) subNavTabs.style.setProperty('display', 'none', 'important');
 

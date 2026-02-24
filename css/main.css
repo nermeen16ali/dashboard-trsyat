@@ -3241,7 +3241,7 @@ html[dir="ltr"] .send-btn svg {
 }
 
 /* Branding Section Styles */
-.branding-icon-con {
+/* .branding-icon-con {
   width: 64px;
   height: 64px;
   background: #27253d;
@@ -3255,7 +3255,7 @@ html[dir="ltr"] .send-btn svg {
 .branding-icon-con img {
   width: 40px;
   height: 40px;
-}
+} */
 
 .branding-desc {
   color: #ddddde;
@@ -4807,9 +4807,9 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     height: 378px;
   }
 
-  .branding-icon-con {
+  /* .branding-icon-con {
     background: unset;
-  }
+  } */
 
   .sector-tag {
     font-size: 12px;
