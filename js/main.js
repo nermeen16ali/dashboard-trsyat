@@ -565,7 +565,7 @@ if (document.querySelector('.sort-icon')) {
 
 // Video Explanation Popup Logic
 document.addEventListener("click", (e) => {
-  const videoBtn = e.target.closest(".outline-primary-gray.bordered-40");
+  const videoBtn = e.target.closest("button.outline-primary-gray.bordered-40");
   if (!videoBtn) return;
 
   e.preventDefault();
