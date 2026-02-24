@@ -4807,10 +4807,6 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     height: 378px;
   }
 
-  /* .branding-icon-con {
-    background: unset;
-  } */
-
   .sector-tag {
     font-size: 12px;
   }
@@ -4879,20 +4875,6 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
   .tender-dates {
     flex-direction: column;
   }
-
-  /* .sub-nav-tabs {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
-  }
-
-  .sub-nav-tabs::-webkit-scrollbar {
-    display: none;
-  }
-
-  .sub-nav-tabs::scrollbar {
-    display: none;
-  } */
 
   .sub-tabs .btn-base {
     width: 100%;
