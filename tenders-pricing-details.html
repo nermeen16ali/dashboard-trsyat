@@ -676,15 +676,14 @@
     <div class="tender-card p-3 mb-4">
       <div class="d-flex align-items-center justify-content-between mb-3">
         <h6 class="fw-medium black-text">تفاصيل الطلب</h6>
-        <!--badge here d-none, remove d-none to show it-->
-        <span class="sm-ele fz-12 bordered-8 text-nowrap badge-reviewed  d-none">يتم المراجعه</span>
-        <!--second case-->
         <div class="d-flex align-items-center gap-12">
-          <span class="sm-ele fz-12 bordered-8 text-nowrap badge-success">تم ارجاعها بملاحظة</span>
-          <a href="new-pricing-edit.html" class="btn-primary sm-ele fz-12 bordered-8 text-nowrap">
-            <img src="images/pen-add.svg" alt="icon">
-            تعديل
-          </a>
+          <span id="pricingBadge" class="sm-ele fz-12 bordered-8 text-nowrap badge-reviewed d-none">يتم المراجعه</span>
+          <div id="editBtnContainer" class="d-none">
+            <a href="new-pricing-edit.html" class="btn-primary sm-ele fz-12 bordered-40 text-nowrap">
+              <img src="images/pen-add.svg" alt="icon">
+              تعديل
+            </a>
+          </div>
         </div>
       </div>
       <div class="tender-sections p-3 rounded-12 bg-white">
@@ -720,25 +719,10 @@
         </div>
       </div>
     </div>
-    <div class="tender-card p-3 mb-4">
-      <h6 class="fw-medium black-text mb-3">الملاحظة</h6>
-      <div class="tender-sections p-12 rounded-12 bg-white fz-14 text-dark-gray">
-        <p>تسعى شركة الراجحي من خلال هذه المناقصة إلى تحديث بنيتها التحتية التقنية عبر توريد وتركيب مجموعة متكاملة من
-          أجهزة الحاسب الآلي المكتبية والمحمولة. تهدف العملية إلى تلبية احتياجات الإدارات المختلفة، وتحسين كفاءة
-          الموظفين، وضمان توافق الأجهزة مع أحدث الأنظمة والتطبيقات المستخدمة داخل الشركة. ويشمل نطاق العمل كذلك تجهيز
-          الأجهزة بجميع المكوّنات والبرامج الأساسية اللازمة للتشغيل.
-          كما تتضمن المناقصة التزام المورد الفائز بتقديم خدمات الصيانة الدورية والدعم الفني لمدة عامين، بما يشمل معالجة
-          الأعطال الطارئة، وتوفير قطع الغيار الأصلية، وتقديم تقارير أداء دورية للإدارة التقنية. ويُتوقّع من المورد أيضًا
-          الالتزام بجدول زمني محدد للتسليم والتركيب، مع تدريب فريق العمل الداخلي على الاستخدام الأمثل للأجهزة، وذلك
-          لضمان استدامة الحلول التقنية وتعزيز الكفاءة التشغيلية للشركة.
-        </p>
-        <p>
-          كما تتضمن المناقصة التزام المورد الفائز بتقديم خدمات الصيانة الدورية والدعم الفني لمدة عامين، بما يشمل معالجة
-          الأعطال الطارئة، وتوفير قطع الغيار الأصلية، وتقديم تقارير أداء دورية للإدارة التقنية. ويُتوقّع من المورد أيضًا
-          الالتزام بجدول زمني محدد للتسليم والتركيب، مع تدريب فريق العمل الداخلي على الاستخدام الأمثل للأجهزة، وذلك
-          لضمان استدامة الحلول التقنية وتعزيز الكفاءة التشغيلية للشركة.
-        </p>
-      </div>
+    <div class="tender-card p-3 mb-4 d-none" id="noteSection">
+      <h6 class="black-text mb-12">الملاحظة</h6>
+      <textarea class="note-bg tender-sections p-3 rounded-12 bg-white"
+        placeholder="اكتب الملاحظة هنا...">تسعى شركة الراجحي من خلال هذه المناقصة إلى تحديث بنيتها التحتية التقنية عبر توريد وتركيب مجموعة متكاملة من أجهزة الحاسب الآلي المكتبية والمحمولة. تهدف العملية إلى تلبية احتياجات الإدارات المختلفة وتحسين كفاءة الموظفين، وضمان توافق الأجهزة مع أحدث الأنظمة والتطبيقات المستخدمة داخل الشركة. ويشمل نطاق العمل كذلك تجهيز الأجهزة بجميع المكونات والبرامج الأساسية للازمة للتشغيل. كما تتضمن المناقصة التزام المورد الفائز بتقديم خدمات الصيانة الدورية والدعم الفني لمدة عامين، بما يشمل معالجة الأعطال الطارئة، وتوفير قطع الغيار الأصلية، وتقديم تقارير أداء دورية للإدارة التقنية. ويُتوقَّع من المورد أيضًا الالتزام بجدول زمني محدد للتسليم والتركيب مع تدريب فريق العمل الداخلي على الاستخدام الأمثل للأجهزة، وذلك لضمان استدامة الحلول التقنية وتعزيز الكفاءة التشغيلية للشركة.</textarea>
     </div>
 
     <div class="dash-widget p-4">
@@ -1454,6 +1438,32 @@
   <script>
     $('#selectAll').click(function (e) {
       $(this).closest('table').find('td input:checkbox').prop('checked', this.checked);
+    });
+
+    // Pricing Badge Synchronization
+    document.addEventListener('DOMContentLoaded', function () {
+      const status = sessionStorage.getItem('pricingStatus');
+      const statusClass = sessionStorage.getItem('pricingClass');
+      const pricingBadge = document.getElementById('pricingBadge');
+      const editBtnContainer = document.getElementById('editBtnContainer');
+      const noteSection = document.getElementById('noteSection');
+
+      if (status && pricingBadge) {
+        pricingBadge.textContent = status;
+        if (statusClass) {
+          pricingBadge.className = statusClass;
+        }
+        pricingBadge.classList.remove('d-none');
+
+        // Show edit button and note section if status is "Returned with Note"
+        if (status.includes('ارجاع') || status.includes('Returned')) {
+          if (editBtnContainer) editBtnContainer.classList.remove('d-none');
+          if (noteSection) noteSection.classList.remove('d-none');
+        } else {
+          if (editBtnContainer) editBtnContainer.classList.add('d-none');
+          if (noteSection) noteSection.classList.add('d-none');
+        }
+      }
     });
   </script>
 </body>

@@ -1421,6 +1421,27 @@
         });
     }
 
+    // Robust Badge Synchronization Logic for Pricing
+    document.addEventListener('DOMContentLoaded', function () {
+      const table = document.querySelector('.competition-table');
+      if (table) {
+        table.addEventListener('click', function (e) {
+          const detailLink = e.target.closest('a[href*="tenders-pricing-details.html"]');
+          if (detailLink) {
+            const row = detailLink.closest('tr');
+            if (row) {
+              // Robust badge detection
+              const badge = row.querySelector('[data-label*="الحا"] .sm-ele, [data-label*="Status"] .sm-ele, .sm-ele[class*="badge-"], .prim-opacity-outlined');
+              if (badge) {
+                sessionStorage.setItem('pricingStatus', badge.textContent.trim());
+                sessionStorage.setItem('pricingClass', badge.className);
+              }
+            }
+          }
+        });
+      }
+    });
+
   </script>
 </body>
 
