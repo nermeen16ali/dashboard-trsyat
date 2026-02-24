@@ -323,6 +323,10 @@ html[dir="rtl"] [type="url"] {
   width: fit-content;
 }
 
+img[src="images/Trsyat-logo.png"] {
+  width: 62px;
+}
+
 .navbar {
   position: fixed;
   top: 0;
