@@ -3259,7 +3259,7 @@ html[dir="ltr"] .send-btn svg {
 
 .branding-desc {
   color: #ddddde;
-  max-width: 500px;
+  /* max-width: 500px; */
 }
 
 .status-item {
@@ -4864,7 +4864,7 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
 
   .branding-desc {
     font-size: 10px;
-    max-width: 286px;
+    /* max-width: 286px; */
   }
 
   .tender-section:first-child:after,
