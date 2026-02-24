@@ -5811,3 +5811,21 @@ html[dir="rtl"] .coming-soon-text {
 .fav-target-pulse {
   animation: navLinkPulse 0.6s ease-out !important;
 }
+
+/* ============================
+   Note Section Styles
+   ============================ */
+.note-bg {
+  width: 100%;
+  min-height: 132px;
+  font-size: 14px;
+  color: var(--text-gray-color);
+  line-height: 1.6;
+  resize: vertical;
+  display: block;
+}
+
+.note-bg:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}

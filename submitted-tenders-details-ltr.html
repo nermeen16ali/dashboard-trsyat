@@ -648,6 +648,11 @@
       </nav>
       <div class="tab-content" id="Sub-nav-tabContent">
         <div class="tab-pane fade" id="nav-uploaded" role="tabpanel" aria-labelledby="nav-uploaded-tab">
+          <div class="tender-card p-3 mb-4 d-none" id="noteSection">
+            <h6>Note</h6>
+            <textarea class="note-bg tender-sections p-3 rounded-12 bg-white"
+              placeholder="Write the note here...">Al-Rajhi Company seeks through this tender to update its technical infrastructure by supplying and installing an integrated set of desktop and laptop computers. The process aims to meet the needs of different departments and improve employee efficiency, ensuring device compatibility with the latest systems and applications used within the company. The scope of work also includes preparing the devices with all basic components and software required for operation. The tender also includes a commitment by the winning supplier to provide periodic maintenance services and technical support for two years, including addressing emergency breakdowns, providing original spare parts, and submitting periodic performance reports to the technical management. The supplier is also expected to adhere to a specific schedule for delivery and installation with training the internal work team on the optimal use of the devices, in order to ensure the sustainability of technical solutions and enhance the company's operational efficiency.</textarea>
+          </div>
           <!-- Tender Cards Grid -->
           <div class="tender-card p-3 mb-4 abs-card">
             <div class="tender-header d-flex align-items-center justify-content-between mb-3">
@@ -1403,10 +1408,18 @@
             firstPane.classList.add('show', 'active');
           }
         } else {
+          const noteSection = document.getElementById('noteSection');
           if (badge) {
             const baseClasses = ['sm-ele', 'fz-12', 'bordered-8', 'text-nowrap'];
             badge.className = baseClasses.join(' ') + ' ' + (status || 'badge-reviewed');
             badge.textContent = finalStatus;
+
+            // Show note section if status is "Returned with Note"
+            if (finalStatus.includes('Returned') || finalStatus.includes('ارجاع')) {
+              if (noteSection) noteSection.classList.remove('d-none');
+            } else {
+              if (noteSection) noteSection.classList.add('d-none');
+            }
           }
           if (rejectionBadgeAndSupport) rejectionBadgeAndSupport.style.setProperty('display', 'none', 'important');
           if (rejectionReasonSection) rejectionReasonSection.classList.add('d-none');

@@ -915,6 +915,11 @@
       </nav>
       <div class="tab-content" id="Sub-nav-tabContent">
         <div class="tab-pane fade" id="nav-uploaded" role="tabpanel" aria-labelledby="nav-uploaded-tab">
+          <div class="tender-card p-3 mb-4 d-none" id="noteSection">
+            <h6 class="black-text mb-12">الملاحظة</h6>
+            <textarea class="note-bg tender-sections p-3 rounded-12 bg-white"
+              placeholder="اكتب الملاحظة هنا...">تسعى شركة الراجحي من خلال هذه المناقصة إلى تحديث بنيتها التحتية التقنية عبر توريد وتركيب مجموعة متكاملة من أجهزة الحاسب الآلي المكتبية والمحمولة. تهدف العملية إلى تلبية احتياجات الإدارات المختلفة وتحسين كفاءة الموظفين، وضمان توافق الأجهزة مع أحدث الأنظمة والتطبيقات المستخدمة داخل الشركة. ويشمل نطاق العمل كذلك تجهيز الأجهزة بجميع المكونات والبرامج الأساسية للازمة للتشغيل. كما تتضمن المناقصة تزام المورد الفائز بتقديم خدمات الصيانة الدورية والدعم الفني لمدة عامين، بما يشمل معالجة الأعطال الطارئة، وتوفير قطع الغيار الأصلية، وتقديم تقارير أداء دورية للإدارة التقنية. ويُتوقَّع من المورد أيضًا الالتزام بجدول زمني محدد للتسليم والتركيب مع تدريب فريق العمل الداخلي على الاستخدام الأمثل للأجهزة، وذلك لضمان استدامة الحلول التقنية وتعزيز الكفاءة التشغيلية للشركة.</textarea>
+          </div>
           <!-- Tender Cards Grid -->
           <div class="tender-card p-3 mb-4 abs-card">
             <div class="tender-header d-flex align-items-center justify-content-between mb-3">
@@ -1720,6 +1725,25 @@
         if (firstTab) {
           const bsTab = new bootstrap.Tab(firstTab);
           bsTab.show();
+        }
+      }
+
+      // Badge Synchronization
+      const status = urlParams.get('status') || sessionStorage.getItem('selectedTenderStatus');
+      const statusClass = urlParams.get('class') || sessionStorage.getItem('selectedTenderClass');
+      const noteSection = document.getElementById('noteSection');
+
+      if (status && reviewBadge) {
+        reviewBadge.textContent = status;
+        if (statusClass) {
+          const baseClasses = ['sm-ele', 'fz-12', 'bordered-8', 'text-nowrap'];
+          reviewBadge.className = baseClasses.join(' ') + ' ' + statusClass;
+        }
+        // Show note section if status is "Returned with Note"
+        if (status.includes('ارجاع') || status.includes('Returned')) {
+          if (noteSection) noteSection.classList.remove('d-none');
+        } else {
+          if (noteSection) noteSection.classList.add('d-none');
         }
       }
 
