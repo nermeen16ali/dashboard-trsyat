@@ -1683,6 +1683,19 @@ The tender also requires the selected supplier to provide periodic maintenance a
                 }
             });
         });
+
+        // Badge Sync Logic
+        const storedStatus = sessionStorage.getItem('selectedTenderStatus');
+        const storedClass = sessionStorage.getItem('selectedTenderClass');
+        if (storedStatus && otherControls) {
+            const statusBadge = otherControls.querySelector('.sm-ele');
+            if (statusBadge) {
+                statusBadge.textContent = storedStatus;
+                if (storedClass) {
+                    statusBadge.className = storedClass;
+                }
+            }
+        }
     </script>
 </body>
 

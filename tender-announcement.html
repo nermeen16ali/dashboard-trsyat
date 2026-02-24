@@ -1147,6 +1147,20 @@
     <script src="js/main.js" defer></script>
     <script src="js/filtering.js" defer></script>
     <script src="js/dataTable.js" defer></script>
+    <script>
+        $(document).ready(function () {
+            $('.competition-table').on('click', 'a[href="announce-tenders-details.html"]', function (e) {
+                const row = $(this).closest('tr');
+                const badge = row.find('td[data-label="الحاله"] span, td[data-label="الحالة"] span');
+                if (badge.length) {
+                    const statusText = badge.text().trim();
+                    const statusClass = badge.attr('class');
+                    sessionStorage.setItem('selectedTenderStatus', statusText);
+                    sessionStorage.setItem('selectedTenderClass', statusClass);
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
