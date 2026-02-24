@@ -774,6 +774,10 @@ html[dir="ltr"] .btn-shadow-bottom {
   background: #e3f0f2 !important;
 }
 
+.stat-card:hover {
+  background: #e3f0f247;
+}
+
 .stat-value {
   font-size: 18px;
   font-weight: 500;
