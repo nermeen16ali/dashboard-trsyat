@@ -2571,6 +2571,32 @@
     <script src="js/main.js"></script>
     <script src="js/dataTable.js"></script>
     <script src="js/upload-file.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        let status = urlParams.get('status');
+        let statusClass = urlParams.get('class');
+
+        if (!status) {
+          status = sessionStorage.getItem('tenderStatus');
+          statusClass = sessionStorage.getItem('tenderClass');
+        }
+
+        if (status) {
+          // Find the badge in the "Selected Tender" section
+          const selectedTenderBadge = document.querySelector('#nav-uploaded .badge-reviewed, #nav-uploaded .prim-opacity-outlined, #nav-uploaded .badge-draft, #nav-uploaded .badge-success');
+
+          if (selectedTenderBadge) {
+            selectedTenderBadge.textContent = status;
+            if (statusClass) {
+              // Preserve base classes
+              const baseClasses = ['sm-ele', 'fz-12', 'bordered-8', 'text-nowrap'];
+              selectedTenderBadge.className = baseClasses.join(' ') + ' ' + statusClass;
+            }
+          }
+        }
+      });
+    </script>
 </body>
 
 </html>
