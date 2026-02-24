@@ -1620,6 +1620,57 @@
       });
     });
   </script>
+
+  <!-- Conditional "تفاصيل الترسية" tab visibility -->
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var showDetails = params.get('tab') === 'details';
+      var detailsTab = document.getElementById('nav-details-tab');
+      var detailsPane = document.getElementById('nav-details');
+
+      if (!detailsTab) return;
+
+      if (showDetails) {
+        // Show the tab and activate it
+        detailsTab.style.display = '';
+        // Remove active from all sibling tabs and panes
+        var allTabs = detailsTab.closest('.sub-tabs').querySelectorAll('.nav-link');
+        var allPanes = document.querySelectorAll('#Sub-nav-tabContent > .tab-pane');
+        allTabs.forEach(function (t) {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        allPanes.forEach(function (p) {
+          p.classList.remove('show', 'active');
+        });
+        // Activate the details tab
+        detailsTab.classList.add('active');
+        detailsTab.setAttribute('aria-selected', 'true');
+        if (detailsPane) {
+          detailsPane.classList.add('show', 'active');
+        }
+      } else {
+        // Hide the tab and its pane
+        detailsTab.style.display = 'none';
+        if (detailsPane) {
+          detailsPane.classList.remove('show', 'active');
+        }
+        // Make sure another tab is active if details was the default active
+        if (detailsTab.classList.contains('active')) {
+          detailsTab.classList.remove('active');
+          detailsTab.setAttribute('aria-selected', 'false');
+          var firstTab = detailsTab.closest('.sub-tabs').querySelector('.nav-link:not(#nav-details-tab)');
+          if (firstTab) {
+            firstTab.classList.add('active');
+            firstTab.setAttribute('aria-selected', 'true');
+            var firstPane = document.querySelector(firstTab.getAttribute('data-bs-target'));
+            if (firstPane) firstPane.classList.add('show', 'active');
+          }
+        }
+      }
+    })();
+  </script>
 </body>
 
 </html>
