@@ -3,8 +3,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const heartSVG = '<svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none"><path d="M9.07976 13.8733C8.85309 13.9533 8.47976 13.9533 8.25309 13.8733C6.31976 13.2133 1.99976 10.46 1.99976 5.79332C1.99976 3.73332 3.65976 2.06665 5.70642 2.06665C6.91976 2.06665 7.99309 2.65332 8.66642 3.55998C9.33976 2.65332 10.4198 2.06665 11.6264 2.06665C13.6731 2.06665 15.3331 3.73332 15.3331 5.79332C15.3331 10.46 11.0131 13.2133 9.07976 13.8733Z" stroke="#da1e1e" stroke-width="1.5" fill="#da1e1e" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
   function flyHeart(btn) {
-    let targetLink = document.querySelector('a[href="tenders-management.html"].nav-link') ||
-      document.querySelector('a[href="tenders-management-ltr.html"].nav-link');
+    const isLTR = document.documentElement.dir === 'ltr' || document.body.classList.contains('ltr');
+    let targetLink = isLTR
+      ? document.querySelector('a[href="tenders-management-ltr.html"].nav-link')
+      : document.querySelector('a[href="tenders-management.html"].nav-link');
+
     const moreBtn = document.getElementById("moreMenuBtn");
 
     // If target link is hidden or not found, fly to the "More" button
@@ -33,16 +36,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const dx = endX - startX;
     const dy = endY - startY;
     const dist = Math.sqrt(dx * dx + dy * dy);
-    const duration = Math.max(0.6, Math.min(1.1, dist / 500));
-    heart.style.setProperty('--fly-duration', duration + 's');
-
-    const midX = startX + dx * 0.5 - dy * 0.15;
-    const midY = startY + dy * 0.5 + Math.abs(dx) * 0.05;
+    const duration = Math.max(0.6, Math.min(1, dist / 800)); // Slightly faster straight flight
 
     heart.animate(
       [
         { left: startX + 'px', top: startY + 'px', opacity: 1, transform: 'scale(1.5)' },
-        { left: midX + 'px', top: midY + 'px', opacity: 1, transform: 'scale(1.1)', offset: 0.5 },
         { left: endX + 'px', top: endY + 'px', opacity: 0, transform: 'scale(0.4)' }
       ],
       {
