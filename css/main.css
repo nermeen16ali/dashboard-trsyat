@@ -1520,12 +1520,6 @@ button:focus:not(:focus-visible) {
   position: relative;
 }
 
-@media (max-width: 343px) {
-  .credit-card {
-    width: 100%;
-  }
-}
-
 .card-effect {
   position: absolute;
   bottom: 0;
@@ -5053,6 +5047,10 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
 @media (max-width: 767px) {
   .competition-table thead {
     display: none;
+  }
+
+  .credit-card {
+    width: 90%;
   }
 
   .swal2-toast-custom {
