@@ -1610,11 +1610,15 @@
           if (votingSection) votingSection.classList.remove('d-none');
           if (votingControls) votingControls.classList.remove('d-none');
         } else if (activeTabId === 'nav-submit-tab') {
-          // Tab 3: Show Review badge ONLY, Hide others
+          // Tab 3: Show correct badge — check URL params first, then sessionStorage
           if (votingSection) votingSection.classList.remove('d-none');
 
+          const urlStatus = new URLSearchParams(window.location.search).get('status');
           const storedStatus = sessionStorage.getItem('selectedTenderStatus');
-          if (storedStatus && storedStatus.includes('مرفوض')) {
+          const isRejected = (urlStatus && urlStatus.includes('rejected')) ||
+            (storedStatus && storedStatus.includes('مرفوض'));
+
+          if (isRejected) {
             if (rejectionBadgeAndSupport) rejectionBadgeAndSupport.classList.remove('d-none');
           } else {
             if (reviewBadge) reviewBadge.classList.remove('d-none');
