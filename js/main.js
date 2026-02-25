@@ -629,7 +629,7 @@ if (document.querySelector('.sort-icon')) {
 
 
 
-// Video Explanation Popup Logic
+// Video Guide Popup Logic
 document.addEventListener("click", (e) => {
   const videoBtn = e.target.closest("button.outline-primary-gray.bordered-40");
   if (!videoBtn) return;

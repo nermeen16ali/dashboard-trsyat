@@ -1249,6 +1249,7 @@ input[type="file"] {
 .pagination {
   gap: 11px;
   align-items: center;
+  justify-content: end;
 }
 
 .pagination .page-link {
@@ -1703,7 +1704,7 @@ button:focus:not(:focus-visible) {
   padding: 10px;
 }
 
-.table tbody td {
+.table td {
   vertical-align: middle;
   color: #202020;
   font-size: 12px;
@@ -3449,7 +3450,7 @@ html[dir="ltr"] .send-btn svg {
   }
 
   .table thead th,
-  .table tbody td {
+  .table td {
     /* white-space: normal; */
     min-width: auto;
   }
@@ -4480,7 +4481,7 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
   border-radius: 16px;
 }
 
-.table tbody td img[src="images/ryall.svg"] {
+.table td img[src="images/ryall.svg"] {
   height: 13px;
 }
 
@@ -5189,7 +5190,7 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     border-bottom: 0 !important;
   }
 
-  .table tbody td img[src="images/ryall.svg"] {
+  .table td img[src="images/ryall.svg"] {
     height: 11px;
   }
 
@@ -5652,7 +5653,7 @@ html[dir="rtl"] .coming-soon-text {
   font-family: "Expo Arabic", sans-serif;
 }
 
-/* Video Explanation Popup */
+/* Video Guide Popup */
 .video-popup-overlay {
   position: fixed;
   top: 0;

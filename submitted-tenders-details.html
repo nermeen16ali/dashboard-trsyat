@@ -1383,21 +1383,14 @@
                     </td>
                   </tr>
                 </tbody>
-                <tfoot>
-                  <tr>
-                    <td colspan="10">
-                      <div class="d-flex align-items-center justify-content-between mt-2 px-3">
-                        <span class="fz-14 fw-medium black-text">السعر الاجمالي <span
-                            class="fz-10">(بالضريبة)</span></span>
-                        <div class="d-flex align-items-center gap-2">
-                          <span class="fw-medium fs-6 black-text">100.23</span>
-                          <img src="images/ryall.svg" alt="ريال">
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                </tfoot>
               </table>
+              <div id="boqTotalFooter" class="d-flex align-items-center justify-content-between px-3 py-2">
+                <span class="fz-14 fw-medium black-text">السعر الاجمالي <span class="fz-10">(بالضريبة)</span></span>
+                <div class="d-flex align-items-center gap-2">
+                  <span class="fw-medium fs-6 black-text">100.23</span>
+                  <img src="images/ryall.svg" alt="ريال">
+                </div>
+              </div>
             </div>
           </div>
           <div class="tender-card p-3">
@@ -1584,6 +1577,18 @@
   <!-- Custom JS -->
   <script src="js/main.js"></script>
   <script src="js/dataTable.js"></script>
+  <script src="js/calender.js"></script>
+  <script>
+    // Move DataTables pagination after the Total Price footer on every draw
+    $('table.competition-table').on('draw.dt init.dt', function () {
+      var wrapper = $(this).closest('.dataTables_wrapper');
+      var totalFooter = $('#boqTotalFooter');
+      var pagination = wrapper.find('.dataTables_paginate');
+      if (totalFooter.length && pagination.length) {
+        pagination.insertAfter(totalFooter);
+      }
+    });
+  </script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const subTabs = document.querySelectorAll('#sub-nav-tab .nav-link');
