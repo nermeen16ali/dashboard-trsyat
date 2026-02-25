@@ -1722,9 +1722,7 @@ html[dir="ltr"] table.dataTable thead>tr>th.sorting:after {
 }
 
 html[dir="rtl"] table.dataTable thead th,
-html[dir="rtl"] table.dataTable thead td,
-html[dir="rtl"] table.dataTable tfoot th,
-html[dir="rtl"] table.dataTable tfoot td {
+html[dir="rtl"] table.dataTable thead td {
   text-align: right;
   padding-right: 10px;
   padding-left: 24px;
@@ -4540,7 +4538,16 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
   }
 
   .navbar-nav {
-    align-items: center;
+    align-items: start;
+  }
+
+  .navbar .nav-link {
+    border: 0;
+  }
+
+  .navbar .btn-primary-shadowed {
+    min-width: 154px;
+    margin-top: 32px;
   }
 
   /* Mobile sidebar menu */
@@ -4583,12 +4590,6 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     /* background-color: rgba(0, 0, 0, 0.5); */
     background-color: rgb(12 32 48 / 50%);
     z-index: -1;
-  }
-
-  .navbar-collapse .nav-link,
-  .btn-primary-shadowed {
-    width: fit-content;
-    min-width: 156px;
   }
 
   .navbar .search-box .form-control {
@@ -5078,10 +5079,6 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
   .fz-14 p,
   .dropdown-item {
     font-size: 12px;
-  }
-
-  .table tfoot {
-    display: none;
   }
 
   .tender-footer>*,
