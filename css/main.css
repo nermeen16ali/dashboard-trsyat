@@ -586,6 +586,7 @@ html[dir="ltr"] .btn-shadow-bottom {
   border-color: #e8e8e8;
   padding: 21px;
   transition: all 0.3s ease;
+  text-align: center;
 }
 
 .services-row .tender-card:hover {
