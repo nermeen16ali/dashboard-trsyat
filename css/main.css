@@ -457,6 +457,8 @@ img[src="images/trsyat-white-logo.svg"] {
   background: var(--primary-color);
   border: 1px solid #ffffff29;
   border-radius: 12px;
+  white-space: nowrap;
+  flex-shrink: 0;
   overflow: hidden;
   transition: all 0.3s ease;
 }
@@ -2179,6 +2181,10 @@ span.flatpickr-weekday {
 @media (min-width: 768px) {
   .tender-section:first-child:after {
     width: 100%;
+  }
+
+  .w-620 {
+    min-width: 620px;
   }
 
   body.swal2-toast-shown .swal2-container {
@@ -4217,10 +4223,6 @@ a.colored:hover {
 
   .navbar .search-box {
     margin-inline-start: 16px;
-  }
-
-  .w-620 {
-    min-width: 620px;
   }
 
   .message-group {
