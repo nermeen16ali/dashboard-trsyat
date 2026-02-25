@@ -1251,6 +1251,7 @@ input[type="file"] {
   gap: 11px;
   align-items: center;
   justify-content: end;
+  margin-top: 16px !important;
 }
 
 .pagination .page-link {
