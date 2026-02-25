@@ -4546,8 +4546,12 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
   }
 
   .navbar .btn-primary-shadowed {
-    min-width: 154px;
+    min-width: 152px;
     margin-top: 32px;
+  }
+
+  .navbar .dropdown-toggle svg {
+    width: 12px;
   }
 
   /* Mobile sidebar menu */
