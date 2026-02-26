@@ -4836,7 +4836,7 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
   }
 
   .stat-card {
-    padding-block: 14px;
+    padding-block: 14px !important;
   }
 
   .chat-main {
