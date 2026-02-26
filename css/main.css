@@ -4887,23 +4887,18 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     display: none;
   }
 
-  /* .gray-outline-btn,
-  .tender-actions .btn-base {
-    display: none;
-  } */
-
   .sub-nav-tabs+div {
     margin-top: 24px;
   }
 
   body {
-    /* padding:0 4px; */
     padding: 0;
   }
 
   .main-content {
     padding: 12px;
     border-radius: 12px;
+    margin-top: 78px;
   }
 
 
