@@ -2548,19 +2548,6 @@ span.flatpickr-weekday {
   background: #fff;
 }
 
-/* .verification-input {
-  width: 56px;
-  height: 56px;
-  text-align: center;
-  font-size: 24px;
-  font-weight: 500;
-  border: 1px solid #e8e8e8;
-  border-radius: 12px;
-  background: #fff;
-  color: var(--black-color);
-  transition: all 0.3s ease;
-} */
-
 .verification-input::placeholder {
   color: #f2f2f2;
 }
