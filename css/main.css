@@ -241,14 +241,14 @@ html[dir="rtl"] [type="url"] {
   border: 1px solid var(--primary-secondary);
 }
 
-.btn-base-alt {
+/* .btn-base-alt {
   background-color: #27253d;
   border: 1px solid #00000038;
 }
 
 .btn-base-alt:hover {
   background-color: var(--primary-secondary);
-}
+} */
 
 .bordered-8 {
   border-radius: 8px;
