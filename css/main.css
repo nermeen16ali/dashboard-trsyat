@@ -2465,9 +2465,9 @@ span.flatpickr-weekday {
 .glow {
   border-radius: 674px;
   background: #27253d;
-  width: 934px;
-  height: 934px;
-  border-radius: 934px;
+  width: 800px;
+  height: 800px;
+  border-radius: 800px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   top: -30%;
   inset-inline-start: -50%;
@@ -2475,11 +2475,11 @@ span.flatpickr-weekday {
 }
 
 .glow-sm {
-  border-radius: 934px;
+  border-radius: 800px;
   background: #27253d;
   filter: blur(77px);
   width: 100%;
-  height: 934px;
+  height: 800px;
   top: -30%;
   inset-inline-start: -30%;
 }
@@ -2488,9 +2488,9 @@ span.flatpickr-weekday {
   border-radius: 674px;
   background: #27253d;
   filter: blur(77px);
-  width: 934px;
-  height: 934px;
-  border-radius: 934px;
+  width: 800px;
+  height: 800px;
+  border-radius: 800px;
   top: -30%;
   inset-inline-start: -50%;
   z-index: 1;
