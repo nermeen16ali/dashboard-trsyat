@@ -4172,6 +4172,11 @@ a.colored:hover {
     margin-inline-start: auto;
   }
 
+  .register-text img[src="images/trsyat-white-logo.svg"] {
+    width: 250px;
+    margin-bottom: 50px;
+  }
+
   .competition-table td:last-child {
     display: flex;
     justify-content: center;
