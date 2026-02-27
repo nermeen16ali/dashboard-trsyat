@@ -313,6 +313,14 @@ img[src="images/trsyat-white-logo.svg"] {
   width: 132px;
 }
 
+img[src="images/trsyat-white-logo.svg"].branding-icon-con {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+}
+
 .dropdown-item img[src="images/trsyat-logo.svg"] {
   width: 32px;
 }
@@ -4174,11 +4182,6 @@ a.colored:hover {
 
   img[src="images/trsyat-white-logo.svg"].branding-icon-con {
     width: 250px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 99;
   }
 
   .competition-table td:last-child {
