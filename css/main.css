@@ -676,6 +676,15 @@ html[dir="ltr"] .btn-shadow-bottom {
   }
 }
 
+/* Drag Handle Styling */
+.drag-handle {
+  cursor: grab;
+  color: #6F6F6F;
+}
+
+.drag-handle:active {
+  cursor: grabbing;
+}
 
 /* More (ellipsis) button stays compact */
 .page-tabs .more-btn {
@@ -833,7 +842,6 @@ html[dir="ltr"] .btn-shadow-bottom {
 
 .kanban-column .tender-card {
   padding-inline-start: 27px;
-  cursor: pointer;
 }
 
 .lh-normal {

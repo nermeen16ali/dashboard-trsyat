@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 animation: 150,
                 ghostClass: 'sortable-ghost',
                 dragClass: 'sortable-drag',
-                handle: '.tender-card',
+                handle: '.drag-handle',
                 onEnd: function (evt) {
                     const card = evt.item;
                     const targetColumn = evt.to;
@@ -31,4 +31,8 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
+
+    // Initialize Bootstrap tooltips
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 });
