@@ -665,6 +665,9 @@ html[dir="ltr"] .btn-shadow-bottom {
   .page-tabs>.dropdown:first-of-type {
     flex: unset;
     width: fit-content;
+  }
+
+  .page-tabs>a.nav-link.active {
     padding-inline: 24px;
   }
 
