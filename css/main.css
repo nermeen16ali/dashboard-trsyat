@@ -765,6 +765,11 @@ html[dir="ltr"] .btn-shadow-bottom {
   min-width: 145px;
   flex-shrink: 0;
   white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.sub-nav-tabs .nav-link:hover {
+  color: var(--primary-base-color);
 }
 
 .modal .sub-nav-tabs .nav-link {
