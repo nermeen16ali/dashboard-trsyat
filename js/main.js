@@ -109,23 +109,51 @@ document.addEventListener("DOMContentLoaded", () => {
     let hiddenTabs = [];
 
     dropdownMenu.innerHTML = "";
-    tabs.forEach((tab) => (tab.style.display = "inline-flex"));
     moreBtn.style.display = "none";
 
-    // نستخدم 1200px لضمان تفعيل الالتفاف على التابلت واللابتوب الصغير
+    // Breakpoints
+    const isMobile = window.innerWidth < 992;
     const isSmallScreen = window.innerWidth < 1360;
 
-    if (isSmallScreen) {
-      // نطبق منطق الالتفاف (إخفاء ما لا يكفي في المساحة) فقط في الشاشات الصغيرة
+    let hasActive = tabs.some(tab => tab.classList.contains("active"));
+
+    if (isMobile) {
+      // On mobile: show only the active tab (or first if none active), hide the rest
+      tabs.forEach((tab, index) => {
+        const wrapper = tab.closest('.dropdown') || tab;
+        if (tab.classList.contains("active") || (!hasActive && index === 0)) {
+          wrapper.style.display = ""; // Reset to CSS default
+          tab.style.display = "inline-flex";
+        } else {
+          wrapper.style.display = "none";
+          tab.style.display = "none";
+          hiddenTabs.push(tab);
+        }
+      });
+    } else if (isSmallScreen) {
+      // Tablet/Small Desktop: wrap overflowing tabs
+      tabs.forEach((tab) => {
+        const wrapper = tab.closest('.dropdown') || tab;
+        wrapper.style.display = ""; // Reset to CSS default
+        tab.style.display = "inline-flex";
+      });
+
       for (let tab of tabs) {
         totalWidth += tab.offsetWidth + 16;
         if (totalWidth > containerWidth) {
+          const wrapper = tab.closest('.dropdown') || tab;
+          wrapper.style.display = "none";
           tab.style.display = "none";
           hiddenTabs.push(tab);
         }
       }
     } else {
-      // في شاشات الكمبيوتر الكبيرة (Desktop): نتركها فارغة لتظهر جميع العناصر دائماً
+      // Desktop: leave them to show all
+      tabs.forEach((tab) => {
+        const wrapper = tab.closest('.dropdown') || tab;
+        wrapper.style.display = ""; // Reset to CSS default
+        tab.style.display = "inline-flex";
+      });
     }
 
     // التعامل مع القائمة المنسدلة (Dropdown)
@@ -138,6 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (parentDropdown) {
           // Clone the entire dropdown structure
           const clonedDropdown = parentDropdown.cloneNode(true);
+          clonedDropdown.style.display = ""; // Reset since original is display:none
           const clonedButton = clonedDropdown.querySelector('button, a');
 
           // Convert to dropdown-item style for the More menu
