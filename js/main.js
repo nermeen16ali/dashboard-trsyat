@@ -297,6 +297,14 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   });
+
+  // Initialize Bootstrap tooltips globally
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl, {
+    trigger: 'hover',
+    animation: false,
+    delay: { show: 0, hide: 0 }
+  }));
 });
 
 // Custom Activity Multiselect Logic

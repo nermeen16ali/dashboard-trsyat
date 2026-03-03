@@ -32,10 +32,4 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Initialize Bootstrap tooltips
-    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl, {
-        trigger: 'hover',
-        delay: { show: 0, hide: 0 }
-    }));
 });
