@@ -5904,7 +5904,7 @@ html[dir="rtl"] .coming-soon-text {
   }
 
   .kanban-column.active {
-    display: block !important;
+    display: flex !important;
     width: 100% !important;
   }
 
