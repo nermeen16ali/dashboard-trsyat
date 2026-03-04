@@ -5834,6 +5834,12 @@ html[dir="rtl"] .coming-soon-text {
     overflow-x: hidden !important;
   }
 
+  .kanban-header .sm-logo {
+    width: 21px;
+    height: 21px;
+    font-size: 12px;
+  }
+
   .kanban-header::before {
     width: 2px;
     height: 20px;
@@ -5869,10 +5875,15 @@ html[dir="rtl"] .coming-soon-text {
   }
 
   #kanbanBoardRow {
-    flex-wrap: wrap !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
     overflow-x: hidden !important;
+    overflow-y: hidden !important;
+    /* No scroll here */
+    height: auto !important;
     margin: 0 !important;
     width: 100% !important;
+    padding: 0 !important;
   }
 
   .kanban-header-row .col-lg-3 {
@@ -5883,7 +5894,7 @@ html[dir="rtl"] .coming-soon-text {
 
   .kanban-header {
     min-width: 120px;
-    height: 40px;
+    height: 36px;
     gap: 12px;
     /* white-space: nowrap;
     cursor: pointer;
@@ -5907,13 +5918,29 @@ html[dir="rtl"] .coming-soon-text {
     color: var(--primary-base-color);
   }
 
+  #kanbanBoardRow>.col-lg-3 {
+    display: none !important;
+    padding: 0 !important;
+  }
+
+  #kanbanBoardRow>.col-lg-3.active {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
   .kanban-column {
     display: none !important;
   }
 
   .kanban-column.active {
     display: flex !important;
+    flex-direction: column !important;
     width: 100% !important;
+    height: calc(100vh - 220px) !important;
+    /* Constrained height for internal scroll */
+    overflow-y: auto !important;
+    padding: 16px !important;
   }
 
   .kanban-nav-arrow {

@@ -77,6 +77,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
         });
+
+        // Auto-activate first tab on load
+        switchColumn(0);
     }
 
     function switchColumn(index) {
@@ -85,10 +88,24 @@ document.addEventListener('DOMContentLoaded', function () {
         const activeHeader = document.querySelector(`.kanban-header[data-column="${index}"]`);
         if (activeHeader) activeHeader.classList.add('active');
 
-        // Update columns active state
-        document.querySelectorAll('.kanban-column').forEach(c => c.classList.remove('active'));
+        // Update columns and their parent wrappers active state
+        document.querySelectorAll('.kanban-column').forEach(c => {
+            c.classList.remove('active');
+            const wrapper = c.closest('.col-lg-3');
+            if (wrapper) wrapper.classList.remove('active');
+        });
+
         const activeColumn = document.querySelector(`.kanban-column[data-column="${index}"]`);
-        if (activeColumn) activeColumn.classList.add('active');
+        if (activeColumn) {
+            activeColumn.classList.add('active');
+            const activeWrapper = activeColumn.closest('.col-lg-3');
+            if (activeWrapper) activeWrapper.classList.add('active');
+        }
+
+        // Reset active column scroll to top when switching
+        if (activeColumn) {
+            activeColumn.scrollTop = 0;
+        }
 
         // Scroll header into view if needed
         if (activeHeader) {
