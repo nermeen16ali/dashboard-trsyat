@@ -2216,7 +2216,7 @@ span.flatpickr-weekday {
   position: relative;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .tender-section:first-child:after {
     width: 100%;
   }
@@ -3503,7 +3503,7 @@ html[dir="ltr"] .send-btn svg {
 /* Responsive */
 
 /* Ensure table displays all columns on desktop without wrapping */
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .table-responsive {
     overflow-x: visible;
   }
@@ -5944,7 +5944,6 @@ html[dir="rtl"] .coming-soon-text {
     height: calc(100vh - 220px) !important;
     /* Constrained height for internal scroll */
     overflow-y: auto !important;
-    padding: 16px !important;
   }
 
   .kanban-nav-arrow {
