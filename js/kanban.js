@@ -97,34 +97,24 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function openMoveModal() {
-        const optionsContainer = document.getElementById('moveColumnOptions');
-        optionsContainer.innerHTML = '';
-        const headers = document.querySelectorAll('.kanban-header');
         const currentColumnIndex = currentCardToMove.closest('.kanban-column').getAttribute('data-column');
 
-        headers.forEach(header => {
-            const index = header.getAttribute('data-column');
-            const title = header.querySelector('h6').innerText;
-            const isCurrent = index === currentColumnIndex;
-
-            const item = document.createElement('div');
-            item.className = `move-column-item`;
-            item.innerHTML = `
-                <label class="d-flex align-items-center justify-content-between w-100 mb-0 cursor-pointer">
-                    <span class="fz-14 black-text">${title} ${isCurrent ? '<small class="text-gray">(الحالية)</small>' : ''}</span>
-                    <input type="radio" name="moveTarget" value="${index}" class="form-check-input" ${isCurrent ? 'checked' : ''}>
-                </label>
-            `;
-
-            // Re-bind the click even if the label handles it, for better UX
-            item.addEventListener('click', (e) => {
-                if (e.target.tagName !== 'INPUT') {
-                    const radio = item.querySelector('input[type="radio"]');
-                    radio.checked = true;
-                }
-            });
-            optionsContainer.appendChild(item);
+        // Reset all current labels
+        document.querySelectorAll('.current-label').forEach(label => {
+            label.classList.add('d-none');
         });
+
+        // Find and check the radio button for the current column
+        const currentRadio = document.querySelector(`input[name="moveTarget"][value="${currentColumnIndex}"]`);
+        if (currentRadio) {
+            currentRadio.checked = true;
+
+            // Show the "Current" label for this option
+            const currentLabel = currentRadio.closest('.move-column-item').querySelector('.current-label');
+            if (currentLabel) {
+                currentLabel.classList.remove('d-none');
+            }
+        }
 
         const bsModal = new bootstrap.Modal(moveModal);
         bsModal.show();

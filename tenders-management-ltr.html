@@ -2584,15 +2584,81 @@
     <div class="modal fade" id="moveCompetitionModal" tabindex="-1" aria-labelledby="moveModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="moveModalLabel">Move Tender to:</h5>
+                <div class="modal-header brd-btm">
+                    <h5 class="modal-title" id="moveModalLabel">Competition Management</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body p-0" id="moveColumnOptions">
-                    <!-- Options will be populated by JS -->
+                <div class="modal-body">
+                    <div class="tender-card p-12">
+                        <h6 class="black-text mb-3">Move Tender to:</h6>
+                        <div class="tender-sections p-12 rounded-12 bg-white" id="moveColumnOptions">
+                            <div class="move-column-item">
+                                <label
+                                    class="d-flex align-items-center justify-content-between w-100 mb-0 cursor-pointer">
+                                    <span class="fz-14 black-text">For Review <small
+                                            class="text-gray current-label d-none">(Current)</small></span>
+                                    <input type="radio" name="moveTarget" value="0" class="form-check-input">
+                                </label>
+                            </div>
+                            <div class="move-column-item">
+                                <label
+                                    class="d-flex align-items-center justify-content-between w-100 mb-0 cursor-pointer">
+                                    <span class="fz-14 black-text">Brochure Purchased <small
+                                            class="text-gray current-label d-none">(Current)</small></span>
+                                    <input type="radio" name="moveTarget" value="1" class="form-check-input">
+                                </label>
+                            </div>
+                            <div class="move-column-item">
+                                <label
+                                    class="d-flex align-items-center justify-content-between w-100 mb-0 cursor-pointer">
+                                    <span class="fz-14 black-text">Preparing Offers <small
+                                            class="text-gray current-label d-none">(Current)</small></span>
+                                    <input type="radio" name="moveTarget" value="2" class="form-check-input">
+                                </label>
+                            </div>
+                            <div class="move-column-item">
+                                <label
+                                    class="d-flex align-items-center justify-content-between w-100 mb-0 cursor-pointer">
+                                    <span class="fz-14 black-text">Offer Submitted <small
+                                            class="text-gray current-label d-none">(Current)</small></span>
+                                    <input type="radio" name="moveTarget" value="3" class="form-check-input">
+                                </label>
+                            </div>
+                            <div class="move-column-item">
+                                <label
+                                    class="d-flex align-items-center justify-content-between w-100 mb-0 cursor-pointer">
+                                    <span class="fz-14 black-text">Awarded <small
+                                            class="text-gray current-label d-none">(Current)</small></span>
+                                    <input type="radio" name="moveTarget" value="4" class="form-check-input">
+                                </label>
+                            </div>
+                            <div class="move-column-item">
+                                <label
+                                    class="d-flex align-items-center justify-content-between w-100 mb-0 cursor-pointer">
+                                    <span class="fz-14 black-text">Not Awarded <small
+                                            class="text-gray current-label d-none">(Current)</small></span>
+                                    <input type="radio" name="moveTarget" value="5" class="form-check-input">
+                                </label>
+                            </div>
+                            <div class="move-column-item">
+                                <label
+                                    class="d-flex align-items-center justify-content-between w-100 mb-0 cursor-pointer">
+                                    <span class="fz-14 black-text">Financial Claim Submitted <small
+                                            class="text-gray current-label d-none">(Current)</small></span>
+                                    <input type="radio" name="moveTarget" value="6" class="form-check-input">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn-main btn-primary w-100" id="confirmMoveBtn">Confirm Move</button>
+                <div class="modal-footer pt-0 gap-3 flex-nowrap">
+                    <button class="btn-main btn-primary w-100" id="confirmMoveBtn">
+                        Confirm Move
+                    </button>
+                    <button type="button" class="btn-main btn-primary-outline w-100" data-bs-dismiss="modal"
+                        aria-label="Close">
+                        Cancel
+                    </button>
                 </div>
             </div>
         </div>
