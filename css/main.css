@@ -6014,32 +6014,3 @@ html[dir="rtl"] .coming-soon-text {
   background-color: var(--primary-base-color);
   border-color: var(--primary-base-color);
 }
-
-/* Custom Light Tooltip */
-.tooltip-inner {
-  background-color: var(--main-opacity-color) !important;
-  color: var(--black-color) !important;
-  border-radius: 12px !important;
-  padding: 8px 16px !important;
-  font-size: 13px !important;
-  font-weight: 500 !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
-  border: 1px solid #e8e8e8 !important;
-  max-width: 250px !important;
-}
-
-.tooltip .tooltip-arrow::before {
-  border-top-color: var(--main-opacity-color) !important;
-}
-
-.bs-tooltip-bottom .tooltip-arrow::before {
-  border-bottom-color: var(--main-opacity-color) !important;
-}
-
-.bs-tooltip-start .tooltip-arrow::before {
-  border-left-color: var(--main-opacity-color) !important;
-}
-
-.bs-tooltip-end .tooltip-arrow::before {
-  border-right-color: var(--main-opacity-color) !important;
-}
