@@ -5066,6 +5066,10 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     display: none;
   }
 
+  .modal-footer {
+    flex-direction: column;
+  }
+
   .credit-card {
     width: 90%;
   }
