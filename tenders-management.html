@@ -2623,15 +2623,25 @@
   <div class="modal fade" id="moveCompetitionModal" tabindex="-1" aria-labelledby="moveModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="moveModalLabel">نقل المناقصة إلى:</h5>
+        <div class="modal-header brd-btm">
+          <h5 class="modal-title" id="moveModalLabel">ادارة المنافسة</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body p-0" id="moveColumnOptions">
-          <!-- Options will be populated by JS -->
+        <div class="modal-body">
+          <div class="tender-card p-12">
+            <h6 class="black-text mb-3">نقل المناقصة إلى:</h6>
+            <div class="tender-sections p-12 rounded-12 bg-white" id="moveColumnOptions">
+              <!-- Options will be populated by JS -->
+            </div>
+          </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn-main btn-primary w-100" id="confirmMoveBtn">تأكيد النقل</button>
+        <div class="modal-footer pt-0 gap-3 flex-nowrap">
+          <button class="btn-main btn-primary w-100">
+            تأكيد النقل
+          </button>
+          <button type="button" class="btn-main btn-primary-outline w-100" data-bs-dismiss="modal" aria-label="Close">
+            تراجع
+          </button>
         </div>
       </div>
     </div>

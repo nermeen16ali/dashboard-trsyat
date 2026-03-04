@@ -105,20 +105,23 @@ document.addEventListener('DOMContentLoaded', function () {
         headers.forEach(header => {
             const index = header.getAttribute('data-column');
             const title = header.querySelector('h6').innerText;
-            const isActive = index === currentColumnIndex;
+            const isCurrent = index === currentColumnIndex;
 
             const item = document.createElement('div');
-            item.className = `move-column-item ${isActive ? 'active' : ''}`;
+            item.className = `move-column-item`;
             item.innerHTML = `
-                <div class="d-flex align-items-center justify-content-between w-100">
-                    <span class="fz-14 black-text">${title}</span>
-                    <div class="radio-circle"></div>
-                </div>
+                <label class="d-flex align-items-center justify-content-between w-100 mb-0 cursor-pointer">
+                    <span class="fz-14 black-text">${title} ${isCurrent ? '<small class="text-gray">(الحالية)</small>' : ''}</span>
+                    <input type="radio" name="moveTarget" value="${index}" class="form-check-input" ${isCurrent ? 'checked' : ''}>
+                </label>
             `;
-            item.addEventListener('click', () => {
-                document.querySelectorAll('.move-column-item').forEach(i => i.classList.remove('active'));
-                item.classList.add('active');
-                item.setAttribute('data-target-index', index);
+
+            // Re-bind the click even if the label handles it, for better UX
+            item.addEventListener('click', (e) => {
+                if (e.target.tagName !== 'INPUT') {
+                    const radio = item.querySelector('input[type="radio"]');
+                    radio.checked = true;
+                }
             });
             optionsContainer.appendChild(item);
         });
@@ -130,9 +133,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const confirmMoveBtn = document.getElementById('confirmMoveBtn');
     if (confirmMoveBtn) {
         confirmMoveBtn.addEventListener('click', function () {
-            const activeOption = document.querySelector('.move-column-item.active[data-target-index]');
-            if (activeOption && currentCardToMove) {
-                const targetIndex = activeOption.getAttribute('data-target-index');
+            const selectedRadio = document.querySelector('input[name="moveTarget"]:checked');
+            if (selectedRadio && currentCardToMove) {
+                const targetIndex = selectedRadio.value;
                 const targetColumn = document.querySelector(`.kanban-column[data-column="${targetIndex}"]`);
 
                 if (targetColumn) {
