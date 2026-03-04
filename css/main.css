@@ -4732,6 +4732,7 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     display: flex !important;
     gap: 12px;
     margin-top: 8px;
+    flex-direction: column;
   }
 
   .sort-icon {
