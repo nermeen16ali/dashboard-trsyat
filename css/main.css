@@ -5906,19 +5906,10 @@ html[dir="rtl"] .coming-soon-text {
 
   .kanban-header {
     min-width: 170px;
+    white-space: nowrap;
     height: 36px;
     gap: 12px;
-    white-space: nowrap;
-    cursor: pointer;
-    border: 1px solid #e8e8e8;
-    background: #fff;
-    border-radius: 12px;
-    padding: 8px 15px;
     transition: all 0.3s ease;
-    margin-bottom: 0 !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   .kanban-header.active {
