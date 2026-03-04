@@ -5947,8 +5947,11 @@ html[dir="rtl"] .coming-soon-text {
     flex-direction: column !important;
     width: 100% !important;
     height: calc(100vh - 220px) !important;
-    /* Constrained height for internal scroll */
     overflow-y: auto !important;
+  }
+
+  .kanban-column.active::-webkit-scrollbar {
+    display: none;
   }
 
   .kanban-nav-arrow {
