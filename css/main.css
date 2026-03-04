@@ -5834,6 +5834,10 @@ html[dir="rtl"] .coming-soon-text {
     overflow-x: hidden !important;
   }
 
+  .tooltip {
+    display: none !important;
+  }
+
   .kanban-header-row {
     position: relative;
     padding: 0 40px;
@@ -5938,12 +5942,6 @@ html[dir="rtl"] .coming-soon-text {
     right: auto;
     left: 0;
     transform: translateY(-50%) rotate(180deg);
-  }
-}
-
-@media (max-width: 768px) {
-  .tooltip {
-    display: none !important;
   }
 }
 
