@@ -549,50 +549,62 @@
             <div class="kanban-wrapper overflow-x-auto">
                 <!-- Kanban Headers -->
                 <div class="kanban-header-row">
-                    <div class="row Kanban-row flex-nowrap">
+                    <button class="kanban-nav-arrow prev d-md-none" id="kanbanPrevBtn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M15 18l-6-6 6-6" />
+                        </svg>
+                    </button>
+                    <div class="row Kanban-row flex-nowrap" id="kanbanHeaderRow">
                         <div class="col-lg-3">
-                            <div class="kanban-header prim-kanban">
+                            <div class="kanban-header prim-kanban active" data-column="0">
                                 <h6>To Review</h6><span class="sm-logo">4</span>
                             </div>
                         </div>
                         <div class="col-lg-3">
-                            <div class="kanban-header black-kanban">
+                            <div class="kanban-header black-kanban" data-column="1">
                                 <h6>Purchased</h6><span class="sm-logo">4</span>
                             </div>
                         </div>
                         <div class="col-lg-3">
-                            <div class="kanban-header yellow-kanban">
+                            <div class="kanban-header yellow-kanban" data-column="2">
                                 <h6>Preparing Offer</h6><span class="sm-logo">4</span>
                             </div>
                         </div>
                         <div class="col-lg-3">
-                            <div class="kanban-header blue-kanban">
+                            <div class="kanban-header blue-kanban" data-column="3">
                                 <h6>Offer Submitted</h6><span class="sm-logo">4</span>
                             </div>
                         </div>
                         <div class="col-lg-3">
-                            <div class="kanban-header green-kanban">
+                            <div class="kanban-header green-kanban" data-column="4">
                                 <h6>Tendered</h6><span class="sm-logo">4</span>
                             </div>
                         </div>
                         <div class="col-lg-3">
-                            <div class="kanban-header red-kanban">
+                            <div class="kanban-header red-kanban" data-column="5">
                                 <h6>Not Tendered</h6><span class="sm-logo">4</span>
                             </div>
                         </div>
                         <div class="col-lg-3">
-                            <div class="kanban-header move-kanban">
+                            <div class="kanban-header move-kanban" data-column="6">
                                 <h6>Financial Claim Submitted</h6><span class="sm-logo">4</span>
                             </div>
                         </div>
                     </div>
+                    <button class="kanban-nav-arrow next d-md-none" id="kanbanNextBtn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M9 18l6-6-6-6" />
+                        </svg>
+                    </button>
                 </div>
 
                 <!-- Kanban Cards -->
-                <div class="row g-4 Kanban-row flex-nowrap pb-4">
+                <div class="row g-md-4 Kanban-row flex-nowrap pb-4" id="kanbanBoardRow">
                     <!-- Column 1: To Review -->
                     <div class="col-lg-3">
-                        <div class="kanban-column prim-kanban">
+                        <div class="kanban-column prim-kanban active" data-column="0">
                             <!-- Card 1 -->
                             <div class="tender-card p-3 bg-white">
                                 <div class="tender-header d-flex align-items-center justify-content-between mb-3">
@@ -874,7 +886,7 @@
 
                     <!-- Column 2: Purchased -->
                     <div class="col-lg-3">
-                        <div class="kanban-column black-kanban">
+                        <div class="kanban-column black-kanban" data-column="1">
                             <!-- Card 1 -->
                             <div class="tender-card p-3 bg-white">
                                 <div class="tender-header d-flex align-items-center justify-content-between mb-3">
@@ -1156,7 +1168,7 @@
 
                     <!-- Column 3: Preparing Offer -->
                     <div class="col-lg-3">
-                        <div class="kanban-column yellow-kanban">
+                        <div class="kanban-column yellow-kanban" data-column="2">
                             <!-- Card 1 -->
                             <div class="tender-card p-3 bg-white">
                                 <div class="tender-header d-flex align-items-center justify-content-between mb-3">
@@ -1438,7 +1450,7 @@
 
                     <!-- Column 4: Offer Submitted -->
                     <div class="col-lg-3">
-                        <div class="kanban-column blue-kanban">
+                        <div class="kanban-column blue-kanban" data-column="3">
                             <!-- Card 1 -->
                             <div class="tender-card p-3 bg-white">
                                 <div class="tender-header d-flex align-items-center justify-content-between mb-3">
@@ -1720,7 +1732,7 @@
 
                     <!-- Column 5: Tendered -->
                     <div class="col-lg-3">
-                        <div class="kanban-column green-kanban">
+                        <div class="kanban-column green-kanban" data-column="4">
                             <!-- Card 1 -->
                             <div class="tender-card p-3 bg-white">
                                 <div class="tender-header d-flex align-items-center justify-content-between mb-3">
@@ -2002,7 +2014,7 @@
 
                     <!-- Column 6: Not Tendered -->
                     <div class="col-lg-3">
-                        <div class="kanban-column red-kanban">
+                        <div class="kanban-column red-kanban" data-column="5">
                             <!-- Card 1 -->
                             <div class="tender-card p-3 bg-white">
                                 <div class="tender-header d-flex align-items-center justify-content-between mb-3">
@@ -2284,7 +2296,7 @@
 
                     <!-- Column 7: Financial Claim Submitted -->
                     <div class="col-lg-3">
-                        <div class="kanban-column move-kanban">
+                        <div class="kanban-column move-kanban" data-column="6">
                             <!-- Card 1 -->
                             <div class="tender-card p-3 bg-white">
                                 <div class="tender-header d-flex align-items-center justify-content-between mb-3">
@@ -2563,6 +2575,24 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Move Competition Modal -->
+    <div class="modal fade" id="moveCompetitionModal" tabindex="-1" aria-labelledby="moveModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="moveModalLabel">Move Tender to:</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0" id="moveColumnOptions">
+                    <!-- Options will be populated by JS -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-main btn-primary w-100" id="confirmMoveBtn">Confirm Move</button>
                 </div>
             </div>
         </div>
