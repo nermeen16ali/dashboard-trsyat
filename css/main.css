@@ -5834,6 +5834,12 @@ html[dir="rtl"] .coming-soon-text {
     overflow-x: hidden !important;
   }
 
+  .kanban-header::before {
+    width: 2px;
+    height: 20px;
+    inset-inline-start: 9px;
+  }
+
   .tooltip {
     display: none !important;
   }
@@ -5865,6 +5871,8 @@ html[dir="rtl"] .coming-soon-text {
   #kanbanBoardRow {
     flex-wrap: wrap !important;
     overflow-x: hidden !important;
+    margin: 0 !important;
+    width: 100% !important;
   }
 
   .kanban-header-row .col-lg-3 {
