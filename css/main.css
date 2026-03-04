@@ -667,6 +667,11 @@ html[dir="ltr"] .btn-shadow-bottom {
     width: fit-content;
   }
 
+  .page-tabs .nav-link {
+    white-space: normal;
+    word-break: break-word;
+  }
+
   .page-tabs>a.nav-link.active {
     padding-inline: 24px;
   }
@@ -763,7 +768,6 @@ html[dir="ltr"] .btn-shadow-bottom {
   color: #6b6b6b;
   border-radius: 9px;
   min-width: 145px;
-  flex-shrink: 0;
   white-space: nowrap;
   transition: all 0.3s ease;
 }
@@ -5555,7 +5559,6 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
 
   .scrollable-row>* {
     scroll-snap-align: start;
-    flex-shrink: 0;
   }
 }
 
@@ -5902,23 +5905,20 @@ html[dir="rtl"] .coming-soon-text {
   }
 
   .kanban-header {
-    min-width: 120px;
+    min-width: 170px;
     height: 36px;
     gap: 12px;
-    /* white-space: nowrap;
+    white-space: nowrap;
     cursor: pointer;
     border: 1px solid #e8e8e8;
     background: #fff;
     border-radius: 12px;
     padding: 8px 15px;
-    opacity: 0.6;
     transition: all 0.3s ease;
     margin-bottom: 0 !important;
     display: flex;
     align-items: center;
-    gap: 8px;
-    height: 44px;
-    justify-content: center; */
+    justify-content: center;
   }
 
   .kanban-header.active {
