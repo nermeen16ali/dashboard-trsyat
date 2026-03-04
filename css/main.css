@@ -5443,6 +5443,10 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     font-size: 9px;
   }
 
+  html[dir="ltr"] .add-time .fz-12.bordered-40 {
+    text-align: center;
+  }
+
   .tender-number {
     font-size: 11px;
     gap: 6px;
