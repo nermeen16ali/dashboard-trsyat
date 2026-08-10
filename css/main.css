@@ -5715,12 +5715,22 @@ html[dir="rtl"] .coming-soon-text {
 }
 
 .upgrade-layout-row {
-  align-items: stretch;
+  align-items: flex-start;
+}
+
+.upgrade-sidebar-col {
+  position: sticky;
+  top: 68px;
+  z-index: 2;
+  height: fit-content;
 }
 
 .upgrade-sidebar-col .sidebar-features-card {
-  position: sticky;
-  top: 24px;
+  position: relative;
+}
+
+body:has(.upgrade-stepper-wrapper) {
+  overflow-x: clip;
 }
 
 .summary-service-icon {
