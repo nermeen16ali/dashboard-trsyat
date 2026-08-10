@@ -2452,7 +2452,9 @@ span.flatpickr-weekday {
   color: var(--black-color);
   font-weight: 400;
 }
-
+.upgrade-main-col .form-label{
+  font-size: 12px;
+}
 .form-control::placeholder {
   color: var(--text-gray-color);
 }
@@ -5744,7 +5746,8 @@ html[dir="rtl"] .coming-soon-text {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 } */
 
-.selected-service-badge .icon-box.is-bell {
+.selected-service-badge .icon-box.is-bell,
+.selected-service-badge .service-choice-icon.bell {
   background: var(--main-opacity-color);
   color: var(--primary-color);
 }
@@ -6216,25 +6219,60 @@ html[dir="ltr"] .plan-card-radio {
 
 .selected-service-badge {
   background: var(--main-opacity-color);
-  border: 1px solid #cbd5e0;
+  border: 1px solid #d0dfe3;
   border-radius: 16px;
-  padding: 14px 18px;
+  padding: 14px 16px;
   display: flex;
   align-items: center;
   gap: 12px;
   margin-bottom: 24px;
   position: relative;
+  text-align: start;
 }
 
+.selected-service-badge .service-choice-icon,
 .selected-service-badge .icon-box {
   width: 44px;
   height: 44px;
+  min-width: 44px;
   border-radius: 50%;
   background: #fff8e7;
   color: var(--primary-400);
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+}
+
+.selected-service-badge .service-choice-info {
+  flex: 1;
+  min-width: 0;
+  text-align: start;
+}
+
+.selected-service-badge .service-choice-info .feature-info-title,
+.selected-service-badge .service-choice-info .feature-info-desc {
+  margin: 0;
+}
+
+.selected-service-badge .service-choice-info .feature-info-title {
+  margin-bottom: 3px;
+}
+
+.upgrade-stepper-wrapper:has(#pkg-shamel-tab.active) .selected-service-badge {
+  background: #fff8e7;
+  border-color: #efd9a0;
+}
+
+.upgrade-stepper-wrapper:has(#pkg-notif-tab.active) .selected-service-badge {
+  background: var(--main-opacity-color);
+  border-color: #d0dfe3;
+}
+
+.upgrade-stepper-wrapper:has(#pkg-notif-tab.active) .selected-service-badge .service-choice-icon,
+.upgrade-stepper-wrapper:has(#pkg-notif-tab.active) .selected-service-badge .icon-box {
+  background: #e6f4f5;
+  color: #397d86;
 }
 
 .price-breakdown-row {
@@ -6298,16 +6336,15 @@ html[dir="ltr"] .plan-card-radio {
   background: var(--primary-color);
   color: var(--white-color);
   border: none;
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: 13px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 12px;
   padding: 10px 18px;
   cursor: pointer;
   transition: background 0.2s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin: 0;
 }
 
 .coupon-input-group button:hover,
@@ -6327,9 +6364,9 @@ html[dir="ltr"] .plan-card-radio {
   background: var(--main-opacity-color);
   color: var(--primary-color);
   border-radius: 8px;
-  padding: 6px 12px;
+  padding: 8px 12px;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 500;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -6654,15 +6691,13 @@ html[dir="ltr"] .input-icon-group input {
 }
 
 .coupon-activated-msg {
-  font-size: 13px;
-  font-weight: 700;
+  color: #00a640;
 }
 
 .breakdown-discount-total {
   border-top: 1px dashed #cbd5e0;
   padding-top: 8px;
   margin-top: 8px;
-  font-weight: 700;
 }
 
 .breakdown-highlight-price {
@@ -6726,12 +6761,12 @@ html[dir="ltr"] .input-icon-group input {
   margin-bottom: 28px;
 }
 
-.bank-notes-title {
+/* .bank-notes-title {
   font-size: 16px;
   font-weight: 800;
   color: #2b7a78;
   margin: 0 0 12px 0;
-}
+} */
 
 .bank-notes-list {
   margin: 0;
@@ -6745,9 +6780,8 @@ html[dir="ltr"] .input-icon-group input {
 .bank-notes-list li {
   position: relative;
   font-size: 13.5px;
-  font-weight: 600;
   color: #334155;
-  line-height: 1.7;
+  line-height: 1;
   padding-inline-start: 16px;
 }
 
@@ -6763,8 +6797,7 @@ html[dir="ltr"] .input-icon-group input {
 }
 
 .bank-notes-accent {
-  color: #2b7a78;
-  font-weight: 800;
+  color: var(--primary-color);
 }
 
 .bank-after-discount {
@@ -6784,21 +6817,14 @@ html[dir="ltr"] .input-icon-group input {
   flex-wrap: wrap;
 }
 
-.bank-receipt-text h5 {
-  font-size: 15px;
-  font-weight: 800;
-  color: #2b7a78;
-  margin: 0 0 4px 0;
-}
-
-.bank-receipt-text p {
+/* .bank-receipt-text p {
   font-size: 13px;
   color: #64748b;
   margin: 0;
   font-weight: 500;
-}
+} */
 
-.bank-upload-btn {
+/* .bank-upload-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -6819,7 +6845,7 @@ html[dir="ltr"] .input-icon-group input {
 .bank-upload-btn:hover {
   background: #47959e;
   transform: translateY(-1px);
-}
+} */
 
 /* ===== Upgrade page ===== */
 .upgrade-state-input {
@@ -7020,10 +7046,6 @@ html[dir="ltr"] .input-icon-group input {
 
 .upgrade-stepper-wrapper:has(#coupon-toggle:checked) .pay-summary-discount-row {
   display: flex !important;
-}
-
-.upgrade-stepper-wrapper:has(#coupon-toggle:checked) .coupon-apply-label {
-  display: none;
 }
 
 /* ===== End upgrade CSS state ===== */
