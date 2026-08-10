@@ -2452,9 +2452,11 @@ span.flatpickr-weekday {
   color: var(--black-color);
   font-weight: 400;
 }
-.upgrade-main-col .form-label{
+
+.upgrade-main-col .form-label {
   font-size: 12px;
 }
+
 .form-control::placeholder {
   color: var(--text-gray-color);
 }
@@ -6331,7 +6333,7 @@ html[dir="ltr"] .plan-card-radio {
   outline: none;
 }
 
-.coupon-input-group button,
+/* .coupon-input-group button,
 .coupon-apply-label {
   background: var(--primary-color);
   color: var(--white-color);
@@ -6350,7 +6352,7 @@ html[dir="ltr"] .plan-card-radio {
 .coupon-input-group button:hover,
 .coupon-apply-label:hover {
   background: var(--primary-secondary);
-}
+} */
 
 .coupon-activated-state {
   background: #ffffff;
@@ -7011,7 +7013,7 @@ html[dir="ltr"] .input-icon-group input {
   color: #397d86;
 }
 
-.coupon-apply-label {
+/* .coupon-apply-label {
   background: #5ea8b1;
   color: #ffffff;
   border: none;
@@ -7024,7 +7026,7 @@ html[dir="ltr"] .input-icon-group input {
   display: inline-flex;
   align-items: center;
   white-space: nowrap;
-}
+} */
 
 .coupon-remove-label {
   cursor: pointer;
