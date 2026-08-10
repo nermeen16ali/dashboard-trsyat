@@ -7,7 +7,7 @@
 //     pageLength: 8,
 //     lengthChange: false,
 //     language: {
-//       url: "//cdn.datatables.net/plug-ins/1.13.6/i18n/ar.json",
+//       url: "assets/i18n/datatables-ar.json",
 //     },
 //   });
 
@@ -42,8 +42,8 @@ $(document).ready(function () {
     lengthChange: false,
     language: {
       url: isRTL
-        ? "//cdn.datatables.net/plug-ins/1.13.6/i18n/ar.json"
-        : "//cdn.datatables.net/plug-ins/1.13.6/i18n/en-GB.json",
+        ? "assets/i18n/datatables-ar.json"
+        : "assets/i18n/datatables-en-GB.json",
       paginate: {
         previous: isRTL ? rightArrow : leftArrow,
         next: isRTL ? leftArrow : rightArrow,

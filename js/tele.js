@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
         initialCountry: "sa",
         countryOrder: ["sa", "ae", "kw", "qa", "bh", "eg"],
         separateDialCode: true,
-        utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/js/utils.js",
+        utilsScript: "assets/js/intlTelInput-utils.js",
     };
 
     // Select all inputs by class
