@@ -599,768 +599,1278 @@
                 <img src="images/play-cricle.svg" alt="Video Guide">
             </button>
         </div>
+        <!-- Upgrade Tabs Section (Bootstrap tabs/pills + CSS state) -->
+        <div class="upgrade-stepper-wrapper container-fluid px-2 px-md-4">
+            <input class="upgrade-state-input" type="checkbox" id="coupon-toggle" checked>
+            <input class="upgrade-state-input" type="radio" name="upgrade-flow" id="s1-yearly" checked>
+            <input class="upgrade-state-input" type="radio" name="upgrade-flow" id="s1-6months">
+            <input class="upgrade-state-input" type="radio" name="upgrade-flow" id="s1-monthly">
 
-        <section class="plans container">
-            <nav>
-                <div class="nav nav-tabs upgrade-nav-tab justify-content-center" id="upgrade-nav-tab" role="tablist">
-                    <button class="nav-link active" id="nav-monthly-tab" data-bs-toggle="tab"
-                        data-bs-target="#nav-monthly" type="button" role="tab" aria-controls="nav-monthly"
-                        aria-selected="true">
-                        Monthly
+            <ul class="nav nav-pills stepper-header-bar d-flex align-items-center justify-content-center gap-3 gap-md-5 border-0"
+                id="upgradeTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link stepper-step active border-0 bg-transparent p-0 text-start"
+                        id="upgrade-tab-select-btn" data-bs-toggle="tab" data-bs-target="#upgrade-tab-select"
+                        type="button" role="tab" aria-controls="upgrade-tab-select" aria-selected="true">
+                        <div class="stepper-step-number">1</div>
+                        <div class="stepper-step-info">
+                            <h4 class="stepper-step-title">Select Service & Duration</h4>
+                            <p class="stepper-step-subtitle">Choose the suitable service type</p>
+                        </div>
                     </button>
-                    <button class="nav-link" id="nav-half-tab" data-bs-toggle="tab" data-bs-target="#nav-half"
-                        type="button" role="tab" aria-controls="nav-half" aria-selected="false">
-                        Semi-annually
+                </li>
+                <div class="stepper-line-divider d-none d-md-block"></div>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link stepper-step stepper-step-locked border-0 bg-transparent p-0 text-start"
+                        id="upgrade-tab-checkout-btn" data-bs-toggle="tab" data-bs-target="#upgrade-tab-checkout"
+                        type="button" role="tab" aria-controls="upgrade-tab-checkout" aria-selected="false"
+                        aria-disabled="true">
+                        <div class="stepper-step-number">2</div>
+                        <div class="stepper-step-info">
+                            <h4 class="stepper-step-title">Review Order & Payment</h4>
+                            <p class="stepper-step-subtitle">Review your details and pay</p>
+                        </div>
                     </button>
-                    <button class="nav-link" id="nav-yearly-tab" data-bs-toggle="tab" data-bs-target="#nav-yearly"
-                        type="button" role="tab" aria-controls="nav-yearly" aria-selected="false">
-                        Yearly
-                    </button>
+                </li>
+            </ul>
+
+            <div class="row g-4 upgrade-layout-row align-items-start">
+                <div class="col-12 col-lg-3 upgrade-sidebar-col">
+                    <aside class="sidebar-features-card" id="upgrade-sidebar">
+                        <h3 class="sidebar-select-title">What you will get after subscribing</h3>
+                        <div class="selected-service-badge" id="sidebar-checkout-badge">
+                            <div class="icon-box sidebar-badge-icon-crown"><svg xmlns="http://www.w3.org/2000/svg"
+                                    width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"></path>
+                                </svg></div>
+                            <div class="icon-box sidebar-badge-icon-bell is-bell"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                    <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                                </svg></div>
+                            <div>
+                                <h5 class="feature-info-title"><span class="upgrade-v"
+                                        data-v="shamel-yearly-coupon">Trsyat Comprehensive
+                                        Package</span><span class="upgrade-v" data-v="shamel-yearly-nocoupon">Trsyat
+                                        Comprehensive Package</span><span class="upgrade-v"
+                                        data-v="shamel-6months-coupon">Trsyat Comprehensive Package</span><span
+                                        class="upgrade-v" data-v="shamel-6months-nocoupon">Trsyat Comprehensive
+                                        Package</span><span class="upgrade-v" data-v="shamel-monthly-coupon">Trsyat
+                                        Comprehensive Package</span><span class="upgrade-v"
+                                        data-v="shamel-monthly-nocoupon">Trsyat Comprehensive Package</span><span
+                                        class="upgrade-v" data-v="notif-yearly-coupon">Notifications Package</span><span
+                                        class="upgrade-v" data-v="notif-yearly-nocoupon">Notifications
+                                        Package</span><span class="upgrade-v"
+                                        data-v="notif-6months-coupon">Notifications Package</span><span
+                                        class="upgrade-v" data-v="notif-6months-nocoupon">Notifications
+                                        Package</span><span class="upgrade-v"
+                                        data-v="notif-monthly-coupon">Notifications Package</span><span
+                                        class="upgrade-v" data-v="notif-monthly-nocoupon">Notifications Package</span>
+                                </h5>
+                                <p class="feature-info-desc"><span class="upgrade-v"
+                                        data-v="shamel-yearly-coupon">Complete solution with dedicated team managing all
+                                        tenders</span><span class="upgrade-v" data-v="shamel-yearly-nocoupon">Complete
+                                        solution with dedicated team managing all tenders</span><span class="upgrade-v"
+                                        data-v="shamel-6months-coupon">Complete solution with dedicated team managing
+                                        all tenders</span><span class="upgrade-v"
+                                        data-v="shamel-6months-nocoupon">Complete solution with dedicated team managing
+                                        all tenders</span><span class="upgrade-v"
+                                        data-v="shamel-monthly-coupon">Complete solution with dedicated team managing
+                                        all tenders</span><span class="upgrade-v"
+                                        data-v="shamel-monthly-nocoupon">Complete solution with dedicated team managing
+                                        all tenders</span><span class="upgrade-v" data-v="notif-yearly-coupon">Best for
+                                        companies tracking suitable tenders only</span><span class="upgrade-v"
+                                        data-v="notif-yearly-nocoupon">Best for companies tracking suitable tenders
+                                        only</span><span class="upgrade-v" data-v="notif-6months-coupon">Best for
+                                        companies tracking suitable tenders only</span><span class="upgrade-v"
+                                        data-v="notif-6months-nocoupon">Best for companies tracking suitable tenders
+                                        only</span><span class="upgrade-v" data-v="notif-monthly-coupon">Best for
+                                        companies tracking suitable tenders only</span><span class="upgrade-v"
+                                        data-v="notif-monthly-nocoupon">Best for companies tracking suitable tenders
+                                        only</span></p>
+                            </div>
+                        </div>
+                        <div id="sidebar-features-shamel">
+                            <div class="feature-list-item">
+                                <div class="feature-icon-box">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h5 class="feature-info-title">Dedicated Tender Chat with Advisor</h5>
+                                    <p class="feature-info-desc">Specialized team for proposal preparation & review</p>
+                                </div>
+                            </div>
+                            <div class="feature-list-item">
+                                <div class="feature-icon-box">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                        <line x1="11" y1="8" x2="11" y2="14"></line>
+                                        <line x1="8" y1="11" x2="14" y2="11"></line>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h5 class="feature-info-title">Pre-Purchase Booklet Consultation</h5>
+                                    <p class="feature-info-desc">Booklet analysis and review before buying</p>
+                                </div>
+                            </div>
+                            <div class="feature-list-item">
+                                <div class="feature-icon-box">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                        <polyline points="14 2 14 8 20 8"></polyline>
+                                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                                        <polyline points="10 9 9 9 8 9"></polyline>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h5 class="feature-info-title">View Competition Results & Prices</h5>
+                                    <p class="feature-info-desc">Track tender outcomes with instant notifications</p>
+                                </div>
+                            </div>
+                            <div class="feature-list-item">
+                                <div class="feature-icon-box">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h5 class="feature-info-title">Technical & Financial Proposal Prep</h5>
+                                    <p class="feature-info-desc">Dedicated team for drafting & auditing offers</p>
+                                </div>
+                            </div>
+                            <div class="feature-list-item">
+                                <div class="feature-icon-box">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <circle cx="12" cy="12" r="6"></circle>
+                                        <circle cx="12" cy="12" r="2"></circle>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h5 class="feature-info-title">Smart Tender Matching</h5>
+                                    <p class="feature-info-desc">AI-powered matching for your industry</p>
+                                </div>
+                            </div>
+                            <div class="feature-list-item">
+                                <div class="feature-icon-box">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+                                        <line x1="9" y1="22" x2="9" y2="22.01"></line>
+                                        <line x1="15" y1="22" x2="15" y2="22.01"></line>
+                                        <line x1="12" y1="18" x2="12" y2="18.01"></line>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h5 class="feature-info-title">Etimad Platform Management</h5>
+                                    <p class="feature-info-desc">Full portal handling by experienced staff</p>
+                                </div>
+                            </div>
+                            <div class="feature-list-item">
+                                <div class="feature-icon-box">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="12" cy="7" r="4"></circle>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h5 class="feature-info-title">Dedicated Account Manager</h5>
+                                    <p class="feature-info-desc">Personalized follow-up for all your requests</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="sidebar-features-notif">
+                            <div class="feature-list-item">
+                                <div class="feature-icon-box">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h5 class="feature-info-title">Access All Government Tenders & Competitions</h5>
+                                    <p class="feature-info-desc">Full coverage of competitions and tenders</p>
+                                </div>
+                            </div>
+                            <div class="feature-list-item">
+                                <div class="feature-icon-box">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path
+                                            d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h5 class="feature-info-title">Instant Alerts via WhatsApp & Email</h5>
+                                    <p class="feature-info-desc">Real-time notifications as soon as tenders are
+                                        published</p>
+                                </div>
+                            </div>
+                            <div class="feature-list-item">
+                                <div class="feature-icon-box">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h5 class="feature-info-title">Filtered Alerts for Your Industry</h5>
+                                    <p class="feature-info-desc">Fully customized notifications by activity</p>
+                                </div>
+                            </div>
+                            <div class="feature-list-item">
+                                <div class="feature-icon-box">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                        <polyline points="14 2 14 8 20 8"></polyline>
+                                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                                        <polyline points="10 9 9 9 8 9"></polyline>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h5 class="feature-info-title">View Booklets, Results & Prices</h5>
+                                    <p class="feature-info-desc">Track every detail and tender pricing</p>
+                                </div>
+                            </div>
+                            <div class="feature-list-item">
+                                <div class="feature-icon-box">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="12 6 12 12 16 14"></polyline>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h5 class="feature-info-title">Request Tender Booklet Purchase</h5>
+                                    <p class="feature-info-desc">Fast support for booklet purchase requests</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="guarantee-box">
+                            <div class="guarantee-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                    <polyline points="9 12 11 14 15 10"></polyline>
+                                </svg></div>
+                            <div>
+                                <h5 class="feature-info-title">Trsyat Guarantee</h5>
+                                <p class="feature-info-desc">Safe and reliable service guaranteed</p>
+                            </div>
+                        </div>
+                    </aside>
                 </div>
-            </nav>
-
-            <div class="tab-content" id="upgrade-nav-tabContent">
-                <div class="tab-pane fade active show" id="nav-monthly" role="tabpanel"
-                    aria-labelledby="nav-monthly-tab">
-                    <div class="packages-cards d-flex align-items-center justify-content-end">
-                        <div class="package bg-gred-prim d-flex flex-column justify-content-between">
-                            <h5>Basic Plan</h5>
-                            <small>( Direct purchase tenders package
-                                )</small>
-                            <div class="package-price">
-                                <strong>2000 </strong>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="17" viewBox="0 0 14 17"
-                                    fill="none">
-                                    <path
-                                        d="M7.94464 2.35687C8.5173 1.66814 8.86922 1.35893 9.56045 0.968001V12.4367L7.94464 12.7944V2.35687Z"
-                                        fill="white"></path>
-                                    <path
-                                        d="M13.1073 8.12279C13.4423 7.36523 13.4817 7.02853 13.5714 6.25137L1.18585 9.13288C0.892139 9.83385 0.797597 10.2257 0.752335 10.9216L13.1073 8.12279Z"
-                                        fill="white"></path>
-                                    <path
-                                        d="M13.1073 11.6356C13.4423 10.878 13.4817 10.5413 13.5714 9.76419L8.00376 11.0268C7.96435 11.7212 8.00961 12.0775 7.96435 12.7734L13.1073 11.6356Z"
-                                        fill="white"></path>
-                                    <path
-                                        d="M13.1073 15.1479C13.4423 14.3903 13.4817 14.0537 13.5714 13.2765L8.49638 14.4569C8.24022 14.8357 8.08258 15.467 7.96435 16.2857L13.1073 15.1479Z"
-                                        fill="white"></path>
-                                    <path
-                                        d="M5.04802 13.9518C5.54064 13.2995 6.05297 12.4788 6.40766 11.8054L0.433513 13.1928C0.139804 13.8938 0.0452622 14.2856 0 14.9815L5.04802 13.9518Z"
-                                        fill="white"></path>
-                                    <path
-                                        d="M4.79186 1.38887C5.36451 0.700138 5.71643 0.390928 6.40766 0V11.8475L4.79186 12.2052V1.38887Z"
-                                        fill="white"></path>
-                                </svg>
-                                /month
+                <div class="col-12 col-lg-9 upgrade-main-col">
+                    <div class="tab-content" id="upgradeTabContent">
+                        <div class="tab-pane fade show active" id="upgrade-tab-select" role="tabpanel"
+                            aria-labelledby="upgrade-tab-select-btn">
+                            <h2 class="stepper-section-title">Select the service that fits your needs</h2>
+                            <p class="stepper-section-subtitle">Start by choosing the package tailored to your business
+                                scale</p>
+                            <div class="nav nav-pills row g-3 mb-5 border-0" id="packageChoiceTabs" role="tablist">
+                                <div class="col-12 col-md-6" role="presentation">
+                                    <button class="service-choice-card nav-link active text-start w-100"
+                                        id="pkg-shamel-tab" data-bs-toggle="pill" data-bs-target="#pkg-shamel-plans"
+                                        type="button" role="tab" aria-controls="pkg-shamel-plans" aria-selected="true">
+                                        <div class="service-choice-icon crown"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"></path>
+                                            </svg></div>
+                                        <div class="service-choice-info">
+                                            <h4>Trsyat Comprehensive Package</h4>
+                                            <p>Complete solution with dedicated team managing all tenders</p>
+                                        </div>
+                                        <div class="custom-radio-circle"></div>
+                                    </button>
+                                </div>
+                                <div class="col-12 col-md-6" role="presentation">
+                                    <button class="service-choice-card nav-link text-start w-100" id="pkg-notif-tab"
+                                        data-bs-toggle="pill" data-bs-target="#pkg-notif-plans" type="button" role="tab"
+                                        aria-controls="pkg-notif-plans" aria-selected="false">
+                                        <div class="service-choice-icon bell"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                                            </svg></div>
+                                        <div class="service-choice-info">
+                                            <h4>Notifications Package</h4>
+                                            <p>Best for companies tracking suitable tenders only</p>
+                                        </div>
+                                        <div class="custom-radio-circle"></div>
+                                    </button>
+                                </div>
                             </div>
-                            <span>
-                                <a class="text-decoration-underline more-link" href="#featuresTable">Read more</a>
-                                <a href="#featuresTable">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="rotate-180" width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M10.5303 5.46967C10.8232 5.76256 10.8232 6.23744 10.5303 6.53033L5.81066 11.25H20C20.4142 11.25 20.75 11.5858 20.75 12C20.75 12.4142 20.4142 12.75 20 12.75H5.81066L10.5303 17.4697C10.8232 17.7626 10.8232 18.2374 10.5303 18.5303C10.2374 18.8232 9.76256 18.8232 9.46967 18.5303L3.46967 12.5303C3.17678 12.2374 3.17678 11.7626 3.46967 11.4697L9.46967 5.46967C9.76256 5.17678 10.2374 5.17678 10.5303 5.46967Z"
-                                            fill="white"></path>
-                                    </svg>
-                                </a>
-                            </span>
-                            <a href="contact-us-package-ltr.html" class="primary-custom-btn">Choose
-                                plan</a>
+                            <h2 class="stepper-section-title">Select Subscription Duration</h2>
+                            <p class="stepper-section-subtitle">Choose the plan length that suits your requirements</p>
+                            <div class="tab-content" id="packagePlansContent">
+                                <div class="tab-pane fade show active" id="pkg-shamel-plans" role="tabpanel"
+                                    aria-labelledby="pkg-shamel-tab">
+                                    <div class="row g-4 align-items-stretch">
+                                        <div class="col-12 col-md-4">
+                                            <div class="plan-choice-card" data-plan="yearly">
+                                                <span class="plan-badge-tag dark-teal">Most Savings</span>
+                                                <label class="plan-card-face" for="s1-yearly">
+                                                    <div class="plan-card-radio">
+                                                        <div class="custom-radio-circle"></div>
+                                                    </div>
+                                                    <div class="plan-card-icon">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38"
+                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"></path>
+                                                        </svg>
+                                                    </div>
+                                                    <h3>Yearly</h3>
+                                                    <div class="plan-duration-sub">12 Months</div>
+                                                    <div>
+                                                        <div class="plan-price-val">16,990</div>
+                                                        <div class="plan-price-unit">SAR / Month</div>
+                                                    </div>
+                                                    <div class="approx-month-badge">~ 1,416 SAR / Month</div>
+                                                </label>
+                                                <button type="button" class="plan-cta-btn"
+                                                    onclick="goToUpgradeCheckout('s1-yearly')">Subscribe
+                                                    Now</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-md-4">
+                                            <div class="plan-choice-card" data-plan="6months">
+                                                <span class="plan-badge-tag teal">Best Choice</span>
+                                                <label class="plan-card-face" for="s1-6months">
+                                                    <div class="plan-card-radio">
+                                                        <div class="custom-radio-circle"></div>
+                                                    </div>
+                                                    <div class="plan-card-icon">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38"
+                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <polygon
+                                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                                            </polygon>
+                                                        </svg>
+                                                    </div>
+                                                    <h3>6 Months</h3>
+                                                    <div class="plan-duration-sub">180 Days</div>
+                                                    <div>
+                                                        <div class="plan-price-val">10,990</div>
+                                                        <div class="plan-price-unit">SAR / Month</div>
+                                                    </div>
+                                                    <div class="approx-month-badge">~ 1,831 SAR / Month</div>
+                                                </label>
+                                                <button type="button" class="plan-cta-btn"
+                                                    onclick="goToUpgradeCheckout('s1-6months')">Subscribe
+                                                    Now</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-md-4">
+                                            <div class="plan-choice-card" data-plan="monthly">
+
+                                                <label class="plan-card-face" for="s1-monthly">
+                                                    <div class="plan-card-radio">
+                                                        <div class="custom-radio-circle"></div>
+                                                    </div>
+                                                    <div class="plan-card-icon">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38"
+                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2">
+                                                            </rect>
+                                                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                        </svg>
+                                                    </div>
+                                                    <h3>Monthly</h3>
+                                                    <div class="plan-duration-sub">30 Days</div>
+                                                    <div>
+                                                        <div class="plan-price-val">2,490</div>
+                                                        <div class="plan-price-unit">SAR / Month</div>
+                                                    </div>
+                                                    <div class="approx-month-badge plan-approx-empty">—</div>
+                                                </label>
+                                                <button type="button" class="plan-cta-btn"
+                                                    onclick="goToUpgradeCheckout('s1-monthly')">Subscribe
+                                                    Now</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pkg-notif-plans" role="tabpanel"
+                                    aria-labelledby="pkg-notif-tab">
+                                    <div class="row g-4 align-items-stretch">
+                                        <div class="col-12 col-md-4">
+                                            <div class="plan-choice-card" data-plan="yearly">
+                                                <span class="plan-badge-tag dark-teal">Most Savings</span>
+                                                <label class="plan-card-face" for="s1-yearly">
+                                                    <div class="plan-card-radio">
+                                                        <div class="custom-radio-circle"></div>
+                                                    </div>
+                                                    <div class="plan-card-icon">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38"
+                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"></path>
+                                                        </svg>
+                                                    </div>
+                                                    <h3>Yearly</h3>
+                                                    <div class="plan-duration-sub">12 Months</div>
+                                                    <div>
+                                                        <div class="plan-price-val">1,499</div>
+                                                        <div class="plan-price-unit">SAR / Month</div>
+                                                    </div>
+                                                    <div class="approx-month-badge">~ 125 SAR / Month</div>
+                                                </label>
+                                                <button type="button" class="plan-cta-btn"
+                                                    onclick="goToUpgradeCheckout('s1-yearly')">Subscribe
+                                                    Now</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-md-4">
+                                            <div class="plan-choice-card" data-plan="6months">
+                                                <span class="plan-badge-tag teal">Best Choice</span>
+                                                <label class="plan-card-face" for="s1-6months">
+                                                    <div class="plan-card-radio">
+                                                        <div class="custom-radio-circle"></div>
+                                                    </div>
+                                                    <div class="plan-card-icon">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38"
+                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <polygon
+                                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                                            </polygon>
+                                                        </svg>
+                                                    </div>
+                                                    <h3>6 Months</h3>
+                                                    <div class="plan-duration-sub">180 Days</div>
+                                                    <div>
+                                                        <div class="plan-price-val">999</div>
+                                                        <div class="plan-price-unit">SAR / Month</div>
+                                                    </div>
+                                                    <div class="approx-month-badge">~ 166 SAR / Month</div>
+                                                </label>
+                                                <button type="button" class="plan-cta-btn"
+                                                    onclick="goToUpgradeCheckout('s1-6months')">Subscribe
+                                                    Now</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-md-4">
+                                            <div class="plan-choice-card" data-plan="monthly">
+
+                                                <label class="plan-card-face" for="s1-monthly">
+                                                    <div class="plan-card-radio">
+                                                        <div class="custom-radio-circle"></div>
+                                                    </div>
+                                                    <div class="plan-card-icon">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38"
+                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2">
+                                                            </rect>
+                                                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                        </svg>
+                                                    </div>
+                                                    <h3>Monthly</h3>
+                                                    <div class="plan-duration-sub">30 Days</div>
+                                                    <div>
+                                                        <div class="plan-price-val">249</div>
+                                                        <div class="plan-price-unit">SAR / Month</div>
+                                                    </div>
+                                                    <div class="approx-month-badge plan-approx-empty">—</div>
+                                                </label>
+                                                <button type="button" class="plan-cta-btn"
+                                                    onclick="goToUpgradeCheckout('s1-monthly')">Subscribe
+                                                    Now</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="package d-flex flex-column justify-content-between">
-                            <h5>Advanced Plan</h5>
-                            <small class="colored">( Public tenders
-                                package )</small>
-                            <div class="package-price">
-                                <strong>3000</strong>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="17" viewBox="0 0 14 17"
-                                    fill="none">
-                                    <path
-                                        d="M7.94464 2.35687C8.5173 1.66814 8.86922 1.35893 9.56045 0.968001V12.4367L7.94464 12.7944V2.35687Z"
-                                        fill="black" />
-                                    <path
-                                        d="M13.1073 8.12279C13.4423 7.36523 13.4817 7.02853 13.5714 6.25137L1.18585 9.13288C0.892139 9.83385 0.797597 10.2257 0.752335 10.9216L13.1073 8.12279Z"
-                                        fill="black" />
-                                    <path
-                                        d="M13.1073 11.6356C13.4423 10.878 13.4817 10.5413 13.5714 9.76419L8.00376 11.0268C7.96435 11.7212 8.00961 12.0775 7.96435 12.7734L13.1073 11.6356Z"
-                                        fill="black" />
-                                    <path
-                                        d="M13.1073 15.1479C13.4423 14.3903 13.4817 14.0537 13.5714 13.2765L8.49638 14.4569C8.24022 14.8357 8.08258 15.467 7.96435 16.2857L13.1073 15.1479Z"
-                                        fill="black" />
-                                    <path
-                                        d="M5.04802 13.9518C5.54064 13.2995 6.05297 12.4788 6.40766 11.8054L0.433513 13.1928C0.139804 13.8938 0.0452622 14.2856 0 14.9815L5.04802 13.9518Z"
-                                        fill="black" />
-                                    <path
-                                        d="M4.79186 1.38887C5.36451 0.700138 5.71643 0.390928 6.40766 0V11.8475L4.79186 12.2052V1.38887Z"
-                                        fill="black" />
-                                </svg>/month
-                            </div>
-                            <span>
-                                <a class="text-decoration-underline more-link" href="#featuresTable">Read more</a>
-                                <a href="#featuresTable">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="rotate-180" width="18" height="14"
-                                        viewBox="0 0 18 14" fill="none">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M7.53033 0.46967C7.82322 0.762563 7.82322 1.23744 7.53033 1.53033L2.81066 6.25H17C17.4142 6.25 17.75 6.58579 17.75 7C17.75 7.41421 17.4142 7.75 17 7.75H2.81066L7.53033 12.4697C7.82322 12.7626 7.82322 13.2374 7.53033 13.5303C7.23744 13.8232 6.76256 13.8232 6.46967 13.5303L0.46967 7.53033C0.176777 7.23744 0.176777 6.76256 0.46967 6.46967L6.46967 0.46967C6.76256 0.176777 7.23744 0.176777 7.53033 0.46967Z"
-                                            fill="#6BAFB8"></path>
-                                    </svg>
-                                </a>
-                            </span>
-                            <a href="contact-us-package-ltr.html" class="primary-custom-btn">Choose
-                                plan</a>
-                        </div>
+                        <div class="tab-pane fade" id="upgrade-tab-checkout" role="tabpanel"
+                            aria-labelledby="upgrade-tab-checkout-btn">
+                            <div class="row g-4">
+                                <div class="col-12 col-lg-5 ">
+                                    <div class="order-summary-card">
+                                        <h3>Order Summary</h3>
+                                        <div class="price-breakdown-row"><span
+                                                style="color: #94a3b8; font-size: 13px;">Service</span></div>
+                                        <div class="selected-service-row">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="summary-service-icon summary-service-icon-crown">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"></path>
+                                                    </svg>
+                                                </div>
+                                                <div class="summary-service-icon summary-service-icon-bell">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                                                    </svg>
+                                                </div>
+                                                <strong style="font-size: 16px; color: #0f2231;"><span class="upgrade-v"
+                                                        data-v="shamel-yearly-coupon">Trsyat Comprehensive
+                                                        Package</span><span class="upgrade-v"
+                                                        data-v="shamel-yearly-nocoupon">Trsyat Comprehensive
+                                                        Package</span><span class="upgrade-v"
+                                                        data-v="shamel-6months-coupon">Trsyat Comprehensive
+                                                        Package</span><span class="upgrade-v"
+                                                        data-v="shamel-6months-nocoupon">Trsyat Comprehensive
+                                                        Package</span><span class="upgrade-v"
+                                                        data-v="shamel-monthly-coupon">Trsyat Comprehensive
+                                                        Package</span><span class="upgrade-v"
+                                                        data-v="shamel-monthly-nocoupon">Trsyat Comprehensive
+                                                        Package</span><span class="upgrade-v"
+                                                        data-v="notif-yearly-coupon">Notifications Package</span><span
+                                                        class="upgrade-v" data-v="notif-yearly-nocoupon">Notifications
+                                                        Package</span><span class="upgrade-v"
+                                                        data-v="notif-6months-coupon">Notifications Package</span><span
+                                                        class="upgrade-v" data-v="notif-6months-nocoupon">Notifications
+                                                        Package</span><span class="upgrade-v"
+                                                        data-v="notif-monthly-coupon">Notifications Package</span><span
+                                                        class="upgrade-v" data-v="notif-monthly-nocoupon">Notifications
+                                                        Package</span></strong>
+                                            </div>
+                                        </div>
+                                        <div class="price-breakdown-row" style="margin-top: 14px;"><span
+                                                style="color: #94a3b8; font-size: 13px;">Subscription Period</span>
+                                        </div>
+                                        <div class="selected-service-row"><strong
+                                                style="font-size: 16px; color: #0f2231;"><span class="upgrade-v"
+                                                    data-v="shamel-yearly-coupon">Yearly (12 Months)</span><span
+                                                    class="upgrade-v" data-v="shamel-yearly-nocoupon">Yearly (12
+                                                    Months)</span><span class="upgrade-v"
+                                                    data-v="shamel-6months-coupon">6 Months (180 Days)</span><span
+                                                    class="upgrade-v" data-v="shamel-6months-nocoupon">6 Months (180
+                                                    Days)</span><span class="upgrade-v"
+                                                    data-v="shamel-monthly-coupon">Monthly (30 Days)</span><span
+                                                    class="upgrade-v" data-v="shamel-monthly-nocoupon">Monthly (30
+                                                    Days)</span><span class="upgrade-v"
+                                                    data-v="notif-yearly-coupon">Yearly (12 Months)</span><span
+                                                    class="upgrade-v" data-v="notif-yearly-nocoupon">Yearly (12
+                                                    Months)</span><span class="upgrade-v"
+                                                    data-v="notif-6months-coupon">6 Months (180 Days)</span><span
+                                                    class="upgrade-v" data-v="notif-6months-nocoupon">6 Months (180
+                                                    Days)</span><span class="upgrade-v"
+                                                    data-v="notif-monthly-coupon">Monthly (30 Days)</span><span
+                                                    class="upgrade-v" data-v="notif-monthly-nocoupon">Monthly (30
+                                                    Days)</span></strong></div>
+                                        <div class="price-breakdown-row" style="margin-top: 20px;"><span>Base
+                                                Price</span><strong style="color: #0f2231;"><span class="upgrade-v"
+                                                    data-v="shamel-yearly-coupon">14,774 SAR</span><span
+                                                    class="upgrade-v" data-v="shamel-yearly-nocoupon">14,774
+                                                    SAR</span><span class="upgrade-v"
+                                                    data-v="shamel-6months-coupon">9,557 SAR</span><span
+                                                    class="upgrade-v" data-v="shamel-6months-nocoupon">9,557
+                                                    SAR</span><span class="upgrade-v"
+                                                    data-v="shamel-monthly-coupon">2,165 SAR</span><span
+                                                    class="upgrade-v" data-v="shamel-monthly-nocoupon">2,165
+                                                    SAR</span><span class="upgrade-v" data-v="notif-yearly-coupon">1,303
+                                                    SAR</span><span class="upgrade-v"
+                                                    data-v="notif-yearly-nocoupon">1,303 SAR</span><span
+                                                    class="upgrade-v" data-v="notif-6months-coupon">869 SAR</span><span
+                                                    class="upgrade-v" data-v="notif-6months-nocoupon">869
+                                                    SAR</span><span class="upgrade-v" data-v="notif-monthly-coupon">217
+                                                    SAR</span><span class="upgrade-v"
+                                                    data-v="notif-monthly-nocoupon">217 SAR</span></strong></div>
+                                        <div class="price-breakdown-row"><span>VAT (15%)</span><strong
+                                                style="color: #0f2231;"><span class="upgrade-v"
+                                                    data-v="shamel-yearly-coupon">2,216 SAR</span><span
+                                                    class="upgrade-v" data-v="shamel-yearly-nocoupon">2,216
+                                                    SAR</span><span class="upgrade-v"
+                                                    data-v="shamel-6months-coupon">1,433 SAR</span><span
+                                                    class="upgrade-v" data-v="shamel-6months-nocoupon">1,433
+                                                    SAR</span><span class="upgrade-v" data-v="shamel-monthly-coupon">325
+                                                    SAR</span><span class="upgrade-v"
+                                                    data-v="shamel-monthly-nocoupon">325 SAR</span><span
+                                                    class="upgrade-v" data-v="notif-yearly-coupon">196 SAR</span><span
+                                                    class="upgrade-v" data-v="notif-yearly-nocoupon">196 SAR</span><span
+                                                    class="upgrade-v" data-v="notif-6months-coupon">130 SAR</span><span
+                                                    class="upgrade-v" data-v="notif-6months-nocoupon">130
+                                                    SAR</span><span class="upgrade-v" data-v="notif-monthly-coupon">32
+                                                    SAR</span><span class="upgrade-v" data-v="notif-monthly-nocoupon">32
+                                                    SAR</span></strong></div>
+                                        <div class="price-breakdown-row total-row"><span>Total Before
+                                                Discount</span><strong style="color: #0f2231;"><span class="upgrade-v"
+                                                    data-v="shamel-yearly-coupon">16,990 SAR</span><span
+                                                    class="upgrade-v" data-v="shamel-yearly-nocoupon">16,990
+                                                    SAR</span><span class="upgrade-v"
+                                                    data-v="shamel-6months-coupon">10,990 SAR</span><span
+                                                    class="upgrade-v" data-v="shamel-6months-nocoupon">10,990
+                                                    SAR</span><span class="upgrade-v"
+                                                    data-v="shamel-monthly-coupon">2,490 SAR</span><span
+                                                    class="upgrade-v" data-v="shamel-monthly-nocoupon">2,490
+                                                    SAR</span><span class="upgrade-v" data-v="notif-yearly-coupon">1,499
+                                                    SAR</span><span class="upgrade-v"
+                                                    data-v="notif-yearly-nocoupon">1,499 SAR</span><span
+                                                    class="upgrade-v" data-v="notif-6months-coupon">999 SAR</span><span
+                                                    class="upgrade-v" data-v="notif-6months-nocoupon">999
+                                                    SAR</span><span class="upgrade-v" data-v="notif-monthly-coupon">249
+                                                    SAR</span><span class="upgrade-v"
+                                                    data-v="notif-monthly-nocoupon">249 SAR</span></strong></div>
+                                        <div class="coupon-box-card">
+                                            <div class="coupon-box-title">Have a coupon code?</div>
+                                            <div class="coupon-input-group">
+                                                <input type="text" id="coupon-input" placeholder="Enter coupon code"
+                                                    value="TRSTAT10">
+                                                <label class="coupon-apply-label" for="coupon-toggle">Apply</label>
+                                            </div>
+                                            <div class="coupon-activated-state">
+                                                <div class="d-flex align-items-center gap-2 text-success mb-2"
+                                                    style="font-size: 13px; font-weight: 700;">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2.5" stroke-linecap="round"
+                                                        stroke-linejoin="round">
+                                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                                    </svg>
+                                                    Coupon Applied
+                                                </div>
+                                                <div class="coupon-tag-chip">
+                                                    <span>TRSTAT10 <small class="text-muted ms-1">(10% off yearly
+                                                            subscription)</small></span>
+                                                    <label class="coupon-remove-label" for="coupon-toggle">✕</label>
+                                                </div>
+                                                <div class="price-breakdown-row mb-1"><span>Discount Value</span><strong
+                                                        class="text-success"><span class="upgrade-v"
+                                                            data-v="shamel-yearly-coupon">1,699 SAR</span><span
+                                                            class="upgrade-v" data-v="shamel-yearly-nocoupon">1,699
+                                                            SAR</span><span class="upgrade-v"
+                                                            data-v="shamel-6months-coupon">1,099 SAR</span><span
+                                                            class="upgrade-v" data-v="shamel-6months-nocoupon">1,099
+                                                            SAR</span><span class="upgrade-v"
+                                                            data-v="shamel-monthly-coupon">249 SAR</span><span
+                                                            class="upgrade-v" data-v="shamel-monthly-nocoupon">249
+                                                            SAR</span><span class="upgrade-v"
+                                                            data-v="notif-yearly-coupon">150 SAR</span><span
+                                                            class="upgrade-v" data-v="notif-yearly-nocoupon">150
+                                                            SAR</span><span class="upgrade-v"
+                                                            data-v="notif-6months-coupon">100 SAR</span><span
+                                                            class="upgrade-v" data-v="notif-6months-nocoupon">100
+                                                            SAR</span><span class="upgrade-v"
+                                                            data-v="notif-monthly-coupon">25 SAR</span><span
+                                                            class="upgrade-v" data-v="notif-monthly-nocoupon">25
+                                                            SAR</span></strong></div>
+                                                <div class="price-breakdown-row font-weight-bold"
+                                                    style="border-top: 1px dashed #cbd5e0; padding-top: 8px; margin-top: 8px;">
+                                                    <strong style="color: #0f2231;">Total (After Discount)</strong>
+                                                    <strong style="color: #28646b; font-size: 17px;"><span
+                                                            class="upgrade-v" data-v="shamel-yearly-coupon">15,291
+                                                            SAR</span><span class="upgrade-v"
+                                                            data-v="shamel-yearly-nocoupon">16,990 SAR</span><span
+                                                            class="upgrade-v" data-v="shamel-6months-coupon">9,891
+                                                            SAR</span><span class="upgrade-v"
+                                                            data-v="shamel-6months-nocoupon">10,990 SAR</span><span
+                                                            class="upgrade-v" data-v="shamel-monthly-coupon">2,241
+                                                            SAR</span><span class="upgrade-v"
+                                                            data-v="shamel-monthly-nocoupon">2,490 SAR</span><span
+                                                            class="upgrade-v" data-v="notif-yearly-coupon">1,349
+                                                            SAR</span><span class="upgrade-v"
+                                                            data-v="notif-yearly-nocoupon">1,499 SAR</span><span
+                                                            class="upgrade-v" data-v="notif-6months-coupon">899
+                                                            SAR</span><span class="upgrade-v"
+                                                            data-v="notif-6months-nocoupon">999 SAR</span><span
+                                                            class="upgrade-v" data-v="notif-monthly-coupon">224
+                                                            SAR</span><span class="upgrade-v"
+                                                            data-v="notif-monthly-nocoupon">249 SAR</span></strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="support-help-card">
+                                        <div class="support-help-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                                                <path
+                                                    d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <h4>Need Help?</h4>
+                                        <p>Our support team is here to assist you anytime</p>
+                                        <a href="#" class="support-btn">Contact Support</a>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-7 ">
+                                    <div class="payment-section-card">
+                                        <h3>Select Payment Method</h3>
+                                        <p class="subtitle">Choose the most convenient payment method for you</p>
+                                        <ul class="nav nav-pills payment-tabs-group border-0" id="paymentMethodTabs"
+                                            role="tablist">
+                                            <li class="nav-item flex-fill" role="presentation">
+                                                <button type="button" class="payment-tab-btn nav-link active w-100"
+                                                    id="pay-tab-card" data-bs-toggle="pill"
+                                                    data-bs-target="#payment-card-pane" role="tab"
+                                                    aria-controls="payment-card-pane" aria-selected="true">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                                                        <line x1="1" y1="10" x2="23" y2="10"></line>
+                                                    </svg>
+                                                    Mada / Visa / Mastercard
+                                                </button>
+                                            </li>
+                                            <li class="nav-item flex-fill" role="presentation">
+                                                <button type="button" class="payment-tab-btn nav-link w-100"
+                                                    id="pay-tab-bank" data-bs-toggle="pill"
+                                                    data-bs-target="#payment-bank-pane" role="tab"
+                                                    aria-controls="payment-bank-pane" aria-selected="false">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <polygon points="12 2 2 7 22 7 12 2"></polygon>
+                                                        <line x1="2" y1="17" x2="22" y2="17"></line>
+                                                        <line x1="12" y1="7" x2="12" y2="17"></line>
+                                                        <line x1="5" y1="7" x2="5" y2="17"></line>
+                                                        <line x1="19" y1="7" x2="19" y2="17"></line>
+                                                        <line x1="2" y1="22" x2="22" y2="22"></line>
+                                                    </svg>
+                                                    Bank Transfer
+                                                </button>
+                                            </li>
+                                        </ul>
+                                        <div class="encryption-notice">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                                <polyline points="9 12 11 14 15 10"></polyline>
+                                            </svg>
+                                            <span>All transactions are encrypted & secure - We use latest security
+                                                standards</span>
+                                        </div>
+                                        <div class="tab-content" id="paymentTabContent">
+                                            <div class="tab-pane fade show active" id="payment-card-pane"
+                                                role="tabpanel" aria-labelledby="pay-tab-card">
+                                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                                    <label class="form-label-bold m-0">Card Details</label>
+                                                    <div class="card-brand-logos">
+                                                        <img src="images/mastercard.svg" alt="mastercard" height="20"
+                                                            onerror="this.style.display='none'">
+                                                        <img src="images/visa.svg" alt="visa" height="16"
+                                                            onerror="this.style.display='none'">
+                                                        <img src="images/mada.svg" alt="mada" height="16"
+                                                            onerror="this.style.display='none'">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3"><input type="text" class="payment-input-control"
+                                                        placeholder="0123456789123456" value="0123456789123456"></div>
+                                                <div class="row g-3 mb-3">
+                                                    <div class="col-6">
+                                                        <label class="form-label-bold">Expiry Date</label>
+                                                        <div class="input-icon-group">
+                                                            <input type="text" class="payment-input-control"
+                                                                placeholder="MM / YY">
+                                                            <div class="icon-inside"><svg
+                                                                    xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                    height="16" viewBox="0 0 24 24" fill="none"
+                                                                    stroke="currentColor" stroke-width="2"
+                                                                    stroke-linecap="round" stroke-linejoin="round">
+                                                                    <rect x="3" y="4" width="18" height="18" rx="2"
+                                                                        ry="2"></rect>
+                                                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                                </svg></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <label class="form-label-bold">CVV Code</label>
+                                                        <div class="input-icon-group">
+                                                            <input type="text" class="payment-input-control"
+                                                                placeholder="123">
+                                                            <div class="icon-inside"><svg
+                                                                    xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                    height="16" viewBox="0 0 24 24" fill="none"
+                                                                    stroke="currentColor" stroke-width="2"
+                                                                    stroke-linecap="round" stroke-linejoin="round">
+                                                                    <rect x="3" y="11" width="18" height="11" rx="2"
+                                                                        ry="2"></rect>
+                                                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                                                </svg></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label-bold">Cardholder Name</label>
+                                                    <input type="text" class="payment-input-control"
+                                                        placeholder="Name as printed on card">
+                                                </div>
+                                                <div class="form-check mb-4">
+                                                    <input class="form-check-input" type="checkbox" id="saveCardCheck"
+                                                        checked>
+                                                    <label class="form-check-label"
+                                                        style="font-size: 12px; color: var(--text-gray-color);"
+                                                        for="saveCardCheck">Save card for future payments</label>
+                                                </div>
+                                                <div class="pt-3 border-top">
+                                                    <h4
+                                                        style="font-size: 16px; font-weight: 800; color: var(--primary-secondary); margin-bottom: 14px;">
+                                                        Payment Summary</h4>
+                                                    <div class="price-breakdown-row"><span>Subscription
+                                                            Subtotal</span><strong
+                                                            style="color: var(--primary-secondary);"><span
+                                                                class="upgrade-v" data-v="shamel-yearly-coupon">14,774
+                                                                SAR</span><span class="upgrade-v"
+                                                                data-v="shamel-yearly-nocoupon">14,774 SAR</span><span
+                                                                class="upgrade-v" data-v="shamel-6months-coupon">9,557
+                                                                SAR</span><span class="upgrade-v"
+                                                                data-v="shamel-6months-nocoupon">9,557 SAR</span><span
+                                                                class="upgrade-v" data-v="shamel-monthly-coupon">2,165
+                                                                SAR</span><span class="upgrade-v"
+                                                                data-v="shamel-monthly-nocoupon">2,165 SAR</span><span
+                                                                class="upgrade-v" data-v="notif-yearly-coupon">1,303
+                                                                SAR</span><span class="upgrade-v"
+                                                                data-v="notif-yearly-nocoupon">1,303 SAR</span><span
+                                                                class="upgrade-v" data-v="notif-6months-coupon">869
+                                                                SAR</span><span class="upgrade-v"
+                                                                data-v="notif-6months-nocoupon">869 SAR</span><span
+                                                                class="upgrade-v" data-v="notif-monthly-coupon">217
+                                                                SAR</span><span class="upgrade-v"
+                                                                data-v="notif-monthly-nocoupon">217 SAR</span></strong>
+                                                    </div>
+                                                    <div class="price-breakdown-row"><span>VAT (15%)</span><strong
+                                                            style="color: var(--primary-secondary);"><span
+                                                                class="upgrade-v" data-v="shamel-yearly-coupon">2,216
+                                                                SAR</span><span class="upgrade-v"
+                                                                data-v="shamel-yearly-nocoupon">2,216
+                                                                SAR</span><span class="upgrade-v"
+                                                                data-v="shamel-6months-coupon">1,433 SAR</span><span
+                                                                class="upgrade-v" data-v="shamel-6months-nocoupon">1,433
+                                                                SAR</span><span class="upgrade-v"
+                                                                data-v="shamel-monthly-coupon">325 SAR</span><span
+                                                                class="upgrade-v" data-v="shamel-monthly-nocoupon">325
+                                                                SAR</span><span class="upgrade-v"
+                                                                data-v="notif-yearly-coupon">196 SAR</span><span
+                                                                class="upgrade-v" data-v="notif-yearly-nocoupon">196
+                                                                SAR</span><span class="upgrade-v"
+                                                                data-v="notif-6months-coupon">130 SAR</span><span
+                                                                class="upgrade-v" data-v="notif-6months-nocoupon">130
+                                                                SAR</span><span class="upgrade-v"
+                                                                data-v="notif-monthly-coupon">32 SAR</span><span
+                                                                class="upgrade-v" data-v="notif-monthly-nocoupon">32
+                                                                SAR</span></strong></div>
+                                                    <div
+                                                        class="price-breakdown-row text-success pay-summary-discount-row">
+                                                        <span>Coupon Discount (TRSTAT10)</span><strong><span
+                                                                class="upgrade-v" data-v="shamel-yearly-coupon">-1,699
+                                                                SAR</span><span class="upgrade-v"
+                                                                data-v="shamel-yearly-nocoupon">-1,699 SAR</span><span
+                                                                class="upgrade-v" data-v="shamel-6months-coupon">-1,099
+                                                                SAR</span><span class="upgrade-v"
+                                                                data-v="shamel-6months-nocoupon">-1,099 SAR</span><span
+                                                                class="upgrade-v" data-v="shamel-monthly-coupon">-249
+                                                                SAR</span><span class="upgrade-v"
+                                                                data-v="shamel-monthly-nocoupon">-249 SAR</span><span
+                                                                class="upgrade-v" data-v="notif-yearly-coupon">-150
+                                                                SAR</span><span class="upgrade-v"
+                                                                data-v="notif-yearly-nocoupon">-150 SAR</span><span
+                                                                class="upgrade-v" data-v="notif-6months-coupon">-100
+                                                                SAR</span><span class="upgrade-v"
+                                                                data-v="notif-6months-nocoupon">-100 SAR</span><span
+                                                                class="upgrade-v" data-v="notif-monthly-coupon">-25
+                                                                SAR</span><span class="upgrade-v"
+                                                                data-v="notif-monthly-coupon">-25 SAR</span></strong>
+                                                    </div>
+                                                    <div class="price-breakdown-row total-row"
+                                                        style="font-size: 17px; margin-top: 14px;">
+                                                        <strong style="color: var(--primary-secondary);">Total
+                                                            Due</strong>
+                                                        <strong
+                                                            style="color: var(--primary-color); font-size: 20px;"><span
+                                                                class="upgrade-v" data-v="shamel-yearly-coupon">15,291
+                                                                SAR</span><span class="upgrade-v"
+                                                                data-v="shamel-yearly-nocoupon">16,990 SAR</span><span
+                                                                class="upgrade-v" data-v="shamel-6months-coupon">9,891
+                                                                SAR</span><span class="upgrade-v"
+                                                                data-v="shamel-6months-nocoupon">10,990 SAR</span><span
+                                                                class="upgrade-v" data-v="shamel-monthly-coupon">2,241
+                                                                SAR</span><span class="upgrade-v"
+                                                                data-v="shamel-monthly-nocoupon">2,490 SAR</span><span
+                                                                class="upgrade-v" data-v="notif-yearly-coupon">1,349
+                                                                SAR</span><span class="upgrade-v"
+                                                                data-v="notif-yearly-nocoupon">1,499 SAR</span><span
+                                                                class="upgrade-v" data-v="notif-6months-coupon">899
+                                                                SAR</span><span class="upgrade-v"
+                                                                data-v="notif-6months-nocoupon">999 SAR</span><span
+                                                                class="upgrade-v" data-v="notif-monthly-coupon">224
+                                                                SAR</span><span class="upgrade-v"
+                                                                data-v="notif-monthly-nocoupon">249 SAR</span></strong>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="pay-now-cta-btn">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2.5" stroke-linecap="round"
+                                                        stroke-linejoin="round">
+                                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                                    </svg>
+                                                    <span><span class="upgrade-v" data-v="shamel-yearly-coupon">Pay Now
+                                                            15,291 SAR</span><span class="upgrade-v"
+                                                            data-v="shamel-yearly-nocoupon">Pay Now 16,990
+                                                            SAR</span><span class="upgrade-v"
+                                                            data-v="shamel-6months-coupon">Pay Now 9,891 SAR</span><span
+                                                            class="upgrade-v" data-v="shamel-6months-nocoupon">Pay Now
+                                                            10,990 SAR</span><span class="upgrade-v"
+                                                            data-v="shamel-monthly-coupon">Pay Now 2,241 SAR</span><span
+                                                            class="upgrade-v" data-v="shamel-monthly-nocoupon">Pay Now
+                                                            2,490 SAR</span><span class="upgrade-v"
+                                                            data-v="notif-yearly-coupon">Pay Now 1,349 SAR</span><span
+                                                            class="upgrade-v" data-v="notif-yearly-nocoupon">Pay Now
+                                                            1,499 SAR</span><span class="upgrade-v"
+                                                            data-v="notif-6months-coupon">Pay Now 899 SAR</span><span
+                                                            class="upgrade-v" data-v="notif-6months-nocoupon">Pay Now
+                                                            999 SAR</span><span class="upgrade-v"
+                                                            data-v="notif-monthly-coupon">Pay Now 224 SAR</span><span
+                                                            class="upgrade-v" data-v="notif-monthly-nocoupon">Pay Now
+                                                            249 SAR</span></span>
+                                                </button>
+                                                <p class="terms-notice-text">By clicking Pay Now you agree to our <a
+                                                        href="#">Terms & Conditions and Privacy Policy</a></p>
+                                            </div>
+                                            <div class="tab-pane fade" id="payment-bank-pane" role="tabpanel"
+                                                aria-labelledby="pay-tab-bank">
+                                                <div class="bank-details-list">
+                                                    <div class="bank-detail-item">
+                                                        <label class="form-label-bold" for="bank-name-input">Bank
+                                                            Name</label>
+                                                        <div class="bank-detail-value-row">
+                                                            <input type="text" id="bank-name-input"
+                                                                class="bank-detail-input" value="Riyad Bank"
+                                                                placeholder="Enter bank name">
+                                                            <button type="button" class="bank-copy-btn"
+                                                                aria-label="Copy" data-copied-msg="Bank name copied">
+                                                                <svg class="bank-copy-icon"
+                                                                    xmlns="http://www.w3.org/2000/svg" width="18"
+                                                                    height="18" viewBox="0 0 24 24" fill="none"
+                                                                    stroke="currentColor" stroke-width="2"
+                                                                    stroke-linecap="round" stroke-linejoin="round">
+                                                                    <rect x="9" y="9" width="13" height="13" rx="2"
+                                                                        ry="2"></rect>
+                                                                    <path
+                                                                        d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1">
+                                                                    </path>
+                                                                </svg>
+                                                                <svg class="bank-copied-icon"
+                                                                    xmlns="http://www.w3.org/2000/svg" width="18"
+                                                                    height="18" viewBox="0 0 24 24" fill="none"
+                                                                    stroke="currentColor" stroke-width="2.5"
+                                                                    stroke-linecap="round" stroke-linejoin="round">
+                                                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="bank-detail-item">
+                                                        <label class="form-label-bold" for="bank-holder-input">Account
+                                                            Holder Name</label>
+                                                        <div class="bank-detail-value-row">
+                                                            <input type="text" id="bank-holder-input"
+                                                                class="bank-detail-input" value="Trsyat"
+                                                                placeholder="Enter account holder name">
+                                                            <button type="button" class="bank-copy-btn"
+                                                                aria-label="Copy"
+                                                                data-copied-msg="Account holder name copied">
+                                                                <svg class="bank-copy-icon"
+                                                                    xmlns="http://www.w3.org/2000/svg" width="18"
+                                                                    height="18" viewBox="0 0 24 24" fill="none"
+                                                                    stroke="currentColor" stroke-width="2"
+                                                                    stroke-linecap="round" stroke-linejoin="round">
+                                                                    <rect x="9" y="9" width="13" height="13" rx="2"
+                                                                        ry="2"></rect>
+                                                                    <path
+                                                                        d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1">
+                                                                    </path>
+                                                                </svg>
+                                                                <svg class="bank-copied-icon"
+                                                                    xmlns="http://www.w3.org/2000/svg" width="18"
+                                                                    height="18" viewBox="0 0 24 24" fill="none"
+                                                                    stroke="currentColor" stroke-width="2.5"
+                                                                    stroke-linecap="round" stroke-linejoin="round">
+                                                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="bank-detail-item">
+                                                        <label class="form-label-bold" for="bank-account-input">Account
+                                                            Number</label>
+                                                        <div class="bank-detail-value-row">
+                                                            <input type="text" id="bank-account-input"
+                                                                class="bank-detail-input" dir="ltr"
+                                                                value="123456789101112"
+                                                                placeholder="Enter account number">
+                                                            <button type="button" class="bank-copy-btn"
+                                                                aria-label="Copy"
+                                                                data-copied-msg="Account number copied">
+                                                                <svg class="bank-copy-icon"
+                                                                    xmlns="http://www.w3.org/2000/svg" width="18"
+                                                                    height="18" viewBox="0 0 24 24" fill="none"
+                                                                    stroke="currentColor" stroke-width="2"
+                                                                    stroke-linecap="round" stroke-linejoin="round">
+                                                                    <rect x="9" y="9" width="13" height="13" rx="2"
+                                                                        ry="2"></rect>
+                                                                    <path
+                                                                        d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1">
+                                                                    </path>
+                                                                </svg>
+                                                                <svg class="bank-copied-icon"
+                                                                    xmlns="http://www.w3.org/2000/svg" width="18"
+                                                                    height="18" viewBox="0 0 24 24" fill="none"
+                                                                    stroke="currentColor" stroke-width="2.5"
+                                                                    stroke-linecap="round" stroke-linejoin="round">
+                                                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="bank-detail-item">
+                                                        <label class="form-label-bold"
+                                                            for="bank-iban-input">IBAN</label>
+                                                        <div class="bank-detail-value-row">
+                                                            <input type="text" id="bank-iban-input"
+                                                                class="bank-detail-input" dir="ltr"
+                                                                value="SA15245236522114461265" placeholder="Enter IBAN">
+                                                            <button type="button" class="bank-copy-btn"
+                                                                aria-label="Copy" data-copied-msg="IBAN copied">
+                                                                <svg class="bank-copy-icon"
+                                                                    xmlns="http://www.w3.org/2000/svg" width="18"
+                                                                    height="18" viewBox="0 0 24 24" fill="none"
+                                                                    stroke="currentColor" stroke-width="2"
+                                                                    stroke-linecap="round" stroke-linejoin="round">
+                                                                    <rect x="9" y="9" width="13" height="13" rx="2"
+                                                                        ry="2"></rect>
+                                                                    <path
+                                                                        d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1">
+                                                                    </path>
+                                                                </svg>
+                                                                <svg class="bank-copied-icon"
+                                                                    xmlns="http://www.w3.org/2000/svg" width="18"
+                                                                    height="18" viewBox="0 0 24 24" fill="none"
+                                                                    stroke="currentColor" stroke-width="2.5"
+                                                                    stroke-linecap="round" stroke-linejoin="round">
+                                                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="bank-detail-item">
+                                                        <label class="form-label-bold"
+                                                            for="bank-swift-input">SWIFT</label>
+                                                        <div class="bank-detail-value-row">
+                                                            <input type="text" id="bank-swift-input"
+                                                                class="bank-detail-input" dir="ltr" value="RIBLSDEFIXXX"
+                                                                placeholder="Enter SWIFT">
+                                                            <button type="button" class="bank-copy-btn"
+                                                                aria-label="Copy" data-copied-msg="SWIFT copied">
+                                                                <svg class="bank-copy-icon"
+                                                                    xmlns="http://www.w3.org/2000/svg" width="18"
+                                                                    height="18" viewBox="0 0 24 24" fill="none"
+                                                                    stroke="currentColor" stroke-width="2"
+                                                                    stroke-linecap="round" stroke-linejoin="round">
+                                                                    <rect x="9" y="9" width="13" height="13" rx="2"
+                                                                        ry="2"></rect>
+                                                                    <path
+                                                                        d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1">
+                                                                    </path>
+                                                                </svg>
+                                                                <svg class="bank-copied-icon"
+                                                                    xmlns="http://www.w3.org/2000/svg" width="18"
+                                                                    height="18" viewBox="0 0 24 24" fill="none"
+                                                                    stroke="currentColor" stroke-width="2.5"
+                                                                    stroke-linecap="round" stroke-linejoin="round">
+                                                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-                        <div class="package package-orange d-flex flex-column justify-content-between">
-                            <h5>Strategic Partnership Plan</h5>
-                            <small>( Most requested )</small>
-                            <div class="package-price">
-                                <strong>4000</strong>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="17" viewBox="0 0 14 17"
-                                    fill="none">
-                                    <path
-                                        d="M7.94464 2.35687C8.5173 1.66814 8.86922 1.35893 9.56045 0.968001V12.4367L7.94464 12.7944V2.35687Z"
-                                        fill="#FF6600" />
-                                    <path
-                                        d="M13.1073 8.12279C13.4423 7.36523 13.4817 7.02853 13.5714 6.25137L1.18585 9.13288C0.892139 9.83385 0.797597 10.2257 0.752335 10.9216L13.1073 8.12279Z"
-                                        fill="#FF6600" />
-                                    <path
-                                        d="M13.1073 11.6356C13.4423 10.878 13.4817 10.5413 13.5714 9.76419L8.00376 11.0268C7.96435 11.7212 8.00961 12.0775 7.96435 12.7734L13.1073 11.6356Z"
-                                        fill="#FF6600" />
-                                    <path
-                                        d="M13.1073 15.1479C13.4423 14.3903 13.4817 14.0537 13.5714 13.2765L8.49638 14.4569C8.24022 14.8357 8.08258 15.467 7.96435 16.2857L13.1073 15.1479Z"
-                                        fill="#FF6600" />
-                                    <path
-                                        d="M5.04802 13.9518C5.54064 13.2995 6.05297 12.4788 6.40766 11.8054L0.433513 13.1928C0.139804 13.8938 0.0452622 14.2856 0 14.9815L5.04802 13.9518Z"
-                                        fill="#FF6600" />
-                                    <path
-                                        d="M4.79186 1.38887C5.36451 0.700138 5.71643 0.390928 6.40766 0V11.8475L4.79186 12.2052V1.38887Z"
-                                        fill="#FF6600" />
-                                </svg>
-                                /month
-                            </div>
-                            <span>
-                                <a class="text-decoration-underline more-link" href="#featuresTable">Read more</a>
-                                <a href="#featuresTable">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="rotate-180" width="18" height="14"
-                                        viewBox="0 0 18 14" fill="none">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M7.53033 0.46967C7.82322 0.762563 7.82322 1.23744 7.53033 1.53033L2.81066 6.25H17C17.4142 6.25 17.75 6.58579 17.75 7C17.75 7.41421 17.4142 7.75 17 7.75H2.81066L7.53033 12.4697C7.82322 12.7626 7.82322 13.2374 7.53033 13.5303C7.23744 13.8232 6.76256 13.8232 6.46967 13.5303L0.46967 7.53033C0.176777 7.23744 0.176777 6.76256 0.46967 6.46967L6.46967 0.46967C6.76256 0.176777 7.23744 0.176777 7.53033 0.46967Z"
-                                            fill="#6BAFB8"></path>
-                                    </svg>
-                                </a>
-                            </span>
-                            <a href="contact-us-package-ltr.html" class="primary-custom-btn">Choose
-                                plan</a>
-                        </div>
+                                                <div class="bank-notes-box">
+                                                    <h4 class="bank-notes-title">Important Notes</h4>
+                                                    <ul class="bank-notes-list">
+                                                        <li>
+                                                            Please transfer the full amount:
+                                                            <strong class="bank-notes-accent">
+                                                                <span class="upgrade-v"
+                                                                    data-v="shamel-yearly-coupon">15,291 SAR</span><span
+                                                                    class="upgrade-v"
+                                                                    data-v="shamel-yearly-nocoupon">16,990
+                                                                    SAR</span><span class="upgrade-v"
+                                                                    data-v="shamel-6months-coupon">9,891 SAR</span><span
+                                                                    class="upgrade-v"
+                                                                    data-v="shamel-6months-nocoupon">10,990
+                                                                    SAR</span><span class="upgrade-v"
+                                                                    data-v="shamel-monthly-coupon">2,241 SAR</span><span
+                                                                    class="upgrade-v"
+                                                                    data-v="shamel-monthly-nocoupon">2,490
+                                                                    SAR</span><span class="upgrade-v"
+                                                                    data-v="notif-yearly-coupon">1,349 SAR</span><span
+                                                                    class="upgrade-v"
+                                                                    data-v="notif-yearly-nocoupon">1,499 SAR</span><span
+                                                                    class="upgrade-v" data-v="notif-6months-coupon">899
+                                                                    SAR</span><span class="upgrade-v"
+                                                                    data-v="notif-6months-nocoupon">999 SAR</span><span
+                                                                    class="upgrade-v" data-v="notif-monthly-coupon">224
+                                                                    SAR</span><span class="upgrade-v"
+                                                                    data-v="notif-monthly-nocoupon">249 SAR</span>
+                                                                <span class="bank-after-discount"> (after
+                                                                    discount)</span>
+                                                            </strong>
+                                                        </li>
+                                                        <li>
+                                                            Add your order number in the transfer description:
+                                                            <strong class="bank-notes-accent"
+                                                                dir="ltr">TRS-2026-001123</strong>
+                                                        </li>
+                                                        <li>Transfer confirmation may take 1 to 2 business days</li>
+                                                    </ul>
+                                                </div>
 
-                        <div class="package d-flex flex-column justify-content-between">
-                            <h5>Enterprise Plan</h5>
-                            <small class="orange">(Annual plan
-                                only)</small>
-                            <div class="package-price">Based on company
-                                size and needs</div>
-                            <span>
-                                <a class="text-decoration-underline more-link" href="#bigPackage">Read more</a>
-                                <a href="#bigPackage">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="rotate-180" width="18" height="14"
-                                        viewBox="0 0 18 14" fill="none">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M7.53033 0.46967C7.82322 0.762563 7.82322 1.23744 7.53033 1.53033L2.81066 6.25H17C17.4142 6.25 17.75 6.58579 17.75 7C17.75 7.41421 17.4142 7.75 17 7.75H2.81066L7.53033 12.4697C7.82322 12.7626 7.82322 13.2374 7.53033 13.5303C7.23744 13.8232 6.76256 13.8232 6.46967 13.5303L0.46967 7.53033C0.176777 7.23744 0.176777 6.76256 0.46967 6.46967L6.46967 0.46967C6.76256 0.176777 7.23744 0.176777 7.53033 0.46967Z"
-                                            fill="#6BAFB8"></path>
-                                    </svg>
-                                </a>
-                            </span>
-                            <a href="contact-us-package-ltr.html" class="primary-custom-btn bg-prim-alt">Choose
-                                plan</a>
+                                                <div class="bank-receipt-block">
+                                                    <div class="bank-receipt-text">
+                                                        <h5>Send transfer receipt (optional)</h5>
+                                                        <p>You can upload the transfer receipt to speed up verification
+                                                        </p>
+                                                    </div>
+                                                    <label class="bank-upload-btn">
+                                                        <input type="file" accept="image/*,.pdf" hidden>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2.5" stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                                            <polyline points="17 8 12 3 7 8"></polyline>
+                                                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                                                        </svg>
+                                                        <span>Upload Receipt</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="security-bottom-badges">
+                                            <div class="security-badge-item"><svg xmlns="http://www.w3.org/2000/svg"
+                                                    width="15" height="15" viewBox="0 0 24 24" fill="none"
+                                                    stroke="#28646b" stroke-width="2.5" stroke-linecap="round"
+                                                    stroke-linejoin="round">
+                                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                                </svg><span>100% Secure Payment</span></div>
+                                            <div class="security-badge-item"><svg xmlns="http://www.w3.org/2000/svg"
+                                                    width="15" height="15" viewBox="0 0 24 24" fill="none"
+                                                    stroke="#28646b" stroke-width="2.5" stroke-linecap="round"
+                                                    stroke-linejoin="round">
+                                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                                </svg><span>Data Protected</span></div>
+                                            <div class="security-badge-item"><svg xmlns="http://www.w3.org/2000/svg"
+                                                    width="15" height="15" viewBox="0 0 24 24" fill="none"
+                                                    stroke="#28646b" stroke-width="2.5" stroke-linecap="round"
+                                                    stroke-linejoin="round">
+                                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                                </svg><span>Terms Compliant</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="tab-pane fade" id="nav-half" role="tabpanel" aria-labelledby="nav-half-tab">
-                    <div class="packages-cards d-flex align-items-center justify-content-end">
-                        <!-- Semi-annual prices and same structure -->
-                        <div class="package bg-gred-prim d-flex flex-column justify-content-between">
-                            <h5>Basic Plan</h5>
-                            <small>( Direct purchase tenders package
-                                )</small>
-                            <div class="package-price"><strong>1500</strong>
-                                /month</div>
-                            <div class="discount">25% discount</div>
-                            <span><a class="text-decoration-underline more-link" href="#featuresTable">Read
-                                    more</a></span>
-                            <a href="contact-us-package-ltr.html" class="primary-custom-btn">Choose
-                                plan</a>
-                        </div>
-
-                        <div class="package d-flex flex-column justify-content-between">
-                            <h5>Advanced Plan</h5>
-                            <small class="colored">( Public tenders
-                                package )</small>
-                            <div class="package-price"><strong>2250</strong>
-                                /month</div>
-                            <div class="discount">25% discount</div>
-                            <a href="contact-us-package-ltr.html" class="primary-custom-btn">Choose
-                                plan</a>
-                        </div>
-
-                        <div class="package package-orange d-flex flex-column justify-content-between">
-                            <h5>Strategic Partnership Plan</h5>
-                            <small>( Most requested )</small>
-                            <div class="package-price"><strong>3000</strong>
-                                /month</div>
-                            <div class="discount">25% discount</div>
-                            <a href="contact-us-package-ltr.html" class="primary-custom-btn">Choose
-                                plan</a>
-                        </div>
-
-                        <div class="package d-flex flex-column justify-content-between">
-                            <h5>Enterprise Plan</h5>
-                            <small class="orange">(Annual plan
-                                only)</small>
-                            <div class="package-price">Based on company
-                                size and needs</div>
-                            <a href="contact-us-package-ltr.html" class="primary-custom-btn bg-prim-alt">Choose
-                                plan</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tab-pane fade" id="nav-yearly" role="tabpanel" aria-labelledby="nav-yearly-tab">
-                    <div class="packages-cards d-flex align-items-center justify-content-end">
-                        <!-- Yearly prices -->
-                        <div class="package bg-gred-prim d-flex flex-column justify-content-between">
-                            <h5>Basic Plan</h5>
-                            <small>( Direct purchase tenders package
-                                )</small>
-                            <div class="package-price"><strong>1000</strong>
-                                /month</div>
-                            <div class="discount">50% discount</div>
-                            <a href="contact-us-package-ltr.html" class="primary-custom-btn">Choose
-                                plan</a>
-                        </div>
-
-                        <div class="package d-flex flex-column justify-content-between">
-                            <h5>Advanced Plan</h5>
-                            <small class="colored">( Public tenders
-                                package )</small>
-                            <div class="package-price"><strong>1500</strong>
-                                /month</div>
-                            <div class="discount">50% discount</div>
-                            <a href="contact-us-package-ltr.html" class="primary-custom-btn">Choose
-                                plan</a>
-                        </div>
-
-                        <div class="package package-orange d-flex flex-column justify-content-between">
-                            <h5>Strategic Partnership Plan</h5>
-                            <small>( Most requested )</small>
-                            <div class="package-price"><strong>2000</strong>
-                                /month</div>
-                            <div class="discount">50% discount</div>
-                            <a href="contact-us-package-ltr.html" class="primary-custom-btn">Choose
-                                plan</a>
-                        </div>
-
-                        <div class="package d-flex flex-column justify-content-between">
-                            <h5>Enterprise Plan</h5>
-                            <small class="orange">(Annual plan
-                                only)</small>
-                            <div class="package-price">Based on company
-                                size and needs</div>
-                            <a href="contact-us-package-ltr.html" class="primary-custom-btn bg-prim-alt">Choose
-                                plan</a>
-                        </div>
-                    </div>
-                </div>
             </div>
-
-            <div class="table-responsive features-table" id="featuresTable">
-                <table class="table competition-table upgrade-table">
-                    <thead>
-                        <tr>
-                            <th>All features</th>
-                            <th>Basic Plan</th>
-                            <th>Advanced Plan</th>
-                            <th>Strategic Partnership Plan</th>
-                            <th>Notification Plan</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <h5>Preparation of technical & financial proposals</h5>
-                                <span class="colored">Direct Purchase Tenders</span>
-                                <span>(One tender per day – except Friday and Saturday, no balance rollover).</span>
-                            </td>
-                            <td data-label="Basic Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path
-                                        d="M12 2.25C10.0716 2.25 8.18657 2.82183 6.58319 3.89317C4.97982 4.96451 3.73013 6.48726 2.99218 8.26884C2.25422 10.0504 2.06114 12.0108 2.43735 13.9021C2.81355 15.7934 3.74215 17.5307 5.10571 18.8943C6.46928 20.2579 8.20656 21.1865 10.0979 21.5627C11.9892 21.9389 13.9496 21.7458 15.7312 21.0078C17.5127 20.2699 19.0355 19.0202 20.1068 17.4168C21.1782 15.8134 21.75 13.9284 21.75 12C21.7473 9.41498 20.7192 6.93661 18.8913 5.10872C17.0634 3.28084 14.585 2.25273 12 2.25ZM16.2806 10.2806L11.0306 15.5306C10.961 15.6004 10.8783 15.6557 10.7872 15.6934C10.6962 15.7312 10.5986 15.7506 10.5 15.7506C10.4014 15.7506 10.3038 15.7312 10.2128 15.6934C10.1218 15.6557 10.039 15.6004 9.96938 15.5306L7.71938 13.2806C7.57865 13.1399 7.49959 12.949 7.49959 12.75C7.49959 12.551 7.57865 12.3601 7.71938 12.2194C7.86011 12.0786 8.05098 11.9996 8.25 11.9996C8.44903 11.9996 8.6399 12.0786 8.78063 12.2194L10.5 13.9397L15.2194 9.21937C15.2891 9.14969 15.3718 9.09442 15.4628 9.0567C15.5539 9.01899 15.6515 8.99958 15.75 8.99958C15.8486 8.99958 15.9461 9.01899 16.0372 9.0567C16.1282 9.09442 16.2109 9.14969 16.2806 9.21937C16.3503 9.28906 16.4056 9.37178 16.4433 9.46283C16.481 9.55387 16.5004 9.65145 16.5004 9.75C16.5004 9.84855 16.481 9.94613 16.4433 10.0372C16.4056 10.1282 16.3503 10.2109 16.2806 10.2806Z"
-                                        fill="#00A640" />
-                                </svg>
-                            </td>
-                            <td data-label="Advanced Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
-                                    fill="none">
-                                    <rect width="20.5714" height="20.5714" rx="10.2857" fill="#DA1E1E" />
-                                    <path
-                                        d="M7.08613 14.2857L6.28613 13.4857L9.48613 10.2857L6.28613 7.08571L7.08613 6.28571L10.2861 9.48571L13.4861 6.28571L14.2861 7.08571L11.0861 10.2857L14.2861 13.4857L13.4861 14.2857L10.2861 11.0857L7.08613 14.2857Z"
-                                        fill="white" />
-                                </svg>
-                            </td>
-                            <td data-label="Strategic Partnership Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path
-                                        d="M12 2.25C10.0716 2.25 8.18657 2.82183 6.58319 3.89317C4.97982 4.96451 3.73013 6.48726 2.99218 8.26884C2.25422 10.0504 2.06114 12.0108 2.43735 13.9021C2.81355 15.7934 3.74215 17.5307 5.10571 18.8943C6.46928 20.2579 8.20656 21.1865 10.0979 21.5627C11.9892 21.9389 13.9496 21.7458 15.7312 21.0078C17.5127 20.2699 19.0355 19.0202 20.1068 17.4168C21.1782 15.8134 21.75 13.9284 21.75 12C21.7473 9.41498 20.7192 6.93661 18.8913 5.10872C17.0634 3.28084 14.585 2.25273 12 2.25ZM16.2806 10.2806L11.0306 15.5306C10.961 15.6004 10.8783 15.6557 10.7872 15.6934C10.6962 15.7312 10.5986 15.7506 10.5 15.7506C10.4014 15.7506 10.3038 15.7312 10.2128 15.6934C10.1218 15.6557 10.039 15.6004 9.96938 15.5306L7.71938 13.2806C7.57865 13.1399 7.49959 12.949 7.49959 12.75C7.49959 12.551 7.57865 12.3601 7.71938 12.2194C7.86011 12.0786 8.05098 11.9996 8.25 11.9996C8.44903 11.9996 8.6399 12.0786 8.78063 12.2194L10.5 13.9397L15.2194 9.21937C15.2891 9.14969 15.3718 9.09442 15.4628 9.0567C15.5539 9.01899 15.6515 8.99958 15.75 8.99958C15.8486 8.99958 15.9461 9.01899 16.0372 9.0567C16.1282 9.09442 16.2109 9.14969 16.2806 9.21937C16.3503 9.28906 16.4056 9.37178 16.4433 9.46283C16.481 9.55387 16.5004 9.65145 16.5004 9.75C16.5004 9.84855 16.481 9.94613 16.4433 10.0372C16.4056 10.1282 16.3503 10.2109 16.2806 10.2806Z"
-                                        fill="#00A640" />
-                                </svg>
-                            </td>
-                            <td data-label="Notification Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path
-                                        d="M12 2.25C10.0716 2.25 8.18657 2.82183 6.58319 3.89317C4.97982 4.96451 3.73013 6.48726 2.99218 8.26884C2.25422 10.0504 2.06114 12.0108 2.43735 13.9021C2.81355 15.7934 3.74215 17.5307 5.10571 18.8943C6.46928 20.2579 8.20656 21.1865 10.0979 21.5627C11.9892 21.9389 13.9496 21.7458 15.7312 21.0078C17.5127 20.2699 19.0355 19.0202 20.1068 17.4168C21.1782 15.8134 21.75 13.9284 21.75 12C21.7473 9.41498 20.7192 6.93661 18.8913 5.10872C17.0634 3.28084 14.585 2.25273 12 2.25ZM16.2806 10.2806L11.0306 15.5306C10.961 15.6004 10.8783 15.6557 10.7872 15.6934C10.6962 15.7312 10.5986 15.7506 10.5 15.7506C10.4014 15.7506 10.3038 15.7312 10.2128 15.6934C10.1218 15.6557 10.039 15.6004 9.96938 15.5306L7.71938 13.2806C7.57865 13.1399 7.49959 12.949 7.49959 12.75C7.49959 12.551 7.57865 12.3601 7.71938 12.2194C7.86011 12.0786 8.05098 11.9996 8.25 11.9996C8.44903 11.9996 8.6399 12.0786 8.78063 12.2194L10.5 13.9397L15.2194 9.21937C15.2891 9.14969 15.3718 9.09442 15.4628 9.0567C15.5539 9.01899 15.6515 8.99958 15.75 8.99958C15.8486 8.99958 15.9461 9.01899 16.0372 9.0567C16.1282 9.09442 16.2109 9.14969 16.2806 9.21937C16.3503 9.28906 16.4056 9.37178 16.4433 9.46283C16.481 9.55387 16.5004 9.65145 16.5004 9.75C16.5004 9.84855 16.481 9.94613 16.4433 10.0372C16.4056 10.1282 16.3503 10.2109 16.2806 10.2806Z"
-                                        fill="#00A640" />
-                                </svg>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h5>Preparation of technical & financial proposals</h5>
-                                <span class="colored">Public Tenders</span>
-                                <span>(One tender per day on average – except Friday and Saturday, no balance
-                                    rollover).</span>
-                            </td>
-                            <td data-label="Basic Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
-                                    fill="none">
-                                    <rect width="20.5714" height="20.5714" rx="10.2857" fill="#DA1E1E" />
-                                    <path
-                                        d="M7.08613 14.2857L6.28613 13.4857L9.48613 10.2857L6.28613 7.08571L7.08613 6.28571L10.2861 9.48571L13.4861 6.28571L14.2861 7.08571L11.0861 10.2857L14.2861 13.4857L13.4861 14.2857L10.2861 11.0857L7.08613 14.2857Z"
-                                        fill="white" />
-                                </svg>
-                            </td>
-                            <td data-label="Advanced Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path
-                                        d="M12 2.25C10.0716 2.25 8.18657 2.82183 6.58319 3.89317C4.97982 4.96451 3.73013 6.48726 2.99218 8.26884C2.25422 10.0504 2.06114 12.0108 2.43735 13.9021C2.81355 15.7934 3.74215 17.5307 5.10571 18.8943C6.46928 20.2579 8.20656 21.1865 10.0979 21.5627C11.9892 21.9389 13.9496 21.7458 15.7312 21.0078C17.5127 20.2699 19.0355 19.0202 20.1068 17.4168C21.1782 15.8134 21.75 13.9284 21.75 12C21.7473 9.41498 20.7192 6.93661 18.8913 5.10872C17.0634 3.28084 14.585 2.25273 12 2.25ZM16.2806 10.2806L11.0306 15.5306C10.961 15.6004 10.8783 15.6557 10.7872 15.6934C10.6962 15.7312 10.5986 15.7506 10.5 15.7506C10.4014 15.7506 10.3038 15.7312 10.2128 15.6934C10.1218 15.6557 10.039 15.6004 9.96938 15.5306L7.71938 13.2806C7.57865 13.1399 7.49959 12.949 7.49959 12.75C7.49959 12.551 7.57865 12.3601 7.71938 12.2194C7.86011 12.0786 8.05098 11.9996 8.25 11.9996C8.44903 11.9996 8.6399 12.0786 8.78063 12.2194L10.5 13.9397L15.2194 9.21937C15.2891 9.14969 15.3718 9.09442 15.4628 9.0567C15.5539 9.01899 15.6515 8.99958 15.75 8.99958C15.8486 8.99958 15.9461 9.01899 16.0372 9.0567C16.1282 9.09442 16.2109 9.14969 16.2806 9.21937C16.3503 9.28906 16.4056 9.37178 16.4433 9.46283C16.481 9.55387 16.5004 9.65145 16.5004 9.75C16.5004 9.84855 16.481 9.94613 16.4433 10.0372C16.4056 10.1282 16.3503 10.2109 16.2806 10.2806Z"
-                                        fill="#00A640" />
-                                </svg>
-                            </td>
-                            <td data-label="Strategic Partnership Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path
-                                        d="M12 2.25C10.0716 2.25 8.18657 2.82183 6.58319 3.89317C4.97982 4.96451 3.73013 6.48726 2.99218 8.26884C2.25422 10.0504 2.06114 12.0108 2.43735 13.9021C2.81355 15.7934 3.74215 17.5307 5.10571 18.8943C6.46928 20.2579 8.20656 21.1865 10.0979 21.5627C11.9892 21.9389 13.9496 21.7458 15.7312 21.0078C17.5127 20.2699 19.0355 19.0202 20.1068 17.4168C21.1782 15.8134 21.75 13.9284 21.75 12C21.7473 9.41498 20.7192 6.93661 18.8913 5.10872C17.0634 3.28084 14.585 2.25273 12 2.25ZM16.2806 10.2806L11.0306 15.5306C10.961 15.6004 10.8783 15.6557 10.7872 15.6934C10.6962 15.7312 10.5986 15.7506 10.5 15.7506C10.4014 15.7506 10.3038 15.7312 10.2128 15.6934C10.1218 15.6557 10.039 15.6004 9.96938 15.5306L7.71938 13.2806C7.57865 13.1399 7.49959 12.949 7.49959 12.75C7.49959 12.551 7.57865 12.3601 7.71938 12.2194C7.86011 12.0786 8.05098 11.9996 8.25 11.9996C8.44903 11.9996 8.6399 12.0786 8.78063 12.2194L10.5 13.9397L15.2194 9.21937C15.2891 9.14969 15.3718 9.09442 15.4628 9.0567C15.5539 9.01899 15.6515 8.99958 15.75 8.99958C15.8486 8.99958 15.9461 9.01899 16.0372 9.0567C16.1282 9.09442 16.2109 9.14969 16.2806 9.21937C16.3503 9.28906 16.4056 9.37178 16.4433 9.46283C16.481 9.55387 16.5004 9.65145 16.5004 9.75C16.5004 9.84855 16.481 9.94613 16.4433 10.0372C16.4056 10.1282 16.3503 10.2109 16.2806 10.2806Z"
-                                        fill="#00A640" />
-                                </svg>
-                            </td>
-                            <td data-label="Notification Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path
-                                        d="M12 2.25C10.0716 2.25 8.18657 2.82183 6.58319 3.89317C4.97982 4.96451 3.73013 6.48726 2.99218 8.26884C2.25422 10.0504 2.06114 12.0108 2.43735 13.9021C2.81355 15.7934 3.74215 17.5307 5.10571 18.8943C6.46928 20.2579 8.20656 21.1865 10.0979 21.5627C11.9892 21.9389 13.9496 21.7458 15.7312 21.0078C17.5127 20.2699 19.0355 19.0202 20.1068 17.4168C21.1782 15.8134 21.75 13.9284 21.75 12C21.7473 9.41498 20.7192 6.93661 18.8913 5.10872C17.0634 3.28084 14.585 2.25273 12 2.25ZM16.2806 10.2806L11.0306 15.5306C10.961 15.6004 10.8783 15.6557 10.7872 15.6934C10.6962 15.7312 10.5986 15.7506 10.5 15.7506C10.4014 15.7506 10.3038 15.7312 10.2128 15.6934C10.1218 15.6557 10.039 15.6004 9.96938 15.5306L7.71938 13.2806C7.57865 13.1399 7.49959 12.949 7.49959 12.75C7.49959 12.551 7.57865 12.3601 7.71938 12.2194C7.86011 12.0786 8.05098 11.9996 8.25 11.9996C8.44903 11.9996 8.6399 12.0786 8.78063 12.2194L10.5 13.9397L15.2194 9.21937C15.2891 9.14969 15.3718 9.09442 15.4628 9.0567C15.5539 9.01899 15.6515 8.99958 15.75 8.99958C15.8486 8.99958 15.9461 9.01899 16.0372 9.0567C16.1282 9.09442 16.2109 9.14969 16.2806 9.21937C16.3503 9.28906 16.4056 9.37178 16.4433 9.46283C16.481 9.55387 16.5004 9.65145 16.5004 9.75C16.5004 9.84855 16.481 9.94613 16.4433 10.0372C16.4056 10.1282 16.3503 10.2109 16.2806 10.2806Z"
-                                        fill="#00A640" />
-                                </svg>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h5>Preparation of technical & financial proposals</h5>
-                                <span class="colored">Joint Venture Contract Tenders</span>
-                            </td>
-                            <td data-label="Basic Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
-                                    fill="none">
-                                    <rect width="20.5714" height="20.5714" rx="10.2857" fill="#DA1E1E" />
-                                    <path
-                                        d="M7.08613 14.2857L6.28613 13.4857L9.48613 10.2857L6.28613 7.08571L7.08613 6.28571L10.2861 9.48571L13.4861 6.28571L14.2861 7.08571L11.0861 10.2857L14.2861 13.4857L13.4861 14.2857L10.2861 11.0857L7.08613 14.2857Z"
-                                        fill="white" />
-                                </svg>
-                            </td>
-                            <td data-label="Advanced Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
-                                    fill="none">
-                                    <rect width="20.5714" height="20.5714" rx="10.2857" fill="#DA1E1E" />
-                                    <path
-                                        d="M7.08613 14.2857L6.28613 13.4857L9.48613 10.2857L6.28613 7.08571L7.08613 6.28571L10.2861 9.48571L13.4861 6.28571L14.2861 7.08571L11.0861 10.2857L14.2861 13.4857L13.4861 14.2857L10.2861 11.0857L7.08613 14.2857Z"
-                                        fill="white" />
-                                </svg>
-                            </td>
-                            <td data-label="Strategic Partnership Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path
-                                        d="M12 2.25C10.0716 2.25 8.18657 2.82183 6.58319 3.89317C4.97982 4.96451 3.73013 6.48726 2.99218 8.26884C2.25422 10.0504 2.06114 12.0108 2.43735 13.9021C2.81355 15.7934 3.74215 17.5307 5.10571 18.8943C6.46928 20.2579 8.20656 21.1865 10.0979 21.5627C11.9892 21.9389 13.9496 21.7458 15.7312 21.0078C17.5127 20.2699 19.0355 19.0202 20.1068 17.4168C21.1782 15.8134 21.75 13.9284 21.75 12C21.7473 9.41498 20.7192 6.93661 18.8913 5.10872C17.0634 3.28084 14.585 2.25273 12 2.25ZM16.2806 10.2806L11.0306 15.5306C10.961 15.6004 10.8783 15.6557 10.7872 15.6934C10.6962 15.7312 10.5986 15.7506 10.5 15.7506C10.4014 15.7506 10.3038 15.7312 10.2128 15.6934C10.1218 15.6557 10.039 15.6004 9.96938 15.5306L7.71938 13.2806C7.57865 13.1399 7.49959 12.949 7.49959 12.75C7.49959 12.551 7.57865 12.3601 7.71938 12.2194C7.86011 12.0786 8.05098 11.9996 8.25 11.9996C8.44903 11.9996 8.6399 12.0786 8.78063 12.2194L10.5 13.9397L15.2194 9.21937C15.2891 9.14969 15.3718 9.09442 15.4628 9.0567C15.5539 9.01899 15.6515 8.99958 15.75 8.99958C15.8486 8.99958 15.9461 9.01899 16.0372 9.0567C16.1282 9.09442 16.2109 9.14969 16.2806 9.21937C16.3503 9.28906 16.4056 9.37178 16.4433 9.46283C16.481 9.55387 16.5004 9.65145 16.5004 9.75C16.5004 9.84855 16.481 9.94613 16.4433 10.0372C16.4056 10.1282 16.3503 10.2109 16.2806 10.2806Z"
-                                        fill="#00A640" />
-                                </svg>
-                            </td>
-                            <td data-label="Notification Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path
-                                        d="M12 2.25C10.0716 2.25 8.18657 2.82183 6.58319 3.89317C4.97982 4.96451 3.73013 6.48726 2.99218 8.26884C2.25422 10.0504 2.06114 12.0108 2.43735 13.9021C2.81355 15.7934 3.74215 17.5307 5.10571 18.8943C6.46928 20.2579 8.20656 21.1865 10.0979 21.5627C11.9892 21.9389 13.9496 21.7458 15.7312 21.0078C17.5127 20.2699 19.0355 19.0202 20.1068 17.4168C21.1782 15.8134 21.75 13.9284 21.75 12C21.7473 9.41498 20.7192 6.93661 18.8913 5.10872C17.0634 3.28084 14.585 2.25273 12 2.25ZM16.2806 10.2806L11.0306 15.5306C10.961 15.6004 10.8783 15.6557 10.7872 15.6934C10.6962 15.7312 10.5986 15.7506 10.5 15.7506C10.4014 15.7506 10.3038 15.7312 10.2128 15.6934C10.1218 15.6557 10.039 15.6004 9.96938 15.5306L7.71938 13.2806C7.57865 13.1399 7.49959 12.949 7.49959 12.75C7.49959 12.551 7.57865 12.3601 7.71938 12.2194C7.86011 12.0786 8.05098 11.9996 8.25 11.9996C8.44903 11.9996 8.6399 12.0786 8.78063 12.2194L10.5 13.9397L15.2194 9.21937C15.2891 9.14969 15.3718 9.09442 15.4628 9.0567C15.5539 9.01899 15.6515 8.99958 15.75 8.99958C15.8486 8.99958 15.9461 9.01899 16.0372 9.0567C16.1282 9.09442 16.2109 9.14969 16.2806 9.21937C16.3503 9.28906 16.4056 9.37178 16.4433 9.46283C16.481 9.55387 16.5004 9.65145 16.5004 9.75C16.5004 9.84855 16.481 9.94613 16.4433 10.0372C16.4056 10.1282 16.3503 10.2109 16.2806 10.2806Z"
-                                        fill="#00A640" />
-                                </svg>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h5>Preparation of technical & financial proposals</h5>
-                                <span class="colored">Framework Agreements - Limited Tenders - Two-stage Tenders</span>
-                            </td>
-                            <td data-label="Basic Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
-                                    fill="none">
-                                    <rect width="20.5714" height="20.5714" rx="10.2857" fill="#DA1E1E" />
-                                    <path
-                                        d="M7.08613 14.2857L6.28613 13.4857L9.48613 10.2857L6.28613 7.08571L7.08613 6.28571L10.2861 9.48571L13.4861 6.28571L14.2861 7.08571L11.0861 10.2857L14.2861 13.4857L13.4861 14.2857L10.2861 11.0857L7.08613 14.2857Z"
-                                        fill="white" />
-                                </svg>
-                            </td>
-                            <td data-label="Advanced Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
-                                    fill="none">
-                                    <rect width="20.5714" height="20.5714" rx="10.2857" fill="#DA1E1E" />
-                                    <path
-                                        d="M7.08613 14.2857L6.28613 13.4857L9.48613 10.2857L6.28613 7.08571L7.08613 6.28571L10.2861 9.48571L13.4861 6.28571L14.2861 7.08571L11.0861 10.2857L14.2861 13.4857L13.4861 14.2857L10.2861 11.0857L7.08613 14.2857Z"
-                                        fill="white" />
-                                </svg>
-                            </td>
-                            <td data-label="Strategic Partnership Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path
-                                        d="M12 2.25C10.0716 2.25 8.18657 2.82183 6.58319 3.89317C4.97982 4.96451 3.73013 6.48726 2.99218 8.26884C2.25422 10.0504 2.06114 12.0108 2.43735 13.9021C2.81355 15.7934 3.74215 17.5307 5.10571 18.8943C6.46928 20.2579 8.20656 21.1865 10.0979 21.5627C11.9892 21.9389 13.9496 21.7458 15.7312 21.0078C17.5127 20.2699 19.0355 19.0202 20.1068 17.4168C21.1782 15.8134 21.75 13.9284 21.75 12C21.7473 9.41498 20.7192 6.93661 18.8913 5.10872C17.0634 3.28084 14.585 2.25273 12 2.25ZM16.2806 10.2806L11.0306 15.5306C10.961 15.6004 10.8783 15.6557 10.7872 15.6934C10.6962 15.7312 10.5986 15.7506 10.5 15.7506C10.4014 15.7506 10.3038 15.7312 10.2128 15.6934C10.1218 15.6557 10.039 15.6004 9.96938 15.5306L7.71938 13.2806C7.57865 13.1399 7.49959 12.949 7.49959 12.75C7.49959 12.551 7.57865 12.3601 7.71938 12.2194C7.86011 12.0786 8.05098 11.9996 8.25 11.9996C8.44903 11.9996 8.6399 12.0786 8.78063 12.2194L10.5 13.9397L15.2194 9.21937C15.2891 9.14969 15.3718 9.09442 15.4628 9.0567C15.5539 9.01899 15.6515 8.99958 15.75 8.99958C15.8486 8.99958 15.9461 9.01899 16.0372 9.0567C16.1282 9.09442 16.2109 9.14969 16.2806 9.21937C16.3503 9.28906 16.4056 9.37178 16.4433 9.46283C16.481 9.55387 16.5004 9.65145 16.5004 9.75C16.5004 9.84855 16.481 9.94613 16.4433 10.0372C16.4056 10.1282 16.3503 10.2109 16.2806 10.2806Z"
-                                        fill="#00A640" />
-                                </svg>
-                            </td>
-                            <td data-label="Notification Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path
-                                        d="M12 2.25C10.0716 2.25 8.18657 2.82183 6.58319 3.89317C4.97982 4.96451 3.73013 6.48726 2.99218 8.26884C2.25422 10.0504 2.06114 12.0108 2.43735 13.9021C2.81355 15.7934 3.74215 17.5307 5.10571 18.8943C6.46928 20.2579 8.20656 21.1865 10.0979 21.5627C11.9892 21.9389 13.9496 21.7458 15.7312 21.0078C17.5127 20.2699 19.0355 19.0202 20.1068 17.4168C21.1782 15.8134 21.75 13.9284 21.75 12C21.7473 9.41498 20.7192 6.93661 18.8913 5.10872C17.0634 3.28084 14.585 2.25273 12 2.25ZM16.2806 10.2806L11.0306 15.5306C10.961 15.6004 10.8783 15.6557 10.7872 15.6934C10.6962 15.7312 10.5986 15.7506 10.5 15.7506C10.4014 15.7506 10.3038 15.7312 10.2128 15.6934C10.1218 15.6557 10.039 15.6004 9.96938 15.5306L7.71938 13.2806C7.57865 13.1399 7.49959 12.949 7.49959 12.75C7.49959 12.551 7.57865 12.3601 7.71938 12.2194C7.86011 12.0786 8.05098 11.9996 8.25 11.9996C8.44903 11.9996 8.6399 12.0786 8.78063 12.2194L10.5 13.9397L15.2194 9.21937C15.2891 9.14969 15.3718 9.09442 15.4628 9.0567C15.5539 9.01899 15.6515 8.99958 15.75 8.99958C15.8486 8.99958 15.9461 9.01899 16.0372 9.0567C16.1282 9.09442 16.2109 9.14969 16.2806 9.21937C16.3503 9.28906 16.4056 9.37178 16.4433 9.46283C16.481 9.55387 16.5004 9.65145 16.5004 9.75C16.5004 9.84855 16.481 9.94613 16.4433 10.0372C16.4056 10.1282 16.3503 10.2109 16.2806 10.2806Z"
-                                        fill="#00A640" />
-                                </svg>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h5>Consultation before buying the dossier</h5>
-                            </td>
-                            <td data-label="Basic Plan">
-                                <div class="cell-details d-flex align-items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none">
-                                        <path
-                                            d="M12 2.25C10.0716 2.25 8.18657 2.82183 6.58319 3.89317C4.97982 4.96451 3.73013 6.48726 2.99218 8.26884C2.25422 10.0504 2.06114 12.0108 2.43735 13.9021C2.81355 15.7934 3.74215 17.5307 5.10571 18.8943C6.46928 20.2579 8.20656 21.1865 10.0979 21.5627C11.9892 21.9389 13.9496 21.7458 15.7312 21.0078C17.5127 20.2699 19.0355 19.0202 20.1068 17.4168C21.1782 15.8134 21.75 13.9284 21.75 12C21.7473 9.41498 20.7192 6.93661 18.8913 5.10872C17.0634 3.28084 14.585 2.25273 12 2.25ZM16.2806 10.2806L11.0306 15.5306C10.961 15.6004 10.8783 15.6557 10.7872 15.6934C10.6962 15.7312 10.5986 15.7506 10.5 15.7506C10.4014 15.7506 10.3038 15.7312 10.2128 15.6934C10.1218 15.6557 10.039 15.6004 9.96938 15.5306L7.71938 13.2806C7.57865 13.1399 7.49959 12.949 7.49959 12.75C7.49959 12.551 7.57865 12.3601 7.71938 12.2194C7.86011 12.0786 8.05098 11.9996 8.25 11.9996C8.44903 11.9996 8.6399 12.0786 8.78063 12.2194L10.5 13.9397L15.2194 9.21937C15.2891 9.14969 15.3718 9.09442 15.4628 9.0567C15.5539 9.01899 15.6515 8.99958 15.75 8.99958C15.8486 8.99958 15.9461 9.01899 16.0372 9.0567C16.1282 9.09442 16.2109 9.14969 16.2806 9.21937C16.3503 9.28906 16.4056 9.37178 16.4433 9.46283C16.481 9.55387 16.5004 9.65145 16.5004 9.75C16.5004 9.84855 16.481 9.94613 16.4433 10.0372C16.4056 10.1282 16.3503 10.2109 16.2806 10.2806Z"
-                                            fill="#00A640" />
-                                    </svg>
-                                    <span>
-                                        <span class="fw-medium d-block">Direct purchase tenders only</span>
-                                        (One tender per day — balance not carried over).
-                                    </span>
-                                </div>
-                            </td>
-                            <td data-label="Advanced Plan">
-                                <div class="cell-details d-flex align-items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none">
-                                        <path
-                                            d="M12 2.25C10.0716 2.25 8.18657 2.82183 6.58319 3.89317C4.97982 4.96451 3.73013 6.48726 2.99218 8.26884C2.25422 10.0504 2.06114 12.0108 2.43735 13.9021C2.81355 15.7934 3.74215 17.5307 5.10571 18.8943C6.46928 20.2579 8.20656 21.1865 10.0979 21.5627C11.9892 21.9389 13.9496 21.7458 15.7312 21.0078C17.5127 20.2699 19.0355 19.0202 20.1068 17.4168C21.1782 15.8134 21.75 13.9284 21.75 12C21.7473 9.41498 20.7192 6.93661 18.8913 5.10872C17.0634 3.28084 14.585 2.25273 12 2.25ZM16.2806 10.2806L11.0306 15.5306C10.961 15.6004 10.8783 15.6557 10.7872 15.6934C10.6962 15.7312 10.5986 15.7506 10.5 15.7506C10.4014 15.7506 10.3038 15.7312 10.2128 15.6934C10.1218 15.6557 10.039 15.6004 9.96938 15.5306L7.71938 13.2806C7.57865 13.1399 7.49959 12.75C7.49959 12.551 7.57865 12.3601 7.71938 12.2194C7.86011 12.0786 8.05098 11.9996 8.25 11.9996C8.44903 11.9996 8.6399 12.0786 8.78063 12.2194L10.5 13.9397L15.2194 9.21937C15.2891 9.14969 15.3718 9.09442 15.4628 9.0567C15.5539 9.01899 15.6515 8.99958 15.75 8.99958C15.8486 8.99958 15.9461 9.01899 16.0372 9.0567C16.1282 9.09442 16.2109 9.14969 16.2806 9.21937C16.3503 9.28906 16.4056 9.37178 16.4433 9.46283C16.481 9.55387 16.5004 9.65145 16.5004 9.75C16.5004 9.84855 16.481 9.94613 16.4433 10.0372C16.4056 10.1282 16.3503 10.2109 16.2806 10.2806Z"
-                                            fill="#00A640" />
-                                    </svg>
-                                    <span>
-                                        <span class="fw-medium d-block">Public tenders only</span>
-                                        (One tender per day — balance not carried over).
-                                    </span>
-                                </div>
-                            </td>
-                            <td data-label="Strategic Partnership Plan">
-                                <div class="cell-details d-flex align-items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none">
-                                        <path
-                                            d="M12 2.25C10.0716 2.25 8.18657 2.82183 6.58319 3.89317C4.97982 4.96451 3.73013 6.48726 2.99218 8.26884C2.25422 10.0504 2.06114 12.0108 2.43735 13.9021C2.81355 15.7934 3.74215 17.5307 5.10571 18.8943C6.46928 20.2579 8.20656 21.1865 10.0979 21.5627C11.9892 21.9389 13.9496 21.7458 15.7312 21.0078C17.5127 20.2699 19.0355 19.0202 20.1068 17.4168C21.1782 15.8134 21.75 13.9284 21.75 12C21.7473 9.41498 20.7192 6.93661 18.8913 5.10872C17.0634 3.28084 14.585 2.25273 12 2.25ZM16.2806 10.2806L11.0306 15.5306C10.961 15.6004 10.8783 15.6557 10.7872 15.6934C10.6962 15.7312 10.5986 15.7506 10.5 15.7506C10.4014 15.7506 10.3038 15.7312 10.2128 15.6934C10.1218 15.6557 10.039 15.6004 9.96938 15.5306L7.71938 13.2806C7.57865 13.1399 7.49959 12.75C7.49959 12.551 7.57865 12.3601 7.71938 12.2194C7.86011 12.0786 8.05098 11.9996 8.25 11.9996C8.44903 11.9996 8.6399 12.0786 8.78063 12.2194L10.5 13.9397L15.2194 9.21937C15.2891 9.14969 15.3718 9.09442 15.4628 9.0567C15.5539 9.01899 15.6515 8.99958 15.75 8.99958C15.8486 8.99958 15.9461 9.01899 16.0372 9.0567C16.1282 9.09442 16.2109 9.14969 16.2806 9.21937C16.3503 9.28906 16.4056 9.37178 16.4433 9.46283C16.481 9.55387 16.5004 9.65145 16.5004 9.75C16.5004 9.84855 16.481 9.94613 16.4433 10.0372C16.4056 10.1282 16.3503 10.2109 16.2806 10.2806Z"
-                                            fill="#00A640" />
-                                    </svg>
-                                    <span>
-                                        <span class="fw-medium d-block">Includes direct purchase and public
-                                            tenders</span>
-                                        (One tender per day — balance not carried over).
-                                    </span>
-                                </div>
-                            </td>
-                            <td data-label="Notification Plan">
-                                <div class="cell-details d-flex align-items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none">
-                                        <path
-                                            d="M12 2.25C10.0716 2.25 8.18657 2.82183 6.58319 3.89317C4.97982 4.96451 3.73013 6.48726 2.99218 8.26884C2.25422 10.0504 2.06114 12.0108 2.43735 13.9021C2.81355 15.7934 3.74215 17.5307 5.10571 18.8943C6.46928 20.2579 8.20656 21.1865 10.0979 21.5627C11.9892 21.9389 13.9496 21.7458 15.7312 21.0078C17.5127 20.2699 19.0355 19.0202 20.1068 17.4168C21.1782 15.8134 21.75 13.9284 21.75 12C21.7473 9.41498 20.7192 6.93661 18.8913 5.10872C17.0634 3.28084 14.585 2.25273 12 2.25ZM16.2806 10.2806L11.0306 15.5306C10.961 15.6004 10.8783 15.6557 10.7872 15.6934C10.6962 15.7312 10.5986 15.7506 10.5 15.7506C10.4014 15.7506 10.3038 15.7312 10.2128 15.6934C10.1218 15.6557 10.039 15.6004 9.96938 15.5306L7.71938 13.2806C7.57865 13.1399 7.49959 12.75C7.49959 12.551 7.57865 12.3601 7.71938 12.2194C7.86011 12.0786 8.05098 11.9996 8.25 11.9996C8.44903 11.9996 8.6399 12.0786 8.78063 12.2194L10.5 13.9397L15.2194 9.21937C15.2891 9.14969 15.3718 9.09442 15.4628 9.0567C15.5539 9.01899 15.6515 8.99958 15.75 8.99958C15.8486 8.99958 15.9461 9.01899 16.0372 9.0567C16.1282 9.09442 16.2109 9.14969 16.2806 9.21937C16.3503 9.28906 16.4056 9.37178 16.4433 9.46283C16.481 9.55387 16.5004 9.65145 16.5004 9.75C16.5004 9.84855 16.481 9.94613 16.4433 10.0372C16.4056 10.1282 16.3503 10.2109 16.2806 10.2806Z"
-                                            fill="#00A640" />
-                                    </svg>
-                                    <span>
-                                        <span class="fw-medium d-block">Includes direct purchase and public
-                                            tenders</span>
-                                        (One tender per day — balance not carried over).
-                                    </span>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h5>Tender Notifications</h5>
-                                <span>(You receive notifications as soon as any tender matching your activity or field
-                                    is posted.)</span>
-                            </td>
-                            <td data-label="Basic Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path
-                                        d="M12 2.25C10.0716 2.25 8.18657 2.82183 6.58319 3.89317C4.97982 4.96451 3.73013 6.48726 2.99218 8.26884C2.25422 10.0504 2.06114 12.0108 2.43735 13.9021C2.81355 15.7934 3.74215 17.5307 5.10571 18.8943C6.46928 20.2579 8.20656 21.1865 10.0979 21.5627C11.9892 21.9389 13.9496 21.7458 15.7312 21.0078C17.5127 20.2699 19.0355 19.0202 20.1068 17.4168C21.1782 15.8134 21.75 13.9284 21.75 12C21.7473 9.41498 20.7192 6.93661 18.8913 5.10872C17.0634 3.28084 14.585 2.25273 12 2.25ZM16.2806 10.2806L11.0306 15.5306C10.961 15.6004 10.8783 15.6557 10.7872 15.6934C10.6962 15.7312 10.5986 15.7506 10.5 15.7506C10.4014 15.7506 10.3038 15.7312 10.2128 15.6934C10.1218 15.6557 10.039 15.6004 9.96938 15.5306L7.71938 13.2806C7.57865 13.1399 7.49959 12.949 7.49959 12.75C7.49959 12.551 7.57865 12.3601 7.71938 12.2194C7.86011 12.0786 8.05098 11.9996 8.25 11.9996C8.44903 11.9996 8.6399 12.0786 8.78063 12.2194L10.5 13.9397L15.2194 9.21937C15.2891 9.14969 15.3718 9.09442 15.4628 9.0567C15.5539 9.01899 15.6515 8.99958 15.75 8.99958C15.8486 8.99958 15.9461 9.01899 16.0372 9.0567C16.1282 9.09442 16.2109 9.14969 16.2806 9.21937C16.3503 9.28906 16.4056 9.37178 16.4433 9.46283C16.481 9.55387 16.5004 9.65145 16.5004 9.75C16.5004 9.84855 16.481 9.94613 16.4433 10.0372C16.4056 10.1282 16.3503 10.2109 16.2806 10.2806Z"
-                                        fill="#00A640" />
-                                </svg>
-                            </td>
-                            <td data-label="Advanced Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path
-                                        d="M12 2.25C10.0716 2.25 8.18657 2.82183 6.58319 3.89317C4.97982 4.96451 3.73013 6.48726 2.99218 8.26884C2.25422 10.0504 2.06114 12.0108 2.43735 13.9021C2.81355 15.7934 3.74215 17.5307 5.10571 18.8943C6.46928 20.2579 8.20656 21.1865 10.0979 21.5627C11.9892 21.9389 13.9496 21.7458 15.7312 21.0078C17.5127 20.2699 19.0355 19.0202 20.1068 17.4168C21.1782 15.8134 21.75 13.9284 21.75 12C21.7473 9.41498 20.7192 6.93661 18.8913 5.10872C17.0634 3.28084 14.585 2.25273 12 2.25ZM16.2806 10.2806L11.0306 15.5306C10.961 15.6004 10.8783 15.6557 10.7872 15.6934C10.6962 15.7312 10.5986 15.7506 10.5 15.7506C10.4014 15.7506 10.3038 15.7312 10.2128 15.6934C10.1218 15.6557 10.039 15.6004 9.96938 15.5306L7.71938 13.2806C7.57865 13.1399 7.49959 12.949 7.49959 12.75C7.49959 12.551 7.57865 12.3601 7.71938 12.2194C7.86011 12.0786 8.05098 11.9996 8.25 11.9996C8.44903 11.9996 8.6399 12.0786 8.78063 12.2194L10.5 13.9397L15.2194 9.21937C15.2891 9.14969 15.3718 9.09442 15.4628 9.0567C15.5539 9.01899 15.6515 8.99958 15.75 8.99958C15.8486 8.99958 15.9461 9.01899 16.0372 9.0567C16.1282 9.09442 16.2109 9.14969 16.2806 9.21937C16.3503 9.28906 16.4056 9.37178 16.4433 9.46283C16.481 9.55387 16.5004 9.65145 16.5004 9.75C16.5004 9.84855 16.481 9.94613 16.4433 10.0372C16.4056 10.1282 16.3503 10.2109 16.2806 10.2806Z"
-                                        fill="#00A640" />
-                                </svg>
-                            </td>
-                            <td data-label="Strategic Partnership Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path
-                                        d="M12 2.25C10.0716 2.25 8.18657 2.82183 6.58319 3.89317C4.97982 4.96451 3.73013 6.48726 2.99218 8.26884C2.25422 10.0504 2.06114 12.0108 2.43735 13.9021C2.81355 15.7934 3.74215 17.5307 5.10571 18.8943C6.46928 20.2579 8.20656 21.1865 10.0979 21.5627C11.9892 21.9389 13.9496 21.7458 15.7312 21.0078C17.5127 20.2699 19.0355 19.0202 20.1068 17.4168C21.1782 15.8134 21.75 13.9284 21.75 12C21.7473 9.41498 20.7192 6.93661 18.8913 5.10872C17.0634 3.28084 14.585 2.25273 12 2.25ZM16.2806 10.2806L11.0306 15.5306C10.961 15.6004 10.8783 15.6557 10.7872 15.6934C10.6962 15.7312 10.5986 15.7506 10.5 15.7506C10.4014 15.7506 10.3038 15.7312 10.2128 15.6934C10.1218 15.6557 10.039 15.6004 9.96938 15.5306L7.71938 13.2806C7.57865 13.1399 7.49959 12.949 7.49959 12.75C7.49959 12.551 7.57865 12.3601 7.71938 12.2194C7.86011 12.0786 8.05098 11.9996 8.25 11.9996C8.44903 11.9996 8.6399 12.0786 8.78063 12.2194L10.5 13.9397L15.2194 9.21937C15.2891 9.14969 15.3718 9.09442 15.4628 9.0567C15.5539 9.01899 15.6515 8.99958 15.75 8.99958C15.8486 8.99958 15.9461 9.01899 16.0372 9.0567C16.1282 9.09442 16.2109 9.14969 16.2806 9.21937C16.3503 9.28906 16.4056 9.37178 16.4433 9.46283C16.481 9.55387 16.5004 9.65145 16.5004 9.75C16.5004 9.84855 16.481 9.94613 16.4433 10.0372C16.4056 10.1282 16.3503 10.2109 16.2806 10.2806Z"
-                                        fill="#00A640" />
-                                </svg>
-                            </td>
-                            <td data-label="Notification Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path
-                                        d="M12 2.25C10.0716 2.25 8.18657 2.82183 6.58319 3.89317C4.97982 4.96451 3.73013 6.48726 2.99218 8.26884C2.25422 10.0504 2.06114 12.0108 2.43735 13.9021C2.81355 15.7934 3.74215 17.5307 5.10571 18.8943C6.46928 20.2579 8.20656 21.1865 10.0979 21.5627C11.9892 21.9389 13.9496 21.7458 15.7312 21.0078C17.5127 20.2699 19.0355 19.0202 20.1068 17.4168C21.1782 15.8134 21.75 13.9284 21.75 12C21.7473 9.41498 20.7192 6.93661 18.8913 5.10872C17.0634 3.28084 14.585 2.25273 12 2.25ZM16.2806 10.2806L11.0306 15.5306C10.961 15.6004 10.8783 15.6557 10.7872 15.6934C10.6962 15.7312 10.5986 15.7506 10.5 15.7506C10.4014 15.7506 10.3038 15.7312 10.2128 15.6934C10.1218 15.6557 10.039 15.6004 9.96938 15.5306L7.71938 13.2806C7.57865 13.1399 7.49959 12.949 7.49959 12.75C7.49959 12.551 7.57865 12.3601 7.71938 12.2194C7.86011 12.0786 8.05098 11.9996 8.25 11.9996C8.44903 11.9996 8.6399 12.0786 8.78063 12.2194L10.5 13.9397L15.2194 9.21937C15.2891 9.14969 15.3718 9.09442 15.4628 9.0567C15.5539 9.01899 15.6515 8.99958 15.75 8.99958C15.8486 8.99958 15.9461 9.01899 16.0372 9.0567C16.1282 9.09442 16.2109 9.14969 16.2806 9.21937C16.3503 9.28906 16.4056 9.37178 16.4433 9.46283C16.481 9.55387 16.5004 9.65145 16.5004 9.75C16.5004 9.84855 16.481 9.94613 16.4433 10.0372C16.4056 10.1282 16.3503 10.2109 16.2806 10.2806Z"
-                                        fill="#00A640" />
-                                </svg>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h5>Submission to Etimad Platform</h5>
-                                <span>(Uploading financial statements, post-qualification, and
-                                    pre-qualification.)</span>
-                            </td>
-                            <td data-label="Basic Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
-                                    fill="none">
-                                    <rect width="20.5714" height="20.5714" rx="10.2857" fill="#DA1E1E" />
-                                    <path
-                                        d="M7.08613 14.2857L6.28613 13.4857L9.48613 10.2857L6.28613 7.08571L7.08613 6.28571L10.2861 9.48571L13.4861 6.28571L14.2861 7.08571L11.0861 10.2857L14.2861 13.4857L13.4861 14.2857L10.2861 11.0857L7.08613 14.2857Z"
-                                        fill="white" />
-                                </svg>
-                            </td>
-                            <td data-label="Advanced Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
-                                    fill="none">
-                                    <rect width="20.5714" height="20.5714" rx="10.2857" fill="#DA1E1E" />
-                                    <path
-                                        d="M7.08613 14.2857L6.28613 13.4857L9.48613 10.2857L6.28613 7.08571L7.08613 6.28571L10.2861 9.48571L13.4861 6.28571L14.2861 7.08571L11.0861 10.2857L14.2861 13.4857L13.4861 14.2857L10.2861 11.0857L7.08613 14.2857Z"
-                                        fill="white" />
-                                </svg>
-                            </td>
-                            <td data-label="Strategic Partnership Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path
-                                        d="M12 2.25C10.0716 2.25 8.18657 2.82183 6.58319 3.89317C4.97982 4.96451 3.73013 6.48726 2.99218 8.26884C2.25422 10.0504 2.06114 12.0108 2.43735 13.9021C2.81355 15.7934 3.74215 17.5307 5.10571 18.8943C6.46928 20.2579 8.20656 21.1865 10.0979 21.5627C11.9892 21.9389 13.9496 21.7458 15.7312 21.0078C17.5127 20.2699 19.0355 19.0202 20.1068 17.4168C21.1782 15.8134 21.75 13.9284 21.75 12C21.7473 9.41498 20.7192 6.93661 18.8913 5.10872C17.0634 3.28084 14.585 2.25273 12 2.25ZM16.2806 10.2806L11.0306 15.5306C10.961 15.6004 10.8783 15.6557 10.7872 15.6934C10.6962 15.7312 10.5986 15.7506 10.5 15.7506C10.4014 15.7506 10.3038 15.7312 10.2128 15.6934C10.1218 15.6557 10.039 15.6004 9.96938 15.5306L7.71938 13.2806C7.57865 13.1399 7.49959 12.949 7.49959 12.75C7.49959 12.551 7.57865 12.3601 7.71938 12.2194C7.86011 12.0786 8.05098 11.9996 8.25 11.9996C8.44903 11.9996 8.6399 12.0786 8.78063 12.2194L10.5 13.9397L15.2194 9.21937C15.2891 9.14969 15.3718 9.09442 15.4628 9.0567C15.5539 9.01899 15.6515 8.99958 15.75 8.99958C15.8486 8.99958 15.9461 9.01899 16.0372 9.0567C16.1282 9.09442 16.2109 9.14969 16.2806 9.21937C16.3503 9.28906 16.4056 9.37178 16.4433 9.46283C16.481 9.55387 16.5004 9.65145 16.5004 9.75C16.5004 9.84855 16.481 9.94613 16.4433 10.0372C16.4056 10.1282 16.3503 10.2109 16.2806 10.2806Z"
-                                        fill="#00A640" />
-                                </svg>
-                            </td>
-                            <td data-label="Notification Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path
-                                        d="M12 2.25C10.0716 2.25 8.18657 2.82183 6.58319 3.89317C4.97982 4.96451 3.73013 6.48726 2.99218 8.26884C2.25422 10.0504 2.06114 12.0108 2.43735 13.9021C2.81355 15.7934 3.74215 17.5307 5.10571 18.8943C6.46928 20.2579 8.20656 21.1865 10.0979 21.5627C11.9892 21.9389 13.9496 21.7458 15.7312 21.0078C17.5127 20.2699 19.0355 19.0202 20.1068 17.4168C21.1782 15.8134 21.75 13.9284 21.75 12C21.7473 9.41498 20.7192 6.93661 18.8913 5.10872C17.0634 3.28084 14.585 2.25273 12 2.25ZM16.2806 10.2806L11.0306 15.5306C10.961 15.6004 10.8783 15.6557 10.7872 15.6934C10.6962 15.7312 10.5986 15.7506 10.5 15.7506C10.4014 15.7506 10.3038 15.7312 10.2128 15.6934C10.1218 15.6557 10.039 15.6004 9.96938 15.5306L7.71938 13.2806C7.57865 13.1399 7.49959 12.949 7.49959 12.75C7.49959 12.551 7.57865 12.3601 7.71938 12.2194C7.86011 12.0786 8.05098 11.9996 8.25 11.9996C8.44903 11.9996 8.6399 12.0786 8.78063 12.2194L10.5 13.9397L15.2194 9.21937C15.2891 9.14969 15.3718 9.09442 15.4628 9.0567C15.5539 9.01899 15.6515 8.99958 15.75 8.99958C15.8486 8.99958 15.9461 9.01899 16.0372 9.0567C16.1282 9.09442 16.2109 9.14969 16.2806 9.21937C16.3503 9.28906 16.4056 9.37178 16.4433 9.46283C16.481 9.55387 16.5004 9.65145 16.5004 9.75C16.5004 9.84855 16.481 9.94613 16.4433 10.0372C16.4056 10.1282 16.3503 10.2109 16.2806 10.2806Z"
-                                        fill="#00A640" />
-                                </svg>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h5>Dedicated Account Manager</h5>
-                                <span>Personal account manager follows your daily needs via group or email, answers
-                                    inquiries and assists in resolving issues quickly and flexibly.</span>
-                            </td>
-                            <td data-label="Basic Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
-                                    fill="none">
-                                    <rect width="20.5714" height="20.5714" rx="10.2857" fill="#DA1E1E" />
-                                    <path
-                                        d="M7.08613 14.2857L6.28613 13.4857L9.48613 10.2857L6.28613 7.08571L7.08613 6.28571L10.2861 9.48571L13.4861 6.28571L14.2861 7.08571L11.0861 10.2857L14.2861 13.4857L13.4861 14.2857L10.2861 11.0857L7.08613 14.2857Z"
-                                        fill="white" />
-                                </svg>
-                            </td>
-                            <td data-label="Advanced Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
-                                    fill="none">
-                                    <rect width="20.5714" height="20.5714" rx="10.2857" fill="#DA1E1E" />
-                                    <path
-                                        d="M7.08613 14.2857L6.28613 13.4857L9.48613 10.2857L6.28613 7.08571L7.08613 6.28571L10.2861 9.48571L13.4861 6.28571L14.2861 7.08571L11.0861 10.2857L14.2861 13.4857L13.4861 14.2857L10.2861 11.0857L7.08613 14.2857Z"
-                                        fill="white" />
-                                </svg>
-                            </td>
-                            <td data-label="Strategic Partnership Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path
-                                        d="M12 2.25C10.0716 2.25 8.18657 2.82183 6.58319 3.89317C4.97982 4.96451 3.73013 6.48726 2.99218 8.26884C2.25422 10.0504 2.06114 12.0108 2.43735 13.9021C2.81355 15.7934 3.74215 17.5307 5.10571 18.8943C6.46928 20.2579 8.20656 21.1865 10.0979 21.5627C11.9892 21.9389 13.9496 21.7458 15.7312 21.0078C17.5127 20.2699 19.0355 19.0202 20.1068 17.4168C21.1782 15.8134 21.75 13.9284 21.75 12C21.7473 9.41498 20.7192 6.93661 18.8913 5.10872C17.0634 3.28084 14.585 2.25273 12 2.25ZM16.2806 10.2806L11.0306 15.5306C10.961 15.6004 10.8783 15.6557 10.7872 15.6934C10.6962 15.7312 10.5986 15.7506 10.5 15.7506C10.4014 15.7506 10.3038 15.7312 10.2128 15.6934C10.1218 15.6557 10.039 15.6004 9.96938 15.5306L7.71938 13.2806C7.57865 13.1399 7.49959 12.949 7.49959 12.75C7.49959 12.551 7.57865 12.3601 7.71938 12.2194C7.86011 12.0786 8.05098 11.9996 8.25 11.9996C8.44903 11.9996 8.6399 12.0786 8.78063 12.2194L10.5 13.9397L15.2194 9.21937C15.2891 9.14969 15.3718 9.09442 15.4628 9.0567C15.5539 9.01899 15.6515 8.99958 15.75 8.99958C15.8486 8.99958 15.9461 9.01899 16.0372 9.0567C16.1282 9.09442 16.2109 9.14969 16.2806 9.21937C16.3503 9.28906 16.4056 9.37178 16.4433 9.46283C16.481 9.55387 16.5004 9.65145 16.5004 9.75C16.5004 9.84855 16.481 9.94613 16.4433 10.0372C16.4056 10.1282 16.3503 10.2109 16.2806 10.2806Z"
-                                        fill="#00A640" />
-                                </svg>
-                            </td>
-                            <td data-label="Notification Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path
-                                        d="M12 2.25C10.0716 2.25 8.18657 2.82183 6.58319 3.89317C4.97982 4.96451 3.73013 6.48726 2.99218 8.26884C2.25422 10.0504 2.06114 12.0108 2.43735 13.9021C2.81355 15.7934 3.74215 17.5307 5.10571 18.8943C6.46928 20.2579 8.20656 21.1865 10.0979 21.5627C11.9892 21.9389 13.9496 21.7458 15.7312 21.0078C17.5127 20.2699 19.0355 19.0202 20.1068 17.4168C21.1782 15.8134 21.75 13.9284 21.75 12C21.7473 9.41498 20.7192 6.93661 18.8913 5.10872C17.0634 3.28084 14.585 2.25273 12 2.25ZM16.2806 10.2806L11.0306 15.5306C10.961 15.6004 10.8783 15.6557 10.7872 15.6934C10.6962 15.7312 10.5986 15.7506 10.5 15.7506C10.4014 15.7506 10.3038 15.7312 10.2128 15.6934C10.1218 15.6557 10.039 15.6004 9.96938 15.5306L7.71938 13.2806C7.57865 13.1399 7.49959 12.949 7.49959 12.75C7.49959 12.551 7.57865 12.3601 7.71938 12.2194C7.86011 12.0786 8.05098 11.9996 8.25 11.9996C8.44903 11.9996 8.6399 12.0786 8.78063 12.2194L10.5 13.9397L15.2194 9.21937C15.2891 9.14969 15.3718 9.09442 15.4628 9.0567C15.5539 9.01899 15.6515 8.99958 15.75 8.99958C15.8486 8.99958 15.9461 9.01899 16.0372 9.0567C16.1282 9.09442 16.2109 9.14969 16.2806 9.21937C16.3503 9.28906 16.4056 9.37178 16.4433 9.46283C16.481 9.55387 16.5004 9.65145 16.5004 9.75C16.5004 9.84855 16.481 9.94613 16.4433 10.0372C16.4056 10.1282 16.3503 10.2109 16.2806 10.2806Z"
-                                        fill="#00A640" />
-                                </svg>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h5>Specialized consultant to improve your company's status and follow it up</h5>
-                                <span>A specialized consultant provides accurate analysis and advice to develop your
-                                    company's performance, and follows up on suitable tenders with monthly reports
-                                    explaining your opportunities and market trends.</span>
-                            </td>
-                            <td data-label="Basic Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
-                                    fill="none">
-                                    <rect width="20.5714" height="20.5714" rx="10.2857" fill="#DA1E1E" />
-                                    <path
-                                        d="M7.08613 14.2857L6.28613 13.4857L9.48613 10.2857L6.28613 7.08571L7.08613 6.28571L10.2861 9.48571L13.4861 6.28571L14.2861 7.08571L11.0861 10.2857L14.2861 13.4857L13.4861 14.2857L10.2861 11.0857L7.08613 14.2857Z"
-                                        fill="white" />
-                                </svg>
-                            </td>
-                            <td data-label="Advanced Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
-                                    fill="none">
-                                    <rect width="20.5714" height="20.5714" rx="10.2857" fill="#DA1E1E" />
-                                    <path
-                                        d="M7.08613 14.2857L6.28613 13.4857L9.48613 10.2857L6.28613 7.08571L7.08613 6.28571L10.2861 9.48571L13.4861 6.28571L14.2861 7.08571L11.0861 10.2857L14.2861 13.4857L13.4861 14.2857L10.2861 11.0857L7.08613 14.2857Z"
-                                        fill="white" />
-                                </svg>
-                            </td>
-                            <td data-label="Strategic Partnership Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path
-                                        d="M12 2.25C10.0716 2.25 8.18657 2.82183 6.58319 3.89317C4.97982 4.96451 3.73013 6.48726 2.99218 8.26884C2.25422 10.0504 2.06114 12.0108 2.43735 13.9021C2.81355 15.7934 3.74215 17.5307 5.10571 18.8943C6.46928 20.2579 8.20656 21.1865 10.0979 21.5627C11.9892 21.9389 13.9496 21.7458 15.7312 21.0078C17.5127 20.2699 19.0355 19.0202 20.1068 17.4168C21.1782 15.8134 21.75 13.9284 21.75 12C21.7473 9.41498 20.7192 6.93661 18.8913 5.10872C17.0634 3.28084 14.585 2.25273 12 2.25ZM16.2806 10.2806L11.0306 15.5306C10.961 15.6004 10.8783 15.6557 10.7872 15.6934C10.6962 15.7312 10.5986 15.7506 10.5 15.7506C10.4014 15.7506 10.3038 15.7312 10.2128 15.6934C10.1218 15.6557 10.039 15.6004 9.96938 15.5306L7.71938 13.2806C7.57865 13.1399 7.49959 12.949 7.49959 12.75C7.49959 12.551 7.57865 12.3601 7.71938 12.2194C7.86011 12.0786 8.05098 11.9996 8.25 11.9996C8.44903 11.9996 8.6399 12.0786 8.78063 12.2194L10.5 13.9397L15.2194 9.21937C15.2891 9.14969 15.3718 9.09442 15.4628 9.0567C15.5539 9.01899 15.6515 8.99958 15.75 8.99958C15.8486 8.99958 15.9461 9.01899 16.0372 9.0567C16.1282 9.09442 16.2109 9.14969 16.2806 9.21937C16.3503 9.28906 16.4056 9.37178 16.4433 9.46283C16.481 9.55387 16.5004 9.65145 16.5004 9.75C16.5004 9.84855 16.481 9.94613 16.4433 10.0372C16.4056 10.1282 16.3503 10.2109 16.2806 10.2806Z"
-                                        fill="#00A640" />
-                                </svg>
-                            </td>
-                            <td data-label="Notification Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path
-                                        d="M12 2.25C10.0716 2.25 8.18657 2.82183 6.58319 3.89317C4.97982 4.96451 3.73013 6.48726 2.99218 8.26884C2.25422 10.0504 2.06114 12.0108 2.43735 13.9021C2.81355 15.7934 3.74215 17.5307 5.10571 18.8943C6.46928 20.2579 8.20656 21.1865 10.0979 21.5627C11.9892 21.9389 13.9496 21.7458 15.7312 21.0078C17.5127 20.2699 19.0355 19.0202 20.1068 17.4168C21.1782 15.8134 21.75 13.9284 21.75 12C21.7473 9.41498 20.7192 6.93661 18.8913 5.10872C17.0634 3.28084 14.585 2.25273 12 2.25ZM16.2806 10.2806L11.0306 15.5306C10.961 15.6004 10.8783 15.6557 10.7872 15.6934C10.6962 15.7312 10.5986 15.7506 10.5 15.7506C10.4014 15.7506 10.3038 15.7312 10.2128 15.6934C10.1218 15.6557 10.039 15.6004 9.96938 15.5306L7.71938 13.2806C7.57865 13.1399 7.49959 12.949 7.49959 12.75C7.49959 12.551 7.57865 12.3601 7.71938 12.2194C7.86011 12.0786 8.05098 11.9996 8.25 11.9996C8.44903 11.9996 8.6399 12.0786 8.78063 12.2194L10.5 13.9397L15.2194 9.21937C15.2891 9.14969 15.3718 9.09442 15.4628 9.0567C15.5539 9.01899 15.6515 8.99958 15.75 8.99958C15.8486 8.99958 15.9461 9.01899 16.0372 9.0567C16.1282 9.09442 16.2109 9.14969 16.2806 9.21937C16.3503 9.28906 16.4056 9.37178 16.4433 9.46283C16.481 9.55387 16.5004 9.65145 16.5004 9.75C16.5004 9.84855 16.481 9.94613 16.4433 10.0372C16.4056 10.1282 16.3503 10.2109 16.2806 10.2806Z"
-                                        fill="#00A640" />
-                                </svg>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h5>View Historical Tender Prices</h5>
-                                <span>We provide accurate data on competitors' actual prices in previous tenders.</span>
-                            </td>
-                            <td data-label="Basic Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
-                                    fill="none">
-                                    <rect width="20.5714" height="20.5714" rx="10.2857" fill="#DA1E1E" />
-                                    <path
-                                        d="M7.08613 14.2857L6.28613 13.4857L9.48613 10.2857L6.28613 7.08571L7.08613 6.28571L10.2861 9.48571L13.4861 6.28571L14.2861 7.08571L11.0861 10.2857L14.2861 13.4857L13.4861 14.2857L10.2861 11.0857L7.08613 14.2857Z"
-                                        fill="white" />
-                                </svg>
-                            </td>
-                            <td data-label="Advanced Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
-                                    fill="none">
-                                    <rect width="20.5714" height="20.5714" rx="10.2857" fill="#DA1E1E" />
-                                    <path
-                                        d="M7.08613 14.2857L6.28613 13.4857L9.48613 10.2857L6.28613 7.08571L7.08613 6.28571L10.2861 9.48571L13.4861 6.28571L14.2861 7.08571L11.0861 10.2857L14.2861 13.4857L13.4861 14.2857L10.2861 11.0857L7.08613 14.2857Z"
-                                        fill="white" />
-                                </svg>
-                            </td>
-                            <td data-label="Strategic Partnership Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path
-                                        d="M12 2.25C10.0716 2.25 8.18657 2.82183 6.58319 3.89317C4.97982 4.96451 3.73013 6.48726 2.99218 8.26884C2.25422 10.0504 2.06114 12.0108 2.43735 13.9021C2.81355 15.7934 3.74215 17.5307 5.10571 18.8943C6.46928 20.2579 8.20656 21.1865 10.0979 21.5627C11.9892 21.9389 13.9496 21.7458 15.7312 21.0078C17.5127 20.2699 19.0355 19.0202 20.1068 17.4168C21.1782 15.8134 21.75 13.9284 21.75 12C21.7473 9.41498 20.7192 6.93661 18.8913 5.10872C17.0634 3.28084 14.585 2.25273 12 2.25ZM16.2806 10.2806L11.0306 15.5306C10.961 15.6004 10.8783 15.6557 10.7872 15.6934C10.6962 15.7312 10.5986 15.7506 10.5 15.7506C10.4014 15.7506 10.3038 15.7312 10.2128 15.6934C10.1218 15.6557 10.039 15.6004 9.96938 15.5306L7.71938 13.2806C7.57865 13.1399 7.49959 12.949 7.49959 12.75C7.49959 12.551 7.57865 12.3601 7.71938 12.2194C7.86011 12.0786 8.05098 11.9996 8.25 11.9996C8.44903 11.9996 8.6399 12.0786 8.78063 12.2194L10.5 13.9397L15.2194 9.21937C15.2891 9.14969 15.3718 9.09442 15.4628 9.0567C15.5539 9.01899 15.6515 8.99958 15.75 8.99958C15.8486 8.99958 15.9461 9.01899 16.0372 9.0567C16.1282 9.09442 16.2109 9.14969 16.2806 9.21937C16.3503 9.28906 16.4056 9.37178 16.4433 9.46283C16.481 9.55387 16.5004 9.65145 16.5004 9.75C16.5004 9.84855 16.481 9.94613 16.4433 10.0372C16.4056 10.1282 16.3503 10.2109 16.2806 10.2806Z"
-                                        fill="#00A640" />
-                                </svg>
-                            </td>
-                            <td data-label="Notification Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path
-                                        d="M12 2.25C10.0716 2.25 8.18657 2.82183 6.58319 3.89317C4.97982 4.96451 3.73013 6.48726 2.99218 8.26884C2.25422 10.0504 2.06114 12.0108 2.43735 13.9021C2.81355 15.7934 3.74215 17.5307 5.10571 18.8943C6.46928 20.2579 8.20656 21.1865 10.0979 21.5627C11.9892 21.9389 13.9496 21.7458 15.7312 21.0078C17.5127 20.2699 19.0355 19.0202 20.1068 17.4168C21.1782 15.8134 21.75 13.9284 21.75 12C21.7473 9.41498 20.7192 6.93661 18.8913 5.10872C17.0634 3.28084 14.585 2.25273 12 2.25ZM16.2806 10.2806L11.0306 15.5306C10.961 15.6004 10.8783 15.6557 10.7872 15.6934C10.6962 15.7312 10.5986 15.7506 10.5 15.7506C10.4014 15.7506 10.3038 15.7312 10.2128 15.6934C10.1218 15.6557 10.039 15.6004 9.96938 15.5306L7.71938 13.2806C7.57865 13.1399 7.49959 12.949 7.49959 12.75C7.49959 12.551 7.57865 12.3601 7.71938 12.2194C7.86011 12.0786 8.05098 11.9996 8.25 11.9996C8.44903 11.9996 8.6399 12.0786 8.78063 12.2194L10.5 13.9397L15.2194 9.21937C15.2891 9.14969 15.3718 9.09442 15.4628 9.0567C15.5539 9.01899 15.6515 8.99958 15.75 8.99958C15.8486 8.99958 15.9461 9.01899 16.0372 9.0567C16.1282 9.09442 16.2109 9.14969 16.2806 9.21937C16.3503 9.28906 16.4056 9.37178 16.4433 9.46283C16.481 9.55387 16.5004 9.65145 16.5004 9.75C16.5004 9.84855 16.481 9.94613 16.4433 10.0372C16.4056 10.1282 16.3503 10.2109 16.2806 10.2806Z"
-                                        fill="#00A640" />
-                                </svg>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h5>Services for Platforms Other Than Etimad</h5>
-                            </td>
-                            <td data-label="Basic Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
-                                    fill="none">
-                                    <rect width="20.5714" height="20.5714" rx="10.2857" fill="#DA1E1E" />
-                                    <path
-                                        d="M7.08613 14.2857L6.28613 13.4857L9.48613 10.2857L6.28613 7.08571L7.08613 6.28571L10.2861 9.48571L13.4861 6.28571L14.2861 7.08571L11.0861 10.2857L14.2861 13.4857L13.4861 14.2857L10.2861 11.0857L7.08613 14.2857Z"
-                                        fill="white" />
-                                </svg>
-                            </td>
-                            <td data-label="Advanced Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
-                                    fill="none">
-                                    <rect width="20.5714" height="20.5714" rx="10.2857" fill="#DA1E1E" />
-                                    <path
-                                        d="M7.08613 14.2857L6.28613 13.4857L9.48613 10.2857L6.28613 7.08571L7.08613 6.28571L10.2861 9.48571L13.4861 6.28571L14.2861 7.08571L11.0861 10.2857L14.2861 13.4857L13.4861 14.2857L10.2861 11.0857L7.08613 14.2857Z"
-                                        fill="white" />
-                                </svg>
-                            </td>
-                            <td data-label="Strategic Partnership Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path
-                                        d="M12 2.25C10.0716 2.25 8.18657 2.82183 6.58319 3.89317C4.97982 4.96451 3.73013 6.48726 2.99218 8.26884C2.25422 10.0504 2.06114 12.0108 2.43735 13.9021C2.81355 15.7934 3.74215 17.5307 5.10571 18.8943C6.46928 20.2579 8.20656 21.1865 10.0979 21.5627C11.9892 21.9389 13.9496 21.7458 15.7312 21.0078C17.5127 20.2699 19.0355 19.0202 20.1068 17.4168C21.1782 15.8134 21.75 13.9284 21.75 12C21.7473 9.41498 20.7192 6.93661 18.8913 5.10872C17.0634 3.28084 14.585 2.25273 12 2.25ZM16.2806 10.2806L11.0306 15.5306C10.961 15.6004 10.8783 15.6557 10.7872 15.6934C10.6962 15.7312 10.5986 15.7506 10.5 15.7506C10.4014 15.7506 10.3038 15.7312 10.2128 15.6934C10.1218 15.6557 10.039 15.6004 9.96938 15.5306L7.71938 13.2806C7.57865 13.1399 7.49959 12.949 7.49959 12.75C7.49959 12.551 7.57865 12.3601 7.71938 12.2194C7.86011 12.0786 8.05098 11.9996 8.25 11.9996C8.44903 11.9996 8.6399 12.0786 8.78063 12.2194L10.5 13.9397L15.2194 9.21937C15.2891 9.14969 15.3718 9.09442 15.4628 9.0567C15.5539 9.01899 15.6515 8.99958 15.75 8.99958C15.8486 8.99958 15.9461 9.01899 16.0372 9.0567C16.1282 9.09442 16.2109 9.14969 16.2806 9.21937C16.3503 9.28906 16.4056 9.37178 16.4433 9.46283C16.481 9.55387 16.5004 9.65145 16.5004 9.75C16.5004 9.84855 16.481 9.94613 16.4433 10.0372C16.4056 10.1282 16.3503 10.2109 16.2806 10.2806Z"
-                                        fill="#00A640" />
-                                </svg>
-                            </td>
-                            <td data-label="Notification Plan">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path
-                                        d="M12 2.25C10.0716 2.25 8.18657 2.82183 6.58319 3.89317C4.97982 4.96451 3.73013 6.48726 2.99218 8.26884C2.25422 10.0504 2.06114 12.0108 2.43735 13.9021C2.81355 15.7934 3.74215 17.5307 5.10571 18.8943C6.46928 20.2579 8.20656 21.1865 10.0979 21.5627C11.9892 21.9389 13.9496 21.7458 15.7312 21.0078C17.5127 20.2699 19.0355 19.0202 20.1068 17.4168C21.1782 15.8134 21.75 13.9284 21.75 12C21.7473 9.41498 20.7192 6.93661 18.8913 5.10872C17.0634 3.28084 14.585 2.25273 12 2.25ZM16.2806 10.2806L11.0306 15.5306C10.961 15.6004 10.8783 15.6557 10.7872 15.6934C10.6962 15.7312 10.5986 15.7506 10.5 15.7506C10.4014 15.7506 10.3038 15.7312 10.2128 15.6934C10.1218 15.6557 10.039 15.6004 9.96938 15.5306L7.71938 13.2806C7.57865 13.1399 7.49959 12.949 7.49959 12.75C7.49959 12.551 7.57865 12.3601 7.71938 12.2194C7.86011 12.0786 8.05098 11.9996 8.25 11.9996C8.44903 11.9996 8.6399 12.0786 8.78063 12.2194L10.5 13.9397L15.2194 9.21937C15.2891 9.14969 15.3718 9.09442 15.4628 9.0567C15.5539 9.01899 15.6515 8.99958 15.75 8.99958C15.8486 8.99958 15.9461 9.01899 16.0372 9.0567C16.1282 9.09442 16.2109 9.14969 16.2806 9.21937C16.3503 9.28906 16.4056 9.37178 16.4433 9.46283C16.481 9.55387 16.5004 9.65145 16.5004 9.75C16.5004 9.84855 16.481 9.94613 16.4433 10.0372C16.4056 10.1282 16.3503 10.2109 16.2806 10.2806Z"
-                                        fill="#00A640" />
-                                </svg>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+        </div>
     </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="js/main.js" defer></script>
+    <script>
+        (function () {
+            var checkoutBtn = document.getElementById('upgrade-tab-checkout-btn');
+            var selectBtn = document.getElementById('upgrade-tab-select-btn');
+            if (!checkoutBtn || !selectBtn) return;
+
+            var unlocked = false;
+
+            window.goToUpgradeCheckout = function (planId) {
+                var planInput = document.getElementById(planId);
+                if (planInput) planInput.checked = true;
+                unlocked = true;
+                checkoutBtn.classList.remove('stepper-step-locked');
+                checkoutBtn.setAttribute('aria-disabled', 'false');
+                checkoutBtn.click();
+            };
+
+            checkoutBtn.addEventListener('show.bs.tab', function (e) {
+                if (!unlocked) e.preventDefault();
+            });
+
+            selectBtn.addEventListener('shown.bs.tab', function () {
+                unlocked = false;
+                checkoutBtn.classList.add('stepper-step-locked');
+                checkoutBtn.setAttribute('aria-disabled', 'true');
+            });
+        })();
+    </script>
 </body>
 
 </html>

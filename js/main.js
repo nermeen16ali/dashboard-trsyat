@@ -718,3 +718,70 @@ document.addEventListener("click", (e) => {
   // Trigger animation
   setTimeout(() => modalOverlay.classList.add("show"), 10);
 });
+
+// Bank transfer field copy + toast feedback
+(function initBankCopyButtons() {
+  let toastEl = null;
+  let toastTimer = null;
+
+  function getToast() {
+    if (toastEl) return toastEl;
+    toastEl = document.createElement("div");
+    toastEl.className = "bank-copy-toast";
+    toastEl.setAttribute("role", "status");
+    toastEl.setAttribute("aria-live", "polite");
+    document.body.appendChild(toastEl);
+    return toastEl;
+  }
+
+  function showCopiedToast(message) {
+    const toast = getToast();
+    const isRtl = document.documentElement.getAttribute("dir") === "rtl";
+    const fallback = isRtl ? "تم النسخ" : "Copied";
+    toast.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      <span>${message || fallback}</span>
+    `;
+    toast.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove("show"), 2000);
+  }
+
+  async function copyText(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      await navigator.clipboard.writeText(text);
+      return;
+    }
+    const temp = document.createElement("textarea");
+    temp.value = text;
+    temp.setAttribute("readonly", "");
+    temp.style.position = "fixed";
+    temp.style.opacity = "0";
+    document.body.appendChild(temp);
+    temp.select();
+    document.execCommand("copy");
+    document.body.removeChild(temp);
+  }
+
+  document.addEventListener("click", async (e) => {
+    const btn = e.target.closest(".bank-copy-btn");
+    if (!btn) return;
+
+    const row = btn.closest(".bank-detail-value-row");
+    const input = row ? row.querySelector(".bank-detail-input, input") : null;
+    const text = (input ? input.value : btn.getAttribute("data-copy") || "").trim();
+    if (!text) return;
+
+    try {
+      await copyText(text);
+      document.querySelectorAll(".bank-copy-btn.is-copied").forEach((el) => el.classList.remove("is-copied"));
+      btn.classList.add("is-copied");
+      showCopiedToast(btn.getAttribute("data-copied-msg"));
+      setTimeout(() => btn.classList.remove("is-copied"), 2000);
+    } catch (err) {
+      const isRtl = document.documentElement.getAttribute("dir") === "rtl";
+      showCopiedToast(isRtl ? "تعذر النسخ" : "Could not copy");
+    }
+  });
+})();
+
