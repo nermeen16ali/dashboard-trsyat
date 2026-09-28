@@ -3067,9 +3067,6 @@ html[dir="ltr"] .view-link:hover svg {
 
 .chat-preview {
   max-width: 138px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .status-badge {
@@ -7287,3 +7284,89 @@ html[dir="ltr"] .input-icon-group input {
 }
 
 /* ===== End upgrade steps ===== */
+
+/* ===== Smart Proposal Generator ===== */
+.spg-root .spg-intro-copy {
+  max-width: 36rem;
+}
+
+.spg-root .min-h-spg-main {
+  min-height: 420px;
+}
+
+.spg-path-card {
+  cursor: pointer;
+  text-align: start;
+}
+
+.spg-path-card--disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+  filter: grayscale(0.15);
+}
+
+.spg-step-dots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.spg-step-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e8e8e8;
+  flex-shrink: 0;
+}
+
+.spg-step-dot.completed {
+  background: var(--primary-base-color);
+  opacity: 0.45;
+}
+
+.spg-step-dot.current {
+  background: var(--primary-color);
+  transform: scale(1.25);
+}
+
+.spg-detail-card {
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.spg-detail-card.active {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 6px 18px rgba(57, 125, 134, 0.12);
+  background: var(--main-opacity-color);
+}
+
+.spg-repeater-item + .spg-repeater-item {
+  margin-top: 0;
+}
+
+.spg-section-row .spg-section-check {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.spg-section-row .spg-section-check img {
+  width: 100%;
+  height: 100%;
+}
+
+.spg-section-switch {
+  padding-top: 4px;
+}
+
+.spg-project-list .chat-item {
+  cursor: pointer;
+}
+
+@media (max-width: 991.98px) {
+  .spg-root .min-h-spg-main {
+    min-height: 0;
+  }
+}
