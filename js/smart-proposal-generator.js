@@ -246,7 +246,7 @@
     items.forEach((p) => {
       const el = document.createElement("button");
       el.type = "button";
-      el.className = "chat-item d-flex align-items-center gap-12 w-100 border-0 bg-transparent text-end";
+      el.className = "chat-item d-flex align-items-center gap-12 w-100 border-0 bg-transparent ";
       if (p.id === activeProjectId) el.classList.add("active");
       el.setAttribute("role", "option");
       el.setAttribute("aria-selected", p.id === activeProjectId ? "true" : "false");
@@ -267,7 +267,7 @@
             <div class="ticket-id text-truncate">${escapeHtml(p.title || "مشروع")}</div>
             <span class="fz-10 text-gray text-nowrap">${escapeHtml(typeLabel)}</span>
           </div>
-          <div class="fz-10 text-gray chat-preview text-truncate">${escapeHtml(statusLabel(p))}</div>
+          <div class="fz-10 text-gray chat-preview text-truncate text-start">${escapeHtml(statusLabel(p))}</div>
         </div>`;
 
       el.addEventListener("click", () => selectProject(p.id));
@@ -343,8 +343,21 @@
     renderStepDots();
 
     const nextBtn = $("#spgWizardNext");
-    if (nextBtn) {
-      nextBtn.textContent = wizardStep === TOTAL_STEPS ? "متابعة للمراجعة" : "التالي";
+
+    if (nextBtn.length) {
+      nextBtn.html(
+        wizardStep === TOTAL_STEPS
+          ? `متابعة للمراجعة
+               <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+                   <path d="M8.47485 15.5583L3.41652 10.5L8.47485 5.44165" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                   <path opacity="0.4" d="M17.583 10.5H3.55801" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+               </svg>`
+          : `التالي
+               <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+                   <path d="M8.47485 15.5583L3.41652 10.5L8.47485 5.44165" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                   <path opacity="0.4" d="M17.583 10.5H3.55801" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+               </svg>`
+      );
     }
 
     const prevBtn = $("#spgWizardPrev");
@@ -837,15 +850,15 @@
       setView("wizard");
     });
 
-    $("#spgReviewConfirm")?.addEventListener("click", () => {
-      persistActiveFromForm();
-      const note = $("#spgReviewConfirmNote");
-      if (note) {
-        note.textContent =
-          "تم حفظ اختيارات الأقسام. المرحلة التالية من توليد المحتوى ستتوفر قريبًا.";
-        note.classList.remove("d-none");
-      }
-    });
+    // $("#spgReviewConfirm")?.addEventListener("click", () => {
+    //   persistActiveFromForm();
+    //   const note = $("#spgReviewConfirmNote");
+    //   if (note) {
+    //     note.textContent =
+    //       "تم حفظ اختيارات الأقسام. المرحلة التالية من توليد المحتوى ستتوفر قريبًا.";
+    //     note.classList.remove("d-none");
+    //   }
+    // });
   }
 
   function init() {
