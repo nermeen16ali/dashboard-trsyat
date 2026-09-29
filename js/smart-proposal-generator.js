@@ -143,36 +143,6 @@
     };
   }
 
-  /** Server-rendered sidebar items (ASP.NET). In-memory list used only for session UI until postback/API. */
-  function hydrateProjectsFromDom() {
-    const list = $("#spgProjectList");
-    if (!list) return [];
-    return $$(".spg-project-item", list).map((el) => {
-      const id = el.dataset.projectId || uid();
-      return {
-        id,
-        title: el.dataset.projectTitle || "",
-        proposalType: el.dataset.proposalType || null,
-        view: el.dataset.view || "landing",
-        wizardStep: normalizeWizardStep(Number(el.dataset.wizardStep) || 1),
-        projectName: el.dataset.projectName || "",
-        tenderNumber: el.dataset.tenderNumber || "",
-        hasDocs: el.dataset.hasDocs === "true",
-        hasTeam: el.dataset.hasTeam === "true",
-        hasContracts: el.dataset.hasContracts === "true",
-        detailLevel: el.dataset.detailLevel || "detailed",
-        documents: [],
-        team: [],
-        contracts: [],
-        updatedAt: Number(el.dataset.updatedAt) || Date.now(),
-      };
-    });
-  }
-
-  function loadProjects() {
-    projects = hydrateProjectsFromDom();
-  }
-
   /** Persistence is handled by ASP.NET backend — not browser storage. */
   function saveProjects() {}
 
@@ -259,21 +229,6 @@
     if (!list) return;
 
     const q = filter.trim().toLowerCase();
-    const staticItems = $$(".spg-project-item", list);
-
-    if (staticItems.length) {
-      let visible = 0;
-      staticItems.forEach((el) => {
-        const title = (el.dataset.projectTitle || el.textContent || "").toLowerCase();
-        const show = !q || title.includes(q);
-        el.classList.toggle("d-none", !show);
-        el.classList.toggle("active", el.dataset.projectId === activeProjectId);
-        el.setAttribute("aria-selected", el.dataset.projectId === activeProjectId ? "true" : "false");
-        if (show) visible += 1;
-      });
-      empty?.classList.toggle("d-none", visible > 0);
-      return;
-    }
 
     const dynamicButtons = $$("button.chat-item[data-spg-dynamic-project]", list);
     dynamicButtons.forEach((btn) => btn.remove());
@@ -293,7 +248,6 @@
       el.type = "button";
       el.className = "chat-item d-flex align-items-center gap-12 w-100 border-0 bg-transparent ";
       el.dataset.spgDynamicProject = "1";
-      el.dataset.projectId = p.id;
       if (p.id === activeProjectId) el.classList.add("active");
       el.setAttribute("role", "option");
       el.setAttribute("aria-selected", p.id === activeProjectId ? "true" : "false");
@@ -1239,16 +1193,6 @@
       setView("wizard");
     });
 
-    const projectListEl = $("#spgProjectList");
-    if (projectListEl) {
-      $$(".spg-project-item[data-project-id]", projectListEl).forEach((el) => {
-        el.addEventListener("click", () => {
-          const id = el.dataset.projectId;
-          if (id) selectProject(id);
-        });
-      });
-    }
-
     $("#spgOptionalSections")?.addEventListener("change", (e) => {
       if (!e.target.closest(".spg-optional-toggle")) return;
       renderReview(getActiveProject());
@@ -1268,13 +1212,6 @@
   function init() {
     if (!$(".spg-root")) return;
 
-    loadProjects();
-    const root = $(".spg-root");
-    if (root?.dataset.activeProjectId) {
-      activeProjectId = root.dataset.activeProjectId;
-    } else if (projects.length && !activeProjectId) {
-      activeProjectId = projects[0].id;
-    }
     const p = getActiveProject();
     if (p) {
       wizardStep = normalizeWizardStep(p.wizardStep);
