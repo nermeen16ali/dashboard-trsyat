@@ -12,22 +12,12 @@
     "مستوى التفصيل",
   ];
 
-  /** Maps saved step index from the previous 6-step wizard. */
-  function normalizeWizardStep(step) {
-    const n = Number(step) || 1;
-    if (n <= 1) return 1;
-    if (n === 2) return 1;
-    return Math.min(TOTAL_STEPS, n - 1);
-  }
-
   const DETAIL_PAGE_RANGES = {
     detailed: [13, 16],
     medium: [10, 13],
     brief: [6, 9],
   };
 
-  let projects = [];
-  let activeProjectId = null;
   let view = "landing";
   let wizardStep = 1;
   let documentFormEditingId = null;
@@ -35,6 +25,11 @@
   let teamFormEditingId = null;
   let contractFormEditingId = null;
   let teamContractFormsBound = false;
+
+  /** In-page session only (lost on reload). ASP.NET owns persisted rows in the tbodies. */
+  let demoDocuments = [];
+  let demoTeam = [];
+  let demoContracts = [];
 
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
@@ -115,171 +110,8 @@
     }).then((result) => result.isConfirmed === true);
   }
 
-  function uid() {
-    return "p-" + Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 7);
-  }
-
   function entryId() {
     return "e-" + Math.random().toString(36).slice(2, 9);
-  }
-
-  function defaultProject(title) {
-    return {
-      id: uid(),
-      title: title || "مشروع جديد",
-      proposalType: null,
-      view: "landing",
-      wizardStep: 1,
-      projectName: "",
-      tenderNumber: "",
-      hasDocs: false,
-      documents: [],
-      hasTeam: false,
-      team: [],
-      hasContracts: false,
-      contracts: [],
-      detailLevel: "detailed",
-      updatedAt: Date.now(),
-    };
-  }
-
-  /** Persistence is handled by ASP.NET backend — not browser storage. */
-  function saveProjects() {}
-
-  function getActiveProject() {
-    return projects.find((p) => p.id === activeProjectId) || null;
-  }
-
-  function persistActiveFromForm() {
-    const p = getActiveProject();
-    if (!p || view !== "wizard") return;
-
-    p.projectName = ($("#spgProjectName")?.value || "").trim();
-    p.tenderNumber = ($("#spgTenderNumber")?.value || "").trim();
-    p.hasDocs = document.querySelector('input[name="spgHasDocs"]:checked')?.value === "yes";
-    p.hasTeam = document.querySelector('input[name="spgHasTeam"]:checked')?.value === "yes";
-    p.hasContracts = document.querySelector('input[name="spgHasContracts"]:checked')?.value === "yes";
-    p.detailLevel = $(".spg-detail-card.active")?.dataset.detail || p.detailLevel || "detailed";
-    p.wizardStep = wizardStep;
-    p.view = view;
-
-    if (p.projectName) {
-      p.title = p.projectName;
-    }
-    p.updatedAt = Date.now();
-    saveProjects();
-    renderProjectList();
-  }
-
-  function syncFormFromProject(p) {
-    if (!p) return;
-
-    if ($("#spgProjectName")) $("#spgProjectName").value = p.projectName || "";
-    if ($("#spgTenderNumber")) $("#spgTenderNumber").value = p.tenderNumber || "";
-
-    const docsYes = p.hasDocs ? "yes" : "no";
-    const docRadio = document.querySelector(`input[name="spgHasDocs"][value="${docsYes}"]`);
-    if (docRadio) docRadio.checked = true;
-
-    const teamYes = p.hasTeam ? "yes" : "no";
-    const teamRadio = document.querySelector(`input[name="spgHasTeam"][value="${teamYes}"]`);
-    if (teamRadio) teamRadio.checked = true;
-
-    const contractsYes = p.hasContracts ? "yes" : "no";
-    const contractRadio = document.querySelector(`input[name="spgHasContracts"][value="${contractsYes}"]`);
-    if (contractRadio) contractRadio.checked = true;
-
-    $$(".spg-detail-card").forEach((btn) => {
-      btn.classList.toggle("active", btn.dataset.detail === (p.detailLevel || "detailed"));
-    });
-
-    toggleConditionalPanels();
-    renderDocumentsTable(p);
-    resetDocumentForm(true);
-    renderTeamList(p);
-    renderContractsList(p);
-    resetTeamForm(true);
-    resetContractForm(true);
-  }
-
-  function setView(nextView) {
-    view = nextView;
-    const p = getActiveProject();
-    if (p) {
-      p.view = view;
-      saveProjects();
-    }
-
-    $("#spgViewLanding")?.classList.toggle("d-none", view !== "landing");
-    $("#spgViewWizard")?.classList.toggle("d-none", view !== "wizard");
-    $("#spgViewReview")?.classList.toggle("d-none", view !== "review");
-
-    if (view === "wizard") {
-      updateWizardUI();
-      syncFormFromProject(p);
-    }
-    if (view === "review") {
-      renderReview(p);
-    }
-  }
-
-  function renderProjectList(filter = "") {
-    const list = $("#spgProjectList");
-    const empty = $("#spgProjectListEmpty");
-    if (!list) return;
-
-    const q = filter.trim().toLowerCase();
-
-    const dynamicButtons = $$("button.chat-item[data-spg-dynamic-project]", list);
-    dynamicButtons.forEach((btn) => btn.remove());
-
-    const items = projects
-      .filter((p) => !q || (p.title || "").toLowerCase().includes(q))
-      .sort((a, b) => (b.updatedAt || 0) - (a.updatedAt || 0));
-
-    if (!items.length) {
-      empty?.classList.remove("d-none");
-      return;
-    }
-    empty?.classList.add("d-none");
-
-    items.forEach((p) => {
-      const el = document.createElement("button");
-      el.type = "button";
-      el.className = "chat-item d-flex align-items-center gap-12 w-100 border-0 bg-transparent ";
-      el.dataset.spgDynamicProject = "1";
-      if (p.id === activeProjectId) el.classList.add("active");
-      el.setAttribute("role", "option");
-      el.setAttribute("aria-selected", p.id === activeProjectId ? "true" : "false");
-
-      const typeLabel =
-        p.proposalType === "government"
-          ? "مناقصة حكومية"
-          : p.proposalType === "private"
-            ? "مشروع خاص"
-            : "لم يُحدد النوع بعد";
-
-      el.innerHTML = `
-        <div class="chat-item-icon">
-          <img src="images/document-normal.svg" alt="">
-        </div>
-        <div class="w-100">
-          <div class="d-flex align-items-center justify-content-between mb-10 gap-2">
-            <div class="ticket-id text-truncate">${escapeHtml(p.title || "مشروع")}</div>
-            <span class="fz-10 text-gray text-nowrap">${escapeHtml(typeLabel)}</span>
-          </div>
-          <div class="fz-10 text-gray chat-preview text-truncate text-start">${escapeHtml(statusLabel(p))}</div>
-        </div>`;
-
-      el.addEventListener("click", () => selectProject(p.id));
-      list.appendChild(el);
-    });
-  }
-
-  function statusLabel(p) {
-    if (p.view === "review") return "مراجعة الأقسام";
-    if (p.view === "wizard") return `المعالج — الخطوة ${p.wizardStep || 1}`;
-    return "البداية — اختر نوع العرض";
   }
 
   function escapeHtml(str) {
@@ -290,33 +122,59 @@
       .replace(/"/g, "&quot;");
   }
 
-  function selectProject(id) {
-    persistActiveFromForm();
-    activeProjectId = id;
-    const p = getActiveProject();
-    if (!p) return;
+  function escapeAttr(str) {
+    return escapeHtml(str || "").replace(/"/g, "&quot;");
+  }
 
-    wizardStep = normalizeWizardStep(p.wizardStep);
-    p.wizardStep = wizardStep;
-    view = p.view || "landing";
-    setView(view);
-    renderProjectList($("#spgProjectSearch")?.value || "");
+  function truncateCellText(text, maxLen = 56) {
+    const t = (text || "").trim();
+    if (!t) return { display: "—", full: "", hasMore: false };
+    if (t.length <= maxLen) return { display: t, full: t, hasMore: false };
+    return { display: t.slice(0, maxLen) + "…", full: t, hasMore: true };
+  }
+
+  function renderTextDetailCell(label, text) {
+    const { display, full, hasMore } = truncateCellText(text);
+    if (!hasMore) {
+      return `<span class="text-gray fz-12">${escapeHtml(display)}</span>`;
+    }
+    return `
+      <span class="text-gray fz-12">${escapeHtml(display)}</span>
+      <button type="button" class="btn-link colored fz-12 p-0 border-0 bg-transparent spg-show-detail"
+        data-title="${escapeAttr(label)}" data-body="${encodeURIComponent(full)}">عرض</button>`;
+  }
+
+  function renderTableActions(id, editClass, deleteClass) {
+    return `
+      <div class="d-flex align-items-center justify-content-center gap-12">
+        <button type="button" class="icon-container gray-outline-btn ${editClass}" data-id="${escapeHtml(id)}" aria-label="تعديل">
+          <img src="images/edit-pen.svg" alt="">
+        </button>
+        <button type="button" class="icon-container gray-outline-btn ${deleteClass}" data-id="${escapeHtml(id)}" aria-label="حذف">
+          <img src="images/trash.svg" alt="">
+        </button>
+      </div>`;
+  }
+
+  function setView(nextView) {
+    view = nextView;
+
+    $("#spgViewLanding")?.classList.toggle("d-none", view !== "landing");
+    $("#spgViewWizard")?.classList.toggle("d-none", view !== "wizard");
+    $("#spgViewReview")?.classList.toggle("d-none", view !== "review");
+
+    if (view === "wizard") {
+      updateWizardUI();
+      toggleConditionalPanels();
+    }
+    if (view === "review") {
+      renderReview();
+    }
   }
 
   function startWizard(proposalType) {
-    let p = getActiveProject();
-    if (!p) {
-      p = defaultProject();
-      projects.unshift(p);
-      activeProjectId = p.id;
-    }
-    p.proposalType = proposalType;
-    p.view = "wizard";
-    p.wizardStep = 1;
     wizardStep = 1;
-    saveProjects();
     setView("wizard");
-    renderProjectList($("#spgProjectSearch")?.value || "");
 
     const typeLabel =
       proposalType === "government" ? "عرض مناقصة حكومية" : "عرض مشروع خاص";
@@ -344,21 +202,13 @@
     renderStepDots();
 
     const nextBtn = $("#spgWizardNext");
-
-    if (nextBtn.length) {
-      nextBtn.html(
-        wizardStep === TOTAL_STEPS
-          ? `متابعة للمراجعة
-               <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+    const nextArrowSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
                    <path d="M8.47485 15.5583L3.41652 10.5L8.47485 5.44165" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
                    <path opacity="0.4" d="M17.583 10.5H3.55801" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
-               </svg>`
-          : `التالي
-               <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
-                   <path d="M8.47485 15.5583L3.41652 10.5L8.47485 5.44165" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
-                   <path opacity="0.4" d="M17.583 10.5H3.55801" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
-               </svg>`
-      );
+               </svg>`;
+    if (nextBtn) {
+      const label = wizardStep === TOTAL_STEPS ? "متابعة للمراجعة" : "التالي";
+      nextBtn.innerHTML = `${label} ${nextArrowSvg}`;
     }
 
     const prevBtn = $("#spgWizardPrev");
@@ -394,36 +244,19 @@
 
   function wizardNext() {
     if (!validateStep(wizardStep)) return;
-    persistActiveFromForm();
 
     if (wizardStep >= TOTAL_STEPS) {
-      const p = getActiveProject();
-      if (p) {
-        p.view = "review";
-        saveProjects();
-      }
       setView("review");
       return;
     }
 
     wizardStep += 1;
-    const p = getActiveProject();
-    if (p) {
-      p.wizardStep = wizardStep;
-      saveProjects();
-    }
     updateWizardUI();
   }
 
   function wizardPrev() {
-    persistActiveFromForm();
     if (wizardStep <= 1) return;
     wizardStep -= 1;
-    const p = getActiveProject();
-    if (p) {
-      p.wizardStep = wizardStep;
-      saveProjects();
-    }
     updateWizardUI();
   }
 
@@ -436,12 +269,62 @@
     $("#spgTeamPanel")?.classList.toggle("d-none", !hasTeam);
     $("#spgContractsPanel")?.classList.toggle("d-none", !hasContracts);
 
-    const p = getActiveProject();
-    if (!p) return;
+    if (hasDocs) refreshDocumentsTableUi();
+    if (hasTeam) refreshTeamTableUi();
+    if (hasContracts) refreshContractsTableUi();
+  }
 
-    if (hasDocs) renderDocumentsTable(p);
-    if (hasTeam) renderTeamList(p);
-    if (hasContracts) renderContractsList(p);
+  function countDataRows(tbody) {
+    if (!tbody) return 0;
+    return $$("tr", tbody).filter((tr) => tr.querySelector("td")).length;
+  }
+
+  function resolveDocument(id, tr) {
+    if (!id) return null;
+    const fromSession = demoDocuments.find((d) => d.id === id);
+    if (fromSession) return fromSession;
+    if (!tr) return null;
+    return {
+      id,
+      name: tr.dataset.spgName || "",
+      description: tr.dataset.spgDescription || "",
+      fileName: tr.dataset.spgFileName || "",
+    };
+  }
+
+  function resolveTeamMember(id, tr) {
+    if (!id) return null;
+    const fromSession = demoTeam.find((m) => m.id === id);
+    if (fromSession) return fromSession;
+    if (!tr) return null;
+    return {
+      id,
+      name: tr.dataset.spgName || "",
+      nationality: tr.dataset.spgNationality || "",
+      jobTitle: tr.dataset.spgJobTitle || "",
+      degree: tr.dataset.spgDegree || "",
+      years: tr.dataset.spgYears || "",
+      experiences: tr.dataset.spgExperiences || "",
+      summary: tr.dataset.spgSummary || "",
+      cvFileName: tr.dataset.spgCvFileName || "",
+    };
+  }
+
+  function resolveContract(id, tr) {
+    if (!id) return null;
+    const fromSession = demoContracts.find((c) => c.id === id);
+    if (fromSession) return fromSession;
+    if (!tr) return null;
+    return {
+      id,
+      projectName: tr.dataset.spgProjectName || "",
+      entity: tr.dataset.spgEntity || "",
+      description: tr.dataset.spgDescription || "",
+      year: tr.dataset.spgYear || "",
+      duration: tr.dataset.spgDuration || "",
+      cost: tr.dataset.spgCost || "",
+      contractFileName: tr.dataset.spgContractFileName || "",
+    };
   }
 
   function getDocumentDraftFields() {
@@ -520,8 +403,8 @@
     nameEl?.focus();
   }
 
-  function commitDocumentFromFile(file, p) {
-    if (!p || !file) return;
+  function commitDocumentFromFile(file) {
+    if (!file) return;
     const wasEditing = Boolean(documentFormEditingId);
 
     const MAX_SIZE = 500 * 1024 * 1024;
@@ -542,15 +425,15 @@
     showDocumentFormError("");
     $("#spgDocDraftName")?.classList.remove("is-invalid");
 
-    if (documentFormEditingId) {
-      const doc = p.documents.find((d) => d.id === documentFormEditingId);
+    if (wasEditing) {
+      const doc = demoDocuments.find((d) => d.id === documentFormEditingId);
       if (doc) {
         doc.name = name;
         doc.description = description;
         doc.fileName = file.name;
       }
     } else {
-      p.documents.push({
+      demoDocuments.push({
         id: entryId(),
         name,
         description,
@@ -558,21 +441,18 @@
       });
     }
 
-    p.updatedAt = Date.now();
-    saveProjects();
-    renderDocumentsTable(p);
     resetDocumentForm(true);
+    renderDocumentsTable();
     if (wasEditing) spgAlertSaved();
     else spgAlertAdded();
   }
 
-  function saveDocumentEditMetadata(p) {
-    if (!p || !documentFormEditingId) return;
-    const doc = p.documents.find((d) => d.id === documentFormEditingId);
-    if (!doc) return;
+  function saveDocumentEditMetadata() {
+    if (!documentFormEditingId) return;
 
     let { name, description } = getDocumentDraftFields();
-    if (!name) name = doc.fileName ? defaultDocumentNameFromFile(doc.fileName) : "";
+    const doc = demoDocuments.find((d) => d.id === documentFormEditingId);
+    if (!name) name = doc?.fileName ? defaultDocumentNameFromFile(doc.fileName) : "";
     if (!name) {
       showDocumentFormError("يرجى إدخال اسم الملف");
       $("#spgDocDraftName")?.classList.add("is-invalid");
@@ -580,62 +460,57 @@
       return;
     }
 
-    doc.name = name;
-    doc.description = description;
-    p.updatedAt = Date.now();
-    saveProjects();
-    renderDocumentsTable(p);
+    if (doc) {
+      doc.name = name;
+      doc.description = description;
+    }
+
+    showDocumentFormError("");
+    $("#spgDocDraftName")?.classList.remove("is-invalid");
     resetDocumentForm(true);
+    renderDocumentsTable();
     spgAlertSaved();
   }
 
-  function renderDocumentsTable(p) {
+  function renderDocumentsTable() {
     const tbody = $("#spgDocumentsTableBody");
     const empty = $("#spgDocumentsTableEmpty");
-    const table = tbody.closest(".spg-items-table");
-    if (!tbody || !p) return;
+    const table =
+      tbody?.closest(".competition-table") || tbody?.closest(".spg-items-table");
+    if (!tbody) return;
 
-    const docs = p.documents.filter((d) => d.fileName);
+    const serverRows = $$("tr[data-spg-server-row]", tbody);
+    const docs = demoDocuments.filter((d) => d.fileName);
     tbody.innerHTML = "";
-    renderCollectionTableState(tbody, table, empty, docs.length > 0);
-    if (!docs.length) return;
+    serverRows.forEach((tr) => tbody.appendChild(tr));
 
     docs.forEach((doc) => {
       const tr = document.createElement("tr");
+      tr.setAttribute("data-spg-entry-id", doc.id);
+      tr.setAttribute("data-spg-name", doc.name || "");
+      tr.setAttribute("data-spg-description", doc.description || "");
+      tr.setAttribute("data-spg-file-name", doc.fileName || "");
+      tr.dataset.spgClientRow = "1";
       tr.innerHTML = `
         <td data-label="اسم الملف"><span class="black-text fw-medium">${escapeHtml(doc.name || "—")}</span></td>
         <td data-label="الوصف">${renderTextDetailCell("وصف الملف", doc.description)}</td>
         <td data-label="الملف">
           <div class="d-flex align-items-center gap-2">
             <span class="sm-logo flex-shrink-0"><img src="images/document-normal.svg" alt=""></span>
-            <span class="fz-12 black-text spg-cell-truncate" dir="ltr">${escapeHtml(doc.fileName)}</span>
+            <span class="fz-12 black-text" dir="ltr">${escapeHtml(doc.fileName)}</span>
           </div>
         </td>
-        <td data-label="الإجراءات">${renderTableActions(doc.id, "spg-doc-edit", "spg-doc-delete")}</td>`;
+        <td data-label="الاجراءات">${renderTableActions(doc.id, "spg-doc-edit", "spg-doc-delete")}</td>`;
       tbody.appendChild(tr);
     });
 
+    const rowCount = countDataRows(tbody);
+    renderCollectionTableState(tbody, table, empty, rowCount > 0);
     bindDetailButtons(tbody);
-    tbody.querySelectorAll(".spg-doc-edit").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const doc = p.documents.find((d) => d.id === btn.dataset.id);
-        if (doc) loadDocumentIntoForm(doc);
-      });
-    });
+  }
 
-    tbody.querySelectorAll(".spg-doc-delete").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        spgConfirmDelete().then((confirmed) => {
-          if (!confirmed) return;
-          p.documents = p.documents.filter((d) => d.id !== btn.dataset.id);
-          if (documentFormEditingId === btn.dataset.id) resetDocumentForm(true);
-          p.updatedAt = Date.now();
-          saveProjects();
-          renderDocumentsTable(p);
-          spgAlertDeleted();
-        });
-      });
-    });
+  function refreshDocumentsTableUi() {
+    renderDocumentsTable();
   }
 
   function bindDocumentUploadForm() {
@@ -666,9 +541,7 @@
         infoEl.classList.remove("d-none");
       }
 
-      const p = getActiveProject();
-      if (!p) return;
-      commitDocumentFromFile(file, p);
+      commitDocumentFromFile(file);
     };
 
     uploadBox.addEventListener("click", (e) => {
@@ -689,19 +562,9 @@
       handleFile(e.dataTransfer.files?.[0]);
     });
 
-    $("#spgDocEditSave")?.addEventListener("click", () => {
-      const p = getActiveProject();
-      if (p) saveDocumentEditMetadata(p);
-    });
+    $("#spgDocEditSave")?.addEventListener("click", () => saveDocumentEditMetadata());
 
     $("#spgDocEditCancel")?.addEventListener("click", () => resetDocumentForm(true));
-  }
-
-  function truncateCellText(text, maxLen = 56) {
-    const t = (text || "").trim();
-    if (!t) return { display: "—", full: "", hasMore: false };
-    if (t.length <= maxLen) return { display: t, full: t, hasMore: false };
-    return { display: t.slice(0, maxLen) + "…", full: t, hasMore: true };
   }
 
   function openCollectionDetailModal(title, body) {
@@ -726,29 +589,6 @@
     }
     emptyEl?.classList.add("d-none");
     table?.classList.remove("d-none");
-  }
-
-  function renderTableActions(id, editClass, deleteClass) {
-    return `
-      <div class="d-flex align-items-center justify-content-center gap-12">
-        <button type="button" class="icon-container gray-outline-btn ${editClass}" data-id="${id}" aria-label="تعديل">
-          <img src="images/edit-pen.svg" alt="">
-        </button>
-        <button type="button" class="icon-container gray-outline-btn ${deleteClass}" data-id="${id}" aria-label="حذف">
-          <img src="images/trash.svg" alt="">
-        </button>
-      </div>`;
-  }
-
-  function renderTextDetailCell(label, text) {
-    const { display, full, hasMore } = truncateCellText(text);
-    if (!hasMore) {
-      return `<span class="text-gray fz-12">${escapeHtml(display)}</span>`;
-    }
-    return `
-      <span class="text-gray fz-12">${escapeHtml(display)}</span>
-      <button type="button" class="btn-link colored fz-12 p-0 border-0 bg-transparent spg-show-detail"
-        data-title="${escapeAttr(label)}" data-body="${encodeURIComponent(full)}">عرض</button>`;
   }
 
   function bindDetailButtons(root) {
@@ -833,18 +673,7 @@
     $("#spgTeamDraftName")?.focus();
   }
 
-  function applyTeamDraftToMember(member, draft) {
-    member.name = draft.name;
-    member.nationality = draft.nationality;
-    member.jobTitle = draft.jobTitle;
-    member.degree = draft.degree;
-    member.years = draft.years;
-    member.experiences = draft.experiences;
-    member.summary = draft.summary;
-    member.cvFileName = draft.cvFileName;
-  }
-
-  function commitTeamFromForm(p) {
+  function commitTeamFromForm() {
     const draft = getTeamDraftFields();
     if (!draft.name) {
       showTeamFormError("يرجى إدخال اسم الموظف");
@@ -856,38 +685,49 @@
     $("#spgTeamDraftName")?.classList.remove("is-invalid");
 
     const wasEditing = Boolean(teamFormEditingId);
-    if (teamFormEditingId) {
-      const member = p.team.find((m) => m.id === teamFormEditingId);
-      if (member) applyTeamDraftToMember(member, draft);
+    if (wasEditing) {
+      const member = demoTeam.find((m) => m.id === teamFormEditingId);
+      if (member) Object.assign(member, draft);
     } else {
-      p.team.push({ id: entryId(), ...draft });
+      demoTeam.push({ id: entryId(), ...draft });
     }
 
-    p.updatedAt = Date.now();
-    saveProjects();
-    renderTeamList(p);
     resetTeamForm(true);
+    renderTeamList();
     if (wasEditing) spgAlertSaved();
     else spgAlertAdded();
   }
 
-  function saveTeamEditFromForm(p) {
+  function saveTeamEditFromForm() {
     if (!teamFormEditingId) return;
-    commitTeamFromForm(p);
+    commitTeamFromForm();
   }
 
-  function renderTeamList(p) {
+  function renderTeamList() {
     const tbody = $("#spgTeamList");
     const empty = $("#spgTeamTableEmpty");
-    const table = tbody?.closest(".spg-items-table");
-    if (!tbody || !p) return;
+    const table =
+      tbody?.closest(".competition-table") || tbody?.closest(".spg-items-table");
+    if (!tbody) return;
 
-    const members = p.team.filter((m) => (m.name || "").trim());
+    const serverRows = $$("tr[data-spg-server-row]", tbody);
+    const members = demoTeam.filter((m) => (m.name || "").trim());
     tbody.innerHTML = "";
-    renderCollectionTableState(tbody, table, empty, members.length > 0);
+    serverRows.forEach((tr) => tbody.appendChild(tr));
 
     members.forEach((member) => {
       const tr = document.createElement("tr");
+      tr.setAttribute("data-spg-entry-id", member.id);
+      tr.setAttribute("data-spg-name", member.name || "");
+      tr.setAttribute("data-spg-nationality", member.nationality || "");
+      tr.setAttribute("data-spg-job-title", member.jobTitle || "");
+      tr.setAttribute("data-spg-degree", member.degree || "");
+      tr.setAttribute("data-spg-years", member.years || "");
+      tr.setAttribute("data-spg-experiences", member.experiences || "");
+      tr.setAttribute("data-spg-summary", member.summary || "");
+      tr.setAttribute("data-spg-cv-file-name", member.cvFileName || "");
+      tr.dataset.spgClientRow = "1";
+
       const detailBody = [
         member.degree ? `الشهادة: ${member.degree}` : "",
         member.cvFileName ? `ملف السيرة: ${member.cvFileName}` : "",
@@ -898,9 +738,9 @@
         .join("\n\n");
 
       tr.innerHTML = `
-        <td data-label="اسم الموظف"><span class="black-text fw-medium">${escapeHtml(member.name)}</span></td>
-        <td data-label="المسمى الوظيفي"><span class="fz-12 black-text">${escapeHtml(member.jobTitle || "—")}</span></td>
-        <td data-label="الجنسية"><span class="fz-12 text-gray">${escapeHtml(member.nationality || "—")}</span></td>
+        <td data-label="اسم الموظف"><span class="text-dark-gray fw-medium">${escapeHtml(member.name)}</span></td>
+        <td data-label="المسمى الوظيفي"><span class="black-text fw-medium">${escapeHtml(member.jobTitle || "—")}</span></td>
+        <td data-label="الجنسية"><span class="text-dark-gray fw-medium">${escapeHtml(member.nationality || "—")}</span></td>
         <td data-label="سنوات الخبرة"><span class="fz-12 ff-onest">${escapeHtml(member.years || "—")}</span></td>
         <td data-label="التفاصيل">
           ${detailBody
@@ -908,30 +748,16 @@
                 data-title="${escapeAttr(`تفاصيل — ${member.name}`)}" data-body="${encodeURIComponent(detailBody)}">عرض التفاصيل</button>`
             : `<span class="text-gray fz-12">—</span>`}
         </td>
-        <td data-label="الإجراءات">${renderTableActions(member.id, "spg-team-edit", "spg-team-delete")}</td>`;
+        <td data-label="الاجراءات">${renderTableActions(member.id, "spg-team-edit", "spg-team-delete")}</td>`;
       tbody.appendChild(tr);
     });
 
+    renderCollectionTableState(tbody, table, empty, countDataRows(tbody) > 0);
     bindDetailButtons(tbody);
-    tbody.querySelectorAll(".spg-team-edit").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const member = p.team.find((m) => m.id === btn.dataset.id);
-        if (member) loadTeamIntoForm(member);
-      });
-    });
-    tbody.querySelectorAll(".spg-team-delete").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        spgConfirmDelete().then((confirmed) => {
-          if (!confirmed) return;
-          p.team = p.team.filter((m) => m.id !== btn.dataset.id);
-          if (teamFormEditingId === btn.dataset.id) resetTeamForm(true);
-          p.updatedAt = Date.now();
-          saveProjects();
-          renderTeamList(p);
-          spgAlertDeleted();
-        });
-      });
-    });
+  }
+
+  function refreshTeamTableUi() {
+    renderTeamList();
   }
 
   function getContractDraftFields() {
@@ -999,17 +825,7 @@
     $("#spgContractDraftProjectName")?.focus();
   }
 
-  function applyContractDraftToItem(item, draft) {
-    item.projectName = draft.projectName;
-    item.entity = draft.entity;
-    item.description = draft.description;
-    item.year = draft.year;
-    item.duration = draft.duration;
-    item.cost = draft.cost;
-    item.contractFileName = draft.contractFileName;
-  }
-
-  function commitContractFromForm(p) {
+  function commitContractFromForm() {
     const draft = getContractDraftFields();
     if (!draft.projectName) {
       showContractFormError("يرجى إدخال اسم المشروع");
@@ -1021,129 +837,270 @@
     $("#spgContractDraftProjectName")?.classList.remove("is-invalid");
 
     const wasEditing = Boolean(contractFormEditingId);
-    if (contractFormEditingId) {
-      const item = p.contracts.find((c) => c.id === contractFormEditingId);
-      if (item) applyContractDraftToItem(item, draft);
+    if (wasEditing) {
+      const item = demoContracts.find((c) => c.id === contractFormEditingId);
+      if (item) Object.assign(item, draft);
     } else {
-      p.contracts.push({ id: entryId(), ...draft });
+      demoContracts.push({ id: entryId(), ...draft });
     }
 
-    p.updatedAt = Date.now();
-    saveProjects();
-    renderContractsList(p);
     resetContractForm(true);
+    renderContractsList();
     if (wasEditing) spgAlertSaved();
     else spgAlertAdded();
   }
 
-  function renderContractsList(p) {
+  function renderContractsList() {
     const tbody = $("#spgContractsList");
     const empty = $("#spgContractsTableEmpty");
-    const table = tbody?.closest(".spg-items-table");
-    if (!tbody || !p) return;
+    const table =
+      tbody?.closest(".competition-table") || tbody?.closest(".spg-items-table");
+    if (!tbody) return;
 
-    const items = p.contracts.filter((c) => (c.projectName || "").trim());
+    const serverRows = $$("tr[data-spg-server-row]", tbody);
+    const items = demoContracts.filter((c) => (c.projectName || "").trim());
     tbody.innerHTML = "";
-    renderCollectionTableState(tbody, table, empty, items.length > 0);
+    serverRows.forEach((tr) => tbody.appendChild(tr));
 
     items.forEach((c) => {
       const tr = document.createElement("tr");
-      const descCell = renderTextDetailCell("وصف المشروع", c.description);
+      tr.setAttribute("data-spg-entry-id", c.id);
+      tr.setAttribute("data-spg-project-name", c.projectName || "");
+      tr.setAttribute("data-spg-entity", c.entity || "");
+      tr.setAttribute("data-spg-description", c.description || "");
+      tr.setAttribute("data-spg-year", c.year || "");
+      tr.setAttribute("data-spg-duration", c.duration || "");
+      tr.setAttribute("data-spg-cost", c.cost || "");
+      tr.setAttribute("data-spg-contract-file-name", c.contractFileName || "");
+      tr.dataset.spgClientRow = "1";
       tr.innerHTML = `
-        <td data-label="اسم المشروع"><span class="black-text fw-medium">${escapeHtml(c.projectName)}</span></td>
-        <td data-label="الجهة"><span class="fz-12 text-gray">${escapeHtml(c.entity || "—")}</span></td>
-        <td data-label="السنة"><span class="fz-12 ff-onest">${escapeHtml(c.year || "—")}</span></td>
-        <td data-label="المدة"><span class="fz-12">${escapeHtml(c.duration || "—")}</span></td>
-        <td data-label="التكلفة"><span class="fz-12 ff-onest">${escapeHtml(c.cost || "—")}</span></td>
-        <td data-label="الوصف">${descCell}</td>
-        <td data-label="الإجراءات">${renderTableActions(c.id, "spg-contract-edit", "spg-contract-delete")}</td>`;
+        <td data-label="اسم المشروع"><span class="text-dark-gray fw-medium">${escapeHtml(c.projectName)}</span></td>
+        <td data-label="الجهة"><span class="text-dark-gray fw-medium">${escapeHtml(c.entity || "—")}</span></td>
+        <td data-label="تفاصيل المشروع">${renderTextDetailCell("تفاصيل المشروع", c.description)}</td>
+        <td data-label="سنة المشروع"><span class="fz-12 ff-onest">${escapeHtml(c.year || "—")}</span></td>
+        <td data-label="مدة المشروع"><span class="fz-12">${escapeHtml(c.duration || "—")}</span></td>
+        <td data-label="تكلفة المشروع"><span class="fz-12 ff-onest">${escapeHtml(c.cost || "—")}</span></td>
+        <td data-label="الاجراءات">${renderTableActions(c.id, "spg-contract-edit", "spg-contract-delete")}</td>`;
       tbody.appendChild(tr);
     });
 
+    renderCollectionTableState(tbody, table, empty, countDataRows(tbody) > 0);
     bindDetailButtons(tbody);
-    tbody.querySelectorAll(".spg-contract-edit").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const item = p.contracts.find((x) => x.id === btn.dataset.id);
-        if (item) loadContractIntoForm(item);
+  }
+
+  function refreshContractsTableUi() {
+    renderContractsList();
+  }
+
+  function bindCollectionTableActions() {
+    const docBody = $("#spgDocumentsTableBody");
+    if (docBody && !docBody.dataset.spgActionsBound) {
+      docBody.dataset.spgActionsBound = "1";
+      docBody.addEventListener("click", (e) => {
+        const editBtn = e.target.closest(".spg-doc-edit");
+        const deleteBtn = e.target.closest(".spg-doc-delete");
+        const tr = e.target.closest("tr");
+        if (editBtn) {
+          const doc = resolveDocument(editBtn.dataset.id, tr);
+          if (doc) loadDocumentIntoForm(doc);
+          return;
+        }
+        if (deleteBtn) {
+          spgConfirmDelete().then((confirmed) => {
+            if (!confirmed) return;
+            const id = deleteBtn.dataset.id;
+            demoDocuments = demoDocuments.filter((d) => d.id !== id);
+            if (documentFormEditingId === id) resetDocumentForm(true);
+            if (tr?.dataset.spgServerRow) tr.remove();
+            renderDocumentsTable();
+            spgAlertDeleted();
+          });
+        }
       });
-    });
-    tbody.querySelectorAll(".spg-contract-delete").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        spgConfirmDelete().then((confirmed) => {
-          if (!confirmed) return;
-          p.contracts = p.contracts.filter((x) => x.id !== btn.dataset.id);
-          if (contractFormEditingId === btn.dataset.id) resetContractForm(true);
-          p.updatedAt = Date.now();
-          saveProjects();
-          renderContractsList(p);
-          spgAlertDeleted();
-        });
+    }
+
+    const teamBody = $("#spgTeamList");
+    if (teamBody && !teamBody.dataset.spgActionsBound) {
+      teamBody.dataset.spgActionsBound = "1";
+      teamBody.addEventListener("click", (e) => {
+        const editBtn = e.target.closest(".spg-team-edit");
+        const deleteBtn = e.target.closest(".spg-team-delete");
+        const tr = e.target.closest("tr");
+        if (editBtn) {
+          const member = resolveTeamMember(editBtn.dataset.id, tr);
+          if (member) loadTeamIntoForm(member);
+          return;
+        }
+        if (deleteBtn) {
+          spgConfirmDelete().then((confirmed) => {
+            if (!confirmed) return;
+            const id = deleteBtn.dataset.id;
+            demoTeam = demoTeam.filter((m) => m.id !== id);
+            if (teamFormEditingId === id) resetTeamForm(true);
+            if (tr?.dataset.spgServerRow) tr.remove();
+            renderTeamList();
+            spgAlertDeleted();
+          });
+        }
       });
-    });
+    }
+
+    const contractBody = $("#spgContractsList");
+    if (contractBody && !contractBody.dataset.spgActionsBound) {
+      contractBody.dataset.spgActionsBound = "1";
+      contractBody.addEventListener("click", (e) => {
+        const editBtn = e.target.closest(".spg-contract-edit");
+        const deleteBtn = e.target.closest(".spg-contract-delete");
+        const tr = e.target.closest("tr");
+        if (editBtn) {
+          const item = resolveContract(editBtn.dataset.id, tr);
+          if (item) loadContractIntoForm(item);
+          return;
+        }
+        if (deleteBtn) {
+          spgConfirmDelete().then((confirmed) => {
+            if (!confirmed) return;
+            const id = deleteBtn.dataset.id;
+            demoContracts = demoContracts.filter((c) => c.id !== id);
+            if (contractFormEditingId === id) resetContractForm(true);
+            if (tr?.dataset.spgServerRow) tr.remove();
+            renderContractsList();
+            spgAlertDeleted();
+          });
+        }
+      });
+    }
   }
 
   function bindTeamAndContractForms() {
     if (teamContractFormsBound) return;
     teamContractFormsBound = true;
 
-    $("#spgAddTeamBtn")?.addEventListener("click", () => {
-      const p = getActiveProject();
-      if (p) commitTeamFromForm(p);
-    });
-    $("#spgTeamEditSave")?.addEventListener("click", () => {
-      const p = getActiveProject();
-      if (p) saveTeamEditFromForm(p);
-    });
+    $("#spgAddTeamBtn")?.addEventListener("click", () => commitTeamFromForm());
+    $("#spgTeamEditSave")?.addEventListener("click", () => saveTeamEditFromForm());
     $("#spgTeamEditCancel")?.addEventListener("click", () => resetTeamForm(true));
 
-    $("#spgAddContractBtn")?.addEventListener("click", () => {
-      const p = getActiveProject();
-      if (p) commitContractFromForm(p);
-    });
-    $("#spgContractEditSave")?.addEventListener("click", () => {
-      const p = getActiveProject();
-      if (p) commitContractFromForm(p);
-    });
+    $("#spgAddContractBtn")?.addEventListener("click", () => commitContractFromForm());
+    $("#spgContractEditSave")?.addEventListener("click", () => commitContractFromForm());
     $("#spgContractEditCancel")?.addEventListener("click", () => resetContractForm(true));
-  }
-
-  function escapeAttr(str) {
-    return escapeHtml(str || "").replace(/"/g, "&quot;");
   }
 
   function countEnabledOptionalFromDom() {
     return $$(".spg-optional-toggle:checked").length;
   }
 
-  function estimatePages(p) {
-    const level =
-      p?.detailLevel || $(".spg-detail-card.active")?.dataset.detail || "detailed";
+  function countCoreSectionsFromDom() {
+    const root = $("#spgCoreSections");
+    if (!root) return SPG_CORE_SECTION_COUNT;
+    const n = $$(".spg-section-row", root).length;
+    return n || SPG_CORE_SECTION_COUNT;
+  }
+
+  function estimatePages() {
+    const level = $(".spg-detail-card.active")?.dataset.detail || "detailed";
     const [minBase, maxBase] = DETAIL_PAGE_RANGES[level] || DETAIL_PAGE_RANGES.detailed;
+    const coreCount = countCoreSectionsFromDom();
     const extra = countEnabledOptionalFromDom();
     const min = minBase + extra;
     const max = maxBase + extra * 2;
-    return { min, max, totalSections: SPG_CORE_SECTION_COUNT + extra };
+    return { min, max, totalSections: coreCount + extra, coreCount };
   }
 
-  function renderReview(p) {
-    if (!p) return;
-    persistActiveFromForm();
+  function renderReview() {
     $("#spgReviewConfirmNote")?.classList.add("d-none");
 
     const enabledOptional = countEnabledOptionalFromDom();
-    const { min, max, totalSections } = estimatePages(p);
+    const { min, max, totalSections, coreCount } = estimatePages();
 
     $("#spgSummaryTotal").textContent = String(totalSections);
-    $("#spgSummaryCore").textContent = String(SPG_CORE_SECTION_COUNT);
+    $("#spgSummaryCore").textContent = String(coreCount);
     $("#spgSummaryOptional").textContent = String(enabledOptional);
     $("#spgSummaryPages").textContent = `${min} – ${max}`;
     $("#spgSummarySizeLabel").textContent = `${totalSections} أقسام — ${min} إلى ${max} صفحة تقريبًا`;
   }
 
-  function bindEvents() {
-    $("#spgProjectSearch")?.addEventListener("input", (e) => {
-      renderProjectList(e.target.value);
+  function bindProjectsDrawer() {
+    const root = $(".spg-root");
+    const panel = $("#spgProjectsSidebar");
+    const backdrop = $("#spgProjectsSidebarBackdrop");
+    const openBtn = $("#spgProjectsSidebarOpen");
+    const closeBtn = $("#spgProjectsSidebarClose");
+    if (!root || !panel) return;
+
+    const mobileQuery = window.matchMedia("(max-width: 767.98px)");
+
+    function syncDrawerA11yDesktop() {
+      if (!mobileQuery.matches) {
+        root.classList.remove("spg-projects-drawer-open");
+        document.body.classList.remove("spg-projects-drawer-open");
+        backdrop?.classList.remove("show");
+        document.body.classList.remove("spg-projects-drawer-body-lock");
+        panel.removeAttribute("aria-hidden");
+        panel.setAttribute("role", "complementary");
+        panel.removeAttribute("aria-modal");
+        openBtn?.setAttribute("aria-expanded", "false");
+        return true;
+      }
+      panel.setAttribute("role", "dialog");
+      panel.setAttribute("aria-modal", "true");
+      if (!root.classList.contains("spg-projects-drawer-open")) {
+        panel.setAttribute("aria-hidden", "true");
+      }
+      return false;
+    }
+
+    function isMobileDrawerViewport() {
+      return mobileQuery.matches;
+    }
+
+    function openDrawer() {
+      if (!isMobileDrawerViewport()) return;
+      root.classList.add("spg-projects-drawer-open");
+      document.body.classList.add("spg-projects-drawer-open");
+      backdrop?.classList.add("show");
+      backdrop?.setAttribute("aria-hidden", "false");
+      openBtn?.setAttribute("aria-expanded", "true");
+      panel.setAttribute("aria-hidden", "false");
+      document.body.classList.add("spg-projects-drawer-body-lock");
+      closeBtn?.focus();
+    }
+
+    function closeDrawer() {
+      if (!isMobileDrawerViewport()) return;
+      root.classList.remove("spg-projects-drawer-open");
+      document.body.classList.remove("spg-projects-drawer-open");
+      backdrop?.classList.remove("show");
+      backdrop?.setAttribute("aria-hidden", "true");
+      openBtn?.setAttribute("aria-expanded", "false");
+      panel.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("spg-projects-drawer-body-lock");
+      openBtn?.focus();
+    }
+
+    openBtn?.addEventListener("click", openDrawer);
+    closeBtn?.addEventListener("click", closeDrawer);
+    backdrop?.addEventListener("click", closeDrawer);
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && root.classList.contains("spg-projects-drawer-open")) {
+        closeDrawer();
+      }
     });
+
+    const projectList = $("#spgProjectList");
+    projectList?.addEventListener("click", (e) => {
+      const item = e.target.closest(".spg-project-item, [data-spg-dynamic-project]");
+      if (item && root.classList.contains("spg-projects-drawer-open")) {
+        closeDrawer();
+      }
+    });
+
+    mobileQuery.addEventListener("change", syncDrawerA11yDesktop);
+    syncDrawerA11yDesktop();
+  }
+
+  function bindEvents() {
+    bindProjectsDrawer();
 
     $$(".spg-path-card[data-proposal-type]").forEach((btn) => {
       btn.addEventListener("click", () => {
@@ -1154,75 +1111,42 @@
 
     $("#spgWizardNext")?.addEventListener("click", wizardNext);
     $("#spgWizardPrev")?.addEventListener("click", wizardPrev);
-    $("#spgWizardBackToLanding")?.addEventListener("click", () => {
-      persistActiveFromForm();
-      const p = getActiveProject();
-      if (p) {
-        p.view = "landing";
-        saveProjects();
-      }
-      setView("landing");
-    });
+    $("#spgWizardBackToLanding")?.addEventListener("click", () => setView("landing"));
 
     $$('input[name="spgHasDocs"], input[name="spgHasTeam"], input[name="spgHasContracts"]').forEach((input) => {
-      input.addEventListener("change", () => {
-        toggleConditionalPanels();
-        persistActiveFromForm();
-      });
+      input.addEventListener("change", () => toggleConditionalPanels());
     });
 
     bindDocumentUploadForm();
     bindTeamAndContractForms();
+    bindCollectionTableActions();
 
     $$(".spg-detail-card").forEach((btn) => {
       btn.addEventListener("click", () => {
         $$(".spg-detail-card").forEach((b) => b.classList.remove("active"));
         btn.classList.add("active");
-        persistActiveFromForm();
       });
     });
 
     $("#spgReviewBack")?.addEventListener("click", () => {
-      const p = getActiveProject();
       wizardStep = TOTAL_STEPS;
-      if (p) {
-        p.view = "wizard";
-        p.wizardStep = TOTAL_STEPS;
-        saveProjects();
-      }
       setView("wizard");
     });
 
     $("#spgOptionalSections")?.addEventListener("change", (e) => {
       if (!e.target.closest(".spg-optional-toggle")) return;
-      renderReview(getActiveProject());
+      renderReview();
     });
 
-    // $("#spgReviewConfirm")?.addEventListener("click", () => {
-    //   persistActiveFromForm();
-    //   const note = $("#spgReviewConfirmNote");
-    //   if (note) {
-    //     note.textContent =
-    //       "تم حفظ اختيارات الأقسام. المرحلة التالية من توليد المحتوى ستتوفر قريبًا.";
-    //     note.classList.remove("d-none");
-    //   }
-    // });
   }
 
   function init() {
     if (!$(".spg-root")) return;
 
-    const p = getActiveProject();
-    if (p) {
-      wizardStep = normalizeWizardStep(p.wizardStep);
-      p.wizardStep = wizardStep;
-      view = p.view || "landing";
-    } else {
-      view = "landing";
-    }
-
     bindEvents();
-    renderProjectList();
+    renderDocumentsTable();
+    renderTeamList();
+    renderContractsList();
     setView(view);
   }
 

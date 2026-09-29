@@ -550,11 +550,18 @@
     </div>
     <div class="dash-widget sm-0 p-lg-4 spg-root">
       <div class="row chat-layout g-4">
-        <div class="col-lg-3 order-2 order-lg-1">
-          <div class="tender-card sm-0 p-lg-3 h-100">
+        <div class="col-lg-3 order-2 order-lg-1 spg-projects-sidebar-col">
+          <div class="spg-projects-drawer-backdrop d-md-none" id="spgProjectsSidebarBackdrop" aria-hidden="true"
+            tabindex="-1"></div>
+          <div class="tender-card sm-0 p-lg-3 h-100 spg-projects-sidebar-panel" id="spgProjectsSidebar" role="dialog"
+            aria-modal="true" aria-labelledby="spgProjectsSidebarTitle" aria-hidden="true">
             <div
               class="sidebar-header d-flex flex-column flex-lg-row align-items-lg-center gap-4 justify-content-between mb-4">
-              <h6 class="black-text mb-0">المشاريع السابقة</h6>
+              <div class="d-flex align-items-center justify-content-between w-100 gap-2">
+                <h6 class="black-text mb-0" id="spgProjectsSidebarTitle">المشاريع السابقة</h6>
+                <button type="button" class="btn-close spg-projects-drawer-close d-md-none flex-shrink-0"
+                  id="spgProjectsSidebarClose" aria-label="إغلاق قائمة المشاريع"></button>
+              </div>
               <button type="button" class="btn-base btn-main fw-medium fz-14 h-36" id="spgAddProjectBtn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M8 3.33398V12.6673" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round"
@@ -580,6 +587,20 @@
               </span>
             </div>
             <div class="chat-list spg-project-list" id="spgProjectList" role="listbox" aria-label="قائمة المشاريع">
+              <button type="button"
+                class="chat-item spg-project-item d-flex align-items-center gap-12 w-100 border-0 bg-transparent active"
+                role="option" aria-selected="true" data-project-id="0" data-project-title="اسم المشروع / المناقصة"
+                data-proposal-type="government" data-view="landing" data-wizard-step="1" data-project-name=""
+                data-tender-number="" data-has-docs="false" data-has-team="false" data-has-contracts="false"
+                data-detail-level="detailed">
+                <div class="chat-item-icon">
+                  <img src="images/document-normal.svg" alt="">
+                </div>
+                <div class="w-100 text-start">
+                  <div class="ticket-id text-truncate mb-2">اسم المشروع / المناقصة</div>
+                  <div class="fz-10 text-gray chat-preview text-truncate">البداية — اختر نوع العرض</div>
+                </div>
+              </button>
             </div>
             <div class="text-center py-4 d-none" id="spgProjectListEmpty">
               <p class="fz-14 text-gray mb-0">لا توجد مشاريع بعد. ابدأ بإضافة مشروع جديد.</p>
@@ -587,8 +608,16 @@
           </div>
         </div>
 
-        <div class="col-lg-9 order-1 order-lg-2">
+        <div class="col-12 col-lg-9 order-1 order-lg-2">
           <div class="tender-card p-3 p-lg-4 d-flex flex-column min-h-spg-main" id="spgMainPanel">
+            <div class="d-flex align-items-center d-md-none mb-3">
+              <button type="button" class="icon-container gray-outline-btn spg-projects-drawer-open-btn"
+                id="spgProjectsSidebarOpen" aria-controls="spgProjectsSidebar" aria-expanded="false"
+                aria-label="فتح قائمة المشاريع">
+                <img src="images/folder-open.svg" alt="">
+              </button>
+              <span class="fz-14 black-text ms-2">المشاريع</span>
+            </div>
 
             <section id="spgViewLanding" class="spg-view">
               <div class="text-center mb-4 mb-lg-5">
