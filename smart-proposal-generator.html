@@ -701,14 +701,69 @@
                       </div>
                     </div>
                   </div>
-                  <div id="spgDocumentsPanel" class="d-none">
-                    <div class="d-flex align-items-center justify-content-between mb-3">
-                      <h6 class="black-text fz-14 mb-0">مستندات المناقصة</h6>
-                      <button type="button" class="btn-main btn-primary-outline fz-12 h-36" id="spgAddDocumentBtn">
-                        إضافة مستند
-                      </button>
+                  <div id="spgDocumentsPanel" class="d-none spg-collection-section">
+                    <h6 class="black-text fz-14 mb-2">مستندات المناقصة</h6>
+                    <p class="fz-12 text-gray mb-3">أدخل بيانات المستند ثم ارفع الملف؛ سيُضاف تلقائيًا إلى الجدول أدناه.</p>
+
+                    <div class="tender-card p-3 bg-white mb-4 spg-collection-form-card" id="spgDocumentFormCard">
+                      <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                          <label class="form-label" for="spgDocDraftName">اسم الملف</label>
+                          <input type="text" class="form-control" id="spgDocDraftName" placeholder="اسم الملف"
+                            autocomplete="off" />
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <label class="form-label" for="spgDocDraftDesc">وصف الملف</label>
+                          <input type="text" class="form-control" id="spgDocDraftDesc" placeholder="وصف مختصر"
+                            autocomplete="off" />
+                        </div>
+                        <div class="col-12">
+                          <label class="form-label">الملف</label>
+                          <div class="upload-container">
+                            <div class="upload-box uploadBox spg-doc-upload" id="spgDocUploadBox">
+                              <div class="upload-icon"><img src="images/document-download.svg" alt=""></div>
+                              <div class="d-flex flex-column gap-10">
+                                <div class="upload-title fz-10 black-text">اسحب الملف هنا أو تصفح لإضافته للقائمة</div>
+                                <div class="upload-subtitle fz-9 text-gray">أقصى حجم 500 ميغابايت</div>
+                                <input type="file" class="fileInput" id="spgDocDraftFile" />
+                                <div class="fz-10 colored d-none fileInfo" id="spgDocDraftFileInfo"></div>
+                                <div class="red-colored fz-10 d-none errorMsg" id="spgDocDraftFileError"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-none flex-wrap align-items-center gap-3 mt-3 pt-3 border-top border-light"
+                        id="spgDocumentEditActions">
+                        <span class="fz-12 text-gray flex-grow-1" id="spgDocumentEditHint">تعديل مستند محفوظ</span>
+                        <button type="button" class="btn-main btn-primary-outline fz-12 h-36" id="spgDocEditCancel">
+                          إلغاء
+                        </button>
+                        <button type="button" class="btn-main btn-primary fz-12 h-36" id="spgDocEditSave">
+                          حفظ التعديل
+                        </button>
+                      </div>
                     </div>
-                    <div id="spgDocumentsList" class="d-flex flex-column gap-3"></div>
+
+                    <div class="table-container spg-collection-table-wrap" id="spgDocumentsTableWrap">
+                      <div class="table-responsive">
+                        <table class="table table-bordered align-middle competition-table spg-items-table spg-documents-table">
+                          <thead>
+                            <tr>
+                              <th>اسم الملف</th>
+                              <th>الوصف</th>
+                              <th>الملف</th>
+                              <th class="text-center">الإجراءات</th>
+                            </tr>
+                          </thead>
+                          <tbody id="spgDocumentsTableBody"></tbody>
+                        </table>
+                      </div>
+                      <div class="text-center py-4 spg-collection-empty d-none" id="spgDocumentsTableEmpty">
+                        <p class="fz-14 text-gray mb-0">لم تتم إضافة أي مستندات بعد</p>
+                        <p class="fz-12 text-gray mb-0 mt-1">أدخل البيانات وارفع الملف لإضافة أول مستند.</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="spg-wizard-step d-none" data-step="3">
@@ -727,14 +782,81 @@
                       </div>
                     </div>
                   </div>
-                  <div id="spgTeamPanel" class="d-none">
-                    <div class="d-flex align-items-center justify-content-between mb-3">
-                      <h6 class="black-text fz-14 mb-0">أعضاء الفريق</h6>
-                      <button type="button" class="btn-main btn-primary-outline fz-12 h-36" id="spgAddTeamBtn">
-                        إضافة عضو
-                      </button>
+                  <div id="spgTeamPanel" class="d-none spg-collection-section">
+                    <h6 class="black-text fz-14 mb-2">أعضاء فريق العمل</h6>
+                    <p class="fz-12 text-gray mb-3">أكمل بيانات العضو ثم احفظها لتظهر في الجدول. يمكنك إضافة عدة أعضاء.</p>
+
+                    <div class="tender-card p-3 bg-white mb-4 spg-collection-form-card" id="spgTeamFormCard">
+                      <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                          <label class="form-label" for="spgTeamDraftName">اسم الموظف</label>
+                          <input type="text" class="form-control" id="spgTeamDraftName" autocomplete="off" />
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <label class="form-label" for="spgTeamDraftNationality">الجنسية</label>
+                          <input type="text" class="form-control" id="spgTeamDraftNationality" autocomplete="off" />
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <label class="form-label" for="spgTeamDraftJobTitle">المسمى الوظيفي</label>
+                          <input type="text" class="form-control" id="spgTeamDraftJobTitle" autocomplete="off" />
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <label class="form-label" for="spgTeamDraftDegree">الشهادة</label>
+                          <input type="text" class="form-control" id="spgTeamDraftDegree" autocomplete="off" />
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <label class="form-label" for="spgTeamDraftYears">سنوات الخبرة</label>
+                          <input type="text" class="form-control" id="spgTeamDraftYears" autocomplete="off" dir="ltr" />
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <label class="form-label" for="spgTeamDraftCvFileName">اسم ملف السيرة الذاتية</label>
+                          <input type="text" class="form-control" id="spgTeamDraftCvFileName" autocomplete="off" />
+                        </div>
+                        <div class="col-12">
+                          <label class="form-label" for="spgTeamDraftExperiences">الخبرات</label>
+                          <textarea class="form-control" id="spgTeamDraftExperiences" rows="2"></textarea>
+                        </div>
+                        <div class="col-12">
+                          <label class="form-label" for="spgTeamDraftSummary">الملخص</label>
+                          <textarea class="form-control" id="spgTeamDraftSummary" rows="2"></textarea>
+                        </div>
+                      </div>
+                      <div class="d-flex flex-wrap align-items-center justify-content-end gap-3 mt-3 pt-3 border-top border-light"
+                        id="spgTeamFormPrimaryActions">
+                        <button type="button" class="btn-main btn-primary h-44 fz-14" id="spgAddTeamBtn">حفظ وإضافة
+                          للقائمة</button>
+                      </div>
+                      <div class="d-none flex-wrap align-items-center gap-3 mt-3 pt-3 border-top border-light"
+                        id="spgTeamEditActions">
+                        <span class="fz-12 text-gray flex-grow-1">تعديل عضو محفوظ</span>
+                        <button type="button" class="btn-main btn-primary-outline fz-12 h-36" id="spgTeamEditCancel">إلغاء</button>
+                        <button type="button" class="btn-main btn-primary fz-12 h-36" id="spgTeamEditSave">حفظ
+                          التعديل</button>
+                      </div>
+                      <div class="red-colored fz-12 d-none mt-2" id="spgTeamFormError"></div>
                     </div>
-                    <div id="spgTeamList" class="d-flex flex-column gap-3"></div>
+
+                    <div class="table-container spg-collection-table-wrap">
+                      <div class="table-responsive">
+                        <table class="table table-bordered align-middle competition-table spg-items-table">
+                          <thead>
+                            <tr>
+                              <th>اسم الموظف</th>
+                              <th>المسمى الوظيفي</th>
+                              <th>الجنسية</th>
+                              <th>سنوات الخبرة</th>
+                              <th>التفاصيل</th>
+                              <th class="text-center">الإجراءات</th>
+                            </tr>
+                          </thead>
+                          <tbody id="spgTeamList"></tbody>
+                        </table>
+                      </div>
+                      <div class="text-center py-4 spg-collection-empty d-none" id="spgTeamTableEmpty">
+                        <p class="fz-14 text-gray mb-0">لم تتم إضافة أعضاء فريق بعد</p>
+                        <p class="fz-12 text-gray mb-0 mt-1">أكمل النموذج أعلاه ثم اضغط «حفظ وإضافة للقائمة».</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="spg-wizard-step d-none" data-step="4">
@@ -754,14 +876,79 @@
                       </div>
                     </div>
                   </div>
-                  <div id="spgContractsPanel" class="d-none">
-                    <div class="d-flex align-items-center justify-content-between mb-3">
-                      <h6 class="black-text fz-14 mb-0">العقود والمشاريع السابقة</h6>
-                      <button type="button" class="btn-main btn-primary-outline fz-12 h-36" id="spgAddContractBtn">
-                        إضافة عقد
-                      </button>
+                  <div id="spgContractsPanel" class="d-none spg-collection-section">
+                    <h6 class="black-text fz-14 mb-2">العقود والمشاريع السابقة</h6>
+                    <p class="fz-12 text-gray mb-3">أدخل بيانات المشروع أو العقد ثم احفظها لتظهر في الجدول.</p>
+
+                    <div class="tender-card p-3 bg-white mb-4 spg-collection-form-card" id="spgContractFormCard">
+                      <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                          <label class="form-label" for="spgContractDraftProjectName">اسم المشروع</label>
+                          <input type="text" class="form-control" id="spgContractDraftProjectName" autocomplete="off" />
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <label class="form-label" for="spgContractDraftEntity">الجهة</label>
+                          <input type="text" class="form-control" id="spgContractDraftEntity" autocomplete="off" />
+                        </div>
+                        <div class="col-12">
+                          <label class="form-label" for="spgContractDraftDescription">وصف المشروع</label>
+                          <textarea class="form-control" id="spgContractDraftDescription" rows="2"></textarea>
+                        </div>
+                        <div class="col-12 col-md-4">
+                          <label class="form-label" for="spgContractDraftYear">سنة المشروع</label>
+                          <input type="text" class="form-control" id="spgContractDraftYear" autocomplete="off" dir="ltr" />
+                        </div>
+                        <div class="col-12 col-md-4">
+                          <label class="form-label" for="spgContractDraftDuration">مدة المشروع</label>
+                          <input type="text" class="form-control" id="spgContractDraftDuration" autocomplete="off" />
+                        </div>
+                        <div class="col-12 col-md-4">
+                          <label class="form-label" for="spgContractDraftCost">تكلفة المشروع</label>
+                          <input type="text" class="form-control" id="spgContractDraftCost" autocomplete="off" dir="ltr" />
+                        </div>
+                        <div class="col-12">
+                          <label class="form-label" for="spgContractDraftFileName">اسم ملف العقد</label>
+                          <input type="text" class="form-control" id="spgContractDraftFileName" autocomplete="off" />
+                        </div>
+                      </div>
+                      <div class="d-flex flex-wrap align-items-center justify-content-end gap-3 mt-3 pt-3 border-top border-light"
+                        id="spgContractFormPrimaryActions">
+                        <button type="button" class="btn-main btn-primary h-44 fz-14" id="spgAddContractBtn">حفظ
+                          وإضافة للقائمة</button>
+                      </div>
+                      <div class="d-none flex-wrap align-items-center gap-3 mt-3 pt-3 border-top border-light"
+                        id="spgContractEditActions">
+                        <span class="fz-12 text-gray flex-grow-1">تعديل عقد/مشروع محفوظ</span>
+                        <button type="button" class="btn-main btn-primary-outline fz-12 h-36"
+                          id="spgContractEditCancel">إلغاء</button>
+                        <button type="button" class="btn-main btn-primary fz-12 h-36" id="spgContractEditSave">حفظ
+                          التعديل</button>
+                      </div>
+                      <div class="red-colored fz-12 d-none mt-2" id="spgContractFormError"></div>
                     </div>
-                    <div id="spgContractsList" class="d-flex flex-column gap-3"></div>
+
+                    <div class="table-container spg-collection-table-wrap">
+                      <div class="table-responsive">
+                        <table class="table table-bordered align-middle competition-table spg-items-table">
+                          <thead>
+                            <tr>
+                              <th>اسم المشروع</th>
+                              <th>الجهة</th>
+                              <th>السنة</th>
+                              <th>المدة</th>
+                              <th>التكلفة</th>
+                              <th>الوصف</th>
+                              <th class="text-center">الإجراءات</th>
+                            </tr>
+                          </thead>
+                          <tbody id="spgContractsList"></tbody>
+                        </table>
+                      </div>
+                      <div class="text-center py-4 spg-collection-empty d-none" id="spgContractsTableEmpty">
+                        <p class="fz-14 text-gray mb-0">لم تتم إضافة عقود أو مشاريع سابقة بعد</p>
+                        <p class="fz-12 text-gray mb-0 mt-1">أكمل النموذج أعلاه ثم اضغط «حفظ وإضافة للقائمة».</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="spg-wizard-step d-none" data-step="5">
@@ -853,10 +1040,143 @@
               </div>
 
               <h6 class="black-text mb-3">الأقسام الأساسية</h6>
-              <div class="d-flex flex-column gap-3 mb-4" id="spgCoreSections"></div>
+              <div class="row g-3 mb-4" id="spgCoreSections">
+                <div class="col-12 col-lg-6">
+                  <div class="spg-section-row tender-card p-3 bg-white d-flex gap-3 align-items-start">
+                    <span class="spg-section-check" aria-hidden="true">
+                      <img src="images/checked-green.svg" alt="">
+                    </span>
+                    <div class="flex-grow-1">
+                      <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                        <h6 class="black-text fz-14 mb-0">الغلاف والمعلومات العامة</h6>
+                        <span class="sm-ele fz-10 bordered-8 badge-opacity-prim py-1 px-2">أساسي</span>
+                      </div>
+                      <p class="fz-12 text-gray mb-0">بيانات المنافسة، رقم المنافسة، الجهة، الموعد النهائي</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                  <div class="spg-section-row tender-card p-3 bg-white d-flex gap-3 align-items-start">
+                    <span class="spg-section-check" aria-hidden="true">
+                      <img src="images/checked-green.svg" alt="">
+                    </span>
+                    <div class="flex-grow-1">
+                      <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                        <h6 class="black-text fz-14 mb-0">فهم المشروع والمنهجية</h6>
+                        <span class="sm-ele fz-10 bordered-8 badge-opacity-prim py-1 px-2">أساسي</span>
+                      </div>
+                      <p class="fz-12 text-gray mb-0">تحليل متطلبات المشروع، خطة العمل المعتمدة</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                  <div class="spg-section-row tender-card p-3 bg-white d-flex gap-3 align-items-start">
+                    <span class="spg-section-check" aria-hidden="true">
+                      <img src="images/checked-green.svg" alt="">
+                    </span>
+                    <div class="flex-grow-1">
+                      <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                        <h6 class="black-text fz-14 mb-0">خطة العمل والتنفيذ</h6>
+                        <span class="sm-ele fz-10 bordered-8 badge-opacity-prim py-1 px-2">أساسي</span>
+                      </div>
+                      <p class="fz-12 text-gray mb-0">مراحل التنفيذ، الجداول الزمنية لكل خطوة</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                  <div class="spg-section-row tender-card p-3 bg-white d-flex gap-3 align-items-start">
+                    <span class="spg-section-check" aria-hidden="true">
+                      <img src="images/checked-green.svg" alt="">
+                    </span>
+                    <div class="flex-grow-1">
+                      <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                        <h6 class="black-text fz-14 mb-0">الهيكل التنظيمي وفريق العمل</h6>
+                        <span class="sm-ele fz-10 bordered-8 badge-opacity-prim py-1 px-2">أساسي</span>
+                      </div>
+                      <p class="fz-12 text-gray mb-0">أدوار ومسؤوليات فريق العمل، خبرات فريق العمل</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                  <div class="spg-section-row tender-card p-3 bg-white d-flex gap-3 align-items-start">
+                    <span class="spg-section-check" aria-hidden="true">
+                      <img src="images/checked-green.svg" alt="">
+                    </span>
+                    <div class="flex-grow-1">
+                      <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                        <h6 class="black-text fz-14 mb-0">العرض المالي</h6>
+                        <span class="sm-ele fz-10 bordered-8 badge-opacity-prim py-1 px-2">أساسي</span>
+                      </div>
+                      <p class="fz-12 text-gray mb-0">تفاصيل التسعير، المبلغ الإجمالي شامل الضريبة</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               <h6 class="black-text mb-3">الأقسام المقترحة</h6>
-              <div class="d-flex flex-column gap-3 mb-4" id="spgOptionalSections"></div>
+              <div class="row g-3 mb-4" id="spgOptionalSections">
+                <div class="col-12 col-lg-6">
+                  <div class="spg-section-row tender-card p-3 bg-white d-flex gap-3 align-items-start">
+                    <div class="form-check form-switch spg-section-switch flex-shrink-0 mb-0">
+                      <input class="form-check-input switch-control spg-optional-toggle" type="checkbox" role="switch"
+                        id="spg-opt-risk" data-section-id="risk">
+                    </div>
+                    <div class="flex-grow-1">
+                      <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                        <label class="black-text fz-14 mb-0 fw-medium" for="spg-opt-risk">خطة إدارة المخاطر</label>
+                        <span class="sm-ele fz-10 bordered-8 badge-reviewed py-1 px-2">ذكاء اصطناعي</span>
+                      </div>
+                      <p class="fz-12 text-gray mb-0">إدارة المخاطر المحتملة وخطط الاستجابة لها</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                  <div class="spg-section-row tender-card p-3 bg-white d-flex gap-3 align-items-start">
+                    <div class="form-check form-switch spg-section-switch flex-shrink-0 mb-0">
+                      <input class="form-check-input switch-control spg-optional-toggle" type="checkbox" role="switch"
+                        id="spg-opt-experience" data-section-id="experience">
+                    </div>
+                    <div class="flex-grow-1">
+                      <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                        <label class="black-text fz-14 mb-0 fw-medium" for="spg-opt-experience">الخبرات والعقود
+                          السابقة</label>
+                        <span class="sm-ele fz-10 bordered-8 badge-reviewed py-1 px-2">ذكاء اصطناعي</span>
+                      </div>
+                      <p class="fz-12 text-gray mb-0">مشاريع سابقة تُظهر الخبرة والقدرات</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                  <div class="spg-section-row tender-card p-3 bg-white d-flex gap-3 align-items-start">
+                    <div class="form-check form-switch spg-section-switch flex-shrink-0 mb-0">
+                      <input class="form-check-input switch-control spg-optional-toggle" type="checkbox" role="switch"
+                        id="spg-opt-quality" data-section-id="quality">
+                    </div>
+                    <div class="flex-grow-1">
+                      <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                        <label class="black-text fz-14 mb-0 fw-medium" for="spg-opt-quality">خطة إدارة الجودة</label>
+                        <span class="sm-ele fz-10 bordered-8 badge-reviewed py-1 px-2">ذكاء اصطناعي</span>
+                      </div>
+                      <p class="fz-12 text-gray mb-0">معايير الجودة، طرق المراجعة، التوثيق</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                  <div class="spg-section-row tender-card p-3 bg-white d-flex gap-3 align-items-start">
+                    <div class="form-check form-switch spg-section-switch flex-shrink-0 mb-0">
+                      <input class="form-check-input switch-control spg-optional-toggle" type="checkbox" role="switch"
+                        id="spg-opt-timeline" data-section-id="timeline">
+                    </div>
+                    <div class="flex-grow-1">
+                      <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                        <label class="black-text fz-14 mb-0 fw-medium" for="spg-opt-timeline">الجدول الزمني للتنفيذ</label>
+                        <span class="sm-ele fz-10 bordered-8 badge-reviewed py-1 px-2">ذكاء اصطناعي</span>
+                      </div>
+                      <p class="fz-12 text-gray mb-0">المراحل، المخرجات، المسؤولون</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               <p class="fz-12 text-gray d-none mb-0" id="spgReviewConfirmNote" role="status"></p>
               <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mt-4 pt-3">
@@ -884,10 +1204,26 @@
     </div>
   </div>
 
+  <div class="modal fade" id="spgCollectionDetailModal" tabindex="-1" aria-labelledby="spgCollectionDetailTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content w-620">
+        <div class="modal-header">
+          <h6 class="modal-title black-text" id="spgCollectionDetailTitle"></h6>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="fz-14 text-gray mb-0 spg-collection-detail-body" id="spgCollectionDetailBody"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- jQuery -->
   <!-- <script src="assets/js/jquery-3.7.1.min.js"></script> -->
   <!-- Bootstrap JS -->
   <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/sweetalert2.all.min.js"></script>
   <!-- Custom JS -->
   <script src="js/main.js" defer></script>
   <script src="js/smart-proposal-generator.js" defer></script>

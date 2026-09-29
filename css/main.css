@@ -7365,6 +7365,168 @@ html[dir="ltr"] .input-icon-group input {
   cursor: pointer;
 }
 
+.spg-collection-form-editing,
+.spg-document-form-editing {
+  box-shadow: 0 0 0 1px var(--primary-base-color);
+}
+
+.spg-collection-section + .spg-collection-section {
+  margin-top: 0;
+}
+
+.spg-collection-table-wrap {
+  margin-top: 0;
+}
+
+.spg-items-table td .spg-cell-truncate {
+  display: inline-block;
+  max-width: 10rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.spg-collection-empty {
+  border-radius: 12px;
+  background: var(--gray-500-color);
+}
+
+.spg-collection-detail-body {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.spg-collection-section .spg-collection-form-card {
+  border-radius: 12px;
+}
+
+.spg-items-table td[data-label="الوصف"] .spg-show-detail,
+.spg-items-table td[data-label="التفاصيل"] .spg-show-detail {
+  display: inline-block;
+  margin-inline-start: 4px;
+}
+
+/* SPG — SweetAlert (dashboard-themed) */
+.swal2-spg-success-compact {
+  border-radius: 12px !important;
+  padding: 1rem 1.25rem 1.125rem !important;
+  width: auto !important;
+  min-width: 17rem;
+  max-width: 22rem;
+  box-shadow: 0 8px 28px rgba(12, 32, 48, 0.1) !important;
+}
+
+
+.swal2-spg-success-title {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #0c2030 !important;
+  margin: 0.5rem 0 0.25rem !important;
+}
+
+.swal2-spg-success-text {
+  font-size: 14px !important;
+  color: #6f6f6f !important;
+  margin: 0 !important;
+}
+
+.swal2-spg-success-icon {
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  margin: 0.25rem auto 0 !important;
+  border: none !important;
+}
+
+.spg-swal-check-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spg-swal-check-icon svg {
+  display: block;
+}
+
+.spg-swal-check-circle {
+  stroke-dasharray: 120;
+  stroke-dashoffset: 120;
+  animation: spg-swal-check-circle 0.45s ease forwards;
+}
+
+.spg-swal-check-path {
+  stroke-dasharray: 28;
+  stroke-dashoffset: 28;
+  animation: spg-swal-check-path 0.35s ease 0.38s forwards;
+}
+
+@keyframes spg-swal-check-circle {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes spg-swal-check-path {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.swal2-spg-confirm-icon {
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  margin: 0 auto 0.75rem !important;
+  border: none !important;
+}
+
+.spg-swal-trash-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: #da1e1e14;
+  border: 1px solid #da1e1e2e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swal2-spg-confirm {
+  border-radius: 12px !important;
+  padding: 1.5rem 1.5rem 1.25rem !important;
+  width: 100% !important;
+  max-width: 28rem;
+  box-shadow: 0 12px 40px rgba(12, 32, 48, 0.14) !important;
+}
+
+.swal2-spg-confirm-title {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  color: #0c2030 !important;
+}
+
+.swal2-spg-confirm-text {
+  font-size: 14px !important;
+  color: #6f6f6f !important;
+}
+
+.swal2-spg-confirm-actions {
+  flex-direction: row-reverse !important;
+  gap: 12px !important;
+  width: 100%;
+  margin-top: 1.25rem !important;
+}
+
+.swal2-spg-confirm-actions .swal2-spg-confirm-delete,
+.swal2-spg-confirm-actions .swal2-spg-confirm-cancel {
+  flex: 1 1 auto;
+  min-height: 44px;
+  margin: 0 !important;
+}
+
 @media (max-width: 991.98px) {
   .spg-root .min-h-spg-main {
     min-height: 0;
