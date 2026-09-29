@@ -1,8 +1,8 @@
 (function () {
   "use strict";
 
-  const STORAGE_KEY = "trsyat-spg-projects-v1";
   const TOTAL_STEPS = 5;
+  const SPG_CORE_SECTION_COUNT = 5;
 
   const STEP_HEADINGS = [
     "بيانات المناقصة / المشروع",
@@ -19,61 +19,6 @@
     if (n === 2) return 1;
     return Math.min(TOTAL_STEPS, n - 1);
   }
-
-  const CORE_SECTIONS = [
-    {
-      id: "cover",
-      title: "الغلاف والمعلومات العامة",
-      description: "بيانات المنافسة، رقم المنافسة، الجهة، الموعد النهائي",
-    },
-    {
-      id: "understanding",
-      title: "فهم المشروع والمنهجية",
-      description: "تحليل متطلبات المشروع، خطة العمل المعتمدة",
-    },
-    {
-      id: "workplan",
-      title: "خطة العمل والتنفيذ",
-      description: "مراحل التنفيذ، الجداول الزمنية لكل خطوة",
-    },
-    {
-      id: "team",
-      title: "الهيكل التنظيمي وفريق العمل",
-      description: "أدوار ومسؤوليات فريق العمل، خبرات فريق العمل",
-    },
-    {
-      id: "financial",
-      title: "العرض المالي",
-      description: "تفاصيل التسعير، المبلغ الإجمالي شامل الضريبة",
-    },
-  ];
-
-  const OPTIONAL_SECTIONS = [
-    {
-      id: "risk",
-      title: "خطة إدارة المخاطر",
-      description: "إدارة المخاطر المحتملة وخطط الاستجابة لها",
-      defaultOn: true,
-    },
-    {
-      id: "experience",
-      title: "الخبرات والعقود السابقة",
-      description: "مشاريع سابقة تُظهر الخبرة والقدرات",
-      defaultOn: true,
-    },
-    {
-      id: "quality",
-      title: "خطة إدارة الجودة",
-      description: "معايير الجودة، طرق المراجعة، التوثيق",
-      defaultOn: false,
-    },
-    {
-      id: "timeline",
-      title: "الجدول الزمني للتنفيذ",
-      description: "المراحل، المخرجات، المسؤولون",
-      defaultOn: true,
-    },
-  ];
 
   const DETAIL_PAGE_RANGES = {
     detailed: [13, 16],
@@ -179,10 +124,6 @@
   }
 
   function defaultProject(title) {
-    const optional = {};
-    OPTIONAL_SECTIONS.forEach((s) => {
-      optional[s.id] = s.defaultOn;
-    });
     return {
       id: uid(),
       title: title || "مشروع جديد",
@@ -198,51 +139,42 @@
       hasContracts: false,
       contracts: [],
       detailLevel: "detailed",
-      optionalSections: optional,
       updatedAt: Date.now(),
     };
   }
 
-  function loadProjects() {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (raw) {
-        projects = JSON.parse(raw);
-        projects.forEach((proj) => {
-          if (Array.isArray(proj.documents)) {
-            proj.documents = proj.documents.filter((d) => d && d.fileName);
-          }
-          if (Array.isArray(proj.team)) {
-            proj.team = proj.team.filter((m) => m && (m.name || "").trim());
-          }
-          if (Array.isArray(proj.contracts)) {
-            proj.contracts = proj.contracts.filter((c) => c && (c.projectName || "").trim());
-          }
-        });
-        return;
-      }
-    } catch (_) {
-      /* ignore */
-    }
-    projects = [
-      Object.assign(defaultProject("توريد وتركيب أنظمة مراقبة"), {
-        proposalType: "government",
-        projectName: "توريد وتركيب أنظمة مراقبة",
-        tenderNumber: "250739020707",
-        view: "landing",
-      }),
-      Object.assign(defaultProject("صيانة البنية التحتية"), {
-        proposalType: "private",
-        projectName: "صيانة البنية التحتية",
-        view: "landing",
-      }),
-    ];
-    saveProjects();
+  /** Server-rendered sidebar items (ASP.NET). In-memory list used only for session UI until postback/API. */
+  function hydrateProjectsFromDom() {
+    const list = $("#spgProjectList");
+    if (!list) return [];
+    return $$(".spg-project-item", list).map((el) => {
+      const id = el.dataset.projectId || uid();
+      return {
+        id,
+        title: el.dataset.projectTitle || "",
+        proposalType: el.dataset.proposalType || null,
+        view: el.dataset.view || "landing",
+        wizardStep: normalizeWizardStep(Number(el.dataset.wizardStep) || 1),
+        projectName: el.dataset.projectName || "",
+        tenderNumber: el.dataset.tenderNumber || "",
+        hasDocs: el.dataset.hasDocs === "true",
+        hasTeam: el.dataset.hasTeam === "true",
+        hasContracts: el.dataset.hasContracts === "true",
+        detailLevel: el.dataset.detailLevel || "detailed",
+        documents: [],
+        team: [],
+        contracts: [],
+        updatedAt: Number(el.dataset.updatedAt) || Date.now(),
+      };
+    });
   }
 
-  function saveProjects() {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(projects));
+  function loadProjects() {
+    projects = hydrateProjectsFromDom();
   }
+
+  /** Persistence is handled by ASP.NET backend — not browser storage. */
+  function saveProjects() {}
 
   function getActiveProject() {
     return projects.find((p) => p.id === activeProjectId) || null;
@@ -327,11 +259,29 @@
     if (!list) return;
 
     const q = filter.trim().toLowerCase();
+    const staticItems = $$(".spg-project-item", list);
+
+    if (staticItems.length) {
+      let visible = 0;
+      staticItems.forEach((el) => {
+        const title = (el.dataset.projectTitle || el.textContent || "").toLowerCase();
+        const show = !q || title.includes(q);
+        el.classList.toggle("d-none", !show);
+        el.classList.toggle("active", el.dataset.projectId === activeProjectId);
+        el.setAttribute("aria-selected", el.dataset.projectId === activeProjectId ? "true" : "false");
+        if (show) visible += 1;
+      });
+      empty?.classList.toggle("d-none", visible > 0);
+      return;
+    }
+
+    const dynamicButtons = $$("button.chat-item[data-spg-dynamic-project]", list);
+    dynamicButtons.forEach((btn) => btn.remove());
+
     const items = projects
       .filter((p) => !q || (p.title || "").toLowerCase().includes(q))
       .sort((a, b) => (b.updatedAt || 0) - (a.updatedAt || 0));
 
-    list.innerHTML = "";
     if (!items.length) {
       empty?.classList.remove("d-none");
       return;
@@ -342,6 +292,8 @@
       const el = document.createElement("button");
       el.type = "button";
       el.className = "chat-item d-flex align-items-center gap-12 w-100 border-0 bg-transparent ";
+      el.dataset.spgDynamicProject = "1";
+      el.dataset.projectId = p.id;
       if (p.id === activeProjectId) el.classList.add("active");
       el.setAttribute("role", "option");
       el.setAttribute("aria-selected", p.id === activeProjectId ? "true" : "false");
@@ -536,33 +488,6 @@
     if (hasDocs) renderDocumentsTable(p);
     if (hasTeam) renderTeamList(p);
     if (hasContracts) renderContractsList(p);
-  }
-
-  function emptyTeamMember() {
-    return {
-      id: entryId(),
-      name: "",
-      nationality: "",
-      jobTitle: "",
-      degree: "",
-      years: "",
-      experiences: "",
-      summary: "",
-      cvFileName: "",
-    };
-  }
-
-  function emptyContract() {
-    return {
-      id: entryId(),
-      projectName: "",
-      entity: "",
-      description: "",
-      year: "",
-      duration: "",
-      cost: "",
-      contractFileName: "",
-    };
   }
 
   function getDocumentDraftFields() {
@@ -1232,65 +1157,18 @@
     return escapeHtml(str || "").replace(/"/g, "&quot;");
   }
 
-  function bindUploadBoxes(root) {
-    const MAX_SIZE = 500 * 1024 * 1024;
-    root.querySelectorAll(".uploadBox").forEach((uploadBox) => {
-      if (uploadBox.dataset.spgBound) return;
-      uploadBox.dataset.spgBound = "1";
-      const fileInput = uploadBox.querySelector(".fileInput");
-      const fileInfo = uploadBox.querySelector(".fileInfo");
-      const errorMsg = uploadBox.querySelector(".errorMsg");
-      if (!fileInput) return;
-
-      uploadBox.addEventListener("click", (e) => {
-        if (e.target === fileInput) return;
-        fileInput.click();
-      });
-      fileInput.addEventListener("click", (e) => e.stopPropagation());
-
-      const handle = (file) => {
-        fileInfo?.classList.add("d-none");
-        errorMsg?.classList.add("d-none");
-        if (!file) return;
-        if (file.size > MAX_SIZE) {
-          if (errorMsg) {
-            errorMsg.textContent = "حجم الملف أكبر من 500 ميغابايت";
-            errorMsg.classList.remove("d-none");
-          }
-          return;
-        }
-        if (fileInfo) {
-          fileInfo.textContent = `تم اختيار الملف: ${file.name}`;
-          fileInfo.classList.remove("d-none");
-        }
-      };
-
-      uploadBox.addEventListener("dragover", (e) => {
-        e.preventDefault();
-        uploadBox.classList.add("dragover");
-      });
-      uploadBox.addEventListener("dragleave", () => uploadBox.classList.remove("dragover"));
-      uploadBox.addEventListener("drop", (e) => {
-        e.preventDefault();
-        uploadBox.classList.remove("dragover");
-        handle(e.dataTransfer.files[0]);
-      });
-      fileInput.addEventListener("change", () => handle(fileInput.files[0]));
-    });
-  }
-
-  function countEnabledOptional(p) {
-    if (!p?.optionalSections) return 0;
-    return OPTIONAL_SECTIONS.filter((s) => p.optionalSections[s.id]).length;
+  function countEnabledOptionalFromDom() {
+    return $$(".spg-optional-toggle:checked").length;
   }
 
   function estimatePages(p) {
-    const level = p.detailLevel || "detailed";
+    const level =
+      p?.detailLevel || $(".spg-detail-card.active")?.dataset.detail || "detailed";
     const [minBase, maxBase] = DETAIL_PAGE_RANGES[level] || DETAIL_PAGE_RANGES.detailed;
-    const extra = countEnabledOptional(p);
+    const extra = countEnabledOptionalFromDom();
     const min = minBase + extra;
     const max = maxBase + extra * 2;
-    return { min, max, totalSections: 5 + extra };
+    return { min, max, totalSections: SPG_CORE_SECTION_COUNT + extra };
   }
 
   function renderReview(p) {
@@ -1298,19 +1176,14 @@
     persistActiveFromForm();
     $("#spgReviewConfirmNote")?.classList.add("d-none");
 
-    const enabledOptional = countEnabledOptional(p);
+    const enabledOptional = countEnabledOptionalFromDom();
     const { min, max, totalSections } = estimatePages(p);
 
     $("#spgSummaryTotal").textContent = String(totalSections);
-    $("#spgSummaryCore").textContent = "5";
+    $("#spgSummaryCore").textContent = String(SPG_CORE_SECTION_COUNT);
     $("#spgSummaryOptional").textContent = String(enabledOptional);
     $("#spgSummaryPages").textContent = `${min} – ${max}`;
     $("#spgSummarySizeLabel").textContent = `${totalSections} أقسام — ${min} إلى ${max} صفحة تقريبًا`;
-
-    OPTIONAL_SECTIONS.forEach((section) => {
-      const input = document.getElementById(`spg-opt-${section.id}`);
-      if (input) input.checked = Boolean(p.optionalSections[section.id]);
-    });
   }
 
   function bindEvents() {
@@ -1366,14 +1239,19 @@
       setView("wizard");
     });
 
+    const projectListEl = $("#spgProjectList");
+    if (projectListEl) {
+      $$(".spg-project-item[data-project-id]", projectListEl).forEach((el) => {
+        el.addEventListener("click", () => {
+          const id = el.dataset.projectId;
+          if (id) selectProject(id);
+        });
+      });
+    }
+
     $("#spgOptionalSections")?.addEventListener("change", (e) => {
-      const input = e.target.closest(".spg-optional-toggle");
-      if (!input) return;
-      const p = getActiveProject();
-      if (!p) return;
-      p.optionalSections[input.dataset.sectionId] = input.checked;
-      saveProjects();
-      renderReview(p);
+      if (!e.target.closest(".spg-optional-toggle")) return;
+      renderReview(getActiveProject());
     });
 
     // $("#spgReviewConfirm")?.addEventListener("click", () => {
@@ -1391,12 +1269,19 @@
     if (!$(".spg-root")) return;
 
     loadProjects();
-    if (projects.length && !activeProjectId) {
+    const root = $(".spg-root");
+    if (root?.dataset.activeProjectId) {
+      activeProjectId = root.dataset.activeProjectId;
+    } else if (projects.length && !activeProjectId) {
       activeProjectId = projects[0].id;
-      const p = getActiveProject();
-      wizardStep = normalizeWizardStep(p?.wizardStep);
-      if (p) p.wizardStep = wizardStep;
-      view = p?.view || "landing";
+    }
+    const p = getActiveProject();
+    if (p) {
+      wizardStep = normalizeWizardStep(p.wizardStep);
+      p.wizardStep = wizardStep;
+      view = p.view || "landing";
+    } else {
+      view = "landing";
     }
 
     bindEvents();
