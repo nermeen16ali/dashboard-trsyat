@@ -7392,19 +7392,60 @@ html[dir="ltr"] .input-icon-group input {
   background: var(--gray-500-color);
 }
 
-.spg-collection-detail-body {
+#spgCollectionDetailModal .modal-content {
+  padding: 28px 24px;
+  gap: 24px;
+  border-radius: 12px;
+  background: var(--white-color, #fff);
+}
+
+#spgCollectionDetailModal .modal-header.brd-btm {
+  border-bottom: 1px solid #f2f2f2;
+}
+
+#spgCollectionDetailModal .modal-body {
+  gap: 0;
+}
+
+#spgCollectionDetailModal .spg-collection-detail-card {
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  background: var(--main-opacity-color, #f7fbfc);
+}
+
+#spgCollectionDetailModal .spg-collection-detail-body {
   white-space: pre-wrap;
   word-break: break-word;
+  color: var(--primary-secondary, #0c2030);
+  line-height: 1.65;
+}
+
+#spgCollectionDetailModal .modal-footer .btn-main {
+  min-height: 44px;
+}
+
+@media (max-width: 576px) {
+  #spgCollectionDetailModal .modal-content {
+    border-radius: 12px 12px 0 0;
+    padding-inline: 16px;
+    max-height: 85vh;
+    overflow-y: auto;
+  }
+
+  #spgCollectionDetailModal .modal-dialog {
+    margin: 0;
+  }
 }
 
 .spg-collection-section .spg-collection-form-card {
   border-radius: 12px;
 }
 
-.spg-items-table td[data-label="الوصف"] .spg-show-detail,
-.spg-items-table td[data-label="التفاصيل"] .spg-show-detail {
+.spg-items-table td .spg-detail-modal-trigger,
+.competition-table td .spg-detail-modal-trigger {
   display: inline-block;
   margin-inline-start: 4px;
+  cursor: pointer;
 }
 
 /* SPG — SweetAlert (dashboard-themed) */

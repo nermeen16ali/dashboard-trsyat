@@ -1233,16 +1233,26 @@
     </div>
   </div>
 
+  <!-- Single details modal: ASP.NET renders title/body per row; triggers use data-bs-target="#spgCollectionDetailModal" -->
   <div class="modal fade" id="spgCollectionDetailModal" tabindex="-1" aria-labelledby="spgCollectionDetailTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content w-620">
-        <div class="modal-header">
-          <h6 class="modal-title black-text" id="spgCollectionDetailTitle"></h6>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-content w-620 gap-32 spg-detail-modal-content">
+        <div class="modal-header brd-btm p-0 pb-3 mb-0">
+          <div class="d-flex flex-column gap-10 flex-grow-1 pe-2">
+            <h4 class="modal-title fz-20 black-text mb-0" id="spgCollectionDetailTitle">التفاصيل</h4>
+            <p class="text-gray fz-14 mb-0">عرض التفاصيل الكاملة</p>
+          </div>
+          <button type="button" class="btn-close flex-shrink-0" data-bs-dismiss="modal"
+            aria-label="إغلاق"></button>
         </div>
-        <div class="modal-body">
-          <p class="fz-14 text-gray mb-0 spg-collection-detail-body" id="spgCollectionDetailBody"></p>
+        <div class="modal-body pt-0" id="spgCollectionDetailBody">
+          <div class="tender-card p-3 bg-white mb-0 spg-collection-detail-card">
+            <p class="fz-14 mb-0 spg-collection-detail-body text-gray">محتوى التفاصيل يُعرض هنا من الخادم.</p>
+          </div>
+        </div>
+        <div class="modal-footer pt-0">
+          <button type="button" class="btn-main btn-primary w-100" data-bs-dismiss="modal">إغلاق</button>
         </div>
       </div>
     </div>

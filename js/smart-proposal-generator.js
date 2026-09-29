@@ -133,15 +133,23 @@
     return { display: t.slice(0, maxLen) + "…", full: t, hasMore: true };
   }
 
-  function renderTextDetailCell(label, text) {
-    const { display, full, hasMore } = truncateCellText(text);
+  const SPG_DETAIL_MODAL_TARGET = "#spgCollectionDetailModal";
+
+  function renderDetailModalTrigger(label) {
+    return `<button type="button" class="colored text-decoration-underline fz-12 text-nowrap border-0 bg-transparent p-0 spg-detail-modal-trigger"
+      data-bs-toggle="modal" data-bs-target="${SPG_DETAIL_MODAL_TARGET}">${escapeHtml(label)}</button>`;
+  }
+
+  function renderTextDetailCell(text) {
+    const { display, hasMore } = truncateCellText(text);
     if (!hasMore) {
       return `<span class="text-gray fz-12">${escapeHtml(display)}</span>`;
     }
     return `
-      <span class="text-gray fz-12">${escapeHtml(display)}</span>
-      <button type="button" class="btn-link colored fz-12 p-0 border-0 bg-transparent spg-show-detail"
-        data-title="${escapeAttr(label)}" data-body="${encodeURIComponent(full)}">عرض</button>`;
+      <div class="d-flex align-items-end text-dark-gray gap-1 flex-wrap">
+        <p class="ellipse-text fz-12 text-gray mb-0">${escapeHtml(display)}</p>
+        ${renderDetailModalTrigger("عرض المزيد")}
+      </div>`;
   }
 
   function renderTableActions(id, editClass, deleteClass) {
@@ -493,7 +501,7 @@
       tr.dataset.spgClientRow = "1";
       tr.innerHTML = `
         <td data-label="اسم الملف"><span class="black-text fw-medium">${escapeHtml(doc.name || "—")}</span></td>
-        <td data-label="الوصف">${renderTextDetailCell("وصف الملف", doc.description)}</td>
+        <td data-label="الوصف">${renderTextDetailCell(doc.description)}</td>
         <td data-label="الملف">
           <div class="d-flex align-items-center gap-2">
             <span class="sm-logo flex-shrink-0"><img src="images/document-normal.svg" alt=""></span>
@@ -506,7 +514,6 @@
 
     const rowCount = countDataRows(tbody);
     renderCollectionTableState(tbody, table, empty, rowCount > 0);
-    bindDetailButtons(tbody);
   }
 
   function refreshDocumentsTableUi() {
@@ -567,19 +574,6 @@
     $("#spgDocEditCancel")?.addEventListener("click", () => resetDocumentForm(true));
   }
 
-  function openCollectionDetailModal(title, body) {
-    const titleEl = $("#spgCollectionDetailTitle");
-    const bodyEl = $("#spgCollectionDetailBody");
-    if (titleEl) titleEl.textContent = title;
-    if (bodyEl) {
-      bodyEl.textContent = body || "—";
-    }
-    const modalEl = $("#spgCollectionDetailModal");
-    if (modalEl && typeof bootstrap !== "undefined") {
-      bootstrap.Modal.getOrCreateInstance(modalEl).show();
-    }
-  }
-
   function renderCollectionTableState(tbody, table, emptyEl, hasRows) {
     if (!tbody) return;
     if (!hasRows) {
@@ -589,20 +583,6 @@
     }
     emptyEl?.classList.add("d-none");
     table?.classList.remove("d-none");
-  }
-
-  function bindDetailButtons(root) {
-    root.querySelectorAll(".spg-show-detail").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        let body = btn.dataset.body || "";
-        try {
-          body = decodeURIComponent(body);
-        } catch (_) {
-          /* keep raw */
-        }
-        openCollectionDetailModal(btn.dataset.title, body);
-      });
-    });
   }
 
   function getTeamDraftFields() {
@@ -743,17 +723,13 @@
         <td data-label="الجنسية"><span class="text-dark-gray fw-medium">${escapeHtml(member.nationality || "—")}</span></td>
         <td data-label="سنوات الخبرة"><span class="fz-12 ff-onest">${escapeHtml(member.years || "—")}</span></td>
         <td data-label="التفاصيل">
-          ${detailBody
-            ? `<button type="button" class="btn-link colored fz-12 p-0 border-0 bg-transparent spg-show-detail"
-                data-title="${escapeAttr(`تفاصيل — ${member.name}`)}" data-body="${encodeURIComponent(detailBody)}">عرض التفاصيل</button>`
-            : `<span class="text-gray fz-12">—</span>`}
+          ${detailBody ? renderDetailModalTrigger("عرض التفاصيل") : `<span class="text-gray fz-12">—</span>`}
         </td>
         <td data-label="الاجراءات">${renderTableActions(member.id, "spg-team-edit", "spg-team-delete")}</td>`;
       tbody.appendChild(tr);
     });
 
     renderCollectionTableState(tbody, table, empty, countDataRows(tbody) > 0);
-    bindDetailButtons(tbody);
   }
 
   function refreshTeamTableUi() {
@@ -876,7 +852,7 @@
       tr.innerHTML = `
         <td data-label="اسم المشروع"><span class="text-dark-gray fw-medium">${escapeHtml(c.projectName)}</span></td>
         <td data-label="الجهة"><span class="text-dark-gray fw-medium">${escapeHtml(c.entity || "—")}</span></td>
-        <td data-label="تفاصيل المشروع">${renderTextDetailCell("تفاصيل المشروع", c.description)}</td>
+        <td data-label="تفاصيل المشروع">${renderTextDetailCell(c.description)}</td>
         <td data-label="سنة المشروع"><span class="fz-12 ff-onest">${escapeHtml(c.year || "—")}</span></td>
         <td data-label="مدة المشروع"><span class="fz-12">${escapeHtml(c.duration || "—")}</span></td>
         <td data-label="تكلفة المشروع"><span class="fz-12 ff-onest">${escapeHtml(c.cost || "—")}</span></td>
@@ -885,7 +861,6 @@
     });
 
     renderCollectionTableState(tbody, table, empty, countDataRows(tbody) > 0);
-    bindDetailButtons(tbody);
   }
 
   function refreshContractsTableUi() {
