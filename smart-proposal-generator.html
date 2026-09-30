@@ -7,11 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>مولد العروض الذكي</title>
 
-  <!-- Inter Font -->
-  <link href="assets/css/inter.css" rel="stylesheet">
-
   <!-- Bootstrap 5 RTL CSS -->
   <link href="assets/css/bootstrap.rtl.min.css" rel="stylesheet" />
+  <!-- DataTables CSS -->
+  <link href="assets/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+  <link href="assets/css/responsive.bootstrap5.min.css" rel="stylesheet" />
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/main.css" />
@@ -732,7 +732,7 @@
                   </div>
                   <div id="spgDocumentsPanel" class="d-none spg-collection-section">
                     <h6 class="black-text fz-14 mb-2">مستندات المناقصة</h6>
-                    <p class="fz-12 text-gray mb-3">أدخل بيانات المستند ثم ارفع الملف؛ سيُضاف تلقائيًا إلى الجدول أدناه.</p>
+                    <p class="fz-12 text-gray mb-3">أدخل بيانات المستند ثم ارفع الملف.</p>
 
                     <div class="tender-card p-3 bg-white mb-4 spg-collection-form-card" id="spgDocumentFormCard">
                       <div class="row g-3">
@@ -774,9 +774,9 @@
                       </div>
                     </div>
 
-                    <div class="table-container spg-collection-table-wrap" id="spgDocumentsTableWrap">
+                    <div class="table-container" id="spgDocumentsTableWrap">
                       <div class="table-responsive">
-                        <table class="table table-bordered align-middle competition-table spg-items-table spg-documents-table">
+                        <table class="table table-bordered align-middle competition-table">
                           <thead>
                             <tr>
                               <th>اسم الملف</th>
@@ -785,12 +785,105 @@
                               <th class="text-center">الإجراءات</th>
                             </tr>
                           </thead>
-                          <tbody id="spgDocumentsTableBody"></tbody>
+                          <tbody id="spgDocumentsTableBody">
+                            <tr data-spg-server-row="1" data-spg-entry-id="doc-1" data-spg-name="كراسة الشروط والمواصفات"
+                              data-spg-description="كراسة الشروط الفنية والإدارية للمنافسة بما يشمل نطاق العمل ومعايير التقييم."
+                              data-spg-file-name="tender-specifications-2025.pdf">
+                              <td data-label="اسم الملف">
+                                <span class="black-text fw-medium">كراسة الشروط والمواصفات</span>
+                              </td>
+                              <td data-label="الوصف">
+                                <div class="d-flex align-items-end text-dark-gray">
+                                  <p class="ellipse-text">
+                                    كراسة الشروط الفنية والإدارية للمنافسة بما يشمل نطاق العمل ومعايير التقييم.
+                                  </p>
+                                  <a href="#" class="colored text-decoration-underline fz-12 text-nowrap"
+                                    data-bs-toggle="modal" data-bs-target="#spgCollectionDetailModal">عرض المزيد</a>
+                                </div>
+                              </td>
+                              <td data-label="الملف">
+                                <div class="d-flex align-items-center">
+                                  <span class="sm-logo">
+                                    <img src="images/document-normal.svg" alt="الملف">
+                                  </span>
+                                  <span class="fz-12 black-text" dir="ltr">tender-specifications-2025.pdf</span>
+                                </div>
+                              </td>
+                              <td data-label="الإجراءات">
+                                <div class="d-flex align-items-center justify-content-center gap-12">
+                                  <button type="button" class="icon-container gray-outline-btn spg-doc-edit"
+                                    data-id="doc-1" aria-label="تعديل">
+                                    <img src="images/edit-pen.svg" alt="">
+                                  </button>
+                                  <button type="button" class="icon-container gray-outline-btn spg-doc-delete"
+                                    data-id="doc-1" aria-label="حذف">
+                                    <img src="images/trash.svg" alt="">
+                                  </button>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr data-spg-server-row="1" data-spg-entry-id="doc-2" data-spg-name="جدول الكميات"
+                              data-spg-description="بنود الأعمال والكميات التقديرية للمشروع."
+                              data-spg-file-name="BOQ-project.xlsx">
+                              <td data-label="اسم الملف">
+                                <span class="black-text fw-medium">جدول الكميات</span>
+                              </td>
+                              <td data-label="الوصف">
+                                <span class="text-gray fz-12">بنود الأعمال والكميات التقديرية للمشروع.</span>
+                              </td>
+                              <td data-label="الملف">
+                                <div class="d-flex align-items-center">
+                                  <span class="sm-logo">
+                                    <img src="images/document-normal.svg" alt="الملف">
+                                  </span>
+                                  <span class="fz-12 black-text" dir="ltr">BOQ-project.xlsx</span>
+                                </div>
+                              </td>
+                              <td data-label="الإجراءات">
+                                <div class="d-flex align-items-center justify-content-center gap-12">
+                                  <button type="button" class="icon-container gray-outline-btn spg-doc-edit"
+                                    data-id="doc-2" aria-label="تعديل">
+                                    <img src="images/edit-pen.svg" alt="">
+                                  </button>
+                                  <button type="button" class="icon-container gray-outline-btn spg-doc-delete"
+                                    data-id="doc-2" aria-label="حذف">
+                                    <img src="images/trash.svg" alt="">
+                                  </button>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr data-spg-server-row="1" data-spg-entry-id="doc-3" data-spg-name="المخططات الهندسية المعتمدة"
+                              data-spg-description="المخططات المعمارية والكهربائية المعتمدة من الجهة المالكة."
+                              data-spg-file-name="approved-drawings.pdf">
+                              <td data-label="اسم الملف">
+                                <span class="black-text fw-medium">المخططات الهندسية المعتمدة</span>
+                              </td>
+                              <td data-label="الوصف">
+                                <span class="text-gray fz-12">المخططات المعمارية والكهربائية المعتمدة من الجهة المالكة.</span>
+                              </td>
+                              <td data-label="الملف">
+                                <div class="d-flex align-items-center">
+                                  <span class="sm-logo">
+                                    <img src="images/document-normal.svg" alt="الملف">
+                                  </span>
+                                  <span class="fz-12 black-text" dir="ltr">approved-drawings.pdf</span>
+                                </div>
+                              </td>
+                              <td data-label="الإجراءات">
+                                <div class="d-flex align-items-center justify-content-center gap-12">
+                                  <button type="button" class="icon-container gray-outline-btn spg-doc-edit"
+                                    data-id="doc-3" aria-label="تعديل">
+                                    <img src="images/edit-pen.svg" alt="">
+                                  </button>
+                                  <button type="button" class="icon-container gray-outline-btn spg-doc-delete"
+                                    data-id="doc-3" aria-label="حذف">
+                                    <img src="images/trash.svg" alt="">
+                                  </button>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
                         </table>
-                      </div>
-                      <div class="text-center py-4 spg-collection-empty d-none" id="spgDocumentsTableEmpty">
-                        <p class="fz-14 text-gray mb-0">لم تتم إضافة أي مستندات بعد</p>
-                        <p class="fz-12 text-gray mb-0 mt-1">أدخل البيانات وارفع الملف لإضافة أول مستند.</p>
                       </div>
                     </div>
                   </div>
@@ -813,7 +906,7 @@
                   </div>
                   <div id="spgTeamPanel" class="d-none spg-collection-section">
                     <h6 class="black-text fz-14 mb-2">أعضاء فريق العمل</h6>
-                    <p class="fz-12 text-gray mb-3">أكمل بيانات العضو ثم احفظها لتظهر في الجدول. يمكنك إضافة عدة أعضاء.</p>
+                    <p class="fz-12 text-gray mb-3">أكمل بيانات العضو ثم احفظها. يمكنك إضافة عدة أعضاء.</p>
 
                     <div class="tender-card p-3 bg-white mb-4 spg-collection-form-card" id="spgTeamFormCard">
                       <div class="row g-3">
@@ -865,25 +958,139 @@
                       <div class="red-colored fz-12 d-none mt-2" id="spgTeamFormError"></div>
                     </div>
 
-                    <div class="table-container spg-collection-table-wrap">
+                    <div class="table-container">
                       <div class="table-responsive">
-                        <table class="table table-bordered align-middle competition-table spg-items-table">
+                        <table class="table table-bordered align-middle competition-table">
                           <thead>
                             <tr>
                               <th>اسم الموظف</th>
-                              <th>المسمى الوظيفي</th>
                               <th>الجنسية</th>
+                              <th>المسمى الوظيفي</th>
+                              <th>المؤهل</th>
                               <th>سنوات الخبرة</th>
-                              <th>التفاصيل</th>
                               <th class="text-center">الإجراءات</th>
                             </tr>
                           </thead>
-                          <tbody id="spgTeamList"></tbody>
+                          <tbody id="spgTeamList">
+                            <tr data-spg-server-row="1" data-spg-entry-id="team-1" data-spg-name="أحمد محمد علي"
+                              data-spg-nationality="سعودي" data-spg-job-title="مدير مشروع"
+                              data-spg-degree="بكالوريوس هندسة مدنية" data-spg-years="12"
+                              data-spg-experiences="إدارة مشاريع بنية تحتية حكومية وتشغيل فرق متعددة التخصصات."
+                              data-spg-summary="مدير مشاريع بخبرة في التخطيط والتنفيذ والتسليم وفق الجداول المعتمدة."
+                              data-spg-cv-file-name="cv-ahmed-ali.pdf">
+                              <td data-label="اسم الموظف">
+                                <span class="text-dark-gray fw-medium">أحمد محمد علي</span>
+                              </td>
+                              <td data-label="الجنسية">
+                                <span class="text-dark-gray fw-medium">سعودي</span>
+                              </td>
+                              <td data-label="المسمى الوظيفي">
+                                <span class="black-text fw-medium">مدير مشروع</span>
+                              </td>
+                              <td data-label="المؤهل">
+                                <span class="text-dark-gray fw-medium">بكالوريوس هندسة مدنية</span>
+                              </td>
+                              <td data-label="سنوات الخبرة">
+                                <div class="d-flex align-items-center">
+                                  <span class="sm-logo">
+                                    <img src="images/timer.svg" alt="سنوات الخبرة">
+                                  </span>
+                                  <span class="fw-medium black-text">12 سنة</span>
+                                </div>
+                              </td>
+                              <td data-label="الإجراءات">
+                                <div class="d-flex align-items-center justify-content-center gap-12">
+                                  <button type="button" class="icon-container gray-outline-btn spg-team-edit"
+                                    data-id="team-1" aria-label="تعديل">
+                                    <img src="images/edit-pen.svg" alt="">
+                                  </button>
+                                  <button type="button" class="icon-container gray-outline-btn spg-team-delete"
+                                    data-id="team-1" aria-label="حذف">
+                                    <img src="images/trash.svg" alt="">
+                                  </button>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr data-spg-server-row="1" data-spg-entry-id="team-2" data-spg-name="سارة خالد العتيبي"
+                              data-spg-nationality="سعودية" data-spg-job-title="مهندسة نظم"
+                              data-spg-degree="ماجستير علوم الحاسب" data-spg-years="8"
+                              data-spg-experiences="تحليل الأنظمة وربط الخدمات الإلكترونية وإعداد وثائق الحلول الفنية."
+                              data-spg-summary="مهندسة نظم متخصصة في التكامل التقني وجودة التسليم."
+                              data-spg-cv-file-name="cv-sara-otaibi.pdf">
+                              <td data-label="اسم الموظف">
+                                <span class="text-dark-gray fw-medium">سارة خالد العتيبي</span>
+                              </td>
+                              <td data-label="الجنسية">
+                                <span class="text-dark-gray fw-medium">سعودية</span>
+                              </td>
+                              <td data-label="المسمى الوظيفي">
+                                <span class="black-text fw-medium">مهندسة نظم</span>
+                              </td>
+                              <td data-label="المؤهل">
+                                <span class="text-dark-gray fw-medium">ماجستير علوم الحاسب</span>
+                              </td>
+                              <td data-label="سنوات الخبرة">
+                                <div class="d-flex align-items-center">
+                                  <span class="sm-logo">
+                                    <img src="images/timer.svg" alt="سنوات الخبرة">
+                                  </span>
+                                  <span class="fw-medium black-text">8 سنوات</span>
+                                </div>
+                              </td>
+                              <td data-label="الإجراءات">
+                                <div class="d-flex align-items-center justify-content-center gap-12">
+                                  <button type="button" class="icon-container gray-outline-btn spg-team-edit"
+                                    data-id="team-2" aria-label="تعديل">
+                                    <img src="images/edit-pen.svg" alt="">
+                                  </button>
+                                  <button type="button" class="icon-container gray-outline-btn spg-team-delete"
+                                    data-id="team-2" aria-label="حذف">
+                                    <img src="images/trash.svg" alt="">
+                                  </button>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr data-spg-server-row="1" data-spg-entry-id="team-3" data-spg-name="فهد عبدالرحمن القحطاني"
+                              data-spg-nationality="سعودي" data-spg-job-title="محاسب تكاليف"
+                              data-spg-degree="بكالوريوس محاسبة" data-spg-years="6"
+                              data-spg-experiences="إعداد العروض المالية ومتابعة التكاليف ومطابقة بنود الكميات."
+                              data-spg-summary="محاسب تكاليف مسؤول عن دقة التسعير والتقارير المالية للعرض."
+                              data-spg-cv-file-name="cv-fahad-qahtani.pdf">
+                              <td data-label="اسم الموظف">
+                                <span class="text-dark-gray fw-medium">فهد عبدالرحمن القحطاني</span>
+                              </td>
+                              <td data-label="الجنسية">
+                                <span class="text-dark-gray fw-medium">سعودي</span>
+                              </td>
+                              <td data-label="المسمى الوظيفي">
+                                <span class="black-text fw-medium">محاسب تكاليف</span>
+                              </td>
+                              <td data-label="المؤهل">
+                                <span class="text-dark-gray fw-medium">بكالوريوس محاسبة</span>
+                              </td>
+                              <td data-label="سنوات الخبرة">
+                                <div class="d-flex align-items-center">
+                                  <span class="sm-logo">
+                                    <img src="images/timer.svg" alt="سنوات الخبرة">
+                                  </span>
+                                  <span class="fw-medium black-text">6 سنوات</span>
+                                </div>
+                              </td>
+                              <td data-label="الإجراءات">
+                                <div class="d-flex align-items-center justify-content-center gap-12">
+                                  <button type="button" class="icon-container gray-outline-btn spg-team-edit"
+                                    data-id="team-3" aria-label="تعديل">
+                                    <img src="images/edit-pen.svg" alt="">
+                                  </button>
+                                  <button type="button" class="icon-container gray-outline-btn spg-team-delete"
+                                    data-id="team-3" aria-label="حذف">
+                                    <img src="images/trash.svg" alt="">
+                                  </button>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
                         </table>
-                      </div>
-                      <div class="text-center py-4 spg-collection-empty d-none" id="spgTeamTableEmpty">
-                        <p class="fz-14 text-gray mb-0">لم تتم إضافة أعضاء فريق بعد</p>
-                        <p class="fz-12 text-gray mb-0 mt-1">أكمل النموذج أعلاه ثم اضغط «حفظ وإضافة للقائمة».</p>
                       </div>
                     </div>
                   </div>
@@ -907,7 +1114,7 @@
                   </div>
                   <div id="spgContractsPanel" class="d-none spg-collection-section">
                     <h6 class="black-text fz-14 mb-2">العقود والمشاريع السابقة</h6>
-                    <p class="fz-12 text-gray mb-3">أدخل بيانات المشروع أو العقد ثم احفظها لتظهر في الجدول.</p>
+                    <p class="fz-12 text-gray mb-3">أدخل بيانات المشروع أو العقد ثم احفظها.</p>
 
                     <div class="tender-card p-3 bg-white mb-4 spg-collection-form-card" id="spgContractFormCard">
                       <div class="row g-3">
@@ -956,26 +1163,209 @@
                       <div class="red-colored fz-12 d-none mt-2" id="spgContractFormError"></div>
                     </div>
 
-                    <div class="table-container spg-collection-table-wrap">
+                    <div class="table-container">
                       <div class="table-responsive">
-                        <table class="table table-bordered align-middle competition-table spg-items-table">
+                        <table class="table table-bordered align-middle competition-table">
                           <thead>
                             <tr>
                               <th>اسم المشروع</th>
                               <th>الجهة</th>
+                              <th>الوصف</th>
                               <th>السنة</th>
                               <th>المدة</th>
                               <th>التكلفة</th>
-                              <th>الوصف</th>
+                              <th>الملف</th>
                               <th class="text-center">الإجراءات</th>
                             </tr>
                           </thead>
-                          <tbody id="spgContractsList"></tbody>
+                          <tbody id="spgContractsList">
+                            <tr data-spg-server-row="1" data-spg-entry-id="contract-1"
+                              data-spg-project-name="تطوير أنظمة الموارد البشرية" data-spg-entity="وزارة الموارد البشرية"
+                              data-spg-description="توريد وتنفيذ منظومة إلكترونية لإدارة الموارد البشرية مع التدريب والدعم الفني."
+                              data-spg-year="2024" data-spg-duration="12 شهر" data-spg-cost="1,250,000"
+                              data-spg-contract-file-name="hr-systems-contract.pdf">
+                              <td data-label="اسم المشروع">
+                                <span class="text-dark-gray fw-medium">تطوير أنظمة الموارد البشرية</span>
+                              </td>
+                              <td data-label="الجهة">
+                                <span class="text-dark-gray fw-medium">وزارة الموارد البشرية</span>
+                              </td>
+                              <td data-label="الوصف">
+                                <div class="d-flex align-items-end text-dark-gray">
+                                  <p class="ellipse-text">
+                                    توريد وتنفيذ منظومة إلكترونية لإدارة الموارد البشرية مع التدريب والدعم الفني.
+                                  </p>
+                                  <a href="#" class="colored text-decoration-underline fz-12 text-nowrap"
+                                    data-bs-toggle="modal" data-bs-target="#spgCollectionDetailModal">عرض المزيد</a>
+                                </div>
+                              </td>
+                              <td data-label="السنة">
+                                <div class="d-flex align-items-center">
+                                  <span class="sm-logo">
+                                    <img src="images/calendar.svg" alt="السنة">
+                                  </span>
+                                  <span class="fw-medium black-text">2024</span>
+                                </div>
+                              </td>
+                              <td data-label="المدة">
+                                <div class="d-flex align-items-center">
+                                  <span class="sm-logo">
+                                    <img src="images/clock.svg" alt="المدة">
+                                  </span>
+                                  <span class="fw-medium black-text">12 شهر</span>
+                                </div>
+                              </td>
+                              <td data-label="التكلفة">
+                                <div class="d-flex align-items-center gap-1">
+                                  <span class="fw-medium black-text">1,250,000</span>
+                                  <img src="images/ryall.svg" alt="ريال">
+                                </div>
+                              </td>
+                              <td data-label="الملف">
+                                <div class="d-flex align-items-center">
+                                  <span class="sm-logo">
+                                    <img src="images/document-normal.svg" alt="الملف">
+                                  </span>
+                                  <span class="fz-12 black-text" dir="ltr">hr-systems-contract.pdf</span>
+                                </div>
+                              </td>
+                              <td data-label="الإجراءات">
+                                <div class="d-flex align-items-center justify-content-center gap-12">
+                                  <button type="button" class="icon-container gray-outline-btn spg-contract-edit"
+                                    data-id="contract-1" aria-label="تعديل">
+                                    <img src="images/edit-pen.svg" alt="">
+                                  </button>
+                                  <button type="button" class="icon-container gray-outline-btn spg-contract-delete"
+                                    data-id="contract-1" aria-label="حذف">
+                                    <img src="images/trash.svg" alt="">
+                                  </button>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr data-spg-server-row="1" data-spg-entry-id="contract-2"
+                              data-spg-project-name="صيانة وتشغيل مراكز البيانات"
+                              data-spg-entity="هيئة الحكومة الرقمية"
+                              data-spg-description="عقد تشغيل وصيانة لمراكز البيانات يشمل المراقبة على مدار الساعة وخطط الاستجابة للحوادث."
+                              data-spg-year="2023" data-spg-duration="24 شهر" data-spg-cost="3,400,000"
+                              data-spg-contract-file-name="data-center-ops.pdf">
+                              <td data-label="اسم المشروع">
+                                <span class="text-dark-gray fw-medium">صيانة وتشغيل مراكز البيانات</span>
+                              </td>
+                              <td data-label="الجهة">
+                                <span class="text-dark-gray fw-medium">هيئة الحكومة الرقمية</span>
+                              </td>
+                              <td data-label="الوصف">
+                                <div class="d-flex align-items-end text-dark-gray">
+                                  <p class="ellipse-text">
+                                    عقد تشغيل وصيانة لمراكز البيانات يشمل المراقبة على مدار الساعة وخطط الاستجابة للحوادث.
+                                  </p>
+                                  <a href="#" class="colored text-decoration-underline fz-12 text-nowrap"
+                                    data-bs-toggle="modal" data-bs-target="#spgCollectionDetailModal">عرض المزيد</a>
+                                </div>
+                              </td>
+                              <td data-label="السنة">
+                                <div class="d-flex align-items-center">
+                                  <span class="sm-logo">
+                                    <img src="images/calendar.svg" alt="السنة">
+                                  </span>
+                                  <span class="fw-medium black-text">2023</span>
+                                </div>
+                              </td>
+                              <td data-label="المدة">
+                                <div class="d-flex align-items-center">
+                                  <span class="sm-logo">
+                                    <img src="images/clock.svg" alt="المدة">
+                                  </span>
+                                  <span class="fw-medium black-text">24 شهر</span>
+                                </div>
+                              </td>
+                              <td data-label="التكلفة">
+                                <div class="d-flex align-items-center gap-1">
+                                  <span class="fw-medium black-text">3,400,000</span>
+                                  <img src="images/ryall.svg" alt="ريال">
+                                </div>
+                              </td>
+                              <td data-label="الملف">
+                                <div class="d-flex align-items-center">
+                                  <span class="sm-logo">
+                                    <img src="images/document-normal.svg" alt="الملف">
+                                  </span>
+                                  <span class="fz-12 black-text" dir="ltr">data-center-ops.pdf</span>
+                                </div>
+                              </td>
+                              <td data-label="الإجراءات">
+                                <div class="d-flex align-items-center justify-content-center gap-12">
+                                  <button type="button" class="icon-container gray-outline-btn spg-contract-edit"
+                                    data-id="contract-2" aria-label="تعديل">
+                                    <img src="images/edit-pen.svg" alt="">
+                                  </button>
+                                  <button type="button" class="icon-container gray-outline-btn spg-contract-delete"
+                                    data-id="contract-2" aria-label="حذف">
+                                    <img src="images/trash.svg" alt="">
+                                  </button>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr data-spg-server-row="1" data-spg-entry-id="contract-3"
+                              data-spg-project-name="توريد أجهزة شبكات الاتصال"
+                              data-spg-entity="أمانة منطقة الرياض"
+                              data-spg-description="توريد وتركيب أجهزة شبكات الاتصال لمباني الأمانة مع الضمان والصيانة."
+                              data-spg-year="2022" data-spg-duration="9 أشهر" data-spg-cost="780,500"
+                              data-spg-contract-file-name="network-supply-contract.pdf">
+                              <td data-label="اسم المشروع">
+                                <span class="text-dark-gray fw-medium">توريد أجهزة شبكات الاتصال</span>
+                              </td>
+                              <td data-label="الجهة">
+                                <span class="text-dark-gray fw-medium">أمانة منطقة الرياض</span>
+                              </td>
+                              <td data-label="الوصف">
+                                <span class="text-gray fz-12">توريد وتركيب أجهزة شبكات الاتصال لمباني الأمانة مع الضمان والصيانة.</span>
+                              </td>
+                              <td data-label="السنة">
+                                <div class="d-flex align-items-center">
+                                  <span class="sm-logo">
+                                    <img src="images/calendar.svg" alt="السنة">
+                                  </span>
+                                  <span class="fw-medium black-text">2022</span>
+                                </div>
+                              </td>
+                              <td data-label="المدة">
+                                <div class="d-flex align-items-center">
+                                  <span class="sm-logo">
+                                    <img src="images/clock.svg" alt="المدة">
+                                  </span>
+                                  <span class="fw-medium black-text">9 أشهر</span>
+                                </div>
+                              </td>
+                              <td data-label="التكلفة">
+                                <div class="d-flex align-items-center gap-1">
+                                  <span class="fw-medium black-text">780,500</span>
+                                  <img src="images/ryall.svg" alt="ريال">
+                                </div>
+                              </td>
+                              <td data-label="الملف">
+                                <div class="d-flex align-items-center">
+                                  <span class="sm-logo">
+                                    <img src="images/document-normal.svg" alt="الملف">
+                                  </span>
+                                  <span class="fz-12 black-text" dir="ltr">network-supply-contract.pdf</span>
+                                </div>
+                              </td>
+                              <td data-label="الإجراءات">
+                                <div class="d-flex align-items-center justify-content-center gap-12">
+                                  <button type="button" class="icon-container gray-outline-btn spg-contract-edit"
+                                    data-id="contract-3" aria-label="تعديل">
+                                    <img src="images/edit-pen.svg" alt="">
+                                  </button>
+                                  <button type="button" class="icon-container gray-outline-btn spg-contract-delete"
+                                    data-id="contract-3" aria-label="حذف">
+                                    <img src="images/trash.svg" alt="">
+                                  </button>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
                         </table>
-                      </div>
-                      <div class="text-center py-4 spg-collection-empty d-none" id="spgContractsTableEmpty">
-                        <p class="fz-14 text-gray mb-0">لم تتم إضافة عقود أو مشاريع سابقة بعد</p>
-                        <p class="fz-12 text-gray mb-0 mt-1">أكمل النموذج أعلاه ثم اضغط «حفظ وإضافة للقائمة».</p>
                       </div>
                     </div>
                   </div>
@@ -1259,11 +1649,18 @@
   </div>
 
   <!-- jQuery -->
-  <!-- <script src="assets/js/jquery-3.7.1.min.js"></script> -->
+  <script src="assets/js/jquery-3.7.1.min.js"></script>
   <!-- Bootstrap JS -->
   <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+  <!-- DataTables JS -->
+  <script src="assets/js/jquery.dataTables.min.js"></script>
+  <script src="assets/js/dataTables.bootstrap5.min.js"></script>
+  <script src="assets/js/dataTables.responsive.min.js"></script>
+  <script src="assets/js/responsive.bootstrap5.min.js"></script>
   <script src="assets/js/sweetalert2.all.min.js"></script>
   <!-- Custom JS -->
+  <script src="js/dataTable.js"></script>
   <script src="js/main.js" defer></script>
   <script src="js/smart-proposal-generator.js" defer></script>
 </body>
