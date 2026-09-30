@@ -1502,6 +1502,11 @@
             </section>
 
             <section id="spgViewReview" class="spg-view d-none" aria-live="polite">
+              <div class="accordion spg-review-stage-accordion border-0" id="spgReviewStageAccordion">
+                <div class="accordion-item border-0 bg-transparent">
+                  <div id="spgReviewPane" class="accordion-collapse collapse show"
+                    data-bs-parent="#spgReviewStageAccordion">
+                    <div class="accordion-body p-0">
               <div class="mb-4">
                 <h3 class="black-text fw-medium mb-2">مراجعة وتأكيد أقسام العرض</h3>
                 <p class="fz-14 text-gray mb-0">راجع الأقسام التي اقترحها الذكاء الاصطناعي وعدّلها قبل أن نجهز لك
@@ -1690,7 +1695,9 @@
                     <path opacity="0.4" d="M2.91667 10H16.9417" stroke="#6BAFB8" stroke-width="1.5"
                       stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
                   </svg> رجوع</button>
-                <button type="button" class="btn-main btn-primary h-44 fz-14" id="spgReviewConfirm">تأكيد والمتابعة
+                <button type="button" class="btn-main btn-primary h-44 fz-14" id="spgReviewConfirm"
+                  data-bs-toggle="collapse" data-bs-target="#spgSectionReviewPane" aria-expanded="false"
+                  aria-controls="spgSectionReviewPane">تأكيد والمتابعة
                   للمراجعة <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
                     fill="none">
                     <path d="M8.47485 15.5583L3.41652 10.5L8.47485 5.44165" stroke="#fff" stroke-width="1.5"
@@ -1698,6 +1705,200 @@
                     <path opacity="0.4" d="M17.583 10.5H3.55801" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10"
                       stroke-linecap="round" stroke-linejoin="round"></path>
                   </svg></button>
+              </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item border-0 bg-transparent">
+                  <div id="spgSectionReviewPane" class="accordion-collapse collapse"
+                    data-bs-parent="#spgReviewStageAccordion">
+                    <div class="accordion-body p-0">
+                      <div class="row g-3 g-lg-4 spg-section-review-layout">
+                        <div class="col-12 col-lg-4 col-xl-3 spg-section-review-nav-col">
+                          <div class="tender-card p-3 h-100 spg-section-review-sidebar">
+                            <h6 class="black-text fz-14 fw-medium mb-3">أقسام العرض</h6>
+                            <div class="nav flex-column nav-pills spg-section-review-nav gap-2" id="spgSectionReviewTabs"
+                              role="tablist" aria-orientation="vertical">
+                              <button class="nav-link spg-section-review-tab active w-100" id="spg-sec-01-tab"
+                                data-bs-toggle="tab" data-bs-target="#spg-sec-01" type="button" role="tab"
+                                aria-controls="spg-sec-01" aria-selected="true">
+                                <span class="d-flex align-items-center justify-content-between gap-2 w-100">
+                                  <span class="d-flex align-items-center gap-2 min-w-0 text-start">
+                                    <span class="spg-section-review-num ff-onest text-gray">01</span>
+                                    <span class="spg-section-review-title black-text fw-medium text-truncate">الملخص
+                                      التنفيذي</span>
+                                  </span>
+                                  <span class="spg-section-review-words ff-onest fz-12 text-gray flex-shrink-0">420</span>
+                                </span>
+                              </button>
+                              <button class="nav-link spg-section-review-tab w-100" id="spg-sec-02-tab"
+                                data-bs-toggle="tab" data-bs-target="#spg-sec-02" type="button" role="tab"
+                                aria-controls="spg-sec-02" aria-selected="false">
+                                <span class="d-flex align-items-center justify-content-between gap-2 w-100">
+                                  <span class="d-flex align-items-center gap-2 min-w-0 text-start">
+                                    <span class="spg-section-review-num ff-onest text-gray">02</span>
+                                    <span class="spg-section-review-title black-text fw-medium text-truncate">فهم
+                                      المتطلبات</span>
+                                  </span>
+                                  <span class="spg-section-review-words ff-onest fz-12 text-gray flex-shrink-0">380</span>
+                                </span>
+                              </button>
+                              <button class="nav-link spg-section-review-tab w-100" id="spg-sec-03-tab"
+                                data-bs-toggle="tab" data-bs-target="#spg-sec-03" type="button" role="tab"
+                                aria-controls="spg-sec-03" aria-selected="false">
+                                <span class="d-flex align-items-center justify-content-between gap-2 w-100">
+                                  <span class="d-flex align-items-center gap-2 min-w-0 text-start">
+                                    <span class="spg-section-review-num ff-onest text-gray">03</span>
+                                    <span class="spg-section-review-title black-text fw-medium text-truncate">منهجية
+                                      التنفيذ</span>
+                                  </span>
+                                  <span class="spg-section-review-words ff-onest fz-12 text-gray flex-shrink-0">450</span>
+                                </span>
+                              </button>
+                              <button class="nav-link spg-section-review-tab w-100" id="spg-sec-04-tab"
+                                data-bs-toggle="tab" data-bs-target="#spg-sec-04" type="button" role="tab"
+                                aria-controls="spg-sec-04" aria-selected="false">
+                                <span class="d-flex align-items-center justify-content-between gap-2 w-100">
+                                  <span class="d-flex align-items-center gap-2 min-w-0 text-start">
+                                    <span class="spg-section-review-num ff-onest text-gray">04</span>
+                                    <span class="spg-section-review-title black-text fw-medium text-truncate">خطة
+                                      العمل</span>
+                                  </span>
+                                  <span class="spg-section-review-words ff-onest fz-12 text-gray flex-shrink-0">520</span>
+                                </span>
+                              </button>
+                              <button class="nav-link spg-section-review-tab w-100" id="spg-sec-05-tab"
+                                data-bs-toggle="tab" data-bs-target="#spg-sec-05" type="button" role="tab"
+                                aria-controls="spg-sec-05" aria-selected="false">
+                                <span class="d-flex align-items-center justify-content-between gap-2 w-100">
+                                  <span class="d-flex align-items-center gap-2 min-w-0 text-start">
+                                    <span class="spg-section-review-num ff-onest text-gray">05</span>
+                                    <span class="spg-section-review-title black-text fw-medium text-truncate">فريق
+                                      المشروع</span>
+                                  </span>
+                                  <span class="spg-section-review-words ff-onest fz-12 text-gray flex-shrink-0">340</span>
+                                </span>
+                              </button>
+                              <button class="nav-link spg-section-review-tab w-100" id="spg-sec-06-tab"
+                                data-bs-toggle="tab" data-bs-target="#spg-sec-06" type="button" role="tab"
+                                aria-controls="spg-sec-06" aria-selected="false">
+                                <span class="d-flex align-items-center justify-content-between gap-2 w-100">
+                                  <span class="d-flex align-items-center gap-2 min-w-0 text-start">
+                                    <span class="spg-section-review-num ff-onest text-gray">06</span>
+                                    <span class="spg-section-review-title black-text fw-medium text-truncate">الخبرات
+                                      السابقة</span>
+                                  </span>
+                                  <span class="spg-section-review-words ff-onest fz-12 text-gray flex-shrink-0">410</span>
+                                </span>
+                              </button>
+                              <button class="nav-link spg-section-review-tab w-100" id="spg-sec-07-tab"
+                                data-bs-toggle="tab" data-bs-target="#spg-sec-07" type="button" role="tab"
+                                aria-controls="spg-sec-07" aria-selected="false">
+                                <span class="d-flex align-items-center justify-content-between gap-2 w-100">
+                                  <span class="d-flex align-items-center gap-2 min-w-0 text-start">
+                                    <span class="spg-section-review-num ff-onest text-gray">07</span>
+                                    <span class="spg-section-review-title black-text fw-medium text-truncate">العرض
+                                      المالي</span>
+                                  </span>
+                                  <span class="spg-section-review-words ff-onest fz-12 text-gray flex-shrink-0">290</span>
+                                </span>
+                              </button>
+                              <button class="nav-link spg-section-review-tab w-100" id="spg-sec-08-tab"
+                                data-bs-toggle="tab" data-bs-target="#spg-sec-08" type="button" role="tab"
+                                aria-controls="spg-sec-08" aria-selected="false">
+                                <span class="d-flex align-items-center justify-content-between gap-2 w-100">
+                                  <span class="d-flex align-items-center gap-2 min-w-0 text-start">
+                                    <span class="spg-section-review-num ff-onest text-gray">08</span>
+                                    <span class="spg-section-review-title black-text fw-medium text-truncate">الملحقات</span>
+                                  </span>
+                                  <span class="spg-section-review-words ff-onest fz-12 text-gray flex-shrink-0">180</span>
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="spg-section-review-total mt-3 pt-3 border-top border-light d-flex align-items-center justify-content-between gap-2">
+                              <span class="black-text fw-medium fz-14">إجمالي الكلمات</span>
+                              <span class="ff-onest black-text fw-medium">2,990</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12 col-lg-8 col-xl-9 spg-section-review-main-col">
+                          <div
+                            class="spg-section-review-status tender-card p-3 p-lg-4 mb-3 mb-lg-4 bg-white d-flex flex-column flex-md-row align-items-md-start justify-content-md-between gap-3">
+                            <div>
+                              <h3 class="black-text fw-medium mb-2">العرض جاهز للمراجعة</h3>
+                              <p class="fz-14 text-gray mb-0">راجع محتوى كل قسم أدناه. تأكد من الصياغة والهيكل قبل
+                                اعتماد العرض النهائي.</p>
+                            </div>
+                            <button type="button"
+                              class="btn-main btn-primary-outline fz-12 h-36 flex-shrink-0 d-inline-flex align-items-center gap-2">
+                              <img src="images/edit-pen.svg" alt="" width="16" height="16">
+                              تعديل
+                            </button>
+                          </div>
+                          <div class="tab-content spg-section-review-panels" id="spgSectionReviewTabContent">
+                            <div class="tab-pane fade show active" id="spg-sec-01" role="tabpanel"
+                              aria-labelledby="spg-sec-01-tab" tabindex="0">
+                              <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
+                                <h4 class="black-text fw-medium mb-3">الملخص التنفيذي</h4>
+                                <p class="fz-14 text-gray mb-0">سيظهر محتوى الملخص التنفيذي هنا.</p>
+                              </div>
+                            </div>
+                            <div class="tab-pane fade" id="spg-sec-02" role="tabpanel" aria-labelledby="spg-sec-02-tab"
+                              tabindex="0">
+                              <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
+                                <h4 class="black-text fw-medium mb-3">فهم المتطلبات</h4>
+                                <p class="fz-14 text-gray mb-0">سيظهر محتوى فهم المتطلبات هنا.</p>
+                              </div>
+                            </div>
+                            <div class="tab-pane fade" id="spg-sec-03" role="tabpanel" aria-labelledby="spg-sec-03-tab"
+                              tabindex="0">
+                              <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
+                                <h4 class="black-text fw-medium mb-3">منهجية التنفيذ</h4>
+                                <p class="fz-14 text-gray mb-0">سيظهر محتوى منهجية التنفيذ هنا.</p>
+                              </div>
+                            </div>
+                            <div class="tab-pane fade" id="spg-sec-04" role="tabpanel" aria-labelledby="spg-sec-04-tab"
+                              tabindex="0">
+                              <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
+                                <h4 class="black-text fw-medium mb-3">خطة العمل</h4>
+                                <p class="fz-14 text-gray mb-0">سيظهر محتوى خطة العمل هنا.</p>
+                              </div>
+                            </div>
+                            <div class="tab-pane fade" id="spg-sec-05" role="tabpanel" aria-labelledby="spg-sec-05-tab"
+                              tabindex="0">
+                              <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
+                                <h4 class="black-text fw-medium mb-3">فريق المشروع</h4>
+                                <p class="fz-14 text-gray mb-0">سيظهر محتوى فريق المشروع هنا.</p>
+                              </div>
+                            </div>
+                            <div class="tab-pane fade" id="spg-sec-06" role="tabpanel" aria-labelledby="spg-sec-06-tab"
+                              tabindex="0">
+                              <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
+                                <h4 class="black-text fw-medium mb-3">الخبرات السابقة</h4>
+                                <p class="fz-14 text-gray mb-0">سيظهر محتوى الخبرات السابقة هنا.</p>
+                              </div>
+                            </div>
+                            <div class="tab-pane fade" id="spg-sec-07" role="tabpanel" aria-labelledby="spg-sec-07-tab"
+                              tabindex="0">
+                              <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
+                                <h4 class="black-text fw-medium mb-3">العرض المالي</h4>
+                                <p class="fz-14 text-gray mb-0">سيظهر محتوى العرض المالي هنا.</p>
+                              </div>
+                            </div>
+                            <div class="tab-pane fade" id="spg-sec-08" role="tabpanel" aria-labelledby="spg-sec-08-tab"
+                              tabindex="0">
+                              <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
+                                <h4 class="black-text fw-medium mb-3">الملحقات</h4>
+                                <p class="fz-14 text-gray mb-0">سيظهر محتوى الملحقات هنا.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </section>
 
