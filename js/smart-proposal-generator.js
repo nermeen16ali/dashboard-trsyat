@@ -1944,22 +1944,33 @@
 
       panel.setAttribute(
         "role",
-        "dialog"
+        "complementary"
       );
 
-      panel.setAttribute(
-        "aria-modal",
-        "true"
+      panel.removeAttribute(
+        "aria-modal"
       );
+
+      panel.removeAttribute(
+        "aria-hidden"
+      );
+
+      const dropdownPanel =
+        $("#spgProjectsDropdownPanel");
 
       if (
         !root.classList.contains(
           "spg-projects-drawer-open"
         )
       ) {
-        panel.setAttribute(
+        dropdownPanel?.setAttribute(
           "aria-hidden",
           "true"
+        );
+      } else {
+        dropdownPanel?.setAttribute(
+          "aria-hidden",
+          "false"
         );
       }
 
@@ -1968,6 +1979,70 @@
 
     function isMobileDrawerViewport() {
       return mobileQuery.matches;
+    }
+
+    function syncMobileProjectSelectLabel() {
+      const labelEl =
+        $("#spgProjectsMobileSelectLabel");
+
+      const list =
+        $("#spgProjectList");
+
+      if (!labelEl || !list) {
+        return;
+      }
+
+      const activeItem =
+        list.querySelector(
+          ".spg-project-item.active"
+        );
+
+      const title =
+        activeItem
+          ?.querySelector(".ticket-id")
+          ?.textContent?.trim() ||
+        "";
+
+      if (title) {
+        labelEl.textContent =
+          title;
+      }
+    }
+
+    function filterProjectList(
+      query
+    ) {
+      const list =
+        $("#spgProjectList");
+
+      if (!list) {
+        return;
+      }
+
+      const normalized =
+        (query || "")
+          .trim()
+          .toLowerCase();
+
+      $$(
+        ".spg-project-item",
+        list
+      ).forEach((item) => {
+        const text =
+          item.textContent ||
+          "";
+
+        const matches =
+          !normalized ||
+          text
+            .toLowerCase()
+            .includes(normalized);
+
+        item.classList.toggle(
+          "d-none",
+          !matches
+        );
+      });
     }
 
     function openDrawer() {
@@ -1981,34 +2056,19 @@
         "spg-projects-drawer-open"
       );
 
-      document.body.classList.add(
-        "spg-projects-drawer-open"
-      );
-
-      backdrop?.classList.add(
-        "show"
-      );
-
-      backdrop?.setAttribute(
-        "aria-hidden",
-        "false"
-      );
-
       openBtn?.setAttribute(
         "aria-expanded",
         "true"
       );
 
-      panel.setAttribute(
-        "aria-hidden",
-        "false"
-      );
+      $("#spgProjectsDropdownPanel")
+        ?.setAttribute(
+          "aria-hidden",
+          "false"
+        );
 
-      document.body.classList.add(
-        "spg-projects-drawer-body-lock"
-      );
-
-      closeBtn?.focus();
+      $("#spgProjectSearch")
+        ?.focus();
     }
 
     function closeDrawer() {
@@ -2022,39 +2082,38 @@
         "spg-projects-drawer-open"
       );
 
-      document.body.classList.remove(
-        "spg-projects-drawer-open"
-      );
-
-      backdrop?.classList.remove(
-        "show"
-      );
-
-      backdrop?.setAttribute(
-        "aria-hidden",
-        "true"
-      );
-
       openBtn?.setAttribute(
         "aria-expanded",
         "false"
       );
 
-      panel.setAttribute(
-        "aria-hidden",
-        "true"
-      );
-
-      document.body.classList.remove(
-        "spg-projects-drawer-body-lock"
-      );
+      $("#spgProjectsDropdownPanel")
+        ?.setAttribute(
+          "aria-hidden",
+          "true"
+        );
 
       openBtn?.focus();
     }
 
+    function toggleDrawer() {
+      if (
+        root.classList.contains(
+          "spg-projects-drawer-open"
+        )
+      ) {
+        closeDrawer();
+      } else {
+        openDrawer();
+      }
+    }
+
     openBtn?.addEventListener(
       "click",
-      openDrawer
+      (e) => {
+        e.stopPropagation();
+        toggleDrawer();
+      }
     );
 
     closeBtn?.addEventListener(
@@ -2081,6 +2140,29 @@
       }
     );
 
+    document.addEventListener(
+      "click",
+      (e) => {
+        if (
+          !isMobileDrawerViewport() ||
+          !root.classList.contains(
+            "spg-projects-drawer-open"
+          )
+        ) {
+          return;
+        }
+
+        const inside =
+          e.target.closest(
+            "#spgProjectsSidebar, #spgProjectsSidebarOpen"
+          );
+
+        if (!inside) {
+          closeDrawer();
+        }
+      }
+    );
+
     const projectList =
       $("#spgProjectList");
 
@@ -2092,16 +2174,42 @@
             ".spg-project-item, [data-spg-dynamic-project]"
           );
 
+        if (!item) {
+          return;
+        }
+
+        $$(
+          ".spg-project-item",
+          projectList
+        ).forEach((el) => {
+          el.classList.remove(
+            "active"
+          );
+        });
+
+        item.classList.add(
+          "active"
+        );
+
+        syncMobileProjectSelectLabel();
+
         if (
-          item &&
-          root.classList.contains(
-            "spg-projects-drawer-open"
-          )
+          isMobileDrawerViewport()
         ) {
           closeDrawer();
         }
       }
     );
+
+    $("#spgProjectSearch")
+      ?.addEventListener(
+        "input",
+        (e) => {
+          filterProjectList(
+            e.target.value
+          );
+        }
+      );
 
     mobileQuery.addEventListener(
       "change",
@@ -2109,6 +2217,8 @@
     );
 
     syncDrawerA11yDesktop();
+
+    syncMobileProjectSelectLabel();
   }
 
   /*

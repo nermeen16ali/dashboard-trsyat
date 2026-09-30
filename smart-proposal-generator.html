@@ -550,19 +550,37 @@
     </div>
     <div class="dash-widget sm-0 p-lg-4 spg-root">
       <div class="row chat-layout g-4">
-        <div class="col-lg-3 order-2 order-lg-1 spg-projects-sidebar-col">
+        <div class="col-12 col-lg-3 spg-projects-sidebar-col">
           <div class="spg-projects-drawer-backdrop d-md-none" id="spgProjectsSidebarBackdrop" aria-hidden="true"
             tabindex="-1"></div>
-          <div class="tender-card sm-0 p-lg-3 h-100 spg-projects-sidebar-panel d-flex flex-column" id="spgProjectsSidebar" role="dialog"
+          <div class="tender-card sm-0 p-lg-3 spg-projects-sidebar-panel d-flex flex-column h-lg-100" id="spgProjectsSidebar" role="dialog"
             aria-modal="true" aria-labelledby="spgProjectsSidebarTitle" aria-hidden="true">
             <div
-              class="sidebar-header d-flex flex-column flex-lg-row align-items-lg-center gap-4 justify-content-between mb-4">
-              <div class="d-flex align-items-center justify-content-between w-100 gap-2">
+              class="sidebar-header spg-projects-sidebar-header d-flex flex-column flex-lg-row align-items-lg-center gap-4 justify-content-between mb-4">
+              <div
+                class="spg-projects-sidebar-title-row d-none d-md-flex align-items-center justify-content-between w-100 gap-2">
                 <h6 class="black-text mb-0" id="spgProjectsSidebarTitle">المشاريع السابقة</h6>
-                <button type="button" class="btn-close spg-projects-drawer-close d-md-none flex-shrink-0"
-                  id="spgProjectsSidebarClose" aria-label="إغلاق قائمة المشاريع"></button>
               </div>
-              <button type="button" class="btn-base btn-main fw-medium fz-14 h-36" id="spgAddProjectBtn">
+              <div class="spg-projects-mobile-toolbar d-md-none flex-grow-1 min-w-0">
+                <button type="button"
+                  class="spg-projects-mobile-dropdown-toggle w-100 spg-projects-drawer-open-btn"
+                  id="spgProjectsSidebarOpen" aria-controls="spgProjectsDropdownPanel" aria-expanded="false"
+                  aria-label="اختيار المشروع">
+                  <span class="spg-projects-mobile-select-icon flex-shrink-0" aria-hidden="true">
+                    <img src="images/folder-open.svg" alt="">
+                  </span>
+                  <span class="spg-projects-mobile-select-label text-truncate flex-grow-1 black-text fz-14 fw-medium"
+                    id="spgProjectsMobileSelectLabel">تأهيل الأسوار الخرسانية</span>
+                  <span class="spg-projects-mobile-select-chevron flex-shrink-0" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="9" viewBox="0 0 16 9" fill="none">
+                      <path d="M14.6 1.45825L9.16669 6.89159C8.52502 7.53325 7.47503 7.53325 6.83336 6.89159L1.40002 1.45825"
+                        stroke="#0C2030" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                </button>
+              </div>
+              <button type="button" class="btn-base btn-main fw-medium fz-14 flex-shrink-0">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M8 3.33398V12.6673" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round"
                     stroke-linejoin="round" />
@@ -571,8 +589,10 @@
                 </svg>
                 <span>إضافة مشروع</span>
               </button>
+              <button type="button" class="btn-close spg-projects-drawer-close d-none flex-shrink-0"
+                id="spgProjectsSidebarClose" aria-label="إغلاق قائمة المشاريع" tabindex="-1"></button>
             </div>
-            <div class="support-chats flex-grow-1">
+            <div class="support-chats flex-grow-1 spg-projects-dropdown-panel" id="spgProjectsDropdownPanel">
               <div class="search-box w-100 position-relative mb-4">
                 <input type="text" class="form-control" id="spgProjectSearch" placeholder="البحث في المشاريع"
                   autocomplete="off" />
@@ -616,17 +636,8 @@
           </div>
         </div>
 
-        <div class="col-12 col-lg-9 order-1 order-lg-2">
+        <div class="col-12 col-lg-9">
           <div class="tender-card p-3 p-lg-4 d-flex flex-column min-h-spg-main" id="spgMainPanel">
-            <div class="d-flex align-items-center d-md-none mb-3">
-              <button type="button" class="icon-container gray-outline-btn spg-projects-drawer-open-btn"
-                id="spgProjectsSidebarOpen" aria-controls="spgProjectsSidebar" aria-expanded="false"
-                aria-label="فتح قائمة المشاريع">
-                <img src="images/folder-open.svg" alt="">
-              </button>
-              <span class="fz-14 black-text ms-2">المشاريع</span>
-            </div>
-
             <section id="spgViewLanding" class="spg-view">
               <div class="text-center mb-4 mb-lg-5">
                 <span class="badge-opacity-prim fz-12 mb-3 d-inline-flex">مولد العروض الذكي</span>
@@ -1512,7 +1523,7 @@
                 </div>
                 <div class="text-center mt-4 pt-2 border-top border-light">
                   <span class="fz-12 text-gray d-block mb-1">حجم العرض المتوقع</span>
-                  <span class="black-text fw-medium" id="spgSummarySizeLabel">—</span>
+                  <span class="black-text fw-medium">—</span>
                 </div>
               </div>
 
