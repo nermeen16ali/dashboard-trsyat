@@ -585,12 +585,6 @@ html[dir="ltr"] .btn-shadow-bottom {
   padding: 12px;
   border-radius: 16px;
   background: #f2f2f2;
-  visibility: hidden;
-  /* Hide initially to prevent layout shift */
-}
-
-.page-tabs.initialized {
-  visibility: visible;
 }
 
 .services-row .tender-card {
@@ -678,6 +672,30 @@ html[dir="ltr"] .btn-shadow-bottom {
 
   .page-tabs>.dropdown:last-of-type {
     margin-inline-start: auto;
+  }
+
+  /*
+   * Match handleTabOverflow() mobile layout before main.js runs
+   * (avoids full tab strip height/overflow, then collapse on DOMContentLoaded).
+   */
+  .page-tabs > a.nav-link {
+    display: none;
+  }
+
+  .page-tabs > a.nav-link.active {
+    display: inline-flex;
+  }
+
+  .page-tabs > .dropdown:not(:last-of-type) {
+    display: none;
+  }
+
+  .page-tabs > .dropdown:not(:last-of-type):has(.nav-link.active) {
+    display: block;
+  }
+
+  .page-tabs:not(:has(> a.nav-link.active)):not(:has(> .dropdown:not(:last-of-type) .nav-link.active)) > a.nav-link:first-of-type {
+    display: inline-flex;
   }
 }
 
