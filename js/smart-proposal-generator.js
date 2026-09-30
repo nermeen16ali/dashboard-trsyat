@@ -16,9 +16,7 @@
   let wizardStep = 1;
   let documentFormEditingId = null;
   let documentUploadBound = false;
-  let teamFormEditingId = null;
   let contractFormEditingId = null;
-  let teamContractFormsBound = false;
 
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
@@ -223,21 +221,6 @@
     };
   }
 
-  function resolveTeamMember(id, tr) {
-    if (!id || !tr) return null;
-    return {
-      id,
-      name: tr.dataset.spgName || "",
-      nationality: tr.dataset.spgNationality || "",
-      jobTitle: tr.dataset.spgJobTitle || "",
-      degree: tr.dataset.spgDegree || "",
-      years: tr.dataset.spgYears || "",
-      experiences: tr.dataset.spgExperiences || "",
-      summary: tr.dataset.spgSummary || "",
-      cvFileName: tr.dataset.spgCvFileName || "",
-    };
-  }
-
   function resolveContract(id, tr) {
     if (!id || !tr) return null;
     return {
@@ -391,108 +374,6 @@
     $("#spgDocEditCancel")?.addEventListener("click", () => resetDocumentForm(true));
   }
 
-  function getTeamDraftFields() {
-    return {
-      name: ($("#spgTeamDraftName")?.value || "").trim(),
-      nationality: ($("#spgTeamDraftNationality")?.value || "").trim(),
-      jobTitle: ($("#spgTeamDraftJobTitle")?.value || "").trim(),
-      degree: ($("#spgTeamDraftDegree")?.value || "").trim(),
-      years: ($("#spgTeamDraftYears")?.value || "").trim(),
-      experiences: ($("#spgTeamDraftExperiences")?.value || "").trim(),
-      summary: ($("#spgTeamDraftSummary")?.value || "").trim(),
-      cvFileName: ($("#spgTeamDraftCvFileName")?.value || "").trim(),
-    };
-  }
-
-  function showTeamFormError(message) {
-    const el = $("#spgTeamFormError");
-    if (!el) return;
-    if (message) {
-      el.textContent = message;
-      el.classList.remove("d-none");
-    } else {
-      el.textContent = "";
-      el.classList.add("d-none");
-    }
-  }
-
-  function updateTeamFormEditUI() {
-    const isEditing = Boolean(teamFormEditingId);
-    $("#spgTeamEditActions")?.classList.toggle("d-none", !isEditing);
-    $("#spgTeamEditActions")?.classList.toggle("d-flex", isEditing);
-    $("#spgTeamFormPrimaryActions")?.classList.toggle("d-none", isEditing);
-    $("#spgTeamFormCard")?.classList.toggle("spg-collection-form-editing", isEditing);
-  }
-
-  function resetTeamForm(clearEditing = true) {
-    if (clearEditing) teamFormEditingId = null;
-    [
-      "spgTeamDraftName",
-      "spgTeamDraftNationality",
-      "spgTeamDraftJobTitle",
-      "spgTeamDraftDegree",
-      "spgTeamDraftYears",
-      "spgTeamDraftExperiences",
-      "spgTeamDraftSummary",
-      "spgTeamDraftCvFileName",
-    ].forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) el.value = "";
-    });
-    showTeamFormError("");
-    $("#spgTeamDraftName")?.classList.remove("is-invalid");
-    updateTeamFormEditUI();
-  }
-
-  function loadTeamIntoForm(member) {
-    teamFormEditingId = member.id;
-    $("#spgTeamDraftName").value = member.name || "";
-    $("#spgTeamDraftNationality").value = member.nationality || "";
-    $("#spgTeamDraftJobTitle").value = member.jobTitle || "";
-    $("#spgTeamDraftDegree").value = member.degree || "";
-    $("#spgTeamDraftYears").value = member.years || "";
-    $("#spgTeamDraftExperiences").value = member.experiences || "";
-    $("#spgTeamDraftSummary").value = member.summary || "";
-    $("#spgTeamDraftCvFileName").value = member.cvFileName || "";
-    showTeamFormError("");
-    updateTeamFormEditUI();
-    $("#spgTeamDraftName")?.focus();
-  }
-
-  function commitTeamFromForm() {
-    const draft = getTeamDraftFields();
-    if (!draft.name) {
-      showTeamFormError("يرجى إدخال اسم الموظف");
-      $("#spgTeamDraftName")?.classList.add("is-invalid");
-      $("#spgTeamDraftName")?.focus();
-      return;
-    }
-    showTeamFormError("");
-    $("#spgTeamDraftName")?.classList.remove("is-invalid");
-
-    const wasEditing = Boolean(teamFormEditingId);
-    resetTeamForm(true);
-    if (wasEditing) spgAlertSaved();
-    else spgAlertAdded();
-  }
-
-  function saveTeamEditFromForm() {
-    if (!teamFormEditingId) return;
-    commitTeamFromForm();
-  }
-
-  function getContractDraftFields() {
-    return {
-      projectName: ($("#spgContractDraftProjectName")?.value || "").trim(),
-      entity: ($("#spgContractDraftEntity")?.value || "").trim(),
-      description: ($("#spgContractDraftDescription")?.value || "").trim(),
-      year: ($("#spgContractDraftYear")?.value || "").trim(),
-      duration: ($("#spgContractDraftDuration")?.value || "").trim(),
-      cost: ($("#spgContractDraftCost")?.value || "").trim(),
-      contractFileName: ($("#spgContractDraftFileName")?.value || "").trim(),
-    };
-  }
-
   function showContractFormError(message) {
     const el = $("#spgContractFormError");
     if (!el) return;
@@ -589,26 +470,20 @@
     }
 
     const teamBody = $("#spgTeamList");
+
     if (teamBody && !teamBody.dataset.spgActionsBound) {
       teamBody.dataset.spgActionsBound = "1";
+
       teamBody.addEventListener("click", (e) => {
         const editBtn = e.target.closest(".spg-team-edit");
-        const deleteBtn = e.target.closest(".spg-team-delete");
-        const tr = e.target.closest("tr");
-        if (editBtn) {
-          const member = resolveTeamMember(editBtn.dataset.id, tr);
-          if (member) loadTeamIntoForm(member);
-          return;
-        }
-        if (deleteBtn) {
-          spgConfirmDelete().then((confirmed) => {
-            if (!confirmed) return;
-            const id = deleteBtn.dataset.id;
-            if (teamFormEditingId === id) resetTeamForm(true);
-            tr?.remove();
-            spgAlertDeleted();
-          });
-        }
+        if (!editBtn) return;
+
+        $("#spgTeamFormCard")?.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+        $("#spgTeamDraftName")?.focus();
       });
     }
 
@@ -637,14 +512,7 @@
     }
   }
 
-  function bindTeamAndContractForms() {
-    if (teamContractFormsBound) return;
-    teamContractFormsBound = true;
-
-    $("#spgAddTeamBtn")?.addEventListener("click", () => commitTeamFromForm());
-    $("#spgTeamEditSave")?.addEventListener("click", () => saveTeamEditFromForm());
-    $("#spgTeamEditCancel")?.addEventListener("click", () => resetTeamForm(true));
-
+  function bindContractForm() {
     $("#spgAddContractBtn")?.addEventListener("click", () => commitContractFromForm());
     $("#spgContractEditSave")?.addEventListener("click", () => commitContractFromForm());
     $("#spgContractEditCancel")?.addEventListener("click", () => resetContractForm(true));
@@ -667,19 +535,6 @@
     const min = coreCount + extra;
     const max = coreCount + extra * 2;
     return { min, max, totalSections: coreCount + extra, coreCount };
-  }
-
-  function renderReview() {
-    $("#spgReviewConfirmNote")?.classList.add("d-none");
-
-    const enabledOptional = countEnabledOptionalFromDom();
-    const { min, max, totalSections, coreCount } = estimatePages();
-
-    $("#spgSummaryTotal").textContent = String(totalSections);
-    $("#spgSummaryCore").textContent = String(coreCount);
-    $("#spgSummaryOptional").textContent = String(enabledOptional);
-    $("#spgSummaryPages").textContent = `${min} – ${max}`;
-    $("#spgSummarySizeLabel").textContent = `${totalSections} أقسام — ${min} إلى ${max} صفحة تقريبًا`;
   }
 
   function bindProjectsDrawer() {
@@ -781,7 +636,7 @@
     });
 
     bindDocumentUploadForm();
-    bindTeamAndContractForms();
+    bindContractForm();
     bindCollectionTableActions();
 
     $("#spgReviewBack")?.addEventListener("click", () => {
