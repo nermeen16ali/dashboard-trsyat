@@ -27,10 +27,7 @@
   const SPG_SWAL_TIMER_MS = 1800;
 
   const SPG_SWAL_SUCCESS_ICON_HTML = `<div class="spg-swal-check-icon" aria-hidden="true">
-    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-      <circle class="spg-swal-check-circle" cx="20" cy="20" r="17" stroke="#00A640" stroke-width="2" fill="none"/>
-      <path class="spg-swal-check-path" d="M12.5 20.2L17.8 25.5L27.5 14.8" stroke="#00A640" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-    </svg>
+    <img src="images/checked-green.svg" width="40" height="40" alt="">
   </div>`;
 
   const SPG_SWAL_DELETE_ICON_HTML = `<div class="spg-swal-trash-icon" aria-hidden="true">
@@ -65,10 +62,24 @@
     });
   }
 
+  function spgAlertAdded() {
+    spgAlertSuccessCompact(
+      "تمت الإضافة بنجاح",
+      "تمت إضافة العنصر بنجاح."
+    );
+  }
+
   function spgAlertSaved() {
     spgAlertSuccessCompact(
       "تم الحفظ بنجاح",
       "تم تحديث البيانات بنجاح."
+    );
+  }
+
+  function spgAlertDocumentUploaded() {
+    spgAlertSuccessCompact(
+      "تم رفع الملف بنجاح",
+      "تم اختيار الملف وإضافته بنجاح."
     );
   }
 
@@ -780,6 +791,8 @@
             "d-none"
           );
         }
+
+        spgAlertDocumentUploaded();
       };
 
     uploadBox.addEventListener(
@@ -1116,11 +1129,7 @@
     );
   }
 
-  function saveTeamEdit() {
-    if (!teamFormEditingId) {
-      return;
-    }
-
+  function saveTeamFromForm() {
     const fields =
       getTeamDraftFields();
 
@@ -1137,9 +1146,20 @@
 
     showTeamFormError("");
 
+    const wasEditing =
+      Boolean(teamFormEditingId);
+
     resetTeamForm(true);
 
-    spgAlertSaved();
+    if (wasEditing) {
+      spgAlertSaved();
+    } else {
+      spgAlertAdded();
+    }
+  }
+
+  function saveTeamEdit() {
+    saveTeamFromForm();
   }
 
   /*
@@ -1374,11 +1394,7 @@
     );
   }
 
-  function saveContractEdit() {
-    if (!contractFormEditingId) {
-      return;
-    }
-
+  function saveContractFromForm() {
     const fields =
       getContractDraftFields();
 
@@ -1395,9 +1411,20 @@
 
     showContractFormError("");
 
+    const wasEditing =
+      Boolean(contractFormEditingId);
+
     resetContractForm(true);
 
-    spgAlertSaved();
+    if (wasEditing) {
+      spgAlertSaved();
+    } else {
+      spgAlertAdded();
+    }
+  }
+
+  function saveContractEdit() {
+    saveContractFromForm();
   }
 
   /*
@@ -1945,6 +1972,13 @@
      * ==========================
      */
 
+    $("#spgAddTeamBtn")
+      ?.addEventListener(
+        "click",
+        () =>
+          saveTeamFromForm()
+      );
+
     $("#spgTeamEditSave")
       ?.addEventListener(
         "click",
@@ -1964,6 +1998,13 @@
      * CONTRACT EDIT ACTIONS
      * ==========================
      */
+
+    $("#spgAddContractBtn")
+      ?.addEventListener(
+        "click",
+        () =>
+          saveContractFromForm()
+      );
 
     $("#spgContractEditSave")
       ?.addEventListener(
