@@ -18,6 +18,7 @@
   let documentUploadBound = false;
 
   let teamFormEditingId = null;
+  let teamCvUploadBound = false;
   let contractFormEditingId = null;
 
   const $ = (sel, root = document) => root.querySelector(sel);
@@ -912,6 +913,207 @@
     };
   }
 
+  function getTeamCvFileName() {
+    const fromFile =
+      $("#spgTeamDraftCvFile")
+        ?.files?.[0]?.name || "";
+
+    if (fromFile) {
+      return fromFile.trim();
+    }
+
+    return (
+      $("#spgTeamDraftCvFileName")
+        ?.value || ""
+    ).trim();
+  }
+
+  function showTeamCvFileError(message) {
+    const errorEl =
+      $("#spgTeamDraftCvFileError");
+
+    if (!errorEl) {
+      return;
+    }
+
+    if (message) {
+      errorEl.textContent =
+        message;
+
+      errorEl.classList.remove(
+        "d-none"
+      );
+    } else {
+      errorEl.textContent = "";
+
+      errorEl.classList.add(
+        "d-none"
+      );
+    }
+  }
+
+  function setTeamCvFileDisplay(
+    fileName,
+    options = {}
+  ) {
+    const infoEl =
+      $("#spgTeamDraftCvFileInfo");
+
+    const hiddenEl =
+      $("#spgTeamDraftCvFileName");
+
+    const name =
+      (fileName || "").trim();
+
+    if (hiddenEl) {
+      hiddenEl.value = name;
+    }
+
+    if (!infoEl) {
+      return;
+    }
+
+    if (!name) {
+      infoEl.textContent = "";
+
+      infoEl.classList.add(
+        "d-none"
+      );
+
+      return;
+    }
+
+    const prefix =
+      options.isCurrent
+        ? "الملف الحالي: "
+        : "تم اختيار الملف: ";
+
+    infoEl.textContent =
+      `${prefix}${name}`;
+
+    infoEl.classList.remove(
+      "d-none"
+    );
+  }
+
+  function resetTeamCvUpload() {
+    const fileEl =
+      $("#spgTeamDraftCvFile");
+
+    if (fileEl) {
+      fileEl.value = "";
+    }
+
+    setTeamCvFileDisplay("");
+
+    showTeamCvFileError("");
+  }
+
+  function bindTeamCvUploadForm() {
+    if (teamCvUploadBound) {
+      return;
+    }
+
+    const uploadBox =
+      $("#spgTeamCvUploadBox");
+
+    const fileInput =
+      $("#spgTeamDraftCvFile");
+
+    if (!uploadBox || !fileInput) {
+      return;
+    }
+
+    teamCvUploadBound = true;
+
+    const MAX_SIZE =
+      500 * 1024 * 1024;
+
+    const handleFile =
+      (file) => {
+        showTeamCvFileError("");
+
+        if (!file) {
+          return;
+        }
+
+        if (file.size > MAX_SIZE) {
+          showTeamCvFileError(
+            "حجم الملف أكبر من 500 ميغابايت"
+          );
+
+          setTeamCvFileDisplay("");
+
+          return;
+        }
+
+        setTeamCvFileDisplay(
+          file.name
+        );
+
+        spgAlertDocumentUploaded();
+      };
+
+    uploadBox.addEventListener(
+      "click",
+      (e) => {
+        if (e.target === fileInput) {
+          return;
+        }
+
+        fileInput.click();
+      }
+    );
+
+    fileInput.addEventListener(
+      "click",
+      (e) =>
+        e.stopPropagation()
+    );
+
+    fileInput.addEventListener(
+      "change",
+      () =>
+        handleFile(
+          fileInput.files?.[0]
+        )
+    );
+
+    uploadBox.addEventListener(
+      "dragover",
+      (e) => {
+        e.preventDefault();
+
+        uploadBox.classList.add(
+          "dragover"
+        );
+      }
+    );
+
+    uploadBox.addEventListener(
+      "dragleave",
+      () =>
+        uploadBox.classList.remove(
+          "dragover"
+        )
+    );
+
+    uploadBox.addEventListener(
+      "drop",
+      (e) => {
+        e.preventDefault();
+
+        uploadBox.classList.remove(
+          "dragover"
+        );
+
+        handleFile(
+          e.dataTransfer.files?.[0]
+        );
+      }
+    );
+  }
+
   function getTeamDraftFields() {
     return {
       name:
@@ -944,11 +1146,7 @@
             ?.value || ""
         ).trim(),
 
-      cvFileName:
-        (
-          $("#spgTeamDraftCvFileName")
-            ?.value || ""
-        ).trim(),
+      cvFileName: getTeamCvFileName(),
 
       summary:
         (
@@ -1030,7 +1228,6 @@
       "#spgTeamDraftJobTitle",
       "#spgTeamDraftDegree",
       "#spgTeamDraftYears",
-      "#spgTeamDraftCvFileName",
     ];
 
     fields.forEach(
@@ -1047,6 +1244,8 @@
       "#spgTeamDraftSummary",
       ""
     );
+
+    resetTeamCvUpload();
 
     showTeamFormError("");
 
@@ -1103,9 +1302,16 @@
       yearsDigits
     );
 
-    setSpgFormFieldValue(
-      "#spgTeamDraftCvFileName",
-      member.cvFileName || ""
+    const fileEl =
+      $("#spgTeamDraftCvFile");
+
+    if (fileEl) {
+      fileEl.value = "";
+    }
+
+    setTeamCvFileDisplay(
+      member.cvFileName || "",
+      { isCurrent: true }
     );
 
     setSpgFormFieldValue(
@@ -1964,6 +2170,7 @@
     );
 
     bindDocumentUploadForm();
+    bindTeamCvUploadForm();
     bindCollectionTableActions();
 
     /*

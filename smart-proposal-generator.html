@@ -553,7 +553,7 @@
         <div class="col-lg-3 order-2 order-lg-1 spg-projects-sidebar-col">
           <div class="spg-projects-drawer-backdrop d-md-none" id="spgProjectsSidebarBackdrop" aria-hidden="true"
             tabindex="-1"></div>
-          <div class="tender-card sm-0 p-lg-3 h-100 spg-projects-sidebar-panel" id="spgProjectsSidebar" role="dialog"
+          <div class="tender-card sm-0 p-lg-3 h-100 spg-projects-sidebar-panel d-flex flex-column" id="spgProjectsSidebar" role="dialog"
             aria-modal="true" aria-labelledby="spgProjectsSidebarTitle" aria-hidden="true">
             <div
               class="sidebar-header d-flex flex-column flex-lg-row align-items-lg-center gap-4 justify-content-between mb-4">
@@ -572,38 +572,46 @@
                 <span>إضافة مشروع</span>
               </button>
             </div>
-            <div class="search-box w-100 position-relative mb-4">
-              <input type="text" class="form-control" id="spgProjectSearch" placeholder="البحث في المشاريع"
-                autocomplete="off" />
-              <span class="search-icon position-absolute">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path
-                    d="M9.58341 17.5001C13.9557 17.5001 17.5001 13.9557 17.5001 9.58341C17.5001 5.21116 13.9557 1.66675 9.58341 1.66675C5.21116 1.66675 1.66675 5.21116 1.66675 9.58341C1.66675 13.9557 5.21116 17.5001 9.58341 17.5001Z"
-                    fill="white" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                  </path>
-                  <path opacity="0.4" d="M18.3334 18.3334L16.6667 16.6667" stroke="#0C2030" stroke-width="1.5"
-                    stroke-linecap="round" stroke-linejoin="round"></path>
-                </svg>
-              </span>
-            </div>
-            <div class="chat-list spg-project-list" id="spgProjectList" role="listbox" aria-label="قائمة المشاريع">
-              <button type="button"
-                class="chat-item spg-project-item d-flex align-items-center gap-12 w-100 border-0 bg-transparent active"
-                role="option" aria-selected="true" data-project-id="0" data-project-title="اسم المشروع / المناقصة"
-                data-proposal-type="government" data-view="landing" data-wizard-step="1" data-project-name=""
-                data-tender-number="" data-has-docs="false" data-has-team="false" data-has-contracts="false"
-                data-detail-level="detailed">
-                <div class="chat-item-icon">
-                  <img src="images/document-normal.svg" alt="">
-                </div>
-                <div class="w-100 text-start">
-                  <div class="ticket-id text-truncate mb-2">اسم المشروع / المناقصة</div>
-                  <div class="fz-10 text-gray chat-preview text-truncate">البداية — اختر نوع العرض</div>
-                </div>
-              </button>
-            </div>
-            <div class="text-center py-4 d-none" id="spgProjectListEmpty">
-              <p class="fz-14 text-gray mb-0">لا توجد مشاريع بعد. ابدأ بإضافة مشروع جديد.</p>
+            <div class="support-chats flex-grow-1">
+              <div class="search-box w-100 position-relative mb-4">
+                <input type="text" class="form-control" id="spgProjectSearch" placeholder="البحث في المشاريع"
+                  autocomplete="off" />
+                <span class="search-icon position-absolute">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path
+                      d="M9.58341 17.5001C13.9557 17.5001 17.5001 13.9557 17.5001 9.58341C17.5001 5.21116 13.9557 1.66675 9.58341 1.66675C5.21116 1.66675 1.66675 5.21116 1.66675 9.58341C1.66675 13.9557 5.21116 17.5001 9.58341 17.5001Z"
+                      fill="white" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    </path>
+                    <path opacity="0.4" d="M18.3334 18.3334L16.6667 16.6667" stroke="#0C2030" stroke-width="1.5"
+                      stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </span>
+              </div>
+              <div class="chat-list spg-project-list" id="spgProjectList" role="listbox" aria-label="قائمة المشاريع">
+                <button type="button"
+                  class="chat-item spg-project-item d-flex align-items-center gap-12 w-100 active">
+                  <div class="chat-item-icon">
+                    <img src="images/document-normal.svg" alt="">
+                  </div>
+                  <div class="w-100 text-start">
+                    <div class="ticket-id text-truncate mb-2">تأهيل الأسوار الخرسانية</div>
+                    <div class="fz-10 text-gray chat-preview text-truncate"> وصف المشروع</div>
+                  </div>
+                </button>
+                <button type="button"
+                  class="chat-item spg-project-item d-flex align-items-center gap-12 w-100">
+                  <div class="chat-item-icon">
+                    <img src="images/document-normal.svg" alt="">
+                  </div>
+                  <div class="w-100 text-start">
+                    <div class="ticket-id text-truncate mb-2">خدمات المناسبات</div>
+                    <div class="fz-10 text-gray chat-preview text-truncate"> وصف المشروع</div>
+                  </div>
+                </button>
+              </div>
+              <div class="text-center py-4 d-none">
+                <p class="fz-14 text-gray mb-0">لا توجد مشاريع بعد. ابدأ بإضافة مشروع جديد.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -942,9 +950,21 @@
                             <option value="12">12</option>
                           </select>
                         </div>
-                        <div class="col-12 col-md-6">
-                          <label class="form-label" for="spgTeamDraftCvFileName">اسم ملف السيرة الذاتية</label>
-                          <input type="text" class="form-control" id="spgTeamDraftCvFileName" autocomplete="off" />
+                        <div class="col-12">
+                          <label class="form-label" for="spgTeamDraftCvFile">ملف السيرة الذاتية</label>
+                          <div class="upload-container">
+                            <div class="upload-box uploadBox spg-team-cv-upload" id="spgTeamCvUploadBox">
+                              <div class="upload-icon"><img src="images/document-download.svg" alt=""></div>
+                              <div class="d-flex flex-column gap-10">
+                                <div class="upload-title fz-10 black-text">اسحب الملف هنا أو تصفح لإضافته للقائمة</div>
+                                <div class="upload-subtitle fz-9 text-gray">أقصى حجم 500 ميغابايت</div>
+                                <input type="file" class="fileInput" id="spgTeamDraftCvFile" />
+                                <div class="fz-10 colored d-none fileInfo" id="spgTeamDraftCvFileInfo"></div>
+                                <div class="red-colored fz-10 d-none errorMsg" id="spgTeamDraftCvFileError"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <input type="hidden" id="spgTeamDraftCvFileName" value="" />
                         </div>
                         <div class="col-12">
                           <label class="form-label">
@@ -1395,53 +1415,43 @@
                   <p class="fz-14 text-gray mb-4">اختر مستوى التفصيل المناسب لحجم العرض والوقت المتاح لديك.</p>
                   <div class="row g-3">
 
-                      <!-- Detailed -->
-                      <div class="col-12 col-md-4">
-                          <label class="stat-card w-100 border-0 p-0 flex-column spg-detail-card">
-                              <input
-                                  type="radio"
-                                  name="spgDetailLevel"
-                                  class="spg-detail-radio"
-                                  checked>
+                    <!-- Detailed -->
+                    <div class="col-12 col-md-4">
+                      <label class="stat-card w-100 border-0 p-0 flex-column spg-detail-card">
+                        <input type="radio" name="spgDetailLevel" class="spg-detail-radio" checked>
 
-                              <h3 class="fz-16 black-text mb-2">مفصل</h3>
+                        <h3 class="fz-16 black-text mb-2">مفصل</h3>
 
-                              <p class="fz-12 text-gray mb-0">
-                                  عرض شامل بأقصى عمق وتوثيق لكل قسم.
-                              </p>
-                          </label>
-                      </div>
+                        <p class="fz-12 text-gray mb-0">
+                          عرض شامل بأقصى عمق وتوثيق لكل قسم.
+                        </p>
+                      </label>
+                    </div>
 
-                      <!-- Medium -->
-                      <div class="col-12 col-md-4">
-                          <label class="stat-card w-100 border-0 p-0 flex-column spg-detail-card">
-                              <input
-                                  type="radio"
-                                  name="spgDetailLevel"
-                                  class="spg-detail-radio">
+                    <!-- Medium -->
+                    <div class="col-12 col-md-4">
+                      <label class="stat-card w-100 border-0 p-0 flex-column spg-detail-card">
+                        <input type="radio" name="spgDetailLevel" class="spg-detail-radio">
 
-                              <h3 class="fz-16 black-text mb-2">متوسط</h3>
+                        <h3 class="fz-16 black-text mb-2">متوسط</h3>
 
-                              <p class="fz-12 text-gray mb-0">
-                                  توازن بين التفصيل والاختصار للمعظم.
-                              </p>
-                          </label>
-                      </div>
+                        <p class="fz-12 text-gray mb-0">
+                          توازن بين التفصيل والاختصار للمعظم.
+                        </p>
+                      </label>
+                    </div>
 
-                      <!-- Brief -->
-                      <div class="col-12 col-md-4">
-                          <label class="stat-card w-100 border-0 p-0 flex-column spg-detail-card">
-                              <input
-                                  type="radio"
-                                  name="spgDetailLevel"
-                                  class="spg-detail-radio">
-                              <h3 class="fz-16 black-text mb-2">مختصر</h3>
+                    <!-- Brief -->
+                    <div class="col-12 col-md-4">
+                      <label class="stat-card w-100 border-0 p-0 flex-column spg-detail-card">
+                        <input type="radio" name="spgDetailLevel" class="spg-detail-radio">
+                        <h3 class="fz-16 black-text mb-2">مختصر</h3>
 
-                              <p class="fz-12 text-gray mb-0">
-                                  محتوى مركز يركز على النقاط الجوهرية.
-                              </p>
-                          </label>
-                      </div>
+                        <p class="fz-12 text-gray mb-0">
+                          محتوى مركز يركز على النقاط الجوهرية.
+                        </p>
+                      </label>
+                    </div>
 
                   </div>
                 </div>
