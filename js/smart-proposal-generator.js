@@ -12,12 +12,6 @@
     "مستوى التفصيل",
   ];
 
-  const DETAIL_PAGE_RANGES = {
-    detailed: [13, 16],
-    medium: [10, 13],
-    brief: [6, 9],
-  };
-
   let view = "landing";
   let wizardStep = 1;
   let documentFormEditingId = null;
@@ -668,12 +662,10 @@
   }
 
   function estimatePages() {
-    const level = $(".spg-detail-card.active")?.dataset.detail || "detailed";
-    const [minBase, maxBase] = DETAIL_PAGE_RANGES[level] || DETAIL_PAGE_RANGES.detailed;
     const coreCount = countCoreSectionsFromDom();
     const extra = countEnabledOptionalFromDom();
-    const min = minBase + extra;
-    const max = maxBase + extra * 2;
+    const min = coreCount + extra;
+    const max = coreCount + extra * 2;
     return { min, max, totalSections: coreCount + extra, coreCount };
   }
 
@@ -792,13 +784,6 @@
     bindTeamAndContractForms();
     bindCollectionTableActions();
 
-    $$(".spg-detail-card").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        $$(".spg-detail-card").forEach((b) => b.classList.remove("active"));
-        btn.classList.add("active");
-      });
-    });
-
     $("#spgReviewBack")?.addEventListener("click", () => {
       wizardStep = TOTAL_STEPS;
       setView("wizard");
@@ -808,7 +793,6 @@
       if (!e.target.closest(".spg-optional-toggle")) return;
       renderReview();
     });
-
   }
 
   function init() {
