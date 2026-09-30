@@ -2,7 +2,6 @@
   "use strict";
 
   const TOTAL_STEPS = 5;
-  const SPG_CORE_SECTION_COUNT = 5;
 
   const STEP_HEADINGS = [
     "بيانات المناقصة / المشروع",
@@ -14,11 +13,16 @@
 
   let view = "landing";
   let wizardStep = 1;
+
   let documentFormEditingId = null;
   let documentUploadBound = false;
 
+  let teamFormEditingId = null;
+  let contractFormEditingId = null;
+
   const $ = (sel, root = document) => root.querySelector(sel);
-  const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+  const $$ = (sel, root = document) =>
+    Array.from(root.querySelectorAll(sel));
 
   const SPG_SWAL_TIMER_MS = 1800;
 
@@ -34,11 +38,15 @@
   </div>`;
 
   function spgSwalAvailable() {
-    return typeof Swal !== "undefined" && typeof Swal.fire === "function";
+    return (
+      typeof Swal !== "undefined" &&
+      typeof Swal.fire === "function"
+    );
   }
 
   function spgAlertSuccessCompact(title, text) {
     if (!spgSwalAvailable()) return;
+
     Swal.fire({
       title,
       text,
@@ -57,22 +65,27 @@
     });
   }
 
-  function spgAlertAdded() {
-    spgAlertSuccessCompact("تمت الإضافة بنجاح", "تمت إضافة العنصر بنجاح.");
-  }
-
   function spgAlertSaved() {
-    spgAlertSuccessCompact("تم الحفظ بنجاح", "تم تحديث البيانات بنجاح.");
+    spgAlertSuccessCompact(
+      "تم الحفظ بنجاح",
+      "تم تحديث البيانات بنجاح."
+    );
   }
 
   function spgAlertDeleted() {
-    spgAlertSuccessCompact("تم الحذف بنجاح", "تم حذف العنصر بنجاح.");
+    spgAlertSuccessCompact(
+      "تم الحذف بنجاح",
+      "تم حذف العنصر بنجاح."
+    );
   }
 
   function spgConfirmDelete() {
     if (!spgSwalAvailable()) {
-      return Promise.resolve(window.confirm("هل أنت متأكد؟"));
+      return Promise.resolve(
+        window.confirm("هل أنت متأكد؟")
+      );
     }
+
     return Swal.fire({
       title: "هل أنت متأكد؟",
       text: "سيتم حذف هذا العنصر ولا يمكن التراجع عن هذه العملية.",
@@ -88,25 +101,41 @@
         title: "swal2-spg-confirm-title",
         htmlContainer: "swal2-spg-confirm-text",
         icon: "swal2-spg-confirm-icon",
-        confirmButton: "btn-main badge-rejected swal2-spg-confirm-delete",
-        cancelButton: "btn-main btn-primary-outline swal2-spg-confirm-cancel",
+        confirmButton:
+          "btn-main badge-rejected swal2-spg-confirm-delete",
+        cancelButton:
+          "btn-main btn-primary-outline swal2-spg-confirm-cancel",
         actions: "swal2-spg-confirm-actions",
       },
       buttonsStyling: false,
-    }).then((result) => result.isConfirmed === true);
+    }).then(
+      (result) => result.isConfirmed === true
+    );
   }
 
   function setView(nextView) {
     view = nextView;
 
-    $("#spgViewLanding")?.classList.toggle("d-none", view !== "landing");
-    $("#spgViewWizard")?.classList.toggle("d-none", view !== "wizard");
-    $("#spgViewReview")?.classList.toggle("d-none", view !== "review");
+    $("#spgViewLanding")?.classList.toggle(
+      "d-none",
+      view !== "landing"
+    );
+
+    $("#spgViewWizard")?.classList.toggle(
+      "d-none",
+      view !== "wizard"
+    );
+
+    $("#spgViewReview")?.classList.toggle(
+      "d-none",
+      view !== "review"
+    );
 
     if (view === "wizard") {
       updateWizardUI();
       toggleConditionalPanels();
     }
+
     if (view === "review") {
       renderReview();
     }
@@ -117,73 +146,176 @@
     setView("wizard");
 
     const typeLabel =
-      proposalType === "government" ? "عرض مناقصة حكومية" : "عرض مشروع خاص";
-    const labelEl = $("#spgWizardTypeLabel");
-    if (labelEl) labelEl.textContent = typeLabel;
+      proposalType === "government"
+        ? "عرض مناقصة حكومية"
+        : "عرض مشروع خاص";
+
+    const labelEl =
+      $("#spgWizardTypeLabel");
+
+    if (labelEl) {
+      labelEl.textContent = typeLabel;
+    }
   }
 
   function updateWizardUI() {
-    $$(".spg-wizard-step").forEach((stepEl) => {
-      const step = Number(stepEl.dataset.step);
-      stepEl.classList.toggle("d-none", step !== wizardStep);
-    });
+    $$(".spg-wizard-step").forEach(
+      (stepEl) => {
+        const step =
+          Number(stepEl.dataset.step);
 
-    const counter = $("#spgStepCounter");
-    const heading = $("#spgStepHeading");
-    const bar = $("#spgProgressBar");
-    if (counter) counter.textContent = `الخطوة ${wizardStep} من ${TOTAL_STEPS}`;
-    if (heading) heading.textContent = STEP_HEADINGS[wizardStep - 1] || "";
+        stepEl.classList.toggle(
+          "d-none",
+          step !== wizardStep
+        );
+      }
+    );
+
+    const counter =
+      $("#spgStepCounter");
+
+    const heading =
+      $("#spgStepHeading");
+
+    const bar =
+      $("#spgProgressBar");
+
+    if (counter) {
+      counter.textContent =
+        `الخطوة ${wizardStep} من ${TOTAL_STEPS}`;
+    }
+
+    if (heading) {
+      heading.textContent =
+        STEP_HEADINGS[wizardStep - 1] || "";
+    }
+
     if (bar) {
-      const pct = Math.round((wizardStep / TOTAL_STEPS) * 100);
-      bar.style.width = pct + "%";
-      bar.setAttribute("aria-valuenow", String(pct));
+      const pct =
+        Math.round(
+          (wizardStep / TOTAL_STEPS) * 100
+        );
+
+      bar.style.width =
+        pct + "%";
+
+      bar.setAttribute(
+        "aria-valuenow",
+        String(pct)
+      );
     }
 
     renderStepDots();
 
-    const nextBtn = $("#spgWizardNext");
+    const nextBtn =
+      $("#spgWizardNext");
+
     const nextArrowSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
-                   <path d="M8.47485 15.5583L3.41652 10.5L8.47485 5.44165" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
-                   <path opacity="0.4" d="M17.583 10.5H3.55801" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
-               </svg>`;
+      <path d="M8.47485 15.5583L3.41652 10.5L8.47485 5.44165"
+        stroke="#fff"
+        stroke-width="1.5"
+        stroke-miterlimit="10"
+        stroke-linecap="round"
+        stroke-linejoin="round"></path>
+      <path opacity="0.4"
+        d="M17.583 10.5H3.55801"
+        stroke="#fff"
+        stroke-width="1.5"
+        stroke-miterlimit="10"
+        stroke-linecap="round"
+        stroke-linejoin="round"></path>
+    </svg>`;
+
     if (nextBtn) {
-      const label = wizardStep === TOTAL_STEPS ? "متابعة للمراجعة" : "التالي";
-      nextBtn.innerHTML = `${label} ${nextArrowSvg}`;
+      const label =
+        wizardStep === TOTAL_STEPS
+          ? "متابعة للمراجعة"
+          : "التالي";
+
+      nextBtn.innerHTML =
+        `${label} ${nextArrowSvg}`;
     }
 
-    const prevBtn = $("#spgWizardPrev");
-    if (prevBtn) prevBtn.disabled = wizardStep === 1;
+    const prevBtn =
+      $("#spgWizardPrev");
+
+    if (prevBtn) {
+      prevBtn.disabled =
+        wizardStep === 1;
+    }
   }
 
   function renderStepDots() {
-    const dots = $("#spgStepDots");
+    const dots =
+      $("#spgStepDots");
+
     if (!dots) return;
+
     dots.innerHTML = "";
-    for (let i = 1; i <= TOTAL_STEPS; i++) {
-      const dot = document.createElement("span");
-      dot.className = "spg-step-dot";
-      if (i < wizardStep) dot.classList.add("completed");
-      if (i === wizardStep) dot.classList.add("current");
-      dot.title = STEP_HEADINGS[i - 1];
+
+    for (
+      let i = 1;
+      i <= TOTAL_STEPS;
+      i++
+    ) {
+      const dot =
+        document.createElement("span");
+
+      dot.className =
+        "spg-step-dot";
+
+      if (i < wizardStep) {
+        dot.classList.add(
+          "completed"
+        );
+      }
+
+      if (i === wizardStep) {
+        dot.classList.add(
+          "current"
+        );
+      }
+
+      dot.title =
+        STEP_HEADINGS[i - 1];
+
       dots.appendChild(dot);
     }
   }
 
   function validateStep(step) {
     if (step === 1) {
-      const name = ($("#spgProjectName")?.value || "").trim();
+      const name =
+        (
+          $("#spgProjectName")
+            ?.value || ""
+        ).trim();
+
       if (!name) {
-        $("#spgProjectName")?.focus();
-        $("#spgProjectName")?.classList.add("is-invalid");
+        $("#spgProjectName")
+          ?.focus();
+
+        $("#spgProjectName")
+          ?.classList.add(
+            "is-invalid"
+          );
+
         return false;
       }
-      $("#spgProjectName")?.classList.remove("is-invalid");
+
+      $("#spgProjectName")
+        ?.classList.remove(
+          "is-invalid"
+        );
     }
+
     return true;
   }
 
   function wizardNext() {
-    if (!validateStep(wizardStep)) return;
+    if (!validateStep(wizardStep)) {
+      return;
+    }
 
     if (wizardStep >= TOTAL_STEPS) {
       setView("review");
@@ -191,281 +323,1331 @@
     }
 
     wizardStep += 1;
+
     updateWizardUI();
   }
 
   function wizardPrev() {
-    if (wizardStep <= 1) return;
+    if (wizardStep <= 1) {
+      return;
+    }
+
     wizardStep -= 1;
+
     updateWizardUI();
   }
 
   function toggleConditionalPanels() {
-    const hasDocs = document.querySelector('input[name="spgHasDocs"]:checked')?.value === "yes";
-    const hasTeam = document.querySelector('input[name="spgHasTeam"]:checked')?.value === "yes";
-    const hasContracts = document.querySelector('input[name="spgHasContracts"]:checked')?.value === "yes";
+    const hasDocs =
+      document.querySelector(
+        'input[name="spgHasDocs"]:checked'
+      )?.value === "yes";
 
-    $("#spgDocumentsPanel")?.classList.toggle("d-none", !hasDocs);
-    $("#spgTeamPanel")?.classList.toggle("d-none", !hasTeam);
-    $("#spgContractsPanel")?.classList.toggle("d-none", !hasContracts);
+    const hasTeam =
+      document.querySelector(
+        'input[name="spgHasTeam"]:checked'
+      )?.value === "yes";
+
+    const hasContracts =
+      document.querySelector(
+        'input[name="spgHasContracts"]:checked'
+      )?.value === "yes";
+
+    $("#spgDocumentsPanel")
+      ?.classList.toggle(
+        "d-none",
+        !hasDocs
+      );
+
+    $("#spgTeamPanel")
+      ?.classList.toggle(
+        "d-none",
+        !hasTeam
+      );
+
+    $("#spgContractsPanel")
+      ?.classList.toggle(
+        "d-none",
+        !hasContracts
+      );
   }
+
+  /*
+   * ==========================
+   * DOCUMENTS
+   * ==========================
+   */
 
   function resolveDocument(id, tr) {
     if (!id || !tr) return null;
+
     return {
       id,
-      name: tr.dataset.spgName || "",
-      description: tr.dataset.spgDescription || "",
-      fileName: tr.dataset.spgFileName || "",
+      name:
+        tr.dataset.spgName || "",
+      description:
+        tr.dataset.spgDescription || "",
+      fileName:
+        tr.dataset.spgFileName || "",
     };
   }
 
   function getDocumentDraftFields() {
     return {
-      name: ($("#spgDocDraftName")?.value || "").trim(),
-      description: ($("#spgDocDraftDesc")?.value || "").trim(),
+      name:
+        (
+          $("#spgDocDraftName")
+            ?.value || ""
+        ).trim(),
+
+      description:
+        (
+          $("#spgDocDraftDesc")
+            ?.value || ""
+        ).trim(),
     };
   }
 
   function showDocumentFormError(message) {
-    const errorEl = $("#spgDocDraftFileError");
+    const errorEl =
+      $("#spgDocDraftFileError");
+
     if (!errorEl) return;
+
     if (message) {
-      errorEl.textContent = message;
-      errorEl.classList.remove("d-none");
+      errorEl.textContent =
+        message;
+
+      errorEl.classList.remove(
+        "d-none"
+      );
     } else {
       errorEl.textContent = "";
-      errorEl.classList.add("d-none");
+
+      errorEl.classList.add(
+        "d-none"
+      );
     }
   }
 
   function updateDocumentFormEditUI() {
-    const actions = $("#spgDocumentEditActions");
-    const card = $("#spgDocumentFormCard");
-    const isEditing = Boolean(documentFormEditingId);
-    actions?.classList.toggle("d-none", !isEditing);
-    actions?.classList.toggle("d-flex", isEditing);
-    card?.classList.toggle("spg-collection-form-editing", isEditing);
+    const actions =
+      $("#spgDocumentEditActions");
+
+    const card =
+      $("#spgDocumentFormCard");
+
+    const isEditing =
+      Boolean(
+        documentFormEditingId
+      );
+
+    actions?.classList.toggle(
+      "d-none",
+      !isEditing
+    );
+
+    actions?.classList.toggle(
+      "d-flex",
+      isEditing
+    );
+
+    card?.classList.toggle(
+      "spg-collection-form-editing",
+      isEditing
+    );
   }
 
-  function resetDocumentForm(clearEditing = true) {
-    if (clearEditing) documentFormEditingId = null;
-    const nameEl = $("#spgDocDraftName");
-    const descEl = $("#spgDocDraftDesc");
-    const fileEl = $("#spgDocDraftFile");
-    const infoEl = $("#spgDocDraftFileInfo");
-    if (nameEl) nameEl.value = "";
-    if (descEl) descEl.value = "";
-    if (fileEl) fileEl.value = "";
+  /*
+   * Keeps the editing visual state
+   * consistent between all collections.
+   */
+  function updateCollectionFormEditUI(
+    activeForm
+  ) {
+    const forms = [
+      $("#spgDocumentFormCard"),
+      $("#spgTeamFormCard"),
+      $("#spgContractFormCard"),
+    ];
+
+    forms.forEach(
+      (form) => {
+        if (!form) return;
+
+        form.classList.toggle(
+          "spg-collection-form-editing",
+          form === activeForm
+        );
+      }
+    );
+  }
+
+  function resetDocumentForm(
+    clearEditing = true
+  ) {
+    if (clearEditing) {
+      documentFormEditingId =
+        null;
+    }
+
+    const nameEl =
+      $("#spgDocDraftName");
+
+    const descEl =
+      $("#spgDocDraftDesc");
+
+    const fileEl =
+      $("#spgDocDraftFile");
+
+    const infoEl =
+      $("#spgDocDraftFileInfo");
+
+    if (nameEl) {
+      nameEl.value = "";
+    }
+
+    if (descEl) {
+      descEl.value = "";
+    }
+
+    if (fileEl) {
+      fileEl.value = "";
+    }
+
     if (infoEl) {
       infoEl.textContent = "";
-      infoEl.classList.add("d-none");
+
+      infoEl.classList.add(
+        "d-none"
+      );
     }
+
     showDocumentFormError("");
-    nameEl?.classList.remove("is-invalid");
+
+    nameEl?.classList.remove(
+      "is-invalid"
+    );
+
     updateDocumentFormEditUI();
+
+    if (
+      !teamFormEditingId &&
+      !contractFormEditingId
+    ) {
+      updateCollectionFormEditUI(
+        null
+      );
+    }
   }
 
-  function loadDocumentIntoForm(doc) {
-    documentFormEditingId = doc.id;
-    const nameEl = $("#spgDocDraftName");
-    const descEl = $("#spgDocDraftDesc");
-    const infoEl = $("#spgDocDraftFileInfo");
-    if (nameEl) nameEl.value = doc.name || "";
-    if (descEl) descEl.value = doc.description || "";
+  function loadDocumentIntoForm(
+    doc
+  ) {
+    documentFormEditingId =
+      doc.id;
+
+    teamFormEditingId = null;
+    contractFormEditingId = null;
+
+    const nameEl =
+      $("#spgDocDraftName");
+
+    const descEl =
+      $("#spgDocDraftDesc");
+
+    const infoEl =
+      $("#spgDocDraftFileInfo");
+
+    if (nameEl) {
+      nameEl.value =
+        doc.name || "";
+    }
+
+    if (descEl) {
+      descEl.value =
+        doc.description || "";
+    }
+
     if (infoEl) {
       if (doc.fileName) {
-        infoEl.textContent = `الملف الحالي: ${doc.fileName}`;
-        infoEl.classList.remove("d-none");
+        infoEl.textContent =
+          `الملف الحالي: ${doc.fileName}`;
+
+        infoEl.classList.remove(
+          "d-none"
+        );
       } else {
         infoEl.textContent = "";
-        infoEl.classList.add("d-none");
+
+        infoEl.classList.add(
+          "d-none"
+        );
       }
     }
-    const fileEl = $("#spgDocDraftFile");
-    if (fileEl) fileEl.value = "";
+
+    const fileEl =
+      $("#spgDocDraftFile");
+
+    if (fileEl) {
+      fileEl.value = "";
+    }
+
     showDocumentFormError("");
-    nameEl?.classList.remove("is-invalid");
+
+    nameEl?.classList.remove(
+      "is-invalid"
+    );
+
+    updateCollectionFormEditUI(
+      $("#spgDocumentFormCard")
+    );
+
     updateDocumentFormEditUI();
+    $("#spgDocumentFormCard")
+      ?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+
     nameEl?.focus();
   }
 
   function saveDocumentEditMetadata() {
-    if (!documentFormEditingId) return;
+    if (!documentFormEditingId) {
+      return;
+    }
 
-    let { name } = getDocumentDraftFields();
+    const { name } =
+      getDocumentDraftFields();
+
     if (!name) {
-      showDocumentFormError("يرجى إدخال اسم الملف");
-      $("#spgDocDraftName")?.classList.add("is-invalid");
-      $("#spgDocDraftName")?.focus();
+      showDocumentFormError(
+        "يرجى إدخال اسم الملف"
+      );
+
+      $("#spgDocDraftName")
+        ?.classList.add(
+          "is-invalid"
+        );
+
+      $("#spgDocDraftName")
+        ?.focus();
+
       return;
     }
 
     showDocumentFormError("");
-    $("#spgDocDraftName")?.classList.remove("is-invalid");
+
+    $("#spgDocDraftName")
+      ?.classList.remove(
+        "is-invalid"
+      );
+
     resetDocumentForm(true);
+
     spgAlertSaved();
   }
 
   function bindDocumentUploadForm() {
-    if (documentUploadBound) return;
-    const uploadBox = $("#spgDocUploadBox");
-    const fileInput = $("#spgDocDraftFile");
-    if (!uploadBox || !fileInput) return;
+    if (documentUploadBound) {
+      return;
+    }
+
+    const uploadBox =
+      $("#spgDocUploadBox");
+
+    const fileInput =
+      $("#spgDocDraftFile");
+
+    if (!uploadBox || !fileInput) {
+      return;
+    }
 
     documentUploadBound = true;
-    const MAX_SIZE = 500 * 1024 * 1024;
 
-    const handleFile = (file) => {
-      const infoEl = $("#spgDocDraftFileInfo");
-      showDocumentFormError("");
-      if (!file) return;
+    const MAX_SIZE =
+      500 * 1024 * 1024;
 
-      if (file.size > MAX_SIZE) {
-        showDocumentFormError("حجم الملف أكبر من 500 ميغابايت");
-        if (infoEl) {
-          infoEl.classList.add("d-none");
-          infoEl.textContent = "";
-        }
-        return;
-      }
+    const handleFile =
+      (file) => {
+        const infoEl =
+          $("#spgDocDraftFileInfo");
 
-      if (infoEl) {
-        infoEl.textContent = `تم اختيار الملف: ${file.name}`;
-        infoEl.classList.remove("d-none");
-      }
-    };
+        showDocumentFormError("");
 
-    uploadBox.addEventListener("click", (e) => {
-      if (e.target === fileInput) return;
-      fileInput.click();
-    });
-    fileInput.addEventListener("click", (e) => e.stopPropagation());
-    fileInput.addEventListener("change", () => handleFile(fileInput.files?.[0]));
+        if (!file) return;
 
-    uploadBox.addEventListener("dragover", (e) => {
-      e.preventDefault();
-      uploadBox.classList.add("dragover");
-    });
-    uploadBox.addEventListener("dragleave", () => uploadBox.classList.remove("dragover"));
-    uploadBox.addEventListener("drop", (e) => {
-      e.preventDefault();
-      uploadBox.classList.remove("dragover");
-      handleFile(e.dataTransfer.files?.[0]);
-    });
+        if (file.size > MAX_SIZE) {
+          showDocumentFormError(
+            "حجم الملف أكبر من 500 ميغابايت"
+          );
 
-    $("#spgDocEditSave")?.addEventListener("click", () => saveDocumentEditMetadata());
+          if (infoEl) {
+            infoEl.classList.add(
+              "d-none"
+            );
 
-    $("#spgDocEditCancel")?.addEventListener("click", () => resetDocumentForm(true));
-  }
+            infoEl.textContent = "";
+          }
 
-  function bindCollectionTableActions() {
-    const docBody = $("#spgDocumentsTableBody");
-    if (docBody && !docBody.dataset.spgActionsBound) {
-      docBody.dataset.spgActionsBound = "1";
-      docBody.addEventListener("click", (e) => {
-        const editBtn = e.target.closest(".spg-doc-edit");
-        const deleteBtn = e.target.closest(".spg-doc-delete");
-        const tr = e.target.closest("tr");
-        if (editBtn) {
-          const doc = resolveDocument(editBtn.dataset.id, tr);
-          if (doc) loadDocumentIntoForm(doc);
           return;
         }
-        if (deleteBtn) {
-          spgConfirmDelete().then((confirmed) => {
-            if (!confirmed) return;
-            const id = deleteBtn.dataset.id;
-            if (documentFormEditingId === id) resetDocumentForm(true);
-            tr?.remove();
-            spgAlertDeleted();
-          });
+
+        if (infoEl) {
+          infoEl.textContent =
+            `تم اختيار الملف: ${file.name}`;
+
+          infoEl.classList.remove(
+            "d-none"
+          );
         }
-      });
+      };
+
+    uploadBox.addEventListener(
+      "click",
+      (e) => {
+        if (e.target === fileInput) {
+          return;
+        }
+
+        fileInput.click();
+      }
+    );
+
+    fileInput.addEventListener(
+      "click",
+      (e) =>
+        e.stopPropagation()
+    );
+
+    fileInput.addEventListener(
+      "change",
+      () =>
+        handleFile(
+          fileInput.files?.[0]
+        )
+    );
+
+    uploadBox.addEventListener(
+      "dragover",
+      (e) => {
+        e.preventDefault();
+
+        uploadBox.classList.add(
+          "dragover"
+        );
+      }
+    );
+
+    uploadBox.addEventListener(
+      "dragleave",
+      () =>
+        uploadBox.classList.remove(
+          "dragover"
+        )
+    );
+
+    uploadBox.addEventListener(
+      "drop",
+      (e) => {
+        e.preventDefault();
+
+        uploadBox.classList.remove(
+          "dragover"
+        );
+
+        handleFile(
+          e.dataTransfer.files?.[0]
+        );
+      }
+    );
+
+    $("#spgDocEditSave")
+      ?.addEventListener(
+        "click",
+        () =>
+          saveDocumentEditMetadata()
+      );
+
+    $("#spgDocEditCancel")
+      ?.addEventListener(
+        "click",
+        () =>
+          resetDocumentForm(true)
+      );
+  }
+
+  /*
+   * ==========================
+   * TEAM MEMBERS
+   * ==========================
+   */
+
+  function resolveTeamMember(
+    id,
+    tr
+  ) {
+    if (!id || !tr) {
+      return null;
     }
 
-    const teamBody = $("#spgTeamList");
+    return {
+      id,
 
-    if (teamBody && !teamBody.dataset.spgActionsBound) {
-      teamBody.dataset.spgActionsBound = "1";
+      name:
+        tr.dataset.spgName || "",
 
-      teamBody.addEventListener("click", (e) => {
-        const editBtn = e.target.closest(".spg-team-edit");
-        if (!editBtn) return;
+      nationality:
+        tr.dataset.spgNationality || "",
 
-        $("#spgTeamFormCard")?.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
+      jobTitle:
+        tr.dataset.spgJobTitle || "",
 
-        $("#spgTeamDraftName")?.focus();
-      });
+      degree:
+        tr.dataset.spgDegree || "",
+
+      years:
+        tr.dataset.spgYears || "",
+
+      experiences:
+        tr.dataset.spgExperiences || "",
+
+      summary:
+        tr.dataset.spgSummary || "",
+
+      cvFileName:
+        tr.dataset.spgCvFileName || "",
+    };
+  }
+
+  function getTeamDraftFields() {
+    const summaryEl =
+      $("#spgTeamFormCard textarea");
+
+    return {
+      name:
+        (
+          $("#spgTeamDraftName")
+            ?.value || ""
+        ).trim(),
+
+      nationality:
+        (
+          $("#spgTeamDraftNationality")
+            ?.value || ""
+        ).trim(),
+
+      jobTitle:
+        (
+          $("#spgTeamDraftJobTitle")
+            ?.value || ""
+        ).trim(),
+
+      degree:
+        (
+          $("#spgTeamDraftDegree")
+            ?.value || ""
+        ).trim(),
+
+      years:
+        (
+          $("#spgTeamDraftYears")
+            ?.value || ""
+        ).trim(),
+
+      cvFileName:
+        (
+          $("#spgTeamDraftCvFileName")
+            ?.value || ""
+        ).trim(),
+
+      summary:
+        (
+          summaryEl?.value || ""
+        ).trim(),
+    };
+  }
+
+  function showTeamFormError(
+    message
+  ) {
+    const errorEl =
+      $("#spgTeamFormError");
+
+    if (!errorEl) return;
+
+    if (message) {
+      errorEl.textContent =
+        message;
+
+      errorEl.classList.remove(
+        "d-none"
+      );
+    } else {
+      errorEl.textContent = "";
+
+      errorEl.classList.add(
+        "d-none"
+      );
+    }
+  }
+
+  function updateTeamFormEditUI() {
+    const primaryActions =
+      $("#spgTeamFormPrimaryActions");
+
+    const editActions =
+      $("#spgTeamEditActions");
+
+    const card =
+      $("#spgTeamFormCard");
+
+    const isEditing =
+      Boolean(teamFormEditingId);
+
+    primaryActions?.classList.toggle(
+      "d-none",
+      isEditing
+    );
+
+    editActions?.classList.toggle(
+      "d-none",
+      !isEditing
+    );
+
+    editActions?.classList.toggle(
+      "d-flex",
+      isEditing
+    );
+
+    card?.classList.toggle(
+      "spg-collection-form-editing",
+      isEditing
+    );
+  }
+
+  function resetTeamForm(
+    clearEditing = true
+  ) {
+    if (clearEditing) {
+      teamFormEditingId =
+        null;
     }
 
-    const contractBody = $("#spgContractsList");
+    const fields = [
+      "#spgTeamDraftName",
+      "#spgTeamDraftNationality",
+      "#spgTeamDraftJobTitle",
+      "#spgTeamDraftDegree",
+      "#spgTeamDraftYears",
+      "#spgTeamDraftCvFileName",
+    ];
 
-    if (contractBody && !contractBody.dataset.spgActionsBound) {
-      contractBody.dataset.spgActionsBound = "1";
-    
-      contractBody.addEventListener("click", (e) => {
-        const editBtn = e.target.closest(".spg-contract-edit");
-        if (!editBtn) return;
-    
-        $("#spgContractFormCard")?.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-    
-        $("#spgContractDraftProjectName")?.focus();
-      });
+    fields.forEach(
+      (selector) => {
+        const el = $(selector);
+
+        if (el) {
+          el.value = "";
+        }
+      }
+    );
+
+    const summaryEl =
+      $("#spgTeamFormCard textarea");
+
+    if (summaryEl) {
+      summaryEl.value = "";
+    }
+
+    showTeamFormError("");
+
+    updateTeamFormEditUI();
+
+    if (
+      !documentFormEditingId &&
+      !contractFormEditingId
+    ) {
+      updateCollectionFormEditUI(
+        null
+      );
     }
   }
-  function countEnabledOptionalFromDom() {
-    return $$(".spg-optional-toggle:checked").length;
+
+  function loadTeamMemberIntoForm(
+    member
+  ) {
+    teamFormEditingId =
+      member.id;
+
+    documentFormEditingId = null;
+    contractFormEditingId = null;
+
+    $("#spgTeamDraftName").value =
+      member.name || "";
+
+    $("#spgTeamDraftNationality").value =
+      member.nationality || "";
+
+    $("#spgTeamDraftJobTitle").value =
+      member.jobTitle || "";
+
+    $("#spgTeamDraftDegree").value =
+      member.degree || "";
+
+    $("#spgTeamDraftYears").value =
+      member.years || "";
+
+    $("#spgTeamDraftCvFileName").value =
+      member.cvFileName || "";
+
+    const summaryEl =
+      $("#spgTeamFormCard textarea");
+
+    if (summaryEl) {
+      summaryEl.value =
+        member.summary ||
+        member.experiences ||
+        "";
+    }
+
+    showTeamFormError("");
+
+    updateCollectionFormEditUI(
+      $("#spgTeamFormCard")
+    );
+
+    updateTeamFormEditUI();
+
+    $("#spgTeamFormCard")
+      ?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+
+    $("#spgTeamDraftName")
+      ?.focus();
   }
 
-  function countCoreSectionsFromDom() {
-    const root = $("#spgCoreSections");
-    if (!root) return SPG_CORE_SECTION_COUNT;
-    const n = $$(".spg-section-row", root).length;
-    return n || SPG_CORE_SECTION_COUNT;
+  function saveTeamEdit() {
+    if (!teamFormEditingId) {
+      return;
+    }
+
+    const fields =
+      getTeamDraftFields();
+
+    if (!fields.name) {
+      showTeamFormError(
+        "يرجى إدخال اسم الموظف"
+      );
+
+      $("#spgTeamDraftName")
+        ?.focus();
+
+      return;
+    }
+
+    showTeamFormError("");
+
+    resetTeamForm(true);
+
+    spgAlertSaved();
   }
 
-  function estimatePages() {
-    const coreCount = countCoreSectionsFromDom();
-    const extra = countEnabledOptionalFromDom();
-    const min = coreCount + extra;
-    const max = coreCount + extra * 2;
-    return { min, max, totalSections: coreCount + extra, coreCount };
+  /*
+   * ==========================
+   * CONTRACTS
+   * ==========================
+   */
+
+  function resolveContract(
+    id,
+    tr
+  ) {
+    if (!id || !tr) {
+      return null;
+    }
+
+    return {
+      id,
+
+      projectName:
+        tr.dataset.spgProjectName || "",
+
+      entity:
+        tr.dataset.spgEntity || "",
+
+      description:
+        tr.dataset.spgDescription || "",
+
+      year:
+        tr.dataset.spgYear || "",
+
+      duration:
+        tr.dataset.spgDuration || "",
+
+      cost:
+        tr.dataset.spgCost || "",
+
+      fileName:
+        tr.dataset.spgContractFileName || "",
+    };
   }
+
+  function getContractDraftFields() {
+    return {
+      projectName:
+        (
+          $("#spgContractDraftProjectName")
+            ?.value || ""
+        ).trim(),
+
+      entity:
+        (
+          $("#spgContractDraftEntity")
+            ?.value || ""
+        ).trim(),
+
+      description:
+        (
+          $("#spgContractDraftDescription")
+            ?.value || ""
+        ).trim(),
+
+      year:
+        (
+          $("#spgContractDraftYear")
+            ?.value || ""
+        ).trim(),
+
+      duration:
+        (
+          $("#spgContractDraftDuration")
+            ?.value || ""
+        ).trim(),
+
+      cost:
+        (
+          $("#spgContractDraftCost")
+            ?.value || ""
+        ).trim(),
+
+      fileName:
+        (
+          $("#spgContractDraftFileName")
+            ?.value || ""
+        ).trim(),
+    };
+  }
+
+  function showContractFormError(
+    message
+  ) {
+    const errorEl =
+      $("#spgContractFormError");
+
+    if (!errorEl) return;
+
+    if (message) {
+      errorEl.textContent =
+        message;
+
+      errorEl.classList.remove(
+        "d-none"
+      );
+    } else {
+      errorEl.textContent = "";
+
+      errorEl.classList.add(
+        "d-none"
+      );
+    }
+  }
+
+  function updateContractFormEditUI() {
+    const primaryActions =
+      $("#spgContractFormPrimaryActions");
+
+    const editActions =
+      $("#spgContractEditActions");
+
+    const card =
+      $("#spgContractFormCard");
+
+    const isEditing =
+      Boolean(
+        contractFormEditingId
+      );
+
+    primaryActions?.classList.toggle(
+      "d-none",
+      isEditing
+    );
+
+    editActions?.classList.toggle(
+      "d-none",
+      !isEditing
+    );
+
+    editActions?.classList.toggle(
+      "d-flex",
+      isEditing
+    );
+
+    card?.classList.toggle(
+      "spg-collection-form-editing",
+      isEditing
+    );
+  }
+
+  function resetContractForm(
+    clearEditing = true
+  ) {
+    if (clearEditing) {
+      contractFormEditingId =
+        null;
+    }
+
+    const fields = [
+      "#spgContractDraftProjectName",
+      "#spgContractDraftEntity",
+      "#spgContractDraftDescription",
+      "#spgContractDraftYear",
+      "#spgContractDraftDuration",
+      "#spgContractDraftCost",
+      "#spgContractDraftFileName",
+    ];
+
+    fields.forEach(
+      (selector) => {
+        const el = $(selector);
+
+        if (el) {
+          el.value = "";
+        }
+      }
+    );
+
+    showContractFormError("");
+
+    updateContractFormEditUI();
+
+    if (
+      !documentFormEditingId &&
+      !teamFormEditingId
+    ) {
+      updateCollectionFormEditUI(
+        null
+      );
+    }
+  }
+
+  function loadContractIntoForm(
+    contract
+  ) {
+    contractFormEditingId =
+      contract.id;
+
+    documentFormEditingId = null;
+    teamFormEditingId = null;
+
+    $("#spgContractDraftProjectName").value =
+      contract.projectName || "";
+
+    $("#spgContractDraftEntity").value =
+      contract.entity || "";
+
+    $("#spgContractDraftDescription").value =
+      contract.description || "";
+
+    $("#spgContractDraftYear").value =
+      contract.year || "";
+
+    $("#spgContractDraftDuration").value =
+      contract.duration || "";
+
+    $("#spgContractDraftCost").value =
+      contract.cost || "";
+
+    $("#spgContractDraftFileName").value =
+      contract.fileName || "";
+
+    showContractFormError("");
+
+    updateCollectionFormEditUI(
+      $("#spgContractFormCard")
+    );
+
+    updateContractFormEditUI();
+
+    $("#spgContractFormCard")
+      ?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+
+    $("#spgContractDraftProjectName")
+      ?.focus();
+  }
+
+  function saveContractEdit() {
+    if (!contractFormEditingId) {
+      return;
+    }
+
+    const fields =
+      getContractDraftFields();
+
+    if (!fields.projectName) {
+      showContractFormError(
+        "يرجى إدخال اسم المشروع"
+      );
+
+      $("#spgContractDraftProjectName")
+        ?.focus();
+
+      return;
+    }
+
+    showContractFormError("");
+
+    resetContractForm(true);
+
+    spgAlertSaved();
+  }
+
+  /*
+   * ==========================
+   * COLLECTION TABLE ACTIONS
+   * ==========================
+   */
+
+  function bindCollectionTableActions() {
+    /*
+     * ==========================
+     * DOCUMENTS
+     * ==========================
+     */
+
+    const docBody =
+      $("#spgDocumentsTableBody");
+
+    if (
+      docBody &&
+      !docBody.dataset.spgActionsBound
+    ) {
+      docBody.dataset.spgActionsBound =
+        "1";
+
+      docBody.addEventListener(
+        "click",
+        (e) => {
+          const editBtn =
+            e.target.closest(
+              ".spg-doc-edit"
+            );
+
+          const deleteBtn =
+            e.target.closest(
+              ".spg-doc-delete"
+            );
+
+          const tr =
+            e.target.closest("tr");
+
+          if (editBtn) {
+            const doc =
+              resolveDocument(
+                editBtn.dataset.id,
+                tr
+              );
+
+            if (doc) {
+              loadDocumentIntoForm(
+                doc
+              );
+            }
+
+            return;
+          }
+
+          if (deleteBtn) {
+            spgConfirmDelete().then(
+              (confirmed) => {
+                if (!confirmed) {
+                  return;
+                }
+
+                const id =
+                  deleteBtn.dataset.id;
+
+                if (
+                  documentFormEditingId ===
+                  id
+                ) {
+                  resetDocumentForm(
+                    true
+                  );
+                }
+
+                tr?.remove();
+
+                spgAlertDeleted();
+              }
+            );
+          }
+        }
+      );
+    }
+
+    /*
+     * ==========================
+     * TEAM MEMBERS
+     * ==========================
+     */
+
+    const teamBody =
+      $("#spgTeamList");
+
+    if (
+      teamBody &&
+      !teamBody.dataset.spgActionsBound
+    ) {
+      teamBody.dataset.spgActionsBound =
+        "1";
+
+      teamBody.addEventListener(
+        "click",
+        (e) => {
+          const editBtn =
+            e.target.closest(
+              ".spg-team-edit"
+            );
+
+          const deleteBtn =
+            e.target.closest(
+              ".spg-team-delete"
+            );
+
+          const tr =
+            e.target.closest("tr");
+
+          if (editBtn) {
+            const member =
+              resolveTeamMember(
+                editBtn.dataset.id,
+                tr
+              );
+
+            if (member) {
+              loadTeamMemberIntoForm(
+                member
+              );
+            }
+
+            return;
+          }
+
+          if (deleteBtn) {
+            spgConfirmDelete().then(
+              (confirmed) => {
+                if (!confirmed) {
+                  return;
+                }
+
+                const id =
+                  deleteBtn.dataset.id;
+
+                if (
+                  teamFormEditingId ===
+                  id
+                ) {
+                  resetTeamForm(
+                    true
+                  );
+                }
+
+                tr?.remove();
+
+                spgAlertDeleted();
+              }
+            );
+          }
+        }
+      );
+    }
+
+    /*
+     * ==========================
+     * CONTRACTS
+     * ==========================
+     */
+
+    const contractBody =
+      $("#spgContractsList");
+
+    if (
+      contractBody &&
+      !contractBody.dataset.spgActionsBound
+    ) {
+      contractBody.dataset.spgActionsBound =
+        "1";
+
+      contractBody.addEventListener(
+        "click",
+        (e) => {
+          const editBtn =
+            e.target.closest(
+              ".spg-contract-edit"
+            );
+
+          const deleteBtn =
+            e.target.closest(
+              ".spg-contract-delete"
+            );
+
+          const tr =
+            e.target.closest("tr");
+
+          if (editBtn) {
+            const contract =
+              resolveContract(
+                editBtn.dataset.id,
+                tr
+              );
+
+            if (contract) {
+              loadContractIntoForm(
+                contract
+              );
+            }
+
+            return;
+          }
+
+          if (deleteBtn) {
+            spgConfirmDelete().then(
+              (confirmed) => {
+                if (!confirmed) {
+                  return;
+                }
+
+                const id =
+                  deleteBtn.dataset.id;
+
+                if (
+                  contractFormEditingId ===
+                  id
+                ) {
+                  resetContractForm(
+                    true
+                  );
+                }
+
+                tr?.remove();
+
+                spgAlertDeleted();
+              }
+            );
+          }
+        }
+      );
+    }
+  }
+
+  /*
+   * ==========================
+   * PROJECT DRAWER
+   * ==========================
+   */
 
   function bindProjectsDrawer() {
-    const root = $(".spg-root");
-    const panel = $("#spgProjectsSidebar");
-    const backdrop = $("#spgProjectsSidebarBackdrop");
-    const openBtn = $("#spgProjectsSidebarOpen");
-    const closeBtn = $("#spgProjectsSidebarClose");
-    if (!root || !panel) return;
+    const root =
+      $(".spg-root");
 
-    const mobileQuery = window.matchMedia("(max-width: 767.98px)");
+    const panel =
+      $("#spgProjectsSidebar");
+
+    const backdrop =
+      $("#spgProjectsSidebarBackdrop");
+
+    const openBtn =
+      $("#spgProjectsSidebarOpen");
+
+    const closeBtn =
+      $("#spgProjectsSidebarClose");
+
+    if (!root || !panel) {
+      return;
+    }
+
+    const mobileQuery =
+      window.matchMedia(
+        "(max-width: 767.98px)"
+      );
 
     function syncDrawerA11yDesktop() {
       if (!mobileQuery.matches) {
-        root.classList.remove("spg-projects-drawer-open");
-        document.body.classList.remove("spg-projects-drawer-open");
-        backdrop?.classList.remove("show");
-        document.body.classList.remove("spg-projects-drawer-body-lock");
-        panel.removeAttribute("aria-hidden");
-        panel.setAttribute("role", "complementary");
-        panel.removeAttribute("aria-modal");
-        openBtn?.setAttribute("aria-expanded", "false");
+        root.classList.remove(
+          "spg-projects-drawer-open"
+        );
+
+        document.body.classList.remove(
+          "spg-projects-drawer-open"
+        );
+
+        backdrop?.classList.remove(
+          "show"
+        );
+
+        document.body.classList.remove(
+          "spg-projects-drawer-body-lock"
+        );
+
+        panel.removeAttribute(
+          "aria-hidden"
+        );
+
+        panel.setAttribute(
+          "role",
+          "complementary"
+        );
+
+        panel.removeAttribute(
+          "aria-modal"
+        );
+
+        openBtn?.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
         return true;
       }
-      panel.setAttribute("role", "dialog");
-      panel.setAttribute("aria-modal", "true");
-      if (!root.classList.contains("spg-projects-drawer-open")) {
-        panel.setAttribute("aria-hidden", "true");
+
+      panel.setAttribute(
+        "role",
+        "dialog"
+      );
+
+      panel.setAttribute(
+        "aria-modal",
+        "true"
+      );
+
+      if (
+        !root.classList.contains(
+          "spg-projects-drawer-open"
+        )
+      ) {
+        panel.setAttribute(
+          "aria-hidden",
+          "true"
+        );
       }
+
       return false;
     }
 
@@ -474,89 +1656,287 @@
     }
 
     function openDrawer() {
-      if (!isMobileDrawerViewport()) return;
-      root.classList.add("spg-projects-drawer-open");
-      document.body.classList.add("spg-projects-drawer-open");
-      backdrop?.classList.add("show");
-      backdrop?.setAttribute("aria-hidden", "false");
-      openBtn?.setAttribute("aria-expanded", "true");
-      panel.setAttribute("aria-hidden", "false");
-      document.body.classList.add("spg-projects-drawer-body-lock");
+      if (
+        !isMobileDrawerViewport()
+      ) {
+        return;
+      }
+
+      root.classList.add(
+        "spg-projects-drawer-open"
+      );
+
+      document.body.classList.add(
+        "spg-projects-drawer-open"
+      );
+
+      backdrop?.classList.add(
+        "show"
+      );
+
+      backdrop?.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+      openBtn?.setAttribute(
+        "aria-expanded",
+        "true"
+      );
+
+      panel.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+      document.body.classList.add(
+        "spg-projects-drawer-body-lock"
+      );
+
       closeBtn?.focus();
     }
 
     function closeDrawer() {
-      if (!isMobileDrawerViewport()) return;
-      root.classList.remove("spg-projects-drawer-open");
-      document.body.classList.remove("spg-projects-drawer-open");
-      backdrop?.classList.remove("show");
-      backdrop?.setAttribute("aria-hidden", "true");
-      openBtn?.setAttribute("aria-expanded", "false");
-      panel.setAttribute("aria-hidden", "true");
-      document.body.classList.remove("spg-projects-drawer-body-lock");
+      if (
+        !isMobileDrawerViewport()
+      ) {
+        return;
+      }
+
+      root.classList.remove(
+        "spg-projects-drawer-open"
+      );
+
+      document.body.classList.remove(
+        "spg-projects-drawer-open"
+      );
+
+      backdrop?.classList.remove(
+        "show"
+      );
+
+      backdrop?.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+      openBtn?.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+      panel.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+      document.body.classList.remove(
+        "spg-projects-drawer-body-lock"
+      );
+
       openBtn?.focus();
     }
 
-    openBtn?.addEventListener("click", openDrawer);
-    closeBtn?.addEventListener("click", closeDrawer);
-    backdrop?.addEventListener("click", closeDrawer);
+    openBtn?.addEventListener(
+      "click",
+      openDrawer
+    );
 
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && root.classList.contains("spg-projects-drawer-open")) {
-        closeDrawer();
+    closeBtn?.addEventListener(
+      "click",
+      closeDrawer
+    );
+
+    backdrop?.addEventListener(
+      "click",
+      closeDrawer
+    );
+
+    document.addEventListener(
+      "keydown",
+      (e) => {
+        if (
+          e.key === "Escape" &&
+          root.classList.contains(
+            "spg-projects-drawer-open"
+          )
+        ) {
+          closeDrawer();
+        }
       }
-    });
+    );
 
-    const projectList = $("#spgProjectList");
-    projectList?.addEventListener("click", (e) => {
-      const item = e.target.closest(".spg-project-item, [data-spg-dynamic-project]");
-      if (item && root.classList.contains("spg-projects-drawer-open")) {
-        closeDrawer();
+    const projectList =
+      $("#spgProjectList");
+
+    projectList?.addEventListener(
+      "click",
+      (e) => {
+        const item =
+          e.target.closest(
+            ".spg-project-item, [data-spg-dynamic-project]"
+          );
+
+        if (
+          item &&
+          root.classList.contains(
+            "spg-projects-drawer-open"
+          )
+        ) {
+          closeDrawer();
+        }
       }
-    });
+    );
 
-    mobileQuery.addEventListener("change", syncDrawerA11yDesktop);
+    mobileQuery.addEventListener(
+      "change",
+      syncDrawerA11yDesktop
+    );
+
     syncDrawerA11yDesktop();
   }
+
+  /*
+   * ==========================
+   * EVENTS
+   * ==========================
+   */
 
   function bindEvents() {
     bindProjectsDrawer();
 
-    $$(".spg-path-card[data-proposal-type]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        btn.classList.add("active");
-        startWizard(btn.dataset.proposalType);
-      });
-    });
+    $$(".spg-path-card[data-proposal-type]")
+      .forEach(
+        (btn) => {
+          btn.addEventListener(
+            "click",
+            () => {
+              btn.classList.add(
+                "active"
+              );
 
-    $("#spgWizardNext")?.addEventListener("click", wizardNext);
-    $("#spgWizardPrev")?.addEventListener("click", wizardPrev);
-    $("#spgWizardBackToLanding")?.addEventListener("click", () => setView("landing"));
+              startWizard(
+                btn.dataset.proposalType
+              );
+            }
+          );
+        }
+      );
 
-    $$('input[name="spgHasDocs"], input[name="spgHasTeam"], input[name="spgHasContracts"]').forEach((input) => {
-      input.addEventListener("change", () => toggleConditionalPanels());
-    });
+    $("#spgWizardNext")
+      ?.addEventListener(
+        "click",
+        wizardNext
+      );
+
+    $("#spgWizardPrev")
+      ?.addEventListener(
+        "click",
+        wizardPrev
+      );
+
+    $("#spgWizardBackToLanding")
+      ?.addEventListener(
+        "click",
+        () =>
+          setView("landing")
+      );
+
+    $$(
+      'input[name="spgHasDocs"], input[name="spgHasTeam"], input[name="spgHasContracts"]'
+    ).forEach(
+      (input) => {
+        input.addEventListener(
+          "change",
+          () =>
+            toggleConditionalPanels()
+        );
+      }
+    );
 
     bindDocumentUploadForm();
     bindCollectionTableActions();
 
-    $("#spgReviewBack")?.addEventListener("click", () => {
-      wizardStep = TOTAL_STEPS;
-      setView("wizard");
-    });
+    /*
+     * ==========================
+     * TEAM EDIT ACTIONS
+     * ==========================
+     */
 
-    $("#spgOptionalSections")?.addEventListener("change", (e) => {
-      if (!e.target.closest(".spg-optional-toggle")) return;
-      renderReview();
-    });
+    $("#spgTeamEditSave")
+      ?.addEventListener(
+        "click",
+        () =>
+          saveTeamEdit()
+      );
+
+    $("#spgTeamEditCancel")
+      ?.addEventListener(
+        "click",
+        () =>
+          resetTeamForm(true)
+      );
+
+    /*
+     * ==========================
+     * CONTRACT EDIT ACTIONS
+     * ==========================
+     */
+
+    $("#spgContractEditSave")
+      ?.addEventListener(
+        "click",
+        () =>
+          saveContractEdit()
+      );
+
+    $("#spgContractEditCancel")
+      ?.addEventListener(
+        "click",
+        () =>
+          resetContractForm(true)
+      );
+
+    $("#spgReviewBack")
+      ?.addEventListener(
+        "click",
+        () => {
+          wizardStep =
+            TOTAL_STEPS;
+
+          setView("wizard");
+        }
+      );
+
+    $("#spgOptionalSections")
+      ?.addEventListener(
+        "change",
+        (e) => {
+          if (
+            !e.target.closest(
+              ".spg-optional-toggle"
+            )
+          ) {
+            return;
+          }
+
+          renderReview();
+        }
+      );
   }
 
   function init() {
-    if (!$(".spg-root")) return;
+    if (!$(".spg-root")) {
+      return;
+    }
 
     bindEvents();
+
     setView(view);
   }
 
-  document.addEventListener("DOMContentLoaded", init);
+  document.addEventListener(
+    "DOMContentLoaded",
+    init
+  );
 })();

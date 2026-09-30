@@ -951,7 +951,7 @@
                       <div
                         class="d-flex flex-wrap align-items-center justify-content-end gap-3 mt-3 pt-3 border-top border-light"
                         id="spgTeamFormPrimaryActions">
-                        <button type="button" class="btn-main btn-primary h-44 fz-14" id="spgAddTeamBtn">حفظ وإضافة
+                        <button type="button" class="btn-main btn-primary h-44 fz-14">حفظ وإضافة
                           للقائمة</button>
                       </div>
                       <div class="d-none flex-wrap align-items-center gap-3 mt-3 pt-3 border-top border-light"
@@ -1159,7 +1159,7 @@
                       <div
                         class="d-flex flex-wrap align-items-center justify-content-end gap-3 mt-3 pt-3 border-top border-light"
                         id="spgContractFormPrimaryActions">
-                        <button type="button" class="btn-main btn-primary h-44 fz-14" id="spgAddContractBtn">حفظ
+                        <button type="button" class="btn-main btn-primary h-44 fz-14">حفظ
                           وإضافة للقائمة</button>
                       </div>
                       <div class="d-none flex-wrap align-items-center gap-3 mt-3 pt-3 border-top border-light"
@@ -1391,7 +1391,6 @@
                               <input
                                   type="radio"
                                   name="spgDetailLevel"
-                                  value="detailed"
                                   class="spg-detail-radio"
                                   checked>
 
@@ -1409,7 +1408,6 @@
                               <input
                                   type="radio"
                                   name="spgDetailLevel"
-                                  value="medium"
                                   class="spg-detail-radio">
 
                               <h3 class="fz-16 black-text mb-2">متوسط</h3>
@@ -1426,9 +1424,7 @@
                               <input
                                   type="radio"
                                   name="spgDetailLevel"
-                                  value="brief"
                                   class="spg-detail-radio">
-
                               <h3 class="fz-16 black-text mb-2">مختصر</h3>
 
                               <p class="fz-12 text-gray mb-0">
@@ -1471,25 +1467,25 @@
                 <div class="row g-3 text-center">
                   <div class="col-6 col-lg-3">
                     <div class="stat-card flex-column py-3 h-100">
-                      <span class="stat-value ff-onest" id="spgSummaryTotal">—</span>
+                      <span class="stat-value ff-onest">—</span>
                       <span class="text-gray">إجمالي الأقسام</span>
                     </div>
                   </div>
                   <div class="col-6 col-lg-3">
                     <div class="stat-card flex-column py-3 h-100">
-                      <span class="stat-value ff-onest" id="spgSummaryCore">5</span>
+                      <span class="stat-value ff-onest">5</span>
                       <span class="text-gray">الأقسام الأساسية</span>
                     </div>
                   </div>
                   <div class="col-6 col-lg-3">
                     <div class="stat-card flex-column py-3 h-100">
-                      <span class="stat-value ff-onest" id="spgSummaryOptional">—</span>
+                      <span class="stat-value ff-onest">—</span>
                       <span class="text-gray">الأقسام الاختيارية</span>
                     </div>
                   </div>
                   <div class="col-6 col-lg-3">
                     <div class="stat-card flex-column py-3 h-100">
-                      <span class="stat-value ff-onest fz-14" id="spgSummaryPages">—</span>
+                      <span class="stat-value ff-onest fz-14">—</span>
                       <span class="text-gray">الصفحات التقديرية</span>
                     </div>
                   </div>
@@ -1666,7 +1662,6 @@
     </div>
   </div>
 
-  <!-- Single details modal: ASP.NET renders title/body per row; triggers use data-bs-target="#spgCollectionDetailModal" -->
   <div class="modal fade" id="spgCollectionDetailModal" tabindex="-1" aria-labelledby="spgCollectionDetailTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
