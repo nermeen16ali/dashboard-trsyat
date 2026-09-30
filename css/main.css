@@ -7710,3 +7710,12 @@ body.spg-projects-drawer-body-lock {
     min-height: 0;
   }
 }
+/* Hide radio completely */
+.spg-detail-radio {
+    display: none;
+}
+
+.stat-card.active,
+.spg-detail-card:has(.spg-detail-radio:checked) {
+  background: #e3f0f2 !important;
+}
