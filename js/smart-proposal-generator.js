@@ -16,7 +16,6 @@
   let wizardStep = 1;
   let documentFormEditingId = null;
   let documentUploadBound = false;
-  let contractFormEditingId = null;
 
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
@@ -221,20 +220,6 @@
     };
   }
 
-  function resolveContract(id, tr) {
-    if (!id || !tr) return null;
-    return {
-      id,
-      projectName: tr.dataset.spgProjectName || "",
-      entity: tr.dataset.spgEntity || "",
-      description: tr.dataset.spgDescription || "",
-      year: tr.dataset.spgYear || "",
-      duration: tr.dataset.spgDuration || "",
-      cost: tr.dataset.spgCost || "",
-      contractFileName: tr.dataset.spgContractFileName || "",
-    };
-  }
-
   function getDocumentDraftFields() {
     return {
       name: ($("#spgDocDraftName")?.value || "").trim(),
@@ -374,76 +359,6 @@
     $("#spgDocEditCancel")?.addEventListener("click", () => resetDocumentForm(true));
   }
 
-  function showContractFormError(message) {
-    const el = $("#spgContractFormError");
-    if (!el) return;
-    if (message) {
-      el.textContent = message;
-      el.classList.remove("d-none");
-    } else {
-      el.textContent = "";
-      el.classList.add("d-none");
-    }
-  }
-
-  function updateContractFormEditUI() {
-    const isEditing = Boolean(contractFormEditingId);
-    $("#spgContractEditActions")?.classList.toggle("d-none", !isEditing);
-    $("#spgContractEditActions")?.classList.toggle("d-flex", isEditing);
-    $("#spgContractFormPrimaryActions")?.classList.toggle("d-none", isEditing);
-    $("#spgContractFormCard")?.classList.toggle("spg-collection-form-editing", isEditing);
-  }
-
-  function resetContractForm(clearEditing = true) {
-    if (clearEditing) contractFormEditingId = null;
-    [
-      "spgContractDraftProjectName",
-      "spgContractDraftEntity",
-      "spgContractDraftDescription",
-      "spgContractDraftYear",
-      "spgContractDraftDuration",
-      "spgContractDraftCost",
-      "spgContractDraftFileName",
-    ].forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) el.value = "";
-    });
-    showContractFormError("");
-    $("#spgContractDraftProjectName")?.classList.remove("is-invalid");
-    updateContractFormEditUI();
-  }
-
-  function loadContractIntoForm(contract) {
-    contractFormEditingId = contract.id;
-    $("#spgContractDraftProjectName").value = contract.projectName || "";
-    $("#spgContractDraftEntity").value = contract.entity || "";
-    $("#spgContractDraftDescription").value = contract.description || "";
-    $("#spgContractDraftYear").value = contract.year || "";
-    $("#spgContractDraftDuration").value = contract.duration || "";
-    $("#spgContractDraftCost").value = contract.cost || "";
-    $("#spgContractDraftFileName").value = contract.contractFileName || "";
-    showContractFormError("");
-    updateContractFormEditUI();
-    $("#spgContractDraftProjectName")?.focus();
-  }
-
-  function commitContractFromForm() {
-    const draft = getContractDraftFields();
-    if (!draft.projectName) {
-      showContractFormError("يرجى إدخال اسم المشروع");
-      $("#spgContractDraftProjectName")?.classList.add("is-invalid");
-      $("#spgContractDraftProjectName")?.focus();
-      return;
-    }
-    showContractFormError("");
-    $("#spgContractDraftProjectName")?.classList.remove("is-invalid");
-
-    const wasEditing = Boolean(contractFormEditingId);
-    resetContractForm(true);
-    if (wasEditing) spgAlertSaved();
-    else spgAlertAdded();
-  }
-
   function bindCollectionTableActions() {
     const docBody = $("#spgDocumentsTableBody");
     if (docBody && !docBody.dataset.spgActionsBound) {
@@ -488,36 +403,23 @@
     }
 
     const contractBody = $("#spgContractsList");
+
     if (contractBody && !contractBody.dataset.spgActionsBound) {
       contractBody.dataset.spgActionsBound = "1";
+    
       contractBody.addEventListener("click", (e) => {
         const editBtn = e.target.closest(".spg-contract-edit");
-        const deleteBtn = e.target.closest(".spg-contract-delete");
-        const tr = e.target.closest("tr");
-        if (editBtn) {
-          const item = resolveContract(editBtn.dataset.id, tr);
-          if (item) loadContractIntoForm(item);
-          return;
-        }
-        if (deleteBtn) {
-          spgConfirmDelete().then((confirmed) => {
-            if (!confirmed) return;
-            const id = deleteBtn.dataset.id;
-            if (contractFormEditingId === id) resetContractForm(true);
-            tr?.remove();
-            spgAlertDeleted();
-          });
-        }
+        if (!editBtn) return;
+    
+        $("#spgContractFormCard")?.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+    
+        $("#spgContractDraftProjectName")?.focus();
       });
     }
   }
-
-  function bindContractForm() {
-    $("#spgAddContractBtn")?.addEventListener("click", () => commitContractFromForm());
-    $("#spgContractEditSave")?.addEventListener("click", () => commitContractFromForm());
-    $("#spgContractEditCancel")?.addEventListener("click", () => resetContractForm(true));
-  }
-
   function countEnabledOptionalFromDom() {
     return $$(".spg-optional-toggle:checked").length;
   }
@@ -636,7 +538,6 @@
     });
 
     bindDocumentUploadForm();
-    bindContractForm();
     bindCollectionTableActions();
 
     $("#spgReviewBack")?.addEventListener("click", () => {
