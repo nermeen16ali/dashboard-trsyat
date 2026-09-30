@@ -7440,6 +7440,7 @@ html[dir="ltr"] .input-icon-group input {
 
 .spg-collection-section .spg-collection-form-card {
   border-radius: 12px;
+  scroll-margin-top: 96px;
 }
 
 .spg-items-table td .spg-detail-modal-trigger,

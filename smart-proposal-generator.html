@@ -919,7 +919,11 @@
                         </div>
                         <div class="col-12 col-md-6">
                           <label class="form-label" for="spgTeamDraftNationality">الجنسية</label>
-                          <input type="text" class="form-control" id="spgTeamDraftNationality" autocomplete="off" />
+                          <select class="form-select form-control" id="spgTeamDraftNationality">
+                            <option selected disabled value="">اختر الجنسية</option>
+                            <option value="1">سعودي</option>
+                            <option value="2">غير سعودي</option>
+                          </select>
                         </div>
                         <div class="col-12 col-md-6">
                           <label class="form-label" for="spgTeamDraftJobTitle">المسمى الوظيفي</label>
@@ -931,7 +935,12 @@
                         </div>
                         <div class="col-12 col-md-6">
                           <label class="form-label" for="spgTeamDraftYears">سنوات الخبرة</label>
-                          <input type="text" class="form-control" id="spgTeamDraftYears" autocomplete="off" dir="ltr" />
+                          <select class="form-select form-control" id="spgTeamDraftYears">
+                            <option selected disabled value="">اختر سنوات الخبرة</option>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="12">12</option>
+                          </select>
                         </div>
                         <div class="col-12 col-md-6">
                           <label class="form-label" for="spgTeamDraftCvFileName">اسم ملف السيرة الذاتية</label>
@@ -942,7 +951,8 @@
                             القدرات والملخص
                           </label>
                           <div class="position-relative">
-                            <textarea class="form-control" placeholder="اكتب القدرات والملخص" maxlength="300"></textarea>
+                            <textarea class="form-control" id="spgTeamDraftSummary" placeholder="اكتب القدرات والملخص"
+                              maxlength="300"></textarea>
                             <div class="char-count black-text fz-12">30/300</div>
                           </div>
                         </div>
@@ -951,7 +961,7 @@
                       <div
                         class="d-flex flex-wrap align-items-center justify-content-end gap-3 mt-3 pt-3 border-top border-light"
                         id="spgTeamFormPrimaryActions">
-                        <button type="button" class="btn-main btn-primary h-44 fz-14">حفظ وإضافة
+                        <button type="button" class="btn-main btn-primary h-44 fz-14" id="spgAddTeamBtn">حفظ وإضافة
                           للقائمة</button>
                       </div>
                       <div class="d-none flex-wrap align-items-center gap-3 mt-3 pt-3 border-top border-light"

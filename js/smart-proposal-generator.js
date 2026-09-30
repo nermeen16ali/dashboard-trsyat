@@ -541,6 +541,86 @@
     }
   }
 
+  function setSpgFormFieldValue(
+    selector,
+    value
+  ) {
+    const el = $(selector);
+
+    if (!el) {
+      return;
+    }
+
+    const normalized =
+      value == null
+        ? ""
+        : String(value);
+
+    if (el.tagName === "SELECT") {
+      el.value = normalized;
+
+      if (
+        el.value !== normalized &&
+        normalized.trim()
+      ) {
+        const match = Array.from(
+          el.options
+        ).find(
+          (opt) =>
+            opt.text.trim() ===
+              normalized.trim() ||
+            opt.value === normalized
+        );
+
+        if (match) {
+          el.value = match.value;
+        }
+      }
+
+      return;
+    }
+
+    el.value = normalized;
+  }
+
+  function scrollSpgCollectionFormIntoView(
+    formCard,
+    focusEl
+  ) {
+    if (!formCard) {
+      return;
+    }
+
+    requestAnimationFrame(() => {
+      formCard.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+
+      const target =
+        focusEl ||
+        formCard.querySelector(
+          "input:not([type='hidden']):not([type='file']), textarea, select"
+        );
+
+      if (
+        !target ||
+        typeof target.focus !==
+          "function"
+      ) {
+        return;
+      }
+
+      try {
+        target.focus({
+          preventScroll: true,
+        });
+      } catch (_err) {
+        target.focus();
+      }
+    });
+  }
+
   function loadDocumentIntoForm(
     doc
   ) {
@@ -604,13 +684,11 @@
     );
 
     updateDocumentFormEditUI();
-    $("#spgDocumentFormCard")
-      ?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
 
-    nameEl?.focus();
+    scrollSpgCollectionFormIntoView(
+      $("#spgDocumentFormCard"),
+      nameEl
+    );
   }
 
   function saveDocumentEditMetadata() {
@@ -822,9 +900,6 @@
   }
 
   function getTeamDraftFields() {
-    const summaryEl =
-      $("#spgTeamFormCard textarea");
-
     return {
       name:
         (
@@ -864,7 +939,8 @@
 
       summary:
         (
-          summaryEl?.value || ""
+          $("#spgTeamDraftSummary")
+            ?.value || ""
         ).trim(),
     };
   }
@@ -954,12 +1030,10 @@
       }
     );
 
-    const summaryEl =
-      $("#spgTeamFormCard textarea");
-
-    if (summaryEl) {
-      summaryEl.value = "";
-    }
+    setSpgFormFieldValue(
+      "#spgTeamDraftSummary",
+      ""
+    );
 
     showTeamFormError("");
 
@@ -984,33 +1058,49 @@
     documentFormEditingId = null;
     contractFormEditingId = null;
 
-    $("#spgTeamDraftName").value =
-      member.name || "";
+    setSpgFormFieldValue(
+      "#spgTeamDraftName",
+      member.name || ""
+    );
 
-    $("#spgTeamDraftNationality").value =
-      member.nationality || "";
+    setSpgFormFieldValue(
+      "#spgTeamDraftNationality",
+      member.nationality || ""
+    );
 
-    $("#spgTeamDraftJobTitle").value =
-      member.jobTitle || "";
+    setSpgFormFieldValue(
+      "#spgTeamDraftJobTitle",
+      member.jobTitle || ""
+    );
 
-    $("#spgTeamDraftDegree").value =
-      member.degree || "";
+    setSpgFormFieldValue(
+      "#spgTeamDraftDegree",
+      member.degree || ""
+    );
 
-    $("#spgTeamDraftYears").value =
+    const yearsRaw =
       member.years || "";
 
-    $("#spgTeamDraftCvFileName").value =
-      member.cvFileName || "";
+    const yearsDigits =
+      yearsRaw.match(/\d+/)?.[0] ||
+      yearsRaw;
 
-    const summaryEl =
-      $("#spgTeamFormCard textarea");
+    setSpgFormFieldValue(
+      "#spgTeamDraftYears",
+      yearsDigits
+    );
 
-    if (summaryEl) {
-      summaryEl.value =
-        member.summary ||
+    setSpgFormFieldValue(
+      "#spgTeamDraftCvFileName",
+      member.cvFileName || ""
+    );
+
+    setSpgFormFieldValue(
+      "#spgTeamDraftSummary",
+      member.summary ||
         member.experiences ||
-        "";
-    }
+        ""
+    );
 
     showTeamFormError("");
 
@@ -1020,14 +1110,10 @@
 
     updateTeamFormEditUI();
 
-    $("#spgTeamFormCard")
-      ?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-
-    $("#spgTeamDraftName")
-      ?.focus();
+    scrollSpgCollectionFormIntoView(
+      $("#spgTeamFormCard"),
+      $("#spgTeamDraftName")
+    );
   }
 
   function saveTeamEdit() {
@@ -1282,14 +1368,10 @@
 
     updateContractFormEditUI();
 
-    $("#spgContractFormCard")
-      ?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-
-    $("#spgContractDraftProjectName")
-      ?.focus();
+    scrollSpgCollectionFormIntoView(
+      $("#spgContractFormCard"),
+      $("#spgContractDraftProjectName")
+    );
   }
 
   function saveContractEdit() {
