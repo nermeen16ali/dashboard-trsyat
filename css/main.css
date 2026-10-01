@@ -678,23 +678,23 @@ html[dir="ltr"] .btn-shadow-bottom {
    * Match handleTabOverflow() mobile layout before main.js runs
    * (avoids full tab strip height/overflow, then collapse on DOMContentLoaded).
    */
-  .page-tabs > a.nav-link {
+  .page-tabs>a.nav-link {
     display: none;
   }
 
-  .page-tabs > a.nav-link.active {
+  .page-tabs>a.nav-link.active {
     display: inline-flex;
   }
 
-  .page-tabs > .dropdown:not(:last-of-type) {
+  .page-tabs>.dropdown:not(:last-of-type) {
     display: none;
   }
 
-  .page-tabs > .dropdown:not(:last-of-type):has(.nav-link.active) {
+  .page-tabs>.dropdown:not(:last-of-type):has(.nav-link.active) {
     display: block;
   }
 
-  .page-tabs:not(:has(> a.nav-link.active)):not(:has(> .dropdown:not(:last-of-type) .nav-link.active)) > a.nav-link:first-of-type {
+  .page-tabs:not(:has(> a.nav-link.active)):not(:has(> .dropdown:not(:last-of-type) .nav-link.active))>a.nav-link:first-of-type {
     display: inline-flex;
   }
 }
@@ -7361,7 +7361,7 @@ html[dir="ltr"] .input-icon-group input {
   background: var(--main-opacity-color);
 }
 
-.spg-repeater-item + .spg-repeater-item {
+.spg-repeater-item+.spg-repeater-item {
   margin-top: 0;
 }
 
@@ -7389,7 +7389,7 @@ html[dir="ltr"] .input-icon-group input {
   box-shadow: 0 0 0 1px var(--primary-base-color);
 }
 
-.spg-collection-section + .spg-collection-section {
+.spg-collection-section+.spg-collection-section {
   margin-top: 0;
 }
 
@@ -7620,7 +7620,7 @@ html[dir="ltr"] .input-icon-group input {
     overflow: visible;
   }
 
-  .spg-root .chat-layout > .col-lg-9 {
+  .spg-root .chat-layout>.col-lg-9 {
     flex: 0 0 66%;
     max-width: 66%;
   }
@@ -7647,7 +7647,7 @@ html[dir="ltr"] .input-icon-group input {
     margin-top: 0 !important;
   }
 
-  .spg-root .chat-layout > .col-lg-9 {
+  .spg-root .chat-layout>.col-lg-9 {
     flex: 0 0 100%;
     max-width: 100%;
     width: 100%;
@@ -7783,9 +7783,10 @@ html[dir="ltr"] .input-icon-group input {
     min-height: 0;
   }
 }
+
 /* Hide radio completely */
 .spg-detail-radio {
-    display: none;
+  display: none;
 }
 
 .stat-card.active,
@@ -7796,10 +7797,6 @@ html[dir="ltr"] .input-icon-group input {
 /* Smart Proposal Generator — section content review stage */
 .spg-root .spg-review-stage-accordion .accordion-item {
   overflow: visible;
-}
-
-.spg-root .spg-section-review-sidebar {
-  border: 1px solid var(--gray-200-color, #f2f2f2);
 }
 
 .spg-root .spg-section-review-nav .nav-link {
@@ -7845,6 +7842,7 @@ html[dir="ltr"] .input-icon-group input {
 .spg-root .spg-section-review-status {
   border: 1px solid var(--gray-200-color, #f2f2f2);
 }
+
 .spg-root .spg-section-review-num {
   display: inline-flex;
   align-items: center;
@@ -7866,6 +7864,7 @@ html[dir="ltr"] .input-icon-group input {
   background: var(--primary-color, #6bafb8);
   border-color: var(--primary-color, #6bafb8);
 }
+
 @media (max-width: 991.98px) {
   .spg-root .spg-section-review-nav .nav-link {
     padding: 12px 14px;
