@@ -7918,25 +7918,6 @@ html[dir="ltr"] .input-icon-group input {
   background: var(--main-opacity-color, rgba(107, 175, 184, 0.06));
 }
 
-.spg-root .spg-template-selected-badge {
-  position: absolute;
-  top: 12px;
-  inset-inline-start: 12px;
-  z-index: 2;
-  width: 28px;
-  height: 28px;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(12, 32, 48, 0.08);
-}
-
-.spg-root .spg-template-radio:checked + .spg-template-card .spg-template-selected-badge {
-  display: inline-flex;
-}
-
 .spg-root .spg-template-text-selected {
   display: none;
 }
@@ -7946,7 +7927,10 @@ html[dir="ltr"] .input-icon-group input {
 }
 
 .spg-root .spg-template-radio:checked + .spg-template-card .spg-template-text-selected {
-  display: inline;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .spg-root .spg-template-select-btn {
@@ -7955,16 +7939,40 @@ html[dir="ltr"] .input-icon-group input {
   justify-content: center;
   cursor: pointer;
   user-select: none;
-  border: 1px solid var(--primary-color, #6bafb8);
-  color: var(--primary-color, #6bafb8);
-  background: #fff;
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  background-color: var(--primary-base-color);
+  color: var(--white-color);
+  border: 1px solid var(--primary-base-color);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.spg-root .spg-template-radio:not(:checked) + .spg-template-card .spg-template-select-btn:hover,
+.spg-root .spg-template-radio:not(:checked) + .spg-template-card .spg-template-select-btn:focus-visible {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border-color: var(--primary-color);
 }
 
 .spg-root .spg-template-radio:checked + .spg-template-card .spg-template-select-btn {
-  background: var(--primary-base-color, #6bafb8);
-  border-color: var(--primary-base-color, #6bafb8);
-  color: #fff;
+  color: #00a640;
+  border: 1px solid #00a640;
+  background: var(--white-color);
+}
+
+.spg-root .spg-template-radio:checked + .spg-template-card .spg-template-select-btn:hover,
+.spg-root .spg-template-radio:checked + .spg-template-card .spg-template-select-btn:focus-visible {
+  color: #00a640;
+  border-color: #00a640;
+  background: var(--white-color);
+}
+
+.spg-root .spg-template-body > p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
 }
 
 .spg-root .spg-template-preview {
