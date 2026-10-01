@@ -7866,20 +7866,26 @@ html[dir="ltr"] .input-icon-group input {
 }
 
 @media (max-width: 991.98px) {
-  .spg-root .spg-section-review-nav.flex-column {
+  .spg-root .spg-section-review-nav-col {
+    overflow: visible;
+  }
+
+  .spg-root .spg-section-review-nav {
     flex-direction: row !important;
-    flex-wrap: nowrap;
+    flex-wrap: nowrap !important;
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    max-width: 100%;
   }
 
-  .spg-root .spg-section-review-nav.flex-column::-webkit-scrollbar {
+  .spg-root .spg-section-review-nav::-webkit-scrollbar {
     display: none;
     width: 0;
     height: 0;
+    background: transparent;
   }
 
   .spg-root .spg-section-review-nav .nav-link {
