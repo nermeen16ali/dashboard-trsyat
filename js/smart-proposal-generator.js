@@ -3,13 +3,37 @@
 
   const TOTAL_STEPS = 5;
 
-  const STEP_HEADINGS = [
+  function spgIsEn() {
+    return (
+      document.documentElement.getAttribute("lang") === "en"
+    );
+  }
+
+  function spgUiDir() {
+    return spgIsEn() ? "ltr" : "rtl";
+  }
+
+  const STEP_HEADINGS_AR = [
     "بيانات المناقصة / المشروع",
     "مستندات المناقصة",
     "فريق العمل",
     "العقود السابقة",
     "مستوى التفصيل",
   ];
+
+  const STEP_HEADINGS_EN = [
+    "Tender / project details",
+    "Tender documents",
+    "Team",
+    "Past contracts",
+    "Detail level",
+  ];
+
+  function spgStepHeadings() {
+    return spgIsEn()
+      ? STEP_HEADINGS_EN
+      : STEP_HEADINGS_AR;
+  }
 
   let view = "landing";
   let wizardStep = 1;
@@ -52,7 +76,7 @@
       showConfirmButton: false,
       timer: SPG_SWAL_TIMER_MS,
       timerProgressBar: false,
-      dir: "rtl",
+      dir: spgUiDir(),
       customClass: {
         popup: "swal2-spg-success-compact",
         title: "swal2-spg-success-title",
@@ -65,49 +89,73 @@
 
   function spgAlertAdded() {
     spgAlertSuccessCompact(
-      "تمت الإضافة بنجاح",
-      "تمت إضافة العنصر بنجاح."
+      spgIsEn()
+        ? "Added successfully"
+        : "تمت الإضافة بنجاح",
+      spgIsEn()
+        ? "The item was added successfully."
+        : "تمت إضافة العنصر بنجاح."
     );
   }
 
   function spgAlertSaved() {
     spgAlertSuccessCompact(
-      "تم الحفظ بنجاح",
-      "تم تحديث البيانات بنجاح."
+      spgIsEn()
+        ? "Saved successfully"
+        : "تم الحفظ بنجاح",
+      spgIsEn()
+        ? "Your changes were saved."
+        : "تم تحديث البيانات بنجاح."
     );
   }
 
   function spgAlertDocumentUploaded() {
     spgAlertSuccessCompact(
-      "تم رفع الملف بنجاح",
-      "تم اختيار الملف وإضافته بنجاح."
+      spgIsEn()
+        ? "File uploaded"
+        : "تم رفع الملف بنجاح",
+      spgIsEn()
+        ? "The file was selected and added."
+        : "تم اختيار الملف وإضافته بنجاح."
     );
   }
 
   function spgAlertDeleted() {
     spgAlertSuccessCompact(
-      "تم الحذف بنجاح",
-      "تم حذف العنصر بنجاح."
+      spgIsEn()
+        ? "Deleted successfully"
+        : "تم الحذف بنجاح",
+      spgIsEn()
+        ? "The item was deleted."
+        : "تم حذف العنصر بنجاح."
     );
   }
 
   function spgConfirmDelete() {
     if (!spgSwalAvailable()) {
       return Promise.resolve(
-        window.confirm("هل أنت متأكد؟")
+        window.confirm(
+          spgIsEn()
+            ? "Are you sure?"
+            : "هل أنت متأكد؟"
+        )
       );
     }
 
     return Swal.fire({
-      title: "هل أنت متأكد؟",
-      text: "سيتم حذف هذا العنصر ولا يمكن التراجع عن هذه العملية.",
+      title: spgIsEn()
+        ? "Are you sure?"
+        : "هل أنت متأكد؟",
+      text: spgIsEn()
+        ? "This item will be deleted. This action cannot be undone."
+        : "سيتم حذف هذا العنصر ولا يمكن التراجع عن هذه العملية.",
       iconHtml: SPG_SWAL_DELETE_ICON_HTML,
       showCancelButton: true,
-      confirmButtonText: "حذف",
-      cancelButtonText: "إلغاء",
+      confirmButtonText: spgIsEn() ? "Delete" : "حذف",
+      cancelButtonText: spgIsEn() ? "Cancel" : "إلغاء",
       focusCancel: true,
-      reverseButtons: true,
-      dir: "rtl",
+      reverseButtons: !spgIsEn(),
+      dir: spgUiDir(),
       customClass: {
         popup: "swal2-spg-confirm",
         title: "swal2-spg-confirm-title",
@@ -159,8 +207,12 @@
 
     const typeLabel =
       proposalType === "government"
-        ? "عرض مناقصة حكومية"
-        : "عرض مشروع خاص";
+        ? spgIsEn()
+          ? "Government tender proposal"
+          : "عرض مناقصة حكومية"
+        : spgIsEn()
+          ? "Private project proposal"
+          : "عرض مشروع خاص";
 
     const labelEl =
       $("#spgWizardTypeLabel");
@@ -193,13 +245,14 @@
       $("#spgProgressBar");
 
     if (counter) {
-      counter.textContent =
-        `الخطوة ${wizardStep} من ${TOTAL_STEPS}`;
+      counter.textContent = spgIsEn()
+        ? `Step ${wizardStep} of ${TOTAL_STEPS}`
+        : `الخطوة ${wizardStep} من ${TOTAL_STEPS}`;
     }
 
     if (heading) {
       heading.textContent =
-        STEP_HEADINGS[wizardStep - 1] || "";
+        spgStepHeadings()[wizardStep - 1] || "";
     }
 
     if (bar) {
@@ -241,8 +294,12 @@
     if (nextBtn) {
       const label =
         wizardStep === TOTAL_STEPS
-          ? "متابعة للمراجعة"
-          : "التالي";
+          ? spgIsEn()
+            ? "Continue to review"
+            : "متابعة للمراجعة"
+          : spgIsEn()
+            ? "Next"
+            : "التالي";
 
       nextBtn.innerHTML =
         `${label} ${nextArrowSvg}`;
@@ -289,7 +346,7 @@
       }
 
       dot.title =
-        STEP_HEADINGS[i - 1];
+        spgStepHeadings()[i - 1];
 
       dots.appendChild(dot);
     }
@@ -663,8 +720,9 @@
 
     if (infoEl) {
       if (doc.fileName) {
-        infoEl.textContent =
-          `الملف الحالي: ${doc.fileName}`;
+        infoEl.textContent = spgIsEn()
+          ? `Current file: ${doc.fileName}`
+          : `الملف الحالي: ${doc.fileName}`;
 
         infoEl.classList.remove(
           "d-none"
@@ -713,7 +771,9 @@
 
     if (!name) {
       showDocumentFormError(
-        "يرجى إدخال اسم الملف"
+        spgIsEn()
+          ? "Please enter a file name"
+          : "يرجى إدخال اسم الملف"
       );
 
       $("#spgDocDraftName")
@@ -770,7 +830,9 @@
 
         if (file.size > MAX_SIZE) {
           showDocumentFormError(
-            "حجم الملف أكبر من 500 ميغابايت"
+            spgIsEn()
+              ? "File size exceeds 500 MB"
+              : "حجم الملف أكبر من 500 ميغابايت"
           );
 
           if (infoEl) {
@@ -785,8 +847,9 @@
         }
 
         if (infoEl) {
-          infoEl.textContent =
-            `تم اختيار الملف: ${file.name}`;
+          infoEl.textContent = spgIsEn()
+            ? `Selected file: ${file.name}`
+            : `تم اختيار الملف: ${file.name}`;
 
           infoEl.classList.remove(
             "d-none"
@@ -985,8 +1048,12 @@
 
     const prefix =
       options.isCurrent
-        ? "الملف الحالي: "
-        : "تم اختيار الملف: ";
+        ? spgIsEn()
+          ? "Current file: "
+          : "الملف الحالي: "
+        : spgIsEn()
+          ? "Selected file: "
+          : "تم اختيار الملف: ";
 
     infoEl.textContent =
       `${prefix}${name}`;
@@ -1039,7 +1106,9 @@
 
         if (file.size > MAX_SIZE) {
           showTeamCvFileError(
-            "حجم الملف أكبر من 500 ميغابايت"
+            spgIsEn()
+              ? "File size exceeds 500 MB"
+              : "حجم الملف أكبر من 500 ميغابايت"
           );
 
           setTeamCvFileDisplay("");
@@ -1341,7 +1410,9 @@
 
     if (!fields.name) {
       showTeamFormError(
-        "يرجى إدخال اسم الموظف"
+        spgIsEn()
+          ? "Please enter the employee name"
+          : "يرجى إدخال اسم الموظف"
       );
 
       $("#spgTeamDraftName")
@@ -1606,7 +1677,9 @@
 
     if (!fields.projectName) {
       showContractFormError(
-        "يرجى إدخال اسم المشروع"
+        spgIsEn()
+          ? "Please enter the project name"
+          : "يرجى إدخال اسم المشروع"
       );
 
       $("#spgContractDraftProjectName")

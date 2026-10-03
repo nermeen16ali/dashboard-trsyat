@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="images/trsyat-logo.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>مولد العروض الذكي</title>
+  <title>Smart Proposal Generator</title>
 
-  <!-- Bootstrap 5 RTL CSS -->
-  <link href="assets/css/bootstrap.rtl.min.css" rel="stylesheet" />
+  <!-- Bootstrap 5 LTR CSS -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
   <!-- DataTables CSS -->
   <link href="assets/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
   <link href="assets/css/responsive.bootstrap5.min.css" rel="stylesheet" />
@@ -25,17 +25,17 @@
         <div class="modal-header">
           <div class="d-flex flex-column gap-10">
             <h4 class="modal-title fz-20" id="centeredModalLabel8">
-              الإشعارات
+              Notifications
             </h4>
-            <p class="text-gray fz-14">ابقي علي الأطلاع بالإشعارات</p>
+            <p class="text-gray fz-14">Stay updated with notifications</p>
           </div>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <div class="notification-tabs fw-medium">
-            <button class="notification-tab active">الكل</button>
-            <button class="notification-tab">غير مقروءة (12)</button>
-            <a href="notifications.html" class="ms-auto colored">قراءة الكل</a>
+            <button class="notification-tab active">All</button>
+            <button class="notification-tab">Unread (12)</button>
+            <a href="notifications-ltr.html" class="ms-auto colored">Read All</a>
           </div>
           <div class="notification-list">
             <!-- Today -->
@@ -44,7 +44,7 @@
                 <img src="images/Tax-Law.svg" alt="icon">
               </div>
               <div class="notification-content">
-                <h6 class="fz-14 fw-medium mb-10 black-text">تم استلام طلبك</h6>
+                <h6 class="fz-14 fw-medium mb-10 black-text">Your request has been received</h6>
                 <p class="fz-12 text-gray">تم استلام طلب المنافسة بنجاح، وجار مراجعته من قبل الإدارة.</p>
               </div>
               <div class="d-flex align-items-center gap-4">
@@ -78,8 +78,8 @@
               </div>
               <div class="notification-content">
                 <div class="fz-14 fw-medium mb-10 black-text">تم رفض الطلب</div>
-                <div class="fz-12 text-gray">نأسف لإبلاغك بأنه تم رفض طلب المنافسة. يمكنك مراجعة التفاصيل
-                  لمعرفة السبب.</div>
+                <div class="fz-12 text-gray">We regret to inform you that your tender request has been
+                  rejected. You can review the details to see the reason.</div>
               </div>
               <div class="d-flex align-items-center gap-4">
                 <span class="text-dark-gray fz-12 fw-medium text-nowrap">11:30 مساءً</span>
@@ -114,7 +114,7 @@
                 <img src="images/carbon-close-outline.svg" alt="icon">
               </div>
               <div class="notification-content">
-                <div class="fz-14 fw-medium mb-10 black-text">مناقصة على وشك الإغلاق</div>
+                <div class="fz-14 fw-medium mb-10 black-text">Tender closing soon</div>
                 <div class="fz-12 text-gray">تبقى وقت قليل على انتهاء موعد التقديم لهذه المناقصة.</div>
               </div>
               <div class="d-flex align-items-center gap-4">
@@ -131,7 +131,7 @@
               </div>
               <div class="notification-content">
                 <div class="fz-14 fw-medium mb-10 black-text">تم إعلان الترسية</div>
-                <div class="fz-12 text-gray">تم إعلان نتيجة الترسية لهذه المناقصة. يمكنك الاطلاع على التفاصيل.
+                <div class="fz-12 text-gray">The award result for this tender has been announced. You can view the details.
                 </div>
               </div>
               <div class="d-flex align-items-center gap-4">
@@ -176,9 +176,9 @@
                 </a>
               </div>
             </div>
-            <a href="notifications.html"
+            <a href="notifications-ltr.html"
               class="d-block p-10 fz-14 fw-medium w-100 rounded-12 btn-primary w-100 text-center">
-              عرض جميع الإشعارات
+              عرض جميع Notifications
             </a>
           </div>
         </div>
@@ -190,7 +190,7 @@
   <nav class="navbar navbar-dark top-navbar navbar-expand-lg">
     <div class="container-fluid">
       <!-- Logo -->
-      <a class="navbar-brand" href="index.html"><img src="images/trsyat-white-logo.svg" alt="Trsyat" /></a>
+      <a class="navbar-brand" href="index-ltr.html"><img src="images/trsyat-white-logo.svg" alt="Trsyat" /></a>
       <span class="seperator d-none d-lg-inline-block"></span>
       <!-- Hamburger toggle -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
@@ -203,13 +203,13 @@
       <!-- Collapsible Menu -->
       <div class="collapse navbar-collapse" id="navbarContent">
         <div class="nav-header d-lg-none d-flex justify-content-between align-items-center mb-4 w-100">
-          <a class="navbar-brand m-0" href="index.html"><img src="images/trsyat-white-logo.svg" alt="Trsyat" /></a>
+          <a class="navbar-brand m-0" href="index-ltr.html"><img src="images/trsyat-white-logo.svg" alt="Trsyat" /></a>
           <button type="button" class="btn-close btn-close-white" data-bs-toggle="collapse"
             data-bs-target="#navbarContent" aria-label="Close"></button>
         </div>
         <div class="navbar-nav gap-4 gap-lg-3 d-flex flex-lg-row flex-column w-100">
           <div class="search-box position-relative flex-grow-1">
-            <input type="text" class="form-control" placeholder="البحث في الداشبورد" name="Search" />
+            <input type="text" class="form-control" placeholder="Search in Dashboard" name="Search" />
             <span class="search-icon position-absolute">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path
@@ -220,7 +220,7 @@
               </svg>
             </span>
           </div>
-          <a href="smart-proposal-generator-ltr.html" class="nav-link">
+          <a href="smart-proposal-generator.html" class="nav-link">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g opacity="0.4">
                 <path d="M14.1582 7.4668H5.84155H14.1582Z" fill="currentColor" />
@@ -237,7 +237,7 @@
                 d="M10.0001 18.3334C14.6025 18.3334 18.3334 14.6025 18.3334 10.0001C18.3334 5.39771 14.6025 1.66675 10.0001 1.66675C5.39771 1.66675 1.66675 5.39771 1.66675 10.0001C1.66675 14.6025 5.39771 18.3334 10.0001 18.3334Z"
                 stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
-            <span>English</span>
+            <span>العربية</span>
           </a>
 
           <a href="#" type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#notificationModal">
@@ -254,10 +254,10 @@
                 d="M12.5166 15.8833C12.5166 17.2583 11.3916 18.3833 10.0166 18.3833C9.33327 18.3833 8.69993 18.1 8.24993 17.65C7.79993 17.2 7.5166 16.5666 7.5166 15.8833"
                 stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" />
             </svg>
-            <span>الاشعارات</span>
+            <span>Notifications</span>
           </a>
 
-          <a href="user-guide.html" class="nav-link">
+          <a href="user-guide-ltr.html" class="nav-link">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
               <path d="M15.8926 15.8908C19.1509 12.6324 19.1509 7.35742 15.8926 4.10742" stroke="currentColor"
                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -274,7 +274,7 @@
                 stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
                 stroke-linejoin="round" />
             </svg>
-            <span>دليل الأستخدام</span>
+            <span>User guide</span>
           </a>
           <div class="dropdown">
             <button class="dropdown-toggle nav-link" type="button" id="dropdownMenuButtonheader"
@@ -289,7 +289,7 @@
             </button>
             <ul class="dropdown-menu main-menu" aria-labelledby="dropdownMenuButtonheader">
               <li>
-                <a class="dropdown-item" href="profile.html">
+                <a class="dropdown-item" href="profile-ltr.html">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path opacity="0.4"
                       d="M12.1207 12.7805C12.0507 12.7705 11.9607 12.7705 11.8807 12.7805C10.1207 12.7205 8.7207 11.2805 8.7207 9.51047C8.7207 7.70047 10.1807 6.23047 12.0007 6.23047C13.8107 6.23047 15.2807 7.70047 15.2807 9.51047C15.2707 11.2805 13.8807 12.7205 12.1207 12.7805Z"
@@ -301,11 +301,11 @@
                       d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
                       stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
-                  الملف الشخصي
+                  Profile
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="settings.html">
+                <a class="dropdown-item" href="settings-ltr.html">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path opacity="0.34"
                       d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
@@ -321,7 +321,7 @@
               </li>
               <hr class="m-0">
               <li>
-                <a class="dropdown-item" href="logout.html">
+                <a class="dropdown-item" href="logout-ltr.html">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path
                       d="M15.0996 7.56023C14.7896 3.96023 12.9396 2.49023 8.88961 2.49023H8.75961C4.28961 2.49023 2.49961 4.28023 2.49961 8.75023V15.2702C2.49961 19.7402 4.28961 21.5302 8.75961 21.5302H8.88961C12.9096 21.5302 14.7596 20.0802 15.0896 16.5402"
@@ -341,7 +341,7 @@
               </li>
             </ul>
           </div>
-          <a href="support.html" class="nav-link">
+          <a href="support-ltr.html" class="nav-link">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M18.3083 15.2751C18.3083 15.5751 18.2416 15.8834 18.1 16.1834C17.9583 16.4834 17.775 16.7667 17.5333 17.0334C17.125 17.4834 16.675 17.8084 16.1666 18.0168C15.6666 18.2251 15.125 18.3334 14.5416 18.3334C13.6916 18.3334 12.7833 18.1334 11.825 17.7251C10.8666 17.3167 9.90829 16.7667 8.95829 16.0751C7.99996 15.3751 7.09163 14.6001 6.22496 13.7417C5.36663 12.8751 4.59163 11.9667 3.89996 11.0167C3.21663 10.0667 2.66663 9.11675 2.26663 8.17508C1.86663 7.22508 1.66663 6.31675 1.66663 5.45008C1.66663 4.88341 1.76663 4.34175 1.96663 3.84175C2.16663 3.33341 2.48329 2.86675 2.92496 2.45008C3.45829 1.92508 4.04163 1.66675 4.65829 1.66675C4.89163 1.66675 5.12496 1.71675 5.33329 1.81675C5.54996 1.91675 5.74163 2.06675 5.89163 2.28341L7.82496 5.00841C7.97496 5.21675 8.08329 5.40841 8.15829 5.59175C8.23329 5.76675 8.27496 5.94175 8.27496 6.10008C8.27496 6.30008 8.21663 6.50008 8.09996 6.69175C7.99163 6.88341 7.83329 7.08341 7.63329 7.28341L6.99996 7.94175C6.90829 8.03341 6.86663 8.14175 6.86663 8.27508C6.86663 8.34175 6.87496 8.40008 6.89163 8.46675C6.91663 8.53341 6.94163 8.58341 6.95829 8.63341C7.10829 8.90841 7.36663 9.26675 7.73329 9.70008C8.10829 10.1334 8.50829 10.5751 8.94163 11.0167C9.39163 11.4584 9.82496 11.8667 10.2666 12.2417C10.7 12.6084 11.0583 12.8584 11.3416 13.0084C11.3833 13.0251 11.4333 13.0501 11.4916 13.0751C11.5583 13.1001 11.625 13.1084 11.7 13.1084C11.8416 13.1084 11.95 13.0584 12.0416 12.9667L12.675 12.3417C12.8833 12.1334 13.0833 11.9751 13.275 11.8751C13.4666 11.7584 13.6583 11.7001 13.8666 11.7001C14.025 11.7001 14.1916 11.7334 14.375 11.8084C14.5583 11.8834 14.75 11.9917 14.9583 12.1334L17.7166 14.0917C17.9333 14.2417 18.0833 14.4167 18.175 14.6251C18.2583 14.8334 18.3083 15.0417 18.3083 15.2751Z"
@@ -353,13 +353,13 @@
                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
 
-            <span>الدعم الفني</span>
+            <span>Support</span>
           </a>
-          <a href="upgrade.html" class="btn-primary-shadowed">
+          <a href="upgrade-ltr.html" class="btn-primary-shadowed">
             <div class="btn-shadow-top"></div>
             <div class="btn-shadow-bottom"></div>
             <img src="images/programming-arrow.svg" alt="upgrading" />
-            ترقية الحساب
+            Upgrade account
           </a>
         </div>
       </div>
@@ -369,7 +369,7 @@
   <div class="container-fluid main-content">
     <nav class="nav-tabs">
       <div class="nav page-tabs" id="tabsContainer">
-        <a href="index.html" class="nav-link">
+        <a href="index-ltr.html" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
             <path opacity="0.4" d="M2.11108 14.6667H14.1111" stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round"
               stroke-linejoin="round" />
@@ -410,26 +410,26 @@
           </button>
           <ul class="dropdown-menu main-menu" aria-labelledby="allTenders">
             <li>
-              <a class="dropdown-item b-dash" href="trsyat-tenders.html">
+              <a class="dropdown-item b-dash" href="trsyat-tenders-ltr.html">
                 <img src="images/trsyat-logo.svg" alt="Trsyat">
                 مناقصات ترسيات
               </a>
             </li>
             <li>
-              <a class="dropdown-item" href="etimated-tenders.html">
+              <a class="dropdown-item" href="etimated-tenders-ltr.html">
                 <img src="images/Etimated-Logo.svg" alt="Etimated">
                 مناقصات اعتماد
               </a>
             </li>
             <li>
-              <a class="dropdown-item" href="forsa-tenders.html">
+              <a class="dropdown-item" href="forsa-tenders-ltr.html">
                 <img src="images/Forsa-Logo.svg" alt="Forsa">
                 مناقصات فرصة
               </a>
             </li>
           </ul>
         </div>
-        <a href="nominated-tenders.html" class="nav-link">
+        <a href="nominated-tenders-ltr.html" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path
               d="M14.6673 8.66732V6.00065C14.6673 2.66732 13.334 1.33398 10.0007 1.33398H6.00065C2.66732 1.33398 1.33398 2.66732 1.33398 6.00065V10.0007C1.33398 13.334 2.66732 14.6673 6.00065 14.6673H8.66732"
@@ -443,9 +443,9 @@
             <path opacity="0.4" d="M11.334 7V9" stroke="#292D32" stroke-width="1.5" stroke-linecap="round"
               stroke-linejoin="round" />
           </svg>
-          <span>المناقصات المرشحة</span>
+          <span>Nominated tenders</span>
         </a>
-        <a href="proposals-consultations.html" class="nav-link">
+        <a href="proposals-consultations-ltr.html" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
             <path opacity="0.4"
               d="M12.6312 6.50663V8.59995C12.6312 8.73329 12.6245 8.86662 12.6112 8.99329C12.4912 10.4066 11.6578 11.1133 10.1245 11.1133H9.91783C9.78449 11.1133 9.65783 11.1733 9.58449 11.28L8.95782 12.12C8.67782 12.4933 8.23117 12.4933 7.95117 12.12L7.3245 11.28C7.25784 11.1933 7.1045 11.1133 6.99117 11.1133H6.78451C5.11117 11.1133 4.27783 10.7 4.27783 8.60663V6.51328C4.27783 4.97995 4.98449 4.14663 6.39783 4.02663C6.52449 4.0133 6.65782 4.00663 6.79116 4.00663H10.1445C11.7912 3.99996 12.6312 4.83996 12.6312 6.50663Z"
@@ -455,9 +455,9 @@
               d="M6.4445 14.6666H10.4445C13.7778 14.6666 15.1112 13.3333 15.1112 9.99992V5.99992C15.1112 2.66659 13.7778 1.33325 10.4445 1.33325H6.4445C3.11117 1.33325 1.77783 2.66659 1.77783 5.99992V9.99992C1.77783 13.3333 3.11117 14.6666 6.4445 14.6666Z"
               stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          <span> العروض والاستشارات</span>
+          <span> Proposals & consultations</span>
         </a>
-        <a href="tenders-results.html" class="nav-link">
+        <a href="tenders-results-ltr.html" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
             <path d="M0.75 14.666H15.4167" stroke="#6F6F6F" stroke-width="1.5" stroke-miterlimit="10"
               stroke-linecap="round" stroke-linejoin="round" />
@@ -478,9 +478,9 @@
             <path opacity="0.4" d="M5.58398 14.666V12.166" stroke="#6F6F6F" stroke-width="1.5" stroke-miterlimit="10"
               stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          <span>نتائج المناقصات</span>
+          <span>Tender results</span>
         </a>
-        <a href="tender-announcement.html" class="nav-link">
+        <a href="tender-announcement-ltr.html" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
             <g opacity="0.4">
               <path d="M5.99996 11.334V7.33398L4.66663 8.66732" stroke="#6F6F6F" stroke-width="1.5"
@@ -496,7 +496,7 @@
           </svg>
           <span>الاعلان علي مناقصة</span>
         </a>
-        <a href="tenders-pricing.html" class="nav-link">
+        <a href="tenders-pricing-ltr.html" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
             <path
               d="M2.5555 13.6676C3.10884 14.2209 4.00217 14.2209 4.5555 13.6676L13.2222 5.00094C13.7755 4.4476 13.7755 3.55427 13.2222 3.00094C12.6688 2.4476 11.7755 2.4476 11.2222 3.00094L2.5555 11.6676C2.00217 12.2209 2.00217 13.1143 2.5555 13.6676Z"
@@ -513,9 +513,9 @@
               d="M13.2222 8.95935L14.2222 8.66602L13.9288 9.66602L14.2222 10.666L13.2222 10.3727L12.2222 10.666L12.5155 9.66602L12.2222 8.66602L13.2222 8.95935Z"
               stroke="#6F6F6F" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          <span>تسعيرات المناقصات</span>
+          <span>تسعيرات Tenders</span>
         </a>
-        <a href="tenders-management.html" class="nav-link">
+        <a href="tenders-management-ltr.html" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path
               d="M11.5262 2.76065L11.4795 5.2873C11.4728 5.63397 11.6929 6.09398 11.9729 6.30065L13.6262 7.55396C14.6862 8.35396 14.5129 9.33397 13.2462 9.73397L11.0929 10.4073C10.7329 10.5206 10.3529 10.914 10.2595 11.2806L9.74619 13.2406C9.33952 14.7873 8.32618 14.9406 7.48618 13.5806L6.31284 11.6806C6.09951 11.334 5.59284 11.074 5.19284 11.094L2.9662 11.2073C1.37287 11.2873 0.919527 10.3673 1.95953 9.15398L3.27951 7.62063C3.52618 7.33397 3.63951 6.80064 3.52618 6.44064L2.85288 4.2873C2.45955 3.02063 3.1662 2.32064 4.4262 2.73397L6.39288 3.38064C6.72621 3.48731 7.2262 3.41397 7.5062 3.2073L9.55954 1.7273C10.6662 0.927301 11.5528 1.39398 11.5262 2.76065Z"
@@ -523,7 +523,7 @@
             <path opacity="0.4" d="M14.6059 14.6665L12.5859 12.6465" stroke="#6F6F6F" stroke-width="1.5"
               stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          <span>إدارة المناقصات</span>
+          <span>Tenders management</span>
         </a>
         <!-- More Button (Ellipsis) -->
         <div class="dropdown">
@@ -541,11 +541,11 @@
     <!-- Page Header -->
     <div class="page-header d-flex align-items-center gap-3">
       <div class="page-breadcrumb">
-        <h2 class="active">مولد العروض الذكي</h2>
+        <h2 class="active">Smart Proposal Generator</h2>
       </div>
       <button type="button" class="outline-primary-gray bordered-40 fz-10 d-flex align-items-center gap-10">
-        <span>فيديو شرح</span>
-        <img src="images/play-cricle.svg" alt="فيديو شرح">
+        <span>How-to video</span>
+        <img src="images/play-cricle.svg" alt="How-to video">
       </button>
     </div>
     <div class="dash-widget sm-0 p-lg-4 spg-root">
@@ -559,18 +559,18 @@
               class="sidebar-header spg-projects-sidebar-header d-flex flex-column flex-lg-row align-items-lg-center gap-4 justify-content-between mb-4">
               <div
                 class="spg-projects-sidebar-title-row d-none d-md-flex align-items-center justify-content-between w-100 gap-2">
-                <h6 class="black-text mb-0" id="spgProjectsSidebarTitle">المشاريع السابقة</h6>
+                <h6 class="black-text mb-0" id="spgProjectsSidebarTitle">Past projects</h6>
               </div>
               <div class="spg-projects-mobile-toolbar d-md-none flex-grow-1 min-w-0">
                 <button type="button"
                   class="spg-projects-mobile-dropdown-toggle w-100 spg-projects-drawer-open-btn"
                   id="spgProjectsSidebarOpen" aria-controls="spgProjectsDropdownPanel" aria-expanded="false"
-                  aria-label="اختيار المشروع">
+                  aria-label="Select project">
                   <span class="spg-projects-mobile-select-icon flex-shrink-0" aria-hidden="true">
                     <img src="images/folder-open.svg" alt="">
                   </span>
                   <span class="spg-projects-mobile-select-label text-truncate flex-grow-1 black-text fz-14 fw-medium"
-                    id="spgProjectsMobileSelectLabel">تأهيل الأسوار الخرسانية</span>
+                    id="spgProjectsMobileSelectLabel">Concrete Fence Qualification</span>
                   <span class="spg-projects-mobile-select-chevron flex-shrink-0" aria-hidden="true">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="9" viewBox="0 0 16 9" fill="none">
                       <path d="M14.6 1.45825L9.16669 6.89159C8.52502 7.53325 7.47503 7.53325 6.83336 6.89159L1.40002 1.45825"
@@ -587,14 +587,14 @@
                   <path d="M3.3335 8H12.6668" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round"
                     stroke-linejoin="round" />
                 </svg>
-                <span>إضافة مشروع</span>
+                <span>Add project</span>
               </button>
               <button type="button" class="btn-close spg-projects-drawer-close d-none flex-shrink-0"
-                id="spgProjectsSidebarClose" aria-label="إغلاق قائمة المشاريع" tabindex="-1"></button>
+                id="spgProjectsSidebarClose" aria-label="Close project list" tabindex="-1"></button>
             </div>
             <div class="support-chats flex-grow-1 spg-projects-dropdown-panel" id="spgProjectsDropdownPanel">
               <div class="search-box w-100 position-relative mb-4">
-                <input type="text" class="form-control" id="spgProjectSearch" placeholder="البحث في المشاريع"
+                <input type="text" class="form-control" id="spgProjectSearch" placeholder="Search projects"
                   autocomplete="off" />
                 <span class="search-icon position-absolute">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -607,15 +607,15 @@
                   </svg>
                 </span>
               </div>
-              <div class="chat-list spg-project-list" id="spgProjectList" role="listbox" aria-label="قائمة المشاريع">
+              <div class="chat-list spg-project-list" id="spgProjectList" role="listbox" aria-label="Project list">
                 <button type="button"
                   class="chat-item spg-project-item d-flex align-items-center gap-12 w-100 active">
                   <div class="chat-item-icon">
                     <img src="images/document-normal.svg" alt="">
                   </div>
                   <div class="w-100 text-start">
-                    <div class="ticket-id text-truncate mb-2 fz-14">تأهيل الأسوار الخرسانية</div>
-                    <div class="fz-10 text-gray chat-preview text-truncate"> وصف المشروع</div>
+                    <div class="ticket-id text-truncate mb-2 fz-14">Concrete Fence Qualification</div>
+                    <div class="fz-10 text-gray chat-preview text-truncate"> Project description</div>
                   </div>
                 </button>
                 <button type="button"
@@ -624,13 +624,13 @@
                     <img src="images/document-normal.svg" alt="">
                   </div>
                   <div class="w-100 text-start">
-                    <div class="ticket-id text-truncate mb-2 fz-14">خدمات المناسبات</div>
-                    <div class="fz-10 text-gray chat-preview text-truncate"> وصف المشروع</div>
+                    <div class="ticket-id text-truncate mb-2 fz-14">Event services</div>
+                    <div class="fz-10 text-gray chat-preview text-truncate"> Project description</div>
                   </div>
                 </button>
               </div>
               <div class="text-center py-4 d-none">
-                <p class="fz-14 text-gray mb-0">لا توجد مشاريع بعد. ابدأ بإضافة مشروع جديد.</p>
+                <p class="fz-14 text-gray mb-0">No projects yet. Start by adding a new project.</p>
               </div>
             </div>
           </div>
@@ -653,57 +653,56 @@
                       d="M3.4 10.8L3.75 11.85L4.8 12.2L3.75 12.55L3.4 13.6L3.05 12.55L2 12.2L3.05 11.85L3.4 10.8Z"
                       fill="currentColor" opacity="0.85" />
                   </svg>
-                  مولد العروض الذكي
+                  Smart Proposal Generator
                 </span>
-                <h3 class="black-text fw-medium mb-3">توليد العروض الفنية والمالية بالذكاء الاصطناعي</h3>
+                <h3 class="black-text fw-medium mb-3">Generate technical and financial proposals with AI</h3>
                 <p class="fz-14 text-gray mb-0 mx-auto spg-intro-copy">
-                  أنشئ عرضًا متكاملًا عبر معالج تفاعلي خطوة بخطوة — من بيانات المناقصة إلى مراجعة أقسام العرض قبل
-                  توليد المحتوى.
+                  Build a complete proposal through an interactive step-by-step wizard—from tender details to section review before content generation.
                 </p>
               </div>
-              <h4 class="black-text fz-16 fw-medium text-center mb-4">كيف يمكننا مساعدتك اليوم؟</h4>
+              <h4 class="black-text fz-16 fw-medium text-center mb-4">How can we help you today?</h4>
               <div class="row g-3 g-lg-4">
                 <div class="col-12">
                   <button type="button"
-                    class="service-choice-card stat-card spg-path-card w-100 border-0 text-end d-flex align-items-center gap-3"
+                    class="service-choice-card stat-card spg-path-card w-100 border-0 text-start d-flex align-items-center gap-3"
                     data-proposal-type="government">
                     <div class="service-choice-icon crown">
                       <img src="images/outlined-File.svg" alt="" width="24" height="24">
                     </div>
                     <div class="service-choice-info flex-grow-1">
-                      <h4 class="black-text">إنشاء عرض فني ومالي لمناقصة حكومية</h4>
-                      <p>توليد عرض متكامل فني ومالي لمناقصة حكومية عبر معالج تفاعلي خطوة بخطوة.</p>
+                      <h4 class="black-text">Create a technical and financial proposal for a government tender</h4>
+                      <p>Generate a full technical and financial government tender proposal through an interactive wizard.</p>
                     </div>
                     <div class="custom-radio-circle"></div>
                   </button>
                 </div>
                 <div class="col-12">
                   <button type="button"
-                    class="service-choice-card stat-card spg-path-card w-100 border-0 text-end d-flex align-items-center gap-3"
+                    class="service-choice-card stat-card spg-path-card w-100 border-0 text-start d-flex align-items-center gap-3"
                     data-proposal-type="private">
                     <div class="service-choice-icon bell">
                       <img src="images/File-Text.svg" alt="" width="24" height="24">
                     </div>
                     <div class="service-choice-info flex-grow-1">
-                      <h4 class="black-text">إنشاء عرض فني ومالي لمشروع خاص</h4>
-                      <p>جهّز عرضًا فنيًا وماليًا لمشروعك الخاص بإرشاد واضح في كل خطوة من المعالج.</p>
+                      <h4 class="black-text">Create a technical and financial proposal for a private project</h4>
+                      <p>Prepare a technical and financial proposal for your private project with clear guidance at each wizard step.</p>
                     </div>
                     <div class="custom-radio-circle"></div>
                   </button>
                 </div>
                 <div class="col-12">
                   <div
-                    class="service-choice-card stat-card spg-path-card spg-path-card--disabled w-100 text-end d-flex align-items-center gap-3"
+                    class="service-choice-card stat-card spg-path-card spg-path-card--disabled w-100 text-start d-flex align-items-center gap-3"
                     aria-disabled="true">
                     <div class="service-choice-icon bell opacity-50">
                       <img src="images/document-normal.svg" alt="" width="24" height="24">
                     </div>
                     <div class="service-choice-info flex-grow-1">
                       <div class="d-flex align-items-center flex-wrap gap-2 mb-1">
-                        <h4 class="black-text mb-0">جاهز كراسة الشروط والمواصفات للمشروع</h4>
-                        <span class="outlined-base-prim fz-10">قريبًا</span>
+                        <h4 class="black-text mb-0">Tender booklet ready for the project</h4>
+                        <span class="outlined-base-prim fz-10">Coming soon</span>
                       </div>
-                      <p class="mb-0">رفع كراسة الشروط وتوليد العرض تلقائيًا — قيد التطوير.</p>
+                      <p class="mb-0">Upload the tender booklet and auto-generate the proposal—in development.</p>
                     </div>
                     <div class="custom-radio-circle opacity-25"></div>
                   </div>
@@ -714,14 +713,14 @@
             <section id="spgViewWizard" class="spg-view d-none" aria-live="polite">
               <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
                 <button type="button" class="btn-main btn-primary-outline fz-12 h-36" id="spgWizardBackToLanding">
-                  العودة للبداية
+                  Back to start
                 </button>
                 <span class="fz-12 text-gray" id="spgWizardTypeLabel"></span>
               </div>
               <div class="tender-card p-3 mb-4 bg-white">
                 <div class="d-flex justify-content-between align-items-center mb-2 flex-wrap gap-2">
-                  <span class="fz-12 text-gray" id="spgStepCounter">الخطوة 1 من 5</span>
-                  <span class="fz-14 black-text fw-medium" id="spgStepHeading">بيانات المناقصة / المشروع</span>
+                  <span class="fz-12 text-gray" id="spgStepCounter">Step 1 of 5</span>
+                  <span class="fz-14 black-text fw-medium" id="spgStepHeading">Tender / project details</span>
                 </div>
                 <div class="progress" style="height: 6px;">
                   <div class="progress-bar bg-prim" id="spgProgressBar" role="progressbar" style="width: 20%"
@@ -732,17 +731,16 @@
 
               <div id="spgWizardSteps">
                 <div class="spg-wizard-step" data-step="1">
-                  <p class="fz-14 text-gray mb-4">أدخل اسم المناقصة أو المشروع ورقم المناقصة لربط العرض بالمنافسة
-                    الصحيحة.</p>
+                  <p class="fz-14 text-gray mb-4">Enter the tender or project name and tender number to link the proposal to the correct competition.</p>
                   <div class="row g-3">
                     <div class="col-12">
-                      <label class="form-label" for="spgProjectName">اسم المناقصة / المشروع</label>
-                      <input type="text" class="form-control" id="spgProjectName" placeholder="مثال: توريد وتركيب أنظمة"
+                      <label class="form-label" for="spgProjectName">Tender / project name</label>
+                      <input type="text" class="form-control" id="spgProjectName" placeholder="e.g. Supply and install systems"
                         required />
                     </div>
                     <div class="col-12">
-                      <label class="form-label" for="spgTenderNumber">رقم المناقصة</label>
-                      <input type="text" class="form-control" id="spgTenderNumber" placeholder="مثال: 250739020707"
+                      <label class="form-label" for="spgTenderNumber">Tender number</label>
+                      <input type="text" class="form-control" id="spgTenderNumber" placeholder="e.g. 250739020707"
                         dir="ltr" />
                     </div>
                   </div>
@@ -750,43 +748,43 @@
                 <div class="spg-wizard-step d-none" data-step="2">
                   <div
                     class="d-flex flex-column flex-md-row align-items-md-center justify-content-md-between gap-3 mb-4">
-                    <p class="fz-14 text-gray mb-0">هل لديك مستندات للمناقصة؟</p>
+                    <p class="fz-14 text-gray mb-0">Do you have tender documents?</p>
                     <div class="d-flex align-items-center gap-10">
                       <div class="form-check qns-btn">
                         <input class="form-check-input" type="radio" name="spgHasDocs" id="spgHasDocsYes" value="yes" />
-                        <label class="form-check-label" for="spgHasDocsYes">نعم</label>
+                        <label class="form-check-label" for="spgHasDocsYes">Yes</label>
                       </div>
                       <div class="form-check qns-btn">
                         <input class="form-check-input" type="radio" name="spgHasDocs" id="spgHasDocsNo" value="no"
                           checked />
-                        <label class="form-check-label" for="spgHasDocsNo">لا</label>
+                        <label class="form-check-label" for="spgHasDocsNo">No</label>
                       </div>
                     </div>
                   </div>
                   <div id="spgDocumentsPanel" class="d-none spg-collection-section">
-                    <h6 class="black-text fz-14 mb-2">مستندات المناقصة</h6>
-                    <p class="fz-12 text-gray mb-3">أدخل بيانات المستند ثم ارفع الملف.</p>
+                    <h6 class="black-text fz-14 mb-2">Tender documents</h6>
+                    <p class="fz-12 text-gray mb-3">Enter document details, then upload the file.</p>
 
                     <div class="tender-card p-3 bg-white mb-4 spg-collection-form-card" id="spgDocumentFormCard">
                       <div class="row g-3">
                         <div class="col-12 col-md-6">
-                          <label class="form-label" for="spgDocDraftName">اسم الملف</label>
-                          <input type="text" class="form-control" id="spgDocDraftName" placeholder="اسم الملف"
+                          <label class="form-label" for="spgDocDraftName">File name</label>
+                          <input type="text" class="form-control" id="spgDocDraftName" placeholder="File name"
                             autocomplete="off" />
                         </div>
                         <div class="col-12 col-md-6">
-                          <label class="form-label" for="spgDocDraftDesc">وصف الملف</label>
-                          <input type="text" class="form-control" id="spgDocDraftDesc" placeholder="وصف مختصر"
+                          <label class="form-label" for="spgDocDraftDesc">File description</label>
+                          <input type="text" class="form-control" id="spgDocDraftDesc" placeholder="Short description"
                             autocomplete="off" />
                         </div>
                         <div class="col-12">
-                          <label class="form-label">الملف</label>
+                          <label class="form-label">File</label>
                           <div class="upload-container">
                             <div class="upload-box uploadBox spg-doc-upload" id="spgDocUploadBox">
                               <div class="upload-icon"><img src="images/document-download.svg" alt=""></div>
                               <div class="d-flex flex-column gap-10">
-                                <div class="upload-title fz-10 black-text">اسحب الملف هنا أو تصفح لإضافته للقائمة</div>
-                                <div class="upload-subtitle fz-9 text-gray">أقصى حجم 500 ميغابايت</div>
+                                <div class="upload-title fz-10 black-text">Drag a file here or browse to add it to the list</div>
+                                <div class="upload-subtitle fz-9 text-gray">Max size 500 MB</div>
                                 <input type="file" class="fileInput" id="spgDocDraftFile" />
                                 <div class="fz-10 colored d-none fileInfo" id="spgDocDraftFileInfo"></div>
                                 <div class="red-colored fz-10 d-none errorMsg" id="spgDocDraftFileError"></div>
@@ -797,12 +795,12 @@
                       </div>
                       <div class="d-none flex-wrap align-items-center gap-3 mt-3 pt-3 border-top border-light"
                         id="spgDocumentEditActions">
-                        <span class="fz-12 text-gray flex-grow-1" id="spgDocumentEditHint">تعديل مستند محفوظ</span>
+                        <span class="fz-12 text-gray flex-grow-1" id="spgDocumentEditHint">Editing saved document</span>
                         <button type="button" class="btn-main btn-primary-outline fz-12 h-36" id="spgDocEditCancel">
-                          إلغاء
+                          Cancel
                         </button>
                         <button type="button" class="btn-main btn-primary fz-12 h-36" id="spgDocEditSave">
-                          حفظ التعديل
+                          Save changes
                         </button>
                       </div>
                     </div>
@@ -812,107 +810,106 @@
                         <table class="table table-bordered align-middle competition-table">
                           <thead>
                             <tr>
-                              <th>اسم الملف</th>
-                              <th>الوصف</th>
-                              <th>الملف</th>
-                              <th class="text-center">الإجراءات</th>
+                              <th>File name</th>
+                              <th>Description</th>
+                              <th>File</th>
+                              <th class="text-center">Actions</th>
                             </tr>
                           </thead>
                           <tbody id="spgDocumentsTableBody">
                             <tr data-spg-server-row="1" data-spg-entry-id="doc-1"
-                              data-spg-name="كراسة الشروط والمواصفات"
-                              data-spg-description="كراسة الشروط الفنية والإدارية للمنافسة بما يشمل نطاق العمل ومعايير التقييم."
+                              data-spg-name="Terms and specifications booklet"
+                              data-spg-description="Technical and administrative tender booklet including scope of work and evaluation criteria."
                               data-spg-file-name="tender-specifications-2025.pdf">
-                              <td data-label="اسم الملف">
-                                <span class="black-text fw-medium">كراسة الشروط والمواصفات</span>
+                              <td data-label="File name">
+                                <span class="black-text fw-medium">Terms and specifications booklet</span>
                               </td>
-                              <td data-label="الوصف">
+                              <td data-label="Description">
                                 <div class="d-flex align-items-end text-dark-gray">
                                   <p class="ellipse-text">
-                                    كراسة الشروط الفنية والإدارية للمنافسة بما يشمل نطاق العمل ومعايير التقييم.
+                                    Technical and administrative tender booklet including scope of work and evaluation criteria.
                                   </p>
                                   <a href="#" class="colored text-decoration-underline fz-12 text-nowrap"
-                                    data-bs-toggle="modal" data-bs-target="#spgCollectionDetailModal">عرض المزيد</a>
+                                    data-bs-toggle="modal" data-bs-target="#spgCollectionDetailModal">View more</a>
                                 </div>
                               </td>
-                              <td data-label="الملف">
+                              <td data-label="File">
                                 <div class="d-flex align-items-center">
                                   <span class="sm-logo">
-                                    <img src="images/document-normal.svg" alt="الملف">
+                                    <img src="images/document-normal.svg" alt="File">
                                   </span>
                                   <span class="fz-12 black-text" dir="ltr">tender-specifications-2025.pdf</span>
                                 </div>
                               </td>
-                              <td data-label="الإجراءات">
+                              <td data-label="Actions">
                                 <div class="d-flex align-items-center justify-content-center gap-12">
                                   <button type="button" class="icon-container gray-outline-btn spg-doc-edit"
-                                    data-id="doc-1" aria-label="تعديل">
+                                    data-id="doc-1" aria-label="Edit">
                                     <img src="images/edit-pen.svg" alt="">
                                   </button>
                                   <button type="button" class="icon-container gray-outline-btn spg-doc-delete"
-                                    data-id="doc-1" aria-label="حذف">
+                                    data-id="doc-1" aria-label="Delete">
                                     <img src="images/trash.svg" alt="">
                                   </button>
                                 </div>
                               </td>
                             </tr>
-                            <tr data-spg-server-row="1" data-spg-entry-id="doc-2" data-spg-name="جدول الكميات"
-                              data-spg-description="بنود الأعمال والكميات التقديرية للمشروع."
+                            <tr data-spg-server-row="1" data-spg-entry-id="doc-2" data-spg-name="Bill of quantities"
+                              data-spg-description="Work items and estimated quantities for the project."
                               data-spg-file-name="BOQ-project.xlsx">
-                              <td data-label="اسم الملف">
-                                <span class="black-text fw-medium">جدول الكميات</span>
+                              <td data-label="File name">
+                                <span class="black-text fw-medium">Bill of quantities</span>
                               </td>
-                              <td data-label="الوصف">
-                                <span class="text-gray fz-12">بنود الأعمال والكميات التقديرية للمشروع.</span>
+                              <td data-label="Description">
+                                <span class="text-gray fz-12">Work items and estimated quantities for the project.</span>
                               </td>
-                              <td data-label="الملف">
+                              <td data-label="File">
                                 <div class="d-flex align-items-center">
                                   <span class="sm-logo">
-                                    <img src="images/document-normal.svg" alt="الملف">
+                                    <img src="images/document-normal.svg" alt="File">
                                   </span>
                                   <span class="fz-12 black-text" dir="ltr">BOQ-project.xlsx</span>
                                 </div>
                               </td>
-                              <td data-label="الإجراءات">
+                              <td data-label="Actions">
                                 <div class="d-flex align-items-center justify-content-center gap-12">
                                   <button type="button" class="icon-container gray-outline-btn spg-doc-edit"
-                                    data-id="doc-2" aria-label="تعديل">
+                                    data-id="doc-2" aria-label="Edit">
                                     <img src="images/edit-pen.svg" alt="">
                                   </button>
                                   <button type="button" class="icon-container gray-outline-btn spg-doc-delete"
-                                    data-id="doc-2" aria-label="حذف">
+                                    data-id="doc-2" aria-label="Delete">
                                     <img src="images/trash.svg" alt="">
                                   </button>
                                 </div>
                               </td>
                             </tr>
                             <tr data-spg-server-row="1" data-spg-entry-id="doc-3"
-                              data-spg-name="المخططات الهندسية المعتمدة"
-                              data-spg-description="المخططات المعمارية والكهربائية المعتمدة من الجهة المالكة."
+                              data-spg-name="Approved engineering drawings"
+                              data-spg-description="Approved architectural and electrical drawings from the owner."
                               data-spg-file-name="approved-drawings.pdf">
-                              <td data-label="اسم الملف">
-                                <span class="black-text fw-medium">المخططات الهندسية المعتمدة</span>
+                              <td data-label="File name">
+                                <span class="black-text fw-medium">Approved engineering drawings</span>
                               </td>
-                              <td data-label="الوصف">
-                                <span class="text-gray fz-12">المخططات المعمارية والكهربائية المعتمدة من الجهة
-                                  المالكة.</span>
+                              <td data-label="Description">
+                                <span class="text-gray fz-12">Approved architectural and electrical drawings from the owner.</span>
                               </td>
-                              <td data-label="الملف">
+                              <td data-label="File">
                                 <div class="d-flex align-items-center">
                                   <span class="sm-logo">
-                                    <img src="images/document-normal.svg" alt="الملف">
+                                    <img src="images/document-normal.svg" alt="File">
                                   </span>
                                   <span class="fz-12 black-text" dir="ltr">approved-drawings.pdf</span>
                                 </div>
                               </td>
-                              <td data-label="الإجراءات">
+                              <td data-label="Actions">
                                 <div class="d-flex align-items-center justify-content-center gap-12">
                                   <button type="button" class="icon-container gray-outline-btn spg-doc-edit"
-                                    data-id="doc-3" aria-label="تعديل">
+                                    data-id="doc-3" aria-label="Edit">
                                     <img src="images/edit-pen.svg" alt="">
                                   </button>
                                   <button type="button" class="icon-container gray-outline-btn spg-doc-delete"
-                                    data-id="doc-3" aria-label="حذف">
+                                    data-id="doc-3" aria-label="Delete">
                                     <img src="images/trash.svg" alt="">
                                   </button>
                                 </div>
@@ -927,62 +924,62 @@
                 <div class="spg-wizard-step d-none" data-step="3">
                   <div
                     class="d-flex flex-column flex-md-row align-items-md-center justify-content-md-between gap-3 mb-4">
-                    <p class="fz-14 text-gray mb-0">هل لديك فريق عمل جاهز بأسماء وسير ذاتية لإضافتهم في العرض؟</p>
+                    <p class="fz-14 text-gray mb-0">Do you have a team ready with names and CVs to include in the proposal?</p>
                     <div class="d-flex align-items-center gap-10">
                       <div class="form-check qns-btn">
                         <input class="form-check-input" type="radio" name="spgHasTeam" id="spgHasTeamYes" value="yes" />
-                        <label class="form-check-label" for="spgHasTeamYes">نعم</label>
+                        <label class="form-check-label" for="spgHasTeamYes">Yes</label>
                       </div>
                       <div class="form-check qns-btn">
                         <input class="form-check-input" type="radio" name="spgHasTeam" id="spgHasTeamNo" value="no"
                           checked />
-                        <label class="form-check-label" for="spgHasTeamNo">لا</label>
+                        <label class="form-check-label" for="spgHasTeamNo">No</label>
                       </div>
                     </div>
                   </div>
                   <div id="spgTeamPanel" class="d-none spg-collection-section">
-                    <h6 class="black-text fz-14 mb-2">أعضاء فريق العمل</h6>
-                    <p class="fz-12 text-gray mb-3">أكمل بيانات العضو ثم احفظها. يمكنك إضافة عدة أعضاء.</p>
+                    <h6 class="black-text fz-14 mb-2">Team members</h6>
+                    <p class="fz-12 text-gray mb-3">Complete member details and save. You can add multiple members.</p>
 
                     <div class="tender-card p-3 bg-white mb-4 spg-collection-form-card" id="spgTeamFormCard">
                       <div class="row g-3">
                         <div class="col-12 col-md-6">
-                          <label class="form-label" for="spgTeamDraftName">اسم الموظف</label>
+                          <label class="form-label" for="spgTeamDraftName">Employee name</label>
                           <input type="text" class="form-control" id="spgTeamDraftName" autocomplete="off" />
                         </div>
                         <div class="col-12 col-md-6">
-                          <label class="form-label" for="spgTeamDraftNationality">الجنسية</label>
+                          <label class="form-label" for="spgTeamDraftNationality">Nationality</label>
                           <select class="form-select form-control" id="spgTeamDraftNationality">
-                            <option selected disabled value="">اختر الجنسية</option>
-                            <option value="1">سعودي</option>
-                            <option value="2">غير سعودي</option>
+                            <option selected disabled value="">Select nationality</option>
+                            <option value="1">Saudi</option>
+                            <option value="2">Non-Saudi</option>
                           </select>
                         </div>
                         <div class="col-12 col-md-6">
-                          <label class="form-label" for="spgTeamDraftJobTitle">المسمى الوظيفي</label>
+                          <label class="form-label" for="spgTeamDraftJobTitle">Job title</label>
                           <input type="text" class="form-control" id="spgTeamDraftJobTitle" autocomplete="off" />
                         </div>
                         <div class="col-12 col-md-6">
-                          <label class="form-label" for="spgTeamDraftDegree">الشهادة</label>
+                          <label class="form-label" for="spgTeamDraftDegree">Degree</label>
                           <input type="text" class="form-control" id="spgTeamDraftDegree" autocomplete="off" />
                         </div>
                         <div class="col-12 col-md-6">
-                          <label class="form-label" for="spgTeamDraftYears">سنوات الخبرة</label>
+                          <label class="form-label" for="spgTeamDraftYears">Years of experience</label>
                           <select class="form-select form-control" id="spgTeamDraftYears">
-                            <option selected disabled value="">اختر سنوات الخبرة</option>
+                            <option selected disabled value="">Select years of experience</option>
                             <option value="5">5</option>
                             <option value="10">10</option>
                             <option value="12">12</option>
                           </select>
                         </div>
                         <div class="col-12">
-                          <label class="form-label" for="spgTeamDraftCvFile">ملف السيرة الذاتية</label>
+                          <label class="form-label" for="spgTeamDraftCvFile">CV file</label>
                           <div class="upload-container">
                             <div class="upload-box uploadBox spg-team-cv-upload" id="spgTeamCvUploadBox">
                               <div class="upload-icon"><img src="images/document-download.svg" alt=""></div>
                               <div class="d-flex flex-column gap-10">
-                                <div class="upload-title fz-10 black-text">اسحب الملف هنا أو تصفح لإضافته للقائمة</div>
-                                <div class="upload-subtitle fz-9 text-gray">أقصى حجم 500 ميغابايت</div>
+                                <div class="upload-title fz-10 black-text">Drag a file here or browse to add it to the list</div>
+                                <div class="upload-subtitle fz-9 text-gray">Max size 500 MB</div>
                                 <input type="file" class="fileInput" id="spgTeamDraftCvFile" />
                                 <div class="fz-10 colored d-none fileInfo" id="spgTeamDraftCvFileInfo"></div>
                                 <div class="red-colored fz-10 d-none errorMsg" id="spgTeamDraftCvFileError"></div>
@@ -993,10 +990,10 @@
                         </div>
                         <div class="col-12">
                           <label class="form-label">
-                            القدرات والملخص
+                            Skills and summary
                           </label>
                           <div class="position-relative">
-                            <textarea class="form-control" id="spgTeamDraftSummary" placeholder="اكتب القدرات والملخص"
+                            <textarea class="form-control" id="spgTeamDraftSummary" placeholder="Describe skills and summary"
                               maxlength="300"></textarea>
                             <div class="char-count black-text fz-12">30/300</div>
                           </div>
@@ -1006,16 +1003,15 @@
                       <div
                         class="d-flex flex-wrap align-items-center justify-content-end gap-3 mt-3 pt-3 border-top border-light"
                         id="spgTeamFormPrimaryActions">
-                        <button type="button" class="btn-main btn-primary h-44 fz-14" id="spgAddTeamBtn">حفظ وإضافة
-                          للقائمة</button>
+                        <button type="button" class="btn-main btn-primary h-44 fz-14" id="spgAddTeamBtn">Save and add to list</button>
                       </div>
                       <div class="d-none flex-wrap align-items-center gap-3 mt-3 pt-3 border-top border-light"
                         id="spgTeamEditActions">
-                        <span class="fz-12 text-gray flex-grow-1">تعديل عضو محفوظ</span>
+                        <span class="fz-12 text-gray flex-grow-1">Editing saved member</span>
                         <button type="button" class="btn-main btn-primary-outline fz-12 h-36"
-                          id="spgTeamEditCancel">إلغاء</button>
-                        <button type="button" class="btn-main btn-primary fz-12 h-36" id="spgTeamEditSave">حفظ
-                          التعديل</button>
+                          id="spgTeamEditCancel">Cancel</button>
+                        <button type="button" class="btn-main btn-primary fz-12 h-36" id="spgTeamEditSave">Save
+                          changes</button>
                       </div>
                       <div class="red-colored fz-12 d-none mt-2" id="spgTeamFormError"></div>
                     </div>
@@ -1025,127 +1021,127 @@
                         <table class="table table-bordered align-middle competition-table">
                           <thead>
                             <tr>
-                              <th>اسم الموظف</th>
-                              <th>الجنسية</th>
-                              <th>المسمى الوظيفي</th>
-                              <th>المؤهل</th>
-                              <th>سنوات الخبرة</th>
-                              <th class="text-center">الإجراءات</th>
+                              <th>Employee name</th>
+                              <th>Nationality</th>
+                              <th>Job title</th>
+                              <th>Qualification</th>
+                              <th>Years of experience</th>
+                              <th class="text-center">Actions</th>
                             </tr>
                           </thead>
                           <tbody id="spgTeamList">
-                            <tr data-spg-server-row="1" data-spg-entry-id="team-1" data-spg-name="أحمد محمد علي"
-                              data-spg-nationality="سعودي" data-spg-job-title="مدير مشروع"
-                              data-spg-degree="بكالوريوس هندسة مدنية" data-spg-years="12"
+                            <tr data-spg-server-row="1" data-spg-entry-id="team-1" data-spg-name="Ahmed Mohammed Ali"
+                              data-spg-nationality="Saudi" data-spg-job-title="Project manager"
+                              data-spg-degree="B.Sc. Civil Engineering" data-spg-years="12"
                               data-spg-experiences="إدارة مشاريع بنية تحتية حكومية وتشغيل فرق متعددة التخصصات."
                               data-spg-summary="مدير مشاريع بخبرة في التخطيط والتنفيذ والتسليم وفق الجداول المعتمدة."
                               data-spg-cv-file-name="cv-ahmed-ali.pdf">
-                              <td data-label="اسم الموظف">
-                                <span class="text-dark-gray fw-medium">أحمد محمد علي</span>
+                              <td data-label="Employee name">
+                                <span class="text-dark-gray fw-medium">Ahmed Mohammed Ali</span>
                               </td>
-                              <td data-label="الجنسية">
-                                <span class="text-dark-gray fw-medium">سعودي</span>
+                              <td data-label="Nationality">
+                                <span class="text-dark-gray fw-medium">Saudi</span>
                               </td>
-                              <td data-label="المسمى الوظيفي">
-                                <span class="black-text fw-medium">مدير مشروع</span>
+                              <td data-label="Job title">
+                                <span class="black-text fw-medium">Project manager</span>
                               </td>
-                              <td data-label="المؤهل">
-                                <span class="text-dark-gray fw-medium">بكالوريوس هندسة مدنية</span>
+                              <td data-label="Qualification">
+                                <span class="text-dark-gray fw-medium">B.Sc. Civil Engineering</span>
                               </td>
-                              <td data-label="سنوات الخبرة">
+                              <td data-label="Years of experience">
                                 <div class="d-flex align-items-center">
                                   <span class="sm-logo">
-                                    <img src="images/timer.svg" alt="سنوات الخبرة">
+                                    <img src="images/timer.svg" alt="Years of experience">
                                   </span>
-                                  <span class="fw-medium black-text">12 سنة</span>
+                                  <span class="fw-medium black-text">12 years</span>
                                 </div>
                               </td>
-                              <td data-label="الإجراءات">
+                              <td data-label="Actions">
                                 <div class="d-flex align-items-center justify-content-center gap-12">
                                   <button type="button" class="icon-container gray-outline-btn spg-team-edit"
-                                    data-id="team-1" aria-label="تعديل">
+                                    data-id="team-1" aria-label="Edit">
                                     <img src="images/edit-pen.svg" alt="">
                                   </button>
                                   <button type="button" class="icon-container gray-outline-btn spg-team-delete"
-                                    data-id="team-1" aria-label="حذف">
+                                    data-id="team-1" aria-label="Delete">
                                     <img src="images/trash.svg" alt="">
                                   </button>
                                 </div>
                               </td>
                             </tr>
-                            <tr data-spg-server-row="1" data-spg-entry-id="team-2" data-spg-name="سارة خالد العتيبي"
-                              data-spg-nationality="سعودية" data-spg-job-title="مهندسة نظم"
-                              data-spg-degree="ماجستير علوم الحاسب" data-spg-years="8"
+                            <tr data-spg-server-row="1" data-spg-entry-id="team-2" data-spg-name="Sara Khalid Al-Otaibi"
+                              data-spg-nationality="Saudi" data-spg-job-title="Systems engineer"
+                              data-spg-degree="M.Sc. Computer Science" data-spg-years="8"
                               data-spg-experiences="تحليل الأنظمة وربط الخدمات الإلكترونية وإعداد وثائق الحلول الفنية."
-                              data-spg-summary="مهندسة نظم متخصصة في التكامل التقني وجودة التسليم."
+                              data-spg-summary="Systems engineer متخصصة في التكامل التقني وجودة التسليم."
                               data-spg-cv-file-name="cv-sara-otaibi.pdf">
-                              <td data-label="اسم الموظف">
-                                <span class="text-dark-gray fw-medium">سارة خالد العتيبي</span>
+                              <td data-label="Employee name">
+                                <span class="text-dark-gray fw-medium">Sara Khalid Al-Otaibi</span>
                               </td>
-                              <td data-label="الجنسية">
-                                <span class="text-dark-gray fw-medium">سعودية</span>
+                              <td data-label="Nationality">
+                                <span class="text-dark-gray fw-medium">Saudi</span>
                               </td>
-                              <td data-label="المسمى الوظيفي">
-                                <span class="black-text fw-medium">مهندسة نظم</span>
+                              <td data-label="Job title">
+                                <span class="black-text fw-medium">Systems engineer</span>
                               </td>
-                              <td data-label="المؤهل">
-                                <span class="text-dark-gray fw-medium">ماجستير علوم الحاسب</span>
+                              <td data-label="Qualification">
+                                <span class="text-dark-gray fw-medium">M.Sc. Computer Science</span>
                               </td>
-                              <td data-label="سنوات الخبرة">
+                              <td data-label="Years of experience">
                                 <div class="d-flex align-items-center">
                                   <span class="sm-logo">
-                                    <img src="images/timer.svg" alt="سنوات الخبرة">
+                                    <img src="images/timer.svg" alt="Years of experience">
                                   </span>
-                                  <span class="fw-medium black-text">8 سنوات</span>
+                                  <span class="fw-medium black-text">8 years</span>
                                 </div>
                               </td>
-                              <td data-label="الإجراءات">
+                              <td data-label="Actions">
                                 <div class="d-flex align-items-center justify-content-center gap-12">
                                   <button type="button" class="icon-container gray-outline-btn spg-team-edit"
-                                    data-id="team-2" aria-label="تعديل">
+                                    data-id="team-2" aria-label="Edit">
                                     <img src="images/edit-pen.svg" alt="">
                                   </button>
                                   <button type="button" class="icon-container gray-outline-btn spg-team-delete"
-                                    data-id="team-2" aria-label="حذف">
+                                    data-id="team-2" aria-label="Delete">
                                     <img src="images/trash.svg" alt="">
                                   </button>
                                 </div>
                               </td>
                             </tr>
                             <tr data-spg-server-row="1" data-spg-entry-id="team-3"
-                              data-spg-name="فهد عبدالرحمن القحطاني" data-spg-nationality="سعودي"
-                              data-spg-job-title="محاسب تكاليف" data-spg-degree="بكالوريوس محاسبة" data-spg-years="6"
+                              data-spg-name="Fahad Abdulrahman Al-Qahtani" data-spg-nationality="Saudi"
+                              data-spg-job-title="Cost accountant" data-spg-degree="B.Sc. Accounting" data-spg-years="6"
                               data-spg-experiences="إعداد العروض المالية ومتابعة التكاليف ومطابقة بنود الكميات."
-                              data-spg-summary="محاسب تكاليف مسؤول عن دقة التسعير والتقارير المالية للعرض."
+                              data-spg-summary="Cost accountant مسؤول عن دقة التسعير والتقارير المالية للعرض."
                               data-spg-cv-file-name="cv-fahad-qahtani.pdf">
-                              <td data-label="اسم الموظف">
-                                <span class="text-dark-gray fw-medium">فهد عبدالرحمن القحطاني</span>
+                              <td data-label="Employee name">
+                                <span class="text-dark-gray fw-medium">Fahad Abdulrahman Al-Qahtani</span>
                               </td>
-                              <td data-label="الجنسية">
-                                <span class="text-dark-gray fw-medium">سعودي</span>
+                              <td data-label="Nationality">
+                                <span class="text-dark-gray fw-medium">Saudi</span>
                               </td>
-                              <td data-label="المسمى الوظيفي">
-                                <span class="black-text fw-medium">محاسب تكاليف</span>
+                              <td data-label="Job title">
+                                <span class="black-text fw-medium">Cost accountant</span>
                               </td>
-                              <td data-label="المؤهل">
-                                <span class="text-dark-gray fw-medium">بكالوريوس محاسبة</span>
+                              <td data-label="Qualification">
+                                <span class="text-dark-gray fw-medium">B.Sc. Accounting</span>
                               </td>
-                              <td data-label="سنوات الخبرة">
+                              <td data-label="Years of experience">
                                 <div class="d-flex align-items-center">
                                   <span class="sm-logo">
-                                    <img src="images/timer.svg" alt="سنوات الخبرة">
+                                    <img src="images/timer.svg" alt="Years of experience">
                                   </span>
-                                  <span class="fw-medium black-text">6 سنوات</span>
+                                  <span class="fw-medium black-text">6 years</span>
                                 </div>
                               </td>
-                              <td data-label="الإجراءات">
+                              <td data-label="Actions">
                                 <div class="d-flex align-items-center justify-content-center gap-12">
                                   <button type="button" class="icon-container gray-outline-btn spg-team-edit"
-                                    data-id="team-3" aria-label="تعديل">
+                                    data-id="team-3" aria-label="Edit">
                                     <img src="images/edit-pen.svg" alt="">
                                   </button>
                                   <button type="button" class="icon-container gray-outline-btn spg-team-delete"
-                                    data-id="team-3" aria-label="حذف">
+                                    data-id="team-3" aria-label="Delete">
                                     <img src="images/trash.svg" alt="">
                                   </button>
                                 </div>
@@ -1160,70 +1156,69 @@
                 <div class="spg-wizard-step d-none" data-step="4">
                   <div
                     class="d-flex flex-column flex-md-row align-items-md-center justify-content-md-between gap-3 mb-4">
-                    <p class="fz-14 text-gray mb-0">هل لديك عقود سابقة؟</p>
+                    <p class="fz-14 text-gray mb-0">Do you have past contracts?</p>
                     <div class="d-flex align-items-center gap-10">
                       <div class="form-check qns-btn">
                         <input class="form-check-input" type="radio" name="spgHasContracts" id="spgHasContractsYes"
                           value="yes" />
-                        <label class="form-check-label" for="spgHasContractsYes">نعم</label>
+                        <label class="form-check-label" for="spgHasContractsYes">Yes</label>
                       </div>
                       <div class="form-check qns-btn">
                         <input class="form-check-input" type="radio" name="spgHasContracts" id="spgHasContractsNo"
                           value="no" checked />
-                        <label class="form-check-label" for="spgHasContractsNo">لا</label>
+                        <label class="form-check-label" for="spgHasContractsNo">No</label>
                       </div>
                     </div>
                   </div>
                   <div id="spgContractsPanel" class="d-none spg-collection-section">
-                    <h6 class="black-text fz-14 mb-2">العقود والمشاريع السابقة</h6>
-                    <p class="fz-12 text-gray mb-3">أدخل بيانات المشروع أو العقد ثم احفظها.</p>
+                    <h6 class="black-text fz-14 mb-2">Past contracts and projects</h6>
+                    <p class="fz-12 text-gray mb-3">Enter project or contract details, then save.</p>
 
                     <div class="tender-card p-3 bg-white mb-4 spg-collection-form-card" id="spgContractFormCard">
                       <div class="row g-3">
                         <div class="col-12 col-md-6">
-                          <label class="form-label" for="spgContractDraftProjectName">اسم المشروع</label>
+                          <label class="form-label" for="spgContractDraftProjectName">Project name</label>
                           <input type="text" class="form-control" id="spgContractDraftProjectName" autocomplete="off" />
                         </div>
                         <div class="col-12 col-md-6">
-                          <label class="form-label" for="spgContractDraftEntity">الجهة</label>
+                          <label class="form-label" for="spgContractDraftEntity">Entity</label>
                           <input type="text" class="form-control" id="spgContractDraftEntity" autocomplete="off" />
                         </div>
                         <div class="col-12">
-                          <label class="form-label" for="spgContractDraftDescription">وصف المشروع</label>
+                          <label class="form-label" for="spgContractDraftDescription">Project description</label>
                           <textarea class="form-control" id="spgContractDraftDescription" rows="2"></textarea>
                         </div>
                         <div class="col-12 col-md-4">
-                          <label class="form-label" for="spgContractDraftYear">سنة المشروع</label>
+                          <label class="form-label" for="spgContractDraftYear">Project year</label>
                           <input type="text" class="form-control" id="spgContractDraftYear" autocomplete="off"
                             dir="ltr" />
                         </div>
                         <div class="col-12 col-md-4">
-                          <label class="form-label" for="spgContractDraftDuration">مدة المشروع</label>
+                          <label class="form-label" for="spgContractDraftDuration">Project duration</label>
                           <input type="text" class="form-control" id="spgContractDraftDuration" autocomplete="off" />
                         </div>
                         <div class="col-12 col-md-4">
-                          <label class="form-label" for="spgContractDraftCost">تكلفة المشروع</label>
+                          <label class="form-label" for="spgContractDraftCost">Project cost</label>
                           <input type="text" class="form-control" id="spgContractDraftCost" autocomplete="off"
                             dir="ltr" />
                         </div>
                         <div class="col-12">
-                          <label class="form-label" for="spgContractDraftFileName">اسم ملف العقد</label>
+                          <label class="form-label" for="spgContractDraftFileName">Contract file name</label>
                           <input type="text" class="form-control" id="spgContractDraftFileName" autocomplete="off" />
                         </div>
                       </div>
                       <div
                         class="d-flex flex-wrap align-items-center justify-content-end gap-3 mt-3 pt-3 border-top border-light"
                         id="spgContractFormPrimaryActions">
-                        <button type="button" class="btn-main btn-primary h-44 fz-14" id="spgAddContractBtn">حفظ
-                          وإضافة للقائمة</button>
+                        <button type="button" class="btn-main btn-primary h-44 fz-14" id="spgAddContractBtn">Save and add to list</button>
                       </div>
                       <div class="d-none flex-wrap align-items-center gap-3 mt-3 pt-3 border-top border-light"
                         id="spgContractEditActions">
-                        <span class="fz-12 text-gray flex-grow-1">تعديل عقد/مشروع محفوظ</span>
+                        <span class="fz-12 text-gray flex-grow-1">Editing saved contract/project</span>
                         <button type="button" class="btn-main btn-primary-outline fz-12 h-36"
-                          id="spgContractEditCancel">إلغاء</button>
-                        <button type="button" class="btn-main btn-primary fz-12 h-36" id="spgContractEditSave">حفظ
-                          التعديل</button>
+                          id="spgContractEditCancel">Cancel</button>
+                        <button type="button" class="btn-main btn-primary fz-12 h-36" id="spgContractEditSave">Save
+                          changes</button>
                       </div>
                       <div class="red-colored fz-12 d-none mt-2" id="spgContractFormError"></div>
                     </div>
@@ -1233,198 +1228,196 @@
                         <table class="table table-bordered align-middle competition-table">
                           <thead>
                             <tr>
-                              <th>اسم المشروع</th>
-                              <th>الجهة</th>
-                              <th>الوصف</th>
-                              <th>السنة</th>
-                              <th>المدة</th>
-                              <th>التكلفة</th>
-                              <th>الملف</th>
-                              <th class="text-center">الإجراءات</th>
+                              <th>Project name</th>
+                              <th>Entity</th>
+                              <th>Description</th>
+                              <th>Year</th>
+                              <th>Duration</th>
+                              <th>Cost</th>
+                              <th>File</th>
+                              <th class="text-center">Actions</th>
                             </tr>
                           </thead>
                           <tbody id="spgContractsList">
                             <tr data-spg-server-row="1" data-spg-entry-id="contract-1"
-                              data-spg-project-name="تطوير أنظمة الموارد البشرية"
-                              data-spg-entity="وزارة الموارد البشرية"
-                              data-spg-description="توريد وتنفيذ منظومة إلكترونية لإدارة الموارد البشرية مع التدريب والدعم الفني."
-                              data-spg-year="2024" data-spg-duration="12 شهر" data-spg-cost="1,250,000"
+                              data-spg-project-name="HR systems development"
+                              data-spg-entity="Ministry of Human Resources"
+                              data-spg-description="Supply and implement an electronic HR management system with training and technical support."
+                              data-spg-year="2024" data-spg-duration="12 months" data-spg-cost="1,250,000"
                               data-spg-contract-file-name="hr-systems-contract.pdf">
-                              <td data-label="اسم المشروع">
-                                <span class="text-dark-gray fw-medium">تطوير أنظمة الموارد البشرية</span>
+                              <td data-label="Project name">
+                                <span class="text-dark-gray fw-medium">HR systems development</span>
                               </td>
-                              <td data-label="الجهة">
-                                <span class="text-dark-gray fw-medium">وزارة الموارد البشرية</span>
+                              <td data-label="Entity">
+                                <span class="text-dark-gray fw-medium">Ministry of Human Resources</span>
                               </td>
-                              <td data-label="الوصف">
+                              <td data-label="Description">
                                 <div class="d-flex align-items-end text-dark-gray">
                                   <p class="ellipse-text">
-                                    توريد وتنفيذ منظومة إلكترونية لإدارة الموارد البشرية مع التدريب والدعم الفني.
+                                    Supply and implement an electronic HR management system with training and technical support.
                                   </p>
                                   <a href="#" class="colored text-decoration-underline fz-12 text-nowrap"
-                                    data-bs-toggle="modal" data-bs-target="#spgCollectionDetailModal">عرض المزيد</a>
+                                    data-bs-toggle="modal" data-bs-target="#spgCollectionDetailModal">View more</a>
                                 </div>
                               </td>
-                              <td data-label="السنة">
+                              <td data-label="Year">
                                 <div class="d-flex align-items-center">
                                   <span class="sm-logo">
-                                    <img src="images/calendar.svg" alt="السنة">
+                                    <img src="images/calendar.svg" alt="Year">
                                   </span>
                                   <span class="fw-medium black-text">2024</span>
                                 </div>
                               </td>
-                              <td data-label="المدة">
+                              <td data-label="Duration">
                                 <div class="d-flex align-items-center">
                                   <span class="sm-logo">
-                                    <img src="images/clock.svg" alt="المدة">
+                                    <img src="images/clock.svg" alt="Duration">
                                   </span>
-                                  <span class="fw-medium black-text">12 شهر</span>
+                                  <span class="fw-medium black-text">12 months</span>
                                 </div>
                               </td>
-                              <td data-label="التكلفة">
+                              <td data-label="Cost">
                                 <div class="d-flex align-items-center gap-1">
                                   <span class="fw-medium black-text">1,250,000</span>
-                                  <img src="images/ryall.svg" alt="ريال">
+                                  <img src="images/ryall.svg" alt="SAR">
                                 </div>
                               </td>
-                              <td data-label="الملف">
+                              <td data-label="File">
                                 <div class="d-flex align-items-center">
                                   <span class="sm-logo">
-                                    <img src="images/document-normal.svg" alt="الملف">
+                                    <img src="images/document-normal.svg" alt="File">
                                   </span>
                                   <span class="fz-12 black-text" dir="ltr">hr-systems-contract.pdf</span>
                                 </div>
                               </td>
-                              <td data-label="الإجراءات">
+                              <td data-label="Actions">
                                 <div class="d-flex align-items-center justify-content-center gap-12">
                                   <button type="button" class="icon-container gray-outline-btn spg-contract-edit"
-                                    data-id="contract-1" aria-label="تعديل">
+                                    data-id="contract-1" aria-label="Edit">
                                     <img src="images/edit-pen.svg" alt="">
                                   </button>
                                   <button type="button" class="icon-container gray-outline-btn spg-contract-delete"
-                                    data-id="contract-1" aria-label="حذف">
+                                    data-id="contract-1" aria-label="Delete">
                                     <img src="images/trash.svg" alt="">
                                   </button>
                                 </div>
                               </td>
                             </tr>
                             <tr data-spg-server-row="1" data-spg-entry-id="contract-2"
-                              data-spg-project-name="صيانة وتشغيل مراكز البيانات" data-spg-entity="هيئة الحكومة الرقمية"
-                              data-spg-description="عقد تشغيل وصيانة لمراكز البيانات يشمل المراقبة على مدار الساعة وخطط الاستجابة للحوادث."
-                              data-spg-year="2023" data-spg-duration="24 شهر" data-spg-cost="3,400,000"
+                              data-spg-project-name="Data center operations and maintenance" data-spg-entity="Digital Government Authority"
+                              data-spg-description="Operations and maintenance contract for data centers including 24/7 monitoring and incident response plans."
+                              data-spg-year="2023" data-spg-duration="24 months" data-spg-cost="3,400,000"
                               data-spg-contract-file-name="data-center-ops.pdf">
-                              <td data-label="اسم المشروع">
-                                <span class="text-dark-gray fw-medium">صيانة وتشغيل مراكز البيانات</span>
+                              <td data-label="Project name">
+                                <span class="text-dark-gray fw-medium">Data center operations and maintenance</span>
                               </td>
-                              <td data-label="الجهة">
-                                <span class="text-dark-gray fw-medium">هيئة الحكومة الرقمية</span>
+                              <td data-label="Entity">
+                                <span class="text-dark-gray fw-medium">Digital Government Authority</span>
                               </td>
-                              <td data-label="الوصف">
+                              <td data-label="Description">
                                 <div class="d-flex align-items-end text-dark-gray">
                                   <p class="ellipse-text">
-                                    عقد تشغيل وصيانة لمراكز البيانات يشمل المراقبة على مدار الساعة وخطط الاستجابة
-                                    للحوادث.
+                                    Operations and maintenance contract for data centers including 24/7 monitoring and incident response plans.
                                   </p>
                                   <a href="#" class="colored text-decoration-underline fz-12 text-nowrap"
-                                    data-bs-toggle="modal" data-bs-target="#spgCollectionDetailModal">عرض المزيد</a>
+                                    data-bs-toggle="modal" data-bs-target="#spgCollectionDetailModal">View more</a>
                                 </div>
                               </td>
-                              <td data-label="السنة">
+                              <td data-label="Year">
                                 <div class="d-flex align-items-center">
                                   <span class="sm-logo">
-                                    <img src="images/calendar.svg" alt="السنة">
+                                    <img src="images/calendar.svg" alt="Year">
                                   </span>
                                   <span class="fw-medium black-text">2023</span>
                                 </div>
                               </td>
-                              <td data-label="المدة">
+                              <td data-label="Duration">
                                 <div class="d-flex align-items-center">
                                   <span class="sm-logo">
-                                    <img src="images/clock.svg" alt="المدة">
+                                    <img src="images/clock.svg" alt="Duration">
                                   </span>
-                                  <span class="fw-medium black-text">24 شهر</span>
+                                  <span class="fw-medium black-text">24 months</span>
                                 </div>
                               </td>
-                              <td data-label="التكلفة">
+                              <td data-label="Cost">
                                 <div class="d-flex align-items-center gap-1">
                                   <span class="fw-medium black-text">3,400,000</span>
-                                  <img src="images/ryall.svg" alt="ريال">
+                                  <img src="images/ryall.svg" alt="SAR">
                                 </div>
                               </td>
-                              <td data-label="الملف">
+                              <td data-label="File">
                                 <div class="d-flex align-items-center">
                                   <span class="sm-logo">
-                                    <img src="images/document-normal.svg" alt="الملف">
+                                    <img src="images/document-normal.svg" alt="File">
                                   </span>
                                   <span class="fz-12 black-text" dir="ltr">data-center-ops.pdf</span>
                                 </div>
                               </td>
-                              <td data-label="الإجراءات">
+                              <td data-label="Actions">
                                 <div class="d-flex align-items-center justify-content-center gap-12">
                                   <button type="button" class="icon-container gray-outline-btn spg-contract-edit"
-                                    data-id="contract-2" aria-label="تعديل">
+                                    data-id="contract-2" aria-label="Edit">
                                     <img src="images/edit-pen.svg" alt="">
                                   </button>
                                   <button type="button" class="icon-container gray-outline-btn spg-contract-delete"
-                                    data-id="contract-2" aria-label="حذف">
+                                    data-id="contract-2" aria-label="Delete">
                                     <img src="images/trash.svg" alt="">
                                   </button>
                                 </div>
                               </td>
                             </tr>
                             <tr data-spg-server-row="1" data-spg-entry-id="contract-3"
-                              data-spg-project-name="توريد أجهزة شبكات الاتصال" data-spg-entity="أمانة منطقة الرياض"
-                              data-spg-description="توريد وتركيب أجهزة شبكات الاتصال لمباني الأمانة مع الضمان والصيانة."
-                              data-spg-year="2022" data-spg-duration="9 أشهر" data-spg-cost="780,500"
+                              data-spg-project-name="Network equipment supply" data-spg-entity="Riyadh Region Municipality"
+                              data-spg-description="Supply and install network equipment for municipality buildings with warranty and maintenance."
+                              data-spg-year="2022" data-spg-duration="9 months" data-spg-cost="780,500"
                               data-spg-contract-file-name="network-supply-contract.pdf">
-                              <td data-label="اسم المشروع">
-                                <span class="text-dark-gray fw-medium">توريد أجهزة شبكات الاتصال</span>
+                              <td data-label="Project name">
+                                <span class="text-dark-gray fw-medium">Network equipment supply</span>
                               </td>
-                              <td data-label="الجهة">
-                                <span class="text-dark-gray fw-medium">أمانة منطقة الرياض</span>
+                              <td data-label="Entity">
+                                <span class="text-dark-gray fw-medium">Riyadh Region Municipality</span>
                               </td>
-                              <td data-label="الوصف">
-                                <span class="text-gray fz-12">توريد وتركيب أجهزة شبكات الاتصال لمباني الأمانة مع الضمان
-                                  والصيانة.</span>
+                              <td data-label="Description">
+                                <span class="text-gray fz-12">Supply and install network equipment for municipality buildings with warranty and maintenance.</span>
                               </td>
-                              <td data-label="السنة">
+                              <td data-label="Year">
                                 <div class="d-flex align-items-center">
                                   <span class="sm-logo">
-                                    <img src="images/calendar.svg" alt="السنة">
+                                    <img src="images/calendar.svg" alt="Year">
                                   </span>
                                   <span class="fw-medium black-text">2022</span>
                                 </div>
                               </td>
-                              <td data-label="المدة">
+                              <td data-label="Duration">
                                 <div class="d-flex align-items-center">
                                   <span class="sm-logo">
-                                    <img src="images/clock.svg" alt="المدة">
+                                    <img src="images/clock.svg" alt="Duration">
                                   </span>
-                                  <span class="fw-medium black-text">9 أشهر</span>
+                                  <span class="fw-medium black-text">9 months</span>
                                 </div>
                               </td>
-                              <td data-label="التكلفة">
+                              <td data-label="Cost">
                                 <div class="d-flex align-items-center gap-1">
                                   <span class="fw-medium black-text">780,500</span>
-                                  <img src="images/ryall.svg" alt="ريال">
+                                  <img src="images/ryall.svg" alt="SAR">
                                 </div>
                               </td>
-                              <td data-label="الملف">
+                              <td data-label="File">
                                 <div class="d-flex align-items-center">
                                   <span class="sm-logo">
-                                    <img src="images/document-normal.svg" alt="الملف">
+                                    <img src="images/document-normal.svg" alt="File">
                                   </span>
                                   <span class="fz-12 black-text" dir="ltr">network-supply-contract.pdf</span>
                                 </div>
                               </td>
-                              <td data-label="الإجراءات">
+                              <td data-label="Actions">
                                 <div class="d-flex align-items-center justify-content-center gap-12">
                                   <button type="button" class="icon-container gray-outline-btn spg-contract-edit"
-                                    data-id="contract-3" aria-label="تعديل">
+                                    data-id="contract-3" aria-label="Edit">
                                     <img src="images/edit-pen.svg" alt="">
                                   </button>
                                   <button type="button" class="icon-container gray-outline-btn spg-contract-delete"
-                                    data-id="contract-3" aria-label="حذف">
+                                    data-id="contract-3" aria-label="Delete">
                                     <img src="images/trash.svg" alt="">
                                   </button>
                                 </div>
@@ -1437,7 +1430,7 @@
                   </div>
                 </div>
                 <div class="spg-wizard-step d-none" data-step="5">
-                  <p class="fz-14 text-gray mb-4">اختر مستوى التفصيل المناسب لحجم العرض والوقت المتاح لديك.</p>
+                  <p class="fz-14 text-gray mb-4">Choose a detail level that fits your proposal size and available time.</p>
                   <div class="row g-3">
 
                     <!-- Detailed -->
@@ -1445,10 +1438,10 @@
                       <label class="stat-card w-100 border-0 p-0 flex-column spg-detail-card">
                         <input type="radio" name="spgDetailLevel" class="spg-detail-radio" checked>
 
-                        <h3 class="fz-16 black-text mb-2">مفصل</h3>
+                        <h3 class="fz-16 black-text mb-2">Detailed</h3>
 
                         <p class="fz-12 text-gray mb-0">
-                          عرض شامل بأقصى عمق وتوثيق لكل قسم.
+                          Comprehensive proposal with maximum depth and documentation for each section.
                         </p>
                       </label>
                     </div>
@@ -1458,10 +1451,10 @@
                       <label class="stat-card w-100 border-0 p-0 flex-column spg-detail-card">
                         <input type="radio" name="spgDetailLevel" class="spg-detail-radio">
 
-                        <h3 class="fz-16 black-text mb-2">متوسط</h3>
+                        <h3 class="fz-16 black-text mb-2">Medium</h3>
 
                         <p class="fz-12 text-gray mb-0">
-                          توازن بين التفصيل والاختصار للمعظم.
+                          A balance of detail and brevity for most cases.
                         </p>
                       </label>
                     </div>
@@ -1470,10 +1463,10 @@
                     <div class="col-12 col-md-4">
                       <label class="stat-card w-100 border-0 p-0 flex-column spg-detail-card">
                         <input type="radio" name="spgDetailLevel" class="spg-detail-radio">
-                        <h3 class="fz-16 black-text mb-2">مختصر</h3>
+                        <h3 class="fz-16 black-text mb-2">Brief</h3>
 
                         <p class="fz-12 text-gray mb-0">
-                          محتوى مركز يركز على النقاط الجوهرية.
+                          Focused content highlighting essential points.
                         </p>
                       </label>
                     </div>
@@ -1490,8 +1483,8 @@
                       stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
                     <path opacity="0.4" d="M2.91667 10H16.9417" stroke="#6BAFB8" stroke-width="1.5"
                       stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg> رجوع</button>
-                <button type="button" class="btn-main btn-primary h-44 fz-14" id="spgWizardNext">التالي <svg
+                  </svg> Back</button>
+                <button type="button" class="btn-main btn-primary h-44 fz-14" id="spgWizardNext">Next <svg
                     xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
                     <path d="M8.47485 15.5583L3.41652 10.5L8.47485 5.44165" stroke="#fff" stroke-width="1.5"
                       stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -1508,9 +1501,8 @@
                     data-bs-parent="#spgReviewStageAccordion">
                     <div class="accordion-body p-0">
               <div class="mb-4">
-                <h3 class="black-text fw-medium mb-2">مراجعة وتأكيد أقسام العرض</h3>
-                <p class="fz-14 text-gray mb-0">راجع الأقسام التي اقترحها الذكاء الاصطناعي وعدّلها قبل أن نجهز لك
-                  المحتوى.</p>
+                <h3 class="black-text fw-medium mb-2">Review and confirm proposal sections</h3>
+                <p class="fz-14 text-gray mb-0">Review AI-suggested sections and edit them before we prepare your content.</p>
               </div>
 
               <div class="tender-card p-3 p-lg-4 mb-4 bg-white spg-summary-card">
@@ -1518,35 +1510,35 @@
                   <div class="col-6 col-lg-3">
                     <div class="stat-card flex-column py-3 h-100">
                       <span class="stat-value ff-onest">—</span>
-                      <span class="text-gray">إجمالي الأقسام</span>
+                      <span class="text-gray">Total sections</span>
                     </div>
                   </div>
                   <div class="col-6 col-lg-3">
                     <div class="stat-card flex-column py-3 h-100">
                       <span class="stat-value ff-onest">5</span>
-                      <span class="text-gray">الأقسام الأساسية</span>
+                      <span class="text-gray">Core sections</span>
                     </div>
                   </div>
                   <div class="col-6 col-lg-3">
                     <div class="stat-card flex-column py-3 h-100">
                       <span class="stat-value ff-onest">—</span>
-                      <span class="text-gray">الأقسام الاختيارية</span>
+                      <span class="text-gray">Optional sections</span>
                     </div>
                   </div>
                   <div class="col-6 col-lg-3">
                     <div class="stat-card flex-column py-3 h-100">
                       <span class="stat-value ff-onest fz-14">—</span>
-                      <span class="text-gray">الصفحات التقديرية</span>
+                      <span class="text-gray">Estimated pages</span>
                     </div>
                   </div>
                 </div>
                 <div class="text-center mt-4 pt-2 border-top border-light">
-                  <span class="fz-12 text-gray d-block mb-1">حجم العرض المتوقع</span>
+                  <span class="fz-12 text-gray d-block mb-1">Expected proposal size</span>
                   <span class="black-text fw-medium">—</span>
                 </div>
               </div>
 
-              <h6 class="black-text mb-3">الأقسام الأساسية</h6>
+              <h6 class="black-text mb-3">Core sections</h6>
               <div class="row g-3 mb-4" id="spgCoreSections">
                 <div class="col-12 col-lg-6">
                   <div class="spg-section-row tender-card p-3 bg-white d-flex gap-3 align-items-start">
@@ -1556,11 +1548,10 @@
                     </div>
                     <div class="flex-grow-1">
                       <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
-                        <label class="black-text fz-14 mb-0 fw-medium" for="spg-core-cover">الغلاف والمعلومات
-                          العامة</label>
-                        <span class="sm-ele fz-10 bordered-8 badge-opacity-prim py-1 px-2">أساسي</span>
+                        <label class="black-text fz-14 mb-0 fw-medium" for="spg-core-cover">Cover and general information</label>
+                        <span class="sm-ele fz-10 bordered-8 badge-opacity-prim py-1 px-2">Core</span>
                       </div>
-                      <p class="fz-12 text-gray mb-0">بيانات المنافسة، رقم المنافسة، الجهة، الموعد النهائي</p>
+                      <p class="fz-12 text-gray mb-0">Competition details, reference number, entity, deadline</p>
                     </div>
                   </div>
                 </div>
@@ -1572,11 +1563,10 @@
                     </div>
                     <div class="flex-grow-1">
                       <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
-                        <label class="black-text fz-14 mb-0 fw-medium" for="spg-core-methodology">فهم المشروع
-                          والمنهجية</label>
-                        <span class="sm-ele fz-10 bordered-8 badge-opacity-prim py-1 px-2">أساسي</span>
+                        <label class="black-text fz-14 mb-0 fw-medium" for="spg-core-methodology">Project understanding and methodology</label>
+                        <span class="sm-ele fz-10 bordered-8 badge-opacity-prim py-1 px-2">Core</span>
                       </div>
-                      <p class="fz-12 text-gray mb-0">تحليل متطلبات المشروع، خطة العمل المعتمدة</p>
+                      <p class="fz-12 text-gray mb-0">Requirements analysis and approved work plan</p>
                     </div>
                   </div>
                 </div>
@@ -1588,11 +1578,10 @@
                     </div>
                     <div class="flex-grow-1">
                       <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
-                        <label class="black-text fz-14 mb-0 fw-medium" for="spg-core-workplan">خطة العمل
-                          والتنفيذ</label>
-                        <span class="sm-ele fz-10 bordered-8 badge-opacity-prim py-1 px-2">أساسي</span>
+                        <label class="black-text fz-14 mb-0 fw-medium" for="spg-core-workplan">Work plan and execution</label>
+                        <span class="sm-ele fz-10 bordered-8 badge-opacity-prim py-1 px-2">Core</span>
                       </div>
-                      <p class="fz-12 text-gray mb-0">مراحل التنفيذ، الجداول الزمنية لكل خطوة</p>
+                      <p class="fz-12 text-gray mb-0">Execution phases and timelines for each step</p>
                     </div>
                   </div>
                 </div>
@@ -1604,11 +1593,10 @@
                     </div>
                     <div class="flex-grow-1">
                       <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
-                        <label class="black-text fz-14 mb-0 fw-medium" for="spg-core-team">الهيكل التنظيمي وفريق
-                          العمل</label>
-                        <span class="sm-ele fz-10 bordered-8 badge-opacity-prim py-1 px-2">أساسي</span>
+                        <label class="black-text fz-14 mb-0 fw-medium" for="spg-core-team">Organization structure and team</label>
+                        <span class="sm-ele fz-10 bordered-8 badge-opacity-prim py-1 px-2">Core</span>
                       </div>
-                      <p class="fz-12 text-gray mb-0">أدوار ومسؤوليات فريق العمل، خبرات فريق العمل</p>
+                      <p class="fz-12 text-gray mb-0">Team roles, responsibilities, and experience</p>
                     </div>
                   </div>
                 </div>
@@ -1620,16 +1608,16 @@
                     </div>
                     <div class="flex-grow-1">
                       <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
-                        <label class="black-text fz-14 mb-0 fw-medium" for="spg-core-financial">العرض المالي</label>
-                        <span class="sm-ele fz-10 bordered-8 badge-opacity-prim py-1 px-2">أساسي</span>
+                        <label class="black-text fz-14 mb-0 fw-medium" for="spg-core-financial">Financial proposal</label>
+                        <span class="sm-ele fz-10 bordered-8 badge-opacity-prim py-1 px-2">Core</span>
                       </div>
-                      <p class="fz-12 text-gray mb-0">تفاصيل التسعير، المبلغ الإجمالي شامل الضريبة</p>
+                      <p class="fz-12 text-gray mb-0">Pricing details and total amount including tax</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <h6 class="black-text mb-3">الأقسام المقترحة</h6>
+              <h6 class="black-text mb-3">Suggested sections</h6>
               <div class="row g-3 mb-4" id="spgOptionalSections">
                 <div class="col-12 col-lg-6">
                   <div class="spg-section-row tender-card p-3 bg-white d-flex gap-3 align-items-start">
@@ -1639,10 +1627,10 @@
                     </div>
                     <div class="flex-grow-1">
                       <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
-                        <label class="black-text fz-14 mb-0 fw-medium" for="spg-opt-risk">خطة إدارة المخاطر</label>
-                        <span class="sm-ele fz-10 bordered-8 badge-reviewed py-1 px-2">مقترح</span>
+                        <label class="black-text fz-14 mb-0 fw-medium" for="spg-opt-risk">Risk management plan</label>
+                        <span class="sm-ele fz-10 bordered-8 badge-reviewed py-1 px-2">Suggested</span>
                       </div>
-                      <p class="fz-12 text-gray mb-0">إدارة المخاطر المحتملة وخطط الاستجابة لها</p>
+                      <p class="fz-12 text-gray mb-0">Managing potential risks and response plans</p>
                     </div>
                   </div>
                 </div>
@@ -1654,11 +1642,10 @@
                     </div>
                     <div class="flex-grow-1">
                       <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
-                        <label class="black-text fz-14 mb-0 fw-medium" for="spg-opt-experience">الخبرات والعقود
-                          السابقة</label>
-                        <span class="sm-ele fz-10 bordered-8 badge-reviewed py-1 px-2">مقترح</span>
+                        <label class="black-text fz-14 mb-0 fw-medium" for="spg-opt-experience">Past experience and contracts</label>
+                        <span class="sm-ele fz-10 bordered-8 badge-reviewed py-1 px-2">Suggested</span>
                       </div>
-                      <p class="fz-12 text-gray mb-0">مشاريع سابقة تُظهر الخبرة والقدرات</p>
+                      <p class="fz-12 text-gray mb-0">Past projects demonstrating experience and capabilities</p>
                     </div>
                   </div>
                 </div>
@@ -1670,10 +1657,10 @@
                     </div>
                     <div class="flex-grow-1">
                       <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
-                        <label class="black-text fz-14 mb-0 fw-medium" for="spg-opt-quality">خطة إدارة الجودة</label>
-                        <span class="sm-ele fz-10 bordered-8 badge-reviewed py-1 px-2">مقترح</span>
+                        <label class="black-text fz-14 mb-0 fw-medium" for="spg-opt-quality">Quality management plan</label>
+                        <span class="sm-ele fz-10 bordered-8 badge-reviewed py-1 px-2">Suggested</span>
                       </div>
-                      <p class="fz-12 text-gray mb-0">معايير الجودة، طرق المراجعة، التوثيق</p>
+                      <p class="fz-12 text-gray mb-0">Quality standards, review methods, documentation</p>
                     </div>
                   </div>
                 </div>
@@ -1685,11 +1672,10 @@
                     </div>
                     <div class="flex-grow-1">
                       <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
-                        <label class="black-text fz-14 mb-0 fw-medium" for="spg-opt-timeline">الجدول الزمني
-                          للتنفيذ</label>
-                        <span class="sm-ele fz-10 bordered-8 badge-reviewed py-1 px-2">مقترح</span>
+                        <label class="black-text fz-14 mb-0 fw-medium" for="spg-opt-timeline">Implementation timeline</label>
+                        <span class="sm-ele fz-10 bordered-8 badge-reviewed py-1 px-2">Suggested</span>
                       </div>
-                      <p class="fz-12 text-gray mb-0">المراحل، المخرجات، المسؤولون</p>
+                      <p class="fz-12 text-gray mb-0">Phases, deliverables, owners</p>
                     </div>
                   </div>
                 </div>
@@ -1703,11 +1689,10 @@
                       stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
                     <path opacity="0.4" d="M2.91667 10H16.9417" stroke="#6BAFB8" stroke-width="1.5"
                       stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg> رجوع</button>
+                  </svg> Back</button>
                 <button type="button" class="btn-main btn-primary h-44 fz-14" id="spgReviewConfirm"
                   data-bs-toggle="collapse" data-bs-target="#spgSectionReviewPane" aria-expanded="false"
-                  aria-controls="spgSectionReviewPane">تأكيد والمتابعة
-                  للمراجعة <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
+                  aria-controls="spgSectionReviewPane">Confirm and continue to review <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
                     fill="none">
                     <path d="M8.47485 15.5583L3.41652 10.5L8.47485 5.44165" stroke="#fff" stroke-width="1.5"
                       stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -1725,9 +1710,8 @@
                       <div
                       class="spg-section-review-status tender-card p-3 p-lg-4 mb-3 mb-lg-4 bg-white d-flex flex-column flex-md-row align-items-md-start justify-content-md-between gap-3">
                       <div>
-                        <h6 class="black-text fw-medium mb-2">العرض جاهز للمراجعة</h6>
-                        <p class="fz-12 text-gray mb-0">راجع محتوى كل قسم أدناه. تأكد من الصياغة قبل
-                          اعتماد العرض النهائي.</p>
+                        <h6 class="black-text fw-medium mb-2">Proposal ready for review</h6>
+                        <p class="fz-12 text-gray mb-0">Review each section below. Confirm wording before final approval.</p>
                       </div>
                       <button type="button"
                         class="btn-main outline-primary-gray fz-12 h-36 flex-shrink-0 d-inline-flex align-items-center gap-2">
@@ -1738,7 +1722,7 @@
                       <div class="row g-3 g-lg-4 spg-section-review-layout">
                         <div class="col-12 col-lg-4 col-xl-3 spg-section-review-nav-col">
                           <div class="tender-card border-0 h-100 spg-section-review-sidebar">
-                            <h6 class="black-text fz-14 fw-medium mb-3">أقسام العرض</h6>
+                            <h6 class="black-text fz-14 fw-medium mb-3">Proposal sections</h6>
                             <div class="nav flex-column nav-pills spg-section-review-nav gap-2" id="spgSectionReviewTabs"
                               role="tablist" aria-orientation="vertical">
                               <button class="nav-link spg-section-review-tab active w-100" id="spg-sec-01-tab"
@@ -1747,8 +1731,7 @@
                                 <span class="d-flex align-items-center justify-content-between gap-2 w-100">
                                   <span class="d-flex align-items-center gap-2 min-w-0 text-start">
                                     <span class="spg-section-review-num ff-onest">01</span>
-                                    <span class="spg-section-review-title black-text fw-medium text-truncate">الملخص
-                                      التنفيذي</span>
+                                    <span class="spg-section-review-title black-text fw-medium text-truncate">Executive summary</span>
                                   </span>
                                   <span class="spg-section-review-words ff-onest fz-12 text-gray flex-shrink-0">420</span>
                                 </span>
@@ -1759,8 +1742,7 @@
                                 <span class="d-flex align-items-center justify-content-between gap-2 w-100">
                                   <span class="d-flex align-items-center gap-2 min-w-0 text-start">
                                     <span class="spg-section-review-num ff-onest">02</span>
-                                    <span class="spg-section-review-title black-text fw-medium text-truncate">فهم
-                                      المتطلبات</span>
+                                    <span class="spg-section-review-title black-text fw-medium text-truncate">Requirements understanding</span>
                                   </span>
                                   <span class="spg-section-review-words ff-onest fz-12 text-gray flex-shrink-0">380</span>
                                 </span>
@@ -1771,8 +1753,7 @@
                                 <span class="d-flex align-items-center justify-content-between gap-2 w-100">
                                   <span class="d-flex align-items-center gap-2 min-w-0 text-start">
                                     <span class="spg-section-review-num ff-onest">03</span>
-                                    <span class="spg-section-review-title black-text fw-medium text-truncate">منهجية
-                                      التنفيذ</span>
+                                    <span class="spg-section-review-title black-text fw-medium text-truncate">Implementation methodology</span>
                                   </span>
                                   <span class="spg-section-review-words ff-onest fz-12 text-gray flex-shrink-0">450</span>
                                 </span>
@@ -1783,8 +1764,7 @@
                                 <span class="d-flex align-items-center justify-content-between gap-2 w-100">
                                   <span class="d-flex align-items-center gap-2 min-w-0 text-start">
                                     <span class="spg-section-review-num ff-onest">04</span>
-                                    <span class="spg-section-review-title black-text fw-medium text-truncate">خطة
-                                      العمل</span>
+                                    <span class="spg-section-review-title black-text fw-medium text-truncate">Work plan</span>
                                   </span>
                                   <span class="spg-section-review-words ff-onest fz-12 text-gray flex-shrink-0">520</span>
                                 </span>
@@ -1795,8 +1775,7 @@
                                 <span class="d-flex align-items-center justify-content-between gap-2 w-100">
                                   <span class="d-flex align-items-center gap-2 min-w-0 text-start">
                                     <span class="spg-section-review-num ff-onest">05</span>
-                                    <span class="spg-section-review-title black-text fw-medium text-truncate">فريق
-                                      العمل</span>
+                                    <span class="spg-section-review-title black-text fw-medium text-truncate">Team</span>
                                   </span>
                                   <span class="spg-section-review-words ff-onest fz-12 text-gray flex-shrink-0">340</span>
                                 </span>
@@ -1808,7 +1787,7 @@
                                   <span class="d-flex align-items-center gap-2 min-w-0 text-start">
                                     <span class="spg-section-review-num ff-onest">06</span>
                                     <span class="spg-section-review-title black-text fw-medium text-truncate">الخبرات
-                                      والعقود السابقة</span>
+                                      وPast contracts</span>
                                   </span>
                                   <span class="spg-section-review-words ff-onest fz-12 text-gray flex-shrink-0">410</span>
                                 </span>
@@ -1831,7 +1810,7 @@
                                 <span class="d-flex align-items-center justify-content-between gap-2 w-100">
                                   <span class="d-flex align-items-center gap-2 min-w-0 text-start">
                                     <span class="spg-section-review-num ff-onest">08</span>
-                                    <span class="spg-section-review-title black-text fw-medium text-truncate">الملحقات</span>
+                                    <span class="spg-section-review-title black-text fw-medium text-truncate">Appendices</span>
                                   </span>
                                   <span class="spg-section-review-words ff-onest fz-12 text-gray flex-shrink-0">180</span>
                                 </span>
@@ -1839,7 +1818,7 @@
                             </div>
                             <div
                               class="spg-section-review-total mt-3 pt-3  d-flex align-items-center justify-content-between gap-2">
-                              <span class="black-text fw-medium fz-14">إجمالي الكلمات</span>
+                              <span class="black-text fw-medium fz-14">Total words</span>
                               <span class="ff-onest black-text fw-medium">2,990</span>
                             </div>
                           </div>
@@ -1849,57 +1828,57 @@
                             <div class="tab-pane fade show active" id="spg-sec-01" role="tabpanel"
                               aria-labelledby="spg-sec-01-tab" tabindex="0">
                               <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
-                                <h6 class="black-text fw-medium mb-3">الملخص التنفيذي</h6>
-                                <p class="fz-12 text-gray mb-0">سيظهر محتوى الملخص التنفيذي هنا.</p>
+                                <h6 class="black-text fw-medium mb-3">Executive summary</h6>
+                                <p class="fz-12 text-gray mb-0">Executive summary content will appear here.</p>
                               </div>
                             </div>
                             <div class="tab-pane fade" id="spg-sec-02" role="tabpanel" aria-labelledby="spg-sec-02-tab"
                               tabindex="0">
                               <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
-                                <h6 class="black-text fw-medium mb-3">فهم المتطلبات</h6>
-                                <p class="fz-12 text-gray mb-0">سيظهر محتوى فهم المتطلبات هنا.</p>
+                                <h6 class="black-text fw-medium mb-3">Requirements understanding</h6>
+                                <p class="fz-12 text-gray mb-0">Requirements understanding content will appear here.</p>
                               </div>
                             </div>
                             <div class="tab-pane fade" id="spg-sec-03" role="tabpanel" aria-labelledby="spg-sec-03-tab"
                               tabindex="0">
                               <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
-                                <h6 class="black-text fw-medium mb-3">منهجية التنفيذ</h6>
-                                <p class="fz-12 text-gray mb-0">سيظهر محتوى منهجية التنفيذ هنا.</p>
+                                <h6 class="black-text fw-medium mb-3">Implementation methodology</h6>
+                                <p class="fz-12 text-gray mb-0">Implementation methodology content will appear here.</p>
                               </div>
                             </div>
                             <div class="tab-pane fade" id="spg-sec-04" role="tabpanel" aria-labelledby="spg-sec-04-tab"
                               tabindex="0">
                               <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
-                                <h6 class="black-text fw-medium mb-3">خطة العمل</h6>
-                                <p class="fz-12 text-gray mb-0">سيظهر محتوى خطة العمل هنا.</p>
+                                <h6 class="black-text fw-medium mb-3">Work plan</h6>
+                                <p class="fz-12 text-gray mb-0">Work plan content will appear here.</p>
                               </div>
                             </div>
                             <div class="tab-pane fade" id="spg-sec-05" role="tabpanel" aria-labelledby="spg-sec-05-tab"
                               tabindex="0">
                               <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
-                                <h6 class="black-text fw-medium mb-3">فريق العمل</h6>
-                                <p class="fz-12 text-gray mb-0">سيظهر محتوى فريق العمل هنا.</p>
+                                <h6 class="black-text fw-medium mb-3">Team</h6>
+                                <p class="fz-12 text-gray mb-0">Team content will appear here.</p>
                               </div>
                             </div>
                             <div class="tab-pane fade" id="spg-sec-06" role="tabpanel" aria-labelledby="spg-sec-06-tab"
                               tabindex="0">
                               <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
-                                <h6 class="black-text fw-medium mb-3">الخبرات والعقود السابقة</h6>
-                                <p class="fz-12 text-gray mb-0">سيظهر محتوى الخبرات والعقود السابقة هنا.</p>
+                                <h6 class="black-text fw-medium mb-3">Past experience and contracts</h6>
+                                <p class="fz-12 text-gray mb-0">Past experience and contracts content will appear here.</p>
                               </div>
                             </div>
                             <div class="tab-pane fade" id="spg-sec-07" role="tabpanel" aria-labelledby="spg-sec-07-tab"
                               tabindex="0">
                               <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
-                                <h6 class="black-text fw-medium mb-3">العرض المالي</h6>
-                                <p class="fz-12 text-gray mb-0">سيظهر محتوى العرض المالي هنا.</p>
+                                <h6 class="black-text fw-medium mb-3">Financial proposal</h6>
+                                <p class="fz-12 text-gray mb-0">Financial proposal content will appear here.</p>
                               </div>
                             </div>
                             <div class="tab-pane fade" id="spg-sec-08" role="tabpanel" aria-labelledby="spg-sec-08-tab"
                               tabindex="0">
                               <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
-                                <h6 class="black-text fw-medium mb-3">الملحقات</h6>
-                                <p class="fz-12 text-gray mb-0">سيظهر محتوى الملحقات هنا.</p>
+                                <h6 class="black-text fw-medium mb-3">Appendices</h6>
+                                <p class="fz-12 text-gray mb-0">Appendices content will appear here.</p>
                               </div>
                             </div>
                           </div>
@@ -1916,11 +1895,11 @@
                             <path opacity="0.4" d="M2.91667 10H16.9417" stroke="#6BAFB8" stroke-width="1.5"
                               stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
                           </svg>
-                          رجوع
+                          Back
                         </button>
-                        <a href="smart-proposal-template.html"
+                        <a href="smart-proposal-template-ltr.html"
                           class="btn-main btn-primary h-44 fz-14 d-inline-flex align-items-center gap-2">
-                          متابعة لاختيار القالب
+                          Continue to choose template
                           <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
                             <path d="M8.47485 15.5583L3.41652 10.5L8.47485 5.44165" stroke="#fff" stroke-width="1.5"
                               stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -1947,18 +1926,18 @@
       <div class="modal-content w-620 gap-32 spg-detail-modal-content">
         <div class="modal-header brd-btm p-0 pb-3 mb-0">
           <div class="d-flex flex-column gap-10 flex-grow-1 pe-2">
-            <h4 class="modal-title fz-20 black-text mb-0" id="spgCollectionDetailTitle">التفاصيل</h4>
-            <p class="text-gray fz-14 mb-0">عرض التفاصيل الكاملة</p>
+            <h4 class="modal-title fz-20 black-text mb-0" id="spgCollectionDetailTitle">Details</h4>
+            <p class="text-gray fz-14 mb-0">View full details</p>
           </div>
-          <button type="button" class="btn-close flex-shrink-0" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+          <button type="button" class="btn-close flex-shrink-0" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body pt-0" id="spgCollectionDetailBody">
           <div class="tender-card p-3 bg-white mb-0 spg-collection-detail-card">
-            <p class="fz-14 mb-0 spg-collection-detail-body text-gray">محتوى التفاصيل يُعرض هنا من الخادم.</p>
+            <p class="fz-14 mb-0 spg-collection-detail-body text-gray">Detail content is loaded here from the server.</p>
           </div>
         </div>
         <div class="modal-footer pt-0">
-          <button type="button" class="btn-main btn-primary w-100" data-bs-dismiss="modal">إغلاق</button>
+          <button type="button" class="btn-main btn-primary w-100" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>

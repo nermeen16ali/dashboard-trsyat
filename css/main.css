@@ -7324,7 +7324,12 @@ html[dir="ltr"] .input-icon-group input {
   pointer-events: none;
   filter: grayscale(0.15);
 }
-
+#spgWizardPrev:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+  filter: grayscale(0.15);
+}
 .spg-step-dots {
   display: flex;
   flex-wrap: wrap;
