@@ -603,7 +603,7 @@
                       <div class="d-flex flex-wrap align-items-stretch gap-2 spg-template-actions">
                         <button type="button"
                           class="btn-main outline-primary-gray fz-12 h-36 flex-grow-1 d-inline-flex align-items-center justify-content-center gap-2"
-                          data-bs-toggle="modal" data-bs-target="#spgTemplatePreviewProfessional">
+                          data-bs-toggle="modal" data-bs-target="#spgTemplatePreviewModern">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
                             fill="none" aria-hidden="true" class="flex-shrink-0">
                             <path opacity="0.4"
@@ -708,7 +708,7 @@
                       <div class="d-flex flex-wrap align-items-stretch gap-2 spg-template-actions">
                         <button type="button"
                           class="btn-main outline-primary-gray fz-12 h-36 flex-grow-1 d-inline-flex align-items-center justify-content-center gap-2"
-                          data-bs-toggle="modal" data-bs-target="#spgTemplatePreviewMinimal">
+                          data-bs-toggle="modal" data-bs-target="#spgTemplatePreviewModern">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
                             fill="none" aria-hidden="true" class="flex-shrink-0">
                             <path opacity="0.4"
@@ -761,7 +761,7 @@
                       <div class="d-flex flex-wrap align-items-stretch gap-2 spg-template-actions">
                         <button type="button"
                           class="btn-main outline-primary-gray fz-12 h-36 flex-grow-1 d-inline-flex align-items-center justify-content-center gap-2"
-                          data-bs-toggle="modal" data-bs-target="#spgTemplatePreviewLuxury">
+                          data-bs-toggle="modal" data-bs-target="#spgTemplatePreviewModern">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
                             fill="none" aria-hidden="true" class="flex-shrink-0">
                             <path opacity="0.4"
@@ -816,7 +816,7 @@
                       <div class="d-flex flex-wrap align-items-stretch gap-2 spg-template-actions">
                         <button type="button"
                           class="btn-main outline-primary-gray fz-12 h-36 flex-grow-1 d-inline-flex align-items-center justify-content-center gap-2"
-                          data-bs-toggle="modal" data-bs-target="#spgTemplatePreviewVisual">
+                          data-bs-toggle="modal" data-bs-target="#spgTemplatePreviewModern">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
                             fill="none" aria-hidden="true" class="flex-shrink-0">
                             <path opacity="0.4"
@@ -865,38 +865,6 @@
     </div>
   </div>
 
-  <div class="modal fade" id="spgTemplatePreviewProfessional" tabindex="-1"
-    aria-labelledby="spgTemplatePreviewProfessionalTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content w-620 gap-32 spg-template-preview-modal">
-        <div class="modal-header brd-btm p-0 pb-3 mb-0">
-          <div class="d-flex flex-column gap-10 flex-grow-1 pe-2">
-            <h4 class="modal-title fz-20 black-text mb-0" id="spgTemplatePreviewProfessionalTitle">معاينة: احترافي</h4>
-            <p class="text-gray fz-14 mb-0">تصميم رسمي ومتوازن يناسب العروض الحكومية والتجارية.</p>
-          </div>
-          <button type="button" class="btn-close flex-shrink-0" data-bs-dismiss="modal" aria-label="إغلاق"></button>
-        </div>
-        <div class="modal-body pt-0">
-          <div class="spg-template-preview spg-template-preview--modal spg-template-preview--professional">
-            <div class="spg-template-mock spg-template-mock--lg">
-              <div class="spg-template-mock-header"></div>
-              <div class="spg-template-mock-body">
-                <span class="spg-template-mock-line w-100"></span>
-                <span class="spg-template-mock-line w-85"></span>
-                <span class="spg-template-mock-line w-70"></span>
-                <span class="spg-template-mock-block"></span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer pt-0">
-          <label for="spgTemplateProfessional" class="btn-main btn-primary w-100 mb-0" data-bs-dismiss="modal">اختر
-            هذا القالب</label>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <div class="modal fade" id="spgTemplatePreviewModern" tabindex="-1" aria-labelledby="spgTemplatePreviewModernTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -909,113 +877,39 @@
           <button type="button" class="btn-close flex-shrink-0" data-bs-dismiss="modal" aria-label="إغلاق"></button>
         </div>
         <div class="modal-body pt-0">
-          <div class="spg-template-preview spg-template-preview--modal spg-template-preview--modern">
-            <div class="spg-template-mock spg-template-mock--lg">
-              <div class="spg-template-mock-header"></div>
-              <div class="spg-template-mock-body">
-                <span class="spg-template-mock-line w-90"></span>
-                <span class="spg-template-mock-line w-100"></span>
-                <span class="spg-template-mock-pill-row"><span></span><span></span><span></span></span>
+          <div class="row g-3 g-lg-4 align-items-stretch spg-template-preview-split">
+            <div class="col-12 col-md-5">
+              <div
+                class="spg-template-preview-image-wrap tender-card bg-white overflow-hidden h-100 d-flex align-items-center justify-content-center">
+                <img src="images/spg-template-professional-preview.png"
+                  alt="معاينة القالب الاحترافي لتصميم العرض الفني"
+                  class="img-fluid w-100 spg-template-preview-image" width="800" height="450">
               </div>
+            </div>
+            <div class="col-12 col-md-7 d-flex align-items-center">
+              <ul class="spg-template-preview-checklist list-unstyled mb-0 w-100" role="list">
+                <li class="feature-list-item spg-template-preview-checklist-item" role="listitem">
+                  <img src="images/checked-green.svg" class="w-24 flex-shrink-0" alt="" aria-hidden="true">
+                  <span class="fz-14 black-text">تصميم احترافي وتقدر تعدل عليه بسهولة</span>
+                </li>
+                <li class="feature-list-item spg-template-preview-checklist-item" role="listitem">
+                  <img src="images/checked-green.svg" class="w-24 flex-shrink-0" alt="" aria-hidden="true">
+                  <span class="fz-14 black-text">يدعم اللغة العربية بالكامل من اليمين لليسار</span>
+                </li>
+                <li class="feature-list-item spg-template-preview-checklist-item" role="listitem">
+                  <img src="images/checked-green.svg" class="w-24 flex-shrink-0" alt="" aria-hidden="true">
+                  <span class="fz-14 black-text">تصدير بصيغة PDF بجودة عالية</span>
+                </li>
+                <li class="feature-list-item spg-template-preview-checklist-item mb-0" role="listitem">
+                  <img src="images/checked-green.svg" class="w-24 flex-shrink-0" alt="" aria-hidden="true">
+                  <span class="fz-14 black-text">متوافق ومتناسق مع جميع الأجهزة والشاشات</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
         <div class="modal-footer pt-0">
           <label for="spgTemplateModern" class="btn-main btn-primary w-100 mb-0" data-bs-dismiss="modal">اختر هذا
-            القالب</label>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal fade" id="spgTemplatePreviewMinimal" tabindex="-1" aria-labelledby="spgTemplatePreviewMinimalTitle"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content w-620 gap-32 spg-template-preview-modal">
-        <div class="modal-header brd-btm p-0 pb-3 mb-0">
-          <div class="d-flex flex-column gap-10 flex-grow-1 pe-2">
-            <h4 class="modal-title fz-20 black-text mb-0" id="spgTemplatePreviewMinimalTitle">معاينة: مبسط</h4>
-            <p class="text-gray fz-14 mb-0">تصميم هادئ ومنظم يركز على وضوح المحتوى وسهولة القراءة.</p>
-          </div>
-          <button type="button" class="btn-close flex-shrink-0" data-bs-dismiss="modal" aria-label="إغلاق"></button>
-        </div>
-        <div class="modal-body pt-0">
-          <div class="spg-template-preview spg-template-preview--modal spg-template-preview--minimal">
-            <div class="spg-template-mock spg-template-mock--lg">
-              <div class="spg-template-mock-header"></div>
-              <div class="spg-template-mock-body">
-                <span class="spg-template-mock-line w-100"></span>
-                <span class="spg-template-mock-line w-100"></span>
-                <span class="spg-template-mock-line w-55"></span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer pt-0">
-          <label for="spgTemplateMinimal" class="btn-main btn-primary w-100 mb-0" data-bs-dismiss="modal">اختر هذا
-            القالب</label>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal fade" id="spgTemplatePreviewLuxury" tabindex="-1" aria-labelledby="spgTemplatePreviewLuxuryTitle"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content w-620 gap-32 spg-template-preview-modal">
-        <div class="modal-header brd-btm p-0 pb-3 mb-0">
-          <div class="d-flex flex-column gap-10 flex-grow-1 pe-2">
-            <h4 class="modal-title fz-20 black-text mb-0" id="spgTemplatePreviewLuxuryTitle">معاينة: فاخر</h4>
-            <p class="text-gray fz-14 mb-0">تصميم راقٍ بتفاصيل بصرية مميزة يناسب العروض عالية المستوى.</p>
-          </div>
-          <button type="button" class="btn-close flex-shrink-0" data-bs-dismiss="modal" aria-label="إغلاق"></button>
-        </div>
-        <div class="modal-body pt-0">
-          <div class="spg-template-preview spg-template-preview--modal spg-template-preview--luxury">
-            <div class="spg-template-mock spg-template-mock--lg">
-              <div class="spg-template-mock-header"></div>
-              <div class="spg-template-mock-body">
-                <span class="spg-template-mock-line w-75"></span>
-                <span class="spg-template-mock-accent"></span>
-                <span class="spg-template-mock-line w-90"></span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer pt-0">
-          <label for="spgTemplateLuxury" class="btn-main btn-primary w-100 mb-0" data-bs-dismiss="modal">اختر هذا
-            القالب</label>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal fade" id="spgTemplatePreviewVisual" tabindex="-1" aria-labelledby="spgTemplatePreviewVisualTitle"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content w-620 gap-32 spg-template-preview-modal">
-        <div class="modal-header brd-btm p-0 pb-3 mb-0">
-          <div class="d-flex flex-column gap-10 flex-grow-1 pe-2">
-            <h4 class="modal-title fz-20 black-text mb-0" id="spgTemplatePreviewVisualTitle">معاينة: مرئي</h4>
-            <p class="text-gray fz-14 mb-0">تصميم بصري غني يساعد على إبراز المعلومات والمراحل والبيانات بطريقة جذابة.</p>
-          </div>
-          <button type="button" class="btn-close flex-shrink-0" data-bs-dismiss="modal" aria-label="إغلاق"></button>
-        </div>
-        <div class="modal-body pt-0">
-          <div class="spg-template-preview spg-template-preview--modal spg-template-preview--visual">
-            <div class="spg-template-mock spg-template-mock--lg">
-              <div class="spg-template-mock-header"></div>
-              <div class="spg-template-mock-body spg-template-mock-body--grid">
-                <span class="spg-template-mock-tile"></span>
-                <span class="spg-template-mock-tile"></span>
-                <span class="spg-template-mock-tile"></span>
-                <span class="spg-template-mock-line w-100"></span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer pt-0">
-          <label for="spgTemplateVisual" class="btn-main btn-primary w-100 mb-0" data-bs-dismiss="modal">اختر هذا
             القالب</label>
         </div>
       </div>
