@@ -8076,6 +8076,10 @@ html[dir="ltr"] .input-icon-group input {
 }
 
 /* Section review — static inline edit mode (checkbox, no JS) */
+.spg-root label[for="spgSectionReviewEditMode"] {
+  cursor: pointer;
+}
+
 .spg-root #spg-content-review .spg-review-edit-body {
   display: none;
 }
