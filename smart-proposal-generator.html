@@ -732,7 +732,7 @@
 
               <div id="spgWizardSteps">
                 <div class="spg-wizard-step" data-step="1">
-                  <p class="fz-14 text-gray mb-4">أدخل اسم المناقصة أو المشروع ورقم المناقصة لربط العرض بالمنافسة
+                  <p class="fz-14 text-gray mb-4">أدخل اسم المناقصة أو المشروع والرقم المرجعي لربط العرض بالمنافسة
                     الصحيحة.</p>
                   <div class="row g-3">
                     <div class="col-12">
@@ -741,7 +741,7 @@
                         required />
                     </div>
                     <div class="col-12">
-                      <label class="form-label" for="spgTenderNumber">رقم المناقصة</label>
+                      <label class="form-label" for="spgTenderNumber">الرقم المرجعي</label>
                       <input type="text" class="form-control" id="spgTenderNumber" placeholder="مثال: 250739020707"
                         dir="ltr" />
                     </div>
@@ -1207,8 +1207,19 @@
                             dir="ltr" />
                         </div>
                         <div class="col-12">
-                          <label class="form-label" for="spgContractDraftFileName">اسم ملف العقد</label>
-                          <input type="text" class="form-control" id="spgContractDraftFileName" autocomplete="off" />
+                          <label class="form-label" for="spgContractDraftFile">ملف العقد</label>
+                          <input type="hidden" id="spgContractDraftFileName" value="" autocomplete="off" />
+                          <div class="upload-container">
+                            <div class="upload-box uploadBox spg-doc-upload spg-contract-upload" id="spgContractUploadBox">
+                              <div class="upload-icon"><img src="images/document-download.svg" alt=""></div>
+                              <div class="d-flex flex-column gap-10">
+                                <div class="upload-title fz-10 black-text">اسحب الملف هنا أو تصفح لإضافته للقائمة</div>
+                                <div class="upload-subtitle fz-9 text-gray">أقصى حجم 500 ميغابايت</div>
+                                <input type="file" class="fileInput" id="spgContractDraftFile"
+                                  name="spgContractDraftFile" accept=".pdf,.doc,.docx,image/*" />
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                       <div
@@ -1722,18 +1733,22 @@
                   <div id="spgSectionReviewPane" class="accordion-collapse collapse"
                     data-bs-parent="#spgReviewStageAccordion">
                     <div class="accordion-body p-0" id="spg-content-review">
+                      <input type="checkbox" id="spgSectionReviewEditMode"
+                        class="spg-review-edit-toggle visually-hidden" aria-label="وضع تعديل محتوى العرض">
                       <div
                       class="spg-section-review-status tender-card p-3 p-lg-4 mb-3 mb-lg-4 bg-white d-flex flex-column flex-md-row align-items-md-start justify-content-md-between gap-3">
                       <div>
                         <h6 class="black-text fw-medium mb-2">العرض جاهز للمراجعة</h6>
-                        <p class="fz-12 text-gray mb-0">راجع محتوى كل قسم أدناه. تأكد من الصياغة قبل
+                        <p class="fz-12 text-gray mb-0 spg-review-read-hint">راجع محتوى كل قسم أدناه. تأكد من الصياغة قبل
                           اعتماد العرض النهائي.</p>
+                        <p class="fz-12 text-gray mb-0 spg-review-edit-hint d-none">يمكنك تعديل النص مباشرة داخل كل قسم. سيتم حفظ التغييرات لاحقًا من النظام.</p>
                       </div>
-                      <button type="button"
-                        class="btn-main outline-primary-gray fz-12 h-36 flex-shrink-0 d-inline-flex align-items-center gap-2">
+                      <label for="spgSectionReviewEditMode"
+                        class="btn-main outline-primary-gray fz-12 h-36 flex-shrink-0 d-inline-flex align-items-center gap-2 mb-0 spg-review-edit-toggle-label">
                         <img src="images/edit-pen.svg" alt="" width="16" height="16">
-                        تعديل
-                      </button>
+                        <span class="spg-review-edit-label-on">تعديل</span>
+                        <span class="spg-review-edit-label-off d-none">إنهاء التعديل</span>
+                      </label>
                     </div>
                       <div class="row g-3 g-lg-4 spg-section-review-layout">
                         <div class="col-12 col-lg-4 col-xl-3 spg-section-review-nav-col">
@@ -1850,56 +1865,104 @@
                               aria-labelledby="spg-sec-01-tab" tabindex="0">
                               <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
                                 <h6 class="black-text fw-medium mb-3">الملخص التنفيذي</h6>
-                                <p class="fz-12 text-gray mb-0">سيظهر محتوى الملخص التنفيذي هنا.</p>
+                                <div class="spg-review-read-body">
+                                  <p class="fz-12 text-gray mb-0">سيظهر محتوى الملخص التنفيذي هنا.</p>
+                                </div>
+                                <div class="spg-review-edit-body">
+                                  <div class="spg-proposal-inline-editor form-control" contenteditable="true" role="textbox"
+                                    aria-label="تعديل الملخص التنفيذي" spellcheck="true">نقدّم في هذا العرض حلًا متكاملًا يلبّي متطلبات المنافسة، مع التركيز على الجودة والالتزام بالجدول الزمني المعتمد.</div>
+                                </div>
                               </div>
                             </div>
                             <div class="tab-pane fade" id="spg-sec-02" role="tabpanel" aria-labelledby="spg-sec-02-tab"
                               tabindex="0">
                               <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
                                 <h6 class="black-text fw-medium mb-3">فهم المتطلبات</h6>
-                                <p class="fz-12 text-gray mb-0">سيظهر محتوى فهم المتطلبات هنا.</p>
+                                <div class="spg-review-read-body">
+                                  <p class="fz-12 text-gray mb-0">سيظهر محتوى فهم المتطلبات هنا.</p>
+                                </div>
+                                <div class="spg-review-edit-body">
+                                  <div class="spg-proposal-inline-editor form-control" contenteditable="true" role="textbox"
+                                    aria-label="تعديل فهم المتطلبات" spellcheck="true">تم تحليل متطلبات المنافسة ونطاق العمل والمخرجات المتوقعة وفق كراسة الشروط.</div>
+                                </div>
                               </div>
                             </div>
                             <div class="tab-pane fade" id="spg-sec-03" role="tabpanel" aria-labelledby="spg-sec-03-tab"
                               tabindex="0">
                               <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
                                 <h6 class="black-text fw-medium mb-3">منهجية التنفيذ</h6>
-                                <p class="fz-12 text-gray mb-0">سيظهر محتوى منهجية التنفيذ هنا.</p>
+                                <div class="spg-review-read-body">
+                                  <p class="fz-12 text-gray mb-0">سيظهر محتوى منهجية التنفيذ هنا.</p>
+                                </div>
+                                <div class="spg-review-edit-body">
+                                  <div class="spg-proposal-inline-editor form-control" contenteditable="true" role="textbox"
+                                    aria-label="تعديل منهجية التنفيذ" spellcheck="true">نعتمد منهجية تنفيذ مرحلية تشمل التخطيط، التوريد، التنفيذ، الاختبار، والتسليم.</div>
+                                </div>
                               </div>
                             </div>
                             <div class="tab-pane fade" id="spg-sec-04" role="tabpanel" aria-labelledby="spg-sec-04-tab"
                               tabindex="0">
                               <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
                                 <h6 class="black-text fw-medium mb-3">خطة العمل</h6>
-                                <p class="fz-12 text-gray mb-0">سيظهر محتوى خطة العمل هنا.</p>
+                                <div class="spg-review-read-body">
+                                  <p class="fz-12 text-gray mb-0">سيظهر محتوى خطة العمل هنا.</p>
+                                </div>
+                                <div class="spg-review-edit-body">
+                                  <div class="spg-proposal-inline-editor form-control" contenteditable="true" role="textbox"
+                                    aria-label="تعديل خطة العمل" spellcheck="true">تتضمن خطة العمل جدولًا زمنيًا للمراحل الرئيسية مع تحديد المسؤوليات والمخرجات لكل مرحلة.</div>
+                                </div>
                               </div>
                             </div>
                             <div class="tab-pane fade" id="spg-sec-05" role="tabpanel" aria-labelledby="spg-sec-05-tab"
                               tabindex="0">
                               <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
                                 <h6 class="black-text fw-medium mb-3">فريق العمل</h6>
-                                <p class="fz-12 text-gray mb-0">سيظهر محتوى فريق العمل هنا.</p>
+                                <div class="spg-review-read-body">
+                                  <p class="fz-12 text-gray mb-0">سيظهر محتوى فريق العمل هنا.</p>
+                                </div>
+                                <div class="spg-review-edit-body">
+                                  <div class="spg-proposal-inline-editor form-control" contenteditable="true" role="textbox"
+                                    aria-label="تعديل فريق العمل" spellcheck="true">يتكون فريق العمل من خبرات متخصصة في إدارة المشاريع والتنفيذ والجودة.</div>
+                                </div>
                               </div>
                             </div>
                             <div class="tab-pane fade" id="spg-sec-06" role="tabpanel" aria-labelledby="spg-sec-06-tab"
                               tabindex="0">
                               <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
                                 <h6 class="black-text fw-medium mb-3">الخبرات والعقود السابقة</h6>
-                                <p class="fz-12 text-gray mb-0">سيظهر محتوى الخبرات والعقود السابقة هنا.</p>
+                                <div class="spg-review-read-body">
+                                  <p class="fz-12 text-gray mb-0">سيظهر محتوى الخبرات والعقود السابقة هنا.</p>
+                                </div>
+                                <div class="spg-review-edit-body">
+                                  <div class="spg-proposal-inline-editor form-control" contenteditable="true" role="textbox"
+                                    aria-label="تعديل الخبرات والعقود السابقة" spellcheck="true">سبق للشركة تنفيذ مشاريع مماثلة في نفس المجال مع جهات حكومية وتجارية.</div>
+                                </div>
                               </div>
                             </div>
                             <div class="tab-pane fade" id="spg-sec-07" role="tabpanel" aria-labelledby="spg-sec-07-tab"
                               tabindex="0">
                               <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
                                 <h6 class="black-text fw-medium mb-3">العرض المالي</h6>
-                                <p class="fz-12 text-gray mb-0">سيظهر محتوى العرض المالي هنا.</p>
+                                <div class="spg-review-read-body">
+                                  <p class="fz-12 text-gray mb-0">سيظهر محتوى العرض المالي هنا.</p>
+                                </div>
+                                <div class="spg-review-edit-body">
+                                  <div class="spg-proposal-inline-editor form-control" contenteditable="true" role="textbox"
+                                    aria-label="تعديل العرض المالي" spellcheck="true">يتضمن العرض المالي تفاصيل التسعير والبنود والضريبة والإجمالي النهائي.</div>
+                                </div>
                               </div>
                             </div>
                             <div class="tab-pane fade" id="spg-sec-08" role="tabpanel" aria-labelledby="spg-sec-08-tab"
                               tabindex="0">
                               <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
                                 <h6 class="black-text fw-medium mb-3">الملحقات</h6>
-                                <p class="fz-12 text-gray mb-0">سيظهر محتوى الملحقات هنا.</p>
+                                <div class="spg-review-read-body">
+                                  <p class="fz-12 text-gray mb-0">سيظهر محتوى الملحقات هنا.</p>
+                                </div>
+                                <div class="spg-review-edit-body">
+                                  <div class="spg-proposal-inline-editor form-control" contenteditable="true" role="textbox"
+                                    aria-label="تعديل الملحقات" spellcheck="true">تشمل الملحقات الوثائق الداعمة والشهادات والمخططات المرفقة مع العرض.</div>
+                                </div>
                               </div>
                             </div>
                           </div>

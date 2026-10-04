@@ -596,7 +596,7 @@
                       <div class="d-flex flex-wrap align-items-stretch gap-2 spg-template-actions">
                         <button type="button"
                           class="btn-main outline-primary-gray fz-12 h-36 flex-grow-1 d-inline-flex align-items-center justify-content-center gap-2"
-                          data-bs-toggle="modal" data-bs-target="#spgTemplatePreviewModern">
+                          data-bs-toggle="modal" data-bs-target="#spgTemplatePreviewProfessional">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
                             fill="none" aria-hidden="true" class="flex-shrink-0">
                             <path opacity="0.4"
@@ -833,18 +833,18 @@
     </div>
   </div>
 
-  <div class="modal fade" id="spgTemplatePreviewModern" tabindex="-1" aria-labelledby="spgTemplatePreviewModernTitle"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content w-620 gap-32 spg-template-preview-modal">
+  <div class="modal fade" id="spgTemplatePreviewProfessional" tabindex="-1"
+    aria-labelledby="spgTemplatePreviewProfessionalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+      <div class="modal-content gap-24 spg-template-preview-modal spg-document-preview-modal">
         <div class="modal-header brd-btm p-0 pb-3 mb-0">
           <div class="d-flex flex-column gap-10 flex-grow-1 pe-2">
-            <h4 class="modal-title fz-20 black-text mb-0" id="spgTemplatePreviewModernTitle">معاينة: عصري</h4>
-            <p class="text-gray fz-14 mb-0">خطوط واضحة وتنسيق معاصر يبرز التفاصيل بطريقة أنيقة.</p>
+            <h4 class="modal-title fz-20 black-text mb-0" id="spgTemplatePreviewProfessionalTitle">معاينة: احترافي</h4>
+            <p class="text-gray fz-14 mb-0">معاينة بصرية للعرض النهائي — تصميم رسمي ومتوازن يناسب العروض الحكومية والتجارية.</p>
           </div>
           <button type="button" class="btn-close flex-shrink-0" data-bs-dismiss="modal" aria-label="إغلاق"></button>
         </div>
-        <div class="modal-body pt-0">
+        <div class="modal-body pt-0 d-flex flex-column gap-3">
           <div class="row g-3 g-lg-4 align-items-stretch spg-template-preview-split">
             <div class="col-12 col-md-5">
               <div
@@ -875,6 +875,131 @@
               </ul>
             </div>
           </div>
+          <div class="spg-pdf-viewer" id="spgProfessionalPdfViewer"
+            data-pdf-src="assets/spg/templates/professional-proposal.pdf" dir="rtl">
+            <div
+              class="spg-pdf-viewer-toolbar spg-document-preview-toolbar d-flex flex-wrap align-items-center justify-content-between gap-2 gap-md-3">
+              <div class="d-flex flex-wrap align-items-center gap-2 spg-pdf-nav-group" role="group"
+                aria-label="التنقل بين الصفحات">
+                <button type="button" class="icon-container gray-outline-btn spg-pdf-prev spg-document-preview-zoom-btn"
+                  title="الصفحة السابقة" aria-label="الصفحة السابقة">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none"
+                    aria-hidden="true">
+                    <path d="M12.025 15.0586L17.0833 10.0002L12.025 4.94189" stroke="#6BAFB8" stroke-width="1.5"
+                      stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path opacity="0.4" d="M2.91667 10H16.9417" stroke="#6BAFB8" stroke-width="1.5"
+                      stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </button>
+                <span class="fz-12 black-text fw-medium spg-pdf-page-indicator ff-onest" aria-live="polite">— / —</span>
+                <button type="button" class="icon-container gray-outline-btn spg-pdf-next spg-document-preview-zoom-btn"
+                  title="الصفحة التالية" aria-label="الصفحة التالية">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none"
+                    aria-hidden="true">
+                    <path d="M7.975 15.0586L2.91667 10.0002L7.975 4.94189" stroke="#6BAFB8" stroke-width="1.5"
+                      stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path opacity="0.4" d="M18.0833 10H4.05833" stroke="#6BAFB8" stroke-width="1.5"
+                      stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="d-flex flex-wrap align-items-center gap-2 spg-document-preview-zoom-group spg-pdf-zoom-group"
+                role="group" aria-label="أدوات التكبير">
+                <button type="button" class="icon-container gray-outline-btn spg-pdf-zoom-out spg-document-preview-zoom-btn"
+                  title="تصغير" aria-label="تصغير">
+                  <span class="fz-16 black-text fw-medium" aria-hidden="true">−</span>
+                </button>
+                <span class="fz-12 text-gray spg-pdf-zoom-value spg-document-preview-zoom-value ff-onest">100%</span>
+                <button type="button" class="icon-container gray-outline-btn spg-pdf-zoom-in spg-document-preview-zoom-btn"
+                  title="تكبير" aria-label="تكبير">
+                  <span class="fz-16 black-text fw-medium" aria-hidden="true">+</span>
+                </button>
+                <button type="button" class="btn-main outline-primary-gray fz-12 h-36 spg-pdf-fit-width"
+                  title="ملاءمة العرض">ملاءمة العرض</button>
+                <button type="button" class="btn-main outline-primary-gray fz-12 h-36 spg-pdf-fit-page"
+                  title="ملاءمة الصفحة">ملاءمة الصفحة</button>
+              </div>
+            </div>
+            <div class="spg-pdf-viewer-body d-flex gap-2 gap-md-3">
+              <aside class="spg-pdf-thumbnails-panel tender-card bg-white flex-shrink-0" aria-label="صور مصغرة للصفحات">
+                <p class="fz-10 text-gray mb-2 px-1">الصفحات</p>
+                <div class="spg-pdf-thumbnails-list" id="spgProfessionalPdfThumbnails" role="list"></div>
+              </aside>
+              <div class="spg-pdf-stage flex-grow-1 min-w-0">
+                <div class="spg-pdf-loading fz-12 text-gray text-center py-4 d-none" id="spgProfessionalPdfLoading"
+                  role="status">جاري تحميل المعاينة…</div>
+                <div class="spg-pdf-error red-colored fz-12 text-center py-3 d-none" id="spgProfessionalPdfError"
+                  role="alert"></div>
+                <div class="spg-pdf-pages-scroll spg-document-preview-viewport" id="spgProfessionalPdfPagesScroll"
+                  tabindex="0" role="region" aria-label="معاينة PDF للعرض"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer pt-0">
+          <label for="spgTemplateProfessional" class="btn-main btn-primary w-100 mb-0" data-bs-dismiss="modal">اختر هذا
+            القالب</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="spgTemplatePreviewModern" tabindex="-1" aria-labelledby="spgTemplatePreviewModernTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+      <div class="modal-content gap-24 spg-template-preview-modal spg-document-preview-modal">
+        <div class="modal-header brd-btm p-0 pb-3 mb-0">
+          <div class="d-flex flex-column gap-10 flex-grow-1 pe-2">
+            <h4 class="modal-title fz-20 black-text mb-0" id="spgTemplatePreviewModernTitle">معاينة: عصري</h4>
+            <p class="text-gray fz-14 mb-0">معاينة بصرية للعرض النهائي — خطوط واضحة وتنسيق معاصر يبرز التفاصيل.</p>
+          </div>
+          <button type="button" class="btn-close flex-shrink-0" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+        </div>
+        <div class="modal-body pt-0 d-flex flex-column gap-3">
+          <div
+            class="spg-document-preview-toolbar d-flex flex-wrap align-items-center justify-content-between gap-2 gap-md-3">
+            <span class="fz-12 black-text fw-medium spg-document-preview-page-indicator ff-onest">صفحة 3 من 16</span>
+            <div class="d-flex flex-wrap align-items-center gap-2 spg-document-preview-zoom-group" role="group"
+              aria-label="أدوات التكبير">
+              <button type="button" class="icon-container gray-outline-btn spg-document-preview-zoom-btn" disabled
+                aria-disabled="true" title="تصغير (يتصل لاحقًا)">
+                <span class="fz-16 black-text fw-medium" aria-hidden="true">−</span>
+              </button>
+              <span class="fz-12 text-gray spg-document-preview-zoom-value ff-onest">100%</span>
+              <button type="button" class="icon-container gray-outline-btn spg-document-preview-zoom-btn" disabled
+                aria-disabled="true" title="تكبير (يتصل لاحقًا)">
+                <span class="fz-16 black-text fw-medium" aria-hidden="true">+</span>
+              </button>
+              <button type="button" class="btn-main outline-primary-gray fz-12 h-36" disabled aria-disabled="true"
+                title=" ملاءمة العرض (يتصل لاحقًا)">ملاءمة العرض</button>
+              <button type="button" class="btn-main outline-primary-gray fz-12 h-36" disabled aria-disabled="true"
+                title="ملاءمة الصفحة (يتصل لاحقًا)">ملاءمة الصفحة</button>
+            </div>
+          </div>
+          <div class="spg-document-preview-viewport" tabindex="0" role="region"
+            aria-label="معاينة صفحات العرض">
+            <article class="spg-document-preview-page">
+              <div class="spg-document-preview-page-label fz-10 text-gray">صفحة 1</div>
+              <img src="images/spg-template-technical-proposal.jpg" alt="معاينة صفحة 1 من العرض الفني"
+                class="spg-document-preview-page-image" loading="lazy">
+            </article>
+            <article class="spg-document-preview-page">
+              <div class="spg-document-preview-page-label fz-10 text-gray">صفحة 2</div>
+              <img src="images/spg-template-technical-proposal.jpg" alt="معاينة صفحة 2 من العرض الفني"
+                class="spg-document-preview-page-image" loading="lazy">
+            </article>
+            <article class="spg-document-preview-page">
+              <div class="spg-document-preview-page-label fz-10 text-gray">صفحة 3</div>
+              <img src="images/spg-template-technical-proposal.jpg" alt="معاينة صفحة 3 من العرض الفني"
+                class="spg-document-preview-page-image" loading="lazy">
+            </article>
+            <article class="spg-document-preview-page">
+              <div class="spg-document-preview-page-label fz-10 text-gray">صفحة 4</div>
+              <img src="images/spg-template-technical-proposal.jpg" alt="معاينة صفحة 4 من العرض الفني"
+                class="spg-document-preview-page-image" loading="lazy">
+            </article>
+            <p class="fz-10 text-gray text-center mb-0 pt-2">… 12 صفحة إضافية في ملف PDF النهائي</p>
+          </div>
         </div>
         <div class="modal-footer pt-0">
           <label for="spgTemplateModern" class="btn-main btn-primary w-100 mb-0" data-bs-dismiss="modal">اختر هذا
@@ -885,6 +1010,14 @@
   </div>
 
   <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    if (window.pdfjsLib) {
+      pdfjsLib.GlobalWorkerOptions.workerSrc =
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+    }
+  </script>
+  <script src="js/spg-template-pdf-viewer.js" defer></script>
   <script src="js/main.js" defer></script>
   
 </body>

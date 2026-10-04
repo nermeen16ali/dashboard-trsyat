@@ -8074,3 +8074,264 @@ html[dir="ltr"] .input-icon-group input {
     justify-content: center;
   }
 }
+
+/* Section review — static inline edit mode (checkbox, no JS) */
+.spg-root #spg-content-review .spg-review-edit-body {
+  display: none;
+}
+
+.spg-root #spgSectionReviewEditMode:checked ~ .spg-section-review-layout .spg-review-read-body {
+  display: none;
+}
+
+.spg-root #spgSectionReviewEditMode:checked ~ .spg-section-review-layout .spg-review-edit-body {
+  display: block;
+}
+
+.spg-root #spgSectionReviewEditMode:checked ~ .spg-section-review-status .spg-review-read-hint {
+  display: none !important;
+}
+
+.spg-root #spgSectionReviewEditMode:checked ~ .spg-section-review-status .spg-review-edit-hint {
+  display: block !important;
+}
+
+.spg-root #spgSectionReviewEditMode:checked ~ .spg-section-review-status .spg-review-edit-label-on {
+  display: none !important;
+}
+
+.spg-root #spgSectionReviewEditMode:checked ~ .spg-section-review-status .spg-review-edit-label-off {
+  display: inline !important;
+}
+
+.spg-root #spgSectionReviewEditMode:checked ~ .spg-section-review-layout .spg-section-review-content-card {
+  border-color: rgba(107, 175, 184, 0.45);
+}
+
+.spg-root .spg-proposal-inline-editor {
+  min-height: 220px;
+  height: auto;
+  padding: 16px 18px;
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--primary-secondary, #0c2030);
+  background: #fff;
+  border-radius: 12px;
+  overflow-y: auto;
+  resize: vertical;
+  cursor: text;
+}
+
+.spg-root .spg-proposal-inline-editor:focus {
+  border-color: var(--primary-color, #6bafb8);
+  box-shadow: 0 0 0 3px rgba(107, 175, 184, 0.18);
+  outline: 0;
+}
+
+/* Template preview — multi-page document viewer (static UI) */
+.spg-root .spg-document-preview-modal {
+  max-width: min(960px, 96vw);
+}
+
+.spg-root .spg-document-preview-toolbar {
+  border: 1px solid var(--gray-200-color, #f2f2f2);
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: #f9fafb;
+}
+
+.spg-root .spg-document-preview-page-indicator {
+  font-variant-numeric: tabular-nums;
+}
+
+.spg-root .spg-document-preview-viewport {
+  max-height: min(62vh, 520px);
+  overflow: auto;
+  overflow-x: hidden;
+  padding: 12px 8px 16px;
+  background: #eef1f3;
+  border: 1px solid var(--gray-200-color, #f2f2f2);
+  border-radius: 12px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.spg-root .spg-document-preview-page {
+  max-width: 100%;
+  width: min(100%, 640px);
+  margin: 0 auto 16px;
+  background: #fff;
+  border: 1px solid var(--gray-200-color, #e8e8e8);
+  border-radius: 8px;
+  box-shadow: 0 4px 18px rgba(12, 32, 48, 0.08);
+  overflow: hidden;
+}
+
+.spg-root .spg-document-preview-page:last-child {
+  margin-bottom: 0;
+}
+
+.spg-root .spg-document-preview-page-label {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--gray-200-color, #f2f2f2);
+  background: #fafafa;
+}
+
+.spg-root .spg-document-preview-page-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: top center;
+}
+
+.spg-root .spg-document-preview-zoom-btn {
+  min-width: 36px;
+  height: 36px;
+  padding: 0 10px;
+}
+
+.spg-root .spg-document-preview-zoom-value {
+  min-width: 52px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 575.98px) {
+  .spg-root .spg-document-preview-viewport {
+    max-height: 55vh;
+  }
+
+  .spg-root .spg-document-preview-toolbar {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .spg-root .spg-document-preview-toolbar .spg-document-preview-zoom-group {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.spg-root .spg-pdf-viewer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.spg-root .spg-pdf-viewer-body {
+  min-height: min(58vh, 480px);
+  max-height: min(62vh, 520px);
+}
+
+.spg-root .spg-pdf-thumbnails-panel {
+  width: 112px;
+  max-height: min(58vh, 480px);
+  padding: 10px 8px;
+  border: 1px solid var(--gray-200-color, #f2f2f2);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.spg-root .spg-pdf-thumbnails-list {
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-inline-end: 2px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.spg-root .spg-pdf-thumb-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  padding: 6px;
+  border: 1px solid var(--gray-200-color, #e8e8e8);
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.spg-root .spg-pdf-thumb-btn:hover,
+.spg-root .spg-pdf-thumb-btn:focus-visible {
+  border-color: var(--primary-color, #6bafb8);
+  outline: 0;
+}
+
+.spg-root .spg-pdf-thumb-btn.active {
+  border-color: var(--primary-color, #6bafb8);
+  box-shadow: 0 0 0 2px rgba(107, 175, 184, 0.2);
+}
+
+.spg-root .spg-pdf-thumb-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.spg-root .spg-pdf-thumb-label {
+  color: var(--primary-secondary, #0c2030);
+}
+
+.spg-root .spg-pdf-stage {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.spg-root .spg-pdf-pages-scroll {
+  flex: 1;
+  min-height: min(58vh, 480px);
+  max-height: min(62vh, 520px);
+}
+
+.spg-root .spg-pdf-page-shell {
+  display: flex;
+  justify-content: center;
+  padding: 4px 0;
+}
+
+.spg-root .spg-pdf-page-canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 4px 18px rgba(12, 32, 48, 0.1);
+  border-radius: 4px;
+  background: #fff;
+}
+
+.spg-root .spg-pdf-nav-group .icon-container[disabled],
+.spg-root .spg-pdf-nav-group .icon-container[aria-disabled="true"] {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+@media (max-width: 767.98px) {
+  .spg-root .spg-pdf-thumbnails-panel {
+    display: none !important;
+  }
+
+  .spg-root .spg-pdf-viewer-body {
+    min-height: 50vh;
+    max-height: 55vh;
+  }
+
+  .spg-root .spg-pdf-pages-scroll {
+    min-height: 50vh;
+    max-height: 55vh;
+  }
+
+  .spg-root .spg-pdf-viewer-toolbar .spg-pdf-fit-page,
+  .spg-root .spg-pdf-viewer-toolbar .spg-pdf-fit-width {
+    padding-inline: 10px;
+    font-size: 11px;
+  }
+}

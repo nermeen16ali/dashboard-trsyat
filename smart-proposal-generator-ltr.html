@@ -739,7 +739,7 @@
                         required />
                     </div>
                     <div class="col-12">
-                      <label class="form-label" for="spgTenderNumber">Tender number</label>
+                      <label class="form-label" for="spgTenderNumber">Reference number</label>
                       <input type="text" class="form-control" id="spgTenderNumber" placeholder="e.g. 250739020707"
                         dir="ltr" />
                     </div>
@@ -1203,8 +1203,19 @@
                             dir="ltr" />
                         </div>
                         <div class="col-12">
-                          <label class="form-label" for="spgContractDraftFileName">Contract file name</label>
-                          <input type="text" class="form-control" id="spgContractDraftFileName" autocomplete="off" />
+                          <label class="form-label" for="spgContractDraftFile">Contract file</label>
+                          <input type="hidden" id="spgContractDraftFileName" value="" autocomplete="off" />
+                          <div class="upload-container">
+                            <div class="upload-box uploadBox spg-doc-upload spg-contract-upload" id="spgContractUploadBox">
+                              <div class="upload-icon"><img src="images/document-download.svg" alt=""></div>
+                              <div class="d-flex flex-column gap-10">
+                                <div class="upload-title fz-10 black-text">Drag a file here or browse to add it to the list</div>
+                                <div class="upload-subtitle fz-9 text-gray">Max size 500 MB</div>
+                                <input type="file" class="fileInput" id="spgContractDraftFile"
+                                  name="spgContractDraftFile" accept=".pdf,.doc,.docx,image/*" />
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                       <div
@@ -1707,17 +1718,21 @@
                   <div id="spgSectionReviewPane" class="accordion-collapse collapse"
                     data-bs-parent="#spgReviewStageAccordion">
                     <div class="accordion-body p-0" id="spg-content-review">
+                      <input type="checkbox" id="spgSectionReviewEditMode"
+                        class="spg-review-edit-toggle visually-hidden" aria-label="Proposal content edit mode">
                       <div
                       class="spg-section-review-status tender-card p-3 p-lg-4 mb-3 mb-lg-4 bg-white d-flex flex-column flex-md-row align-items-md-start justify-content-md-between gap-3">
                       <div>
                         <h6 class="black-text fw-medium mb-2">Proposal ready for review</h6>
-                        <p class="fz-12 text-gray mb-0">Review each section below. Confirm wording before final approval.</p>
+                        <p class="fz-12 text-gray mb-0 spg-review-read-hint">Review each section below. Confirm wording before final approval.</p>
+                        <p class="fz-12 text-gray mb-0 spg-review-edit-hint d-none">You can edit text directly in each section. Saving will be handled by the system later.</p>
                       </div>
-                      <button type="button"
-                        class="btn-main outline-primary-gray fz-12 h-36 flex-shrink-0 d-inline-flex align-items-center gap-2">
+                      <label for="spgSectionReviewEditMode"
+                        class="btn-main outline-primary-gray fz-12 h-36 flex-shrink-0 d-inline-flex align-items-center gap-2 mb-0">
                         <img src="images/edit-pen.svg" alt="" width="16" height="16">
-                        تعديل
-                      </button>
+                        <span class="spg-review-edit-label-on">Edit</span>
+                        <span class="spg-review-edit-label-off d-none">Done editing</span>
+                      </label>
                     </div>
                       <div class="row g-3 g-lg-4 spg-section-review-layout">
                         <div class="col-12 col-lg-4 col-xl-3 spg-section-review-nav-col">
@@ -1829,56 +1844,104 @@
                               aria-labelledby="spg-sec-01-tab" tabindex="0">
                               <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
                                 <h6 class="black-text fw-medium mb-3">Executive summary</h6>
-                                <p class="fz-12 text-gray mb-0">Executive summary content will appear here.</p>
+                                <div class="spg-review-read-body">
+                                  <p class="fz-12 text-gray mb-0">Executive summary content will appear here.</p>
+                                </div>
+                                <div class="spg-review-edit-body">
+                                  <div class="spg-proposal-inline-editor form-control" contenteditable="true" role="textbox"
+                                    aria-label="Edit executive summary" spellcheck="true">This proposal presents an integrated solution aligned with the tender requirements, with a focus on quality and the approved timeline.</div>
+                                </div>
                               </div>
                             </div>
                             <div class="tab-pane fade" id="spg-sec-02" role="tabpanel" aria-labelledby="spg-sec-02-tab"
                               tabindex="0">
                               <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
                                 <h6 class="black-text fw-medium mb-3">Requirements understanding</h6>
-                                <p class="fz-12 text-gray mb-0">Requirements understanding content will appear here.</p>
+                                <div class="spg-review-read-body">
+                                  <p class="fz-12 text-gray mb-0">Requirements understanding content will appear here.</p>
+                                </div>
+                                <div class="spg-review-edit-body">
+                                  <div class="spg-proposal-inline-editor form-control" contenteditable="true" role="textbox"
+                                    aria-label="Edit requirements understanding" spellcheck="true">Tender requirements, scope of work, and expected deliverables were analyzed per the specifications booklet.</div>
+                                </div>
                               </div>
                             </div>
                             <div class="tab-pane fade" id="spg-sec-03" role="tabpanel" aria-labelledby="spg-sec-03-tab"
                               tabindex="0">
                               <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
                                 <h6 class="black-text fw-medium mb-3">Implementation methodology</h6>
-                                <p class="fz-12 text-gray mb-0">Implementation methodology content will appear here.</p>
+                                <div class="spg-review-read-body">
+                                  <p class="fz-12 text-gray mb-0">Implementation methodology content will appear here.</p>
+                                </div>
+                                <div class="spg-review-edit-body">
+                                  <div class="spg-proposal-inline-editor form-control" contenteditable="true" role="textbox"
+                                    aria-label="Edit implementation methodology" spellcheck="true">We follow a phased approach covering planning, supply, execution, testing, and handover.</div>
+                                </div>
                               </div>
                             </div>
                             <div class="tab-pane fade" id="spg-sec-04" role="tabpanel" aria-labelledby="spg-sec-04-tab"
                               tabindex="0">
                               <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
                                 <h6 class="black-text fw-medium mb-3">Work plan</h6>
-                                <p class="fz-12 text-gray mb-0">Work plan content will appear here.</p>
+                                <div class="spg-review-read-body">
+                                  <p class="fz-12 text-gray mb-0">Work plan content will appear here.</p>
+                                </div>
+                                <div class="spg-review-edit-body">
+                                  <div class="spg-proposal-inline-editor form-control" contenteditable="true" role="textbox"
+                                    aria-label="Edit work plan" spellcheck="true">The work plan includes a timeline for major phases with responsibilities and deliverables for each stage.</div>
+                                </div>
                               </div>
                             </div>
                             <div class="tab-pane fade" id="spg-sec-05" role="tabpanel" aria-labelledby="spg-sec-05-tab"
                               tabindex="0">
                               <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
                                 <h6 class="black-text fw-medium mb-3">Team</h6>
-                                <p class="fz-12 text-gray mb-0">Team content will appear here.</p>
+                                <div class="spg-review-read-body">
+                                  <p class="fz-12 text-gray mb-0">Team content will appear here.</p>
+                                </div>
+                                <div class="spg-review-edit-body">
+                                  <div class="spg-proposal-inline-editor form-control" contenteditable="true" role="textbox"
+                                    aria-label="Edit team section" spellcheck="true">The team combines specialists in project management, delivery, and quality assurance.</div>
+                                </div>
                               </div>
                             </div>
                             <div class="tab-pane fade" id="spg-sec-06" role="tabpanel" aria-labelledby="spg-sec-06-tab"
                               tabindex="0">
                               <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
                                 <h6 class="black-text fw-medium mb-3">Past experience and contracts</h6>
-                                <p class="fz-12 text-gray mb-0">Past experience and contracts content will appear here.</p>
+                                <div class="spg-review-read-body">
+                                  <p class="fz-12 text-gray mb-0">Past experience and contracts content will appear here.</p>
+                                </div>
+                                <div class="spg-review-edit-body">
+                                  <div class="spg-proposal-inline-editor form-control" contenteditable="true" role="textbox"
+                                    aria-label="Edit past experience" spellcheck="true">The company has delivered similar projects for government and commercial clients.</div>
+                                </div>
                               </div>
                             </div>
                             <div class="tab-pane fade" id="spg-sec-07" role="tabpanel" aria-labelledby="spg-sec-07-tab"
                               tabindex="0">
                               <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
                                 <h6 class="black-text fw-medium mb-3">Financial proposal</h6>
-                                <p class="fz-12 text-gray mb-0">Financial proposal content will appear here.</p>
+                                <div class="spg-review-read-body">
+                                  <p class="fz-12 text-gray mb-0">Financial proposal content will appear here.</p>
+                                </div>
+                                <div class="spg-review-edit-body">
+                                  <div class="spg-proposal-inline-editor form-control" contenteditable="true" role="textbox"
+                                    aria-label="Edit financial proposal" spellcheck="true">The financial proposal includes pricing line items, tax, and the final total.</div>
+                                </div>
                               </div>
                             </div>
                             <div class="tab-pane fade" id="spg-sec-08" role="tabpanel" aria-labelledby="spg-sec-08-tab"
                               tabindex="0">
                               <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
                                 <h6 class="black-text fw-medium mb-3">Appendices</h6>
-                                <p class="fz-12 text-gray mb-0">Appendices content will appear here.</p>
+                                <div class="spg-review-read-body">
+                                  <p class="fz-12 text-gray mb-0">Appendices content will appear here.</p>
+                                </div>
+                                <div class="spg-review-edit-body">
+                                  <div class="spg-proposal-inline-editor form-control" contenteditable="true" role="textbox"
+                                    aria-label="Edit appendices" spellcheck="true">Appendices include supporting documents, certificates, and drawings attached to the proposal.</div>
+                                </div>
                               </div>
                             </div>
                           </div>
