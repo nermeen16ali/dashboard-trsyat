@@ -173,6 +173,76 @@
     );
   }
 
+  function setReviewReadBodyText(readBody, text) {
+    if (!readBody) {
+      return;
+    }
+
+    readBody.replaceChildren();
+
+    const paragraph = document.createElement("p");
+    paragraph.className = "fz-12 text-gray mb-0";
+    paragraph.textContent = text;
+    readBody.appendChild(paragraph);
+  }
+
+  function syncReviewReadFromEditor(card) {
+    const editor = card.querySelector(
+      ".spg-proposal-inline-editor"
+    );
+    const readBody = card.querySelector(
+      ".spg-review-read-body"
+    );
+
+    if (!editor || !readBody) {
+      return;
+    }
+
+    setReviewReadBodyText(
+      readBody,
+      editor.innerText.trim()
+    );
+  }
+
+  function syncReviewEditorFromRead(card) {
+    const editor = card.querySelector(
+      ".spg-proposal-inline-editor"
+    );
+    const readBody = card.querySelector(
+      ".spg-review-read-body"
+    );
+
+    if (!editor || !readBody) {
+      return;
+    }
+
+    editor.textContent = readBody.innerText.trim();
+  }
+
+  function focusReviewInlineEditor(editor) {
+    if (!editor) {
+      return;
+    }
+
+    editor.focus();
+
+    const selection = window.getSelection();
+    const range = document.createRange();
+
+    range.selectNodeContents(editor);
+    range.collapse(false);
+    selection?.removeAllRanges();
+    selection?.addRange(range);
+  }
+
+  function renderReview() {
+    $$(
+      ".spg-section-review-content-card"
+    ).forEach((card) => {
+      syncReviewReadFromEditor(card);
+    });
+  }
+
   function setView(nextView) {
     view = nextView;
 
@@ -2436,6 +2506,41 @@
           renderReview();
         }
       );
+
+    $("#spgSectionReviewEditMode")
+      ?.addEventListener(
+        "change",
+        (e) => {
+          const editing =
+            e.target.checked === true;
+          const cards = $$(
+            ".spg-section-review-content-card"
+          );
+
+          if (editing) {
+            cards.forEach((card) => {
+              syncReviewEditorFromRead(card);
+            });
+
+            const activePane = $(
+              "#spgSectionReviewTabContent .tab-pane.active"
+            );
+            const editor = activePane?.querySelector(
+              ".spg-proposal-inline-editor"
+            );
+
+            requestAnimationFrame(() => {
+              focusReviewInlineEditor(
+                editor
+              );
+            });
+          } else {
+            cards.forEach((card) => {
+              syncReviewReadFromEditor(card);
+            });
+          }
+        }
+      );
   }
 
   function init() {
@@ -2444,6 +2549,8 @@
     }
 
     bindEvents();
+
+    renderReview();
 
     setView(view);
   }
