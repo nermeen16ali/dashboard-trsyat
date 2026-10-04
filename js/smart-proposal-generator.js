@@ -44,6 +44,7 @@
   let teamFormEditingId = null;
   let teamCvUploadBound = false;
   let contractFormEditingId = null;
+  let contractUploadBound = false;
 
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) =>
@@ -1549,6 +1550,184 @@
     };
   }
 
+  function showContractFileError(message) {
+    const errorEl =
+      $("#spgContractDraftFileError");
+
+    if (!errorEl) {
+      return;
+    }
+
+    if (message) {
+      errorEl.textContent = message;
+
+      errorEl.classList.remove("d-none");
+    } else {
+      errorEl.textContent = "";
+
+      errorEl.classList.add("d-none");
+    }
+  }
+
+  function setContractFileDisplay(
+    fileName,
+    options = {}
+  ) {
+    const infoEl =
+      $("#spgContractDraftFileInfo");
+
+    const hiddenEl =
+      $("#spgContractDraftFileName");
+
+    const name =
+      (fileName || "").trim();
+
+    if (hiddenEl) {
+      hiddenEl.value = name;
+    }
+
+    if (!infoEl) {
+      return;
+    }
+
+    if (!name) {
+      infoEl.textContent = "";
+
+      infoEl.classList.add("d-none");
+
+      return;
+    }
+
+    const prefix = options.isCurrent
+      ? spgIsEn()
+        ? "Current file: "
+        : "الملف الحالي: "
+      : spgIsEn()
+        ? "Selected file: "
+        : "تم اختيار الملف: ";
+
+    infoEl.textContent = `${prefix}${name}`;
+
+    infoEl.classList.remove("d-none");
+  }
+
+  function resetContractUpload() {
+    const fileEl =
+      $("#spgContractDraftFile");
+
+    if (fileEl) {
+      fileEl.value = "";
+    }
+
+    setContractFileDisplay("");
+
+    showContractFileError("");
+  }
+
+  function bindContractUploadForm() {
+    if (contractUploadBound) {
+      return;
+    }
+
+    const uploadBox =
+      $("#spgContractUploadBox");
+
+    const fileInput =
+      $("#spgContractDraftFile");
+
+    if (!uploadBox || !fileInput) {
+      return;
+    }
+
+    contractUploadBound = true;
+
+    const MAX_SIZE =
+      500 * 1024 * 1024;
+
+    const handleFile = (file) => {
+      showContractFileError("");
+
+      if (!file) {
+        return;
+      }
+
+      if (file.size > MAX_SIZE) {
+        showContractFileError(
+          spgIsEn()
+            ? "File size exceeds 500 MB"
+            : "حجم الملف أكبر من 500 ميغابايت"
+        );
+
+        setContractFileDisplay("");
+
+        return;
+      }
+
+      setContractFileDisplay(file.name);
+
+      spgAlertDocumentUploaded();
+    };
+
+    uploadBox.addEventListener(
+      "click",
+      (e) => {
+        if (e.target === fileInput) {
+          return;
+        }
+
+        fileInput.click();
+      }
+    );
+
+    fileInput.addEventListener(
+      "click",
+      (e) =>
+        e.stopPropagation()
+    );
+
+    fileInput.addEventListener(
+      "change",
+      () =>
+        handleFile(
+          fileInput.files?.[0]
+        )
+    );
+
+    uploadBox.addEventListener(
+      "dragover",
+      (e) => {
+        e.preventDefault();
+
+        uploadBox.classList.add(
+          "dragover"
+        );
+      }
+    );
+
+    uploadBox.addEventListener(
+      "dragleave",
+      () =>
+        uploadBox.classList.remove(
+          "dragover"
+        )
+    );
+
+    uploadBox.addEventListener(
+      "drop",
+      (e) => {
+        e.preventDefault();
+
+        uploadBox.classList.remove(
+          "dragover"
+        );
+
+        handleFile(
+          e.dataTransfer.files?.[0]
+        );
+      }
+    );
+  }
+
   function getContractDraftFields() {
     return {
       projectName:
@@ -1683,6 +1862,8 @@
       }
     );
 
+    resetContractUpload();
+
     showContractFormError("");
 
     updateContractFormEditUI();
@@ -1724,8 +1905,19 @@
     $("#spgContractDraftCost").value =
       contract.cost || "";
 
-    $("#spgContractDraftFileName").value =
-      contract.fileName || "";
+    setContractFileDisplay(
+      contract.fileName || "",
+      { isCurrent: true }
+    );
+
+    const fileEl =
+      $("#spgContractDraftFile");
+
+    if (fileEl) {
+      fileEl.value = "";
+    }
+
+    showContractFileError("");
 
     showContractFormError("");
 
@@ -2424,6 +2616,7 @@
 
     bindDocumentUploadForm();
     bindTeamCvUploadForm();
+    bindContractUploadForm();
     bindCollectionTableActions();
 
     /*
