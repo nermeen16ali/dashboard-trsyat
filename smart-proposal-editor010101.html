@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="images/trsyat-logo.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>اختر قالب تصميم العرض | مولد العروض الذكي</title>
+  <title>محرر العرض | مولد العروض الذكي</title>
 
   <!-- Bootstrap 5 RTL CSS -->
   <link href="assets/css/bootstrap.rtl.min.css" rel="stylesheet" />
@@ -220,7 +220,7 @@
               </svg>
             </span>
           </div>
-          <a href="smart-proposal-template-ltr.html" class="nav-link">
+          <a href="smart-proposal-export-ltr.html" class="nav-link">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g opacity="0.4">
                 <path d="M14.1582 7.4668H5.84155H14.1582Z" fill="currentColor" />
@@ -541,291 +541,312 @@
     <!-- Page Header -->
     <div class="page-header d-flex align-items-center gap-3">
       <div class="page-breadcrumb">
-        <h2 class="active">اختر قالب تصميم العرض</h2>
+        <h2 class="active">محرر العرض</h2>
       </div>
       <button type="button" class="outline-primary-gray bordered-40 fz-10 d-flex align-items-center gap-10">
         <span>فيديو شرح</span>
         <img src="images/play-cricle.svg" alt="فيديو شرح">
       </button>
     </div>
-    <div class="dash-widget sm-0 p-lg-4 spg-root spg-production-root">
+    <div class="dash-widget sm-0 p-lg-4 spg-root spg-production-root spg-proposal-editor-root">
       <div class="row g-4">
         <div class="col-12">
-          <div class="tender-card p-3 p-lg-4 d-flex flex-column spg-production-panel" id="spgMainPanel">
-            <nav class="spg-production-steps mb-3" aria-label="مراحل إعداد العرض">
-              <ol class="list-unstyled d-flex flex-wrap align-items-center gap-2 fz-12 mb-0 d-none">
-                <li><a href="smart-proposal-generator.html#spg-content-review" class="text-gray">مراجعة المحتوى</a></li>
-                <li class="text-gray" aria-hidden="true">/</li>
-                <li><span class="black-text fw-medium" aria-current="step">اختيار القالب</span></li>
-                <li class="text-gray" aria-hidden="true">/</li>
-                <li><span class="text-gray">التصدير</span></li>
-              </ol>
-            </nav>
+          <div class="tender-card p-3 p-lg-4 d-flex flex-column spg-production-panel spg-proposal-editor-panel">
 
-            <div
-              class="tender-card p-3 mb-4 bg-white d-flex flex-wrap align-items-center justify-content-between gap-3 spg-production-context">
-              <div>
-                <p class="fz-12 text-gray mb-1">المشروع الحالي</p>
-                <h6 class="black-text mb-0 fw-medium">تأمين أثاث مكتبي</h6>
+            <header
+              class="spg-proposal-editor-context tender-card bg-white p-3 p-lg-4 mb-3 d-flex flex-column flex-xl-row align-items-xl-center justify-content-xl-between gap-3">
+              <div class="min-w-0 flex-grow-1">
+                <p class="fz-12 text-gray mb-1">محرر العرض</p>
+                <h3 class="black-text fw-medium mb-2">تأمين أثاث مكتبي</h3>
+                <div class="d-flex flex-wrap align-items-center gap-2 gap-md-3">
+                  <p class="fz-12 text-gray mb-0">القالب: العرض الفني - القالب الثاني</p>
+                  <span class="sm-ele fz-10 bordered-8 badge-reviewed py-1 px-2">المستند الفني</span>
+                </div>
               </div>
-              <span class="badge-opacity-prim fz-12 py-1 px-2 d-inline-flex align-items-center">إنتاج العرض</span>
-            </div>
-
-            <header class="mb-4 mb-lg-5">
-              <h3 class="black-text fw-medium mb-2">اختر قالب تصميم العرض</h3>
-              <p class="fz-14 text-gray mb-0">حدد الشكل والتصميم البصري الذي يناسب عرضك.</p>
+              <div class="d-flex flex-wrap align-items-stretch gap-2 flex-shrink-0">
+                <button type="button" class="btn-main base-outlined-btn h-44 fz-14 d-inline-flex align-items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 22 22" fill="none"
+                    aria-hidden="true" class="flex-shrink-0">
+                    <path
+                      d="M6.41602 6.41602H5.49935C5.01312 6.41602 4.5468 6.60917 4.20299 6.95299C3.85917 7.2968 3.66602 7.76312 3.66602 8.24935V16.4993C3.66602 16.9856 3.85917 17.4519 4.20299 17.7957C4.5468 18.1395 5.01312 18.3327 5.49935 18.3327H13.7493C14.2356 18.3327 14.7019 18.1395 15.0457 17.7957C15.3895 17.4519 15.5827 16.9856 15.5827 16.4993V15.5827"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M14.6667 4.58343L17.4167 7.33343M18.6863 6.03635C19.0473 5.67532 19.2501 5.18567 19.2501 4.6751C19.2501 4.16453 19.0473 3.67487 18.6863 3.31385C18.3252 2.95282 17.8356 2.75 17.325 2.75C16.8144 2.75 16.3248 2.95282 15.9638 3.31385L8.25 11.0001V13.7501H11L18.6863 6.03635Z"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                  حفظ التعديلات
+                </button>
+                <button type="button"
+                  class="btn-main btn-primary-outline h-44 fz-14 d-inline-flex align-items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none"
+                    aria-hidden="true" class="flex-shrink-0">
+                    <path d="M10 3.33398V16.6673" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                    <path opacity="0.4"
+                      d="M14.1667 6.66667H5.83333C4.45262 6.66667 3.33333 7.78596 3.33333 9.16667V10.8333C3.33333 12.214 4.45262 13.3333 5.83333 13.3333H14.1667C15.5474 13.3333 16.6667 12.214 16.6667 10.8333V9.16667C16.6667 7.78596 15.5474 6.66667 14.1667 6.66667Z"
+                      stroke="currentColor" stroke-width="1.5" />
+                  </svg>
+                  إعادة تحميل المحفوظ
+                </button>
+                <a href="smart-proposal-template-preview.html"
+                  class="btn-main outline-primary-gray h-44 fz-14 d-inline-flex align-items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                    aria-hidden="true" class="flex-shrink-0">
+                    <path d="M12.025 15.0586L17.0833 10.0002L12.025 4.94189" stroke="#6BAFB8" stroke-width="1.5"
+                      stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path opacity="0.4" d="M2.91667 10H16.9417" stroke="#6BAFB8" stroke-width="1.5"
+                      stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                  مساحة العرض
+                </a>
+              </div>
             </header>
 
-            <form class="spg-template-form" id="spgTemplateForm" action="smart-proposal-export.html" method="get">
-              <div class="row g-3 g-lg-4 spg-template-grid" role="radiogroup" aria-label="قوالب تصميم العرض">
+            <div class="spg-proposal-editor-status tender-card bg-white px-3 py-2 mb-3 d-flex align-items-center gap-2"
+              role="status">
+              <span class="spg-proposal-editor-status-dot" aria-hidden="true"></span>
+              <p class="fz-12 text-gray mb-0">اختر عنصراً للبدء في التعديل.</p>
+            </div>
 
-                <div class="col-12 col-md-6 col-xl-4 spg-template-option">
-                  <input class="spg-template-radio visually-hidden" type="radio" name="spgTemplate"
-                    id="spgTemplateProfessional" value="professional" checked>
-                  <article class="spg-template-card tender-card h-100 bg-white">
-                    <div class="spg-template-preview">
-                      <img src="images/spg-template-technical-proposal.jpg" alt="معاينة القالب الاحترافي"
-                        class="spg-template-card-image w-100" loading="lazy">
-                    </div>
-                    <div class="spg-template-body p-3 p-lg-4">
-                      <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
-                        <h6 class="black-text fz-16 fw-medium mb-0">احترافي</h6>
-                        <span class="sm-ele fz-10 bordered-8 badge-opacity-prim py-1 px-2">الأكثر طلبًا</span>
-                      </div>
-                      <p class="fz-12 text-gray mb-3 mb-lg-4">تصميم رسمي ومتوازن يناسب العروض الحكومية والتجارية.</p>
-                      <div class="d-flex flex-wrap align-items-stretch gap-2 spg-template-actions">
-                        <a href="smart-proposal-template-preview.html"
-                          class="btn-main outline-primary-gray fz-12 h-36 flex-grow-1 d-inline-flex align-items-center justify-content-center gap-2">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            aria-hidden="true" class="flex-shrink-0">
-                            <path opacity="0.4"
-                              d="M10.3866 7.99995C10.3866 9.31995 9.31995 10.3866 7.99995 10.3866 6.67995 10.3866 5.61328 9.31995 5.61328 7.99995C5.61328 6.67995 6.67995 5.61328 7.99995 5.61328C9.31995 5.61328 10.3866 6.67995 10.3866 7.99995Z"
-                              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            <path
-                              d="M7.9999 13.5138C10.3532 13.5138 12.5466 12.1271 14.0732 9.72713C14.6732 8.78713 14.6732 7.20713 14.0732 6.26713C12.5466 3.86713 10.3532 2.48047 7.9999 2.48047C5.64656 2.48047 3.45323 3.86713 1.92656 6.26713C1.32656 7.20713 1.32656 8.78713 1.92656 9.72713C3.45323 12.1271 5.64656 13.5138 7.9999 13.5138Z"
-                              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                          </svg>
-                          معاينة
-                        </a>
-                        <label class="btn-main fz-12 h-36 flex-grow-1 spg-template-select-btn mb-0"
-                          for="spgTemplateProfessional">
-                          <span class="spg-template-text-default">اختر هذا القالب</span>
-                          <span class="spg-template-text-selected">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                              fill="none" aria-hidden="true" class="spg-template-select-check flex-shrink-0">
-                              <path
-                                d="M12.0089 0C2.77822 0 -2.99097 10 1.62439 18C6.23974 26 17.7781 26 22.3935 18C23.4459 16.1758 24 14.1064 24 12C23.993 5.37548 18.6285 0.00700255 12.0089 0ZM17.2735 9.88384L10.8168 16.3454C10.4565 16.7064 9.87187 16.7064 9.51158 16.3454L6.74441 13.5762C6.24204 13.0734 6.47189 12.215 7.15813 12.031C7.47662 11.9456 7.81644 12.0367 8.04959 12.27L10.1642 14.3873L15.9683 8.57769C16.4707 8.07495 17.3285 8.30497 17.5123 8.99172C17.5977 9.31045 17.5066 9.65052 17.2735 9.88384Z"
-                                fill="#00D252" />
-                            </svg>
-                            مختار حاليًا
-                          </span>
-                        </label>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-
-                <div class="col-12 col-md-6 col-xl-4 spg-template-option">
-                  <input class="spg-template-radio visually-hidden" type="radio" name="spgTemplate"
-                    id="spgTemplateModern" value="modern">
-                  <article class="spg-template-card tender-card h-100 bg-white">
-                    <div class="spg-template-preview">
-                      <img src="images/spg-template-technical-proposal.jpg" alt="معاينة القالب العصري"
-                        class="spg-template-card-image w-100" loading="lazy">
-                    </div>
-                    <div class="spg-template-body p-3 p-lg-4">
-                      <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
-                        <h6 class="black-text fz-16 fw-medium mb-0">عصري</h6>
-                        <span class="sm-ele fz-10 bordered-8 badge-reviewed py-1 px-2">جديد</span>
-                      </div>
-                      <p class="fz-12 text-gray mb-3 mb-lg-4">خطوط واضحة وتنسيق معاصر يبرز التفاصيل بطريقة أنيقة.</p>
-                      <div class="d-flex flex-wrap align-items-stretch gap-2 spg-template-actions">
-                        <a href="smart-proposal-template-preview.html"
-                          class="btn-main outline-primary-gray fz-12 h-36 flex-grow-1 d-inline-flex align-items-center justify-content-center gap-2">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            aria-hidden="true" class="flex-shrink-0">
-                            <path opacity="0.4"
-                              d="M10.3866 7.99995C10.3866 9.31995 9.31995 10.3866 7.99995 10.3866 6.67995 10.3866 5.61328 9.31995 5.61328 7.99995C5.61328 6.67995 6.67995 5.61328 7.99995 5.61328C9.31995 5.61328 10.3866 6.67995 10.3866 7.99995Z"
-                              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            <path
-                              d="M7.9999 13.5138C10.3532 13.5138 12.5466 12.1271 14.0732 9.72713C14.6732 8.78713 14.6732 7.20713 14.0732 6.26713C12.5466 3.86713 10.3532 2.48047 7.9999 2.48047C5.64656 2.48047 3.45323 3.86713 1.92656 6.26713C1.32656 7.20713 1.32656 8.78713 1.92656 9.72713C3.45323 12.1271 5.64656 13.5138 7.9999 13.5138Z"
-                              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                          </svg>
-                          معاينة
-                        </a>
-                        <label class="btn-main fz-12 h-36 flex-grow-1 spg-template-select-btn mb-0"
-                          for="spgTemplateModern">
-                          <span class="spg-template-text-default">اختر هذا القالب</span>
-                          <span class="spg-template-text-selected">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                              fill="none" aria-hidden="true" class="spg-template-select-check flex-shrink-0">
-                              <path
-                                d="M12.0089 0C2.77822 0 -2.99097 10 1.62439 18C6.23974 26 17.7781 26 22.3935 18C23.4459 16.1758 24 14.1064 24 12C23.993 5.37548 18.6285 0.00700255 12.0089 0ZM17.2735 9.88384L10.8168 16.3454C10.4565 16.7064 9.87187 16.7064 9.51158 16.3454L6.74441 13.5762C6.24204 13.0734 6.47189 12.215 7.15813 12.031C7.47662 11.9456 7.81644 12.0367 8.04959 12.27L10.1642 14.3873L15.9683 8.57769C16.4707 8.07495 17.3285 8.30497 17.5123 8.99172C17.5977 9.31045 17.5066 9.65052 17.2735 9.88384Z"
-                                fill="#00D252" />
-                            </svg>
-                            مختار حاليًا
-                          </span>
-                        </label>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-
-                <div class="col-12 col-md-6 col-xl-4 spg-template-option">
-                  <input class="spg-template-radio visually-hidden" type="radio" name="spgTemplate"
-                    id="spgTemplateMinimal" value="minimal">
-                  <article class="spg-template-card tender-card h-100 bg-white">
-                    <div class="spg-template-preview">
-                      <img src="images/spg-template-technical-proposal.jpg" alt="معاينة القالب المبسط"
-                        class="spg-template-card-image w-100" loading="lazy">
-                    </div>
-                    <div class="spg-template-body p-3 p-lg-4">
-                      <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
-                        <h6 class="black-text fz-16 fw-medium mb-0">مبسط</h6>
-                      </div>
-                      <p class="fz-12 text-gray mb-3 mb-lg-4">تصميم هادئ ومنظم يركز على وضوح المحتوى وسهولة القراءة.</p>
-                      <div class="d-flex flex-wrap align-items-stretch gap-2 spg-template-actions">
-                        <button type="button"
-                          class="btn-main outline-primary-gray fz-12 h-36 flex-grow-1 d-inline-flex align-items-center justify-content-center gap-2"
-                          data-bs-toggle="modal" data-bs-target="#spgTemplatePreviewModern">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            aria-hidden="true" class="flex-shrink-0">
-                            <path opacity="0.4"
-                              d="M10.3866 7.99995C10.3866 9.31995 9.31995 10.3866 7.99995 10.3866 6.67995 10.3866 5.61328 9.31995 5.61328 7.99995C5.61328 6.67995 6.67995 5.61328 7.99995 5.61328C9.31995 5.61328 10.3866 6.67995 10.3866 7.99995Z"
-                              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            <path
-                              d="M7.9999 13.5138C10.3532 13.5138 12.5466 12.1271 14.0732 9.72713C14.6732 8.78713 14.6732 7.20713 14.0732 6.26713C12.5466 3.86713 10.3532 2.48047 7.9999 2.48047C5.64656 2.48047 3.45323 3.86713 1.92656 6.26713C1.32656 7.20713 1.32656 8.78713 1.92656 9.72713C3.45323 12.1271 5.64656 13.5138 7.9999 13.5138Z"
-                              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                          </svg>
-                          معاينة
-                        </button>
-                        <label class="btn-main fz-12 h-36 flex-grow-1 spg-template-select-btn mb-0"
-                          for="spgTemplateMinimal">
-                          <span class="spg-template-text-default">اختر هذا القالب</span>
-                          <span class="spg-template-text-selected">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                              fill="none" aria-hidden="true" class="spg-template-select-check flex-shrink-0">
-                              <path
-                                d="M12.0089 0C2.77822 0 -2.99097 10 1.62439 18C6.23974 26 17.7781 26 22.3935 18C23.4459 16.1758 24 14.1064 24 12C23.993 5.37548 18.6285 0.00700255 12.0089 0ZM17.2735 9.88384L10.8168 16.3454C10.4565 16.7064 9.87187 16.7064 9.51158 16.3454L6.74441 13.5762C6.24204 13.0734 6.47189 12.215 7.15813 12.031C7.47662 11.9456 7.81644 12.0367 8.04959 12.27L10.1642 14.3873L15.9683 8.57769C16.4707 8.07495 17.3285 8.30497 17.5123 8.99172C17.5977 9.31045 17.5066 9.65052 17.2735 9.88384Z"
-                                fill="#00D252" />
-                            </svg>
-                            مختار حاليًا
-                          </span>
-                        </label>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-
-                <div class="col-12 col-md-6 col-xl-4 spg-template-option">
-                  <input class="spg-template-radio visually-hidden" type="radio" name="spgTemplate"
-                    id="spgTemplateLuxury" value="luxury">
-                  <article class="spg-template-card tender-card h-100 bg-white">
-                    <div class="spg-template-preview">
-                      <img src="images/spg-template-technical-proposal.jpg" alt="معاينة القالب الفاخر"
-                        class="spg-template-card-image w-100" loading="lazy">
-                    </div>
-                    <div class="spg-template-body p-3 p-lg-4">
-                      <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
-                        <h6 class="black-text fz-16 fw-medium mb-0">فاخر</h6>
-                        <span class="sm-ele fz-10 bordered-8 badge-opacity-prim py-1 px-2">مميز</span>
-                      </div>
-                      <p class="fz-12 text-gray mb-3 mb-lg-4">تصميم راقٍ بتفاصيل بصرية مميزة يناسب العروض عالية المستوى.
-                      </p>
-                      <div class="d-flex flex-wrap align-items-stretch gap-2 spg-template-actions">
-                        <button type="button"
-                          class="btn-main outline-primary-gray fz-12 h-36 flex-grow-1 d-inline-flex align-items-center justify-content-center gap-2"
-                          data-bs-toggle="modal" data-bs-target="#spgTemplatePreviewModern">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            aria-hidden="true" class="flex-shrink-0">
-                            <path opacity="0.4"
-                              d="M10.3866 7.99995C10.3866 9.31995 9.31995 10.3866 7.99995 10.3866 6.67995 10.3866 5.61328 9.31995 5.61328 7.99995C5.61328 6.67995 6.67995 5.61328 7.99995 5.61328C9.31995 5.61328 10.3866 6.67995 10.3866 7.99995Z"
-                              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            <path
-                              d="M7.9999 13.5138C10.3532 13.5138 12.5466 12.1271 14.0732 9.72713C14.6732 8.78713 14.6732 7.20713 14.0732 6.26713C12.5466 3.86713 10.3532 2.48047 7.9999 2.48047C5.64656 2.48047 3.45323 3.86713 1.92656 6.26713C1.32656 7.20713 1.32656 8.78713 1.92656 9.72713C3.45323 12.1271 5.64656 13.5138 7.9999 13.5138Z"
-                              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                          </svg>
-                          معاينة
-                        </button>
-                        <label class="btn-main fz-12 h-36 flex-grow-1 spg-template-select-btn mb-0"
-                          for="spgTemplateLuxury">
-                          <span class="spg-template-text-default">اختر هذا القالب</span>
-                          <span class="spg-template-text-selected">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                              fill="none" aria-hidden="true" class="spg-template-select-check flex-shrink-0">
-                              <path
-                                d="M12.0089 0C2.77822 0 -2.99097 10 1.62439 18C6.23974 26 17.7781 26 22.3935 18C23.4459 16.1758 24 14.1064 24 12C23.993 5.37548 18.6285 0.00700255 12.0089 0ZM17.2735 9.88384L10.8168 16.3454C10.4565 16.7064 9.87187 16.7064 9.51158 16.3454L6.74441 13.5762C6.24204 13.0734 6.47189 12.215 7.15813 12.031C7.47662 11.9456 7.81644 12.0367 8.04959 12.27L10.1642 14.3873L15.9683 8.57769C16.4707 8.07495 17.3285 8.30497 17.5123 8.99172C17.5977 9.31045 17.5066 9.65052 17.2735 9.88384Z"
-                                fill="#00D252" />
-                            </svg>
-                            مختار حاليًا
-                          </span>
-                        </label>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-
-                <div class="col-12 col-md-6 col-xl-4 spg-template-option">
-                  <input class="spg-template-radio visually-hidden" type="radio" name="spgTemplate"
-                    id="spgTemplateVisual" value="visual">
-                  <article class="spg-template-card tender-card h-100 bg-white">
-                    <div class="spg-template-preview">
-                      <img src="images/spg-template-technical-proposal.jpg" alt="معاينة القالب المرئي"
-                        class="spg-template-card-image w-100" loading="lazy">
-                    </div>
-                    <div class="spg-template-body p-3 p-lg-4">
-                      <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
-                        <h6 class="black-text fz-16 fw-medium mb-0">مرئي</h6>
-                        <span class="sm-ele fz-10 bordered-8 badge-reviewed py-1 px-2">إبداع</span>
-                      </div>
-                      <p class="fz-12 text-gray mb-3 mb-lg-4">تصميم بصري غني يساعد على إبراز المعلومات والمراحل
-                        والبيانات بطريقة جذابة.</p>
-                      <div class="d-flex flex-wrap align-items-stretch gap-2 spg-template-actions">
-                        <button type="button"
-                          class="btn-main outline-primary-gray fz-12 h-36 flex-grow-1 d-inline-flex align-items-center justify-content-center gap-2"
-                          data-bs-toggle="modal" data-bs-target="#spgTemplatePreviewModern">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            aria-hidden="true" class="flex-shrink-0">
-                            <path opacity="0.4"
-                              d="M10.3866 7.99995C10.3866 9.31995 9.31995 10.3866 7.99995 10.3866 6.67995 10.3866 5.61328 9.31995 5.61328 7.99995C5.61328 6.67995 6.67995 5.61328 7.99995 5.61328C9.31995 5.61328 10.3866 6.67995 10.3866 7.99995Z"
-                              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            <path
-                              d="M7.9999 13.5138C10.3532 13.5138 12.5466 12.1271 14.0732 9.72713C14.6732 8.78713 14.6732 7.20713 14.0732 6.26713C12.5466 3.86713 10.3532 2.48047 7.9999 2.48047C5.64656 2.48047 3.45323 3.86713 1.92656 6.26713C1.32656 7.20713 1.32656 8.78713 1.92656 9.72713C3.45323 12.1271 5.64656 13.5138 7.9999 13.5138Z"
-                              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                          </svg>
-                          معاينة
-                        </button>
-                        <label class="btn-main fz-12 h-36 flex-grow-1 spg-template-select-btn mb-0"
-                          for="spgTemplateVisual">
-                          <span class="spg-template-text-default">اختر هذا القالب</span>
-                          <span class="spg-template-text-selected">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                              fill="none" aria-hidden="true" class="spg-template-select-check flex-shrink-0">
-                              <path
-                                d="M12.0089 0C2.77822 0 -2.99097 10 1.62439 18C6.23974 26 17.7781 26 22.3935 18C23.4459 16.1758 24 14.1064 24 12C23.993 5.37548 18.6285 0.00700255 12.0089 0ZM17.2735 9.88384L10.8168 16.3454C10.4565 16.7064 9.87187 16.7064 9.51158 16.3454L6.74441 13.5762C6.24204 13.0734 6.47189 12.215 7.15813 12.031C7.47662 11.9456 7.81644 12.0367 8.04959 12.27L10.1642 14.3873L15.9683 8.57769C16.4707 8.07495 17.3285 8.30497 17.5123 8.99172C17.5977 9.31045 17.5066 9.65052 17.2735 9.88384Z"
-                                fill="#00D252" />
-                            </svg>
-                            مختار حاليًا
-                          </span>
-                        </label>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-              </div>
-
-              <div class="d-flex flex-wrap align-items-center justify-content-end gap-3 mt-4 pt-3 spg-template-footer">
-                <button type="submit" class="btn-main btn-primary h-44 fz-14 d-inline-flex align-items-center gap-2">
-                  متابعة لتصدير العرض
-                  <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
-                    <path d="M8.47485 15.5583L3.41652 10.5L8.47485 5.44165" stroke="#fff" stroke-width="1.5"
+            <div
+              class="spg-proposal-editor-toolbar tender-card bg-white p-2 p-md-3 mb-2 d-flex flex-wrap align-items-center gap-2">
+              <div class="d-flex align-items-center gap-2" role="toolbar" aria-label="أدوات المحرر">
+                <button type="button" class="btn-main outline-primary-gray fz-12 h-36 d-inline-flex align-items-center gap-2"
+                  aria-label="تراجع">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none"
+                    aria-hidden="true">
+                    <path d="M7.975 15.0586L2.91667 10.0002L7.975 4.94189" stroke="currentColor" stroke-width="1.5"
                       stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
-                    <path opacity="0.4" d="M17.583 10.5H3.55801" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10"
-                      stroke-linecap="round" stroke-linejoin="round"></path>
                   </svg>
-                  </a>
+                  تراجع
+                </button>
+                <button type="button" class="btn-main outline-primary-gray fz-12 h-36 d-inline-flex align-items-center gap-2"
+                  aria-label="إعادة">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none"
+                    aria-hidden="true">
+                    <path d="M12.025 15.0586L17.0833 10.0002L12.025 4.94189" stroke="currentColor" stroke-width="1.5"
+                      stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                  إعادة
+                </button>
+                <span class="spg-proposal-editor-toolbar-divider" aria-hidden="true"></span>
+                <button type="button"
+                  class="btn-main fz-12 h-36 d-inline-flex align-items-center gap-2 spg-proposal-editor-tool is-active"
+                  aria-pressed="true" aria-label="نقل بالماوس">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    aria-hidden="true">
+                    <path d="M12 2L12 22M12 2L8 6M12 2L16 6M12 22L8 18M12 22L16 18M2 12L22 12M2 12L6 8M2 12L6 16M22 12L18 8M22 12L18 16"
+                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                  </svg>
+                  نقل بالماوس
+                </button>
+                <button type="button" class="btn-main outline-primary-gray fz-12 h-36 d-inline-flex align-items-center gap-2"
+                  aria-label="إضافة نص">
+                  <img src="images/edit-pen.svg" alt="" width="16" height="16" aria-hidden="true">
+                  إضافة نص
+                </button>
+                <button type="button" class="btn-main outline-primary-gray fz-12 h-36 d-inline-flex align-items-center gap-2"
+                  aria-label="إضافة صورة">
+                  <img src="images/document-download.svg" alt="" width="16" height="16" aria-hidden="true">
+                  إضافة صورة
+                </button>
+                <span class="spg-proposal-editor-toolbar-divider" aria-hidden="true"></span>
+                <label class="fz-12 text-gray mb-0 d-none d-sm-inline" for="spgEditorZoomSelect">التكبير</label>
+                <select class="form-select form-control fz-12 h-36 spg-proposal-editor-zoom-select" id="spgEditorZoomSelect"
+                  aria-label="التكبير">
+                  <option value="100" selected>100%</option>
+                  <option value="75">75%</option>
+                  <option value="125">125%</option>
+                </select>
               </div>
-            </form>
+              <button type="button"
+                class="btn-main btn-primary h-44 fz-14 d-inline-flex align-items-center gap-2 ms-md-auto"
+                aria-label="PDF نهائي">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                  aria-hidden="true" class="flex-shrink-0">
+                  <g opacity="0.4">
+                    <path d="M6 7.33301V11.333L7.33333 9.99967" fill="currentColor" />
+                    <path d="M6 7.33301V11.333L7.33333 9.99967" stroke="currentColor" stroke-width="1.5"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M6.0013 11.3333L4.66797 10" stroke="currentColor" stroke-width="1.5"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                  </g>
+                  <path
+                    d="M14.6654 6.66634V9.99967C14.6654 13.333 13.332 14.6663 9.9987 14.6663H5.9987C2.66536 14.6663 1.33203 13.333 1.33203 9.99967V5.99967C1.33203 2.66634 2.66536 1.33301 5.9987 1.33301H9.33203"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M14.6654 6.66634H11.9987C9.9987 6.66634 9.33203 5.99967 9.33203 3.99967V1.33301L14.6654 6.66634Z"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                PDF نهائي
+              </button>
+            </div>
+
+            <p class="fz-14 text-color my-3 px-1 spg-proposal-editor-helper">
+              اضغط على عنصر لتحديده، وانقر مرتين لتحرير النص. استخدم مقابض الجهات والزوايا لتغيير الحجم، ويمكن نقل
+              العناصر بين الصفحات من خصائص العنصر.
+            </p>
+
+            <div class="spg-proposal-editor-main">
+              <aside class="spg-proposal-editor-inspector tender-card bg-white p-3" aria-label="خصائص العنصر">
+                <header class="spg-proposal-editor-inspector-head mb-3 pb-3 brd-btm">
+                  <h6 class="black-text fw-medium mb-1">خصائص العنصر</h6>
+                  <p class="fz-12 text-gray mb-0">العنصر المحدد: <span class="black-text">عنوان</span></p>
+                </header>
+
+                <div class="spg-proposal-editor-inspector-body">
+                  <section class="spg-proposal-editor-section mb-3 pb-3 brd-btm">
+                    <h6 class="fz-12 black-text fw-medium mb-2">النص</h6>
+                    <label class="form-label fz-12" for="spgEditorElementText">محتوى النص</label>
+                    <textarea class="form-control fz-12 mb-2" id="spgEditorElementText" rows="3"
+                      aria-readonly="true">العرض الفني</textarea>
+                    <button type="button" class="btn-main btn-primary-outline fz-12 h-36 w-100">تطبيق النص</button>
+                  </section>
+
+                  <section class="spg-proposal-editor-section mb-3 pb-3 brd-btm">
+                    <h6 class="fz-12 black-text fw-medium mb-2">التنسيق</h6>
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                      <button type="button" class="btn-main outline-primary-gray fz-12 h-36 flex-grow-1">عريض</button>
+                      <button type="button" class="btn-main outline-primary-gray fz-12 h-36 flex-grow-1">مائل</button>
+                    </div>
+                    <p class="form-label fz-12 mb-2">المحاذاة</p>
+                    <div class="d-flex flex-wrap gap-2" role="group" aria-label="المحاذاة">
+                      <button type="button" class="btn-main fz-12 h-36 flex-grow-1 spg-proposal-editor-tool is-active"
+                        aria-pressed="true">يمين</button>
+                      <button type="button" class="btn-main outline-primary-gray fz-12 h-36 flex-grow-1">وسط</button>
+                      <button type="button" class="btn-main outline-primary-gray fz-12 h-36 flex-grow-1">يسار</button>
+                    </div>
+                  </section>
+
+                  <section class="spg-proposal-editor-section mb-3 pb-3 brd-btm">
+                    <h6 class="fz-12 black-text fw-medium mb-2">الخط</h6>
+                    <label class="form-label fz-12" for="spgEditorFontFamily">عائلة الخط</label>
+                    <select class="form-select form-control fz-12 mb-3" id="spgEditorFontFamily">
+                      <option selected>LT Arabic, Tajawal, Cairo, sans-serif</option>
+                    </select>
+                    <label class="form-label fz-12" for="spgEditorFontSize">حجم الخط</label>
+                    <input type="number" class="form-control fz-12" id="spgEditorFontSize" value="76" dir="ltr"
+                      inputmode="numeric" aria-readonly="true">
+                  </section>
+
+                  <section class="spg-proposal-editor-section mb-3 pb-3 brd-btm">
+                    <h6 class="fz-12 black-text fw-medium mb-2">الألوان</h6>
+                    <div class="row g-2 mb-2">
+                      <div class="col-6">
+                        <label class="form-label fz-12" for="spgEditorTextColor">لون النص</label>
+                        <input type="color" class="form-control form-control-color w-100 spg-proposal-editor-color"
+                          id="spgEditorTextColor" value="#ffffff" title="لون النص">
+                      </div>
+                      <div class="col-6">
+                        <label class="form-label fz-12" for="spgEditorBgColor">الخلفية</label>
+                        <input type="color" class="form-control form-control-color w-100 spg-proposal-editor-color"
+                          id="spgEditorBgColor" value="#1a5c4a" title="لون الخلفية">
+                      </div>
+                    </div>
+                    <button type="button" class="btn-main outline-primary-gray fz-12 h-36 w-100">خلفية شفافة</button>
+                  </section>
+
+                  <section class="spg-proposal-editor-section mb-3 pb-3 brd-btm">
+                    <h6 class="fz-12 black-text fw-medium mb-2">الحجم والموضع</h6>
+                    <div class="row g-2 mb-2">
+                      <div class="col-6">
+                        <label class="form-label fz-12" for="spgEditorWidth">العرض</label>
+                        <input type="number" class="form-control fz-12" id="spgEditorWidth" value="687" dir="ltr">
+                      </div>
+                      <div class="col-6">
+                        <label class="form-label fz-12" for="spgEditorHeight">الارتفاع</label>
+                        <input type="number" class="form-control fz-12" id="spgEditorHeight" value="111" dir="ltr">
+                      </div>
+                    </div>
+                    <button type="button" class="btn-main outline-primary-gray fz-12 h-36 w-100 mb-3">ارتفاع تلقائي</button>
+                    <div class="row g-2">
+                      <div class="col-6">
+                        <label class="form-label fz-12" for="spgEditorOffsetX">إزاحة أفقية</label>
+                        <input type="number" class="form-control fz-12" id="spgEditorOffsetX" value="0" dir="ltr">
+                      </div>
+                      <div class="col-6">
+                        <label class="form-label fz-12" for="spgEditorOffsetY">إزاحة رأسية</label>
+                        <input type="number" class="form-control fz-12" id="spgEditorOffsetY" value="0" dir="ltr">
+                      </div>
+                    </div>
+                  </section>
+
+                  <section class="spg-proposal-editor-section mb-3 pb-3 brd-btm">
+                    <h6 class="fz-12 black-text fw-medium mb-2">الصفحة المستهدفة</h6>
+                    <label class="form-label fz-12" for="spgEditorTargetPage">الصفحة</label>
+                    <select class="form-select form-control fz-12 mb-2" id="spgEditorTargetPage">
+                      <option selected>صفحة 1</option>
+                      <option>صفحة 2</option>
+                    </select>
+                    <button type="button" class="btn-main outline-primary-gray fz-12 h-36 w-100">نقل إلى الصفحة</button>
+                  </section>
+
+                  <section class="spg-proposal-editor-section">
+                    <h6 class="fz-12 black-text fw-medium mb-2">إدارة العنصر</h6>
+                    <div class="d-flex flex-column gap-2">
+                      <button type="button"
+                        class="btn-main outline-primary-gray fz-12 h-36 d-inline-flex align-items-center justify-content-center gap-2">
+                        تحديد العنصر الحاوي
+                      </button>
+                      <button type="button"
+                        class="btn-main outline-primary-gray fz-12 h-36 d-inline-flex align-items-center justify-content-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none"
+                          aria-hidden="true">
+                          <path
+                            d="M7.5 13.3333H5.83333C4.45262 13.3333 3.33333 12.214 3.33333 10.8333V5.83333C3.33333 4.45262 4.45262 3.33333 5.83333 3.33333H10.8333C12.214 3.33333 13.3333 4.45262 13.3333 5.83333V7.5"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                          <path opacity="0.4"
+                            d="M9.16667 16.6667H14.1667C15.5474 16.6667 16.6667 15.5474 16.6667 14.1667V9.16667C16.6667 7.78596 15.5474 6.66667 14.1667 6.66667H9.16667C7.78596 6.66667 6.66667 7.78596 6.66667 9.16667V14.1667C6.66667 15.5474 7.78596 16.6667 9.16667 16.6667Z"
+                            stroke="currentColor" stroke-width="1.5" />
+                        </svg>
+                        نسخ العنصر
+                      </button>
+                      <button type="button"
+                        class="btn-main badge-rejected fz-12 h-36 d-inline-flex align-items-center justify-content-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none"
+                          aria-hidden="true" class="flex-shrink-0">
+                          <path
+                            d="M17.5 4.98307C14.725 4.70807 11.9333 4.56641 9.15 4.56641C7.5 4.56641 5.85 4.64974 4.2 4.81641L2.5 4.98307"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          <path opacity="0.34"
+                            d="M7.08301 4.14199L7.26634 3.05033C7.39967 2.25866 7.49967 1.66699 8.90801 1.66699H11.0913C12.4997 1.66699 12.608 2.29199 12.733 3.05866L12.9163 4.14199"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          <path
+                            d="M15.7087 7.61621L15.167 16.0079C15.0753 17.3162 15.0003 18.3329 12.6753 18.3329H7.32533C5.00033 18.3329 4.92533 17.3162 4.83366 16.0079L4.29199 7.61621"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          <path opacity="0.34" d="M8.6084 13.75H11.3834" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                          <path opacity="0.34" d="M7.91699 10.417H12.0837" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        حذف العنصر
+                      </button>
+                    </div>
+                  </section>
+                </div>
+              </aside>
+
+              <div class="spg-proposal-editor-workspace tender-card bg-white p-0 d-flex flex-column min-w-0">
+                <div
+                  class="spg-proposal-editor-workspace-head p-3 d-flex flex-wrap align-items-center justify-content-between gap-2 brd-btm">
+                  <div class="d-flex align-items-center gap-2">
+                    <img src="images/edit-pen.svg" alt="" width="16" height="16" aria-hidden="true">
+                    <h6 class="black-text fw-medium mb-0 fz-14">مساحة التصميم</h6>
+                  </div>
+                  <p class="text-gray fz-12">احفظ تعديلاتك لتظهر في النسخة النهائية من PDF.</p>
+                </div>
+
+                <div class="spg-proposal-editor-viewport" tabindex="0" role="region" aria-label="مساحة مستند العرض">
+                  <div class="spg-proposal-editor-canvas">
+                    <div class="spg-proposal-editor-document-frame">
+                      <iframe class="spg-proposal-editor-pdf-object"
+                        src="assets/spg/templates/professional-proposal.pdf"
+                        title="professional-proposal.pdf"></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -834,7 +855,8 @@
 
   <script src="assets/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js" defer></script>
-
+  
 </body>
 
 </html>
+
