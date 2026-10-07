@@ -14,12 +14,15 @@
   var currentPage = 1;
   var scale = 1;
   var fitMode = "width";
+  var pageRotation = 0;
   var pageViews = [];
   var thumbButtons = [];
   var scrollEl = null;
   var observer = null;
   var loadingPdf = false;
   var pdfjsReady = false;
+  var standaloneMode = false;
+  var workspaceEl = null;
 
   function $(sel, root) {
     return (root || document).querySelector(sel);
@@ -145,6 +148,22 @@
     return $("#spgProfessionalPdfViewer");
   }
 
+  function isStandaloneViewer() {
+    var root = getViewerRoot();
+    return (
+      root &&
+      root.getAttribute("data-spg-pdf-standalone") === "1"
+    );
+  }
+
+  function getWorkspaceEl() {
+    return (
+      workspaceEl ||
+      document.getElementById("spgTemplatePreviewPage") ||
+      getViewerRoot()
+    );
+  }
+
   function updatePageIndicator() {
     var el = $(".spg-pdf-page-indicator", getViewerRoot());
     if (el) {
@@ -185,7 +204,10 @@
   function computeFitScale(pageNum, mode) {
     if (!pdfDoc || !scrollEl) return scale;
     return pdfDoc.getPage(pageNum).then(function (page) {
-      var base = page.getViewport({ scale: 1 });
+      var base = page.getViewport({
+        scale: 1,
+        rotation: pageRotation,
+      });
       var pad = 24;
       var w = scrollEl.clientWidth - pad;
       var h = scrollEl.clientHeight - pad;
@@ -198,7 +220,10 @@
 
   function renderPageCanvas(pageNum, canvas, renderScale) {
     return pdfDoc.getPage(pageNum).then(function (page) {
-      var viewport = page.getViewport({ scale: renderScale });
+      var viewport = page.getViewport({
+        scale: renderScale,
+        rotation: pageRotation,
+      });
       var ctx = canvas.getContext("2d");
       canvas.width = Math.floor(viewport.width);
       canvas.height = Math.floor(viewport.height);
@@ -305,6 +330,7 @@
             currentPage = n;
             updatePageIndicator();
             setActiveThumb(n);
+            syncMobilePageSelect(n);
           }
         }
       },
@@ -325,35 +351,273 @@
     });
   }
 
+  function populateMobilePageSelect() {
+    var select = document.getElementById(
+      "spgPdfMobilePageSelect"
+    );
+    if (!select || !pageCount) return;
+
+    select.innerHTML = "";
+    for (var i = 1; i <= pageCount; i++) {
+      var opt = document.createElement("option");
+      opt.value = String(i);
+      opt.textContent = "صفحة " + i;
+      select.appendChild(opt);
+    }
+    select.value = String(currentPage);
+  }
+
+  function syncMobilePageSelect(pageNum) {
+    var select = document.getElementById(
+      "spgPdfMobilePageSelect"
+    );
+    if (select && pageNum) {
+      select.value = String(pageNum);
+    }
+  }
+
+  function setSearchStatus(message, visible) {
+    var el = document.getElementById(
+      "spgPdfSearchStatus"
+    );
+    if (!el) return;
+    el.textContent = message || "";
+    el.classList.toggle("d-none", !visible);
+  }
+
+  function runPdfSearch(query) {
+    if (!pdfDoc || !query) {
+      setSearchStatus("", false);
+      return Promise.resolve();
+    }
+
+    var needle = query.trim().toLowerCase();
+    if (!needle) {
+      setSearchStatus("", false);
+      return Promise.resolve();
+    }
+
+    setSearchStatus("جاري البحث…", true);
+
+    var chain = Promise.resolve();
+    for (var p = 1; p <= pageCount; p++) {
+      (function (pageNum) {
+        chain = chain.then(function () {
+          return pdfDoc.getPage(pageNum).then(function (page) {
+            return page.getTextContent().then(function (content) {
+              var text = content.items
+                .map(function (item) {
+                  return item.str || "";
+                })
+                .join(" ")
+                .toLowerCase();
+              if (text.indexOf(needle) !== -1) {
+                throw { foundPage: pageNum };
+              }
+            });
+          });
+        });
+      })(p);
+    }
+
+    return chain
+      .then(function () {
+        setSearchStatus(
+          "لم يُعثر على نتائج لـ «" + query.trim() + "»",
+          true
+        );
+      })
+      .catch(function (err) {
+        if (err && err.foundPage) {
+          scrollToPage(err.foundPage, "smooth");
+          setSearchStatus(
+            "تم العثور على نتيجة في الصفحة " + err.foundPage,
+            true
+          );
+        }
+      });
+  }
+
+  function resolveFullscreenTarget(btn) {
+    if (!btn) return null;
+    var selector = btn.getAttribute("data-spg-fullscreen-target");
+    if (selector) {
+      return document.querySelector(selector);
+    }
+    if (btn.closest("#spgProfessionalPdfViewer")) {
+      return getWorkspaceEl();
+    }
+    var editorMain = btn.closest(".spg-proposal-editor-main");
+    if (editorMain) {
+      return (
+        document.getElementById("spgProposalEditorMain") || editorMain
+      );
+    }
+    return null;
+  }
+
+  function toggleFullscreenForTarget(target) {
+    if (!target) return;
+    if (!document.fullscreenElement) {
+      target.requestFullscreen?.();
+    } else {
+      document.exitFullscreen?.();
+    }
+  }
+
+  function bindFullscreenButton(btn) {
+    if (!btn || btn.dataset.spgFullscreenBound === "1") return;
+    btn.dataset.spgFullscreenBound = "1";
+    btn.addEventListener("click", function () {
+      toggleFullscreenForTarget(resolveFullscreenTarget(btn));
+    });
+  }
+
+  function bindStandaloneFullscreenButtons() {
+    document.querySelectorAll(".spg-pdf-fullscreen").forEach(bindFullscreenButton);
+  }
+
   function bindToolbar() {
     var root = getViewerRoot();
     if (!root || root.dataset.bound === "1") return;
     root.dataset.bound = "1";
 
-    $(".spg-pdf-prev", root).addEventListener("click", function () {
-      if (currentPage > 1) scrollToPage(currentPage - 1, "smooth");
-    });
-    $(".spg-pdf-next", root).addEventListener("click", function () {
-      if (currentPage < pageCount) scrollToPage(currentPage + 1, "smooth");
-    });
-    $(".spg-pdf-zoom-in", root).addEventListener("click", function () {
-      fitMode = "custom";
-      scale = Math.min(MAX_SCALE, scale + ZOOM_STEP);
-      updateZoomIndicator();
-      renderAllPages();
-    });
-    $(".spg-pdf-zoom-out", root).addEventListener("click", function () {
-      fitMode = "custom";
-      scale = Math.max(MIN_SCALE, scale - ZOOM_STEP);
-      updateZoomIndicator();
-      renderAllPages();
-    });
-    $(".spg-pdf-fit-width", root).addEventListener("click", function () {
-      applyFit("width");
-    });
-    $(".spg-pdf-fit-page", root).addEventListener("click", function () {
-      applyFit("page");
-    });
+    var prevBtn = $(".spg-pdf-prev", root);
+    if (prevBtn) {
+      prevBtn.addEventListener("click", function () {
+        if (currentPage > 1) scrollToPage(currentPage - 1, "smooth");
+      });
+    }
+
+    var nextBtn = $(".spg-pdf-next", root);
+    if (nextBtn) {
+      nextBtn.addEventListener("click", function () {
+        if (currentPage < pageCount) scrollToPage(currentPage + 1, "smooth");
+      });
+    }
+
+    var zoomIn = $(".spg-pdf-zoom-in", root);
+    if (zoomIn) {
+      zoomIn.addEventListener("click", function () {
+        fitMode = "custom";
+        scale = Math.min(MAX_SCALE, scale + ZOOM_STEP);
+        updateZoomIndicator();
+        renderAllPages();
+      });
+    }
+
+    var zoomOut = $(".spg-pdf-zoom-out", root);
+    if (zoomOut) {
+      zoomOut.addEventListener("click", function () {
+        fitMode = "custom";
+        scale = Math.max(MIN_SCALE, scale - ZOOM_STEP);
+        updateZoomIndicator();
+        renderAllPages();
+      });
+    }
+
+    var fitWidth = $(".spg-pdf-fit-width", root);
+    if (fitWidth) {
+      fitWidth.addEventListener("click", function () {
+        applyFit("width");
+      });
+    }
+
+    var fitPage = $(".spg-pdf-fit-page", root);
+    if (fitPage) {
+      fitPage.addEventListener("click", function () {
+        applyFit("page");
+      });
+    }
+
+    var mobileSelect = document.getElementById(
+      "spgPdfMobilePageSelect"
+    );
+    if (mobileSelect) {
+      mobileSelect.addEventListener("change", function () {
+        var n = Number(mobileSelect.value);
+        if (n) scrollToPage(n, "smooth");
+      });
+    }
+
+    var searchToggle = $(".spg-pdf-search-toggle", root);
+    var searchInput = document.getElementById(
+      "spgPdfSearchInput"
+    );
+    var searchRun = $(".spg-pdf-search-run", root);
+
+    if (searchToggle && searchInput) {
+      searchToggle.addEventListener("click", function () {
+        searchInput.classList.toggle("d-none");
+        var hidden = searchInput.classList.contains("d-none");
+        searchToggle.setAttribute(
+          "aria-expanded",
+          hidden ? "false" : "true"
+        );
+        if (searchRun) {
+          searchRun.classList.toggle("d-none", hidden);
+        }
+        if (!hidden) searchInput.focus();
+      });
+
+      searchInput.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          runPdfSearch(searchInput.value);
+        }
+      });
+    }
+
+    if (searchRun && searchInput) {
+      searchRun.addEventListener("click", function () {
+        runPdfSearch(searchInput.value);
+      });
+    }
+
+    var rotateCw = $(".spg-pdf-rotate-cw", root);
+    if (rotateCw) {
+      rotateCw.addEventListener("click", function () {
+        pageRotation = (pageRotation + 90) % 360;
+        if (fitMode === "custom") {
+          renderAllPages().then(renderThumbnails);
+        } else {
+          applyFit(fitMode).then(renderThumbnails);
+        }
+      });
+    }
+
+    var rotateCcw = $(".spg-pdf-rotate-ccw", root);
+    if (rotateCcw) {
+      rotateCcw.addEventListener("click", function () {
+        pageRotation = (pageRotation + 270) % 360;
+        if (fitMode === "custom") {
+          renderAllPages().then(renderThumbnails);
+        } else {
+          applyFit(fitMode).then(renderThumbnails);
+        }
+      });
+    }
+
+    bindFullscreenButton($(".spg-pdf-fullscreen", root));
+
+    var printBtn = $(".spg-pdf-print", root);
+    if (printBtn) {
+      printBtn.addEventListener("click", function () {
+        if (!pdfUrl) return;
+        var w = window.open(pdfUrl, "_blank");
+        if (w) {
+          w.addEventListener("load", function () {
+            w.focus();
+            w.print();
+          });
+        }
+      });
+    }
+
+    var downloadLink = $(".spg-pdf-download", root);
+    if (downloadLink && !downloadLink.getAttribute("href")) {
+      downloadLink.setAttribute("href", pdfUrl || "#");
+    }
 
     var resizeTimer;
     window.addEventListener("resize", function () {
@@ -384,6 +648,11 @@
     }
     pdfUrl = resolvePdfUrl(pdfSrc);
 
+    var downloadEl = $(".spg-pdf-download", root);
+    if (downloadEl) {
+      downloadEl.setAttribute("href", pdfUrl);
+    }
+
     loadingPdf = true;
     show($("#spgProfessionalPdfLoading"), true);
     show($("#spgProfessionalPdfError"), false);
@@ -408,6 +677,7 @@
       })
       .then(function () {
         setupScrollObserver();
+        populateMobilePageSelect();
         updatePageIndicator();
         updateZoomIndicator();
         show($("#spgProfessionalPdfLoading"), false);
@@ -430,6 +700,7 @@
     pageViews = [];
     thumbButtons = [];
     loadingPdf = false;
+    pageRotation = 0;
 
     var list = $("#spgProfessionalPdfThumbnails");
     if (list) list.innerHTML = "";
@@ -439,10 +710,23 @@
   }
 
   function init() {
-    var modal = document.getElementById(MODAL_ID);
-    if (!modal) return;
+    bindStandaloneFullscreenButtons();
+
+    var root = getViewerRoot();
+    if (!root) return;
+
+    standaloneMode = isStandaloneViewer();
+    workspaceEl = document.getElementById("spgTemplatePreviewPage");
 
     bindToolbar();
+
+    if (standaloneMode) {
+      loadPdf();
+      return;
+    }
+
+    var modal = document.getElementById(MODAL_ID);
+    if (!modal) return;
 
     modal.addEventListener("shown.bs.modal", function () {
       loadPdf();

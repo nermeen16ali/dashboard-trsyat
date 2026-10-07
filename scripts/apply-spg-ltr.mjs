@@ -49,7 +49,7 @@ const REPLACEMENTS = [
   ["اختيار القالب", "Choose template"],
   ["التصدير", "Export"],
   ["المشروع الحالي", "Current project"],
-  ["تأهيل الأسوار الخرسانية", "Concrete Fence Qualification"],
+  ["تأمين أثاث مكتبي", "Concrete Fence Qualification"],
   ["إنتاج العرض", "Proposal production"],
   ["اختر قالب تصميم العرض", "Choose a proposal design template"],
   ["حدد الشكل والتصميم البصري الذي يناسب عرضك.", "Pick the visual style that fits your proposal."],

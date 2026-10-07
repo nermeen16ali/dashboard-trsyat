@@ -1213,6 +1213,8 @@
                                 <div class="upload-subtitle fz-9 text-gray">Max size 500 MB</div>
                                 <input type="file" class="fileInput" id="spgContractDraftFile"
                                   name="spgContractDraftFile" accept=".pdf,.doc,.docx,image/*" />
+                                <div class="fz-10 colored d-none fileInfo" id="spgContractDraftFileInfo"></div>
+                                <div class="red-colored fz-10 d-none errorMsg" id="spgContractDraftFileError"></div>
                               </div>
                             </div>
                           </div>
@@ -1728,7 +1730,7 @@
                         <p class="fz-12 text-gray mb-0 spg-review-edit-hint d-none">You can edit text directly in each section. Saving will be handled by the system later.</p>
                       </div>
                       <label for="spgSectionReviewEditMode"
-                        class="btn-main outline-primary-gray fz-12 h-36 flex-shrink-0 d-inline-flex align-items-center gap-2 mb-0">
+                        class="btn-main outline-primary-gray fz-12 h-36 flex-shrink-0 d-inline-flex align-items-center gap-2 mb-0 spg-review-edit-toggle-label">
                         <img src="images/edit-pen.svg" alt="" width="16" height="16">
                         <span class="spg-review-edit-label-on">Edit</span>
                         <span class="spg-review-edit-label-off d-none">Done editing</span>
@@ -1845,7 +1847,7 @@
                               <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
                                 <h6 class="black-text fw-medium mb-3">Executive summary</h6>
                                 <div class="spg-review-read-body">
-                                  <p class="fz-12 text-gray mb-0">Executive summary content will appear here.</p>
+                                  <p class="fz-12 text-gray mb-0">This proposal presents an integrated solution aligned with the tender requirements, with a focus on quality and the approved timeline.</p>
                                 </div>
                                 <div class="spg-review-edit-body">
                                   <div class="spg-proposal-inline-editor form-control" contenteditable="true" role="textbox"
@@ -1858,7 +1860,7 @@
                               <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
                                 <h6 class="black-text fw-medium mb-3">Requirements understanding</h6>
                                 <div class="spg-review-read-body">
-                                  <p class="fz-12 text-gray mb-0">Requirements understanding content will appear here.</p>
+                                  <p class="fz-12 text-gray mb-0">Tender requirements, scope of work, and expected deliverables were analyzed per the specifications booklet.</p>
                                 </div>
                                 <div class="spg-review-edit-body">
                                   <div class="spg-proposal-inline-editor form-control" contenteditable="true" role="textbox"
@@ -1871,7 +1873,7 @@
                               <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
                                 <h6 class="black-text fw-medium mb-3">Implementation methodology</h6>
                                 <div class="spg-review-read-body">
-                                  <p class="fz-12 text-gray mb-0">Implementation methodology content will appear here.</p>
+                                  <p class="fz-12 text-gray mb-0">We follow a phased approach covering planning, supply, execution, testing, and handover.</p>
                                 </div>
                                 <div class="spg-review-edit-body">
                                   <div class="spg-proposal-inline-editor form-control" contenteditable="true" role="textbox"
@@ -1884,7 +1886,7 @@
                               <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
                                 <h6 class="black-text fw-medium mb-3">Work plan</h6>
                                 <div class="spg-review-read-body">
-                                  <p class="fz-12 text-gray mb-0">Work plan content will appear here.</p>
+                                  <p class="fz-12 text-gray mb-0">The work plan includes a timeline for major phases with responsibilities and deliverables for each stage.</p>
                                 </div>
                                 <div class="spg-review-edit-body">
                                   <div class="spg-proposal-inline-editor form-control" contenteditable="true" role="textbox"
@@ -1897,7 +1899,7 @@
                               <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
                                 <h6 class="black-text fw-medium mb-3">Team</h6>
                                 <div class="spg-review-read-body">
-                                  <p class="fz-12 text-gray mb-0">Team content will appear here.</p>
+                                  <p class="fz-12 text-gray mb-0">The team combines specialists in project management, delivery, and quality assurance.</p>
                                 </div>
                                 <div class="spg-review-edit-body">
                                   <div class="spg-proposal-inline-editor form-control" contenteditable="true" role="textbox"
@@ -1910,7 +1912,7 @@
                               <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
                                 <h6 class="black-text fw-medium mb-3">Past experience and contracts</h6>
                                 <div class="spg-review-read-body">
-                                  <p class="fz-12 text-gray mb-0">Past experience and contracts content will appear here.</p>
+                                  <p class="fz-12 text-gray mb-0">The company has delivered similar projects for government and commercial clients.</p>
                                 </div>
                                 <div class="spg-review-edit-body">
                                   <div class="spg-proposal-inline-editor form-control" contenteditable="true" role="textbox"
@@ -1923,7 +1925,7 @@
                               <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
                                 <h6 class="black-text fw-medium mb-3">Financial proposal</h6>
                                 <div class="spg-review-read-body">
-                                  <p class="fz-12 text-gray mb-0">Financial proposal content will appear here.</p>
+                                  <p class="fz-12 text-gray mb-0">The financial proposal includes pricing line items, tax, and the final total.</p>
                                 </div>
                                 <div class="spg-review-edit-body">
                                   <div class="spg-proposal-inline-editor form-control" contenteditable="true" role="textbox"
@@ -1936,7 +1938,7 @@
                               <div class="tender-card p-3 p-lg-4 bg-white spg-section-review-content-card">
                                 <h6 class="black-text fw-medium mb-3">Appendices</h6>
                                 <div class="spg-review-read-body">
-                                  <p class="fz-12 text-gray mb-0">Appendices content will appear here.</p>
+                                  <p class="fz-12 text-gray mb-0">Appendices include supporting documents, certificates, and drawings attached to the proposal.</p>
                                 </div>
                                 <div class="spg-review-edit-body">
                                   <div class="spg-proposal-inline-editor form-control" contenteditable="true" role="textbox"

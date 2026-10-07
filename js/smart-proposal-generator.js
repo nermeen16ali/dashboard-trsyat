@@ -44,6 +44,7 @@
   let teamFormEditingId = null;
   let teamCvUploadBound = false;
   let contractFormEditingId = null;
+  let contractUploadBound = false;
 
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) =>
@@ -171,6 +172,76 @@
     }).then(
       (result) => result.isConfirmed === true
     );
+  }
+
+  function setReviewReadBodyText(readBody, text) {
+    if (!readBody) {
+      return;
+    }
+
+    readBody.replaceChildren();
+
+    const paragraph = document.createElement("p");
+    paragraph.className = "fz-12 text-gray mb-0";
+    paragraph.textContent = text;
+    readBody.appendChild(paragraph);
+  }
+
+  function syncReviewReadFromEditor(card) {
+    const editor = card.querySelector(
+      ".spg-proposal-inline-editor"
+    );
+    const readBody = card.querySelector(
+      ".spg-review-read-body"
+    );
+
+    if (!editor || !readBody) {
+      return;
+    }
+
+    setReviewReadBodyText(
+      readBody,
+      editor.innerText.trim()
+    );
+  }
+
+  function syncReviewEditorFromRead(card) {
+    const editor = card.querySelector(
+      ".spg-proposal-inline-editor"
+    );
+    const readBody = card.querySelector(
+      ".spg-review-read-body"
+    );
+
+    if (!editor || !readBody) {
+      return;
+    }
+
+    editor.textContent = readBody.innerText.trim();
+  }
+
+  function focusReviewInlineEditor(editor) {
+    if (!editor) {
+      return;
+    }
+
+    editor.focus();
+
+    const selection = window.getSelection();
+    const range = document.createRange();
+
+    range.selectNodeContents(editor);
+    range.collapse(false);
+    selection?.removeAllRanges();
+    selection?.addRange(range);
+  }
+
+  function renderReview() {
+    $$(
+      ".spg-section-review-content-card"
+    ).forEach((card) => {
+      syncReviewReadFromEditor(card);
+    });
   }
 
   function setView(nextView) {
@@ -1479,6 +1550,184 @@
     };
   }
 
+  function showContractFileError(message) {
+    const errorEl =
+      $("#spgContractDraftFileError");
+
+    if (!errorEl) {
+      return;
+    }
+
+    if (message) {
+      errorEl.textContent = message;
+
+      errorEl.classList.remove("d-none");
+    } else {
+      errorEl.textContent = "";
+
+      errorEl.classList.add("d-none");
+    }
+  }
+
+  function setContractFileDisplay(
+    fileName,
+    options = {}
+  ) {
+    const infoEl =
+      $("#spgContractDraftFileInfo");
+
+    const hiddenEl =
+      $("#spgContractDraftFileName");
+
+    const name =
+      (fileName || "").trim();
+
+    if (hiddenEl) {
+      hiddenEl.value = name;
+    }
+
+    if (!infoEl) {
+      return;
+    }
+
+    if (!name) {
+      infoEl.textContent = "";
+
+      infoEl.classList.add("d-none");
+
+      return;
+    }
+
+    const prefix = options.isCurrent
+      ? spgIsEn()
+        ? "Current file: "
+        : "الملف الحالي: "
+      : spgIsEn()
+        ? "Selected file: "
+        : "تم اختيار الملف: ";
+
+    infoEl.textContent = `${prefix}${name}`;
+
+    infoEl.classList.remove("d-none");
+  }
+
+  function resetContractUpload() {
+    const fileEl =
+      $("#spgContractDraftFile");
+
+    if (fileEl) {
+      fileEl.value = "";
+    }
+
+    setContractFileDisplay("");
+
+    showContractFileError("");
+  }
+
+  function bindContractUploadForm() {
+    if (contractUploadBound) {
+      return;
+    }
+
+    const uploadBox =
+      $("#spgContractUploadBox");
+
+    const fileInput =
+      $("#spgContractDraftFile");
+
+    if (!uploadBox || !fileInput) {
+      return;
+    }
+
+    contractUploadBound = true;
+
+    const MAX_SIZE =
+      500 * 1024 * 1024;
+
+    const handleFile = (file) => {
+      showContractFileError("");
+
+      if (!file) {
+        return;
+      }
+
+      if (file.size > MAX_SIZE) {
+        showContractFileError(
+          spgIsEn()
+            ? "File size exceeds 500 MB"
+            : "حجم الملف أكبر من 500 ميغابايت"
+        );
+
+        setContractFileDisplay("");
+
+        return;
+      }
+
+      setContractFileDisplay(file.name);
+
+      spgAlertDocumentUploaded();
+    };
+
+    uploadBox.addEventListener(
+      "click",
+      (e) => {
+        if (e.target === fileInput) {
+          return;
+        }
+
+        fileInput.click();
+      }
+    );
+
+    fileInput.addEventListener(
+      "click",
+      (e) =>
+        e.stopPropagation()
+    );
+
+    fileInput.addEventListener(
+      "change",
+      () =>
+        handleFile(
+          fileInput.files?.[0]
+        )
+    );
+
+    uploadBox.addEventListener(
+      "dragover",
+      (e) => {
+        e.preventDefault();
+
+        uploadBox.classList.add(
+          "dragover"
+        );
+      }
+    );
+
+    uploadBox.addEventListener(
+      "dragleave",
+      () =>
+        uploadBox.classList.remove(
+          "dragover"
+        )
+    );
+
+    uploadBox.addEventListener(
+      "drop",
+      (e) => {
+        e.preventDefault();
+
+        uploadBox.classList.remove(
+          "dragover"
+        );
+
+        handleFile(
+          e.dataTransfer.files?.[0]
+        );
+      }
+    );
+  }
+
   function getContractDraftFields() {
     return {
       projectName:
@@ -1613,6 +1862,8 @@
       }
     );
 
+    resetContractUpload();
+
     showContractFormError("");
 
     updateContractFormEditUI();
@@ -1654,8 +1905,19 @@
     $("#spgContractDraftCost").value =
       contract.cost || "";
 
-    $("#spgContractDraftFileName").value =
-      contract.fileName || "";
+    setContractFileDisplay(
+      contract.fileName || "",
+      { isCurrent: true }
+    );
+
+    const fileEl =
+      $("#spgContractDraftFile");
+
+    if (fileEl) {
+      fileEl.value = "";
+    }
+
+    showContractFileError("");
 
     showContractFormError("");
 
@@ -2354,6 +2616,7 @@
 
     bindDocumentUploadForm();
     bindTeamCvUploadForm();
+    bindContractUploadForm();
     bindCollectionTableActions();
 
     /*
@@ -2436,6 +2699,41 @@
           renderReview();
         }
       );
+
+    $("#spgSectionReviewEditMode")
+      ?.addEventListener(
+        "change",
+        (e) => {
+          const editing =
+            e.target.checked === true;
+          const cards = $$(
+            ".spg-section-review-content-card"
+          );
+
+          if (editing) {
+            cards.forEach((card) => {
+              syncReviewEditorFromRead(card);
+            });
+
+            const activePane = $(
+              "#spgSectionReviewTabContent .tab-pane.active"
+            );
+            const editor = activePane?.querySelector(
+              ".spg-proposal-inline-editor"
+            );
+
+            requestAnimationFrame(() => {
+              focusReviewInlineEditor(
+                editor
+              );
+            });
+          } else {
+            cards.forEach((card) => {
+              syncReviewReadFromEditor(card);
+            });
+          }
+        }
+      );
   }
 
   function init() {
@@ -2444,6 +2742,8 @@
     }
 
     bindEvents();
+
+    renderReview();
 
     setView(view);
   }
