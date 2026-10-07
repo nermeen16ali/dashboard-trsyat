@@ -8553,11 +8553,28 @@ html[dir="ltr"] .input-icon-group input {
 .spg-proposal-editor-root .spg-proposal-editor-main {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: stretch;
+  align-content: flex-start;
   gap: 12px;
   height: calc(100vh - 17.5rem);
   min-height: 520px;
   max-height: calc(100vh - 10rem);
+}
+
+.spg-proposal-editor-root .spg-proposal-editor-main-chrome {
+  flex: 0 0 100%;
+  width: 100%;
+  padding: 0 2px 4px;
+}
+
+.spg-proposal-editor-root .spg-proposal-editor-main.spg-pdf-viewer-workspace:fullscreen {
+  height: 100vh;
+  max-height: none;
+  min-height: 0;
+  padding: 16px;
+  background: #f4f6f8;
+  overflow: auto;
 }
 
 .spg-proposal-editor-root .spg-proposal-editor-inspector {
