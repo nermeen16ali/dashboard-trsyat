@@ -8059,14 +8059,6 @@ html[dir="ltr"] .input-icon-group input {
   margin-bottom: 0;
 }
 
-.spg-root .spg-export-placeholder {
-  max-width: 640px;
-}
-
-.spg-root .spg-export-placeholder-copy {
-  max-width: 28rem;
-}
-
 @media (max-width: 575.98px) {
   .spg-root .spg-template-footer .btn-main,
   .spg-root .spg-template-footer button[type="submit"],

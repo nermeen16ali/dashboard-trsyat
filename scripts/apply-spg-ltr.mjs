@@ -14,7 +14,7 @@ const HREF_SKIP = new Set([
   "support.html",
   "smart-proposal-generator.html",
   "smart-proposal-template.html",
-  "smart-proposal-export.html",
+  "smart-proposal-editor.html",
 ]);
 
 function ltrifyHrefs(content) {
@@ -28,7 +28,7 @@ function ltrifyHrefs(content) {
 function fixLangSwitch(content, arabicPage) {
   return content
     .replace(
-      /href="(?:support-ltr|smart-proposal-(?:generator|template|export)(?:-ltr)?)\.html" class="nav-link"(?=[\s\S]*?<span>(?:English|العربية)<\/span>)/,
+      /href="(?:support-ltr|smart-proposal-(?:generator|template|editor)(?:-ltr)?)\.html" class="nav-link"(?=[\s\S]*?<span>(?:English|العربية)<\/span>)/,
       `href="${arabicPage}" class="nav-link"`
     )
     .replace(/<span>English<\/span>/, "<span>العربية</span>");
@@ -41,9 +41,8 @@ const REPLACEMENTS = [
   ["مولد العروض الذكي | ترشيحات", "Smart Proposal Generator | Trsyat"],
   ["title>مولد العروض الذكي", "title>Smart Proposal Generator"],
   ["href=\"smart-proposal-template.html\"", "href=\"smart-proposal-template-ltr.html\""],
-  ["href=\"smart-proposal-export.html\"", "href=\"smart-proposal-export-ltr.html\""],
   ["href=\"smart-proposal-generator.html#spg-content-review\"", "href=\"smart-proposal-generator-ltr.html#spg-content-review\""],
-  ["action=\"smart-proposal-export.html\"", "action=\"smart-proposal-export-ltr.html\""],
+  ["action=\"smart-proposal-editor.html\"", "action=\"smart-proposal-editor.html\""],
   ["aria-label=\"مراحل إعداد العرض\"", "aria-label=\"Proposal preparation steps\""],
   ["مراجعة المحتوى", "Content review"],
   ["اختيار القالب", "Choose template"],
@@ -345,4 +344,3 @@ function processFile(filename, arabicPage) {
 
 processFile("smart-proposal-generator-ltr.html", "smart-proposal-generator.html");
 processFile("smart-proposal-template-ltr.html", "smart-proposal-template.html");
-processFile("smart-proposal-export-ltr.html", "smart-proposal-export.html");

@@ -76,7 +76,6 @@ NAV.sort((a, b) => b[0].length - a[0].length);
 for (const name of [
   "smart-proposal-generator-ltr.html",
   "smart-proposal-template-ltr.html",
-  "smart-proposal-export-ltr.html",
 ]) {
   const filePath = path.join(root, name);
   let content = fs.readFileSync(filePath, "utf8");
