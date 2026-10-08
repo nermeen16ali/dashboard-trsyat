@@ -652,14 +652,6 @@
                   <img src="images/document-download.svg" alt="" width="16" height="16" aria-hidden="true">
                   إضافة صورة
                 </button>
-                <span class="spg-proposal-editor-toolbar-divider" aria-hidden="true"></span>
-                <label class="fz-12 text-gray mb-0 d-none d-sm-inline" for="spgEditorZoomSelect">التكبير</label>
-                <select class="form-select form-control fz-12 h-36 spg-proposal-editor-zoom-select" id="spgEditorZoomSelect"
-                  aria-label="التكبير">
-                  <option value="100" selected>100%</option>
-                  <option value="75">75%</option>
-                  <option value="125">125%</option>
-                </select>
               </div>
               <button type="button"
                 class="btn-main btn-primary h-44 fz-14 d-inline-flex align-items-center gap-2 ms-md-auto"
@@ -686,28 +678,29 @@
 
             <div class="spg-proposal-editor-main spg-pdf-viewer-workspace" id="spgProposalEditorMain">
               <div
-                class="spg-proposal-editor-main-chrome w-100 d-flex flex-wrap align-items-center justify-content-between gap-2">
-                <p class="fz-14 text-color my-3 px-1 spg-proposal-editor-helper">
+                class="spg-proposal-editor-main-chrome w-100 d-flex align-items-center gap-2 my-1 px-1 spg-proposal-editor-helper-row">
+                <p class="spg-proposal-editor-helper fz-14 text-color mb-0 flex-grow-1 min-w-0">
                   اضغط على عنصر لتحديده، وانقر مرتين لتحرير النص. استخدم مقابض الجهات والزوايا لتغيير الحجم، ويمكن نقل
                   العناصر بين الصفحات من خصائص العنصر.
                 </p>
-                <div class="spg-pdf-extra-tools d-inline-flex" role="group" aria-label="أدوات إضافية">
-                  <button type="button" class="icon-container gray-outline-btn spg-pdf-fullscreen"
-                    data-spg-fullscreen-target="#spgProposalEditorMain" data-tooltip="ملء الشاشة"
-                    aria-label="ملء الشاشة">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none"
-                      aria-hidden="true">
-                      <path d="M2.5 7.5V5.83333C2.5 3.99238 4.02576 2.5 5.83333 2.5H7.5" stroke="#6BAFB8"
-                        stroke-width="1.5" stroke-linecap="round"></path>
-                      <path opacity="0.4" d="M12.5 2.5H14.1667C15.9742 2.5 17.5 3.99238 17.5 5.83333V7.5"
-                        stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round"></path>
-                      <path d="M17.5 12.5V14.1667C17.5 15.9742 15.9742 17.5 14.1667 17.5H12.5" stroke="#6BAFB8"
-                        stroke-width="1.5" stroke-linecap="round"></path>
-                      <path opacity="0.4" d="M7.5 17.5H5.83333C4.02576 17.5 2.5 15.9742 2.5 14.1667V12.5"
-                        stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round"></path>
-                    </svg>
-                  </button>
-                </div>
+                <div class="spg-pdf-extra-tools d-inline-flex align-items-center flex-shrink-0" role="group"
+                aria-label="أدوات المعاينة">
+                <button type="button" class="icon-container gray-outline-btn spg-pdf-fullscreen"
+                  data-spg-fullscreen-target="#spgProposalEditorMain" data-tooltip="ملء الشاشة"
+                  aria-label="ملء الشاشة">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none"
+                    aria-hidden="true">
+                    <path d="M2.5 7.5V5.83333C2.5 3.99238 4.02576 2.5 5.83333 2.5H7.5" stroke="#6BAFB8"
+                      stroke-width="1.5" stroke-linecap="round"></path>
+                    <path opacity="0.4" d="M12.5 2.5H14.1667C15.9742 2.5 17.5 3.99238 17.5 5.83333V7.5"
+                      stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round"></path>
+                    <path d="M17.5 12.5V14.1667C17.5 15.9742 15.9742 17.5 14.1667 17.5H12.5" stroke="#6BAFB8"
+                      stroke-width="1.5" stroke-linecap="round"></path>
+                    <path opacity="0.4" d="M7.5 17.5H5.83333C4.02576 17.5 2.5 15.9742 2.5 14.1667V12.5"
+                      stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round"></path>
+                  </svg>
+                </button>
+              </div>
               </div>
               <aside class="spg-proposal-editor-inspector tender-card bg-white p-3" aria-label="خصائص العنصر">
                 <header class="spg-proposal-editor-inspector-head mb-3 pb-3 brd-btm">
@@ -854,15 +847,22 @@
                     <img src="images/edit-pen.svg" alt="" width="16" height="16" aria-hidden="true">
                     <h6 class="black-text fw-medium mb-0 fz-14">مساحة التصميم</h6>
                   </div>
-                  <p class="text-gray fz-12">احفظ تعديلاتك لتظهر في النسخة النهائية من PDF.</p>
+                  <p class="text-gray fz-12 mb-0">احفظ تعديلاتك لتظهر في النسخة النهائية من PDF.</p>
                 </div>
 
-                <div class="spg-proposal-editor-viewport" tabindex="0" role="region" aria-label="مساحة مستند العرض">
-                  <div class="spg-proposal-editor-canvas">
-                    <div class="spg-proposal-editor-document-frame">
-                      <iframe class="spg-proposal-editor-pdf-object"
-                        src="assets/spg/templates/professional-proposal.pdf"
-                        title="professional-proposal.pdf"></iframe>
+                <div class="spg-proposal-editor-viewport" id="spgEditorPdfViewerPage" role="region"
+                  aria-label="مساحة مستند العرض">
+                  <div class="spg-pdf-viewer spg-pdf-viewer--standalone" id="spgProfessionalPdfViewer"
+                    data-pdf-src="assets/spg/templates/professional-proposal.pdf" data-spg-pdf-standalone="1" dir="rtl">
+                    <div class="spg-pdf-viewer-body">
+                      <div class="spg-pdf-stage flex-grow-1 min-w-0">
+                        <div class="spg-pdf-loading fz-12 text-gray text-center py-4 d-none" id="spgProfessionalPdfLoading"
+                          role="status">جاري تحميل المعاينة…</div>
+                        <div class="spg-pdf-error red-colored fz-12 text-center py-3 d-none" id="spgProfessionalPdfError"
+                          role="alert"></div>
+                        <div class="spg-pdf-pages-scroll spg-document-preview-viewport" id="spgProfessionalPdfPagesScroll"
+                          tabindex="0" role="region" aria-label="معاينة PDF للعرض"></div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -876,6 +876,13 @@
   </div>
 
   <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    if (window.pdfjsLib) {
+      pdfjsLib.GlobalWorkerOptions.workerSrc =
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+    }
+  </script>
   <script src="js/spg-template-pdf-viewer.js" defer></script>
   <script src="js/main.js" defer></script>
   

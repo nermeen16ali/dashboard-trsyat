@@ -716,7 +716,9 @@
     if (!root) return;
 
     standaloneMode = isStandaloneViewer();
-    workspaceEl = document.getElementById("spgTemplatePreviewPage");
+    workspaceEl =
+      document.getElementById("spgTemplatePreviewPage") ||
+      document.getElementById("spgEditorPdfViewerPage");
 
     bindToolbar();
 
