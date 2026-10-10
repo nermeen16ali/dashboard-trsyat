@@ -24,6 +24,15 @@
   var standaloneMode = false;
   var workspaceEl = null;
 
+  function isEnLocale() {
+    var lang = (document.documentElement.lang || "").toLowerCase();
+    return lang === "en" || lang.indexOf("en-") === 0;
+  }
+
+  function msg(arText, enText) {
+    return isEnLocale() ? enText : arText;
+  }
+
   function $(sel, root) {
     return (root || document).querySelector(sel);
   }
@@ -119,29 +128,43 @@
 
   function formatLoadError(err, resolvedUrl) {
     if (err && err.message === "PDFJS_LOAD") {
-      return "تعذر تحميل مكتبة المعاينة (PDF.js). تحقق من الاتصال بالإنترنت أو جرّب تحديث الصفحة.";
+      return msg(
+        "تعذر تحميل مكتبة المعاينة (PDF.js). تحقق من الاتصال بالإنترنت أو جرّب تحديث الصفحة.",
+        "Could not load the preview library (PDF.js). Check your internet connection or refresh the page."
+      );
     }
     if (err && err.message === "EMPTY_PDF") {
-      return (
-        "ملف PDF فارغ أو تالف. استبدل الملف بقالب حقيقي: assets/spg/templates/professional-proposal.pdf"
+      return msg(
+        "ملف PDF فارغ أو تالف. استبدل الملف بقالب حقيقي: assets/spg/templates/professional-proposal.pdf",
+        "The PDF file is empty or corrupt. Replace it with a valid template: assets/spg/templates/professional-proposal.pdf"
       );
     }
     if (err && err.message === "INVALID_PDF") {
-      return "الملف الموجود ليس PDF صالحًا. تحقق من: " + resolvedUrl;
+      return msg(
+        "الملف الموجود ليس PDF صالحًا. تحقق من: " + resolvedUrl,
+        "The file is not a valid PDF. Check: " + resolvedUrl
+      );
     }
     if (err && err.message === "HTTP_404") {
-      return (
+      return msg(
         "لم يُعثر على الملف (404). افتح الصفحة عبر خادم محلي (مثل Live Server) من جذر المشروع. المسار: " +
-        resolvedUrl
+          resolvedUrl,
+        "File not found (404). Open the project via a local server (e.g. Live Server) from the project root. Path: " +
+          resolvedUrl
       );
     }
     if (window.location.protocol === "file:") {
-      return (
+      return msg(
         "تعذر تحميل PDF عند فتح الملف مباشرة (file://). شغّل المشروع عبر خادم محلي ثم افتح smart-proposal-template.html — " +
-        resolvedUrl
+          resolvedUrl,
+        "Could not load the PDF when opening the file directly (file://). Run the project on a local server, then open smart-proposal-template-ltr.html — " +
+          resolvedUrl
       );
     }
-    return "تعذر تحميل ملف PDF. تحقق من المسار: " + resolvedUrl;
+    return msg(
+      "تعذر تحميل ملف PDF. تحقق من المسار: " + resolvedUrl,
+      "Could not load the PDF file. Check the path: " + resolvedUrl
+    );
   }
 
   function getViewerRoot() {
@@ -257,7 +280,10 @@
             btn.className = "spg-pdf-thumb-btn";
             btn.dataset.page = String(pageNum);
             btn.setAttribute("role", "listitem");
-            btn.setAttribute("aria-label", "الصفحة " + pageNum);
+            btn.setAttribute(
+              "aria-label",
+              msg("الصفحة " + pageNum, "Page " + pageNum)
+            );
 
             var canvas = document.createElement("canvas");
             canvas.className = "spg-pdf-thumb-canvas";
@@ -298,7 +324,10 @@
 
       var canvas = document.createElement("canvas");
       canvas.className = "spg-pdf-page-canvas";
-      canvas.setAttribute("aria-label", "صفحة " + i + " من العرض");
+      canvas.setAttribute(
+        "aria-label",
+        msg("صفحة " + i + " من العرض", "Proposal page " + i)
+      );
       wrap.appendChild(canvas);
       scrollEl.appendChild(wrap);
       pageViews.push(wrap);
@@ -361,7 +390,7 @@
     for (var i = 1; i <= pageCount; i++) {
       var opt = document.createElement("option");
       opt.value = String(i);
-      opt.textContent = "صفحة " + i;
+      opt.textContent = msg("صفحة " + i, "Page " + i);
       select.appendChild(opt);
     }
     select.value = String(currentPage);
@@ -397,7 +426,7 @@
       return Promise.resolve();
     }
 
-    setSearchStatus("جاري البحث…", true);
+    setSearchStatus(msg("جاري البحث…", "Searching…"), true);
 
     var chain = Promise.resolve();
     for (var p = 1; p <= pageCount; p++) {
@@ -423,7 +452,10 @@
     return chain
       .then(function () {
         setSearchStatus(
-          "لم يُعثر على نتائج لـ «" + query.trim() + "»",
+          msg(
+            "لم يُعثر على نتائج لـ «" + query.trim() + "»",
+            "No results found for \"" + query.trim() + "\""
+          ),
           true
         );
       })
@@ -431,7 +463,10 @@
         if (err && err.foundPage) {
           scrollToPage(err.foundPage, "smooth");
           setSearchStatus(
-            "تم العثور على نتيجة في الصفحة " + err.foundPage,
+            msg(
+              "تم العثور على نتيجة في الصفحة " + err.foundPage,
+              "Match found on page " + err.foundPage
+            ),
             true
           );
         }
@@ -643,7 +678,12 @@
 
     var pdfSrc = root.getAttribute("data-pdf-src") || "";
     if (!pdfSrc) {
-      showError("تعذر العثور على ملف المعاينة.");
+      showError(
+        msg(
+          "تعذر العثور على ملف المعاينة.",
+          "Preview file could not be found."
+        )
+      );
       return;
     }
     pdfUrl = resolvePdfUrl(pdfSrc);

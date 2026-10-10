@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="images/trsyat-logo.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Template Preview | Smart Proposal Generator</title>
+
+  <!-- Bootstrap 5 LTR CSS -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- DataTables CSS -->
+  <link href="assets/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+  <link href="assets/css/responsive.bootstrap5.min.css" rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+  <div class="container-fluid main-content">
+    <!-- Page Header -->
+    <div class="page-header d-flex align-items-center gap-3">
+      <div class="page-breadcrumb">
+        <h2 class="active">Proposal template preview</h2>
+      </div>
+      <button type="button" class="outline-primary-gray bordered-40 fz-10 d-flex align-items-center gap-10">
+        <span>How-to video</span>
+        <img src="images/play-cricle.svg" alt="How-to video">
+      </button>
+    </div>
+    <div class="dash-widget sm-0 p-lg-4 spg-root spg-production-root spg-template-preview-page-root">
+      <div class="row g-4">
+        <div class="col-12">
+          <div class="tender-card p-3 p-lg-4 d-flex flex-column spg-production-panel spg-template-preview-panel">
+            <div
+              class="tender-card p-3 mb-3 mb-lg-4 bg-white d-flex flex-wrap align-items-center justify-content-between gap-3 spg-production-context">
+              <div>
+                <p class="fz-12 text-gray mb-1">Current project</p>
+                <h6 class="black-text mb-0 fw-medium">Office furniture supply</h6>
+              </div>
+              <span class="badge-opacity-prim fz-12 py-1 px-2 d-inline-flex align-items-center">Proposal production</span>
+            </div>
+
+            <header
+              class="spg-template-preview-page-header tender-card bg-white p-3 p-lg-4 mb-3 mb-lg-4 d-flex flex-column flex-lg-row align-items-lg-center justify-content-lg-between gap-3">
+              <div class="min-w-0">
+                <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                  <h3 class="black-text fw-medium mb-0">Proposal template preview</h3>
+                  <span class="sm-ele fz-10 bordered-8 badge-opacity-prim py-1 px-2">Professional</span>
+                  <span class="sm-ele fz-10 bordered-8 badge-opacity-prim py-1 px-2">Most popular</span>
+                </div>
+                <p class="fz-12 text-gray mb-0">Review the full proposal layout before choosing a template and customizing it.</p>
+              </div>
+              <div class="d-flex flex-wrap align-items-stretch gap-2 flex-shrink-0">
+                <a href="smart-proposal-template-ltr.html"
+                  class="btn-main outline-primary-gray fz-12 h-44 d-inline-flex align-items-center justify-content-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                    aria-hidden="true" class="flex-shrink-0">
+                    <path d="M7.975 15.0586L2.91667 10.0002L7.975 4.94189" stroke="#6BAFB8" stroke-width="1.5"
+                      stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path opacity="0.4" d="M18.0833 10H4.05833" stroke="#6BAFB8" stroke-width="1.5"
+                      stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                  Back to templates
+                </a>
+                <a href="smart-proposal-template-ltr.html#spgTemplateProfessional"
+                  class="btn-main btn-primary h-44 fz-14 d-inline-flex align-items-center justify-content-center gap-2"
+                  id="spgTemplatePreviewSelectTemplate">
+                  Select this template
+                </a>
+              </div>
+            </header>
+
+            <ul class="spg-template-preview-features-row list-unstyled mb-3 mb-lg-4" role="list">
+              <li class="spg-template-preview-feature-item" role="listitem">
+                <img src="images/checked-green.svg" class="w-18 flex-shrink-0" alt="" aria-hidden="true">
+                <span class="fz-12 black-text">Professional design that is easy to customize</span>
+              </li>
+              <li class="spg-template-preview-feature-item" role="listitem">
+                <img src="images/checked-green.svg" class="w-18 flex-shrink-0" alt="" aria-hidden="true">
+                <span class="fz-12 black-text">Full right-to-left Arabic language support</span>
+              </li>
+              <li class="spg-template-preview-feature-item" role="listitem">
+                <img src="images/checked-green.svg" class="w-18 flex-shrink-0" alt="" aria-hidden="true">
+                <span class="fz-12 black-text">High-quality PDF export</span>
+              </li>
+              <li class="spg-template-preview-feature-item" role="listitem">
+                <img src="images/checked-green.svg" class="w-18 flex-shrink-0" alt="" aria-hidden="true">
+                <span class="fz-12 black-text">Responsive and consistent across devices and screen sizes</span>
+              </li>
+            </ul>
+
+            <div class="spg-pdf-viewer-workspace tender-card bg-white p-2 p-md-3" id="spgTemplatePreviewPage">
+              <div class="spg-pdf-viewer spg-pdf-viewer--standalone" id="spgProfessionalPdfViewer"
+                data-pdf-src="assets/spg/templates/professional-proposal.pdf" data-spg-pdf-standalone="1" dir="rtl">
+                <div
+                  class="spg-pdf-viewer-toolbar spg-document-preview-toolbar d-flex flex-wrap align-items-center gap-2 gap-md-3">
+                  <div class="d-flex flex-wrap align-items-center gap-2 spg-pdf-nav-group" role="group"
+                    aria-label="Page navigation">
+                    <button type="button"
+                      class="icon-container gray-outline-btn spg-pdf-prev spg-document-preview-zoom-btn"
+                      title="Previous page" aria-label="Previous page">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none"
+                        aria-hidden="true">
+                        <path d="M7.975 15.0586L2.91667 10.0002L7.975 4.94189" stroke="#6BAFB8" stroke-width="1.5"
+                          stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path opacity="0.4" d="M18.0833 10H4.05833" stroke="#6BAFB8" stroke-width="1.5"
+                          stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </button>
+                    <span class="fz-12 black-text fw-medium spg-pdf-page-indicator ff-onest"
+                      aria-live="polite">— / —</span>
+                    <button type="button"
+                      class="icon-container gray-outline-btn spg-pdf-next spg-document-preview-zoom-btn"
+                      title="Next page" aria-label="Next page">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none"
+                        aria-hidden="true">
+                        <path d="M12.025 15.0586L17.0833 10.0002L12.025 4.94189" stroke="#6BAFB8" stroke-width="1.5"
+                          stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path opacity="0.4" d="M2.91667 10H16.9417" stroke="#6BAFB8" stroke-width="1.5"
+                          stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </button>
+                    <label class="visually-hidden" for="spgPdfMobilePageSelect">Go to page</label>
+                    <select class="form-select form-control fz-12 spg-pdf-mobile-page-select d-md-none" dir="ltr"
+                      id="spgPdfMobilePageSelect" aria-label="Go to page"></select>
+                  </div>
+                  <div class="d-flex flex-wrap align-items-center gap-2 spg-document-preview-zoom-group spg-pdf-zoom-group"
+                    role="group" aria-label="Zoom controls">
+                    <button type="button"
+                      class="icon-container gray-outline-btn spg-pdf-zoom-out spg-document-preview-zoom-btn"
+                      title="Zoom out" aria-label="Zoom out">
+                      <span class="fz-16 black-text fw-medium" aria-hidden="true">−</span>
+                    </button>
+                    <span class="fz-12 text-gray spg-pdf-zoom-value spg-document-preview-zoom-value ff-onest">100%</span>
+                    <button type="button"
+                      class="icon-container gray-outline-btn spg-pdf-zoom-in spg-document-preview-zoom-btn"
+                      title="Zoom in" aria-label="Zoom in">
+                      <span class="fz-16 black-text fw-medium" aria-hidden="true">+</span>
+                    </button>
+                    <button type="button" class="btn-main outline-primary-gray fz-12 h-36 spg-pdf-fit-width"
+                      title="Fit to width">Fit to width</button>
+                    <button type="button" class="btn-main outline-primary-gray fz-12 h-36 spg-pdf-fit-page"
+                      title="Fit to page">Fit to page</button>
+                  </div>
+                  <div class="d-flex flex-wrap align-items-center gap-2 spg-pdf-extra-tools ms-md-auto" role="group"
+                    aria-label="Additional tools">
+                    <div class="spg-pdf-search-wrap d-flex align-items-center gap-1">
+                      <label class="visually-hidden" for="spgPdfSearchInput">Search document</label>
+                      <span class="spg-pdf-tooltip-host d-inline-flex" data-tooltip="Search document">
+                        <input type="search" class="form-control fz-12 spg-pdf-search-input d-none" id="spgPdfSearchInput"
+                          placeholder="Search document…" autocomplete="off" dir="ltr" aria-label="Search document" />
+                      </span>
+                      <button type="button" class="icon-container gray-outline-btn spg-pdf-search-toggle"
+                        data-tooltip="Search document" aria-label="Search document" aria-expanded="false"
+                        aria-controls="spgPdfSearchInput">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none"
+                          aria-hidden="true">
+                          <path
+                            d="M9.58268 17.4993C13.9549 17.4993 17.4993 13.9549 17.4993 9.58268C17.4993 5.21043 13.9549 1.66602 9.58268 1.66602C5.21043 1.66602 1.66602 5.21043 1.66602 9.58268C1.66602 13.9549 5.21043 17.4993 9.58268 17.4993Z"
+                            stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          <path opacity="0.4" d="M18.3333 18.3327L16.6667 16.666" stroke="#6BAFB8" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </button>
+                      <button type="button" class="btn-main outline-primary-gray fz-12 h-36 spg-pdf-search-run d-none"
+                        data-tooltip="Run search" aria-label="Run search">Search</button>
+                    </div>
+                    <button type="button" class="icon-container gray-outline-btn spg-pdf-rotate-ccw"
+                      data-tooltip="Rotate counterclockwise" aria-label="Rotate counterclockwise">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        aria-hidden="true">
+                        <path d="M9 14L5 10L9 6" stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round"
+                          stroke-linejoin="round" />
+                        <path opacity="0.4"
+                          d="M5 10H14C16.7614 10 19 12.2386 19 15V15C19 17.7614 16.7614 20 14 20H12"
+                          stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round" />
+                      </svg>
+                    </button>
+                    <button type="button" class="icon-container gray-outline-btn spg-pdf-rotate-cw"
+                      data-tooltip="Rotate clockwise" aria-label="Rotate clockwise">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        aria-hidden="true">
+                        <path d="M15 14L19 10L15 6" stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round"
+                          stroke-linejoin="round" />
+                        <path opacity="0.4"
+                          d="M19 10H10C7.23858 10 5 12.2386 5 15V15C5 17.7614 7.23858 20 10 20H12"
+                          stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round" />
+                      </svg>
+                    </button>
+                    <button type="button" class="icon-container gray-outline-btn spg-pdf-fullscreen"
+                      data-tooltip="Full screen" aria-label="Full screen">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none"
+                        aria-hidden="true">
+                        <path d="M2.5 7.5V5.83333C2.5 3.99238 4.02576 2.5 5.83333 2.5H7.5" stroke="#6BAFB8"
+                          stroke-width="1.5" stroke-linecap="round"></path>
+                        <path opacity="0.4" d="M12.5 2.5H14.1667C15.9742 2.5 17.5 3.99238 17.5 5.83333V7.5"
+                          stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round"></path>
+                        <path d="M17.5 12.5V14.1667C17.5 15.9742 15.9742 17.5 14.1667 17.5H12.5" stroke="#6BAFB8"
+                          stroke-width="1.5" stroke-linecap="round"></path>
+                        <path opacity="0.4" d="M7.5 17.5H5.83333C4.02576 17.5 2.5 15.9742 2.5 14.1667V12.5"
+                          stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round"></path>
+                      </svg>
+                    </button>
+                    <!-- <a class="icon-container gray-outline-btn spg-pdf-download" data-tooltip="Download PDF"
+                      aria-label="Download PDF" download href="assets/spg/templates/professional-proposal.pdf">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none"
+                        aria-hidden="true">
+                        <path d="M10 12.5V2.5" stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round" />
+                        <path opacity="0.4"
+                          d="M13.3333 6.66667L10 10L6.66667 6.66667M17.5 12.5V15.8333C17.5 16.7538 16.7462 17.5 15.8257 17.5H4.17422C3.25378 17.5 2.5 16.7538 2.5 15.8333V12.5"
+                          stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </a>
+                    <button type="button" class="icon-container gray-outline-btn spg-pdf-print" data-tooltip="Print"
+                      aria-label="Print">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none"
+                        aria-hidden="true">
+                        <path
+                          d="M5 7.5H4.16667C2.92893 7.5 2 8.42893 2 9.66667V13.3333C2 14.5711 2.92893 15.5 4.16667 15.5H5"
+                          stroke="#6BAFB8" stroke-width="1.5" />
+                        <path opacity="0.4" d="M5 15.5H15V17.5H5V15.5Z" stroke="#6BAFB8" stroke-width="1.5" />
+                        <path d="M15 7.5H15.8333C17.0711 7.5 18 8.42893 18 9.66667V13.3333C18 14.5711 17.0711 15.5 15.8333 15.5H15"
+                          stroke="#6BAFB8" stroke-width="1.5" />
+                        <path opacity="0.4" d="M5 2.5H15V7.5H5V2.5Z" stroke="#6BAFB8" stroke-width="1.5" />
+                      </svg>
+                    </button> -->
+                  </div>
+                </div>
+                <p class="spg-pdf-search-status fz-11 text-gray mb-0 px-1 d-none" id="spgPdfSearchStatus" role="status"></p>
+                <div class="spg-pdf-viewer-body d-flex gap-2 gap-md-3">
+                  <aside class="spg-pdf-thumbnails-panel tender-card bg-white flex-shrink-0"
+                    aria-label="Page thumbnails">
+                    <p class="fz-10 text-gray mb-2 px-1">Pages</p>
+                    <div class="spg-pdf-thumbnails-list" id="spgProfessionalPdfThumbnails" role="list"></div>
+                  </aside>
+                  <div class="spg-pdf-stage flex-grow-1 min-w-0">
+                    <div class="spg-pdf-loading fz-12 text-gray text-center py-4 d-none" id="spgProfessionalPdfLoading"
+                      role="status">Loading preview…</div>
+                    <div class="spg-pdf-error red-colored fz-12 text-center py-3 d-none" id="spgProfessionalPdfError"
+                      role="alert"></div>
+                    <div class="spg-pdf-pages-scroll spg-document-preview-viewport" id="spgProfessionalPdfPagesScroll"
+                      tabindex="0" role="region" aria-label="Proposal PDF preview"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    if (window.pdfjsLib) {
+      pdfjsLib.GlobalWorkerOptions.workerSrc =
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+    }
+  </script>
+  <script src="js/spg-template-pdf-viewer.js" defer></script>
+  <script src="js/main.js" defer></script>
+
+</body>
+
+</html>
