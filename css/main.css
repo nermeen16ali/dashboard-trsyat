@@ -8775,14 +8775,9 @@ html[dir="ltr"] .input-icon-group input {
   border-color: #6bafb878;
 }
 
-.tp-pricing-stat--remaining .tp-pricing-stat-label {
+.tp-pricing-stat--remaining .tp-pricing-stat-label, .tp-pricing-stat--remaining .tp-pricing-stat-value {
   color: var(--primary-color, #397d86);
 }
-
-.tp-pricing-stat--remaining .tp-pricing-stat-value {
-  color: var(--primary-secondary, #0c2030);
-}
-
 .tp-system-activity {
   text-align: start;
   background: #f4f6f8;
