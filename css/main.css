@@ -8724,3 +8724,608 @@ html[dir="ltr"] .input-icon-group input {
     max-height: none;
   }
 }
+
+/* Tender pricing — single-page workflow (hash / :target, no app JS) */
+.tp-flow-panel {
+  display: none;
+  scroll-margin-top: 1.5rem;
+}
+
+.tp-flow-panel:target {
+  display: block;
+}
+
+.tp-flow:not(:has(.tp-flow-panel:target)) #tp-welcome,
+.tp-flow:not(:has(.tp-flow-panel:target)) #tr-welcome {
+  display: block;
+}
+
+.tp-pricing-stat {
+  border: 1px solid transparent;
+}
+
+.tp-pricing-stat--complete {
+  background: #38f5900f;
+  border-color: #0042092e;
+}
+
+.tp-pricing-stat--complete .tp-pricing-stat-label {
+  color: #047635;
+}
+
+.tp-pricing-stat--complete .tp-pricing-stat-value {
+  color: #00a63e;
+}
+
+.tp-pricing-stat--processing {
+  background: #f2994a14;
+  border-color: #f2994a5c;
+}
+
+.tp-pricing-stat--processing .tp-pricing-stat-label {
+  color: #b45309;
+}
+
+.tp-pricing-stat--processing .tp-pricing-stat-value {
+  color: #f2994a;
+}
+
+.tp-pricing-stat--remaining {
+  background: #6bafb814;
+  border-color: #6bafb878;
+}
+
+.tp-pricing-stat--remaining .tp-pricing-stat-label {
+  color: var(--primary-color, #397d86);
+}
+
+.tp-pricing-stat--remaining .tp-pricing-stat-value {
+  color: var(--primary-secondary, #0c2030);
+}
+
+.tp-system-activity {
+  text-align: start;
+  background: #f4f6f8;
+  border: 1px solid rgba(217, 217, 217, 0.55);
+  border-radius: 12px;
+  padding: 14px 14px 10px;
+}
+
+.tp-system-activity-steps {
+  margin: 0;
+  padding: 0;
+}
+
+.tp-system-activity-step {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.tp-system-activity-step:last-child {
+  margin-bottom: 0;
+}
+
+.tp-system-activity-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 28px;
+}
+
+.tp-system-activity-node {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  color: #9ca3af;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  position: relative;
+}
+
+.tp-system-activity-step.is-running .tp-system-activity-node {
+  border-color: var(--primary-base-color, #397d86);
+  background: #fff;
+  color: transparent;
+}
+
+.tp-system-activity-node-spinner {
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  border: 2px solid rgba(107, 175, 184, 0.25);
+  border-top-color: var(--primary-base-color, #397d86);
+  animation: tp-system-activity-spin 0.85s linear infinite;
+}
+
+.tp-system-activity-step.is-running .tp-system-activity-node-spinner::after {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border-radius: 50%;
+  background: var(--primary-base-color, #397d86);
+}
+
+.tp-system-activity-connector {
+  flex: 1;
+  width: 2px;
+  min-height: 12px;
+  margin: 4px 0;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #d1d5db 0%, #e5e7eb 100%);
+}
+
+.tp-system-activity-step.is-running .tp-system-activity-connector {
+  background: linear-gradient(
+    180deg,
+    var(--primary-base-color, #397d86) 0%,
+    #d1d5db 100%
+  );
+}
+
+.tp-system-activity-step:last-child .tp-system-activity-connector {
+  display: none;
+}
+
+.tp-system-activity-card {
+  flex: 1;
+  min-width: 0;
+  background: #fff;
+  border: 1px solid rgba(217, 217, 217, 0.5);
+  border-radius: 10px;
+  padding: 12px 14px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.tp-system-activity-step.is-running .tp-system-activity-card {
+  border-color: rgba(107, 175, 184, 0.55);
+  box-shadow: 0 2px 8px rgba(57, 125, 134, 0.08);
+}
+
+.tp-system-activity-step.is-queued .tp-system-activity-card {
+  background: rgba(255, 255, 255, 0.72);
+  border-style: dashed;
+  border-color: #e5e7eb;
+  box-shadow: none;
+}
+
+.tp-system-activity-step.is-queued .tp-system-activity-card h6 {
+  color: #4b5563;
+}
+
+.tp-system-activity-tag {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.2;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: #eef0f2;
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+.tp-system-activity-tag--live {
+  background: #f2994a14;
+  color: #b45309;
+}
+
+.tp-system-activity-track {
+  height: 4px;
+  border-radius: 999px;
+  background: #eef0f2;
+  overflow: hidden;
+}
+
+.tp-system-activity-track-fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    var(--primary-base-color, #397d86),
+    #6bafb8
+  );
+  animation: tp-system-activity-track-pulse 2s ease-in-out infinite;
+}
+
+@keyframes tp-system-activity-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes tp-system-activity-track-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.72;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tp-system-activity-node-spinner,
+  .tp-system-activity-track-fill {
+    animation: none;
+  }
+}
+
+.summary-card.tp-summary-card--low {
+  background: #38f5900f;
+  border-color: #0042092e;
+}
+
+.summary-card.tp-summary-card--low .summary-title {
+  color: #047635;
+}
+
+.summary-card.tp-summary-card--low .tp-summary-value {
+  color: #00a63e;
+}
+
+.summary-card.tp-summary-card--mid {
+  background: rgba(107, 175, 184, 0.12);
+  border-color: var(--primary-base-color, #397d86);
+}
+
+.summary-card.tp-summary-card--mid .summary-title {
+  color: var(--primary-color, #397d86);
+}
+
+.summary-card.tp-summary-card--high {
+  background: #da1e1e0f;
+  border-color: #da1e1e2e;
+}
+
+.summary-card.tp-summary-card--high .summary-title {
+  color: #b42318;
+}
+
+.summary-card.tp-summary-card--high .tp-summary-value {
+  color: #da1e1e;
+}
+
+/* Smart pricing step — processing hero */
+.tp-smart-pricing-hero {
+  max-width: 160px;
+}
+
+.tp-smart-pricing-scene {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+}
+
+.tp-smart-pricing-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(57, 125, 134, 0.35);
+  animation: tp-smart-pricing-pulse 2.4s ease-out infinite;
+}
+
+.tp-smart-pricing-ring--delay {
+  animation-delay: 0.8s;
+}
+
+.tp-smart-pricing-ring--delay2 {
+  animation-delay: 1.6s;
+}
+
+.tp-smart-pricing-sweep {
+  position: absolute;
+  inset: 12%;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg,
+      transparent 0deg,
+      transparent 280deg,
+      rgba(107, 175, 184, 0.45) 310deg,
+      rgba(57, 125, 134, 0.15) 360deg);
+  animation: tp-smart-pricing-sweep 2.8s linear infinite;
+  mask: radial-gradient(circle, transparent 42%, #000 43%);
+  -webkit-mask: radial-gradient(circle, transparent 42%, #000 43%);
+}
+
+.tp-smart-pricing-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 32px;
+  height: 32px;
+  margin: -16px 0 0 -16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color, #397d86);
+  background: linear-gradient(145deg, #fff 0%, rgba(107, 175, 184, 0.22) 100%);
+  box-shadow: 0 8px 24px rgba(57, 125, 134, 0.2), inset 0 0 0 1px rgba(107, 175, 184, 0.35);
+  animation: tp-smart-pricing-core-glow 2s ease-in-out infinite;
+}
+
+.tp-smart-pricing-core-icon {
+  display: block;
+  flex-shrink: 0;
+}
+
+.tp-smart-pricing-core-icon circle:nth-of-type(3) {
+  animation: tp-smart-pricing-node-pulse 1.8s ease-in-out infinite;
+}
+
+.tp-smart-pricing-core-icon path:nth-last-of-type(1),
+.tp-smart-pricing-core-icon path:nth-last-of-type(2) {
+  transform-origin: center;
+  animation: tp-smart-pricing-spark-twinkle 2.2s ease-in-out infinite;
+}
+
+.tp-smart-pricing-core-icon path:nth-last-of-type(1) {
+  animation-delay: 0.35s;
+}
+
+@keyframes tp-smart-pricing-node-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.45;
+  }
+}
+
+@keyframes tp-smart-pricing-spark-twinkle {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.92);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.tp-smart-pricing-orbit {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  background: var(--primary-base-color, #397d86);
+  box-shadow: 0 0 12px rgba(57, 125, 134, 0.55);
+  offset-anchor: center;
+  offset-rotate: 0deg;
+  offset-distance: 0%;
+}
+
+.tp-smart-pricing-orbit--1 {
+  width: 5px;
+  height: 5px;
+  offset-path: circle(28px at 50% 50%);
+  animation: tp-smart-pricing-orbit-path 4s linear infinite;
+}
+
+.tp-smart-pricing-orbit--2 {
+  width: 4px;
+  height: 4px;
+  opacity: 0.75;
+  offset-path: circle(22px at 50% 50%);
+  animation: tp-smart-pricing-orbit-path 5.5s linear infinite;
+  animation-delay: -1.2s;
+}
+
+.tp-smart-pricing-orbit--3 {
+  width: 3px;
+  height: 3px;
+  background: #6bafb8;
+  offset-path: circle(16px at 50% 50%);
+  animation: tp-smart-pricing-orbit-path 6.5s linear infinite;
+  animation-delay: -2.4s;
+}
+
+.tp-smart-pricing-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-wrap: nowrap;
+}
+
+.tp-smart-pricing-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary-base-color, #397d86);
+  animation: tp-smart-pricing-blink 1.2s ease-in-out infinite;
+}
+
+.tp-smart-pricing-ellipsis span {
+  animation: tp-smart-pricing-ellipsis 1.4s ease-in-out infinite;
+  opacity: 0.2;
+}
+
+.tp-smart-pricing-ellipsis span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.tp-smart-pricing-ellipsis span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.tp-smart-pricing-progress {
+  overflow: visible;
+  background: rgba(12, 32, 48, 0.08);
+}
+
+.tp-smart-pricing-progress-bar {
+  position: relative;
+  overflow: hidden;
+}
+
+.tp-smart-pricing-progress-bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.4) 45%,
+      transparent 90%);
+  transform: translateX(-100%);
+  animation: tp-smart-pricing-shimmer 1.8s ease-in-out infinite;
+}
+
+.tp-smart-pricing-pct {
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes tp-smart-pricing-pulse {
+  0% {
+    transform: scale(0.55);
+    opacity: 0.65;
+  }
+
+  100% {
+    transform: scale(1.05);
+    opacity: 0;
+  }
+}
+
+@keyframes tp-smart-pricing-sweep {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+[dir="rtl"] .tp-smart-pricing-sweep {
+  animation-direction: reverse;
+}
+
+[dir="rtl"] .tp-smart-pricing-orbit--1,
+[dir="rtl"] .tp-smart-pricing-orbit--2,
+[dir="rtl"] .tp-smart-pricing-orbit--3 {
+  animation-direction: reverse;
+}
+
+@keyframes tp-smart-pricing-core-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 8px 24px rgba(57, 125, 134, 0.18), inset 0 0 0 1px rgba(107, 175, 184, 0.35);
+    transform: scale(1);
+  }
+
+  50% {
+    box-shadow: 0 10px 32px rgba(57, 125, 134, 0.32), inset 0 0 0 1px rgba(107, 175, 184, 0.5);
+    transform: scale(1.04);
+  }
+}
+
+@keyframes tp-smart-pricing-orbit-path {
+  from {
+    offset-distance: 0%;
+  }
+
+  to {
+    offset-distance: 100%;
+  }
+}
+
+@keyframes tp-smart-pricing-blink {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.35;
+    transform: scale(0.85);
+  }
+}
+
+@keyframes tp-smart-pricing-ellipsis {
+
+  0%,
+  100% {
+    opacity: 0.15;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes tp-smart-pricing-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .tp-smart-pricing-ring,
+  .tp-smart-pricing-sweep,
+  .tp-smart-pricing-core,
+  .tp-smart-pricing-orbit,
+  .tp-smart-pricing-status-dot,
+  .tp-smart-pricing-ellipsis span,
+  .tp-smart-pricing-progress-bar::after,
+  .tp-smart-pricing-core-icon circle,
+  .tp-smart-pricing-core-icon path:nth-last-of-type(1),
+  .tp-smart-pricing-core-icon path:nth-last-of-type(2) {
+    animation: none !important;
+  }
+
+  .tp-smart-pricing-sweep {
+    opacity: 0.35;
+  }
+}
+
+/* Tender results flow — inline SVG icons (currentColor) */
+.tp-flow-panel .tr-flow-icon {
+  display: block;
+  flex-shrink: 0;
+}
+
+.tp-flow-panel .search-icon .tr-flow-icon--field {
+  color: var(--primary-secondary, #0c2030);
+}
+
+.tp-flow-panel .tr-flow-icon--primary {
+  color: var(--primary-base-color, #397d86);
+}
+
+.tp-flow-panel .tr-flow-icon--success {
+  color: #00d252;
+}
+
+.tp-flow-panel .tr-flow-icon--muted {
+  color: var(--text-gray-color, #9ca3af);
+  opacity: 0.85;
+}
+
+.tp-flow-panel .btn-main .tr-flow-icon {
+  color: currentColor;
+}
+
+.tp-flow-panel .colored .tr-flow-icon,
+.tp-flow-panel a.colored .tr-flow-icon {
+  color: currentColor;
+}

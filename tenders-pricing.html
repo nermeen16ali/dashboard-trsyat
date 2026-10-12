@@ -5,129 +5,14 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="images/trsyat-logo.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>تسعيرات المنافسة</title>
+  <title>تسعير المناقصات</title>
   <meta name="description"
-    content="We provide you with an intelligent environment for managing tenders—from search to submission. Our goal is to support your growth by simplifying access to opportunities and enhancing your competitive edge." />
-
-  <!-- Bootstrap 5 RTL CSS -->
+    content="خدمة تسعير المناقصات في ترسيات — ابحث عن تكلفة البنود وقارن الأسعار من مصادر متعددة." />
   <link href="assets/css/bootstrap.rtl.min.css" rel="stylesheet" />
-  <!-- DataTables CSS -->
-  <link href="assets/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
-  <link href="assets/css/responsive.bootstrap5.min.css" rel="stylesheet" />
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="css/main.css" />
 </head>
 
 <body>
-  <!-- Filter Modal -->
-  <div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content g-4 w-620">
-        <div class="modal-header brd-btm">
-          <h6 class="modal-title" id="filterModalLabel">التصفية</h6>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="tender-card p-12">
-            <h6 class="black-text mb-3">المعلومات الاساسية</h6>
-            <div class="tender-card p-12 rounded-12 bg-white d-flex flex-column gap-3">
-              <div class="search-wrapper position-relative">
-                <div class="icon-box">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <path
-                      d="M9.58335 17.5003C13.9556 17.5003 17.5 13.9559 17.5 9.58366C17.5 5.2114 13.9556 1.66699 9.58335 1.66699C5.2111 1.66699 1.66669 5.2114 1.66669 9.58366C1.66669 13.9559 5.2111 17.5003 9.58335 17.5003Z"
-                      stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                    <path opacity="0.4" d="M18.3334 18.3337L16.6667 16.667" stroke="white" stroke-width="1.5"
-                      stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                </div>
-                <input type="text" placeholder="ادخل الرقم المرجعي" class="form-control">
-              </div>
-              <div>
-                <label class="form-label">حالة المنافسة</label>
-                <select class="form-select form-control">
-                  <option selected disabled>اختر حاله المنافسه</option>
-                  <option value="1">متاحة</option>
-                  <option value="2">مقبولة</option>
-                  <option value="3">مرفوضة</option>
-                </select>
-              </div>
-              <div>
-                <label class="form-label">المناطق</label>
-                <select class="form-select form-control">
-                  <option selected disabled>اختر المنطقة</option>
-                  <option value="1">الرياض</option>
-                  <option value="2">جدة</option>
-                </select>
-              </div>
-              <div class="position-relative">
-                <label class="form-label">النشاط الأساسي</label>
-                <div class="custom-select-trigger form-select d-flex align-items-center justify-content-between"
-                  id="activityTrigger">
-                  <span class="customplaceholder">اختر النشاط الأساسي</span>
-                  <div class="selected-count d-none">0</div>
-                </div>
-
-                <div class="activity-dropdown-container mt-1 tender-card d-none" id="activityDropdown">
-                  <div class="search-wrapper position-relative">
-                    <div class="icon-box">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path
-                          d="M9.58335 17.5003C13.9556 17.5003 17.5 13.9559 17.5 9.58366C17.5 5.2114 13.9556 1.66699 9.58335 1.66699C5.2111 1.66699 1.66669 5.2114 1.66669 9.58366C1.66669 13.9559 5.2111 17.5003 9.58335 17.5003Z"
-                          stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                        <path opacity="0.4" d="M18.3334 18.3337L16.6667 16.667" stroke="white" stroke-width="1.5"
-                          stroke-linecap="round" stroke-linejoin="round"></path>
-                      </svg>
-                    </div>
-                    <input type="text" id="activitySearch" placeholder="ابحث عن النشاط الأساسي" class="form-control">
-                  </div>
-
-                  <div class="selected-activities-section">
-                    <div class="d-flex align-items-center justify-content-between">
-                      <span class="fz-14 base-text">تم اختيارها</span>
-                      <button type="button" class="btn-save-tags btn-base" id="saveActivitiesBtn">حفظ</button>
-                    </div>
-                    <div class="selected-tags d-flex flex-wrap gap-2" id="selectedActivitiesContainer">
-                      <!-- Selected tags will appear here -->
-                    </div>
-                  </div>
-
-                  <div class="available-activities-list" id="availableActivitiesList">
-                    <!-- Available items will be populated by JS -->
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer pt-0 gap-3 flex-nowrap">
-          <button type="button" class="btn-main h-41 btn-primary w-100">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path
-                d="M9.58366 17.4993C13.9559 17.4993 17.5003 13.9549 17.5003 9.58268C17.5003 5.21043 13.9559 1.66602 9.58366 1.66602C5.2114 1.66602 1.66699 5.21043 1.66699 9.58268C1.66699 13.9549 5.2114 17.4993 9.58366 17.4993Z"
-                stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              <path opacity="0.4" d="M18.3337 18.3327L16.667 16.666" stroke="white" stroke-width="1.5"
-                stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-            <span>البحث</span>
-          </button>
-          <button type="button" class="btn-main h-41 btn-primary-outline w-100">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path
-                d="M8.56641 16.875H14.1664C16.4664 16.875 18.3331 15.0083 18.3331 12.7083V7.29167C18.3331 4.99167 16.4664 3.125 14.1664 3.125H8.56641C7.39141 3.125 6.27474 3.61667 5.48307 4.49167L2.54141 7.725C1.36641 9.01667 1.36641 10.9833 2.54141 12.275L5.48307 15.5083C6.27474 16.3833 7.39141 16.875 8.56641 16.875Z"
-                stroke="#397D86" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              <g opacity="0.4">
-                <path d="M13.3335 12.0581L9.2168 7.94141" stroke="#397D86" stroke-width="1.5" stroke-linecap="round" />
-                <path d="M9.2168 12.0581L13.3335 7.94141" stroke="#397D86" stroke-width="1.5" stroke-linecap="round" />
-              </g>
-            </svg>
-            <span>حذف</span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!--Notification Modal-->
   <div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="centeredModalLabel8" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -201,7 +86,15 @@
 
             <div class="notification-item">
               <div class="notification-icon pending">
-                <img src="images/tabler-edit.svg" alt="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                  aria-hidden="true">
+                  <path
+                    d="M6.41602 6.41602H5.49935C5.01312 6.41602 4.5468 6.60917 4.20299 6.95299C3.85917 7.2968 3.66602 7.76312 3.66602 8.24935V16.4993C3.66602 16.9856 3.85917 17.4519 4.20299 17.7957C4.5468 18.1395 5.01312 18.3327 5.49935 18.3327H13.7493C14.2356 18.3327 14.7019 18.1395 15.0457 17.7957C15.3895 17.4519 15.5827 16.9856 15.5827 16.4993V15.5827"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M14.6667 4.58343L17.4167 7.33343M18.6863 6.03635C19.0473 5.67532 19.2501 5.18567 19.2501 4.6751C19.2501 4.16453 19.0473 3.67487 18.6863 3.31385C18.3252 2.95282 17.8356 2.75 17.325 2.75C16.8144 2.75 16.3248 2.95282 15.9638 3.31385L8.25 11.0001V13.7501H11L18.6863 6.03635Z"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
               </div>
               <div class="notification-content">
                 <div class="fz-14 fw-medium mb-10 black-text">مطلوب تعديل على الطلب</div>
@@ -295,36 +188,6 @@
       </div>
     </div>
   </div>
-  <!--Add File Modal-->
-  <div class="modal fade" id="addFile" tabindex="-1" aria-labelledby="centeredModalLabel8" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content w-620">
-        <div class="modal-header brd-btm">
-          <h6 class="modal-title" id="centeredModalLabel8">
-            إضافه ملف
-          </h6>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="tender-card p-12">
-            <label class="form-label">
-              اسم التسعير
-            </label>
-            <input type="text" class="form-control" placeholder="اسم التسعير" required="">
-
-          </div>
-        </div>
-        <div class="modal-footer pt-0 gap-3 flex-nowrap">
-          <a href="new-pricing.html" type="button" class="btn-main btn-primary w-100">
-            اضافة تسعيرة
-          </a>
-          <button type="button" class="btn-main btn-primary-outline w-100" data-bs-dismiss="modal" aria-label="Close">
-            تراجع
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Top Navigation Bar -->
   <nav class="navbar navbar-dark top-navbar navbar-expand-lg">
@@ -360,7 +223,7 @@
               </svg>
             </span>
           </div>
-          <a href="tenders-pricing-ltr.html" class="nav-link">
+          <a href="tenders-pricing.html" class="nav-link">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g opacity="0.4">
                 <path d="M14.1582 7.4668H5.84155H14.1582Z" fill="currentColor" />
@@ -424,7 +287,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="9" viewBox="0 0 16 9" fill="none">
                 <path d="M14.6 1.45825L9.16669 6.89159C8.52502 7.53325 7.47503 7.53325 6.83336 6.89159L1.40002 1.45825"
                   stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
-                  stroke-linejoin="round"></path>
+                  stroke-linejoin="round" />
               </svg>
             </button>
             <ul class="dropdown-menu main-menu" aria-labelledby="dropdownMenuButtonheader">
@@ -505,6 +368,7 @@
         </div>
       </div>
   </nav>
+
   <!-- Main Tab Navigation -->
   <div class="container-fluid main-content">
     <nav class="nav-tabs">
@@ -678,684 +542,1093 @@
         </div>
       </div>
     </nav>
-    <!-- Page Header -->
-    <div class="page-header d-flex flex-column flex-md-row gap-4 align-items-md-center justify-content-md-between">
-      <div class="d-flex align-items-center gap-3">
-        <div class="page-breadcrumb">
-          <h2 class="active">تسعيرات المنافسة</h2>
-        </div>
-        <button class="outline-primary-gray bordered-40 fz-10 d-flex align-items-center gap-10">
-          <span>فيديو شرح</span>
-          <img src="images/play-cricle.svg" alt="فيديو شرح">
-        </button>
+
+    <div class="page-header d-flex align-items-center gap-3">
+      <div class="page-breadcrumb">
+        <h2 class="active">تسعير المناقصات</h2>
       </div>
-      <div class="d-flex flex-column flex-md-row align-items-md-center gap-3">
-        <a href="morefifty-pricing-list.html" class="base-outlined-btn btn-main main-btn fw-medium fz-14 h-41">
-          قائمة تسعيرات أكثر من 50 منتج
-        </a>
-        <button class="btn-main btn-primary fw-medium fz-14 h-41" data-bs-toggle="modal" data-bs-target="#addFile">
-          إضافة تسعيرة جديد
-        </button>
-      </div>
+      <button type="button" class="outline-primary-gray bordered-40 fz-10 d-flex align-items-center gap-10">
+        <span>فيديو شرح</span>
+        <img src="images/play-cricle.svg" alt="فيديو شرح">
+      </button>
     </div>
 
-    <div class="dash-widget sm-0 p-lg-3">
-      <!-- Search and Filter Bar -->
-      <div class="filter-bar">
-        <div class="filter-btns d-flex align-items-center gap-3 ">
-          <button class="active">الكل</button>
-          <button>مقبولة</button>
-          <button>يتم المراجعه</button>
-          <button>تم ارجاعها بملاحظة</button>
-          <button>مسودة</button>
-          <button>مرفوضه</button>
-        </div>
-        <div class="d-flex justify-content-between align-items-center w-100 search-filter-bar gap-3">
-          <div class="search-box w-100 position-relative">
-            <input type="text" class="form-control table-search" id="tableSearch" placeholder="البحث في المسابقات"
-              name="Search" />
-            <span class="search-icon position-absolute">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path
-                  d="M9.58341 17.5001C13.9557 17.5001 17.5001 13.9557 17.5001 9.58341C17.5001 5.21116 13.9557 1.66675 9.58341 1.66675C5.21116 1.66675 1.66675 5.21116 1.66675 9.58341C1.66675 13.9557 5.21116 17.5001 9.58341 17.5001Z"
-                  fill="white" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                </path>
-                <path opacity="0.4" d="M18.3334 18.3334L16.6667 16.6667" stroke="#0C2030" stroke-width="1.5"
-                  stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
-            </span>
+    <div class="dash-widget sm-0 p-lg-4 spg-root">
+      <div class="row g-4">
+        <div class="col-12 col-lg-3 spg-projects-sidebar-col">
+          <div class="tender-card sm-0 p-lg-3 spg-projects-sidebar-panel d-flex flex-column h-100">
+            <div
+              class="sidebar-header d-flex flex-column flex-lg-row align-items-lg-center gap-4 justify-content-between mb-4">
+              <div
+                class="spg-projects-sidebar-title-row d-none d-md-flex align-items-center justify-content-between w-100 gap-2">
+                <h6 class="black-text mb-0">تسعيراتك السابقة</h6>
+              </div>
+              <button type="button" class="btn-base btn-main fw-medium fz-14 flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M8 3.33398V12.6673" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                  <path d="M3.3335 8H12.6668" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg>
+                <span>طلب تسعيرة</span>
+              </button>
+              <button type="button" class="btn-close spg-projects-drawer-close d-none flex-shrink-0"></button>
+            </div>
+            <div class="search-box w-100 position-relative mb-3">
+              <input type="search" class="form-control" placeholder="البحث في الطلبات" name="pricing-history-search"
+                autocomplete="off" />
+              <span class="search-icon position-absolute">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                  aria-hidden="true">
+                  <path
+                    d="M9.58341 17.5001C13.9557 17.5001 17.5001 13.9557 17.5001 9.58341C17.5001 5.21116 13.9557 1.66675 9.58341 1.66675C5.21116 1.66675 1.66675 5.21116 1.66675 9.58341C1.66675 13.9557 5.21116 17.5001 9.58341 17.5001Z"
+                    fill="white" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path opacity="0.4" d="M18.3334 18.3334L16.6667 16.6667" stroke="#0C2030" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+            </div>
+            <div class="support-chats flex-grow-1">
+              <div class="black-text fw-medium fz-12 mb-2">اليوم</div>
+              <div class="chat-list d-flex flex-column gap-2 mb-3"><a href="#"
+                  class="chat-item d-flex align-items-center gap-12 w-100 text-decoration-none">
+                  <div class="chat-item-icon">
+                    <img src="images/dollar-square.svg" alt="" width="20" height="20">
+                  </div>
+                  <div class="w-100 text-start min-w-0">
+                    <div class="d-flex align-items-center justify-content-between gap-2 mb-1">
+                      <span class="ticket-id text-truncate fz-14 black-text">توريد وتجهيز البنية التقنية</span>
+                      <span class="sm-ele fz-10 bordered-8 text-nowrap badge-success">مكتمل</span>
+                    </div>
+                    <div class="fz-10 text-gray chat-preview text-truncate">اكتمل · 10 أكتوبر 2025</div>
+                  </div>
+                </a><a href="#" class="chat-item d-flex align-items-center gap-12 w-100 text-decoration-none active">
+                  <div class="chat-item-icon">
+                    <img src="images/dollar-square.svg" alt="" width="20" height="20">
+                  </div>
+                  <div class="w-100 text-start min-w-0">
+                    <div class="d-flex align-items-center justify-content-between gap-2 mb-1">
+                      <span class="ticket-id text-truncate fz-14 black-text">أجهزة شبكات وملحقاتها</span>
+                      <span class="sm-ele fz-10 bordered-8 text-nowrap prim-opacity-outlined">قيد التنفيذ</span>
+                    </div>
+                    <div class="fz-10 text-gray chat-preview text-truncate">قيد التنفيذ · 10 أكتوبر 2025</div>
+                  </div>
+                </a></div>
+              <div class="black-text fw-medium fz-12 mb-2">هذا الأسبوع</div>
+              <div class="chat-list d-flex flex-column gap-2"><a href="#"
+                  class="chat-item d-flex align-items-center gap-12 w-100 text-decoration-none">
+                  <div class="chat-item-icon">
+                    <img src="images/dollar-square.svg" alt="" width="20" height="20">
+                  </div>
+                  <div class="w-100 text-start min-w-0">
+                    <div class="d-flex align-items-center justify-content-between gap-2 mb-1">
+                      <span class="ticket-id text-truncate fz-14 black-text">مشروع تشغيل وصيانة</span>
+                      <span class="sm-ele fz-10 bordered-8 text-nowrap badge-success">مكتمل</span>
+                    </div>
+                    <div class="fz-10 text-gray chat-preview text-truncate">اكتمل · 8 أكتوبر 2025</div>
+                  </div>
+                </a><a href="#" class="chat-item d-flex align-items-center gap-12 w-100 text-decoration-none">
+                  <div class="chat-item-icon">
+                    <img src="images/dollar-square.svg" alt="" width="20" height="20">
+                  </div>
+                  <div class="w-100 text-start min-w-0">
+                    <div class="d-flex align-items-center justify-content-between gap-2 mb-1">
+                      <span class="ticket-id text-truncate fz-14 black-text">توريد أجهزة حاسب</span>
+                      <span class="sm-ele fz-10 bordered-8 text-nowrap prim-opacity-outlined">قيد التنفيذ</span>
+                    </div>
+                    <div class="fz-10 text-gray chat-preview text-truncate">قيد التنفيذ · 7 أكتوبر 2025</div>
+                  </div>
+                </a><a href="#" class="chat-item d-flex align-items-center gap-12 w-100 text-decoration-none">
+                  <div class="chat-item-icon">
+                    <img src="images/dollar-square.svg" alt="" width="20" height="20">
+                  </div>
+                  <div class="w-100 text-start min-w-0">
+                    <div class="d-flex align-items-center justify-content-between gap-2 mb-1">
+                      <span class="ticket-id text-truncate fz-14 black-text">توريد أجهزة حاسب</span>
+                      <span class="sm-ele fz-10 bordered-8 text-nowrap prim-opacity-outlined">قيد التنفيذ</span>
+                    </div>
+                    <div class="fz-10 text-gray chat-preview text-truncate">قيد التنفيذ · 6 أكتوبر 2025</div>
+                  </div>
+                </a><a href="#" class="chat-item d-flex align-items-center gap-12 w-100 text-decoration-none">
+                  <div class="chat-item-icon">
+                    <img src="images/dollar-square.svg" alt="" width="20" height="20">
+                  </div>
+                  <div class="w-100 text-start min-w-0">
+                    <div class="d-flex align-items-center justify-content-between gap-2 mb-1">
+                      <span class="ticket-id text-truncate fz-14 black-text">توريد أجهزة حاسب</span>
+                      <span class="sm-ele fz-10 bordered-8 text-nowrap prim-opacity-outlined">قيد التنفيذ</span>
+                    </div>
+                    <div class="fz-10 text-gray chat-preview text-truncate">قيد التنفيذ · 5 أكتوبر 2025</div>
+                  </div>
+                </a></div>
+            </div>
           </div>
-          <button class="sort-btn h-44" type="button" data-bs-toggle="modal" data-bs-target="#filterModal">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M2.5 5.83325H17.5H2.5Z" fill="white"></path>
-              <path d="M2.5 5.83325H17.5" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round"></path>
-              <path opacity="0.34" d="M5 10H15" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round"></path>
-              <path d="M8.33337 14.1667H11.6667" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round"></path>
-            </svg>
-            <span>تصفية</span>
-          </button>
         </div>
-      </div>
-      <div class="table-container">
-        <div class="table-responsive">
-          <table class="table table-bordered align-middle competition-table">
-            <thead>
-              <tr>
-                <th>
-                  <div class="d-flex align-items-center gap-2">
-                    <input class="form-check-input mt-0" type="checkbox" value="" id="selectAll">
-                    رقم التسعير
+        <div class="col-12 col-lg-9">
+          <div class="tp-flow">
+            <section id="tp-welcome" class="tp-flow-panel">
+              <div class="tender-card p-3 p-lg-4 d-flex flex-column min-h-spg-main" id="tpMainPanel">
+                <div class="text-center mb-4 mb-lg-5">
+                  <span class="badge-opacity-prim fz-12 mb-3 d-inline-flex align-items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16" fill="none"
+                      aria-hidden="true">
+                      <path d="M8 1.2L9.05 5.45L13.3 6.5L9.05 7.55L8 11.8L6.95 7.55L2.7 6.5L6.95 5.45L8 1.2Z"
+                        fill="currentColor" />
+                      <path d="M13.2 2.1L13.65 3.55L15.1 4L13.65 4.45L13.2 5.9L12.75 4.45L11.3 4L12.75 3.555L13.2 2.1Z"
+                        fill="currentColor" opacity="0.85" />
+                      <path d="M3.4 10.8L3.75 11.85L4.8 12.2L3.75 12.55L3.4 13.6L3.05 12.55L2 12.2L3.05 11.85L3.4 10.8Z"
+                        fill="currentColor" opacity="0.85" />
+                    </svg>
+                    تسعير المناقصات
+                  </span>
+                  <h3 class="black-text fw-medium mb-3">تقدير تكلفة المناقصات ببيانات موثقة</h3>
+                  <p class="fz-14 text-gray mb-0 mx-auto spg-intro-copy">
+                    مسار واحد من رفع مستندات المناقصة إلى ملخص التكلفة — يجمع استخراج البنود، التسعير الذكي من مصادر
+                    متعددة، ومراجعة النتائج قبل اتخاذ قرارك التسعيري.
+                  </p>
+                </div>
+                <h4 class="black-text fz-16 fw-medium text-center mb-4">كيف تريد إدخال بنود المناقصة؟</h4>
+                <div class="row g-3 g-lg-4 flex-grow-1">
+                  <div class="col-12">
+                    <button type="button"
+                      class="service-choice-card stat-card spg-path-card w-100 border-0 text-end d-flex align-items-center gap-3"
+                      aria-pressed="true">
+                      <div class="service-choice-icon bell">
+                        <img src="images/document-download.svg" alt="" width="24" height="24">
+                      </div>
+                      <div class="service-choice-info flex-grow-1">
+                        <h4 class="black-text">لدي جدول كميات أو كراسة شروط</h4>
+                        <p class="mb-0">ارفع ملفات المناقصة لاستخراج البنود والمواصفات تلقائياً، مع إمكانية المراجعة
+                          والتعديل قبل التسعير.</p>
+                      </div>
+                      <div class="custom-radio-circle"></div>
+                    </button>
                   </div>
-                </th>
-                <th>نوع التسعير</th>
-                <th>عدد المنتجات</th>
-                <th>عدد الموردين المطلوب</th>
-                <th>تاريخ الانشاء</th>
-                <th>الحاله</th>
-                <th class="text-center">الاجراءات</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td data-label="رقم التسعير">
-                  <div class="d-flex align-items-center gap-2">
-                    <input class="form-check-input" type="checkbox" value="">
-                    <span class="ff-onest black-text fw-medium">250739020707</span>
+                  <div class="col-12">
+                    <button type="button"
+                      class="service-choice-card stat-card spg-path-card w-100 border-0 text-end d-flex align-items-center gap-3"
+                      aria-pressed="false">
+                      <div class="service-choice-icon crown">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 22 22" fill="none"
+                          aria-hidden="true">
+                          <path
+                            d="M6.41602 6.41602H5.49935C5.01312 6.41602 4.5468 6.60917 4.20299 6.95299C3.85917 7.2968 3.66602 7.76312 3.66602 8.24935V16.4993C3.66602 16.9856 3.85917 17.4519 4.20299 17.7957C4.5468 18.1395 5.01312 18.3327 5.49935 18.3327H13.7493C14.2356 18.3327 14.7019 18.1395 15.0457 17.7957C15.3895 17.4519 15.5827 16.9856 15.5827 16.4993V15.5827"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          <path
+                            d="M14.6667 4.58343L17.4167 7.33343M18.6863 6.03635C19.0473 5.67532 19.2501 5.18567 19.2501 4.6751C19.2501 4.16453 19.0473 3.67487 18.6863 3.31385C18.3252 2.95282 17.8356 2.75 17.325 2.75C16.8144 2.75 16.3248 2.95282 15.9638 3.31385L8.25 11.0001V13.7501H11L18.6863 6.03635Z"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </div>
+                      <div class="service-choice-info flex-grow-1">
+                        <h4 class="black-text">إدخال البنود يدوياً</h4>
+                        <p class="mb-0">أضف أسماء البنود والكميات والمواصفات خطوة بخطوة دون الحاجة إلى رفع ملفات.</p>
+                      </div>
+                      <div class="custom-radio-circle"></div>
+                    </button>
                   </div>
-                </td>
-                <td data-label="نوع التسعير">
-                  <div class="d-flex align-items-center">
-                    <span class="sm-logo">
-                      <img src="images/dollar-square.svg" alt="نوع التسعير">
-                    </span>
-                    <span>نوع التسعير</span>
+                </div>
+                <div class="d-flex flex-wrap align-items-center justify-content-end gap-3 mt-4 pt-3 spg-wizard-actions">
+                  <a href="#tp-step-2" class="btn-main btn-primary h-44 fz-14">بدء طلب التسعير <svg
+                      xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none"
+                      aria-hidden="true">
+                      <path d="M8.47485 15.5583L3.41652 10.5L8.47485 5.44165" stroke="#fff" stroke-width="1.5"
+                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path opacity="0.4" d="M17.583 10.5H3.55801" stroke="#fff" stroke-width="1.5"
+                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg></a>
+                </div>
+              </div>
+            </section>
+            <section id="tp-step-2" class="tp-flow-panel">
+              <div class="tender-card p-3 p-lg-4 d-flex flex-column min-h-spg-main">
+                <div class="mb-4">
+                  <a href="#tp-welcome" class="btn-main btn-primary-outline fz-12 h-36">العودة للبداية</a>
+                </div>
+                <div class="tender-card p-3 mb-4 bg-white">
+                  <div class="d-flex justify-content-between align-items-center mb-2 flex-wrap gap-2">
+                    <span class="fz-12 text-gray">الخطوة 1 من 5</span>
+                    <span class="fz-14 black-text fw-medium">مصدر البنود</span>
                   </div>
-                </td>
-                <td data-label="عدد المنتجات">
-                  <div class="d-flex align-items-center">
-                    <span class="sm-logo">
-                      <img src="images/shopping-cart.svg" alt="Shopping cart">
-                    </span>
-                    <span class="fw-medium black-text">12</span>
+                  <div class="progress" style="height: 6px;">
+                    <div class="progress-bar bg-prim" role="progressbar" style="width: 20%" aria-valuemin="0"
+                      aria-valuemax="100"></div>
                   </div>
-                </td>
-                <td data-label="عدد الموردين المطلوب">
-                  <div class="d-flex align-items-center">
-                    <span class="sm-logo">
-                      <img src="images/shop-add.svg" alt="shop Add">
-                    </span>
-                    <span class="fw-medium black-text">12</span>
+                  <div class="spg-step-dots mt-3" aria-hidden="true">
+                    <span class="spg-step-dot current" title="مصدر البنود"></span>
+                    <span class="spg-step-dot" title="مراجعة البنود"></span>
+                    <span class="spg-step-dot" title="التسعير الذكي"></span>
+                    <span class="spg-step-dot" title="مراجعة النتائج"></span>
+                    <span class="spg-step-dot" title="ملخص التكلفة"></span>
                   </div>
-                </td>
-                <td data-label="تاريخ الانشاء">
-                  <div class="d-flex align-items-center">
-                    <div class="sm-logo">
-                      <img src="images/clock.svg" alt="clock">
+                </div>
+                <div class="row g-4 mb-4">
+                  <div class="col-12 col-lg-8">
+                    <div class="tender-card p-3 p-lg-4 h-100 bg-white">
+                      <h6 class="black-text fw-medium text-start mb-2">مصدر البنود</h6>
+                      <p class="fz-14 text-gray text-start mb-4">ارفع ملفات المناقصة لاستخراج جدول البنود
+                        والمواصفات تلقائياً.</p>
+                      <div class="upload-container mb-4">
+                        <div class="upload-box">
+                          <div class="upload-icon"><img src="images/document-download.svg" alt=""></div>
+                          <div class="d-flex flex-column gap-10">
+                            <div class="upload-title fz-10 black-text">أضف جدول الكميات أو كراسة الشروط</div>
+                            <div class="upload-subtitle fz-9 text-gray">PDF · XLSX · DOCX · PNG · JPG</div>
+                          </div>
+                        </div>
+                      </div>
+                      <h6 class="black-text mb-3">الملفات المرفوعة (2)</h6>
+                      <div class="table-container mb-0">
+                        <div class="table-responsive">
+                          <table class="table table-bordered align-middle competition-table">
+                            <thead>
+                              <tr>
+                                <th>اسم الملف</th>
+                                <th>الملف</th>
+                                <th>نوع الملف</th>
+                                <th>الحجم</th>
+                                <th>الحالة</th>
+                                <th class="text-center">الإجراءات</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td data-label="اسم الملف"><span class="black-text fw-medium">جدول الكميات</span></td>
+                                <td data-label="الملف">
+                                  <div class="d-flex align-items-center gap-2"><span class="sm-logo"><img
+                                        src="images/document-normal.svg" alt=""></span><span class="fz-12 black-text"
+                                      dir="ltr">جدول_الكميات_المرحلة_الأولى.xlsx</span></div>
+                                </td>
+                                <td data-label="نوع الملف"><span class="fz-12 text-gray">XLSX</span></td>
+                                <td data-label="الحجم"><span class="fz-12 black-text" dir="ltr">860 KB</span></td>
+                                <td data-label="الحالة"><span
+                                    class="sm-ele fz-10 bordered-8 text-nowrap prim-opacity-outlined">جاهز
+                                    للتحليل</span>
+                                </td>
+                                <td data-label="الإجراءات">
+                                  <div class="d-flex justify-content-center"><button type="button"
+                                      class="icon-container gray-outline-btn" aria-label="حذف"><img
+                                        src="images/trash.svg" alt=""></button></div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td data-label="اسم الملف"><span class="black-text fw-medium">كراسة الشروط</span></td>
+                                <td data-label="الملف">
+                                  <div class="d-flex align-items-center gap-2"><span class="sm-logo"><img
+                                        src="images/document-normal.svg" alt=""></span><span class="fz-12 black-text"
+                                      dir="ltr">كراسة_الشروط_الفنية.pdf</span></div>
+                                </td>
+                                <td data-label="نوع الملف"><span class="fz-12 text-gray">PDF</span></td>
+                                <td data-label="الحجم"><span class="fz-12 black-text" dir="ltr">2.4 MB</span></td>
+                                <td data-label="الحالة"><span
+                                    class="sm-ele fz-10 bordered-8 text-nowrap prim-opacity-outlined">جاهز
+                                    للتحليل</span>
+                                </td>
+                                <td data-label="الإجراءات">
+                                  <div class="d-flex justify-content-center"><button type="button"
+                                      class="icon-container gray-outline-btn" aria-label="حذف"><img
+                                        src="images/trash.svg" alt=""></button></div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
                     </div>
+                  </div>
+                  <div class="col-12 col-lg-4 d-flex flex-column gap-3">
+                    <div class="tender-card p-3 p-lg-4 bg-white">
+                      <h6 class="black-text mb-3">ملخص الخطوات</h6>
+                      <ul class="fz-14 text-gray mb-0 ps-3">
+                        <li class="mb-2">تحليل الملفات واستخراج البنود.</li>
+                        <li class="mb-2">مراجعة البيانات قبل التسعير.</li>
+                        <li>دعم دمج أكثر من ملف في طلب واحد.</li>
+                      </ul>
+                    </div>
+                    <a href="#tp-step-3" class="btn-main btn-primary h-44 fz-14 text-center w-100">استخراج
+                      البنود <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
+                        fill="none" aria-hidden="true">
+                        <path d="M8.47485 15.5583L3.41652 10.5L8.47485 5.44165" stroke="#fff" stroke-width="1.5"
+                          stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path opacity="0.4" d="M17.583 10.5H3.55801" stroke="#fff" stroke-width="1.5"
+                          stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg></a>
+                    <div class="tender-card p-3 bg-white">
+                      <div class="d-flex gap-2 align-items-start">
+                        <img src="images/shield-tick.svg" width="20" height="20" alt="" class="mt-1">
+                        <div>
+                          <h6 class="fz-14 black-text mb-1">نصيحة تقنية</h6>
+                          <p class="fz-12 text-gray mb-0">كلما كانت الملفات أوضح، زادت دقة استخراج البنود.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="d-flex flex-wrap align-items-center justify-content-between gap-3 mt-auto pt-3 spg-wizard-actions">
+                  <a href="#tp-welcome" class="btn-main outline-primary-gray fz-14 fw-medium"><svg
+                      xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                      aria-hidden="true">
+                      <path d="M12.025 15.0586L17.0833 10.0002L12.025 4.94189" stroke="#6BAFB8" stroke-width="1.5"
+                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path opacity="0.4" d="M2.91667 10H16.9417" stroke="#6BAFB8" stroke-width="1.5"
+                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg> السابق</a>
+                  <a href="#tp-step-3" class="btn-main btn-primary h-44 fz-14">مراجعة البنود <svg
+                      xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none"
+                      aria-hidden="true">
+                      <path d="M8.47485 15.5583L3.41652 10.5L8.47485 5.44165" stroke="#fff" stroke-width="1.5"
+                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path opacity="0.4" d="M17.583 10.5H3.55801" stroke="#fff" stroke-width="1.5"
+                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg></a>
+                </div>
+              </div>
+            </section>
+            <section id="tp-step-3" class="tp-flow-panel">
+              <div class="tender-card p-3 p-lg-4 d-flex flex-column min-h-spg-main">
+                <div class="mb-4">
+                  <a href="#tp-welcome" class="btn-main btn-primary-outline fz-12 h-36">العودة للبداية</a>
+                </div>
+                <div class="tender-card p-3 mb-4 bg-white">
+                  <div class="d-flex justify-content-between align-items-center mb-2 flex-wrap gap-2">
+                    <span class="fz-12 text-gray">الخطوة 2 من 5</span>
+                    <span class="fz-14 black-text fw-medium">مراجعة البنود</span>
+                  </div>
+                  <div class="progress" style="height: 6px;">
+                    <div class="progress-bar bg-prim" role="progressbar" style="width: 40%" aria-valuemin="0"
+                      aria-valuemax="100"></div>
+                  </div>
+                  <div class="spg-step-dots mt-3" aria-hidden="true">
+                    <span class="spg-step-dot completed" title="مصدر البنود"></span>
+                    <span class="spg-step-dot current" title="مراجعة البنود"></span>
+                    <span class="spg-step-dot" title="التسعير الذكي"></span>
+                    <span class="spg-step-dot" title="مراجعة النتائج"></span>
+                    <span class="spg-step-dot" title="ملخص التكلفة"></span>
+                  </div>
+                </div>
+                <div class="tender-card p-3 p-lg-4 mb-4 bg-white">
+                  <div class="d-flex flex-wrap justify-content-between gap-3 mb-3">
                     <div>
-                      <span class="black-text fw-medium d-inline-block me-1" dir="ltr">
-                        04:30 pm
-                      </span>
-                      <span class="black-text fw-medium">
-                        05-12-2025
-                      </span>
+                      <h6 class="black-text fw-medium text-start mb-2">مراجعة البنود</h6>
+                      <p class="fz-14 text-gray text-start mb-0">راجع البنود والكميات المستخرجة وعدّل أي بيانات
+                        قبل التسعير.</p>
+                    </div>
+                    <span class="gray-outline-btn lg-btn fz-12 p-12">إجمالي البنود: <span
+                        class="ff-onest fw-medium black-text ms-1">3</span></span>
+                  </div>
+                  <div class="tender-card p-3 mb-4 prim-opacity-outlined">
+                    <p class="fz-14 black-text mb-0">تم استخراج <span class="fw-medium">3</span> بنود بنجاح.</p>
+                  </div>
+                  <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-3">
+                    <h6 class="black-text mb-0">جدول البنود</h6>
+                    <button type="button" class="btn-main btn-primary h-41 fw-medium fz-14" data-bs-toggle="modal"
+                      data-bs-target="#tpAddItemModal">+ إضافة بند</button>
+                  </div>
+                  <div class="table-container mb-3">
+                    <div class="table-responsive">
+                      <table class="table table-bordered align-middle competition-table">
+                        <thead>
+                          <tr>
+                            <th>رقم البند</th>
+                            <th>اسم البند</th>
+                            <th>المواصفات</th>
+                            <th>الوحدة</th>
+                            <th>الكمية</th>
+                            <th class="text-center">الإجراءات</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td data-label="رقم البند"><span class="ff-onest fw-medium black-text">001</span></td>
+                            <td data-label="اسم البند"><span class="black-text fw-medium">توريد وتركيب مكيفات سبليت 18
+                                وحدة</span></td>
+                            <td data-label="المواصفات"><span class="text-gray fz-12 ellipse-text">تبرياد 18000 BTU مع
+                                توصيلات معتمدة.</span></td>
+                            <td data-label="الوحدة">حبة</td>
+                            <td data-label="الكمية"><span class="ff-onest fw-medium black-text">12</span></td>
+                            <td data-label="الإجراءات">
+                              <div class="d-flex justify-content-center gap-12 flex-wrap">
+                                <button type="button" class="icon-container gray-outline-btn" data-bs-toggle="modal"
+                                  data-bs-target="#tpEditItemModal" aria-label="تعديل"><img src="images/edit-pen.svg"
+                                    alt=""></button>
+                                <button type="button" class="icon-container gray-outline-btn" aria-label="نسخ"><img
+                                    src="images/document-normal.svg" alt=""></button>
+                                <button type="button" class="icon-container gray-outline-btn" aria-label="حذف"><img
+                                    src="images/trash.svg" alt=""></button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td data-label="رقم البند"><span class="ff-onest fw-medium black-text">002</span></td>
+                            <td data-label="اسم البند"><span class="black-text fw-medium">توريد أثاث مكتبي — كراسي
+                                هيدروليك</span></td>
+                            <td data-label="المواصفات"><span class="text-gray fz-12 ellipse-text">مقاعد مكتب قابلة
+                                للتعديل
+                                مع دعم قطني.</span></td>
+                            <td data-label="الوحدة">حبة</td>
+                            <td data-label="الكمية"><span class="ff-onest fw-medium black-text">25</span></td>
+                            <td data-label="الإجراءات">
+                              <div class="d-flex justify-content-center gap-12 flex-wrap">
+                                <button type="button" class="icon-container gray-outline-btn" data-bs-toggle="modal"
+                                  data-bs-target="#tpEditItemModal" aria-label="تعديل"><img src="images/edit-pen.svg"
+                                    alt=""></button>
+                                <button type="button" class="icon-container gray-outline-btn" aria-label="نسخ"><img
+                                    src="images/document-normal.svg" alt=""></button>
+                                <button type="button" class="icon-container gray-outline-btn" aria-label="حذف"><img
+                                    src="images/trash.svg" alt=""></button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td data-label="رقم البند"><span class="ff-onest fw-medium black-text">003</span></td>
+                            <td data-label="اسم البند"><span class="black-text fw-medium">توريد وتركيب نقاط شبكة</span>
+                            </td>
+                            <td data-label="المواصفات"><span class="text-gray fz-12 ellipse-text">Gigabit مع توصيلات
+                                معتمدة.</span></td>
+                            <td data-label="الوحدة">عدد</td>
+                            <td data-label="الكمية"><span class="ff-onest fw-medium black-text">48</span></td>
+                            <td data-label="الإجراءات">
+                              <div class="d-flex justify-content-center gap-12 flex-wrap">
+                                <button type="button" class="icon-container gray-outline-btn" data-bs-toggle="modal"
+                                  data-bs-target="#tpEditItemModal" aria-label="تعديل"><img src="images/edit-pen.svg"
+                                    alt=""></button>
+                                <button type="button" class="icon-container gray-outline-btn" aria-label="نسخ"><img
+                                    src="images/document-normal.svg" alt=""></button>
+                                <button type="button" class="icon-container gray-outline-btn" aria-label="حذف"><img
+                                    src="images/trash.svg" alt=""></button>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
                   </div>
-                </td>
-                <td data-label="الحاله">
-                  <span class="sm-ele fz-12 bordered-8 text-nowrap prim-opacity-outlined">مقبولة</span>
-                </td>
-                <td data-label="الاجراءات">
-                  <a href="tenders-pricing-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                    التفاصيل
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td data-label="رقم التسعير">
-                  <div class="d-flex align-items-center gap-2">
-                    <input class="form-check-input" type="checkbox" value="">
-                    <span class="ff-onest black-text fw-medium">250739020707</span>
+                  <p class="fz-12 text-gray mb-0">تأكد من مراجعة البنود المظللة؛ قد تكون بياناتها غير مكتملة.</p>
+                </div>
+                <div
+                  class="d-flex flex-wrap align-items-center justify-content-between gap-3 mt-auto pt-3 spg-wizard-actions">
+                  <a href="#tp-step-2" class="btn-main outline-primary-gray fz-14 fw-medium"><svg
+                      xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                      aria-hidden="true">
+                      <path d="M12.025 15.0586L17.0833 10.0002L12.025 4.94189" stroke="#6BAFB8" stroke-width="1.5"
+                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path opacity="0.4" d="M2.91667 10H16.9417" stroke="#6BAFB8" stroke-width="1.5"
+                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg> السابق</a>
+                  <a href="#tp-step-4" class="btn-main btn-primary h-44 fz-14">ابدأ التسعير الذكي <svg
+                      xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none"
+                      aria-hidden="true">
+                      <path d="M8.47485 15.5583L3.41652 10.5L8.47485 5.44165" stroke="#fff" stroke-width="1.5"
+                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path opacity="0.4" d="M17.583 10.5H3.55801" stroke="#fff" stroke-width="1.5"
+                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg></a>
+                </div>
+              </div>
+            </section>
+            <section id="tp-step-4" class="tp-flow-panel">
+              <div class="tender-card p-3 p-lg-4 d-flex flex-column min-h-spg-main">
+                <div class="mb-4">
+                  <a href="#tp-welcome" class="btn-main btn-primary-outline fz-12 h-36">العودة للبداية</a>
+                </div>
+                <div class="tender-card p-3 mb-4 bg-white">
+                  <div class="d-flex justify-content-between align-items-center mb-2 flex-wrap gap-2">
+                    <span class="fz-12 text-gray">الخطوة 3 من 5</span>
+                    <span class="fz-14 black-text fw-medium">التسعير الذكي</span>
                   </div>
-                </td>
-                <td data-label="نوع التسعير">
-                  <div class="d-flex align-items-center">
-                    <span class="sm-logo">
-                      <img src="images/dollar-square.svg" alt="نوع التسعير">
-                    </span>
-                    <span>نوع التسعير</span>
+                  <div class="progress" style="height: 6px;">
+                    <div class="progress-bar bg-prim" role="progressbar" style="width: 60%" aria-valuemin="0"
+                      aria-valuemax="100"></div>
                   </div>
-                </td>
-                <td data-label="عدد المنتجات">
-                  <div class="d-flex align-items-center">
-                    <span class="sm-logo">
-                      <img src="images/shopping-cart.svg" alt="Shopping cart">
-                    </span>
-                    <span class="fw-medium black-text">12</span>
+                  <div class="spg-step-dots mt-3" aria-hidden="true">
+                    <span class="spg-step-dot completed" title="مصدر البنود"></span>
+                    <span class="spg-step-dot completed" title="مراجعة البنود"></span>
+                    <span class="spg-step-dot current" title="التسعير الذكي"></span>
+                    <span class="spg-step-dot" title="مراجعة النتائج"></span>
+                    <span class="spg-step-dot" title="ملخص التكلفة"></span>
                   </div>
-                </td>
-                <td data-label="عدد الموردين المطلوب">
-                  <div class="d-flex align-items-center">
-                    <span class="sm-logo">
-                      <img src="images/shop-add.svg" alt="shop Add">
-                    </span>
-                    <span class="fw-medium black-text">12</span>
-                  </div>
-                </td>
-                <td data-label="تاريخ الانشاء">
-                  <div class="d-flex align-items-center">
-                    <div class="sm-logo">
-                      <img src="images/clock.svg" alt="clock">
+                </div>
+                <div class="tender-card p-3 p-lg-4 mb-4 bg-white text-center">
+                  <div class="tp-smart-pricing-hero mx-auto mb-3" role="status" aria-live="polite"
+                    aria-label="جاري التسعير الذكي، النظام يجمع الأسعار من مصادر متعددة">
+                    <div class="tp-smart-pricing-scene">
+                      <span class="tp-smart-pricing-ring" aria-hidden="true"></span>
+                      <span class="tp-smart-pricing-ring tp-smart-pricing-ring--delay" aria-hidden="true"></span>
+                      <span class="tp-smart-pricing-ring tp-smart-pricing-ring--delay2" aria-hidden="true"></span>
+                      <span class="tp-smart-pricing-sweep" aria-hidden="true"></span>
+                      <span class="tp-smart-pricing-orbit tp-smart-pricing-orbit--1" aria-hidden="true"></span>
+                      <span class="tp-smart-pricing-orbit tp-smart-pricing-orbit--2" aria-hidden="true"></span>
+                      <span class="tp-smart-pricing-orbit tp-smart-pricing-orbit--3" aria-hidden="true"></span>
+                      <div class="tp-smart-pricing-core" aria-hidden="true">
+                        <svg class="tp-smart-pricing-core-icon" xmlns="http://www.w3.org/2000/svg" width="20"
+                          height="20" viewBox="0 0 24 24" fill="none">
+                          <path d="M4 17V13.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+                          <path d="M9 17V10.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+                          <path d="M14 17V8" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+                          <path d="M19 17V5.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+                          <path d="M3.5 17H20.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            opacity="0.45" />
+                          <circle cx="9" cy="10.5" r="1.35" fill="currentColor" />
+                          <circle cx="14" cy="8" r="1.35" fill="currentColor" />
+                          <circle cx="19" cy="5.5" r="1.6" fill="currentColor" />
+                          <path
+                            d="M8.5 4.2L9.05 5.65L10.55 6.15L9.05 6.65L8.5 8.1L7.95 6.65L6.45 6.15L7.95 5.65L8.5 4.2Z"
+                            fill="currentColor" opacity="0.9" />
+                          <path
+                            d="M17.2 13.8L17.55 14.65L18.45 14.95L17.55 15.25L17.2 16.1L16.85 15.25L15.95 14.95L16.85 14.65L17.2 13.8Z"
+                            fill="currentColor" opacity="0.55" />
+                        </svg>
+                      </div>
                     </div>
+                    <p class="tp-smart-pricing-status fz-12 text-gray mb-0 mt-2">
+                      <span class="tp-smart-pricing-status-dot" aria-hidden="true"></span>
+                      مقارنة الأسعار من مصادر متعددة
+                    </p>
+                  </div>
+                  <h5 class="black-text fw-medium mb-2">جاري التسعير الذكي<span class="tp-smart-pricing-ellipsis"
+                      aria-hidden="true"><span>.</span><span>.</span><span>.</span></span></h5>
+                  <p class="fz-14 text-gray mb-4 mx-auto spg-intro-copy">النظام يبحث في قواعد البيانات ويقارن
+                    الأسعار من مصادر متعددة لتقدير أدق تكلفة.</p>
+                  <div class="tender-card p-3 p-lg-4 mb-4 text-start">
+                    <div class="d-flex justify-content-between flex-wrap gap-2 mb-2">
+                      <span class="fz-14 black-text fw-medium">خلصنا 17 من أصل 19 بند</span>
+                      <span class="fz-12 text-gray tp-smart-pricing-pct">≈ 89%</span>
+                    </div>
+                    <div class="progress tp-smart-pricing-progress mb-4" style="height: 10px;">
+                      <div class="progress-bar bg-dark-base tp-smart-pricing-progress-bar" style="width: 89%"></div>
+                    </div>
+                    <div class="row g-3 mb-0">
+                      <div class="col-4">
+                        <div class="tender-card tp-pricing-stat tp-pricing-stat--complete p-3 text-center h-100">
+                          <p class="fz-12 mb-1 tp-pricing-stat-label">مكتمل</p>
+                          <span class="ff-onest fz-18 fw-medium tp-pricing-stat-value">17</span>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="tender-card tp-pricing-stat tp-pricing-stat--processing p-3 text-center h-100">
+                          <p class="fz-12 mb-1 tp-pricing-stat-label">قيد المعالجة</p>
+                          <span class="ff-onest fz-18 fw-medium tp-pricing-stat-value">01</span>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="tender-card tp-pricing-stat tp-pricing-stat--remaining p-3 text-center h-100">
+                          <p class="fz-12 mb-1 tp-pricing-stat-label">متبقي</p>
+                          <span class="ff-onest fz-18 fw-medium tp-pricing-stat-value">01</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h6 class="black-text text-start mb-3">نشاط النظام</h6>
+                  <div class="tp-system-activity mb-4" role="region" aria-label="نشاط النظام">
+                    <ol class="tp-system-activity-steps list-unstyled mb-0">
+                      <li class="tp-system-activity-step is-running">
+                        <div class="tp-system-activity-rail" aria-hidden="true">
+                          <span class="tp-system-activity-node">
+                            <span class="tp-system-activity-node-spinner"></span>
+                          </span>
+                          <span class="tp-system-activity-connector"></span>
+                        </div>
+                        <article class="tp-system-activity-card">
+                          <div class="d-flex align-items-start justify-content-between gap-2 mb-1">
+                            <h6 class="fz-14 fw-medium black-text mb-0">البحث في مصادر التوريد المعتمدة…</h6>
+                            <span class="tp-system-activity-tag tp-system-activity-tag--live">قيد التنفيذ</span>
+                          </div>
+                          <p class="fz-12 text-gray mb-2">جاري جمع أسعار مرجعية للبند الحالي.</p>
+                          <div class="tp-system-activity-track" role="progressbar" aria-valuenow="68" aria-valuemin="0"
+                            aria-valuemax="100" aria-label="تقدم المهمة الحالية">
+                            <span class="tp-system-activity-track-fill" style="width: 68%;"></span>
+                          </div>
+                        </article>
+                      </li>
+                      <li class="tp-system-activity-step is-queued">
+                        <div class="tp-system-activity-rail" aria-hidden="true">
+                          <span class="tp-system-activity-node">2</span>
+                          <span class="tp-system-activity-connector"></span>
+                        </div>
+                        <article class="tp-system-activity-card">
+                          <div class="d-flex align-items-start justify-content-between gap-2 mb-1">
+                            <h6 class="fz-14 fw-medium black-text mb-0">تحليل أسعار المناقصات السابقة المماثلة</h6>
+                            <span class="tp-system-activity-tag">بالانتظار</span>
+                          </div>
+                          <p class="fz-12 text-gray mb-0">في قائمة الانتظار.</p>
+                        </article>
+                      </li>
+                      <li class="tp-system-activity-step is-queued">
+                        <div class="tp-system-activity-rail" aria-hidden="true">
+                          <span class="tp-system-activity-node">3</span>
+                        </div>
+                        <article class="tp-system-activity-card">
+                          <div class="d-flex align-items-start justify-content-between gap-2 mb-1">
+                            <h6 class="fz-14 fw-medium black-text mb-0">حساب متوسط تكلفة الوحدة الإرشادية</h6>
+                            <span class="tp-system-activity-tag">بالانتظار</span>
+                          </div>
+                          <p class="fz-12 text-gray mb-0">في قائمة الانتظار.</p>
+                        </article>
+                      </li>
+                    </ol>
+                  </div>
+                  <div class="tender-card p-3 mb-0 prim-opacity-outlined text-start">
+                    <p class="fz-14 black-text mb-0">عند اكتمال التسعير نعرض النتائج ونفتح مرحلة المراجعة — لا
+                      حاجة لإجراء إضافي منك.</p>
+                  </div>
+                </div>
+                <div
+                  class="d-flex flex-wrap align-items-center justify-content-between gap-3 mt-auto pt-3 spg-wizard-actions">
+                  <a href="#tp-step-3" class="btn-main outline-primary-gray fz-14 fw-medium"><svg
+                      xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                      aria-hidden="true">
+                      <path d="M12.025 15.0586L17.0833 10.0002L12.025 4.94189" stroke="#6BAFB8" stroke-width="1.5"
+                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path opacity="0.4" d="M2.91667 10H16.9417" stroke="#6BAFB8" stroke-width="1.5"
+                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg> السابق</a>
+                  <a href="#tp-step-5" class="btn-main btn-primary h-44 fz-14">مراجعة النتائج <svg
+                      xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none"
+                      aria-hidden="true">
+                      <path d="M8.47485 15.5583L3.41652 10.5L8.47485 5.44165" stroke="#fff" stroke-width="1.5"
+                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path opacity="0.4" d="M17.583 10.5H3.55801" stroke="#fff" stroke-width="1.5"
+                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg></a>
+                </div>
+              </div>
+            </section>
+            <section id="tp-step-5" class="tp-flow-panel">
+              <div class="tender-card p-3 p-lg-4 d-flex flex-column min-h-spg-main">
+                <div class="mb-4">
+                  <a href="#tp-welcome" class="btn-main btn-primary-outline fz-12 h-36">العودة للبداية</a>
+                </div>
+                <div class="tender-card p-3 mb-4 bg-white">
+                  <div class="d-flex justify-content-between align-items-center mb-2 flex-wrap gap-2">
+                    <span class="fz-12 text-gray">الخطوة 4 من 5</span>
+                    <span class="fz-14 black-text fw-medium">مراجعة النتائج</span>
+                  </div>
+                  <div class="progress" style="height: 6px;">
+                    <div class="progress-bar bg-prim" role="progressbar" style="width: 80%" aria-valuemin="0"
+                      aria-valuemax="100"></div>
+                  </div>
+                  <div class="spg-step-dots mt-3" aria-hidden="true">
+                    <span class="spg-step-dot completed" title="مصدر البنود"></span>
+                    <span class="spg-step-dot completed" title="مراجعة البنود"></span>
+                    <span class="spg-step-dot completed" title="التسعير الذكي"></span>
+                    <span class="spg-step-dot current" title="مراجعة النتائج"></span>
+                    <span class="spg-step-dot" title="ملخص التكلفة"></span>
+                  </div>
+                </div>
+                <div class="tender-card p-3 p-lg-4 mb-4 bg-white">
+                  <div class="d-flex flex-wrap justify-content-between align-items-start gap-3 mb-4">
                     <div>
-                      <span class="black-text fw-medium d-inline-block me-1" dir="ltr">
-                        04:30 pm
-                      </span>
-                      <span class="black-text fw-medium">
-                        05-12-2025
-                      </span>
+                      <h6 class="black-text fw-medium text-start mb-2">مراجعة نتائج التسعير</h6>
+                      <p class="fz-14 text-gray text-start mb-0">تم تسعير 17 من 19 بنداً بنجاح — راجع البنود
+                        التي تحتاج تدخلاً يدوياً.</p>
+                    </div>
+                    <button type="button"
+                      class="btn-main btn-primary-outline h-41 fz-14 d-inline-flex align-items-center gap-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16" fill="none"
+                        aria-hidden="true" class="flex-shrink-0">
+                        <path d="M5.15 8.35H10.35" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
+                          opacity="0.55" />
+                        <path d="M5.15 10.35H9.25" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
+                          opacity="0.55" />
+                        <path d="M5.15 12.35H10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
+                          opacity="0.55" />
+                        <g opacity="0.4">
+                          <path d="M10 9.33301V5.33301L11.3333 6.66634" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M9.9987 5.33301L8.66536 6.66634" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        </g>
+                        <path
+                          d="M14.6654 6.66634V9.99967C14.6654 13.333 13.332 14.6663 9.9987 14.6663H5.9987C2.66536 14.6663 1.33203 13.333 1.33203 9.99967V5.99967C1.33203 2.66634 2.66536 1.33301 5.9987 1.33301H9.33203"
+                          stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                          d="M14.6654 6.66634H11.9987C9.9987 6.66634 9.33203 5.99967 9.33203 3.99967V1.33301L14.6654 6.66634Z"
+                          stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      تصدير تقرير النتائج
+                    </button>
+                  </div>
+                  <div class="row g-3 mb-4">
+                    <div class="col-12 col-md-4">
+                      <div class="summary-card tp-summary-card--low p-3 p-lg-4 h-100">
+                        <p class="summary-title">أقل سعر تقديري</p>
+                        <span class="ff-inter fz-18 fw-medium tp-summary-value">42,500 ر.س</span>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                      <div class="summary-card tp-summary-card--mid p-3 p-lg-4 h-100">
+                        <p class="summary-title">متوسط السعر المرجعي</p>
+                        <span class="ff-inter fz-18 fw-medium colored">48,920 ر.س</span>
+                        <span class="sm-ele fz-10 bordered-8 badge-success mt-2 d-inline-block">موثوقية عالية</span>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                      <div class="summary-card tp-summary-card--high p-3 p-lg-4 h-100">
+                        <p class="summary-title">أعلى سعر تقديري</p>
+                        <span class="ff-inter fz-18 fw-medium tp-summary-value">55,800 ر.س</span>
+                      </div>
                     </div>
                   </div>
-                </td>
-                <td data-label="الحاله">
-                  <span class="sm-ele fz-12 bordered-8 text-nowrap badge-rejected">مرفوضه</span>
-                </td>
-                <td data-label="الاجراءات">
-                  <a href="tenders-pricing-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                    التفاصيل
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td data-label="رقم التسعير">
-                  <div class="d-flex align-items-center gap-2">
-                    <input class="form-check-input" type="checkbox" value="">
-                    <span class="ff-onest black-text fw-medium">250739020707</span>
-                  </div>
-                </td>
-                <td data-label="نوع التسعير">
-                  <div class="d-flex align-items-center">
-                    <span class="sm-logo">
-                      <img src="images/dollar-square.svg" alt="نوع التسعير">
-                    </span>
-                    <span>نوع التسعير</span>
-                  </div>
-                </td>
-                <td data-label="عدد المنتجات">
-                  <div class="d-flex align-items-center">
-                    <span class="sm-logo">
-                      <img src="images/shopping-cart.svg" alt="Shopping cart">
-                    </span>
-                    <span class="fw-medium black-text">12</span>
-                  </div>
-                </td>
-                <td data-label="عدد الموردين المطلوب">
-                  <div class="d-flex align-items-center">
-                    <span class="sm-logo">
-                      <img src="images/shop-add.svg" alt="shop Add">
-                    </span>
-                    <span class="fw-medium black-text">12</span>
-                  </div>
-                </td>
-                <td data-label="تاريخ الانشاء">
-                  <div class="d-flex align-items-center">
-                    <div class="sm-logo">
-                      <img src="images/clock.svg" alt="clock">
+                  <h6 class="black-text mb-3">تفاصيل تسعير البنود</h6>
+                  <div class="table-container mb-4">
+                    <div class="table-responsive">
+                      <table class="table table-bordered align-middle competition-table">
+                        <thead>
+                          <tr>
+                            <th>البند</th>
+                            <th>الكمية</th>
+                            <th>أقل سعر</th>
+                            <th>متوسط السعر</th>
+                            <th>أعلى سعر</th>
+                            <th>المصادر</th>
+                            <th>الحالة</th>
+                            <th class="text-center">إجراءات</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><span class="black-text fw-medium d-block">توريد وتركيب مكيفات سبليت 18 وحدة</span><span
+                                class="text-gray fz-12">12 حبة</span></td>
+                            <td><span class="ff-onest">12 حبة</span></td>
+                            <td class="ff-onest fz-12">2,850</td>
+                            <td class="ff-onest fz-12">3,150</td>
+                            <td class="ff-onest fz-12">3,420</td>
+                            <td><button type="button"
+                                class="btn-main btn-primary-outline fz-12 h-36 d-inline-flex align-items-center gap-1"
+                                data-bs-toggle="modal" data-bs-target="#tpSourcesModal">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"
+                                  fill="none" aria-hidden="true" class="flex-shrink-0">
+                                  <path
+                                    d="M9.33398 2.66699H12.6673C13.4037 2.66699 14.0007 3.26399 14.0007 4.00033V11.3337C14.0007 12.07 13.4037 12.667 12.6673 12.667H7.33398"
+                                    stroke="currentColor" stroke-width="1.35" stroke-linecap="round"
+                                    stroke-linejoin="round" opacity="0.45" />
+                                  <path
+                                    d="M6.66732 4.00065H9.33398C10.6673 4.00065 10.6673 3.33398 10.6673 2.66732C10.6673 1.33398 10.0007 1.33398 9.33398 1.33398H6.66732C6.00065 1.33398 5.33398 1.33398 5.33398 2.66732C5.33398 4.00065 6.00065 4.00065 6.66732 4.00065Z"
+                                    stroke="currentColor" stroke-width="1.35" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                  <path opacity="0.4"
+                                    d="M10.6667 2.67969C12.8867 2.79969 14 3.61969 14 6.66635V10.6664C14 13.333 13.3333 14.6664 10 14.6664H6C2.66667 14.6664 2 13.333 2 10.6664V6.66635C2 3.62635 3.11333 2.79969 5.33333 2.67969"
+                                    stroke="currentColor" stroke-width="1.35" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                </svg>
+                                4 مصادر
+                              </button></td>
+                            <td><span class="sm-ele fz-10 bordered-8 text-nowrap badge-success">مكتمل</span></td>
+                            <td class="text-center">
+                              <div class="d-flex justify-content-center gap-2 flex-wrap"><button type="button"
+                                  class="icon-container gray-outline-btn" aria-label="عرض"><img src="images/eye.svg"
+                                    alt=""></button></div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><span class="black-text fw-medium d-block">توريد أثاث مكتبي — كراسي هيدروليك</span><span
+                                class="text-gray fz-12">25 حبة</span>
+                              <p class="fz-11 red-colored mb-0 mt-1">مصادر غير كافية لتقدير دقيق</p>
+                            </td>
+                            <td><span class="ff-onest">25 حبة</span></td>
+                            <td class="ff-onest fz-12">—</td>
+                            <td class="ff-onest fz-12">—</td>
+                            <td class="ff-onest fz-12">—</td>
+                            <td><span class="fz-12 text-gray">—</span></td>
+                            <td><span class="sm-ele fz-10 bordered-8 text-nowrap prim-opacity-outlined">يحتاج
+                                مراجعة</span></td>
+                            <td class="text-center">
+                              <div class="d-flex justify-content-center gap-2 flex-wrap"><button type="button"
+                                  class="btn-main btn-primary-outline fz-12 h-36">سعر يدوياً</button></div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
+                  </div>
+                  <div class="tender-card p-3 mb-0 prim-opacity-outlined">
+                    <p class="fz-14 black-text mb-0">استخدمنا الذكاء الاصطناعي لمقارنة الأسعار من قواعد بيانات متعددة.
+                      راجع البنود التي لا تملك مصادر كافية.</p>
+                  </div>
+                </div>
+                <div
+                  class="d-flex flex-wrap align-items-center justify-content-between gap-3 mt-auto pt-3 spg-wizard-actions">
+                  <a href="#tp-step-4" class="btn-main outline-primary-gray fz-14 fw-medium"><svg
+                      xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                      aria-hidden="true">
+                      <path d="M12.025 15.0586L17.0833 10.0002L12.025 4.94189" stroke="#6BAFB8" stroke-width="1.5"
+                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path opacity="0.4" d="M2.91667 10H16.9417" stroke="#6BAFB8" stroke-width="1.5"
+                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg> السابق</a>
+                  <a href="#tp-step-6" class="btn-main btn-primary h-44 fz-14">متابعة إلى ملخص التكلفة <svg
+                      xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none"
+                      aria-hidden="true">
+                      <path d="M8.47485 15.5583L3.41652 10.5L8.47485 5.44165" stroke="#fff" stroke-width="1.5"
+                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path opacity="0.4" d="M17.583 10.5H3.55801" stroke="#fff" stroke-width="1.5"
+                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg></a>
+                </div>
+              </div>
+            </section>
+            <section id="tp-step-6" class="tp-flow-panel">
+              <div class="tender-card p-3 p-lg-4 d-flex flex-column min-h-spg-main">
+                <div class="mb-4">
+                  <a href="#tp-welcome" class="btn-main btn-primary-outline fz-12 h-36">العودة للبداية</a>
+                </div>
+                <div class="tender-card p-3 mb-4 bg-white">
+                  <div class="d-flex justify-content-between align-items-center mb-2 flex-wrap gap-2">
+                    <span class="fz-12 text-gray">الخطوة 5 من 5</span>
+                    <span class="fz-14 black-text fw-medium">ملخص التكلفة</span>
+                  </div>
+                  <div class="progress" style="height: 6px;">
+                    <div class="progress-bar bg-prim" role="progressbar" style="width: 100%" aria-valuemin="0"
+                      aria-valuemax="100"></div>
+                  </div>
+                  <div class="spg-step-dots mt-3" aria-hidden="true">
+                    <span class="spg-step-dot completed" title="مصدر البنود"></span>
+                    <span class="spg-step-dot completed" title="مراجعة البنود"></span>
+                    <span class="spg-step-dot completed" title="التسعير الذكي"></span>
+                    <span class="spg-step-dot completed" title="مراجعة النتائج"></span>
+                    <span class="spg-step-dot current" title="ملخص التكلفة"></span>
+                  </div>
+                </div>
+                <div class="tender-card p-3 p-lg-4 mb-4 bg-white">
+                  <div class="d-flex flex-wrap justify-content-between align-items-start gap-3 mb-4">
                     <div>
-                      <span class="black-text fw-medium d-inline-block me-1" dir="ltr">
-                        04:30 pm
-                      </span>
-                      <span class="black-text fw-medium">
-                        05-12-2025
-                      </span>
+                      <h6 class="black-text fw-medium text-start mb-2">ملخص التكلفة النهائي</h6>
+                      <p class="fz-14 text-gray text-start mb-0">الخطوة الأخيرة — نظرة شاملة على تقديرات
+                        التكلفة قبل إنهاء الطلب.</p>
+                    </div>
+                    <button type="button"
+                      class="btn-main btn-primary-outline h-41 fz-14 d-inline-flex align-items-center gap-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16" fill="none"
+                        aria-hidden="true" class="flex-shrink-0">
+                        <g opacity="0.4">
+                          <path d="M6 7.33301V11.333L7.33333 9.99967" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M6.0013 11.3333L4.66797 10" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        </g>
+                        <path
+                          d="M14.6654 6.66634V9.99967C14.6654 13.333 13.332 14.6663 9.9987 14.6663H5.9987C2.66536 14.6663 1.33203 13.333 1.33203 9.99967V5.99967C1.33203 2.66634 2.66536 1.33301 5.9987 1.33301H9.33203"
+                          stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                          d="M14.6654 6.66634H11.9987C9.9987 6.66634 9.33203 5.99967 9.33203 3.99967V1.33301L14.6654 6.66634Z"
+                          stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      تحميل ملخص التكلفة
+                    </button>
+                  </div>
+                  <div class="row g-4 mb-4">
+                    <div class="col-12 col-lg-8">
+                      <div class="row g-3 mb-4">
+                        <div class="col-12 col-md-4">
+                          <div class="summary-card tp-summary-card--low p-3 p-lg-4 h-100">
+                            <p class="summary-title">أقل تكلفة</p>
+                            <span class="ff-inter fz-18 fw-medium tp-summary-value">42,500 ر.س</span>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                          <div class="summary-card tp-summary-card--mid p-3 p-lg-4 h-100">
+                            <p class="summary-title">التكلفة المتوسطة — المقترحة</p>
+                            <span class="ff-inter fz-18 fw-medium colored">48,920 ر.س</span>
+                            <span class="sm-ele fz-10 bordered-8 badge-success mt-2 d-inline-block">دقة عالية</span>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                          <div class="summary-card tp-summary-card--high p-3 p-lg-4 h-100">
+                            <p class="summary-title">أعلى تكلفة</p>
+                            <span class="ff-inter fz-18 fw-medium tp-summary-value">55,800 ر.س</span>
+                          </div>
+                        </div>
+                      </div>
+                      <h6 class="black-text mb-3">تفاصيل تسعير البنود</h6>
+                      <div class="table-container mb-3">
+                        <div class="table-responsive">
+                          <table class="table table-bordered align-middle competition-table">
+                            <thead>
+                              <tr>
+                                <th>#</th>
+                                <th>البند</th>
+                                <th>الكمية</th>
+                                <th>السعر التقديري</th>
+                                <th>الحالة</th>
+                                <th>المصادر</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td><span class="ff-onest">1</span></td>
+                                <td>توريد وتركيب مكيفات سبليت 18 وحدة</td>
+                                <td>12 وحدة</td>
+                                <td class="ff-onest">3,150 ر.س</td>
+                                <td><span class="sm-ele fz-10 bordered-8 badge-success">مكتمل</span></td>
+                                <td><button type="button"
+                                    class="btn-main btn-primary-outline fz-12 h-36 d-inline-flex align-items-center gap-1"
+                                    data-bs-toggle="modal" data-bs-target="#tpSourcesModal">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"
+                                      fill="none" aria-hidden="true" class="flex-shrink-0">
+                                      <path
+                                        d="M9.33398 2.66699H12.6673C13.4037 2.66699 14.0007 3.26399 14.0007 4.00033V11.3337C14.0007 12.07 13.4037 12.667 12.6673 12.667H7.33398"
+                                        stroke="currentColor" stroke-width="1.35" stroke-linecap="round"
+                                        stroke-linejoin="round" opacity="0.45" />
+                                      <path
+                                        d="M6.66732 4.00065H9.33398C10.6673 4.00065 10.6673 3.33398 10.6673 2.66732C10.6673 1.33398 10.0007 1.33398 9.33398 1.33398H6.66732C6.00065 1.33398 5.33398 1.33398 5.33398 2.66732C5.33398 4.00065 6.00065 4.00065 6.66732 4.00065Z"
+                                        stroke="currentColor" stroke-width="1.35" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                      <path opacity="0.4"
+                                        d="M10.6667 2.67969C12.8867 2.79969 14 3.61969 14 6.66635V10.6664C14 13.333 13.3333 14.6664 10 14.6664H6C2.66667 14.6664 2 13.333 2 10.6664V6.66635C2 3.62635 3.11333 2.79969 5.33333 2.67969"
+                                        stroke="currentColor" stroke-width="1.35" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    </svg>
+                                    4 مصادر
+                                  </button></td>
+                              </tr>
+                              <tr>
+                                <td><span class="ff-onest">2</span></td>
+                                <td>توريد كراسي هيدروليك</td>
+                                <td>25 وحدة</td>
+                                <td class="ff-onest">—</td>
+                                <td><span class="sm-ele fz-10 bordered-8 prim-opacity-outlined">غير مكتمل</span></td>
+                                <td class="fz-12 text-gray">مصدر واحد</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      <a href="#" class="fz-14 colored text-decoration-underline">عرض جميع البنود (19 بند)</a>
+                      <p class="fz-12 text-gray mt-3 mb-0">التقديرات مبنية على مصادر متاحة وليست أسعاراً نهائية ملزمة.
+                      </p>
+                    </div>
+                    <div class="col-12 col-lg-4 d-flex flex-column gap-3">
+                      <div class="tender-card p-3">
+                        <h6 class="black-text mb-3">حساب التكلفة</h6>
+                        <div class="d-flex justify-content-between fz-14 mb-2"><span class="text-gray">إجمالي تكلفة
+                            البنود</span><span class="ff-onest black-text">41,457.00 ر.س</span></div>
+                        <div class="d-flex justify-content-between fz-14 mb-2"><span class="text-gray">ضريبة
+                            (15%)</span><span class="ff-onest black-text">6,218.55 ر.س</span></div>
+                        <div class="d-flex justify-content-between fz-16 fw-medium mt-3 pt-3 brd-top"><span
+                            class="black-text">الإجمالي</span><span class="ff-onest colored">47,675.55 ر.س</span></div>
+                      </div>
+                      <div class="tender-card p-3">
+                        <h6 class="black-text mb-3">حالة التسعير</h6>
+                        <div class="d-flex justify-content-between fz-14 mb-2"><span class="text-gray">جميع
+                            البنود</span><span class="ff-onest">19</span></div>
+                        <div class="d-flex justify-content-between fz-14 mb-2"><span class="text-gray">مسعّر
+                            تلقائياً</span><span class="ff-onest success-text">17</span></div>
+                        <div class="d-flex justify-content-between fz-14"><span class="text-gray">يحتاج
+                            مراجعة</span><span class="ff-onest colored">02</span></div>
+                      </div>
                     </div>
                   </div>
-                </td>
-                <td data-label="الحاله">
-                  <span class="sm-ele fz-12 bordered-8 text-nowrap badge-draft">مسودة</span>
-                </td>
-                <td data-label="الاجراءات">
-                  <a href="tenders-pricing-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                    التفاصيل
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td data-label="رقم التسعير">
-                  <div class="d-flex align-items-center gap-2">
-                    <input class="form-check-input" type="checkbox" value="">
-                    <span class="ff-onest black-text fw-medium">250739020707</span>
+                  <div class="tender-card p-3 mb-0 prim-opacity-outlined text-start">
+                    <p class="fz-14 black-text mb-0">الأرقام المعروضة تقديرات إحصائية من البيانات المتاحة — تأكد من
+                      التكاليف الفعلية مع الموردين قبل تقديم العطاء.</p>
                   </div>
-                </td>
-                <td data-label="نوع التسعير">
-                  <div class="d-flex align-items-center">
-                    <span class="sm-logo">
-                      <img src="images/dollar-square.svg" alt="نوع التسعير">
-                    </span>
-                    <span>نوع التسعير</span>
-                  </div>
-                </td>
-                <td data-label="عدد المنتجات">
-                  <div class="d-flex align-items-center">
-                    <span class="sm-logo">
-                      <img src="images/shopping-cart.svg" alt="Shopping cart">
-                    </span>
-                    <span class="fw-medium black-text">12</span>
-                  </div>
-                </td>
-                <td data-label="عدد الموردين المطلوب">
-                  <div class="d-flex align-items-center">
-                    <span class="sm-logo">
-                      <img src="images/shop-add.svg" alt="shop Add">
-                    </span>
-                    <span class="fw-medium black-text">12</span>
-                  </div>
-                </td>
-                <td data-label="تاريخ الانشاء">
-                  <div class="d-flex align-items-center">
-                    <div class="sm-logo">
-                      <img src="images/clock.svg" alt="clock">
-                    </div>
-                    <div>
-                      <span class="black-text fw-medium d-inline-block me-1" dir="ltr">
-                        04:30 pm
-                      </span>
-                      <span class="black-text fw-medium">
-                        05-12-2025
-                      </span>
-                    </div>
-                  </div>
-                </td>
-                <td data-label="الحاله">
-                  <span class="sm-ele fz-12 bordered-8 text-nowrap prim-opacity-outlined">مقبولة</span>
-                </td>
-                <td data-label="الاجراءات">
-                  <a href="tenders-pricing-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                    التفاصيل
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td data-label="رقم التسعير">
-                  <div class="d-flex align-items-center gap-2">
-                    <input class="form-check-input" type="checkbox" value="">
-                    <span class="ff-onest black-text fw-medium">250739020707</span>
-                  </div>
-                </td>
-                <td data-label="نوع التسعير">
-                  <div class="d-flex align-items-center">
-                    <span class="sm-logo">
-                      <img src="images/dollar-square.svg" alt="نوع التسعير">
-                    </span>
-                    <span>نوع التسعير</span>
-                  </div>
-                </td>
-                <td data-label="عدد المنتجات">
-                  <div class="d-flex align-items-center">
-                    <span class="sm-logo">
-                      <img src="images/shopping-cart.svg" alt="Shopping cart">
-                    </span>
-                    <span class="fw-medium black-text">12</span>
-                  </div>
-                </td>
-                <td data-label="عدد الموردين المطلوب">
-                  <div class="d-flex align-items-center">
-                    <span class="sm-logo">
-                      <img src="images/shop-add.svg" alt="shop Add">
-                    </span>
-                    <span class="fw-medium black-text">12</span>
-                  </div>
-                </td>
-                <td data-label="تاريخ الانشاء">
-                  <div class="d-flex align-items-center">
-                    <div class="sm-logo">
-                      <img src="images/clock.svg" alt="clock">
-                    </div>
-                    <div>
-                      <span class="black-text fw-medium d-inline-block me-1" dir="ltr">
-                        04:30 pm
-                      </span>
-                      <span class="black-text fw-medium">
-                        05-12-2025
-                      </span>
-                    </div>
-                  </div>
-                </td>
-                <td data-label="الحاله">
-                  <span class="sm-ele fz-12 bordered-8 text-nowrap badge-success">تم ارجاعها بملاحظة</span>
-                </td>
-                <td data-label="الاجراءات">
-                  <a href="tenders-pricing-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                    التفاصيل
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td data-label="رقم التسعير">
-                  <div class="d-flex align-items-center gap-2">
-                    <input class="form-check-input" type="checkbox" value="">
-                    <span class="ff-onest black-text fw-medium">250739020707</span>
-                  </div>
-                </td>
-                <td data-label="نوع التسعير">
-                  <div class="d-flex align-items-center">
-                    <span class="sm-logo">
-                      <img src="images/dollar-square.svg" alt="نوع التسعير">
-                    </span>
-                    <span>نوع التسعير</span>
-                  </div>
-                </td>
-                <td data-label="عدد المنتجات">
-                  <div class="d-flex align-items-center">
-                    <span class="sm-logo">
-                      <img src="images/shopping-cart.svg" alt="Shopping cart">
-                    </span>
-                    <span class="fw-medium black-text">12</span>
-                  </div>
-                </td>
-                <td data-label="عدد الموردين المطلوب">
-                  <div class="d-flex align-items-center">
-                    <span class="sm-logo">
-                      <img src="images/shop-add.svg" alt="shop Add">
-                    </span>
-                    <span class="fw-medium black-text">12</span>
-                  </div>
-                </td>
-                <td data-label="تاريخ الانشاء">
-                  <div class="d-flex align-items-center">
-                    <div class="sm-logo">
-                      <img src="images/clock.svg" alt="clock">
-                    </div>
-                    <div>
-                      <span class="black-text fw-medium d-inline-block me-1" dir="ltr">
-                        04:30 pm
-                      </span>
-                      <span class="black-text fw-medium">
-                        05-12-2025
-                      </span>
-                    </div>
-                  </div>
-                </td>
-                <td data-label="الحاله">
-                  <span class="sm-ele fz-12 bordered-8 text-nowrap prim-opacity-outlined">مقبولة</span>
-                </td>
-                <td data-label="الاجراءات">
-                  <a href="tenders-pricing-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                    التفاصيل
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td data-label="رقم التسعير">
-                  <div class="d-flex align-items-center gap-2">
-                    <input class="form-check-input" type="checkbox" value="">
-                    <span class="ff-onest black-text fw-medium">250739020707</span>
-                  </div>
-                </td>
-                <td data-label="نوع التسعير">
-                  <div class="d-flex align-items-center">
-                    <span class="sm-logo">
-                      <img src="images/dollar-square.svg" alt="نوع التسعير">
-                    </span>
-                    <span>نوع التسعير</span>
-                  </div>
-                </td>
-                <td data-label="عدد المنتجات">
-                  <div class="d-flex align-items-center">
-                    <span class="sm-logo">
-                      <img src="images/shopping-cart.svg" alt="Shopping cart">
-                    </span>
-                    <span class="fw-medium black-text">12</span>
-                  </div>
-                </td>
-                <td data-label="عدد الموردين المطلوب">
-                  <div class="d-flex align-items-center">
-                    <span class="sm-logo">
-                      <img src="images/shop-add.svg" alt="shop Add">
-                    </span>
-                    <span class="fw-medium black-text">12</span>
-                  </div>
-                </td>
-                <td data-label="تاريخ الانشاء">
-                  <div class="d-flex align-items-center">
-                    <div class="sm-logo">
-                      <img src="images/clock.svg" alt="clock">
-                    </div>
-                    <div>
-                      <span class="black-text fw-medium d-inline-block me-1" dir="ltr">
-                        04:30 pm
-                      </span>
-                      <span class="black-text fw-medium">
-                        05-12-2025
-                      </span>
-                    </div>
-                  </div>
-                </td>
-                <td data-label="الحاله">
-                  <span class="sm-ele fz-12 bordered-8 text-nowrap badge-rejected">مرفوضه</span>
-                </td>
-                <td data-label="الاجراءات">
-                  <a href="tenders-pricing-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                    التفاصيل
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td data-label="رقم التسعير">
-                  <div class="d-flex align-items-center gap-2">
-                    <input class="form-check-input" type="checkbox" value="">
-                    <span class="ff-onest black-text fw-medium">250739020707</span>
-                  </div>
-                </td>
-                <td data-label="نوع التسعير">
-                  <div class="d-flex align-items-center">
-                    <span class="sm-logo">
-                      <img src="images/dollar-square.svg" alt="نوع التسعير">
-                    </span>
-                    <span>نوع التسعير</span>
-                  </div>
-                </td>
-                <td data-label="عدد المنتجات">
-                  <div class="d-flex align-items-center">
-                    <span class="sm-logo">
-                      <img src="images/shopping-cart.svg" alt="Shopping cart">
-                    </span>
-                    <span class="fw-medium black-text">12</span>
-                  </div>
-                </td>
-                <td data-label="عدد الموردين المطلوب">
-                  <div class="d-flex align-items-center">
-                    <span class="sm-logo">
-                      <img src="images/shop-add.svg" alt="shop Add">
-                    </span>
-                    <span class="fw-medium black-text">12</span>
-                  </div>
-                </td>
-                <td data-label="تاريخ الانشاء">
-                  <div class="d-flex align-items-center">
-                    <div class="sm-logo">
-                      <img src="images/clock.svg" alt="clock">
-                    </div>
-                    <div>
-                      <span class="black-text fw-medium d-inline-block me-1" dir="ltr">
-                        04:30 pm
-                      </span>
-                      <span class="black-text fw-medium">
-                        05-12-2025
-                      </span>
-                    </div>
-                  </div>
-                </td>
-                <td data-label="الحاله">
-                  <span class="sm-ele fz-12 bordered-8 text-nowrap badge-draft">مسودة</span>
-                </td>
-                <td data-label="الاجراءات">
-                  <a href="tenders-pricing-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                    التفاصيل
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td data-label="رقم التسعير">
-                  <div class="d-flex align-items-center gap-2">
-                    <input class="form-check-input" type="checkbox" value="">
-                    <span class="ff-onest black-text fw-medium">250739020707</span>
-                  </div>
-                </td>
-                <td data-label="نوع التسعير">
-                  <div class="d-flex align-items-center">
-                    <span class="sm-logo">
-                      <img src="images/dollar-square.svg" alt="نوع التسعير">
-                    </span>
-                    <span>نوع التسعير</span>
-                  </div>
-                </td>
-                <td data-label="عدد المنتجات">
-                  <div class="d-flex align-items-center">
-                    <span class="sm-logo">
-                      <img src="images/shopping-cart.svg" alt="Shopping cart">
-                    </span>
-                    <span class="fw-medium black-text">12</span>
-                  </div>
-                </td>
-                <td data-label="عدد الموردين المطلوب">
-                  <div class="d-flex align-items-center">
-                    <span class="sm-logo">
-                      <img src="images/shop-add.svg" alt="shop Add">
-                    </span>
-                    <span class="fw-medium black-text">12</span>
-                  </div>
-                </td>
-                <td data-label="تاريخ الانشاء">
-                  <div class="d-flex align-items-center">
-                    <div class="sm-logo">
-                      <img src="images/clock.svg" alt="clock">
-                    </div>
-                    <div>
-                      <span class="black-text fw-medium d-inline-block me-1" dir="ltr">
-                        04:30 pm
-                      </span>
-                      <span class="black-text fw-medium">
-                        05-12-2025
-                      </span>
-                    </div>
-                  </div>
-                </td>
-                <td data-label="الحاله">
-                  <span class="sm-ele fz-12 bordered-8 text-nowrap badge-reviewed">يتم المراجعه</span>
-                </td>
-                <td data-label="الاجراءات">
-                  <a href="tenders-pricing-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                    التفاصيل
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td data-label="رقم التسعير">
-                  <div class="d-flex align-items-center gap-2">
-                    <input class="form-check-input" type="checkbox" value="">
-                    <span class="ff-onest black-text fw-medium">250739020707</span>
-                  </div>
-                </td>
-                <td data-label="نوع التسعير">
-                  <div class="d-flex align-items-center">
-                    <span class="sm-logo">
-                      <img src="images/dollar-square.svg" alt="نوع التسعير">
-                    </span>
-                    <span>نوع التسعير</span>
-                  </div>
-                </td>
-                <td data-label="عدد المنتجات">
-                  <div class="d-flex align-items-center">
-                    <span class="sm-logo">
-                      <img src="images/shopping-cart.svg" alt="Shopping cart">
-                    </span>
-                    <span class="fw-medium black-text">12</span>
-                  </div>
-                </td>
-                <td data-label="عدد الموردين المطلوب">
-                  <div class="d-flex align-items-center">
-                    <span class="sm-logo">
-                      <img src="images/shop-add.svg" alt="shop Add">
-                    </span>
-                    <span class="fw-medium black-text">12</span>
-                  </div>
-                </td>
-                <td data-label="تاريخ الانشاء">
-                  <div class="d-flex align-items-center">
-                    <div class="sm-logo">
-                      <img src="images/clock.svg" alt="clock">
-                    </div>
-                    <div>
-                      <span class="black-text fw-medium d-inline-block me-1" dir="ltr">
-                        04:30 pm
-                      </span>
-                      <span class="black-text fw-medium">
-                        05-12-2025
-                      </span>
-                    </div>
-                  </div>
-                </td>
-                <td data-label="الحاله">
-                  <span class="sm-ele fz-12 bordered-8 text-nowrap badge-success">تم ارجاعها بملاحظة</span>
-                </td>
-                <td data-label="الاجراءات">
-                  <a href="tenders-pricing-details.html" class="btn-primary sm-ele fz-12 bordered-40">
-                    التفاصيل
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+                </div>
+                <div
+                  class="d-flex flex-wrap align-items-center justify-content-between gap-3 mt-auto pt-3 spg-wizard-actions">
+                  <a href="#tp-step-5" class="btn-main outline-primary-gray fz-14 fw-medium"><svg
+                      xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                      aria-hidden="true">
+                      <path d="M12.025 15.0586L17.0833 10.0002L12.025 4.94189" stroke="#6BAFB8" stroke-width="1.5"
+                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path opacity="0.4" d="M2.91667 10H16.9417" stroke="#6BAFB8" stroke-width="1.5"
+                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg> السابق</a>
+                  <button type="button" class="btn-main btn-primary h-44 fz-14" disabled>إنهاء الطلب <svg
+                      xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none"
+                      aria-hidden="true">
+                      <path d="M8.47485 15.5583L3.41652 10.5L8.47485 5.44165" stroke="#fff" stroke-width="1.5"
+                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path opacity="0.4" d="M17.583 10.5H3.55801" stroke="#fff" stroke-width="1.5"
+                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg></button>
+                </div>
+              </div>
+            </section>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- jQuery -->
-  <script src="assets/js/jquery-3.7.1.min.js"></script>
-  <!-- Bootstrap JS -->
+
+  <div class="modal fade" id="tpAddItemModal" tabindex="-1" aria-labelledby="tpAddItemModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content w-620">
+        <div class="modal-header brd-btm">
+          <h6 class="modal-title" id="tpAddItemModalLabel">إضافة بند</h6><button type="button" class="btn-close"
+            data-bs-dismiss="modal" aria-label="إغلاق"></button>
+        </div>
+        <div class="modal-body">
+          <div class="tender-card p-12">
+            <div class="row g-3">
+              <div class="col-12 col-md-4"><label class="form-label" for="tpAddNum">رقم البند</label><input
+                  class="form-control" id="tpAddNum" name="item_number" /></div>
+              <div class="col-12 col-md-8"><label class="form-label" for="tpAddName">اسم البند</label><input
+                  class="form-control" id="tpAddName" name="item_name" required /></div>
+              <div class="col-12"><label class="form-label" for="tpAddDesc">المواصفات</label><textarea
+                  class="form-control" id="tpAddDesc" name="item_description" rows="3"></textarea></div>
+              <div class="col-12 col-md-6"><label class="form-label" for="tpAddUnit">الوحدة</label><input
+                  class="form-control" id="tpAddUnit" name="unit" /></div>
+              <div class="col-12 col-md-6"><label class="form-label" for="tpAddQty">الكمية</label><input type="number"
+                  class="form-control" id="tpAddQty" name="quantity" min="0" step="any" /></div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer pt-0 gap-3 flex-nowrap"><button type="button" class="btn-main btn-primary w-100">حفظ
+            البند</button><button type="button" class="btn-main btn-primary-outline w-100"
+            data-bs-dismiss="modal">إلغاء</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="tpEditItemModal" tabindex="-1" aria-labelledby="tpEditItemModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content w-620">
+        <div class="modal-header brd-btm">
+          <h6 class="modal-title" id="tpEditItemModalLabel">تعديل بند</h6><button type="button" class="btn-close"
+            data-bs-dismiss="modal" aria-label="إغلاق"></button>
+        </div>
+        <div class="modal-body">
+          <div class="tender-card p-12">
+            <div class="row g-3">
+              <div class="col-12 col-md-4"><label class="form-label" for="tpEditNum">رقم البند</label><input
+                  class="form-control" id="tpEditNum" name="item_number" /></div>
+              <div class="col-12 col-md-8"><label class="form-label" for="tpEditName">اسم البند</label><input
+                  class="form-control" id="tpEditName" name="item_name" required /></div>
+              <div class="col-12"><label class="form-label" for="tpEditDesc">المواصفات</label><textarea
+                  class="form-control" id="tpEditDesc" name="item_description" rows="3"></textarea></div>
+              <div class="col-12 col-md-6"><label class="form-label" for="tpEditUnit">الوحدة</label><input
+                  class="form-control" id="tpEditUnit" name="unit" /></div>
+              <div class="col-12 col-md-6"><label class="form-label" for="tpEditQty">الكمية</label><input type="number"
+                  class="form-control" id="tpEditQty" name="quantity" min="0" step="any" /></div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer pt-0 gap-3 flex-nowrap"><button type="button" class="btn-main btn-primary w-100">حفظ
+            التعديلات</button><button type="button" class="btn-main btn-primary-outline w-100"
+            data-bs-dismiss="modal">إلغاء</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="tpSourcesModal" tabindex="-1" aria-labelledby="tpSourcesModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content w-620">
+        <div class="modal-header brd-btm">
+          <h6 class="modal-title" id="tpSourcesModalLabel">مصادر التقدير</h6><button type="button" class="btn-close"
+            data-bs-dismiss="modal" aria-label="إغلاق"></button>
+        </div>
+        <div class="modal-body">
+          <ul class="fz-14 black-text mb-3 ps-3">
+            <li class="mb-2">مصدر أسعار السوق</li>
+            <li class="mb-2">تقرير أسعار محلي</li>
+            <li class="mb-2">منصة بيانات الأسعار</li>
+            <li class="mb-2">قاعدة بيانات الموردين</li>
+          </ul>
+          <p class="fz-12 text-gray mb-0">تم استخدام 4 مصادر مرجعية لهذا التقدير.</p>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="assets/js/bootstrap.bundle.min.js"></script>
-
-  <!-- DataTables JS -->
-  <script src="assets/js/jquery.dataTables.min.js"></script>
-  <script src="assets/js/dataTables.bootstrap5.min.js"></script>
-  <script src="assets/js/dataTables.responsive.min.js"></script>
-  <script src="assets/js/responsive.bootstrap5.min.js"></script>
-  <!-- Custom JS -->
-  <script src="js/main.js"></script>
-  <script src="js/filtering.js" defer></script>
-  <script src="js/dataTable.js"></script>
-  <script src="js/upload-file.js"></script>
-  <script>
-    $(document).ready(function () {
-      $('#selectAll').on('click', function () {
-        var isChecked = $(this).is(':checked');
-        $('.competition-table tbody input[type="checkbox"]').prop('checked', isChecked);
-      });
-    });
-
-    // Robust Badge Synchronization Logic for Pricing
-    document.addEventListener('DOMContentLoaded', function () {
-      const table = document.querySelector('.competition-table');
-      if (table) {
-        table.addEventListener('click', function (e) {
-          const detailLink = e.target.closest('a[href*="tenders-pricing-details.html"]');
-          if (detailLink) {
-            const row = detailLink.closest('tr');
-            if (row) {
-              // Robust badge detection
-              const badge = row.querySelector('[data-label*="الحا"] .sm-ele, [data-label*="Status"] .sm-ele, .sm-ele[class*="badge-"], .prim-opacity-outlined');
-              if (badge) {
-                sessionStorage.setItem('pricingStatus', badge.textContent.trim());
-                sessionStorage.setItem('pricingClass', badge.className);
-              }
-            }
-          }
-        });
-      }
-    });
-  </script>
+  <script src="js/main.js" defer></script>
 </body>
 
 </html>
