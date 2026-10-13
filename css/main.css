@@ -1949,10 +1949,6 @@ button.proposal-status.red-colored:hover {
   background-color: var(--primary-base-color);
 }
 
-.progress-bar.bg-dark-base {
-  background-color: #0c2030;
-}
-
 .bg-warning-progress {
   background: #f79e1b;
 }
@@ -8735,6 +8731,21 @@ html[dir="ltr"] .input-icon-group input {
   display: block;
 }
 
+.tp-heading-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.25;
+  background: rgba(107, 175, 184, 0.14);
+  border: 1px solid rgba(107, 175, 184, 0.4);
+  color: var(--primary-color, #397d86);
+}
+
 .tp-flow:not(:has(.tp-flow-panel:target)) #tp-welcome,
 .tp-flow:not(:has(.tp-flow-panel:target)) #tr-welcome {
   display: block;
@@ -8882,7 +8893,6 @@ html[dir="ltr"] .input-icon-group input {
 
 .tp-system-activity-step.is-running .tp-system-activity-card {
   border-color: rgba(107, 175, 184, 0.55);
-  box-shadow: 0 2px 8px rgba(57, 125, 134, 0.08);
 }
 
 .tp-system-activity-step.is-queued .tp-system-activity-card {
