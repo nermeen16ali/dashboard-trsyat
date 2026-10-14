@@ -6,14 +6,8 @@
   <link rel="icon" type="image/png" href="images/trsyat-logo.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>نتائج المناقصات</title>
-  <meta name="description"
-    content="We provide you with an intelligent environment for managing tenders—from search to submission. Our goal is to support your growth by simplifying access to opportunities and enhancing your competitive edge." />
-
-  <!-- Bootstrap 5 RTL CSS -->
+  <meta name="description" content="ذكاء المناقصات — البحث في نتائج المناقصات السابقة والترسيات والمتقدمين." />
   <link href="assets/css/bootstrap.rtl.min.css" rel="stylesheet" />
-  <!-- Flatpickr CSS -->
-  <link rel="stylesheet" href="assets/css/flatpickr-material_blue.css" />
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="css/main.css" />
 </head>
 
@@ -186,8 +180,6 @@
     </div>
   </div>
 
-
-
   <!-- Top Navigation Bar -->
   <nav class="navbar navbar-dark top-navbar navbar-expand-lg">
     <div class="container-fluid">
@@ -211,7 +203,7 @@
         </div>
         <div class="navbar-nav gap-4 gap-lg-3 d-flex flex-lg-row flex-column w-100">
           <div class="search-box position-relative flex-grow-1">
-            <input type="text" class="form-control table-search" placeholder="البحث في الداشبورد" name="Search" />
+            <input type="text" class="form-control" placeholder="البحث في الداشبورد" name="Search" />
             <span class="search-icon position-absolute">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path
@@ -222,7 +214,7 @@
               </svg>
             </span>
           </div>
-          <a href="tenders-results-ltr.html" class="nav-link">
+          <a href="tenders-results.html" class="nav-link">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g opacity="0.4">
                 <path d="M14.1582 7.4668H5.84155H14.1582Z" fill="currentColor" />
@@ -367,6 +359,7 @@
         </div>
       </div>
   </nav>
+
   <!-- Main Tab Navigation -->
   <div class="container-fluid main-content">
     <nav class="nav-tabs">
@@ -540,740 +533,1501 @@
         </div>
       </div>
     </nav>
-    <!-- Page Header -->
-    <div class="page-header d-flex align-items-center">
+
+    <div class="page-header d-flex align-items-center gap-3">
       <div class="page-breadcrumb">
-        <span class="active">نتائج المناقصات</span>
+        <h2 class="active">نتائج المناقصات</h2>
       </div>
-      <button class="outline-primary-gray bordered-40 fz-10 d-flex align-items-center gap-10">
+      <button type="button" class="outline-primary-gray bordered-40 fz-10 d-flex align-items-center gap-10">
         <span>فيديو شرح</span>
         <img src="images/play-cricle.svg" alt="فيديو شرح">
       </button>
     </div>
 
-
-    <div class="d-lg-flex align-items-start gap-4">
-      <div class="filter-sidebar sm-0 mb-4 mb-lg-0">
-        <!-- Filter Header -->
-        <div class="filter-header d-flex align-items-center gap-10">
-          <img src="images/sort.svg" class="sort-icon" alt="Sort">
-          <h6 class="black-text d-none d-lg-inline-block">التصفية و البحث</h6>
-        </div>
-
-        <!-- Search Box -->
-        <div class="search-wrapper position-relative">
-          <div class="icon-box">
-            <img src="images/search-normal.svg" alt="Search">
-          </div>
-          <input type="text" placeholder="البحث في المسابقات" class="form-control h-44">
-        </div>
-
-        <!-- Basic Information Section -->
-        <div class="tender-card p-12">
-          <button class="filter-section-header collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#basicInfoSection" aria-expanded="false">
-            <h6 class="black-text">المعلومات الأساسية</h6>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M13 6L8 11L3 6" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </button>
-          <div class="collapse" id="basicInfoSection">
-            <div class="tender-sections">
-              <!-- Competition Status -->
-              <div class="filter-item">
-                <label class="form-label">حالة المنافسة</label>
-                <select class="form-select">
-                  <option value="" selected>اختر حالة المنافسة</option>
-                  <option value="1">نشطة</option>
-                  <option value="2">منتهية</option>
-                  <option value="3">ملغاة</option>
-                </select>
+    <div class="dash-widget sm-0 p-lg-4 spg-root">
+      <div class="row g-4">
+        <div class="col-12 col-lg-3 spg-projects-sidebar-col">
+          <div class="tender-card sm-0 p-lg-3 spg-projects-sidebar-panel d-flex flex-column h-100">
+            <div
+              class="sidebar-header d-flex flex-column flex-lg-row align-items-lg-center gap-4 justify-content-between mb-4">
+              <div
+                class="spg-projects-sidebar-title-row d-none d-md-flex align-items-center justify-content-between w-100 gap-2">
+                <h6 class="black-text mb-0">طلبات البحث الأخيرة</h6>
               </div>
-
-              <!-- Regions -->
-              <div class="filter-item">
-                <label class="form-label">المناطق</label>
-                <select class="form-select">
-                  <option value="" selected>اختر حالة المنافسة</option>
-                  <option value="1">الرياض</option>
-                  <option value="2">جدة</option>
-                  <option value="3">الدمام</option>
-                </select>
-              </div>
-
-              <!-- Main Activity -->
-              <div class="filter-item">
-                <label class="form-label">النشاط الأساسي</label>
-                <select class="form-select">
-                  <option value="" selected>اختر حالة المنافسة</option>
-                  <option value="1">نشاط 1</option>
-                  <option value="2">نشاط 2</option>
-                  <option value="3">نشاط 3</option>
-                </select>
-              </div>
-
-              <!-- Sub Activity -->
-              <div class="filter-item mb-0">
-                <label class="form-label">النشاط الفرعي</label>
-                <select class="form-select">
-                  <option value="" selected>اختر حالة المنافسة</option>
-                  <option value="1">نشاط فرعي 1</option>
-                  <option value="2">نشاط فرعي 2</option>
-                  <option value="3">نشاط فرعي 3</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Advanced Search Section -->
-        <div class="tender-card p-12">
-          <button class="filter-section-header collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#advancedSearchSection" aria-expanded="false">
-            <h6 class="black-text">البحث المتقدم</h6>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M13 6L8 11L3 6" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </button>
-          <div class="collapse" id="advancedSearchSection">
-            <div class="tender-sections">
-              <!-- Competition Status -->
-              <div class="filter-item">
-                <label class="form-label">نوع المنافسة </label>
-                <select class="form-select">
-                  <option value="" selected>اختر</option>
-                  <option value="1">نشطة</option>
-                  <option value="2">منتهية</option>
-                  <option value="3">ملغاة</option>
-                </select>
-              </div>
-
-              <!-- Regions -->
-              <div class="filter-item">
-                <label class="form-label">الجهة الحكوميه</label>
-                <select class="form-select">
-                  <option value="" selected>اختر نوع المنتج</option>
-                  <option value="1">الرياض</option>
-                  <option value="2">جدة</option>
-                  <option value="3">الدمام</option>
-                </select>
-              </div>
-
-              <!-- Main Activity -->
-              <div class="filter-item">
-                <label class="form-label">مدى سعر كراسة الشروط </label>
-                <select class="form-select">
-                  <option value="" selected>اختر</option>
-                  <option value="1">نشاط 1</option>
-                  <option value="2">نشاط 2</option>
-                  <option value="3">نشاط 3</option>
-                </select>
-              </div>
-              <div class="filter-item">
-                <label class="form-label">تاريخ نشر المنافسة </label>
-                <div class="form-group date_group position-relative">
-                  <input type="text" class="flatpickr-input form-control" placeholder="اختر التاريخ" />
-                  <span class="position-absolute">
-                    <img src="images/calendar.svg" alt="calendar">
-                  </span>
-                </div>
-              </div>
-              <div class="filter-item">
-                <label class="form-label">آخر موعد لتقديم العروض</label>
-                <div class="form-group date_group position-relative mb-12">
-                  <input type="text" class="flatpickr-input form-control" placeholder="من" />
-                  <span class="position-absolute">
-                    <img src="images/calendar.svg" alt="calendar">
-                  </span>
-                </div>
-                <div class="form-group date_group position-relative">
-                  <input type="text" class="flatpickr-input form-control" placeholder="إلي" />
-                  <span class="position-absolute">
-                    <img src="images/calendar.svg" alt="calendar">
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Action Buttons -->
-        <div class="filter-actions d-flex gap-3">
-          <button class="btn-main btn-primary fw-medium w-100">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path
-                d="M9.58366 17.5003C13.9559 17.5003 17.5003 13.9559 17.5003 9.58366C17.5003 5.2114 13.9559 1.66699 9.58366 1.66699C5.2114 1.66699 1.66699 5.2114 1.66699 9.58366C1.66699 13.9559 5.2114 17.5003 9.58366 17.5003Z"
-                stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              <path opacity="0.4" d="M18.3337 18.3337L16.667 16.667" stroke="white" stroke-width="1.5"
-                stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-            البحث
-          </button>
-          <button class="btn-main btn-prim fw-medium w-100">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path
-                d="M8.56641 16.875H14.1664C16.4664 16.875 18.3331 15.0083 18.3331 12.7083V7.29167C18.3331 4.99167 16.4664 3.125 14.1664 3.125H8.56641C7.39141 3.125 6.27474 3.61667 5.48307 4.49167L2.54141 7.725C1.36641 9.01667 1.36641 10.9833 2.54141 12.275L5.48307 15.5083C6.27474 16.3833 7.39141 16.875 8.56641 16.875Z"
-                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              <g opacity="0.4">
-                <path d="M13.3335 12.0581L9.2168 7.94141" stroke="currentColor" stroke-width="1.5"
-                  stroke-linecap="round" />
-                <path d="M9.2168 12.0581L13.3335 7.94141" stroke="currentColor" stroke-width="1.5"
-                  stroke-linecap="round" />
-              </g>
-            </svg>
-            حذف
-          </button>
-        </div>
-      </div>
-      <div class="dash-widget sm-0 flex-grow-1">
-        <div class="tender-card p-3 mb-4 abs-card">
-          <div class="tender-header d-flex align-items-center justify-content-between mb-3">
-            <div class="tender-number">
-              <span>رقم/رمز المناقصة </span>
-              <span class="fz-14 black-text fw-medium">250739020709</span>
-            </div>
-            <div class="tender-actions p-sm-absolute">
-              <a href="tenders-results-details.html" class="btn-base btn-base-sm bordered-40  fz-12">
-                ترسيات الموردين
+              <a href="#tr-search" class="btn-base btn-main fw-medium fz-14 flex-shrink-0 text-decoration-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                  aria-hidden="true">
+                  <path d="M8 3.33398V12.6673" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M3.3335 8H12.6668" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+                <span>طلب جديد</span>
               </a>
+              <button type="button" class="btn-close spg-projects-drawer-close d-none flex-shrink-0"></button>
+            </div>
+            <div class="search-box w-100 position-relative mb-3">
+              <input type="search" class="form-control" placeholder="البحث في الطلبات" name="results-history-search"
+                autocomplete="off" />
+              <span class="search-icon position-absolute">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                  aria-hidden="true">
+                  <path
+                    d="M9.58341 17.5001C13.9557 17.5001 17.5001 13.9557 17.5001 9.58341C17.5001 5.21116 13.9557 1.66675 9.58341 1.66675C5.21116 1.66675 1.66675 5.21116 1.66675 9.58341C1.66675 13.9557 5.21116 17.5001 9.58341 17.5001Z"
+                    fill="white" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path opacity="0.4" d="M18.3334 18.3334L16.6667 16.6667" stroke="#0C2030" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+            </div>
+            <div class="support-chats flex-grow-1">
+              <div class="black-text fw-medium fz-12 mb-2">اليوم</div>
+              <div class="chat-list d-flex flex-column gap-2 mb-3"><a href="#tr-results"
+                  class="chat-item d-flex align-items-center gap-12 w-100 text-decoration-none active">
+                  <div class="chat-item-icon"><img src="images/document-normal.svg" alt="" width="20" height="20"></div>
+                  <div class="w-100 text-start min-w-0">
+                    <div class="d-flex align-items-center justify-content-between gap-2 mb-1">
+                      <span class="ticket-id text-truncate fz-14 black-text">نتائج مناقصات المقاولات في الرياض</span>
+                      <span class="sm-ele fz-10 bordered-8 text-nowrap badge-success">مكتمل</span>
+                    </div>
+                    <div class="fz-10 text-gray chat-preview text-truncate">منذ ساعتين</div>
+                  </div>
+                </a></div>
+              <div class="black-text fw-medium fz-12 mb-2">سابقاً</div>
+              <div class="chat-list d-flex flex-column gap-2"><a href="#tr-results"
+                  class="chat-item d-flex align-items-center gap-12 w-100 text-decoration-none">
+                  <div class="chat-item-icon"><img src="images/document-normal.svg" alt="" width="20" height="20"></div>
+                  <div class="w-100 text-start min-w-0">
+                    <span class="ticket-id text-truncate fz-14 black-text d-block">متوسط أسعار مشاريع وزارة
+                      التعليم</span>
+                    <span class="fz-10 text-gray chat-preview text-truncate">أمس</span>
+                  </div>
+                </a><a href="#tr-results" class="chat-item d-flex align-items-center gap-12 w-100 text-decoration-none">
+                  <div class="chat-item-icon"><img src="images/document-normal.svg" alt="" width="20" height="20"></div>
+                  <div class="w-100 text-start min-w-0">
+                    <span class="ticket-id text-truncate fz-14 black-text d-block">المناقصات فوق 5 مليون ريال</span>
+                    <span class="fz-10 text-gray chat-preview text-truncate">منذ 3 أيام</span>
+                  </div>
+                </a></div>
             </div>
           </div>
-          <div class="tender-sections p-3 rounded-12 bg-white">
-            <div class="tender-section position-relative">
-              <div class="row align-items-md-center">
-                <div class="col-8 col-md-6">
-                  <div class="d-flex flex-column flex-md-row align-items-md-center gap-10">
-                    <span class="tender-status me-3 flex-shrink-0">طلب تقديم العروض</span>
-                    <span class="fz-12 gray-text flex-shrink-0">تاريخ النشر</span>
-                    <span class="fz-14 black-text fw-medium flex-shrink-0">05-12-2025</span>
-                  </div>
-                  <div class="d-flex flex-column flex-lg-row gap-3 justify-content-between">
-                    <div>
-                      <h6 class="tender-title">تجهيز المكاتب وأثاثها</h6>
-                      <div class="tender-subtitle">وزارة الصحة</div>
+        </div>
+        <div class="col-12 col-lg-9">
+          <div class="tp-flow">
+            <section id="tr-welcome" class="tp-flow-panel">
+
+              <div class="tender-card p-3 p-lg-4 d-flex flex-column min-h-spg-main mb-0">
+                <div class="text-center mb-4 mb-lg-5">
+                  <span class="badge-opacity-prim fz-12 mb-3 d-inline-flex align-items-center gap-2">ذكاء
+                    المناقصات</span>
+                  <h3 class="black-text fw-medium mb-3">مرحباً بك في خدمة ذكاء المناقصات</h3>
+                  <p class="fz-14 text-gray mb-0 mx-auto spg-intro-copy">المنافسات السابقة ونتائجها — المتقدمون، التأهيل
+                    الفني، وتفاصيل الترسية.</p>
+                </div>
+                <h4 class="black-text fz-16 fw-medium text-center mb-4">كيف نقدر نساعدك اليوم؟</h4>
+                <div class="row g-3"><a href="#tr-search" class="col-12 col-md-6 col-lg-4 text-decoration-none">
+                    <div
+                      class="service-choice-card stat-card spg-path-card d-flex align-items-center gap-3 text-end w-100">
+                      <div class="service-choice-icon bell">
+                        <svg class="tr-flow-icon" width="24" height="24" viewBox="0 0 16 16" fill="none"
+                          xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path
+                            d="M7.66634 13.9997C11.1641 13.9997 13.9997 11.1641 13.9997 7.66634C13.9997 4.16854 11.1641 1.33301 7.66634 1.33301C4.16854 1.33301 1.33301 4.16854 1.33301 7.66634C1.33301 11.1641 4.16854 13.9997 7.66634 13.9997Z"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          <path opacity="0.45" d="M14.6663 14.6663L13.333 13.333" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </div>
+                      <div class="service-choice-info flex-grow-1">
+                        <h4 class="black-text">بحث مباشر</h4>
+                        <p class="mb-0">ابحث عن مناقصة سابقة بالاسم أو الرقم المرجعي.</p>
+                      </div>
                     </div>
-                    <div>
-                      <span class="fz-12 gray-text">النشاط الأساسي</span>
-                      <div class="fz-14 black-text">
-                        التصميم الداخلي والتجهيزات
+                  </a><a href="#tr-sector" class="col-12 col-md-6 col-lg-4 text-decoration-none">
+                    <div
+                      class="service-choice-card stat-card spg-path-card d-flex align-items-center gap-3 text-end w-100">
+                      <div class="service-choice-icon crown">
+                        <svg class="tr-flow-icon" width="24" height="24" viewBox="0 0 16 16" fill="none"
+                          xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path
+                            d="M5.9987 14.6673H9.9987C13.332 14.6673 14.6654 13.334 14.6654 10.0007V6.00065C14.6654 2.66732 13.332 1.33398 9.9987 1.33398H5.9987C2.66536 1.33398 1.33203 2.66732 1.33203 6.00065V10.0007C1.33203 13.334 2.66536 14.6673 5.9987 14.6673Z"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          <path opacity="0.45"
+                            d="M4.88672 9.65984L6.47339 7.59984C6.70005 7.30651 7.12005 7.25318 7.41339 7.47984L8.63339 8.43984C8.92672 8.66651 9.34672 8.61318 9.57339 8.32651L11.1134 6.33984"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </div>
+                      <div class="service-choice-info flex-grow-1">
+                        <h4 class="black-text">مناقصات حسب النشاط</h4>
+                        <p class="mb-0">استكشف تاريخ المناقصات ضمن قطاع أو نشاط محدد.</p>
+                      </div>
+                    </div>
+                  </a><a href="#tr-search-prior" class="col-12 col-md-6 col-lg-4 text-decoration-none">
+                    <div
+                      class="service-choice-card stat-card spg-path-card d-flex align-items-center gap-3 text-end w-100">
+                      <div class="service-choice-icon bell">
+                        <svg class="tr-flow-icon" width="24" height="24" viewBox="0 0 16 16" fill="none"
+                          xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path
+                            d="M6.66732 4.00065H9.33398C10.6673 4.00065 10.6673 3.33398 10.6673 2.66732C10.6673 1.33398 10.0007 1.33398 9.33398 1.33398H6.66732C6.00065 1.33398 5.33398 1.33398 5.33398 2.66732C5.33398 4.00065 6.00065 4.00065 6.66732 4.00065Z"
+                            stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                          <path opacity="0.45"
+                            d="M10.6667 2.67969C12.8867 2.79969 14 3.61969 14 6.66635V10.6664C14 13.333 13.3333 14.6664 10 14.6664H6C2.66667 14.6664 2 13.333 2 10.6664V6.66635C2 3.62635 3.11333 2.79969 5.33333 2.67969"
+                            stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        </svg>
+                      </div>
+                      <div class="service-choice-info flex-grow-1">
+                        <h4 class="black-text">هل طرحت سابقاً؟</h4>
+                        <p class="mb-0">قارن منافستك الحالية مع طرح أو نتائج سابقة مشابهة.</p>
+                      </div>
+                    </div>
+                  </a><a href="#tr-entity" class="col-12 col-md-6 col-lg-4 text-decoration-none">
+                    <div
+                      class="service-choice-card stat-card spg-path-card d-flex align-items-center gap-3 text-end w-100">
+                      <div class="service-choice-icon crown">
+                        <svg class="tr-flow-icon" width="24" height="24" viewBox="0 0 16 16" fill="none"
+                          xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path opacity="0.45"
+                            d="M7.99992 8.95297C9.14867 8.95297 10.0799 8.02172 10.0799 6.87297C10.0799 5.72422 9.14867 4.79297 7.99992 4.79297C6.85117 4.79297 5.91992 5.72422 5.91992 6.87297C5.91992 8.02172 6.85117 8.95297 7.99992 8.95297Z"
+                            stroke="currentColor" stroke-width="1.5" />
+                          <path
+                            d="M2.4133 5.65968C3.72664 -0.113657 12.28 -0.106991 13.5866 5.66634C14.3533 9.05301 12.2466 11.9197 10.4 13.693C9.05997 14.9863 6.93997 14.9863 5.5933 13.693C3.7533 11.9197 1.64664 9.04634 2.4133 5.65968Z"
+                            stroke="currentColor" stroke-width="1.5" />
+                        </svg>
+                      </div>
+                      <div class="service-choice-info flex-grow-1">
+                        <h4 class="black-text">مناقصات الجهة الحكومية</h4>
+                        <p class="mb-0">اعرض كل المناقصات والنتائج المرتبطة بجهة حكومية.</p>
+                      </div>
+                    </div>
+                  </a>
+                  <div class="col-12 col-md-6 col-lg-4">
+                    <div
+                      class="service-choice-card stat-card d-flex align-items-center gap-3 text-end w-100 spg-path-card--disabled">
+                      <div class="service-choice-icon bell">
+                        <svg class="tr-flow-icon" width="24" height="24" viewBox="0 0 22 22" fill="none"
+                          xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path
+                            d="M5.5 3.5H14.5C15.6 3.5 16.5 4.4 16.5 5.5V18.5C16.5 19.6 15.6 20.5 14.5 20.5H5.5C4.4 20.5 3.5 19.6 3.5 18.5V5.5C3.5 4.4 4.4 3.5 5.5 3.5Z"
+                            stroke="currentColor" stroke-width="1.5" />
+                          <path opacity="0.45" d="M7 8H13M7 11.5H11M7 15H13" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" />
+                        </svg>
+                      </div>
+                      <div class="service-choice-info flex-grow-1">
+                        <h4 class="black-text">تحليل نتائج المناقصات</h4>
+                        <p class="mb-0">تحليلات متقدمة للترسيات والأسعار — قريباً.</p>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="col-4 col-md-6">
-                  <div class="d-flex justify-content-end">
-                    <div class="position-relative">
-                      <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
-                        <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none">
-                        </circle>
-                        <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4" fill="none"
-                          stroke-dasharray="134.6 125.6"></circle>
+              </div>
+            </section>
+            <section id="tr-search" class="tp-flow-panel">
+              <div class="tender-card p-3 p-lg-4 d-flex flex-column min-h-spg-main">
+                <div class="mb-4">
+                  <a href="#tr-welcome" class="btn-main btn-primary-outline fz-12 h-36">العودة للبداية</a>
+                </div>
+                <div class="tender-card p-3 p-lg-4 mb-0 bg-white">
+                  <h6 class="black-text fw-medium text-start mb-4">أبحث عن مناقصة سابقة</h6>
+                  <label class="form-label black-text fw-medium" for="trSearchQuery">اسم المناقصة أو الرقم
+                    المرجعي</label>
+                  <p class="fz-12 text-gray mb-2">أدخل الاسم كاملاً أو رقماً مرجعياً مثل IT-001-2024</p>
+                  <div class="search-box w-100 position-relative mb-4">
+                    <input type="search" class="form-control" id="trSearchQuery" name="tr-search"
+                      placeholder="مثال: تشغيل وصيانة أنظمة تقنية المعلومات" autocomplete="off" />
+                    <span class="search-icon position-absolute">
+                      <svg class="tr-flow-icon tr-flow-icon--field" width="20" height="20" viewBox="0 0 16 16"
+                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path
+                          d="M7.66634 13.9997C11.1641 13.9997 13.9997 11.1641 13.9997 7.66634C13.9997 4.16854 11.1641 1.33301 7.66634 1.33301C4.16854 1.33301 1.33301 4.16854 1.33301 7.66634C1.33301 11.1641 4.16854 13.9997 7.66634 13.9997Z"
+                          stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path opacity="0.45" d="M14.6663 14.6663L13.333 13.333" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
-
-                      <div class="position-absolute top-50 start-50 translate-middle text-center">
-                        <div>200</div>
-                        <div>يوم</div>
-                      </div>
-                    </div>
+                    </span>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div class="tender-section">
-              <div class="row gy-3">
-                <div class="col-md-4">
-                  <div class=" d-flex align-items-center">
-                    <div class="sm-logo">
-                      <img src="images/clock.svg" alt="Clock">
-                    </div>
-                    <div>
-                      <span class="fz-12 gray-text">الموعد النهائي لتقديم العروض</span>
-                      <div>
-                        <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                          04:30 pm
-                        </span>
-                        <span class="black-text fz-12 fw-medium">
-                          05-12-2025
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class=" d-flex align-items-center">
-                    <div class="sm-logo">
-                      <img src="images/clock.svg" alt="Clock">
-                    </div>
-                    <div>
-                      <span class="fz-12 gray-text">موعد اجتماع المناقشة</span>
-                      <div>
-                        <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                          01:00 pm
-                        </span>
-                        <span class="black-text fz-12 fw-medium">
-                          05-12-2025
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="date-item d-flex align-items-center justify-content-md-end">
-                    <div class="sm-logo">
-                      <img src="images/clock.svg" alt="Clock">
-                    </div>
-                    <div>
-                      <span class="fz-12 gray-text">تاريخ الاعلان عن النتائج</span>
-                      <div>
-                        <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                          09:00 am
-                        </span>
-                        <span class="black-text fz-12 fw-medium">
-                          12-12-2025
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-2">
-                  <div class="tender-price d-flex justify-content-end">
-                    <div>
-                      <span class="fz-12 gray-text d-block mb-2">سعر الوثائق</span>
-                      <span class="fs-6 black-text fw-medium">200.50
-                        <img src="images/ryall.svg" alt="ريال">
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="tender-card p-3 mb-4 abs-card">
-          <div class="tender-header d-flex align-items-center justify-content-between mb-3">
-            <div class="tender-number">
-              <span>رقم/رمز المناقصة </span>
-              <span class="fz-14 black-text fw-medium">250739020709</span>
-            </div>
-            <div class="tender-actions p-sm-absolute">
-              <a href="tenders-results-details.html" class="btn-base btn-base-sm bordered-40  fz-12">
-                ترسيات الموردين
-              </a>
-            </div>
-          </div>
-          <div class="tender-sections p-3 rounded-12 bg-white">
-            <div class="tender-section position-relative">
-              <div class="row align-items-md-center">
-                <div class="col-8 col-md-6">
-                  <div class="d-flex flex-column flex-md-row align-items-md-center gap-10">
-                    <span class="tender-status me-3 flex-shrink-0">طلب تقديم العروض</span>
-                    <span class="fz-12 gray-text flex-shrink-0">تاريخ النشر</span>
-                    <span class="fz-14 black-text fw-medium flex-shrink-0">05-12-2025</span>
-                  </div>
-                  <div class="d-flex flex-column flex-lg-row gap-3 justify-content-between">
-                    <div>
-                      <h6 class="tender-title">تجهيز المكاتب وأثاثها</h6>
-                      <div class="tender-subtitle">وزارة الصحة</div>
-                    </div>
-                    <div>
-                      <span class="fz-12 gray-text">النشاط الأساسي</span>
-                      <div class="fz-14 black-text">
-                        التصميم الداخلي والتجهيزات
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-4 col-md-6">
                   <div class="d-flex justify-content-end">
-                    <div class="position-relative">
-                      <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
-                        <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none">
-                        </circle>
-                        <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4" fill="none"
-                          stroke-dasharray="134.6 125.6"></circle>
+                    <a href="#tr-results"
+                      class="btn-main btn-primary h-41 fw-medium fz-14 d-inline-flex align-items-center gap-2">
+                      بحث
+                      <svg class="tr-flow-icon flex-shrink-0" width="18" height="18" viewBox="0 0 16 16" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path
+                          d="M7.66634 13.9997C11.1641 13.9997 13.9997 11.1641 13.9997 7.66634C13.9997 4.16854 11.1641 1.33301 7.66634 1.33301C4.16854 1.33301 1.33301 4.16854 1.33301 7.66634C1.33301 11.1641 4.16854 13.9997 7.66634 13.9997Z"
+                          stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path opacity="0.45" d="M14.6663 14.6663L13.333 13.333" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section id="tr-search-prior" class="tp-flow-panel">
+              <div class="tender-card p-3 p-lg-4 d-flex flex-column min-h-spg-main">
+                <div class="mb-4">
+                  <a href="#tr-welcome" class="btn-main btn-primary-outline fz-12 h-36">العودة للبداية</a>
+                </div>
+                <div class="tender-card p-3 p-lg-4 mb-0 bg-white">
+                  <h6 class="black-text fw-medium text-start mb-2">هل طرحت هذه المنافسة سابقاً؟</h6>
+                  <p class="fz-14 text-gray text-start mb-4">أدخل بيانات المنافسة الحالية للبحث عن طرح سابق أو منافسات
+                    مشابهة.</p>
+                  <form id="trSearchPriorForm" novalidate>
+                    <div class="row g-3 mb-4">
+                      <div class="col-12">
+                        <label class="form-label" for="trCompetitionName">اسم المنافسة</label>
+                        <input type="text" class="form-control" id="trCompetitionName" name="competition_name"
+                          placeholder="مثال: تشغيل وصيانة أنظمة تقنية المعلومات" autocomplete="off" required />
+                      </div>
+                      <div class="col-12">
+                        <label class="form-label" for="trReferenceNumber">الرقم المرجعي</label>
+                        <input type="text" class="form-control" id="trReferenceNumber" name="reference_number"
+                          placeholder="مثال: 230139873561" autocomplete="off" required />
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                      <button type="submit"
+                        class="btn-main btn-primary h-41 fw-medium fz-14 d-inline-flex align-items-center gap-2">
+                        بحث
+                        <svg class="tr-flow-icon flex-shrink-0" width="18" height="18" viewBox="0 0 16 16" fill="none"
+                          xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path
+                            d="M7.66634 13.9997C11.1641 13.9997 13.9997 11.1641 13.9997 7.66634C13.9997 4.16854 11.1641 1.33301 7.66634 1.33301C4.16854 1.33301 1.33301 4.16854 1.33301 7.66634C1.33301 11.1641 4.16854 13.9997 7.66634 13.9997Z"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          <path opacity="0.45" d="M14.6663 14.6663L13.333 13.333" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </section>
+            <section id="tr-history-list" class="tp-flow-panel">
+              <div class="tender-card p-3 p-lg-4 d-flex flex-column min-h-spg-main">
+                <div class="mb-4">
+                  <a href="#tr-welcome" class="btn-main btn-primary-outline fz-12 h-36">العودة للبداية</a>
+                </div>
+                <div class="tender-card p-3 p-lg-4 mb-0 bg-white">
+                  <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+                    <div>
+                      <h6 class="black-text fw-medium text-start mb-2">هل طرحت هذه المنافسة سابقاً؟</h6>
+                      <p class="fz-14 text-gray mb-0">وجدنا <span class="black-text fw-medium">4</span> منافسات مرتبطة
+                        بالمنافسة الحالية.</p>
+                    </div>
+                    <a href="#tr-search-prior"
+                      class="btn-main base-outlined-btn h-41 fz-14 d-inline-flex align-items-center gap-2">
+                      تعديل البحث
+                      <svg class="tr-flow-icon flex-shrink-0" width="18" height="18" viewBox="0 0 16 16" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path
+                          d="M7.66634 13.9997C11.1641 13.9997 13.9997 11.1641 13.9997 7.66634C13.9997 4.16854 11.1641 1.33301 7.66634 1.33301C4.16854 1.33301 1.33301 4.16854 1.33301 7.66634C1.33301 11.1641 4.16854 13.9997 7.66634 13.9997Z"
+                          stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path opacity="0.45" d="M14.6663 14.6663L13.333 13.333" stroke="currentColor"
+                          stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </a>
+                  </div>
+                <div class="tender-card tr-list-item-card bg-white p-3 mb-2">
+                  <h6 class="fz-14 black-text fw-medium">تشغيل وصيانة الشبكات والبنية التحتية</h6>
+                  <div class="d-flex flex-wrap gap-2 fz-12 text-gray tr-list-item-card__meta">
+                    <span>2024</span><span>·</span><span>7 متقدمين</span><span>·</span><span>وزارة الاتصالات وتقنية
+                      المعلومات</span>
+                  </div>
+                  <div class="tr-list-item-card__row">
+                    <div class="tr-list-item-card__winner">
+                      <svg class="tr-flow-icon tr-flow-icon--success" width="16" height="16" viewBox="0 0 16 16"
+                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="8" cy="8" r="7" fill="currentColor" opacity="0.14" />
+                        <path d="M5.25 8.1L7.1 9.95L10.85 6.2" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      <span class="black-text fw-medium">شركة البنية الرقمية</span>
+                      <span class="ff-onest colored fw-medium ms-auto flex-shrink-0">14,000,000 ر.س</span>
+                    </div>
+                    <a href="#tr-detail-full" class="btn-main btn-primary-outline h-36 fz-12 flex-shrink-0">عرض
+                      التفاصيل</a>
+                  </div>
+                </div>
+                <div class="tender-card tr-list-item-card bg-white p-3 mb-2">
+                  <h6 class="fz-14 black-text fw-medium">تشغيل وصيانة أنظمة تقنية المعلومات</h6>
+                  <div class="d-flex flex-wrap gap-2 fz-12 text-gray tr-list-item-card__meta">
+                    <span>2023</span><span>·</span><span>5 متقدمين</span><span>·</span><span>جامعة الملك فيصل</span>
+                  </div>
+                  <div class="tr-list-item-card__row">
+                    <div class="tr-list-item-card__winner">
+                      <svg class="tr-flow-icon tr-flow-icon--success" width="16" height="16" viewBox="0 0 16 16"
+                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="8" cy="8" r="7" fill="currentColor" opacity="0.14" />
+                        <path d="M5.25 8.1L7.1 9.95L10.85 6.2" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      <span class="black-text fw-medium">شركة الحلول الرقمية المتقدمة</span>
+                      <span class="ff-onest colored fw-medium ms-auto flex-shrink-0">4,830,000 ر.س</span>
+                    </div>
+                    <a href="#tr-detail-full" class="btn-main btn-primary-outline h-36 fz-12 flex-shrink-0">عرض
+                      التفاصيل</a>
+                  </div>
+                </div>
+                <div class="tender-card tr-list-item-card bg-white p-3 mb-2">
+                  <h6 class="fz-14 black-text fw-medium">صيانة مراكز البيانات والشبكات</h6>
+                  <div class="d-flex flex-wrap gap-2 fz-12 text-gray tr-list-item-card__meta">
+                    <span>2023</span><span>·</span><span>6 متقدمين</span><span>·</span><span>جامعة الملك فيصل</span>
+                  </div>
+                  <div class="tr-list-item-card__row">
+                    <div class="tr-list-item-card__winner">
+                      <svg class="tr-flow-icon tr-flow-icon--success" width="16" height="16" viewBox="0 0 16 16"
+                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="8" cy="8" r="7" fill="currentColor" opacity="0.14" />
+                        <path d="M5.25 8.1L7.1 9.95L10.85 6.2" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      <span class="black-text fw-medium">مؤسسة التقنية المتقدمة</span>
+                      <span class="ff-onest colored fw-medium ms-auto flex-shrink-0">3,920,000 ر.س</span>
+                    </div>
+                    <a href="#tr-detail-full" class="btn-main btn-primary-outline h-36 fz-12 flex-shrink-0">عرض
+                      التفاصيل</a>
+                  </div>
+                </div>
+                <div class="tender-card tr-list-item-card bg-white p-3 mb-0">
+                  <h6 class="fz-14 black-text fw-medium">تشغيل البنية التحتية لتقنية المعلومات</h6>
+                  <div class="d-flex flex-wrap gap-2 fz-12 text-gray tr-list-item-card__meta">
+                    <span>2022</span><span>·</span><span>4 متقدمين</span><span>·</span><span>وزارة التعليم</span>
+                  </div>
+                  <div class="tr-list-item-card__row">
+                    <div class="tr-list-item-card__winner">
+                      <svg class="tr-flow-icon tr-flow-icon--success" width="16" height="16" viewBox="0 0 16 16"
+                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="8" cy="8" r="7" fill="currentColor" opacity="0.14" />
+                        <path d="M5.25 8.1L7.1 9.95L10.85 6.2" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      <span class="black-text fw-medium">شركة الخدمات التقنية</span>
+                      <span class="ff-onest colored fw-medium ms-auto flex-shrink-0">6,100,000 ر.س</span>
+                    </div>
+                    <a href="#tr-detail-full" class="btn-main btn-primary-outline h-36 fz-12 flex-shrink-0">عرض
+                      التفاصيل</a>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </section>
+            <section id="tr-sector" class="tp-flow-panel">
+              <div class="tender-card p-3 p-lg-4 d-flex flex-column min-h-spg-main">
+                <div class="mb-4">
+                  <a href="#tr-welcome" class="btn-main btn-primary-outline fz-12 h-36">العودة للبداية</a>
+                </div>
+                <div class="tender-card p-3 p-lg-4 mb-0 bg-white">
+                  <h6 class="black-text fw-medium text-start mb-2">منافسات حسب النشاط أو القطاع</h6>
+                  <p class="fz-14 text-gray text-start mb-4">صفِّ النتائج حسب الجهة والموقع والنشاط لاستكشاف تاريخ
+                    الترسيات.</p>
+                  <div class="row g-3 mb-4">
+                    <div class="col-6 col-md-3"><label class="form-label fz-12">نوع المنافسة</label><select
+                        class="form-select form-select-sm">
+                        <option>الكل</option>
+                        <option>مناقصة عامة</option>
+                      </select></div>
+                    <div class="col-6 col-md-3"><label class="form-label fz-12">الجهة</label><select
+                        class="form-select form-select-sm">
+                        <option>الكل</option>
+                        <option>وزارة الاتصالات</option>
+                        <option>جامعة الملك فيصل</option>
+                      </select></div>
+                    <div class="col-6 col-md-3"><label class="form-label fz-12">النشاط</label><select
+                        class="form-select form-select-sm">
+                        <option selected>تقنية معلومات</option>
+                      </select></div>
+                    <div class="col-6 col-md-3"><label class="form-label fz-12">النشاط الفرعي</label><select
+                        class="form-select form-select-sm">
+                        <option>الكل</option>
+                      </select></div>
+                    <div class="col-6 col-md-3"><label class="form-label fz-12">المنطقة</label><select
+                        class="form-select form-select-sm">
+                        <option>الكل</option>
+                        <option>الشرقية</option>
+                      </select></div>
+                    <div class="col-6 col-md-3"><label class="form-label fz-12">المدينة</label><select
+                        class="form-select form-select-sm">
+                        <option>الكل</option>
+                        <option>الأحساء</option>
+                      </select></div>
+                    <div class="col-6 col-md-3"><label class="form-label fz-12">الفترة الزمنية</label><select
+                        class="form-select form-select-sm">
+                        <option>آخر 12 شهراً</option>
+                      </select></div>
+                    <div class="col-6 col-md-3"><label class="form-label fz-12">عدد النتائج</label><select
+                        class="form-select form-select-sm">
+                        <option selected>8 نتائج</option>
+                      </select></div>
+                  </div>
+                <div class="row tr-stat-card-row g-3 mb-4 justify-content-between">
+                  <div class="col-6 col-lg-2">
+                    <div class="summary-card tr-stat-card tr-stat-card--total p-3 h-100">
+                      <p class="summary-title">إجمالي المنافسات</p><span
+                        class="ff-onest fz-18 fw-medium black-text">8</span>
+                    </div>
+                  </div>
+                  <div class="col-6 col-lg-2">
+                    <div class="summary-card tr-stat-card tr-stat-card--awarded p-3 h-100">
+                      <p class="summary-title">منافسات بترسية</p><span
+                        class="ff-onest fz-18 fw-medium success-text">4</span>
+                    </div>
+                  </div>
+                  <div class="col-6 col-lg-2">
+                    <div class="summary-card tr-stat-card tr-stat-card--value p-3 h-100">
+                      <p class="summary-title">إجمالي القيم</p><span
+                        class="ff-onest fz-18 fw-medium colored">22.9M</span>
+                    </div>
+                  </div>
+                  <div class="col-6 col-lg-2">
+                    <div class="summary-card tr-stat-card tr-stat-card--avg p-3 h-100">
+                      <p class="summary-title">متوسط قيمة الترسية</p><span
+                        class="ff-onest fz-18 fw-medium black-text">5.7M</span>
+                    </div>
+                  </div>
+                  <div class="col-6 col-lg-2">
+                    <div class="summary-card tr-stat-card tr-stat-card--winners p-3 h-100">
+                      <p class="summary-title">شركات فائزة</p><span class="ff-onest fz-18 fw-medium black-text">3</span>
+                    </div>
+                  </div>
+                </div>
+                <h6 class="black-text mb-3 d-flex align-items-center gap-2 flex-wrap">المنافسات<span
+                    class="tp-heading-count ff-onest" aria-label="8 منافسات">8</span></h6>
+                <div class="tender-card tr-list-item-card bg-white p-3 mb-2">
+                        <div class="tr-list-item-card__head d-flex flex-wrap align-items-center justify-content-between gap-2">
+                          <h6 class="fz-14 black-text fw-medium mb-0 flex-grow-1 min-w-0 text-start">تشغيل وصيانة أنظمة تقنية المعلومات</h6>
+                          <span class="sm-ele fz-10 bordered-8 text-nowrap badge-success flex-shrink-0">تمت الترسية</span>
+                        </div>
+                  <div class="d-flex flex-wrap gap-2 fz-12 text-gray tr-list-item-card__meta">
+                    <span>وزارة الاتصالات وتقنية المعلومات</span><span>·</span><span>2025</span><span>·</span><span>7
+                      شركات</span>
+                  </div>
+                  <div class="tr-list-item-card__row">
+                    <div class="tr-list-item-card__winner">
+                      <svg class="tr-flow-icon tr-flow-icon--success" width="16" height="16" viewBox="0 0 16 16"
+                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="8" cy="8" r="7" fill="currentColor" opacity="0.14" />
+                        <path d="M5.25 8.1L7.1 9.95L10.85 6.2" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      <span class="black-text fw-medium">شركة الحلول الرقمية المتقدمة</span>
+                      <span class="ff-onest colored fw-medium ms-auto flex-shrink-0">4,000,000 ر.س</span>
+                    </div>
+                    <a href="#tr-detail-full" class="btn-main btn-primary-outline h-36 fz-12 flex-shrink-0">عرض
+                      التفاصيل</a>
+                  </div>
+                </div>
+                <div class="tender-card tr-list-item-card bg-white p-3 mb-2">
+                        <div class="tr-list-item-card__head d-flex flex-wrap align-items-center justify-content-between gap-2">
+                          <h6 class="fz-14 black-text fw-medium mb-0 flex-grow-1 min-w-0 text-start">توريد أجهزة شبكات وملحقاتها</h6>
+                          <span class="sm-ele fz-10 bordered-8 text-nowrap prim-opacity-outlined flex-shrink-0">تحت التقييم</span>
+                        </div>
+                  <div class="d-flex flex-wrap gap-2 fz-12 text-gray tr-list-item-card__meta">
+                    <span>جامعة الملك فيصل</span><span>·</span><span>2025</span><span>·</span><span>5 شركات</span>
+                  </div>
 
-                      <div class="position-absolute top-50 start-50 translate-middle text-center">
-                        <div>200</div>
-                        <div>يوم</div>
+                  <div class="tr-list-item-card__row tr-list-item-card__row--actions-only">
+                    <a href="#tr-detail-full" class="btn-main btn-primary-outline h-36 fz-12 flex-shrink-0">عرض
+                      التفاصيل</a>
+                  </div>
+                </div>
+                <div class="tender-card tr-list-item-card bg-white p-3 mb-2">
+                        <div class="tr-list-item-card__head d-flex flex-wrap align-items-center justify-content-between gap-2">
+                          <h6 class="fz-14 black-text fw-medium mb-0 flex-grow-1 min-w-0 text-start">صيانة مراكز البيانات</h6>
+                          <span class="sm-ele fz-10 bordered-8 text-nowrap prim-opacity-outlined flex-shrink-0">فتح العروض</span>
+                        </div>
+                  <div class="d-flex flex-wrap gap-2 fz-12 text-gray tr-list-item-card__meta">
+                    <span>وزارة التعليم</span><span>·</span><span>2024</span><span>·</span><span>4 شركات</span>
+                  </div>
+
+                  <div class="tr-list-item-card__row tr-list-item-card__row--actions-only">
+                    <a href="#tr-detail-full" class="btn-main btn-primary-outline h-36 fz-12 flex-shrink-0">عرض
+                      التفاصيل</a>
+                  </div>
+                </div>
+                <div class="tender-card tr-list-item-card bg-white p-3 mb-2">
+                        <div class="tr-list-item-card__head d-flex flex-wrap align-items-center justify-content-between gap-2">
+                          <h6 class="fz-14 black-text fw-medium mb-0 flex-grow-1 min-w-0 text-start">تشغيل البنية التحتية لتقنية المعلومات</h6>
+                          <span class="sm-ele fz-10 bordered-8 text-nowrap badge-ended flex-shrink-0">انتهت</span>
+                        </div>
+                  <div class="d-flex flex-wrap gap-2 fz-12 text-gray tr-list-item-card__meta">
+                    <span>وزارة الصحة</span><span>·</span><span>2024</span><span>·</span><span>6 شركات</span>
+                  </div>
+
+                  <div class="tr-list-item-card__row tr-list-item-card__row--actions-only">
+                    <a href="#tr-detail-full" class="btn-main btn-primary-outline h-36 fz-12 flex-shrink-0">عرض
+                      التفاصيل</a>
+                  </div>
+                </div>
+                <div class="tender-card tr-list-item-card bg-white p-3 mb-2">
+                        <div class="tr-list-item-card__head d-flex flex-wrap align-items-center justify-content-between gap-2">
+                          <h6 class="fz-14 black-text fw-medium mb-0 flex-grow-1 min-w-0 text-start">دعم فني لأنظمة الجامعة الإلكترونية</h6>
+                          <span class="sm-ele fz-10 bordered-8 text-nowrap badge-success flex-shrink-0">تمت الترسية</span>
+                        </div>
+                  <div class="d-flex flex-wrap gap-2 fz-12 text-gray tr-list-item-card__meta">
+                    <span>جامعة الملك فيصل</span><span>·</span><span>2024</span><span>·</span><span>8 شركات</span>
+                  </div>
+                  <div class="tr-list-item-card__row">
+                    <div class="tr-list-item-card__winner">
+                      <svg class="tr-flow-icon tr-flow-icon--success" width="16" height="16" viewBox="0 0 16 16"
+                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="8" cy="8" r="7" fill="currentColor" opacity="0.14" />
+                        <path d="M5.25 8.1L7.1 9.95L10.85 6.2" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      <span class="black-text fw-medium">شركة التقنية الحديثة</span>
+                      <span class="ff-onest colored fw-medium ms-auto flex-shrink-0">2,450,000 ر.س</span>
+                    </div>
+                    <a href="#tr-detail-full" class="btn-main btn-primary-outline h-36 fz-12 flex-shrink-0">عرض
+                      التفاصيل</a>
+                  </div>
+                </div>
+                <div class="tender-card tr-list-item-card bg-white p-3 mb-2">
+                        <div class="tr-list-item-card__head d-flex flex-wrap align-items-center justify-content-between gap-2">
+                          <h6 class="fz-14 black-text fw-medium mb-0 flex-grow-1 min-w-0 text-start">ترقية البنية الشبكية للحرم الجامعي</h6>
+                          <span class="sm-ele fz-10 bordered-8 text-nowrap badge-success flex-shrink-0">تمت الترسية</span>
+                        </div>
+                  <div class="d-flex flex-wrap gap-2 fz-12 text-gray tr-list-item-card__meta">
+                    <span>جامعة الملك فيصل</span><span>·</span><span>2023</span><span>·</span><span>3 شركات</span>
+                  </div>
+                  <div class="tr-list-item-card__row">
+                    <div class="tr-list-item-card__winner">
+                      <svg class="tr-flow-icon tr-flow-icon--success" width="16" height="16" viewBox="0 0 16 16"
+                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="8" cy="8" r="7" fill="currentColor" opacity="0.14" />
+                        <path d="M5.25 8.1L7.1 9.95L10.85 6.2" stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      <span class="black-text fw-medium">مؤسسة التقنية المتقدمة</span>
+                      <span class="ff-onest colored fw-medium ms-auto flex-shrink-0">1,890,000 ر.س</span>
+                    </div>
+                    <a href="#tr-detail-full" class="btn-main btn-primary-outline h-36 fz-12 flex-shrink-0">عرض
+                      التفاصيل</a>
+                  </div>
+                </div>
+                <div class="tender-card tr-list-item-card bg-white p-3 mb-2">
+                        <div class="tr-list-item-card__head d-flex flex-wrap align-items-center justify-content-between gap-2">
+                          <h6 class="fz-14 black-text fw-medium mb-0 flex-grow-1 min-w-0 text-start">توريد خوادم ومعدات تخزين</h6>
+                          <span class="sm-ele fz-10 bordered-8 text-nowrap prim-opacity-outlined flex-shrink-0">تحت التقييم</span>
+                        </div>
+                  <div class="d-flex flex-wrap gap-2 fz-12 text-gray tr-list-item-card__meta">
+                    <span>وزارة الاتصالات وتقنية المعلومات</span><span>·</span><span>2023</span><span>·</span><span>9
+                      شركات</span>
+                  </div>
+
+                  <div class="tr-list-item-card__row tr-list-item-card__row--actions-only">
+                    <a href="#tr-detail-full" class="btn-main btn-primary-outline h-36 fz-12 flex-shrink-0">عرض
+                      التفاصيل</a>
+                  </div>
+                </div>
+                <div class="tender-card tr-list-item-card bg-white p-3 mb-0">
+                        <div class="tr-list-item-card__head d-flex flex-wrap align-items-center justify-content-between gap-2">
+                          <h6 class="fz-14 black-text fw-medium mb-0 flex-grow-1 min-w-0 text-start">إدارة ومراقبة مراكز البيانات</h6>
+                          <span class="sm-ele fz-10 bordered-8 text-nowrap badge-ended flex-shrink-0">انتهت</span>
+                        </div>
+                  <div class="d-flex flex-wrap gap-2 fz-12 text-gray tr-list-item-card__meta">
+                    <span>وزارة التعليم</span><span>·</span><span>2022</span><span>·</span><span>5 شركات</span>
+                  </div>
+
+                  <div class="tr-list-item-card__row tr-list-item-card__row--actions-only">
+                    <a href="#tr-detail-full" class="btn-main btn-primary-outline h-36 fz-12 flex-shrink-0">عرض
+                      التفاصيل</a>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </section>
+            <!-- <section id="tr-entity" class="tp-flow-panel">
+              <div class="tender-card p-3 p-lg-4 d-flex flex-column min-h-spg-main">
+                <div class="mb-4">
+                  <a href="#tr-welcome" class="btn-main btn-primary-outline fz-12 h-36">العودة للبداية</a>
+                </div>
+                <div class="tender-card p-3 p-lg-4 mb-0 bg-white d-flex flex-column">
+                  <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="service-choice-icon crown flex-shrink-0">
+                        <svg class="tr-flow-icon" width="24" height="24" viewBox="0 0 16 16" fill="none"
+                          xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path opacity="0.45"
+                            d="M7.99992 8.95297C9.14867 8.95297 10.0799 8.02172 10.0799 6.87297C10.0799 5.72422 9.14867 4.79297 7.99992 4.79297C6.85117 4.79297 5.91992 5.72422 5.91992 6.87297C5.91992 8.02172 6.85117 8.95297 7.99992 8.95297Z"
+                            stroke="currentColor" stroke-width="1.5" />
+                          <path
+                            d="M2.4133 5.65968C3.72664 -0.113657 12.28 -0.106991 13.5866 5.66634C14.3533 9.05301 12.2466 11.9197 10.4 13.693C9.05997 14.9863 6.93997 14.9863 5.5933 13.693C3.7533 11.9197 1.64664 9.04634 2.4133 5.65968Z"
+                            stroke="currentColor" stroke-width="1.5" />
+                        </svg>
                       </div>
+                      <div>
+                        <h6 class="black-text fw-medium text-start mb-0">مناقصات جهة حكومية</h6>
+                        <p class="fz-12 text-gray mb-0">اختر الجهة ونوع الاستعلام لعرض المناقصات والترسيات المرتبطة
+                          بها.</p>
+                      </div>
+                    </div>
+                    <span class="sm-ele fz-10 bordered-8 prim-opacity-outlined">8 نتيجة</span>
+                  </div>
+                  <div class="row g-3 align-items-end mb-4">
+                    <div class="col-12 col-md-6">
+                      <label class="form-label fz-12 black-text fw-medium">الجهة الحكومية</label>
+                      <select class="form-select form-select-sm">
+                        <option selected>— اختر الجهة —</option>
+                        <option>جامعة الملك فيصل</option>
+                        <option>وزارة التعليم</option>
+                      </select>
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <label class="form-label fz-12 black-text fw-medium">نوع الاستعلام</label>
+                      <select class="form-select form-select-sm">
+                        <option selected>المناقصات والنتائج</option>
+                        <option>الشركات الفائزة فقط</option>
+                      </select>
+                    </div>
+                  </div>
+                <div class="row tr-stat-card-row g-3 mb-4">
+                  <div class="col-6 col-lg-2">
+                    <div class="summary-card tr-stat-card tr-stat-card--total p-3 h-100">
+                      <p class="summary-title">إجمالي المناقصات</p><span
+                        class="ff-onest fz-18 fw-medium black-text">8</span>
+                    </div>
+                  </div>
+                  <div class="col-6 col-lg-2">
+                    <div class="summary-card tr-stat-card tr-stat-card--awarded p-3 h-100">
+                      <p class="summary-title">المناقصات المرساة</p><span
+                        class="ff-onest fz-18 fw-medium success-text">4</span>
+                    </div>
+                  </div>
+                  <div class="col-6 col-lg-2">
+                    <div class="summary-card tr-stat-card tr-stat-card--value p-3 h-100">
+                      <p class="summary-title">إجمالي قيمة الترسية</p><span
+                        class="ff-onest fz-18 fw-medium colored">22.9M</span>
+                    </div>
+                  </div>
+                  <div class="col-6 col-lg-2">
+                    <div class="summary-card tr-stat-card tr-stat-card--avg p-3 h-100">
+                      <p class="summary-title">متوسط قيمة الترسية</p><span
+                        class="ff-onest fz-18 fw-medium black-text">5.7M</span>
+                    </div>
+                  </div>
+                  <div class="col-6 col-lg-2">
+                    <div class="summary-card tr-stat-card tr-stat-card--winners p-3 h-100">
+                      <p class="summary-title">الشركات الفائزة</p><span
+                        class="ff-onest fz-18 fw-medium black-text">3</span>
+                    </div>
+                  </div>
+                </div>
+                  <h6 class="black-text mb-3 d-flex align-items-center gap-2 flex-wrap">المناقصات<span
+                      class="tp-heading-count ff-onest" aria-label="8 مناقصات">8</span></h6>
+                  <div class="spg-collection-empty p-5 text-center mb-4">
+                    <span class="d-inline-block mb-3"><svg class="tr-flow-icon tr-flow-icon--muted tr-flow-icon--empty-data"
+                        width="48" height="48" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true">
+                        <path
+                          d="M2.66699 4.66634C2.66699 3.92996 3.26461 3.33301 4.00099 3.33301H12.001C12.7374 3.33301 13.335 3.92996 13.335 4.66634V11.333C13.335 12.0694 12.7374 12.6663 12.001 12.6663H4.00099C3.26461 12.6663 2.66699 12.0694 2.66699 11.333V4.66634Z"
+                          stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                        <path opacity="0.45" d="M4.66699 6.33301H11.3337M4.66699 8.33301H9.66699M4.66699 10.333H8.33366"
+                          stroke="currentColor" stroke-width="1.25" stroke-linecap="round" />
+                        <circle cx="10.667" cy="10.667" r="2.333" stroke="currentColor" stroke-width="1.25" />
+                        <path opacity="0.45" d="M12.3337 12.333L13.667 13.6663" stroke="currentColor" stroke-width="1.25"
+                          stroke-linecap="round" />
+                      </svg></span>
+                    <p class="fz-14 text-gray mb-0">لا يوجد بيانات</p>
+                  </div>
+                <div class="tender-card p-3 prim-opacity-outlined text-start mb-0 mt-auto">
+                  <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+                    <p class="fz-14 black-text mb-0 flex-grow-1 min-w-0">نموذج ثابت: جهة ببيانات كاملة للمعاينة.</p>
+                    <a href="#tr-entity-kfu"
+                      class="btn-main btn-primary h-41 fw-medium fz-14 flex-shrink-0">عرض مناقصات جامعة الملك
+                      فيصل</a>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </section>
+            <section id="tr-entity-kfu" class="tp-flow-panel">
+              <div class="tender-card p-3 p-lg-4 d-flex flex-column min-h-spg-main">
+                <div class="mb-4">
+                  <a href="#tr-entity" class="btn-main btn-primary-outline fz-12 h-36">العودة لاختيار الجهة</a>
+                </div>
+                <div class="tender-card p-3 p-lg-4 mb-0 bg-white">
+                  <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="service-choice-icon bell flex-shrink-0">
+                        <svg class="tr-flow-icon" width="24" height="24" viewBox="0 0 16 16" fill="none"
+                          xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path opacity="0.45"
+                            d="M7.99992 8.95297C9.14867 8.95297 10.0799 8.02172 10.0799 6.87297C10.0799 5.72422 9.14867 4.79297 7.99992 4.79297C6.85117 4.79297 5.91992 5.72422 5.91992 6.87297C5.91992 8.02172 6.85117 8.95297 7.99992 8.95297Z"
+                            stroke="currentColor" stroke-width="1.5" />
+                          <path
+                            d="M2.4133 5.65968C3.72664 -0.113657 12.28 -0.106991 13.5866 5.66634C14.3533 9.05301 12.2466 11.9197 10.4 13.693C9.05997 14.9863 6.93997 14.9863 5.5933 13.693C3.7533 11.9197 1.64664 9.04634 2.4133 5.65968Z"
+                            stroke="currentColor" stroke-width="1.5" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h6 class="black-text fw-medium text-start mb-0">جامعة الملك فيصل</h6>
+                        <p class="fz-12 text-gray mb-0">مناقصات ونتائج الجهة</p>
+                      </div>
+                    </div>
+                    <span class="sm-ele fz-10 bordered-8 prim-opacity-outlined">8 نتيجة</span>
+                  </div>
+                  <div class="row g-3 mb-4">
+                    <div class="col-12 col-md-6">
+                      <label class="form-label fz-12">الجهة</label>
+                      <select class="form-select form-select-sm">
+                        <option selected>جامعة الملك فيصل</option>
+                      </select>
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <label class="form-label fz-12">نوع المناقصة</label>
+                      <select class="form-select form-select-sm">
+                        <option selected>الكل</option>
+                        <option>مناقصة عامة</option>
+                      </select>
+                    </div>
+                  </div>
+                <div class="row tr-stat-card-row g-3 mb-4">
+                  <div class="col-6 col-lg-2">
+                    <div class="summary-card tr-stat-card tr-stat-card--total p-3 h-100">
+                      <p class="summary-title">إجمالي المناقصات</p><span
+                        class="ff-onest fz-18 fw-medium black-text">8</span>
+                    </div>
+                  </div>
+                  <div class="col-6 col-lg-2">
+                    <div class="summary-card tr-stat-card tr-stat-card--awarded p-3 h-100">
+                      <p class="summary-title">المناقصات المرساة</p><span
+                        class="ff-onest fz-18 fw-medium success-text">4</span>
+                    </div>
+                  </div>
+                  <div class="col-6 col-lg-2">
+                    <div class="summary-card tr-stat-card tr-stat-card--value p-3 h-100">
+                      <p class="summary-title">إجمالي قيمة الترسية</p><span
+                        class="ff-onest fz-18 fw-medium colored">22.9M</span>
+                    </div>
+                  </div>
+                  <div class="col-6 col-lg-2">
+                    <div class="summary-card tr-stat-card tr-stat-card--avg p-3 h-100">
+                      <p class="summary-title">متوسط قيمة الترسية</p><span
+                        class="ff-onest fz-18 fw-medium black-text">5.7M</span>
+                    </div>
+                  </div>
+                  <div class="col-6 col-lg-2">
+                    <div class="summary-card tr-stat-card tr-stat-card--winners p-3 h-100">
+                      <p class="summary-title">الشركات الفائزة</p><span
+                        class="ff-onest fz-18 fw-medium black-text">3</span>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="sub-nav-tabs tr-detail-sub-nav-tabs w-100 mb-3" id="tr-entity-sub-nav" role="tablist">
+                    <button class="nav-link active" id="tr-entity-tenders-tab" data-bs-toggle="tab"
+                      data-bs-target="#tr-entity-tenders" type="button" role="tab">المناقصات</button>
+                    <button class="nav-link" id="tr-entity-winners-tab" data-bs-toggle="tab"
+                      data-bs-target="#tr-entity-winners" type="button" role="tab">الشركات الفائزة</button>
+                  </div>
+                  <div class="tab-content">
+                    <div class="tab-pane fade show active" id="tr-entity-tenders" role="tabpanel">
+                      <h6 class="black-text mb-3 d-flex align-items-center gap-2 flex-wrap">المناقصات<span
+                          class="tp-heading-count ff-onest" aria-label="8 مناقصات">8</span></h6>
+                      <div class="tender-card tr-list-item-card bg-white p-3 mb-2">
+                        <div class="tr-list-item-card__head d-flex flex-wrap align-items-center justify-content-between gap-2">
+                          <h6 class="fz-14 black-text fw-medium mb-0 flex-grow-1 min-w-0 text-start">تشغيل وصيانة أنظمة تقنية المعلومات</h6>
+                          <span class="sm-ele fz-10 bordered-8 text-nowrap badge-success flex-shrink-0">تمت الترسية</span>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2 fz-12 text-gray tr-list-item-card__meta">
+                          <span>جامعة الملك فيصل</span><span>·</span><span>12/03/2025</span><span>·</span><span>5
+                            شركات</span>
+                        </div>
+                        <div class="tr-list-item-card__row">
+                          <div class="tr-list-item-card__winner">
+                            <svg class="tr-flow-icon tr-flow-icon--success" width="16" height="16" viewBox="0 0 16 16"
+                              fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                              <circle cx="8" cy="8" r="7" fill="currentColor" opacity="0.14" />
+                              <path d="M5.25 8.1L7.1 9.95L10.85 6.2" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span class="black-text fw-medium">شركة الحلول الرقمية المتقدمة</span>
+                            <span class="ff-onest colored fw-medium ms-auto flex-shrink-0">4,830,000 ر.س</span>
+                          </div>
+                          <a href="#tr-detail-full"
+                            class="fz-14 colored text-decoration-none d-inline-flex align-items-center gap-2 flex-shrink-0">عرض
+                            التفاصيل
+                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="15" viewBox="0 0 8 15" fill="none"
+                              aria-hidden="true" class="tr-flow-icon">
+                              <path
+                                d="M6.66461 0.74995L1.23128 6.18328C0.589611 6.82495 0.589611 7.87495 1.23128 8.51662L6.66461 13.95"
+                                stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            </svg></a>
+                        </div>
+                      </div>
+                      <div class="tender-card tr-list-item-card bg-white p-3 mb-2">
+                        <div class="tr-list-item-card__head d-flex flex-wrap align-items-center justify-content-between gap-2">
+                          <h6 class="fz-14 black-text fw-medium mb-0 flex-grow-1 min-w-0 text-start">صيانة مراكز البيانات والشبكات</h6>
+                          <span class="sm-ele fz-10 bordered-8 text-nowrap badge-success flex-shrink-0">تمت الترسية</span>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2 fz-12 text-gray tr-list-item-card__meta">
+                          <span>جامعة الملك فيصل</span><span>·</span><span>08/11/2024</span><span>·</span><span>6
+                            شركات</span>
+                        </div>
+                        <div class="tr-list-item-card__row">
+                          <div class="tr-list-item-card__winner">
+                            <svg class="tr-flow-icon tr-flow-icon--success" width="16" height="16" viewBox="0 0 16 16"
+                              fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                              <circle cx="8" cy="8" r="7" fill="currentColor" opacity="0.14" />
+                              <path d="M5.25 8.1L7.1 9.95L10.85 6.2" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span class="black-text fw-medium">مؤسسة التقنية المتقدمة</span>
+                            <span class="ff-onest colored fw-medium ms-auto flex-shrink-0">3,920,000 ر.س</span>
+                          </div>
+                          <a href="#tr-detail-full"
+                            class="fz-14 colored text-decoration-none d-inline-flex align-items-center gap-2 flex-shrink-0">عرض
+                            التفاصيل
+                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="15" viewBox="0 0 8 15" fill="none"
+                              aria-hidden="true" class="tr-flow-icon">
+                              <path
+                                d="M6.66461 0.74995L1.23128 6.18328C0.589611 6.82495 0.589611 7.87495 1.23128 8.51662L6.66461 13.95"
+                                stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            </svg></a>
+                        </div>
+                      </div>
+                      <div class="tender-card tr-list-item-card bg-white p-3 mb-2">
+                        <div class="tr-list-item-card__head d-flex flex-wrap align-items-center justify-content-between gap-2">
+                          <h6 class="fz-14 black-text fw-medium mb-0 flex-grow-1 min-w-0 text-start">ترقية البنية الشبكية للحرم الجامعي</h6>
+                          <span class="sm-ele fz-10 bordered-8 text-nowrap badge-success flex-shrink-0">تمت الترسية</span>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2 fz-12 text-gray tr-list-item-card__meta">
+                          <span>جامعة الملك فيصل</span><span>·</span><span>22/06/2023</span><span>·</span><span>3
+                            شركات</span>
+                        </div>
+                        <div class="tr-list-item-card__row">
+                          <div class="tr-list-item-card__winner">
+                            <svg class="tr-flow-icon tr-flow-icon--success" width="16" height="16" viewBox="0 0 16 16"
+                              fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                              <circle cx="8" cy="8" r="7" fill="currentColor" opacity="0.14" />
+                              <path d="M5.25 8.1L7.1 9.95L10.85 6.2" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span class="black-text fw-medium">شركة التقنية الحديثة</span>
+                            <span class="ff-onest colored fw-medium ms-auto flex-shrink-0">1,890,000 ر.س</span>
+                          </div>
+                          <a href="#tr-detail-full"
+                            class="fz-14 colored text-decoration-none d-inline-flex align-items-center gap-2 flex-shrink-0">عرض
+                            التفاصيل
+                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="15" viewBox="0 0 8 15" fill="none"
+                              aria-hidden="true" class="tr-flow-icon">
+                              <path
+                                d="M6.66461 0.74995L1.23128 6.18328C0.589611 6.82495 0.589611 7.87495 1.23128 8.51662L6.66461 13.95"
+                                stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            </svg></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="tr-entity-winners" role="tabpanel">
+                      <div class="table-container">
+                        <div class="table-responsive">
+                          <table class="table table-bordered align-middle competition-table">
+                            <thead>
+                              <tr>
+                                <th>اسم الشركة</th>
+                                <th class="text-center">عدد مرات الفوز</th>
+                                <th>إجمالي قيمة الترسيات</th>
+                                <th>متوسط الترسية</th>
+                                <th>آخر ترسية</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td><span class="black-text fw-medium">شركة الحلول الرقمية المتقدمة</span></td>
+                                <td class="ff-onest text-center">2</td>
+                                <td class="ff-onest">8,680,000 ر.س</td>
+                                <td class="ff-onest">4,340,000 ر.س</td>
+                                <td class="ff-onest">2025</td>
+                              </tr>
+                              <tr>
+                                <td><span class="black-text fw-medium">مؤسسة التقنية المتقدمة</span></td>
+                                <td class="ff-onest text-center">1</td>
+                                <td class="ff-onest">3,920,000 ر.س</td>
+                                <td class="ff-onest">3,920,000 ر.س</td>
+                                <td class="ff-onest">2024</td>
+                              </tr>
+                              <tr>
+                                <td><span class="black-text fw-medium">شركة التقنية الحديثة</span></td>
+                                <td class="ff-onest text-center">1</td>
+                                <td class="ff-onest">1,890,000 ر.س</td>
+                                <td class="ff-onest">1,890,000 ر.س</td>
+                                <td class="ff-onest">2023</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </section> -->
+            <section id="tr-results" class="tp-flow-panel">
+              <div class="tender-card p-3 p-lg-4 d-flex flex-column min-h-spg-main">
+                <div class="mb-4">
+                  <a href="#tr-welcome" class="btn-main btn-primary-outline fz-12 h-36">العودة للبداية</a>
+                </div>
+                <div class="tender-card p-3 p-lg-4 mb-0 bg-white">
+                  <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+                    <p class="fz-14 text-gray mb-0">نتيجة البحث عن «تشغيل وصيانة أنظمة تقنية المعلومات» · <span
+                        class="black-text fw-medium">1 نتيجة</span></p>
+                    <a href="#tr-search" class="btn-main base-outlined-btn fz-14 h-41 flex-shrink-0 d-inline-flex">تعديل
+                      البحث
+                      <svg class="tr-flow-icon flex-shrink-0" width="18" height="18" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M7.66634 13.9997C11.1641 13.9997 13.9997 11.1641 13.9997 7.66634C13.9997 4.16854 11.1641 1.33301 7.66634 1.33301C4.16854 1.33301 1.33301 4.16854 1.33301 7.66634C1.33301 11.1641 4.16854 13.9997 7.66634 13.9997Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path opacity="0.45" d="M14.6663 14.6663L13.333 13.333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="tender-card p-3 p-lg-4 mb-0">
+                    <div class="d-flex flex-wrap justify-content-between gap-3 mb-3">
+                      <span class="sm-ele fz-10 bordered-8 badge-success">تمت الترسية</span>
+                      <span class="fz-12 text-gray">الرقم المرجعي: <span class="ff-onest black-text"
+                          dir="ltr">230139873561</span></span>
+                    </div>
+                    <h6 class="black-text fw-medium mb-2">تشغيل وصيانة أنظمة تقنية المعلومات</h6>
+                    <div class="d-flex flex-wrap gap-3 fz-12 text-gray mb-4">
+                      <span>جامعة الملك فيصل</span>
+                      <span>·</span>
+                      <span>مناقصة عامة</span>
+                      <span>·</span>
+                      <span>تقنية معلومات</span>
+                      <span>·</span>
+                      <span>تاريخ الإعلان: 12/03/2025</span>
+                    </div>
+                    <div class="tender-card p-3 p-lg-4 prim-opacity-outlined mb-4">
+                      <p class="fz-12 text-gray mb-2">تمت الترسية على</p>
+                      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+                        <div class="d-flex align-items-center gap-2">
+                          <svg class="tr-flow-icon tr-flow-icon--success" width="18" height="18" viewBox="0 0 16 16"
+                            fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <circle cx="8" cy="8" r="7" fill="currentColor" opacity="0.14" />
+                            <path d="M5.25 8.1L7.1 9.95L10.85 6.2" stroke="currentColor" stroke-width="1.5"
+                              stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          <span class="black-text fw-medium">شركة الحلول الرقمية المتقدمة</span>
+                        </div>
+                        <span class="ff-onest fz-18 fw-medium colored">4,830,000 ر.س</span>
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                      <a href="#tr-detail-full" class="btn-main btn-primary h-41 fw-medium fz-14">عرض التفاصيل
+                        الكاملة</a>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="tender-section">
-              <div class="row gy-3">
-                <div class="col-md-4">
-                  <div class=" d-flex align-items-center">
-                    <div class="sm-logo">
-                      <img src="images/clock.svg" alt="Clock">
+            </section>
+            <section id="tr-detail" class="tp-flow-panel">
+              <div class="tender-card p-3 p-lg-4 d-flex flex-column min-h-spg-main">
+                <div class="mb-4">
+                  <a href="#tr-welcome" class="btn-main btn-primary-outline fz-12 h-36">العودة للبداية</a>
+                </div>
+                <div class="tender-card p-3 p-lg-4 mb-4 bg-white">
+                  <div class="d-flex flex-wrap align-items-start gap-2 mb-2">
+                    <span class="sm-ele fz-10 bordered-8 badge-success">تمت الترسية</span>
+                  </div>
+                  <h6 class="black-text fw-medium text-start mb-1">تشغيل وصيانة أنظمة تقنية المعلومات</h6>
+                  <p class="fz-14 text-gray mb-4">جامعة الملك فيصل · <span class="ff-onest"
+                      dir="ltr">230139873561</span>
+                  </p>
+
+                  <div class="mb-4">
+                    <h6 class="black-text mb-3">نتيجة المناقصة</h6>
+                    <div class="row g-3 align-items-stretch">
+                      <div class="col-12 col-md-5">
+                        <div class="tender-card p-3 p-lg-4 h-100 prim-opacity-outlined">
+                          <p class="fz-12 text-gray mb-1">قيمة الترسية</p>
+                          <p class="ff-onest fz-20 fw-medium black-text mb-2">4,830,000 ر.س</p>
+                          <p class="fz-12 text-gray mb-0">تاريخ الترسية: 19/07/2025</p>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-7">
+                        <div class="tender-card p-3 p-lg-4 h-100 prim-opacity-outlined">
+                          <div class="d-flex align-items-center gap-2 mb-2">
+                            <svg class="tr-flow-icon tr-flow-icon--success" width="22" height="22" viewBox="0 0 16 16"
+                              fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                              <circle cx="8" cy="8" r="7" fill="currentColor" opacity="0.14" />
+                              <path d="M5.25 8.1L7.1 9.95L10.85 6.2" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span class="sm-ele fz-10 bordered-8 badge-success">تمت الترسية</span>
+                          </div>
+                          <p class="fz-12 text-gray mb-1">تمت الترسية على</p>
+                          <p class="black-text fw-medium fz-16 mb-0">شركة الحلول الرقمية المتقدمة</p>
+                        </div>
+                      </div>
                     </div>
-                    <div>
-                      <span class="fz-12 gray-text">الموعد النهائي لتقديم العروض</span>
-                      <div>
-                        <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                          04:30 pm
-                        </span>
-                        <span class="black-text fz-12 fw-medium">
-                          05-12-2025
-                        </span>
+                  </div>
+                  <div>
+                    <div class="sub-nav-tabs tr-detail-sub-nav-tabs w-100 mb-3" id="tr-detail-sub-nav"
+                      role="tablist">
+                      <button class="nav-link " id="tr-overview-tab" data-bs-toggle="tab" data-bs-target="#tr-overview"
+                        type="button" role="tab">نظرة عامة</button>
+                      <button class="nav-link active" id="tr-applicants-tab" data-bs-toggle="tab"
+                        data-bs-target="#tr-applicants" type="button" role="tab">المتقدمون</button>
+                    </div>
+                    <div class="tab-content">
+                      <div class="tab-pane fade " id="tr-overview" role="tabpanel">
+                  <div class="row tr-stat-card-row g-3 mb-4">
+                    <div class="col-6 col-lg-3">
+                      <div class="summary-card tr-stat-card tr-stat-card--total p-3 h-100">
+                              <p class="summary-title">عدد الشركات المتقدمة</p><span
+                                class="ff-onest fz-18 fw-medium black-text">5</span>
+                            </div>
+                          </div>
+                          <div class="col-6 col-lg-3">
+                            <div class="summary-card tr-stat-card tr-stat-card--awarded p-3 h-100">
+                              <p class="summary-title">المجتازون فنياً</p><span
+                                class="ff-onest fz-18 fw-medium">3</span>
+                            </div>
+                          </div>
+                          <div class="col-6 col-lg-3">
+                            <div class="summary-card tr-stat-card tr-stat-card--not-passed p-3 h-100">
+                              <p class="summary-title">غير المجتازين</p><span class="ff-onest fz-18 fw-medium">1</span>
+                            </div>
+                          </div>
+                          <div class="col-6 col-lg-3">
+                            <div class="summary-card tr-stat-card tr-stat-card--excluded p-3 h-100">
+                              <p class="summary-title">المستبعدون</p><span class="ff-onest fz-18 fw-medium">1</span>
+                            </div>
+                          </div>
+                        </div>
+                        <h6 class="black-text mb-3">بيانات المناقصة</h6>
+                        <div class="row g-3 mb-4">
+                          <div class="col-12 col-md-6 col-lg-4">
+                            <div class="tender-card p-3 h-100">
+                              <p class="fz-12 text-gray mb-1">الجهة</p>
+                              <p class="fz-14 black-text mb-0 fw-medium">جامعة الملك فيصل</p>
+                            </div>
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-4">
+                            <div class="tender-card p-3 h-100">
+                              <p class="fz-12 text-gray mb-1">نوع المناقصة</p>
+                              <p class="fz-14 black-text mb-0 fw-medium">مناقصة عامة</p>
+                            </div>
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-4">
+                            <div class="tender-card p-3 h-100">
+                              <p class="fz-12 text-gray mb-1">الرقم المرجعي</p>
+                              <p class="fz-14 black-text mb-0 fw-medium">230139873561</p>
+                            </div>
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-4">
+                            <div class="tender-card p-3 h-100">
+                              <p class="fz-12 text-gray mb-1">النشاط</p>
+                              <p class="fz-14 black-text mb-0 fw-medium">تقنية معلومات</p>
+                            </div>
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-4">
+                            <div class="tender-card p-3 h-100">
+                              <p class="fz-12 text-gray mb-1">موقع التنفيذ</p>
+                              <p class="fz-14 black-text mb-0 fw-medium">الأحساء</p>
+                            </div>
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-4">
+                            <div class="tender-card p-3 h-100">
+                              <p class="fz-12 text-gray mb-1">تاريخ طرح المناقصة</p>
+                              <p class="fz-14 black-text mb-0 fw-medium">12/03/2025</p>
+                            </div>
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-4">
+                            <div class="tender-card p-3 h-100">
+                              <p class="fz-12 text-gray mb-1">تاريخ الإغلاق</p>
+                              <p class="fz-14 black-text mb-0 fw-medium">15/04/2025</p>
+                            </div>
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-4">
+                            <div class="tender-card p-3 h-100">
+                              <p class="fz-12 text-gray mb-1">تاريخ فتح العروض</p>
+                              <p class="fz-14 black-text mb-0 fw-medium">17/04/2025</p>
+                            </div>
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-4">
+                            <div class="tender-card p-3 h-100">
+                              <p class="fz-12 text-gray mb-1">تاريخ الترسية</p>
+                              <p class="fz-14 black-text mb-0 fw-medium">19/07/2025</p>
+                            </div>
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-4">
+                            <div class="tender-card p-3 h-100">
+                              <p class="fz-12 text-gray mb-1">مدة العقد</p>
+                              <p class="fz-14 black-text mb-0 fw-medium">36 شهراً</p>
+                            </div>
+                          </div>
+                        </div>
+                        <h6 class="black-text mb-2">نطاق العمل</h6>
+                        <div class="tender-card p-3">
+                          <p class="fz-14 text-gray mb-0">تشغيل وصيانة البنية التحتية لتقنية المعلومات، بما في ذلك مراكز
+                            البيانات والشبكات والأنظمة الإلكترونية والدعم الفني وأمن المعلومات.</p>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade show active" id="tr-applicants" role="tabpanel">
+                  <div class="row tr-stat-card-row g-3 mb-4">
+                    <div class="col-6 col-lg-3">
+                      <div class="summary-card tr-stat-card tr-stat-card--total p-3 h-100">
+                              <p class="summary-title">عدد الشركات المتقدمة</p><span
+                                class="ff-onest fz-18 fw-medium black-text">5</span>
+                            </div>
+                          </div>
+                          <div class="col-6 col-lg-3">
+                            <div class="summary-card tr-stat-card tr-stat-card--awarded p-3 h-100">
+                              <p class="summary-title">المجتازون فنياً</p><span
+                                class="ff-onest fz-18 fw-medium">3</span>
+                            </div>
+                          </div>
+                          <div class="col-6 col-lg-3">
+                            <div class="summary-card tr-stat-card tr-stat-card--not-passed p-3 h-100">
+                              <p class="summary-title">غير المجتازين</p><span class="ff-onest fz-18 fw-medium">1</span>
+                            </div>
+                          </div>
+                          <div class="col-6 col-lg-3">
+                            <div class="summary-card tr-stat-card tr-stat-card--excluded p-3 h-100">
+                              <p class="summary-title">المستبعدون</p><span class="ff-onest fz-18 fw-medium">1</span>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <div class="spg-collection-empty p-5 text-center">
+                          <span class="d-inline-block mb-3"><svg class="tr-flow-icon tr-flow-icon--muted" width="48"
+                              height="48" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                              aria-hidden="true">
+                              <path
+                                d="M6.66732 4.00065H9.33398C10.6673 4.00065 10.6673 3.33398 10.6673 2.66732C10.6673 1.33398 10.0007 1.33398 9.33398 1.33398H6.66732C6.00065 1.33398 5.33398 1.33398 5.33398 2.66732C5.33398 4.00065 6.00065 4.00065 6.66732 4.00065Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                              <path opacity="0.45"
+                                d="M10.6667 2.67969C12.8867 2.79969 14 3.61969 14 6.66635V10.6664C14 13.333 13.3333 14.6664 10 14.6664H6C2.66667 14.6664 2 13.333 2 10.6664V6.66635C2 3.62635 3.11333 2.79969 5.33333 2.67969"
+                                stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            </svg></span>
+                          <p class="fz-14 text-gray mb-0">المتقدمون — قريباً</p>
+                        </div>
+
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="col-md-3">
-                  <div class=" d-flex align-items-center">
-                    <div class="sm-logo">
-                      <img src="images/clock.svg" alt="Clock">
-                    </div>
-                    <div>
-                      <span class="fz-12 gray-text">موعد اجتماع المناقشة</span>
-                      <div>
-                        <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                          01:00 pm
-                        </span>
-                        <span class="black-text fz-12 fw-medium">
-                          05-12-2025
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="date-item d-flex align-items-center justify-content-md-end">
-                    <div class="sm-logo">
-                      <img src="images/clock.svg" alt="Clock">
-                    </div>
-                    <div>
-                      <span class="fz-12 gray-text">تاريخ الاعلان عن النتائج</span>
-                      <div>
-                        <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                          09:00 am
-                        </span>
-                        <span class="black-text fz-12 fw-medium">
-                          12-12-2025
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-2">
-                  <div class="tender-price d-flex justify-content-end">
-                    <div>
-                      <span class="fz-12 gray-text d-block mb-2">سعر الوثائق</span>
-                      <span class="fs-6 black-text fw-medium">200.50
-                        <img src="images/ryall.svg" alt="ريال">
-                      </span>
-                    </div>
-                  </div>
+                <div
+                  class="d-flex flex-wrap align-items-center justify-content-end gap-3 spg-wizard-actions mt-auto pt-3">
+                  <a href="#tr-entity-kfu" class="btn-main btn-primary-outline h-41 fw-medium fz-14">مناقصات الجهة</a>
+                  <a href="#tr-history-list" class="btn-main btn-primary-outline h-41 fw-medium fz-14">العودة
+                    للقائمة</a>
+                  <a href="#tr-detail-full" class="btn-main btn-primary-outline h-41 fw-medium fz-14">جدول المتقدمين
+                    الكامل</a>
                 </div>
               </div>
-            </div>
+            </section>
+            <section id="tr-detail-full" class="tp-flow-panel">
+              <div class="tender-card p-3 p-lg-4 d-flex flex-column min-h-spg-main">
+                <div class="mb-4">
+                  <a href="#tr-welcome" class="btn-main btn-primary-outline fz-12 h-36">العودة للبداية</a>
+                </div>
+                <div class="tender-card p-3 p-lg-4 mb-4 bg-white">
+                  <div class="d-flex flex-wrap align-items-start gap-2 mb-2">
+                    <span class="sm-ele fz-10 bordered-8 badge-success">تمت الترسية</span>
+                  </div>
+                  <h6 class="black-text fw-medium text-start mb-1">تشغيل وصيانة أنظمة تقنية المعلومات</h6>
+                  <p class="fz-14 text-gray mb-4">جامعة الملك فيصل · <span class="ff-onest"
+                      dir="ltr">230139873561</span>
+                  </p>
+
+                  <div class="mb-4">
+                    <h6 class="black-text mb-3">نتيجة المناقصة</h6>
+                    <div class="row g-3 align-items-stretch">
+                      <div class="col-12 col-md-5">
+                        <div class="tender-card p-3 p-lg-4 h-100 prim-opacity-outlined">
+                          <p class="fz-12 text-gray mb-1">قيمة الترسية</p>
+                          <p class="ff-onest fz-20 fw-medium black-text mb-2">4,830,000 ر.س</p>
+                          <p class="fz-12 text-gray mb-0">تاريخ الترسية: 19/07/2025</p>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-7">
+                        <div class="tender-card p-3 p-lg-4 h-100 prim-opacity-outlined">
+                          <div class="d-flex align-items-center gap-2 mb-2">
+                            <svg class="tr-flow-icon tr-flow-icon--success" width="22" height="22" viewBox="0 0 16 16"
+                              fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                              <circle cx="8" cy="8" r="7" fill="currentColor" opacity="0.14" />
+                              <path d="M5.25 8.1L7.1 9.95L10.85 6.2" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span class="sm-ele fz-10 bordered-8 badge-success">تمت الترسية</span>
+                          </div>
+                          <p class="fz-12 text-gray mb-1">تمت الترسية على</p>
+                          <p class="black-text fw-medium fz-16 mb-0">شركة الحلول الرقمية المتقدمة</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="sub-nav-tabs tr-detail-sub-nav-tabs w-100 mb-3" id="tr-detail-sub-nav-full"
+                      role="tablist">
+                      <button class="nav-link active" id="tr-overview-tab-full" data-bs-toggle="tab"
+                        data-bs-target="#tr-overview-full" type="button" role="tab">نظرة عامة</button>
+                      <button class="nav-link " id="tr-applicants-tab-full" data-bs-toggle="tab"
+                        data-bs-target="#tr-applicants-full" type="button" role="tab">المتقدمون</button>
+                    </div>
+                    <div class="tab-content">
+                      <div class="tab-pane fade show active" id="tr-overview-full" role="tabpanel">
+                  <div class="row tr-stat-card-row g-3 mb-4">
+                    <div class="col-6 col-lg-3">
+                      <div class="summary-card tr-stat-card tr-stat-card--total p-3 h-100">
+                              <p class="summary-title">عدد الشركات المتقدمة</p><span
+                                class="ff-onest fz-18 fw-medium black-text">5</span>
+                            </div>
+                          </div>
+                          <div class="col-6 col-lg-3">
+                            <div class="summary-card tr-stat-card tr-stat-card--awarded p-3 h-100">
+                              <p class="summary-title">المجتازون فنياً</p><span
+                                class="ff-onest fz-18 fw-medium">3</span>
+                            </div>
+                          </div>
+                          <div class="col-6 col-lg-3">
+                            <div class="summary-card tr-stat-card tr-stat-card--not-passed p-3 h-100">
+                              <p class="summary-title">غير المجتازين</p><span class="ff-onest fz-18 fw-medium">1</span>
+                            </div>
+                          </div>
+                          <div class="col-6 col-lg-3">
+                            <div class="summary-card tr-stat-card tr-stat-card--excluded p-3 h-100">
+                              <p class="summary-title">المستبعدون</p><span class="ff-onest fz-18 fw-medium">1</span>
+                            </div>
+                          </div>
+                        </div>
+                        <h6 class="black-text mb-3">بيانات المناقصة</h6>
+                        <div class="row g-3 mb-4">
+                          <div class="col-12 col-md-6 col-lg-4">
+                            <div class="tender-card p-3 h-100">
+                              <p class="fz-12 text-gray mb-1">الجهة</p>
+                              <p class="fz-14 black-text mb-0 fw-medium">جامعة الملك فيصل</p>
+                            </div>
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-4">
+                            <div class="tender-card p-3 h-100">
+                              <p class="fz-12 text-gray mb-1">نوع المناقصة</p>
+                              <p class="fz-14 black-text mb-0 fw-medium">مناقصة عامة</p>
+                            </div>
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-4">
+                            <div class="tender-card p-3 h-100">
+                              <p class="fz-12 text-gray mb-1">الرقم المرجعي</p>
+                              <p class="fz-14 black-text mb-0 fw-medium">230139873561</p>
+                            </div>
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-4">
+                            <div class="tender-card p-3 h-100">
+                              <p class="fz-12 text-gray mb-1">النشاط</p>
+                              <p class="fz-14 black-text mb-0 fw-medium">تقنية معلومات</p>
+                            </div>
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-4">
+                            <div class="tender-card p-3 h-100">
+                              <p class="fz-12 text-gray mb-1">موقع التنفيذ</p>
+                              <p class="fz-14 black-text mb-0 fw-medium">الأحساء</p>
+                            </div>
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-4">
+                            <div class="tender-card p-3 h-100">
+                              <p class="fz-12 text-gray mb-1">تاريخ طرح المناقصة</p>
+                              <p class="fz-14 black-text mb-0 fw-medium">12/03/2025</p>
+                            </div>
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-4">
+                            <div class="tender-card p-3 h-100">
+                              <p class="fz-12 text-gray mb-1">تاريخ الإغلاق</p>
+                              <p class="fz-14 black-text mb-0 fw-medium">15/04/2025</p>
+                            </div>
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-4">
+                            <div class="tender-card p-3 h-100">
+                              <p class="fz-12 text-gray mb-1">تاريخ فتح العروض</p>
+                              <p class="fz-14 black-text mb-0 fw-medium">17/04/2025</p>
+                            </div>
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-4">
+                            <div class="tender-card p-3 h-100">
+                              <p class="fz-12 text-gray mb-1">تاريخ الترسية</p>
+                              <p class="fz-14 black-text mb-0 fw-medium">19/07/2025</p>
+                            </div>
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-4">
+                            <div class="tender-card p-3 h-100">
+                              <p class="fz-12 text-gray mb-1">مدة العقد</p>
+                              <p class="fz-14 black-text mb-0 fw-medium">36 شهراً</p>
+                            </div>
+                          </div>
+                        </div>
+                        <h6 class="black-text mb-2">نطاق العمل</h6>
+                        <div class="tender-card p-3">
+                          <p class="fz-14 text-gray mb-0">تشغيل وصيانة البنية التحتية لتقنية المعلومات، بما في ذلك مراكز
+                            البيانات والشبكات والأنظمة الإلكترونية والدعم الفني وأمن المعلومات.</p>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade " id="tr-applicants-full" role="tabpanel">
+                  <div class="row tr-stat-card-row g-3 mb-4">
+                    <div class="col-6 col-lg-3">
+                      <div class="summary-card tr-stat-card tr-stat-card--total p-3 h-100">
+                              <p class="summary-title">عدد الشركات المتقدمة</p><span
+                                class="ff-onest fz-18 fw-medium black-text">5</span>
+                            </div>
+                          </div>
+                          <div class="col-6 col-lg-3">
+                            <div class="summary-card tr-stat-card tr-stat-card--awarded p-3 h-100">
+                              <p class="summary-title">المجتازون فنياً</p><span
+                                class="ff-onest fz-18 fw-medium">3</span>
+                            </div>
+                          </div>
+                          <div class="col-6 col-lg-3">
+                            <div class="summary-card tr-stat-card tr-stat-card--not-passed p-3 h-100">
+                              <p class="summary-title">غير المجتازين</p><span class="ff-onest fz-18 fw-medium">1</span>
+                            </div>
+                          </div>
+                          <div class="col-6 col-lg-3">
+                            <div class="summary-card tr-stat-card tr-stat-card--excluded p-3 h-100">
+                              <p class="summary-title">المستبعدون</p><span class="ff-onest fz-18 fw-medium">1</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="table-container">
+                          <div class="table-responsive">
+                            <table class="table table-bordered align-middle competition-table">
+                              <thead>
+                                <tr>
+                                  <th>#</th>
+                                  <th>اسم الشركة</th>
+                                  <th>النتيجة الفنية</th>
+                                  <th>قيمة العرض المالي</th>
+                                  <th>الحالة النهائية</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td><span class="ff-onest">01</span></td>
+                                  <td><span class="black-text fw-medium">شركة الحلول الرقمية المتقدمة</span></td>
+                                  <td><span class="sm-ele fz-10 bordered-8 badge-success">ممتاز</span></td>
+                                  <td class="ff-onest">4,830,000 ر.س</td>
+                                  <td><span class="sm-ele fz-10 bordered-8 text-nowrap badge-success">تمت الترسية</span>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td><span class="ff-onest">02</span></td>
+                                  <td><span class="black-text fw-medium">شركة التقنية الحديثة</span></td>
+                                  <td><span class="sm-ele fz-10 bordered-8 badge-success">جيد جداً</span></td>
+                                  <td class="ff-onest">5,150,000 ر.س</td>
+                                  <td><span class="sm-ele fz-10 bordered-8 text-nowrap badge-rejected">مرفوض</span></td>
+                                </tr>
+                                <tr>
+                                  <td><span class="ff-onest">03</span></td>
+                                  <td><span class="black-text fw-medium">مؤسسة الخدمات المتكاملة</span></td>
+                                  <td><span class="sm-ele fz-10 bordered-8 badge-success">ممتاز</span></td>
+                                  <td class="ff-onest">4,950,000 ر.س</td>
+                                  <td><span class="sm-ele fz-10 bordered-8 text-nowrap badge-rejected">مرفوض</span></td>
+                                </tr>
+                                <tr>
+                                  <td><span class="ff-onest">04</span></td>
+                                  <td><span class="black-text fw-medium">شركة الشبكات الذكية</span></td>
+                                  <td><span class="sm-ele fz-10 bordered-8 badge-rejected">غير مجتاز</span></td>
+                                  <td class="ff-onest">—</td>
+                                  <td><span class="sm-ele fz-10 bordered-8 text-nowrap badge-rejected">غير مجتاز</span>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td><span class="ff-onest">05</span></td>
+                                  <td><span class="black-text fw-medium">مجموعة الخدمات الرقمية</span></td>
+                                  <td><span class="sm-ele fz-10 bordered-8 badge-excluded">مستبعد</span></td>
+                                  <td class="ff-onest">—</td>
+                                  <td><span class="sm-ele fz-10 bordered-8 text-nowrap badge-excluded">مستبعد</span>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="d-flex flex-wrap align-items-center justify-content-end gap-3 spg-wizard-actions mt-auto pt-3">
+                  <a href="#tr-entity-kfu" class="btn-main btn-primary-outline h-41 fw-medium fz-14">مناقصات الجهة</a>
+                  <a href="#tr-history-list" class="btn-main btn-primary-outline h-41 fw-medium fz-14">العودة
+                    للقائمة</a>
+                  <a href="#tr-detail" class="btn-main btn-primary-outline h-41 fw-medium fz-14">معاينة تبويب المتقدمين
+                    (قريباً)</a>
+                </div>
+              </div>
+            </section>
           </div>
         </div>
-        <div class="tender-card p-3 mb-4 abs-card">
-          <div class="tender-header d-flex align-items-center justify-content-between mb-3">
-            <div class="tender-number">
-              <span>رقم/رمز المناقصة </span>
-              <span class="fz-14 black-text fw-medium">250739020709</span>
-            </div>
-            <div class="tender-actions p-sm-absolute">
-              <a href="tenders-results-details.html" class="btn-base btn-base-sm bordered-40  fz-12">
-                ترسيات الموردين
-              </a>
-            </div>
-          </div>
-          <div class="tender-sections p-3 rounded-12 bg-white">
-            <div class="tender-section position-relative">
-              <div class="row align-items-md-center">
-                <div class="col-8 col-md-6">
-                  <div class="d-flex flex-column flex-md-row align-items-md-center gap-10">
-                    <span class="tender-status me-3 flex-shrink-0">طلب تقديم العروض</span>
-                    <span class="fz-12 gray-text flex-shrink-0">تاريخ النشر</span>
-                    <span class="fz-14 black-text fw-medium flex-shrink-0">05-12-2025</span>
-                  </div>
-                  <div class="d-flex flex-column flex-lg-row gap-3 justify-content-between">
-                    <div>
-                      <h6 class="tender-title">تجهيز المكاتب وأثاثها</h6>
-                      <div class="tender-subtitle">وزارة الصحة</div>
-                    </div>
-                    <div>
-                      <span class="fz-12 gray-text">النشاط الأساسي</span>
-                      <div class="fz-14 black-text">
-                        التصميم الداخلي والتجهيزات
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-4 col-md-6">
-                  <div class="d-flex justify-content-end">
-                    <div class="position-relative">
-                      <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
-                        <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none">
-                        </circle>
-                        <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4" fill="none"
-                          stroke-dasharray="134.6 125.6"></circle>
-                      </svg>
-
-                      <div class="position-absolute top-50 start-50 translate-middle text-center">
-                        <div>200</div>
-                        <div>يوم</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="tender-section">
-              <div class="row gy-3">
-                <div class="col-md-4">
-                  <div class=" d-flex align-items-center">
-                    <div class="sm-logo">
-                      <img src="images/clock.svg" alt="Clock">
-                    </div>
-                    <div>
-                      <span class="fz-12 gray-text">الموعد النهائي لتقديم العروض</span>
-                      <div>
-                        <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                          04:30 pm
-                        </span>
-                        <span class="black-text fz-12 fw-medium">
-                          05-12-2025
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class=" d-flex align-items-center">
-                    <div class="sm-logo">
-                      <img src="images/clock.svg" alt="Clock">
-                    </div>
-                    <div>
-                      <span class="fz-12 gray-text">موعد اجتماع المناقشة</span>
-                      <div>
-                        <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                          01:00 pm
-                        </span>
-                        <span class="black-text fz-12 fw-medium">
-                          05-12-2025
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="date-item d-flex align-items-center justify-content-md-end">
-                    <div class="sm-logo">
-                      <img src="images/clock.svg" alt="Clock">
-                    </div>
-                    <div>
-                      <span class="fz-12 gray-text">تاريخ الاعلان عن النتائج</span>
-                      <div>
-                        <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                          09:00 am
-                        </span>
-                        <span class="black-text fz-12 fw-medium">
-                          12-12-2025
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-2">
-                  <div class="tender-price d-flex justify-content-end">
-                    <div>
-                      <span class="fz-12 gray-text d-block mb-2">سعر الوثائق</span>
-                      <span class="fs-6 black-text fw-medium">200.50
-                        <img src="images/ryall.svg" alt="ريال">
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="tender-card p-3 mb-4 abs-card">
-          <div class="tender-header d-flex align-items-center justify-content-between mb-3">
-            <div class="tender-number">
-              <span>رقم/رمز المناقصة </span>
-              <span class="fz-14 black-text fw-medium">250739020709</span>
-            </div>
-            <div class="tender-actions p-sm-absolute">
-              <a href="tenders-results-details.html" class="btn-base btn-base-sm bordered-40  fz-12">
-                ترسيات الموردين
-              </a>
-            </div>
-          </div>
-          <div class="tender-sections p-3 rounded-12 bg-white">
-            <div class="tender-section position-relative">
-              <div class="row align-items-md-center">
-                <div class="col-8 col-md-6">
-                  <div class="d-flex flex-column flex-md-row align-items-md-center gap-10">
-                    <span class="tender-status me-3 flex-shrink-0">طلب تقديم العروض</span>
-                    <span class="fz-12 gray-text flex-shrink-0">تاريخ النشر</span>
-                    <span class="fz-14 black-text fw-medium flex-shrink-0">05-12-2025</span>
-                  </div>
-                  <div class="d-flex flex-column flex-lg-row gap-3 justify-content-between">
-                    <div>
-                      <h6 class="tender-title">تجهيز المكاتب وأثاثها</h6>
-                      <div class="tender-subtitle">وزارة الصحة</div>
-                    </div>
-                    <div>
-                      <span class="fz-12 gray-text">النشاط الأساسي</span>
-                      <div class="fz-14 black-text">
-                        التصميم الداخلي والتجهيزات
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-4 col-md-6">
-                  <div class="d-flex justify-content-end">
-                    <div class="position-relative">
-                      <svg class="rotate-180 progress-svg" viewBox="0 0 100 100">
-                        <circle cx="50" cy="50" r="42" stroke="#F7F7F7" stroke-width="4" fill="none">
-                        </circle>
-                        <circle cx="50" cy="50" r="42" stroke="#6BAFB8" stroke-width="4" fill="none"
-                          stroke-dasharray="134.6 125.6"></circle>
-                      </svg>
-
-                      <div class="position-absolute top-50 start-50 translate-middle text-center">
-                        <div>200</div>
-                        <div>يوم</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="tender-section">
-              <div class="row gy-3">
-                <div class="col-md-4">
-                  <div class=" d-flex align-items-center">
-                    <div class="sm-logo">
-                      <img src="images/clock.svg" alt="Clock">
-                    </div>
-                    <div>
-                      <span class="fz-12 gray-text">الموعد النهائي لتقديم العروض</span>
-                      <div>
-                        <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                          04:30 pm
-                        </span>
-                        <span class="black-text fz-12 fw-medium">
-                          05-12-2025
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class=" d-flex align-items-center">
-                    <div class="sm-logo">
-                      <img src="images/clock.svg" alt="Clock">
-                    </div>
-                    <div>
-                      <span class="fz-12 gray-text">موعد اجتماع المناقشة</span>
-                      <div>
-                        <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                          01:00 pm
-                        </span>
-                        <span class="black-text fz-12 fw-medium">
-                          05-12-2025
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="date-item d-flex align-items-center justify-content-md-end">
-                    <div class="sm-logo">
-                      <img src="images/clock.svg" alt="Clock">
-                    </div>
-                    <div>
-                      <span class="fz-12 gray-text">تاريخ الاعلان عن النتائج</span>
-                      <div>
-                        <span class="black-text fz-12 fw-medium d-inline-block me-1">
-                          09:00 am
-                        </span>
-                        <span class="black-text fz-12 fw-medium">
-                          12-12-2025
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-2">
-                  <div class="tender-price d-flex justify-content-end">
-                    <div>
-                      <span class="fz-12 gray-text d-block mb-2">سعر الوثائق</span>
-                      <span class="fs-6 black-text fw-medium">200.50
-                        <img src="images/ryall.svg" alt="ريال">
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Pagination -->
-        <nav aria-label="Page navigation" class="d-flex justify-content-center">
-          <ul class="pagination">
-            <li class="page-item">
-              <a class="page-link" href="#" aria-label="Previous">
-                <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="20"
-                    viewBox="0 0 21 20" fill="none">
-                    <path d="M12.5249 15.0586L17.5832 10.0002L12.5249 4.94189" stroke="#0C2030" stroke-width="1.5"
-                      stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                    <path opacity="0.4" d="M3.41675 10H17.4417" stroke="#0C2030" stroke-width="1.5"
-                      stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </span>
-              </a>
-            </li>
-            <li class="page-item">
-              <span class="page-link">...</span>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">3</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">2</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">1</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#" aria-label="Next">
-                <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="20"
-                    viewBox="0 0 21 20" fill="none">
-                    <path d="M8.4751 15.0586L3.41676 10.0002L8.4751 4.94189" stroke="#0C2030" stroke-width="1.5"
-                      stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
-                    <path opacity="0.4" d="M17.5833 10H3.55825" stroke="#0C2030" stroke-width="1.5"
-                      stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round">
-                    </path>
-                  </svg>
-                </span>
-              </a>
-            </li>
-          </ul>
-        </nav>
       </div>
     </div>
   </div>
-  <!-- Bootstrap JS -->
   <script src="assets/js/bootstrap.bundle.min.js"></script>
-  <!-- ✅ Flatpickr JS -->
-  <script src="assets/js/flatpickr.min.js"></script>
-  <!-- ✅ Arabic language support -->
-  <script src="assets/js/flatpickr-ar.js"></script>
-  <!-- Custom JS -->
-  <script src="js/main.js"></script>
-  <script src="js/calender.js"></script>
+  <script src="js/main.js" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var form = document.getElementById("trSearchPriorForm");
+      if (!form) return;
+      var nameInput = document.getElementById("trCompetitionName");
+      var refInput = document.getElementById("trReferenceNumber");
+      var submitBtn = form.querySelector('button[type="submit"]');
+
+      function fieldFilled(input) {
+        return input && (input.value || "").trim().length > 0;
+      }
+
+      function validatePriorSearchForm() {
+        var nameOk = fieldFilled(nameInput);
+        var refOk = fieldFilled(refInput);
+        if (nameInput) nameInput.classList.toggle("is-invalid", !nameOk);
+        if (refInput) refInput.classList.toggle("is-invalid", !refOk);
+        if (!nameOk) {
+          nameInput.focus();
+          return false;
+        }
+        if (!refOk) {
+          refInput.focus();
+          return false;
+        }
+        return true;
+      }
+
+      [nameInput, refInput].forEach(function (input) {
+        if (!input) return;
+        input.addEventListener("input", function () {
+          if (fieldFilled(input)) {
+            input.classList.remove("is-invalid");
+          }
+        });
+      });
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (!validatePriorSearchForm()) {
+          return;
+        }
+        window.location.hash = "tr-history-list";
+      });
+
+      if (submitBtn) {
+        submitBtn.addEventListener("click", function (e) {
+          if (!validatePriorSearchForm()) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+        });
+      }
+    });
+  </script>
 </body>
 
 </html>

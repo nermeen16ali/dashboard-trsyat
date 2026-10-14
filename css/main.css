@@ -1885,6 +1885,18 @@ table.table-bordered.dataTable {
   border: 1px solid #0042092e;
 }
 
+.badge-ended {
+  color: #6b7280;
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+}
+
+.badge-excluded {
+  color: #575757;
+  background: #0000000f;
+  border: 1px solid #a1a1a1;
+}
+
 .badge-rejected {
   background: #da1e1e14;
   border: 1px solid #da1e1e2e;
@@ -1947,6 +1959,10 @@ button.proposal-status.red-colored:hover {
 
 .progress-bar.bg-prim {
   background-color: var(--primary-base-color);
+}
+
+.progress-bar.bg-dark-base {
+  background-color: #0c2030;
 }
 
 .bg-warning-progress {
@@ -7414,6 +7430,10 @@ html[dir="ltr"] .input-icon-group input {
   background: var(--gray-500-color);
 }
 
+.spg-collection-empty .tr-flow-icon--empty-data {
+  opacity: 0.72;
+}
+
 #spgCollectionDetailModal .modal-content {
   padding: 28px 24px;
   gap: 24px;
@@ -8893,6 +8913,7 @@ html[dir="ltr"] .input-icon-group input {
 
 .tp-system-activity-step.is-running .tp-system-activity-card {
   border-color: rgba(107, 175, 184, 0.55);
+  box-shadow: 0 2px 8px rgba(57, 125, 134, 0.08);
 }
 
 .tp-system-activity-step.is-queued .tp-system-activity-card {
@@ -9312,11 +9333,6 @@ html[dir="ltr"] .input-icon-group input {
 .tp-flow-panel .search-icon .tr-flow-icon--field {
   color: var(--primary-secondary, #0c2030);
 }
-
-.tp-flow-panel .tr-flow-icon--primary {
-  color: var(--primary-base-color, #397d86);
-}
-
 .tp-flow-panel .tr-flow-icon--success {
   color: #00d252;
 }
@@ -9333,4 +9349,261 @@ html[dir="ltr"] .input-icon-group input {
 .tp-flow-panel .colored .tr-flow-icon,
 .tp-flow-panel a.colored .tr-flow-icon {
   color: currentColor;
+}
+
+/* Tender results — stats & list (reuse pricing flow tokens) */
+.spg-root .summary-card.tr-stat-card {
+  border: 1px solid transparent;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 0.75rem;
+  height: auto;
+  min-height: 3rem;
+}
+
+.spg-root .summary-card.tr-stat-card .summary-title {
+  margin: 0;
+  flex: 1 1 auto;
+  min-width: 0;
+  line-height: 1.35;
+  font-size: 13px;
+  text-align: start;
+}
+
+.spg-root .summary-card.tr-stat-card > .ff-onest {
+  flex: 0 0 auto;
+  line-height: 1.2;
+}
+
+.spg-root .tr-stat-card-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 0.75rem;
+  margin-left: 0;
+  margin-right: 0;
+  --bs-gutter-x: 0;
+  --bs-gutter-y: 0;
+}
+
+.spg-root .tr-stat-card-row > [class*="col-"] {
+  flex: 1 1 calc(50% - 0.375rem);
+  max-width: calc(50% - 0.375rem);
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media (min-width: 992px) {
+  .spg-root .tr-stat-card-row > .col-lg-3 {
+    flex: 1 1 calc(25% - 0.5625rem);
+    max-width: calc(25% - 0.5625rem);
+  }
+
+  .spg-root .tr-stat-card-row > .col-lg-2 {
+    flex: 1 1 calc(20% - 0.6rem);
+    max-width: calc(20% - 0.6rem);
+  }
+}
+
+.spg-root .tr-stat-card-row .summary-card.tr-stat-card.h-100 {
+  height: 100%;
+  min-height: 3rem;
+}
+
+.spg-root .summary-card.tr-stat-card--total {
+  background: rgba(107, 175, 184, 0.12);
+  border-color: rgba(107, 175, 184, 0.45);
+}
+
+.spg-root .summary-card.tr-stat-card--total .summary-title {
+  color: var(--primary-color, #397d86);
+}
+
+.spg-root .summary-card.tr-stat-card--awarded {
+  background: #38f5900f;
+  border-color: #0042092e;
+}
+
+.spg-root .summary-card.tr-stat-card--awarded .summary-title {
+  color: #047635;
+}
+
+.spg-root .summary-card.tr-stat-card--awarded .ff-onest {
+  color: #00a63e;
+}
+
+.spg-root .summary-card.tr-stat-card--value {
+  background: rgba(107, 175, 184, 0.08);
+  border-color: rgba(57, 125, 134, 0.35);
+}
+
+.spg-root .summary-card.tr-stat-card--value .summary-title {
+  color: var(--primary-color, #397d86);
+}
+
+.spg-root .summary-card.tr-stat-card--value .ff-onest.colored,
+.spg-root .summary-card.tr-stat-card--value .ff-onest:not(.black-text) {
+  color: var(--primary-base-color, #397d86);
+}
+
+.spg-root .summary-card.tr-stat-card--avg {
+  background: #f2994a14;
+  border-color: #f2994a5c;
+}
+
+.spg-root .summary-card.tr-stat-card--avg .summary-title {
+  color: #b45309;
+}
+
+.spg-root .summary-card.tr-stat-card--avg .ff-onest {
+  color: #d97706;
+}
+
+.spg-root .summary-card.tr-stat-card--winners {
+  background: rgba(12, 32, 48, 0.06);
+  border-color: rgba(12, 32, 48, 0.14);
+}
+
+.spg-root .summary-card.tr-stat-card--winners .summary-title {
+  color: var(--primary-secondary, #0c2030);
+}
+
+.spg-root .summary-card.tr-stat-card--winners .ff-onest {
+  color: var(--primary-secondary, #0c2030);
+}
+
+.spg-root .summary-card.tr-stat-card--not-passed {
+  background: #f59e0b14;
+  border-color: #f59e0b45;
+}
+
+.spg-root .summary-card.tr-stat-card--not-passed .summary-title {
+  color: #b45309;
+}
+
+.spg-root .summary-card.tr-stat-card--not-passed .ff-onest {
+  color: #d97706;
+}
+
+.spg-root .summary-card.tr-stat-card--excluded {
+  background: #da1e1e14;
+  border-color: #da1e1e2e;
+}
+
+.spg-root .summary-card.tr-stat-card--excluded .summary-title {
+  color: #b42318;
+}
+
+.spg-root .summary-card.tr-stat-card--excluded .ff-onest {
+  color: #e7000b;
+}
+
+.spg-root .sub-nav-tabs.tr-detail-sub-nav-tabs {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.spg-root .sub-nav-tabs.tr-detail-sub-nav-tabs .nav-link {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.spg-root .tp-flow-panel .min-h-spg-main > .tender-card.bg-white:last-child {
+  margin-bottom: 0;
+}
+
+/* Tender results — card footer actions align inline-end (left in RTL) */
+.spg-root .tp-flow-panel .spg-wizard-actions {
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.spg-root .tp-flow-panel .tender-card.bg-white:has(> a.btn-main:last-child),
+.spg-root .tp-flow-panel .tender-card.p-3.prim-opacity-outlined:has(> a.btn-main:last-child),
+.spg-root .tp-flow-panel .tender-card.bg-white:has(> a.fz-14.colored.text-decoration-none:last-child),
+.spg-root .tp-flow-panel .tender-card.bg-white:has(> .d-flex.justify-content-end:last-child) {
+  display: flex;
+  flex-direction: column;
+}
+
+.spg-root .tp-flow-panel .tender-card > a.btn-main:last-child,
+.spg-root .tp-flow-panel .tender-card.bg-white > a.fz-14.colored.text-decoration-none:last-child,
+.spg-root .tp-flow-panel .tender-card.bg-white > .d-flex.justify-content-end:last-child {
+  align-self: flex-end;
+}
+
+/* Nested list rows inside white flow shell */
+.spg-root .tp-flow-panel .tender-card.bg-white > .tender-card:not(.bg-white):not(.tr-list-item-card) {
+  background: rgba(12, 32, 48, 0.04);
+  border: 1px solid rgba(12, 32, 48, 0.08);
+}
+
+.spg-root .tp-flow-panel .tender-card.bg-white > .tender-card.tr-list-item-card.bg-white {
+  background: #fff;
+  border: 1px solid rgba(12, 32, 48, 0.08);
+}
+
+.spg-root .tr-list-item-card {
+  padding: 0.75rem 1rem;
+}
+
+.spg-root .tr-list-item-card h6 {
+  margin-bottom: 0.25rem;
+  line-height: 1.35;
+}
+
+.spg-root .tr-list-item-card .tr-list-item-card__head {
+  margin-bottom: 0.35rem;
+}
+
+.spg-root .tr-list-item-card .tr-list-item-card__head h6 {
+  margin-bottom: 0;
+}
+
+.spg-root .tr-list-item-card .tr-list-item-card__meta {
+  margin-bottom: 0;
+}
+
+.spg-root .tr-list-item-card .tr-list-item-card__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.spg-root .tr-list-item-card .tr-list-item-card__row--actions-only {
+  justify-content: flex-end;
+}
+
+.spg-root .tr-list-item-card .tr-list-item-card__winner {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1 1 12rem;
+  min-width: 0;
+  font-size: 0.875rem;
+}
+
+.spg-root .tr-list-item-card .tr-list-item-card__winner .tr-flow-icon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.spg-root .tr-list-item-card .tr-list-item-card__winner .black-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
 }
