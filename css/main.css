@@ -8771,6 +8771,75 @@ html[dir="ltr"] .input-icon-group input {
   display: block;
 }
 
+/* Branched wizard steps — hash route markers + shared shells (documents vs manual), CSS-only */
+.spg-root .tp-flow .tp-step-4-shell,
+.spg-root .tp-flow .tp-step-5-shell,
+.spg-root .tp-flow .tp-step-6-shell {
+  display: none;
+}
+
+.spg-root .tp-flow:has(#tp-step-4:target) .tp-step-4-shell,
+.spg-root .tp-flow:has(#tp-step-4-manual:target) .tp-step-4-shell {
+  display: block;
+}
+
+.spg-root .tp-flow:has(#tp-step-5:target) .tp-step-5-shell,
+.spg-root .tp-flow:has(#tp-step-5-manual:target) .tp-step-5-shell {
+  display: block;
+}
+
+.spg-root .tp-flow:has(#tp-step-6:target) .tp-step-6-shell,
+.spg-root .tp-flow:has(#tp-step-6-manual:target) .tp-step-6-shell {
+  display: block;
+}
+
+.spg-root .tp-flow .tp-step4-prev--from-manual,
+.spg-root .tp-flow .tp-step4-next--from-manual,
+.spg-root .tp-flow .tp-step5-prev--from-manual,
+.spg-root .tp-flow .tp-step5-next--from-manual,
+.spg-root .tp-flow .tp-step6-prev--from-manual {
+  display: none;
+}
+
+.spg-root .tp-flow:has(#tp-step-4-manual:target) .tp-step4-prev--from-review,
+.spg-root .tp-flow:has(#tp-step-4-manual:target) .tp-step4-next--from-review {
+  display: none;
+}
+
+.spg-root .tp-flow:has(#tp-step-4-manual:target) .tp-step4-prev--from-manual,
+.spg-root .tp-flow:has(#tp-step-4-manual:target) .tp-step4-next--from-manual {
+  display: inline-flex;
+}
+
+.spg-root .tp-flow:has(#tp-step-5-manual:target) .tp-step5-prev--from-review,
+.spg-root .tp-flow:has(#tp-step-5-manual:target) .tp-step5-next--from-review {
+  display: none;
+}
+
+.spg-root .tp-flow:has(#tp-step-5-manual:target) .tp-step5-prev--from-manual,
+.spg-root .tp-flow:has(#tp-step-5-manual:target) .tp-step5-next--from-manual {
+  display: inline-flex;
+}
+
+.spg-root .tp-flow:has(#tp-step-6-manual:target) .tp-step6-prev--from-review {
+  display: none;
+}
+
+.spg-root .tp-flow:has(#tp-step-6-manual:target) .tp-step6-prev--from-manual {
+  display: inline-flex;
+}
+
+.spg-root .tp-flow .tp-flow-route:target {
+  display: block;
+  flex: 0 0 auto;
+  height: 0;
+  min-height: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
 .tp-pricing-stat {
   border: 1px solid transparent;
 }
@@ -9660,6 +9729,35 @@ html[dir="ltr"] .input-icon-group input {
   .spg-root:has(.tp-flow-main-col):has(.tp-flow .tp-flow-panel[id^="tp-step-"]:target) .tp-flow-panel:target > .min-h-spg-main {
     flex: 1 1 auto;
     min-height: 100%;
+  }
+
+  .spg-root:has(.tp-flow-main-col):has(.tp-flow #tp-step-4:target) .tp-step-4-shell,
+  .spg-root:has(.tp-flow-main-col):has(.tp-flow #tp-step-4-manual:target) .tp-step-4-shell,
+  .spg-root:has(.tp-flow-main-col):has(.tp-flow #tp-step-5:target) .tp-step-5-shell,
+  .spg-root:has(.tp-flow-main-col):has(.tp-flow #tp-step-5-manual:target) .tp-step-5-shell,
+  .spg-root:has(.tp-flow-main-col):has(.tp-flow #tp-step-6:target) .tp-step-6-shell,
+  .spg-root:has(.tp-flow-main-col):has(.tp-flow #tp-step-6-manual:target) .tp-step-6-shell {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    min-height: 100%;
+  }
+
+  .spg-root:has(.tp-flow-main-col):has(.tp-flow #tp-step-4:target) .tp-step-4-shell > .min-h-spg-main,
+  .spg-root:has(.tp-flow-main-col):has(.tp-flow #tp-step-4-manual:target) .tp-step-4-shell > .min-h-spg-main,
+  .spg-root:has(.tp-flow-main-col):has(.tp-flow #tp-step-5:target) .tp-step-5-shell > .min-h-spg-main,
+  .spg-root:has(.tp-flow-main-col):has(.tp-flow #tp-step-5-manual:target) .tp-step-5-shell > .min-h-spg-main,
+  .spg-root:has(.tp-flow-main-col):has(.tp-flow #tp-step-6:target) .tp-step-6-shell > .min-h-spg-main,
+  .spg-root:has(.tp-flow-main-col):has(.tp-flow #tp-step-6-manual:target) .tp-step-6-shell > .min-h-spg-main {
+    flex: 1 1 auto;
+    min-height: 100%;
+  }
+
+  .spg-root:has(.tp-flow-main-col):has(.tp-flow .tp-flow-panel[id^="tp-step-"]:target) .tp-flow-panel.tp-flow-route:target {
+    display: block;
+    flex: 0 0 auto;
+    min-height: 0;
+    height: 0;
   }
 }
 

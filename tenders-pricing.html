@@ -1118,7 +1118,7 @@
                 </div>
                 <div
                   class="d-flex flex-wrap align-items-center justify-content-between gap-3 mt-auto pt-3 spg-wizard-actions">
-                  <a href="#tp-step-2" class="btn-main outline-primary-gray fz-14 fw-medium"><svg
+                  <a href="#tp-step-1" class="btn-main outline-primary-gray fz-14 fw-medium"><svg
                       xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"
                       aria-hidden="true">
                       <path d="M12.025 15.0586L17.0833 10.0002L12.025 4.94189" stroke="#6BAFB8" stroke-width="1.5"
@@ -1126,7 +1126,7 @@
                       <path opacity="0.4" d="M2.91667 10H16.9417" stroke="#6BAFB8" stroke-width="1.5"
                         stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
                     </svg> السابق</a>
-                  <a href="#tp-step-4" class="btn-main btn-primary h-44 fz-14">ابدأ التسعير الذكي <svg
+                  <a href="#tp-step-4-manual" class="btn-main btn-primary h-44 fz-14">ابدأ التسعير الذكي <svg
                       xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none"
                       aria-hidden="true">
                       <path d="M8.47485 15.5583L3.41652 10.5L8.47485 5.44165" stroke="#fff" stroke-width="1.5"
@@ -1280,7 +1280,13 @@
                 </div>
               </div>
             </section>
-            <section id="tp-step-4" class="tp-flow-panel">
+            <section id="tp-step-4-manual" class="tp-flow-panel tp-flow-route" tabindex="-1">
+              <span class="visually-hidden">التسعير الذكي — مسار الإدخال اليدوي</span>
+            </section>
+            <section id="tp-step-4" class="tp-flow-panel tp-flow-route" tabindex="-1">
+              <span class="visually-hidden">التسعير الذكي — مسار مراجعة البنود</span>
+            </section>
+            <section id="tp-step-4-shell" class="tp-flow-panel tp-step-4-shell">
               <div class="tender-card p-3 p-lg-4 d-flex flex-column min-h-spg-main">
                 <div class="mb-4">
                   <a href="#tp-welcome" class="btn-main btn-primary-outline fz-12 h-36">العودة للبداية</a>
@@ -1429,7 +1435,8 @@
                 </div>
                 <div
                   class="d-flex flex-wrap align-items-center justify-content-between gap-3 mt-auto pt-3 spg-wizard-actions">
-                  <a href="#tp-step-3" class="btn-main outline-primary-gray fz-14 fw-medium"><svg
+                  <a href="#tp-step-3"
+                    class="btn-main outline-primary-gray fz-14 fw-medium tp-step4-prev tp-step4-prev--from-review"><svg
                       xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"
                       aria-hidden="true">
                       <path d="M12.025 15.0586L17.0833 10.0002L12.025 4.94189" stroke="#6BAFB8" stroke-width="1.5"
@@ -1437,7 +1444,26 @@
                       <path opacity="0.4" d="M2.91667 10H16.9417" stroke="#6BAFB8" stroke-width="1.5"
                         stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
                     </svg> السابق</a>
-                  <a href="#tp-step-5" class="btn-main btn-primary h-44 fz-14">مراجعة النتائج <svg
+                  <a href="#tp-step-manual"
+                    class="btn-main outline-primary-gray fz-14 fw-medium tp-step4-prev tp-step4-prev--from-manual"><svg
+                      xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                      aria-hidden="true">
+                      <path d="M12.025 15.0586L17.0833 10.0002L12.025 4.94189" stroke="#6BAFB8" stroke-width="1.5"
+                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path opacity="0.4" d="M2.91667 10H16.9417" stroke="#6BAFB8" stroke-width="1.5"
+                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg> السابق</a>
+                  <a href="#tp-step-5"
+                    class="btn-main btn-primary h-44 fz-14 tp-path-next tp-step4-next--from-review">مراجعة النتائج <svg
+                      xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none"
+                      aria-hidden="true">
+                      <path d="M8.47485 15.5583L3.41652 10.5L8.47485 5.44165" stroke="#fff" stroke-width="1.5"
+                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path opacity="0.4" d="M17.583 10.5H3.55801" stroke="#fff" stroke-width="1.5"
+                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg></a>
+                  <a href="#tp-step-5-manual"
+                    class="btn-main btn-primary h-44 fz-14 tp-path-next tp-step4-next--from-manual">مراجعة النتائج <svg
                       xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none"
                       aria-hidden="true">
                       <path d="M8.47485 15.5583L3.41652 10.5L8.47485 5.44165" stroke="#fff" stroke-width="1.5"
@@ -1448,7 +1474,13 @@
                 </div>
               </div>
             </section>
-            <section id="tp-step-5" class="tp-flow-panel">
+            <section id="tp-step-5-manual" class="tp-flow-panel tp-flow-route" tabindex="-1">
+              <span class="visually-hidden">مراجعة النتائج — مسار الإدخال اليدوي</span>
+            </section>
+            <section id="tp-step-5" class="tp-flow-panel tp-flow-route" tabindex="-1">
+              <span class="visually-hidden">مراجعة النتائج — مسار المستندات</span>
+            </section>
+            <section id="tp-step-5-shell" class="tp-flow-panel tp-step-5-shell">
               <div class="tender-card p-3 p-lg-4 d-flex flex-column min-h-spg-main">
                 <div class="mb-4">
                   <a href="#tp-welcome" class="btn-main btn-primary-outline fz-12 h-36">العودة للبداية</a>
@@ -1604,7 +1636,8 @@
                 </div>
                 <div
                   class="d-flex flex-wrap align-items-center justify-content-between gap-3 mt-auto pt-3 spg-wizard-actions">
-                  <a href="#tp-step-4" class="btn-main outline-primary-gray fz-14 fw-medium"><svg
+                  <a href="#tp-step-4"
+                    class="btn-main outline-primary-gray fz-14 fw-medium tp-path-prev tp-step5-prev--from-review"><svg
                       xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"
                       aria-hidden="true">
                       <path d="M12.025 15.0586L17.0833 10.0002L12.025 4.94189" stroke="#6BAFB8" stroke-width="1.5"
@@ -1612,9 +1645,28 @@
                       <path opacity="0.4" d="M2.91667 10H16.9417" stroke="#6BAFB8" stroke-width="1.5"
                         stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
                     </svg> السابق</a>
-                  <a href="#tp-step-6" class="btn-main btn-primary h-44 fz-14">متابعة إلى ملخص التكلفة <svg
-                      xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none"
+                  <a href="#tp-step-4-manual"
+                    class="btn-main outline-primary-gray fz-14 fw-medium tp-path-prev tp-step5-prev--from-manual"><svg
+                      xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"
                       aria-hidden="true">
+                      <path d="M12.025 15.0586L17.0833 10.0002L12.025 4.94189" stroke="#6BAFB8" stroke-width="1.5"
+                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path opacity="0.4" d="M2.91667 10H16.9417" stroke="#6BAFB8" stroke-width="1.5"
+                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg> السابق</a>
+                  <a href="#tp-step-6"
+                    class="btn-main btn-primary h-44 fz-14 tp-path-next tp-step5-next--from-review">متابعة إلى ملخص
+                    التكلفة <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
+                      fill="none" aria-hidden="true">
+                      <path d="M8.47485 15.5583L3.41652 10.5L8.47485 5.44165" stroke="#fff" stroke-width="1.5"
+                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path opacity="0.4" d="M17.583 10.5H3.55801" stroke="#fff" stroke-width="1.5"
+                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg></a>
+                  <a href="#tp-step-6-manual"
+                    class="btn-main btn-primary h-44 fz-14 tp-path-next tp-step5-next--from-manual">متابعة إلى ملخص
+                    التكلفة <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
+                      fill="none" aria-hidden="true">
                       <path d="M8.47485 15.5583L3.41652 10.5L8.47485 5.44165" stroke="#fff" stroke-width="1.5"
                         stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
                       <path opacity="0.4" d="M17.583 10.5H3.55801" stroke="#fff" stroke-width="1.5"
@@ -1623,7 +1675,13 @@
                 </div>
               </div>
             </section>
-            <section id="tp-step-6" class="tp-flow-panel">
+            <section id="tp-step-6-manual" class="tp-flow-panel tp-flow-route" tabindex="-1">
+              <span class="visually-hidden">ملخص التكلفة — مسار الإدخال اليدوي</span>
+            </section>
+            <section id="tp-step-6" class="tp-flow-panel tp-flow-route" tabindex="-1">
+              <span class="visually-hidden">ملخص التكلفة — مسار المستندات</span>
+            </section>
+            <section id="tp-step-6-shell" class="tp-flow-panel tp-step-6-shell">
               <div class="tender-card p-3 p-lg-4 d-flex flex-column min-h-spg-main">
                 <div class="mb-4">
                   <a href="#tp-welcome" class="btn-main btn-primary-outline fz-12 h-36">العودة للبداية</a>
@@ -1782,7 +1840,17 @@
                 </div>
                 <div
                   class="d-flex flex-wrap align-items-center justify-content-between gap-3 mt-auto pt-3 spg-wizard-actions">
-                  <a href="#tp-step-5" class="btn-main outline-primary-gray fz-14 fw-medium"><svg
+                  <a href="#tp-step-5"
+                    class="btn-main outline-primary-gray fz-14 fw-medium tp-path-prev tp-step6-prev--from-review"><svg
+                      xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                      aria-hidden="true">
+                      <path d="M12.025 15.0586L17.0833 10.0002L12.025 4.94189" stroke="#6BAFB8" stroke-width="1.5"
+                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path opacity="0.4" d="M2.91667 10H16.9417" stroke="#6BAFB8" stroke-width="1.5"
+                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg> السابق</a>
+                  <a href="#tp-step-5-manual"
+                    class="btn-main outline-primary-gray fz-14 fw-medium tp-path-prev tp-step6-prev--from-manual"><svg
                       xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"
                       aria-hidden="true">
                       <path d="M12.025 15.0586L17.0833 10.0002L12.025 4.94189" stroke="#6BAFB8" stroke-width="1.5"
