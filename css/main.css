@@ -8913,7 +8913,6 @@ html[dir="ltr"] .input-icon-group input {
 
 .tp-system-activity-step.is-running .tp-system-activity-card {
   border-color: rgba(107, 175, 184, 0.55);
-  box-shadow: 0 2px 8px rgba(57, 125, 134, 0.08);
 }
 
 .tp-system-activity-step.is-queued .tp-system-activity-card {
@@ -9606,4 +9605,349 @@ html[dir="ltr"] .input-icon-group input {
   text-overflow: ellipsis;
   white-space: nowrap;
   min-width: 0;
+}
+
+/* Tender pricing — welcome without sidebar; steps with sidebar */
+.spg-root .tp-pricing-sidebar-col {
+  display: none;
+}
+
+.spg-root:has(.tp-flow .tp-flow-panel[id^="tp-step-"]:target) .tp-pricing-sidebar-col {
+  display: block;
+}
+
+.spg-root .tp-sidebar-current-tender {
+  display: none;
+}
+
+.spg-root:has(.tp-flow .tp-flow-panel[id^="tp-step-"]:target) .tp-sidebar-current-tender {
+  display: block;
+}
+
+@media (min-width: 992px) {
+  .spg-root:not(:has(.tp-flow .tp-flow-panel[id^="tp-step-"]:target)) .tp-flow-main-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  /* Tender pricing — main flow panel matches sidebar column height */
+  .spg-root:has(.tp-flow-main-col):has(.tp-flow .tp-flow-panel[id^="tp-step-"]:target) > .row.g-4 {
+    align-items: stretch;
+  }
+
+  .spg-root:has(.tp-flow-main-col):has(.tp-flow .tp-flow-panel[id^="tp-step-"]:target) .tp-pricing-sidebar-col,
+  .spg-root:has(.tp-flow-main-col):has(.tp-flow .tp-flow-panel[id^="tp-step-"]:target) .tp-flow-main-col {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+
+  .spg-root:has(.tp-flow-main-col):has(.tp-flow .tp-flow-panel[id^="tp-step-"]:target) .tp-flow-main-col > .tp-flow {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100%;
+  }
+
+  .spg-root:has(.tp-flow-main-col):has(.tp-flow .tp-flow-panel[id^="tp-step-"]:target) .tp-flow-panel:target {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    min-height: 100%;
+  }
+
+  .spg-root:has(.tp-flow-main-col):has(.tp-flow .tp-flow-panel[id^="tp-step-"]:target) .tp-flow-panel:target > .min-h-spg-main {
+    flex: 1 1 auto;
+    min-height: 100%;
+  }
+}
+
+.spg-root .tp-welcome-name-card {
+  max-width: 36rem;
+  width: 100%;
+}
+
+.spg-root .tp-welcome-overview {
+  max-width: 48rem;
+  width: 100%;
+}
+
+/* Welcome pricing flow — compact horizontal pipeline (RTL-friendly) */
+.spg-root .tp-welcome-flow-wrap {
+  max-width: 34rem;
+  width: 100%;
+  padding-inline: 0.25rem;
+}
+
+.spg-root .tp-welcome-flow-kicker {
+  letter-spacing: 0.01em;
+}
+
+.spg-root .tp-welcome-flow {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+}
+
+.spg-root .tp-welcome-flow-step {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.35rem;
+}
+
+.spg-root .tp-welcome-flow-marker {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(12, 32, 48, 0.07);
+}
+
+.spg-root .tp-welcome-flow-num {
+  position: absolute;
+  inset-block-start: -0.2rem;
+  inset-inline-start: -0.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 2px rgba(12, 32, 48, 0.08);
+}
+
+.spg-root .tp-welcome-flow-title {
+  font-size: 0.9375rem;
+  line-height: 1.35;
+}
+
+.spg-root .tp-welcome-flow-caption {
+  font-size: 0.75rem;
+  line-height: 1.35;
+  max-width: 7.25rem;
+}
+
+.spg-root .tp-welcome-flow-bridge {
+  flex: 0 0 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.125rem;
+  padding-block-start: 1.35rem;
+  color: var(--primary-base-color, #6bafb8);
+  opacity: 0.65;
+}
+
+.spg-root .tp-welcome-flow-line {
+  display: none;
+  width: 5.5rem;
+  height: 2px;
+  border-radius: 1px;
+  background: currentColor;
+}
+
+.spg-root .tp-welcome-flow-chevron {
+  display: block;
+  flex-shrink: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.spg-root .tp-welcome-flow-step--items .tp-welcome-flow-marker {
+  border-color: rgba(107, 175, 184, 0.6);
+}
+
+.spg-root .tp-welcome-flow-step--items .tp-welcome-flow-num {
+  background: var(--primary-base-color, #6bafb8);
+  color: #fff;
+}
+
+.spg-root .tp-welcome-flow-step--items .tp-welcome-flow-title {
+  color: var(--primary-color, #397d86);
+}
+
+.spg-root .tp-welcome-flow-step--pricing .tp-welcome-flow-marker {
+  border-color: #00000094;
+}
+
+.spg-root .tp-welcome-flow-step--pricing .tp-welcome-flow-num {
+  background: var(--black-color);
+  color: #fff;
+}
+
+.spg-root .tp-welcome-flow-step--pricing .tp-welcome-flow-title {
+  color: var(--black-color);
+}
+
+.spg-root .tp-welcome-flow-step--summary .tp-welcome-flow-marker {
+  border-color: rgba(4, 118, 53, 0.45);
+}
+
+.spg-root .tp-welcome-flow-step--summary .tp-welcome-flow-num {
+  background: #047635;
+  color: #fff;
+}
+
+.spg-root .tp-welcome-flow-step--summary .tp-welcome-flow-title {
+  color: #047635;
+}
+
+@media (min-width: 576px) {
+  .spg-root .tp-welcome-flow-wrap {
+    max-width: 36rem;
+  }
+
+  .spg-root .tp-welcome-flow-marker {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .spg-root .tp-welcome-flow-title {
+    font-size: 1rem;
+  }
+
+  .spg-root .tp-welcome-flow-bridge {
+    flex: 0 0 3.25rem;
+    opacity: 0.7;
+  }
+
+  .spg-root .tp-welcome-flow-chevron {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .spg-root .tp-welcome-flow-line {
+    display: block;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .spg-root .tp-welcome-flow-wrap {
+    max-width: 18.5rem;
+  }
+
+  .spg-root .tp-welcome-flow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .spg-root .tp-welcome-flow-step {
+    flex: none;
+    flex-direction: row;
+    align-items: center;
+    text-align: start;
+    gap: 0.75rem;
+    padding-block: 0.25rem;
+  }
+
+  .spg-root .tp-welcome-flow-marker {
+    flex-shrink: 0;
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .spg-root .tp-welcome-flow-marker img {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .spg-root .tp-welcome-flow-caption {
+    max-width: none;
+  }
+
+  .spg-root .tp-welcome-flow-bridge {
+    flex: none;
+    width: 3.5rem;
+    padding-block: 0;
+    padding-inline-start: 1.35rem;
+    justify-content: flex-start;
+  }
+
+  .spg-root .tp-welcome-flow-chevron {
+    width: 1.75rem;
+    height: 1.75rem;
+    transform: rotate(90deg);
+  }
+}
+
+.spg-root .tp-welcome-step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  font-size: 0.8125rem;
+  line-height: 1;
+  margin-bottom: 0.625rem;
+}
+
+.spg-root .tp-welcome-step--items {
+  background: rgba(107, 175, 184, 0.12);
+  border-color: rgba(107, 175, 184, 0.45);
+}
+
+.spg-root .tp-welcome-step--items .tp-welcome-step-num {
+  background: rgba(107, 175, 184, 0.28);
+  color: var(--primary-color, #397d86);
+}
+
+.spg-root .tp-welcome-step--items .tp-welcome-step-title {
+  color: var(--primary-color, #397d86);
+}
+
+.spg-root .tp-welcome-step--items .tp-welcome-step-desc {
+  color: rgba(12, 32, 48, 0.72);
+}
+
+.spg-root .tp-welcome-step--pricing {
+  background: #38f5900f;
+  border-color: #0042092e;
+}
+
+.spg-root .tp-welcome-step--pricing .tp-welcome-step-num {
+  background: rgba(0, 166, 62, 0.18);
+  color: #047635;
+}
+
+.spg-root .tp-welcome-step--pricing .tp-welcome-step-title {
+  color: #047635;
+}
+
+.spg-root .tp-welcome-step--pricing .tp-welcome-step-desc {
+  color: rgba(4, 118, 53, 0.78);
+}
+
+.spg-root .tp-welcome-step--summary {
+  background: #f2994a14;
+  border-color: #f2994a5c;
+}
+
+.spg-root .tp-welcome-step--summary .tp-welcome-step-num {
+  background: rgba(217, 119, 6, 0.2);
+  color: #b45309;
+}
+
+.spg-root .tp-welcome-step--summary .tp-welcome-step-title {
+  color: #b45309;
+}
+
+.spg-root .tp-welcome-step--summary .tp-welcome-step-desc {
+  color: rgba(180, 83, 9, 0.78);
 }
