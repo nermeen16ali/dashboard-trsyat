@@ -10076,6 +10076,10 @@ html[dir="ltr"] .input-icon-group input {
   display: flex;
 }
 
+.spg-root .tr-award-card .tender-title {
+  margin: 0;
+}
+
 /* Tenders results — sector competitions (Trsyat listing card in grid) */
 .spg-root .tr-sector-competition-list > [class*="col-"] {
   display: flex;
