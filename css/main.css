@@ -10071,63 +10071,61 @@ html[dir="ltr"] .input-icon-group input {
   color: rgba(180, 83, 9, 0.78);
 }
 
-/* Tenders results — latest awards grid (compact tender listing pattern) */
-.spg-root .tr-award-card-grid .col-12 {
+/* Tenders results — award / history grids (tr-sector-listing-card) */
+.spg-root .tr-award-card-grid > [class*="col-"] {
   display: flex;
 }
 
-.spg-root .tr-award-card-grid .tr-award-card {
+/* Tenders results — sector competitions (Trsyat listing card in grid) */
+.spg-root .tr-sector-competition-list > [class*="col-"] {
+  display: flex;
+}
+
+.spg-root .tr-sector-listing-card {
   width: 100%;
 }
 
-.spg-root .tr-award-card .tender-header {
-  margin-bottom: 0.75rem;
-}
-
-.spg-root .tr-award-card .tender-header .tender-number {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.125rem;
-  line-height: 1.35;
-}
-
-.spg-root .tr-award-card .tender-sections {
+.spg-root .tr-sector-listing-card .tender-sections {
   flex: 1 1 auto;
 }
 
-.spg-root .tr-award-card .tender-section:first-child {
+.spg-root .tr-sector-listing-card .tender-header .tender-number span:first-child {
+  font-size: 10px;
+  color: var(--text-gray-color, #a1a1a1);
+}
+
+.spg-root .tr-sector-listing-card .tender-price img {
+  height: 12px;
+  margin-inline-start: 4px;
+  vertical-align: baseline;
+}
+
+.spg-root .tr-sector-listing-card .tender-section:first-child {
   padding-top: 0;
 }
 
-.spg-root .tr-award-card .tender-section:not(:first-child) {
-  padding-top: 0.75rem;
+.spg-root .tr-sector-listing-card .tender-section:not(:first-child) {
+  padding-top: 0.625rem;
 }
 
-.spg-root .tr-award-card .tender-section:not(:last-child) {
-  padding-bottom: 0.75rem;
+.spg-root .tr-sector-listing-card .tender-section:not(:last-child) {
+  padding-bottom: 0.625rem;
 }
 
-.spg-root .tr-award-card .tender-section.tr-award-card__meta {
+.spg-root .tr-sector-listing-card .tender-section:last-of-type {
   padding-bottom: 0;
 }
 
-.spg-root .tr-award-card .tender-title {
-  margin-block: 0.5rem 0.625rem;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.4;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
-}
-
-.spg-root .tr-award-card .tender-price .fs-6 {
-  font-size: 1rem !important;
-}
-
-.spg-root .tr-award-card .tender-footer {
+.spg-root .tr-sector-listing-card .tr-sector-tender-winner__inner {
   margin-top: 0.75rem;
+  padding: 0.625rem 0.75rem;
+  border-radius: 8px;
+  background: rgba(107, 175, 184, 0.12);
+  border: 1px solid rgba(107, 175, 184, 0.22);
+}
+
+.spg-root .tr-sector-listing-card .tender-footer {
+  margin-top: 16px;
 }
 
 /* Tenders results — activity value bar chart (RTL) */
