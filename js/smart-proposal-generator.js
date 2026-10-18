@@ -2344,42 +2344,6 @@
       }
     }
 
-    function filterProjectList(
-      query
-    ) {
-      const list =
-        $("#spgProjectList");
-
-      if (!list) {
-        return;
-      }
-
-      const normalized =
-        (query || "")
-          .trim()
-          .toLowerCase();
-
-      $$(
-        ".spg-project-item",
-        list
-      ).forEach((item) => {
-        const text =
-          item.textContent ||
-          "";
-
-        const matches =
-          !normalized ||
-          text
-            .toLowerCase()
-            .includes(normalized);
-
-        item.classList.toggle(
-          "d-none",
-          !matches
-        );
-      });
-    }
-
     function openDrawer() {
       if (
         !isMobileDrawerViewport()
@@ -2401,9 +2365,6 @@
           "aria-hidden",
           "false"
         );
-
-      $("#spgProjectSearch")
-        ?.focus();
     }
 
     function closeDrawer() {
@@ -2535,16 +2496,6 @@
         }
       }
     );
-
-    $("#spgProjectSearch")
-      ?.addEventListener(
-        "input",
-        (e) => {
-          filterProjectList(
-            e.target.value
-          );
-        }
-      );
 
     mobileQuery.addEventListener(
       "change",
