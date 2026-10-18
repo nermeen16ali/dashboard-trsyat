@@ -3961,11 +3961,6 @@ button.colored:hover {
     width: 250px;
   }
 
-  .competition-table td:last-child {
-    display: flex;
-    justify-content: center;
-  }
-
   .navbar .search-box .form-control {
     background: transparent;
     border: 1px solid #ffffff0d;
@@ -5086,6 +5081,29 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     border-bottom-right-radius: 16px;
     padding-bottom: 24px;
     margin-bottom: 0;
+  }
+}
+
+/* Competition table — native row/cell layout so all cells share row height (borders align) */
+@media (min-width: 768px) {
+  .competition-table thead {
+    display: table-header-group;
+  }
+
+  .competition-table tbody {
+    display: table-row-group;
+  }
+
+  .competition-table tr {
+    display: table-row;
+  }
+
+  .competition-table th,
+  .competition-table td,
+  table.dataTable.competition-table th,
+  table.dataTable.competition-table td {
+    display: table-cell !important;
+    vertical-align: middle;
   }
 }
 
