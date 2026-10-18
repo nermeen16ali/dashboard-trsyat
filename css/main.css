@@ -10053,13 +10053,50 @@ html[dir="ltr"] .input-icon-group input {
   color: rgba(180, 83, 9, 0.78);
 }
 
-/* Tenders results — latest awards grid */
-.spg-root .tr-award-card {
-  border: 1px solid rgba(12, 32, 48, 0.08);
-  background: #fff;
+/* Tenders results — latest awards grid (compact tender listing pattern) */
+.spg-root .tr-award-card-grid .col-12 {
+  display: flex;
 }
 
-.spg-root .tr-award-card h6 {
+.spg-root .tr-award-card-grid .tr-award-card {
+  width: 100%;
+}
+
+.spg-root .tr-award-card .tender-header {
+  margin-bottom: 0.75rem;
+}
+
+.spg-root .tr-award-card .tender-header .tender-number {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.125rem;
+  line-height: 1.35;
+}
+
+.spg-root .tr-award-card .tender-sections {
+  flex: 1 1 auto;
+}
+
+.spg-root .tr-award-card .tender-section:first-child {
+  padding-top: 0;
+}
+
+.spg-root .tr-award-card .tender-section:not(:first-child) {
+  padding-top: 0.75rem;
+}
+
+.spg-root .tr-award-card .tender-section:not(:last-child) {
+  padding-bottom: 0.75rem;
+}
+
+.spg-root .tr-award-card .tender-section.tr-award-card__meta {
+  padding-bottom: 0;
+}
+
+.spg-root .tr-award-card .tender-title {
+  margin-block: 0.5rem 0.625rem;
+  font-size: 14px;
+  font-weight: 500;
   line-height: 1.4;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -10067,12 +10104,12 @@ html[dir="ltr"] .input-icon-group input {
   overflow: hidden;
 }
 
-.spg-root .tr-award-card-grid .col-12 {
-  display: flex;
+.spg-root .tr-award-card .tender-price .fs-6 {
+  font-size: 1rem !important;
 }
 
-.spg-root .tr-award-card-grid .tr-award-card {
-  width: 100%;
+.spg-root .tr-award-card .tender-footer {
+  margin-top: 0.75rem;
 }
 
 /* Tenders results — activity value bar chart (RTL) */
