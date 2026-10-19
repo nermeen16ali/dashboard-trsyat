@@ -14,6 +14,8 @@ import { fileURLToPath } from "url";
 import { shared, results, pricing } from "./tr-flow-translations.mjs";
 import { complete } from "./tr-flow-complete-en.mjs";
 import { multiline } from "./tr-flow-multiline-en.mjs";
+import { applyLtrArrowFixes } from "./ltr-arrow-fixes.mjs";
+import { syncMainNavForFile } from "./sync-ltr-main-nav-tabs.mjs";
 
 /** Substring keys that corrupt longer Arabic phrases when replaced globally. */
 const UNSAFE_SUBSTRING_KEYS = new Set([
@@ -110,21 +112,6 @@ function applyTranslations(html, map) {
   return out;
 }
 
-/** Match arrow SVG paths used on RTL pages → LTR (etimad/trsyat LTR pattern). */
-function applyLtrArrowFixes(html) {
-  return html
-    .replaceAll(
-      'd="M8.47485 15.5583L3.41652 10.5L8.47485 5.44165"',
-      'd="M12.5251 5.44172L17.5835 10.5L12.5251 15.5583"',
-    )
-    .replaceAll('d="M17.583 10.5H3.55801"', 'd="M3.417 10.5H17.442"')
-    .replaceAll(
-      'd="M12.025 15.0586L17.0833 10.0002L12.025 4.94189"',
-      'd="M7.975 4.94165L2.91666 10.0000L7.975 15.0583"',
-    )
-    .replaceAll('d="M2.91667 10H16.9417"', 'd="M17.0833 10H3.05829"');
-}
-
 function buildPage(key) {
   const cfg = PAGE_CONFIG[key];
   const srcPath = path.join(root, cfg.src);
@@ -164,6 +151,9 @@ function buildPage(key) {
 
   const outPath = path.join(root, cfg.out);
   fs.writeFileSync(outPath, html, "utf8");
+  if (syncMainNavForFile(cfg.out)) {
+    console.log(`Synced main nav-tabs on ${cfg.out}`);
+  }
   console.log(`Wrote ${cfg.out} (${html.length} bytes)`);
   return outPath;
 }

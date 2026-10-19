@@ -346,7 +346,23 @@
     const nextBtn =
       $("#spgWizardNext");
 
-    const nextArrowSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+    const nextArrowSvg = spgIsEn()
+      ? `<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+      <path d="M12.5251 5.44172L17.5835 10.5L12.5251 15.5583"
+        stroke="#fff"
+        stroke-width="1.5"
+        stroke-miterlimit="10"
+        stroke-linecap="round"
+        stroke-linejoin="round"></path>
+      <path opacity="0.4"
+        d="M3.417 10.5H17.442"
+        stroke="#fff"
+        stroke-width="1.5"
+        stroke-miterlimit="10"
+        stroke-linecap="round"
+        stroke-linejoin="round"></path>
+    </svg>`
+      : `<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
       <path d="M8.47485 15.5583L3.41652 10.5L8.47485 5.44165"
         stroke="#fff"
         stroke-width="1.5"
@@ -1968,6 +1984,110 @@
     saveContractFromForm();
   }
 
+  const SPG_DESC_VIEW_MORE_MIN = 72;
+
+  function spgDescriptionDataLabel() {
+    return spgIsEn() ? "Description" : "الوصف";
+  }
+
+  function spgViewMoreText() {
+    return spgIsEn() ? "View more" : "عرض المزيد";
+  }
+
+  function spgEscapeHtml(value) {
+    return String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function spgGetRowDescription(tr) {
+    return tr?.getAttribute("data-spg-description")?.trim() || "";
+  }
+
+  function spgBuildDescriptionCellHtml(description) {
+    const text = description.trim();
+    return `<div class="d-flex align-items-end text-dark-gray">
+      <p class="ellipse-text">${spgEscapeHtml(text)}</p>
+      <a href="#" class="colored text-decoration-underline fz-12 text-nowrap"
+        data-bs-toggle="modal" data-bs-target="#spgCollectionDetailModal">${spgViewMoreText()}</a>
+    </div>`;
+  }
+
+  /** Plain description cells → truncated + View more when text is long. */
+  function spgEnhanceDescriptionCells() {
+    const label = spgDescriptionDataLabel();
+    document
+      .querySelectorAll(`td[data-label="${label}"]`)
+      .forEach((td) => {
+        if (td.querySelector(".ellipse-text")) {
+          return;
+        }
+
+        const tr = td.closest("tr");
+        const span = td.querySelector("span");
+        const text = (
+          spgGetRowDescription(tr) ||
+          span?.textContent ||
+          ""
+        ).trim();
+
+        if (!text || text.length < SPG_DESC_VIEW_MORE_MIN) {
+          return;
+        }
+
+        td.innerHTML = spgBuildDescriptionCellHtml(text);
+      });
+  }
+
+  function bindDescriptionDetailModal() {
+    const modalEl = document.getElementById(
+      "spgCollectionDetailModal"
+    );
+
+    if (!modalEl || modalEl.dataset.spgDetailBound) {
+      return;
+    }
+
+    modalEl.dataset.spgDetailBound = "1";
+
+    modalEl.addEventListener("show.bs.modal", (event) => {
+      const trigger = event.relatedTarget;
+      const tr = trigger?.closest("tr");
+      if (!tr) {
+        return;
+      }
+
+      const titleEl = document.getElementById(
+        "spgCollectionDetailTitle"
+      );
+      const bodyEl = document.querySelector(
+        "#spgCollectionDetailBody .spg-collection-detail-body"
+      );
+
+      const title =
+        tr.getAttribute("data-spg-name") ||
+        tr.getAttribute("data-spg-project-name") ||
+        (spgIsEn() ? "Details" : "التفاصيل");
+
+      const body =
+        spgGetRowDescription(tr) ||
+        tr
+          .querySelector(`td[data-label="${spgDescriptionDataLabel()}"] .ellipse-text`)
+          ?.textContent?.trim() ||
+        "";
+
+      if (titleEl) {
+        titleEl.textContent = title;
+      }
+
+      if (bodyEl) {
+        bodyEl.textContent = body;
+      }
+    });
+  }
+
   /*
    * ==========================
    * COLLECTION TABLE ACTIONS
@@ -2693,6 +2813,9 @@
     }
 
     bindEvents();
+
+    spgEnhanceDescriptionCells();
+    bindDescriptionDetailModal();
 
     renderReview();
 

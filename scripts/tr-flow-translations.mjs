@@ -244,7 +244,7 @@ export const results = {
 export const pricing = {
   "<title>تسعير المناقصات</title>": "<title>Tender Pricing</title>",
   "<h2 class=\"active\">تسعير المناقصات</h2>": "<h2 class=\"active\">Tender Pricing</h2>",
-  "تسعيراتك السابقة": "Your past pricing runs",
+  "تسعيراتك السابقة": "Your Previous Pricing Sessions",
   "طلب تسعيرة": "Request a quote",
   "المناقصة الحالية:": "Current tender:",
   "تسعير المناقصات": "Tender Pricing",
@@ -269,7 +269,7 @@ export const pricing = {
   "<p class=\"tp-welcome-flow-caption text-gray mb-0\">إجمالي وجاهزية</p>":
     "<p class=\"tp-welcome-flow-caption text-gray mb-0\">Totals and readiness</p>",
   "كيف تريد البدء؟": "How would you like to start?",
-  "ادخل اسم المناقصة للبدء": "Enter the tender name to begin",
+  "ادخل اسم المناقصة للبدء": "Enter the tender name to start",
   "بدء طلب التسعير": "Start pricing request",
   "الخطوة 1 من 6": "Step 1 of 6",
   "الخطوة 2 من 6": "Step 2 of 6",

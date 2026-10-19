@@ -594,9 +594,6 @@
               <div class="chat-list spg-project-list" id="spgProjectList" role="listbox" aria-label="قائمة المشاريع">
                 <button type="button"
                   class="chat-item spg-project-item d-flex align-items-center gap-12 w-100 active">
-                  <div class="chat-item-icon">
-                    <img src="images/document-normal.svg" alt="">
-                  </div>
                   <div class="w-100 text-start">
                     <div class="ticket-id text-truncate mb-2 fz-14">تأمين أثاث مكتبي</div>
                     <div class="fz-10 text-gray chat-preview text-truncate"> وصف المشروع</div>
@@ -604,9 +601,6 @@
                 </button>
                 <button type="button"
                   class="chat-item spg-project-item d-flex align-items-center gap-12 w-100">
-                  <div class="chat-item-icon">
-                    <img src="images/document-normal.svg" alt="">
-                  </div>
                   <div class="w-100 text-start">
                     <div class="ticket-id text-truncate mb-2 fz-14">خدمات المناسبات</div>
                     <div class="fz-10 text-gray chat-preview text-truncate"> وصف المشروع</div>
@@ -1380,8 +1374,13 @@
                                 <span class="text-dark-gray fw-medium">أمانة منطقة الرياض</span>
                               </td>
                               <td data-label="الوصف">
-                                <span class="text-gray fz-12">توريد وتركيب أجهزة شبكات الاتصال لمباني الأمانة مع الضمان
-                                  والصيانة.</span>
+                                <div class="d-flex align-items-end text-dark-gray">
+                                  <p class="ellipse-text">
+                                    توريد وتركيب أجهزة شبكات الاتصال لمباني الأمانة مع الضمان والصيانة.
+                                  </p>
+                                  <a href="#" class="colored text-decoration-underline fz-12 text-nowrap"
+                                    data-bs-toggle="modal" data-bs-target="#spgCollectionDetailModal">عرض المزيد</a>
+                                </div>
                               </td>
                               <td data-label="السنة">
                                 <div class="d-flex align-items-center">
@@ -1438,7 +1437,7 @@
 
                     <!-- Detailed -->
                     <div class="col-12 col-md-4">
-                      <label class="stat-card w-100 border-0 p-0 flex-column spg-detail-card">
+                      <label class="stat-card w-100 border-0 p-0 flex-column spg-detail-card h-100 text-center">
                         <input type="radio" name="spgDetailLevel" class="spg-detail-radio" checked>
 
                         <h3 class="fz-16 black-text mb-2">مفصل</h3>
@@ -1451,7 +1450,7 @@
 
                     <!-- Medium -->
                     <div class="col-12 col-md-4">
-                      <label class="stat-card w-100 border-0 p-0 flex-column spg-detail-card">
+                      <label class="stat-card w-100 border-0 p-0 flex-column spg-detail-card h-100 text-center">
                         <input type="radio" name="spgDetailLevel" class="spg-detail-radio">
 
                         <h3 class="fz-16 black-text mb-2">متوسط</h3>
@@ -1464,7 +1463,7 @@
 
                     <!-- Brief -->
                     <div class="col-12 col-md-4">
-                      <label class="stat-card w-100 border-0 p-0 flex-column spg-detail-card">
+                      <label class="stat-card w-100 border-0 p-0 flex-column spg-detail-card h-100 text-center">
                         <input type="radio" name="spgDetailLevel" class="spg-detail-radio">
                         <h3 class="fz-16 black-text mb-2">مختصر</h3>
 

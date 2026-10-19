@@ -7868,6 +7868,7 @@ html[dir="ltr"] .input-icon-group input {
 .spg-root .spg-section-review-title {
   font-size: 13px;
   line-height: 1.35;
+  white-space: pre-wrap;
 }
 
 .spg-root .spg-section-review-words {
