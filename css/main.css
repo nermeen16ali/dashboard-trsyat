@@ -9914,19 +9914,6 @@ html[dir="ltr"] .input-icon-group input {
   color: var(--black-color);
 }
 
-.spg-root .tp-welcome-flow-step--summary .tp-welcome-flow-marker {
-  border-color: rgba(4, 118, 53, 0.45);
-}
-
-.spg-root .tp-welcome-flow-step--summary .tp-welcome-flow-num {
-  background: #047635;
-  color: #fff;
-}
-
-.spg-root .tp-welcome-flow-step--summary .tp-welcome-flow-title {
-  color: #047635;
-}
-
 @media (min-width: 576px) {
   .spg-root .tp-welcome-flow-wrap {
     max-width: 36rem;

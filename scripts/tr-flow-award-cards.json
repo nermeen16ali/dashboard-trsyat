@@ -1,0 +1,179 @@
+{
+  "footerBtn": "عرض التفاصيل",
+  "history": [
+    {
+      "headerBadge": "ترسية تاريخية",
+      "ref": "260839001107",
+      "title": "تشغيل وصيانة الشبكات والبنية التحتية",
+      "headerPrimaryLabel": "سنة السجل",
+      "headerPrimaryValue": "2024",
+      "price": "14,000,000 ر.س",
+      "entity": "وزارة الاتصالات وتقنية المعلومات",
+      "winner": "شركة الحلول التقنية",
+      "tags": ["7 متقدمين"]
+    },
+    {
+      "headerBadge": "ترسية تاريخية",
+      "ref": "260839001089",
+      "title": "تشغيل وصيانة أنظمة تقنية المعلومات",
+      "headerPrimaryLabel": "سنة السجل",
+      "headerPrimaryValue": "2023",
+      "price": "4,830,000 ر.س",
+      "entity": "جامعة الملك فيصل",
+      "winner": "شركة الحلول الرقمية المتقدمة",
+      "tags": ["5 متقدمين"]
+    },
+    {
+      "headerBadge": "ترسية تاريخية",
+      "ref": "260838998112",
+      "title": "صيانة مراكز البيانات والشبكات",
+      "headerPrimaryLabel": "سنة السجل",
+      "headerPrimaryValue": "2023",
+      "price": "3,920,000 ر.س",
+      "entity": "جامعة الملك فيصل",
+      "winner": "مؤسسة التقنية المتقدمة",
+      "tags": ["6 متقدمين"]
+    },
+    {
+      "headerBadge": "ترسية تاريخية",
+      "ref": "260838985443",
+      "title": "تشغيل البنية التحتية لتقنية المعلومات",
+      "headerPrimaryLabel": "سنة السجل",
+      "headerPrimaryValue": "2022",
+      "price": "6,100,000 ر.س",
+      "entity": "وزارة التعليم",
+      "winner": "شركة الخدمات التقنية",
+      "tags": ["4 متقدمين"]
+    }
+  ],
+  "sector": [
+    {
+      "headerBadge": "تمت الترسية",
+      "headerBadgeClass": "badge-success",
+      "headerPrimaryLabel": "سنة السجل",
+      "headerPrimaryValue": "2025",
+      "title": "تشغيل وصيانة أنظمة تقنية المعلومات",
+      "price": "4,000,000 ر.س",
+      "entity": "وزارة الاتصالات وتقنية المعلومات",
+      "winner": "شركة الحلول الرقمية المتقدمة",
+      "tags": ["7 شركات"]
+    },
+    {
+      "headerBadge": "تحت التقييم",
+      "headerBadgeClass": "prim-opacity-outlined",
+      "headerPrimaryLabel": "سنة السجل",
+      "headerPrimaryValue": "2025",
+      "title": "توريد أجهزة شبكات وملحقاتها",
+      "entity": "جامعة الملك فيصل",
+      "tags": ["5 شركات"]
+    },
+    {
+      "headerBadge": "فتح العروض",
+      "headerBadgeClass": "prim-opacity-outlined",
+      "headerPrimaryLabel": "سنة السجل",
+      "headerPrimaryValue": "2024",
+      "title": "صيانة مراكز البيانات",
+      "entity": "وزارة التعليم",
+      "tags": ["4 شركات"]
+    },
+    {
+      "headerBadge": "انتهت",
+      "headerBadgeClass": "badge-ended",
+      "headerPrimaryLabel": "سنة السجل",
+      "headerPrimaryValue": "2024",
+      "title": "تشغيل البنية التحتية لتقنية المعلومات",
+      "entity": "وزارة الصحة",
+      "tags": ["6 شركات"]
+    },
+    {
+      "headerBadge": "تمت الترسية",
+      "headerBadgeClass": "badge-success",
+      "headerPrimaryLabel": "سنة السجل",
+      "headerPrimaryValue": "2024",
+      "title": "دعم فني لأنظمة الجامعة الإلكترونية",
+      "price": "2,450,000 ر.س",
+      "entity": "جامعة الملك فيصل",
+      "winner": "شركة التقنية الحديثة",
+      "tags": ["8 شركات"]
+    },
+    {
+      "headerBadge": "تمت الترسية",
+      "headerBadgeClass": "badge-success",
+      "headerPrimaryLabel": "سنة السجل",
+      "headerPrimaryValue": "2023",
+      "title": "ترقية البنية الشبكية للحرم الجامعي",
+      "price": "1,890,000 ر.س",
+      "entity": "جامعة الملك فيصل",
+      "winner": "مؤسسة التقنية المتقدمة",
+      "tags": ["3 شركات"]
+    },
+    {
+      "headerBadge": "تحت التقييم",
+      "headerBadgeClass": "prim-opacity-outlined",
+      "headerPrimaryLabel": "سنة السجل",
+      "headerPrimaryValue": "2023",
+      "title": "توريد خوادم ومعدات تخزين",
+      "entity": "وزارة الاتصالات وتقنية المعلومات",
+      "tags": ["9 شركات"]
+    },
+    {
+      "headerBadge": "انتهت",
+      "headerBadgeClass": "badge-ended",
+      "headerPrimaryLabel": "سنة السجل",
+      "headerPrimaryValue": "2022",
+      "title": "إدارة ومراقبة مراكز البيانات",
+      "entity": "وزارة التعليم",
+      "tags": ["5 شركات"]
+    }
+  ],
+  "entity": {
+    "pad": "                      ",
+    "cards": [
+      {
+        "headerBadge": "تمت الترسية",
+        "headerBadgeClass": "badge-success",
+        "headerPrimaryLabel": "تاريخ الإعلان",
+        "headerPrimaryValue": "12/03/2025",
+        "title": "تشغيل وصيانة أنظمة تقنية المعلومات",
+        "price": "4,830,000 ر.س",
+        "entity": "جامعة الملك فيصل",
+        "winner": "شركة الحلول الرقمية المتقدمة",
+        "tags": ["5 شركات"]
+      },
+      {
+        "headerBadge": "تمت الترسية",
+        "headerBadgeClass": "badge-success",
+        "headerPrimaryLabel": "تاريخ الإعلان",
+        "headerPrimaryValue": "08/11/2024",
+        "title": "صيانة مراكز البيانات والشبكات",
+        "price": "3,920,000 ر.س",
+        "entity": "جامعة الملك فيصل",
+        "winner": "مؤسسة التقنية المتقدمة",
+        "tags": ["6 شركات"]
+      },
+      {
+        "headerBadge": "تمت الترسية",
+        "headerBadgeClass": "badge-success",
+        "headerPrimaryLabel": "تاريخ الإعلان",
+        "headerPrimaryValue": "22/06/2023",
+        "title": "ترقية البنية الشبكية للحرم الجامعي",
+        "price": "1,890,000 ر.س",
+        "entity": "جامعة الملك فيصل",
+        "winner": "شركة التقنية الحديثة",
+        "tags": ["3 شركات"]
+      }
+    ]
+  },
+  "results": [
+    {
+      "headerBadge": "تمت الترسية",
+      "headerBadgeClass": "badge-success",
+      "ref": "230139873561",
+      "title": "تشغيل وصيانة أنظمة تقنية المعلومات",
+      "price": "4,830,000 ر.س",
+      "entity": "جامعة الملك فيصل",
+      "winner": "شركة الحلول الرقمية المتقدمة",
+      "tags": ["مناقصة عامة", "تقنية معلومات", "12/03/2025"]
+    }
+  ]
+}
