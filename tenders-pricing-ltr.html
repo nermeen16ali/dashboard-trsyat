@@ -540,15 +540,35 @@
       </button>
     </div>
 
-    <div class="dash-widget sm-0 p-lg-4 spg-root">
+    <div class="dash-widget sm-0 p-lg-4 spg-root" data-flow-history-sidebar>
       <div class="row g-4">
         <div class="col-12 col-lg-3 spg-projects-sidebar-col tp-pricing-sidebar-col">
-          <div class="tender-card sm-0 p-lg-3 spg-projects-sidebar-panel d-flex flex-column h-100">
+          <div class="spg-projects-drawer-backdrop d-md-none" data-history-backdrop tabindex="-1" aria-hidden="true"></div>
+          <div class="tender-card sm-0 p-lg-3 spg-projects-sidebar-panel d-flex flex-column h-100" data-history-panel
+            role="complementary">
             <div
-              class="sidebar-header d-flex flex-column flex-lg-row align-items-lg-center gap-4 justify-content-between mb-4">
+              class="sidebar-header spg-projects-sidebar-header d-flex  align-items-lg-center gap-4 justify-content-between mb-4">
               <div
                 class="spg-projects-sidebar-title-row d-none d-md-flex align-items-center justify-content-between w-100 gap-2">
                 <h6 class="black-text mb-0">Your Previous Pricing Sessions</h6>
+              </div>
+              <div class="spg-projects-mobile-toolbar d-md-none flex-grow-1 min-w-0">
+                <button type="button" class="spg-projects-mobile-dropdown-toggle w-100" data-history-open
+                  aria-expanded="false" aria-label="Select pricing session">
+                  <span class="spg-projects-mobile-select-icon flex-shrink-0" aria-hidden="true">
+                    <img src="images/folder-open.svg" alt="">
+                  </span>
+                  <span class="spg-projects-mobile-select-label text-truncate flex-grow-1 black-text fz-14 fw-medium"
+                    data-history-label>Network Devices and Accessories</span>
+                  <span class="spg-projects-mobile-select-chevron flex-shrink-0" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="9" viewBox="0 0 16 9" fill="none">
+                      <path
+                        d="M14.6 1.45825L9.16669 6.89159C8.52502 7.53325 7.47503 7.53325 6.83336 6.89159L1.40002 1.45825"
+                        stroke="#0C2030" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                </button>
               </div>
               <button type="button" class="btn-base btn-main fw-medium fz-14 flex-shrink-0" data-bs-toggle="modal"
                 data-bs-target="#tpQuoteRequestModal">
@@ -561,25 +581,26 @@
                 </svg>
                 <span>Request a Quote</span>
               </button>
-              <button type="button" class="btn-close spg-projects-drawer-close d-none flex-shrink-0"></button>
             </div>
-            <p class="fz-12 text-gray mb-3 tp-sidebar-current-tender text-start">Current Tender: <span
-                class="black-text fw-medium">Technical Infrastructure Supply and Setup</span></p>
-            <div class="search-box w-100 position-relative mb-3">
-              <input type="search" class="form-control" placeholder="Search requests" name="pricing-history-search"
-                autocomplete="off" />
-              <span class="search-icon position-absolute">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"
-                  aria-hidden="true">
-                  <path
-                    d="M9.58341 17.5001C13.9557 17.5001 17.5001 13.9557 17.5001 9.58341C17.5001 5.21116 13.9557 1.66675 9.58341 1.66675C5.21116 1.66675 1.66675 5.21116 1.66675 9.58341C1.66675 13.9557 5.21116 17.5001 9.58341 17.5001Z"
-                    fill="white" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path opacity="0.4" d="M18.3334 18.3334L16.6667 16.6667" stroke="#0C2030" stroke-width="1.5"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </span>
-            </div>
-            <div class="support-chats flex-grow-1">
+            <div class="support-chats flex-grow-1 spg-projects-dropdown-panel" data-history-dropdown
+              aria-hidden="true">
+              <p class="fz-12 text-gray mb-3 tp-sidebar-current-tender text-start">Current Tender: <span
+                  class="black-text fw-medium">Technical Infrastructure Supply and Setup</span></p>
+              <div class="search-box w-100 position-relative mb-3">
+                <input type="search" class="form-control" placeholder="Search requests" name="pricing-history-search"
+                  autocomplete="off" />
+                <span class="search-icon position-absolute">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                    aria-hidden="true">
+                    <path
+                      d="M9.58341 17.5001C13.9557 17.5001 17.5001 13.9557 17.5001 9.58341C17.5001 5.21116 13.9557 1.66675 9.58341 1.66675C5.21116 1.66675 1.66675 5.21116 1.66675 9.58341C1.66675 13.9557 5.21116 17.5001 9.58341 17.5001Z"
+                      fill="white" stroke="#0C2030" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path opacity="0.4" d="M18.3334 18.3334L16.6667 16.6667" stroke="#0C2030" stroke-width="1.5"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </div>
+              <div data-history-list>
               <div class="black-text fw-medium fz-12 mb-2">Today</div>
               <div class="chat-list d-flex flex-column gap-2 mb-3">
                 <a class="chat-item d-flex align-items-center gap-12 w-100 text-decoration-none">
@@ -640,6 +661,7 @@
                     <div class="fz-10 text-gray chat-preview text-truncate">In progress · October 5, 2025</div>
                   </div>
                 </a>
+              </div>
               </div>
             </div>
           </div>
@@ -1029,7 +1051,7 @@
                             <td data-label="Unit">Piece</td>
                             <td data-label="Quantity"><span class="ff-onest fw-medium black-text">12</span></td>
                             <td data-label="Actions">
-                              <div class="d-flex justify-content-center gap-12 flex-wrap">
+                              <div class="d-flex justify-content-center gap-12">
                                 <button type="button" class="icon-container gray-outline-btn tp-manual-item-edit"
                                   aria-label="Edit"><img src="images/edit-pen.svg" alt=""></button>
                                 <button type="button" class="icon-container gray-outline-btn" aria-label="Duplicate"><img
@@ -1046,7 +1068,7 @@
                             <td data-label="Unit">Piece</td>
                             <td data-label="Quantity"><span class="ff-onest fw-medium black-text">25</span></td>
                             <td data-label="Actions">
-                              <div class="d-flex justify-content-center gap-12 flex-wrap">
+                              <div class="d-flex justify-content-center gap-12">
                                 <button type="button" class="icon-container gray-outline-btn tp-manual-item-edit"
                                   aria-label="Edit"><img src="images/edit-pen.svg" alt=""></button>
                                 <button type="button" class="icon-container gray-outline-btn" aria-label="Duplicate"><img
@@ -1063,7 +1085,7 @@
                             <td data-label="Unit">Unit</td>
                             <td data-label="Quantity"><span class="ff-onest fw-medium black-text">48</span></td>
                             <td data-label="Actions">
-                              <div class="d-flex justify-content-center gap-12 flex-wrap">
+                              <div class="d-flex justify-content-center gap-12">
                                 <button type="button" class="icon-container gray-outline-btn tp-manual-item-edit"
                                   aria-label="Edit"><img src="images/edit-pen.svg" alt=""></button>
                                 <button type="button" class="icon-container gray-outline-btn" aria-label="Duplicate"><img
@@ -1160,7 +1182,7 @@
                             <td data-label="Unit">Piece</td>
                             <td data-label="Quantity"><span class="ff-onest fw-medium black-text">12</span></td>
                             <td data-label="Actions">
-                              <div class="d-flex justify-content-center gap-12 flex-wrap">
+                              <div class="d-flex justify-content-center gap-12">
                                 <button type="button" class="icon-container gray-outline-btn" data-bs-toggle="modal"
                                   data-bs-target="#tpEditItemModal" aria-label="Edit"><img src="images/edit-pen.svg"
                                     alt=""></button>
@@ -1178,7 +1200,7 @@
                             <td data-label="Unit">Piece</td>
                             <td data-label="Quantity"><span class="ff-onest fw-medium black-text">25</span></td>
                             <td data-label="Actions">
-                              <div class="d-flex justify-content-center gap-12 flex-wrap">
+                              <div class="d-flex justify-content-center gap-12">
                                 <button type="button" class="icon-container gray-outline-btn" data-bs-toggle="modal"
                                   data-bs-target="#tpEditItemModal" aria-label="Edit"><img src="images/edit-pen.svg"
                                     alt=""></button>
@@ -1196,7 +1218,7 @@
                             <td data-label="Unit">Unit</td>
                             <td data-label="Quantity"><span class="ff-onest fw-medium black-text">48</span></td>
                             <td data-label="Actions">
-                              <div class="d-flex justify-content-center gap-12 flex-wrap">
+                              <div class="d-flex justify-content-center gap-12">
                                 <button type="button" class="icon-container gray-outline-btn" data-bs-toggle="modal"
                                   data-bs-target="#tpEditItemModal" aria-label="Edit"><img src="images/edit-pen.svg"
                                     alt=""></button>
@@ -1917,6 +1939,7 @@
     </div>
   </div>
   <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="js/flow-history-sidebar.js" defer></script>
   <script src="js/main.js" defer></script>
   <script src="js/tenders-pricing-manual.js" defer></script>
 </body>

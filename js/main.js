@@ -93,12 +93,148 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  function syncPageTabsScrollTrack(container) {
+    if (!container) return;
+
+    const isMobile = window.innerWidth < 992;
+    let track = container.querySelector(":scope > .page-tabs-track");
+
+    if (isMobile) {
+      if (!track) {
+        track = document.createElement("div");
+        track.className = "page-tabs-track";
+        while (container.firstChild) {
+          track.appendChild(container.firstChild);
+        }
+        container.appendChild(track);
+      }
+    } else if (track) {
+      while (track.firstChild) {
+        container.insertBefore(track.firstChild, track);
+      }
+      track.remove();
+    }
+  }
+
+  function positionPageTabsMainMenu(toggle, menu) {
+    const rect = toggle.getBoundingClientRect();
+    const isRtl =
+      document.documentElement.dir === "rtl" ||
+      document.body.classList.contains("rtl");
+
+    menu.style.top = `${rect.bottom + 8}px`;
+    menu.style.minWidth = `${Math.max(rect.width, 200)}px`;
+
+    if (isRtl) {
+      menu.style.left = "auto";
+      menu.style.right = `${window.innerWidth - rect.right}px`;
+    } else {
+      menu.style.right = "auto";
+      menu.style.left = `${rect.left}px`;
+    }
+  }
+
+  function restorePageTabsPortaledMenu(menu) {
+    if (!menu?._portalDropdown) return;
+    menu.classList.remove("page-tabs-portal");
+    menu.style.position = "";
+    menu.style.top = "";
+    menu.style.left = "";
+    menu.style.right = "";
+    menu.style.minWidth = "";
+    menu.style.zIndex = "";
+    menu._portalDropdown.appendChild(menu);
+    delete menu._portalDropdown;
+  }
+
+  function setupPageTabsDropdownPortal(container) {
+    if (!container || container.dataset.pageTabsPortalBound === "1") return;
+    container.dataset.pageTabsPortalBound = "1";
+
+    container.addEventListener("show.bs.dropdown", (event) => {
+      if (window.innerWidth >= 992) return;
+
+      const toggle = event.target.closest('[data-bs-toggle="dropdown"]');
+      if (!toggle || toggle.id === "moreMenuBtn") return;
+
+      const dropdown = toggle.closest(".dropdown");
+      const menu = dropdown?.querySelector(".dropdown-menu.main-menu");
+      if (!menu || menu.classList.contains("page-tabs-portal")) return;
+
+      menu._portalDropdown = dropdown;
+      menu.classList.add("page-tabs-portal");
+      document.body.appendChild(menu);
+    });
+
+    container.addEventListener("shown.bs.dropdown", (event) => {
+      if (window.innerWidth >= 992) return;
+      const toggle = event.target.closest('[data-bs-toggle="dropdown"]');
+      if (!toggle || toggle.id === "moreMenuBtn") return;
+      const menu = document.querySelector(".dropdown-menu.main-menu.page-tabs-portal");
+      if (menu) {
+        positionPageTabsMainMenu(toggle, menu);
+      }
+    });
+
+    container.addEventListener("hide.bs.dropdown", (event) => {
+      const toggle = event.target.closest('[data-bs-toggle="dropdown"]');
+      if (!toggle || toggle.id === "moreMenuBtn") return;
+      const menu = document.querySelector(".dropdown-menu.main-menu.page-tabs-portal");
+      if (menu) restorePageTabsPortaledMenu(menu);
+    });
+  }
+
+  function scrollActivePageTabIntoView(container) {
+    if (window.innerWidth >= 992 || !container) return;
+
+    const activeLink = container.querySelector("a.nav-link.active:not(.more-btn)");
+    let target = activeLink;
+    if (activeLink) {
+      const parentDropdown = activeLink.closest(".dropdown");
+      const moreDropdown = container.querySelector(".dropdown:last-of-type");
+      if (parentDropdown && parentDropdown !== moreDropdown) {
+        target = parentDropdown;
+      }
+    } else {
+      const activeInMenu = container.querySelector(
+        ".dropdown:not(:last-of-type) .nav-link.active"
+      );
+      target = activeInMenu?.closest(".dropdown") || null;
+    }
+    if (!target) return;
+
+    requestAnimationFrame(() => {
+      target.scrollIntoView({
+        block: "nearest",
+        inline: "center",
+        behavior: "auto",
+      });
+    });
+  }
+
+  function initPageTabsDropdownsStatic() {
+    if (window.innerWidth >= 992 || typeof bootstrap === "undefined") return;
+
+    const container = document.getElementById("tabsContainer");
+    if (!container) return;
+
+    container
+      .querySelectorAll('.dropdown-toggle[data-bs-toggle="dropdown"]')
+      .forEach((toggle) => {
+        if (toggle.id === "moreMenuBtn") return;
+        bootstrap.Dropdown.getOrCreateInstance(toggle, { display: "static" });
+      });
+  }
+
   function handleTabOverflow() {
     const container = document.getElementById("tabsContainer");
     const moreBtn = document.getElementById("moreMenuBtn");
     const dropdownMenu = document.getElementById("moreMenu");
 
     if (!container || !moreBtn || !dropdownMenu) return;
+
+    syncPageTabsScrollTrack(container);
+    initPageTabsDropdownsStatic();
 
     const tabs = Array.from(
       container.getElementsByClassName("nav-link")
@@ -115,21 +251,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const isMobile = window.innerWidth < 992;
     const isSmallScreen = window.innerWidth < 1360;
 
-    let hasActive = tabs.some(tab => tab.classList.contains("active"));
-
     if (isMobile) {
-      // On mobile: show only the active tab (or first if none active), hide the rest
-      tabs.forEach((tab, index) => {
-        const wrapper = tab.closest('.dropdown') || tab;
-        if (tab.classList.contains("active") || (!hasActive && index === 0)) {
-          wrapper.style.display = ""; // Reset to CSS default
-          tab.style.display = "inline-flex";
-        } else {
-          wrapper.style.display = "none";
-          tab.style.display = "none";
-          hiddenTabs.push(tab);
-        }
+      tabs.forEach((tab) => {
+        const wrapper = tab.closest(".dropdown") || tab;
+        wrapper.style.display = "";
+        tab.style.display = "inline-flex";
       });
+      scrollActivePageTabIntoView(container);
     } else if (isSmallScreen) {
       // Tablet/Small Desktop: wrap overflowing tabs
       tabs.forEach((tab) => {
@@ -198,76 +326,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // Mark as initialized to show the tabs
     container.classList.add("initialized");
   }
-
-  // function handleTabOverflow() {
-  //   const container = document.getElementById("tabsContainer"); // Tabs container
-  //   const moreBtn = document.getElementById("moreMenuBtn"); // "..." button
-  //   const dropdownMenu = document.getElementById("moreMenu"); // Dropdown menu
-
-  //   if (!container || !moreBtn || !dropdownMenu) return;
-
-  //   const tabs = Array.from(
-  //     container.getElementsByClassName("nav-link")
-  //   ).filter((tab) => !tab.classList.contains("more-btn"));
-
-  //   let containerWidth = container.clientWidth; // Available width
-  //   let totalWidth = moreBtn.offsetWidth; // Start with `...` button width
-  //   let hiddenTabs = [];
-
-  //   dropdownMenu.innerHTML = ""; // Clear previous dropdown items
-  //   tabs.forEach((tab) => (tab.style.display = "inline-flex")); // Reset all tabs
-  //   moreBtn.style.display = "none";
-
-  //   const isSmallScreen = window.innerWidth < 992; // Adjust breakpoint as needed
-
-  //   if (isSmallScreen) {
-  //     // Mobile/Tablet: Show only active tab, others in dropdown
-  //     tabs.forEach(tab => {
-  //       if (tab.classList.contains("active")) {
-  //         tab.style.display = "inline-flex";
-  //       } else {
-  //         tab.style.display = "none";
-  //         hiddenTabs.push(tab);
-  //       }
-  //     });
-  //   } else {
-  //     for (let tab of tabs) {
-  //       totalWidth += tab.offsetWidth + 16;
-  //       if (totalWidth > containerWidth) {
-  //         tab.style.display = "none";
-  //         hiddenTabs.push(tab);
-  //       }
-  //     }
-  //   }
-
-  //   // Handle dropdown menu
-  //   if (hiddenTabs.length > 0) {
-  //     moreBtn.style.display = "inline-flex"; // Show `...` button
-  //     hiddenTabs.forEach((tab) => {
-  //       let dropdownItem = document.createElement("a");
-  //       dropdownItem.className = "dropdown-item";
-  //       dropdownItem.innerHTML = tab.innerHTML;
-  //       dropdownItem.href = tab.href;
-  //       dropdownMenu.appendChild(dropdownItem);
-  //     });
-
-  //     // Ensure click listener is attached to the button
-  //     moreBtn.onclick = function () {
-  //       dropdownMenu.classList.toggle("show");
-  //     };
-
-  //     // Close dropdown when clicking outside
-  //     document.addEventListener('click', function (event) {
-  //       if (!moreBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
-  //         dropdownMenu.classList.remove('show');
-  //       }
-  //     });
-
-  //   }
-  // }
 
   // Ensure it runs on load and resize
   window.addEventListener("resize", handleTabOverflow);
@@ -275,6 +335,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initial call to prevent layout glitch
   handleTabOverflow();
+  setupPageTabsDropdownPortal(document.getElementById("tabsContainer"));
 
   // Close navbar when clicking on backdrop (shadow area)
   document.addEventListener("click", (e) => {
