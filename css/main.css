@@ -5252,6 +5252,53 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     grid-column: 1 / -1;
   }
 
+  /* SPG documents table: description row + file row each full width */
+  .competition-table tr:has(> td[data-label="اسم الملف"]):has(> td[data-label="الوصف"]):has(> td[data-label="الملف"]) > td[data-label="الوصف"],
+  .competition-table tr:has(> td[data-label="File name"]):has(> td[data-label="Description"]):has(> td[data-label="File"]) > td[data-label="Description"] {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    padding-top: 14px;
+  }
+
+  .competition-table tr:has(> td[data-label="اسم الملف"]):has(> td[data-label="الوصف"]):has(> td[data-label="الملف"]) > td[data-label="الملف"],
+  .competition-table tr:has(> td[data-label="File name"]):has(> td[data-label="Description"]):has(> td[data-label="File"]) > td[data-label="File"] {
+    grid-column: 1 / -1;
+    grid-row: 4;
+    padding-top: 10px;
+  }
+
+  .competition-table tr:has(> td[data-label="اسم الملف"]) > td[data-label="الملف"] .d-flex,
+  .competition-table tr:has(> td[data-label="File name"]) > td[data-label="File"] .d-flex {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .competition-table tr:has(> td[data-label="اسم الملف"]) > td[data-label="الملف"] .sm-logo,
+  .competition-table tr:has(> td[data-label="File name"]) > td[data-label="File"] .sm-logo {
+    margin-inline-end: 0;
+  }
+
+  .competition-table tr:has(> td[data-label="اسم الملف"]) > td[data-label="الملف"] .d-flex > :not(.sm-logo),
+  .competition-table tr:has(> td[data-label="File name"]) > td[data-label="File"] .d-flex > :not(.sm-logo) {
+    flex: 0 1 auto;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    white-space: normal;
+  }
+
+  .competition-table tr:has(> td[data-label="اسم الملف"]) > td[data-label="الوصف"] .ellipse-text,
+  .competition-table tr:has(> td[data-label="File name"]) > td[data-label="Description"] .ellipse-text {
+    max-width: 100%;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+  }
+
   /* Manual / review line items: item name + specs full width; unit | quantity paired */
   .competition-table tr:has(> td[data-label="اسم البند"]) > td[data-label="اسم البند"],
   .competition-table tr:has(> td[data-label="Item Name"]) > td[data-label="Item Name"] {
