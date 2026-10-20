@@ -184,6 +184,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  function scrollPageTabTrackToTarget(container, target) {
+    const track =
+      container.querySelector(":scope > .page-tabs-track") || container;
+    if (!track || !target) return;
+
+    const trackRect = track.getBoundingClientRect();
+    const targetRect = target.getBoundingClientRect();
+    const targetCenter = targetRect.left + targetRect.width / 2;
+    const trackCenter = trackRect.left + trackRect.width / 2;
+    const delta = targetCenter - trackCenter;
+
+    if (Math.abs(delta) < 1) return;
+    track.scrollBy({ left: delta, top: 0, behavior: "auto" });
+  }
+
   function scrollActivePageTabIntoView(container) {
     if (window.innerWidth >= 992 || !container) return;
 
@@ -204,11 +219,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!target) return;
 
     requestAnimationFrame(() => {
-      target.scrollIntoView({
-        block: "nearest",
-        inline: "center",
-        behavior: "auto",
-      });
+      scrollPageTabTrackToTarget(container, target);
     });
   }
 
@@ -329,8 +340,14 @@ document.addEventListener("DOMContentLoaded", () => {
     container.classList.add("initialized");
   }
 
-  // Ensure it runs on load and resize
-  window.addEventListener("resize", handleTabOverflow);
+  // Ensure it runs on load and resize (ignore mobile height-only resize from browser chrome)
+  let pageTabsLayoutWidth = window.innerWidth;
+  window.addEventListener("resize", () => {
+    const width = window.innerWidth;
+    if (width === pageTabsLayoutWidth) return;
+    pageTabsLayoutWidth = width;
+    handleTabOverflow();
+  });
   window.addEventListener("load", handleTabOverflow);
 
   // Initial call to prevent layout glitch
