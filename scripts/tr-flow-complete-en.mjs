@@ -1,7 +1,0 @@
-/** Screen-reader / step chrome only (not listing or row data). */
-export const complete = {
-  "\u0645\u0644\u062e\u0635 \u0627\u0644\u062a\u0643\u0644\u0641\u0629 \u2014 \u0645\u0633\u0627\u0631 \u0627\u0644\u0625\u062f\u062e\u0627\u0644 \u0627\u0644\u064a\u062f\u0648\u064a":
-    "Cost summary — manual entry path",
-  "\u0645\u0644\u062e\u0635 \u0627\u0644\u062a\u0643\u0644\u0641\u0629 \u2014 \u0645\u0633\u0627\u0631 \u0627\u0644\u0645\u0633\u062a\u0646\u062f\u0627\u062a":
-    "Cost summary — documents path",
-};
