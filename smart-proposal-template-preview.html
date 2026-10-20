@@ -598,7 +598,7 @@
               <div class="spg-pdf-viewer spg-pdf-viewer--standalone" id="spgProfessionalPdfViewer"
                 data-pdf-src="assets/spg/templates/professional-proposal.pdf" data-spg-pdf-standalone="1" dir="rtl">
                 <div
-                  class="spg-pdf-viewer-toolbar spg-document-preview-toolbar d-flex flex-wrap align-items-center gap-2 gap-md-3">
+                  class="spg-pdf-viewer-toolbar spg-document-preview-toolbar spg-pdf-fullscreen-chrome-host d-flex flex-wrap align-items-center gap-2 gap-md-3">
                   <div class="d-flex flex-wrap align-items-center gap-2 spg-pdf-nav-group" role="group"
                     aria-label="التنقل بين الصفحات">
                     <button type="button"
@@ -647,8 +647,9 @@
                     <button type="button" class="btn-main outline-primary-gray fz-12 h-36 spg-pdf-fit-page"
                       title="ملاءمة للصفحة">ملاءمة للصفحة</button>
                   </div>
-                  <div class="d-flex flex-wrap align-items-center gap-2 spg-pdf-extra-tools ms-md-auto" role="group"
-                    aria-label="أدوات إضافية">
+                  <div
+                    class="d-flex flex-wrap align-items-center gap-2 spg-pdf-extra-tools justify-content-end justify-content-md-start ms-md-auto"
+                    role="group" aria-label="أدوات إضافية">
                     <div class="spg-pdf-search-wrap d-flex align-items-center gap-1">
                       <label class="visually-hidden" for="spgPdfSearchInput">بحث في المستند</label>
                       <span class="spg-pdf-tooltip-host d-inline-flex" data-tooltip="بحث في المستند">
