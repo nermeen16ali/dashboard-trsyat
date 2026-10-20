@@ -11151,10 +11151,6 @@ html[dir="ltr"] .spg-root .spg-section-review-title {
     align-items: flex-start !important;
   } */
 
-  .spg-root .spg-template-actions {
-    flex-direction: column;
-  }
-
   .spg-root .spg-template-actions .btn-main,
   .spg-root .spg-template-actions label.btn-main {
     width: 100%;
