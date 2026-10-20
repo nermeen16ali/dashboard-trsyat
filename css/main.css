@@ -5299,6 +5299,80 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     text-overflow: unset;
   }
 
+  /* SPG contracts table: entity + description + file full width; year | duration paired */
+  .competition-table tr:has(> td[data-label="اسم المشروع"]):has(> td[data-label="الجهة"]):has(> td[data-label="التكلفة"]) > td[data-label="الجهة"],
+  .competition-table tr:has(> td[data-label="Project name"]):has(> td[data-label="Entity"]):has(> td[data-label="Cost"]) > td[data-label="Entity"] {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    padding-top: 14px;
+  }
+
+  .competition-table tr:has(> td[data-label="اسم المشروع"]) > td[data-label="الوصف"],
+  .competition-table tr:has(> td[data-label="Project name"]) > td[data-label="Description"] {
+    grid-column: 1 / -1;
+    grid-row: 4;
+    padding-top: 10px;
+  }
+
+  .competition-table tr:has(> td[data-label="اسم المشروع"]) > td[data-label="السنة"],
+  .competition-table tr:has(> td[data-label="Project name"]) > td[data-label="Year"] {
+    grid-row: 5;
+    grid-column: 1;
+    padding-top: 10px;
+  }
+
+  .competition-table tr:has(> td[data-label="اسم المشروع"]) > td[data-label="المدة"],
+  .competition-table tr:has(> td[data-label="Project name"]) > td[data-label="Duration"] {
+    grid-row: 5;
+    grid-column: 2;
+  }
+
+  .competition-table tr:has(> td[data-label="اسم المشروع"]) > td[data-label="التكلفة"],
+  .competition-table tr:has(> td[data-label="Project name"]) > td[data-label="Cost"] {
+    grid-column: 1 / -1;
+    grid-row: 6;
+    padding-top: 10px;
+  }
+
+  .competition-table tr:has(> td[data-label="اسم المشروع"]) > td[data-label="الملف"],
+  .competition-table tr:has(> td[data-label="Project name"]) > td[data-label="File"] {
+    grid-column: 1 / -1;
+    grid-row: 7;
+    padding-top: 10px;
+  }
+
+  .competition-table tr:has(> td[data-label="اسم المشروع"]) > td[data-label="الملف"] .d-flex,
+  .competition-table tr:has(> td[data-label="Project name"]) > td[data-label="File"] .d-flex {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .competition-table tr:has(> td[data-label="اسم المشروع"]) > td[data-label="الملف"] .sm-logo,
+  .competition-table tr:has(> td[data-label="Project name"]) > td[data-label="File"] .sm-logo {
+    margin-inline-end: 0;
+  }
+
+  .competition-table tr:has(> td[data-label="اسم المشروع"]) > td[data-label="الملف"] .d-flex > :not(.sm-logo),
+  .competition-table tr:has(> td[data-label="Project name"]) > td[data-label="File"] .d-flex > :not(.sm-logo) {
+    flex: 0 1 auto;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    white-space: normal;
+  }
+
+  .competition-table tr:has(> td[data-label="اسم المشروع"]) > td[data-label="الوصف"] .ellipse-text,
+  .competition-table tr:has(> td[data-label="Project name"]) > td[data-label="Description"] .ellipse-text {
+    max-width: 100%;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+  }
+
   /* Manual / review line items: item name + specs full width; unit | quantity paired */
   .competition-table tr:has(> td[data-label="اسم البند"]) > td[data-label="اسم البند"],
   .competition-table tr:has(> td[data-label="Item Name"]) > td[data-label="Item Name"] {
