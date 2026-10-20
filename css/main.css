@@ -11069,61 +11069,81 @@ html[dir="ltr"] .spg-root .spg-section-review-title {
   }
 
   /*
-   * Wizard / flow footers (mobile): 2-column grid fills container width.
-   * 2 actions → side by side; 3 → two on top + last full width; 1 → full width.
+   * Two-up wizard footers (Previous + primary): one row, primary fills remainder.
    */
-  .spg-root .spg-wizard-actions {
-    display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .spg-root .spg-wizard-actions.justify-content-between,
+  .spg-root .spg-section-review-actions {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    align-items: stretch;
+    gap: 0.75rem;
     width: 100%;
     max-width: 100%;
-    gap: 0.5rem !important;
-    align-items: stretch;
-    justify-content: stretch;
     margin-inline: 0;
   }
 
-  .spg-root .spg-wizard-actions > .btn-main,
-  .spg-root .spg-wizard-actions > a.btn-main,
-  .spg-root .spg-wizard-actions > button.btn-main,
-  .spg-root .spg-wizard-actions > button {
-    width: 100%;
-    max-width: none;
-    min-width: 0;
-    min-height: 44px;
-    flex: none !important;
-    justify-content: center;
-  }
-
-  .spg-root .spg-wizard-actions > :last-child:nth-child(odd) {
-    grid-column: 1 / -1;
-  }
-
-  .spg-root .spg-section-review-actions {
-    flex-wrap: nowrap !important;
-    justify-content: space-between !important;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
+  .spg-root .spg-wizard-actions.justify-content-between > .btn-main,
+  .spg-root .spg-wizard-actions.justify-content-between > a.btn-main,
+  .spg-root .spg-wizard-actions.justify-content-between > button.btn-main,
+  .spg-root .spg-wizard-actions.justify-content-between > button,
   .spg-root .spg-section-review-actions > .btn-main,
   .spg-root .spg-section-review-actions > a.btn-main,
   .spg-root .spg-section-review-actions > button {
+    width: auto;
+    max-width: none;
+    min-width: 0;
     min-height: 44px;
+    flex: none;
     justify-content: center;
   }
 
+  .spg-root .spg-wizard-actions.justify-content-between > .outline-primary-gray,
+  .spg-root .spg-wizard-actions.justify-content-between > a.outline-primary-gray,
+  .spg-root .spg-wizard-actions.justify-content-between > button.outline-primary-gray,
   .spg-root .spg-section-review-actions > .outline-primary-gray,
   .spg-root .spg-section-review-actions > button.outline-primary-gray {
     flex: 0 1 auto;
-    width: auto;
     max-width: 42%;
   }
 
+  .spg-root .spg-wizard-actions.justify-content-between > .btn-primary,
+  .spg-root .spg-wizard-actions.justify-content-between > a.btn-primary,
+  .spg-root .spg-wizard-actions.justify-content-between > button.btn-primary,
   .spg-root .spg-section-review-actions > .btn-primary,
   .spg-root .spg-section-review-actions > a.btn-primary {
     flex: 1 1 0;
     min-width: 0;
+    white-space: normal;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  /* Multi-action footers (tender results): 2 equal cols; 3 actions → two on top + last full width */
+  .spg-root .spg-wizard-actions.justify-content-end {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 100%;
+    align-items: stretch;
+    justify-content: stretch;
+  }
+
+  .spg-root .spg-wizard-actions.justify-content-end > .btn-main,
+  .spg-root .spg-wizard-actions.justify-content-end > a.btn-main,
+  .spg-root .spg-wizard-actions.justify-content-end > button {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    min-height: 44px;
+    white-space: normal;
+    justify-content: center;
+    flex: none !important;
+  }
+
+  .spg-root .spg-wizard-actions.justify-content-end > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
   }
 
   /* .spg-root.spg-production-root .spg-production-context {
