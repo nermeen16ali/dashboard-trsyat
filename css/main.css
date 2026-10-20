@@ -10515,6 +10515,21 @@ html[dir="ltr"] .input-icon-group input {
   margin-top: 16px;
 }
 
+@media (max-width: 767.98px) {
+  .spg-root .tr-sector-listing-card .tender-section.d-flex.flex-column.flex-md-row:not(.company-details) {
+    flex-direction: row !important;
+    flex-wrap: nowrap;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 0.5rem 0.75rem;
+  }
+
+  .spg-root .tr-sector-listing-card .tender-section.d-flex.flex-column.flex-md-row:not(.company-details) > .d-flex.align-items-center {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+}
+
 /* Tenders results — activity value bar chart (RTL) */
 .spg-root .tr-activity-value-chart {
   display: flex;
