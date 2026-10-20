@@ -3560,7 +3560,7 @@ html[dir="ltr"] .send-btn svg {
 }
 
 .summary-card {
-  border-radius: 20px;
+  border-radius: 12px;
   background-color: var(--white-color);
   border: 1px solid #e8e8e8;
   height: 100%;
@@ -4981,22 +4981,58 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
     margin-bottom: 8px;
   }
 
-  .competition-table tbody,
-  .competition-table tr,
-  .competition-table td {
+  .competition-table tbody {
     display: block;
     width: 100%;
   }
 
   .competition-table tr {
+    --competition-mobile-panel-inset-x: 0;
+    --competition-mobile-panel-inset-bottom: 12px;
+    --competition-mobile-panel-inner-bottom: 22px;
     margin-bottom: 16px;
     border-radius: 16px;
     border: 1px solid #F2F2F2;
     background: #F7F7F7 !important;
     padding: 12px;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-auto-rows: auto;
+    gap: 0;
     position: relative;
+  }
+
+  .competition-table tr:has(td:nth-of-type(3)) {
+    grid-template-rows: auto 8px;
+  }
+
+  .competition-table tr:has(td:nth-of-type(3))::after {
+    content: "";
+    grid-column: 1 / -1;
+    grid-row: 2;
+    height: 8px;
+    display: block;
+  }
+
+  /* One white panel — full height of middle rows, single 16px radius (no per-cell corners) */
+  .competition-table tr:has(td:nth-of-type(3))::before {
+    content: "";
+    grid-column: 1 / -1;
+    grid-row: 3 / span 100;
+    z-index: 0;
+    display: block;
+    align-self: stretch;
+    justify-self: stretch;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: auto;
+    min-height: 0;
+    margin: 0 0 var(--competition-mobile-panel-inset-bottom, 12px);
+    padding-bottom: var(--competition-mobile-panel-inner-bottom, 22px);
+    background: #fff;
+    border-radius: 16px;
+    pointer-events: none;
   }
 
   .competition-table tr:last-child {
@@ -5037,97 +5073,311 @@ html[dir="rtl"] .choices[data-type*="select-multiple"]::after {
   }
 
   /* Cell Styling */
-  .competition-table td {
-    padding: 8px 16px;
+  .competition-table tr > td {
+    display: flex;
+    box-sizing: border-box;
+    min-width: 0;
+    min-height: min-content;
     border: none;
+    padding: 8px 12px;
+    width: auto;
+    max-width: none;
+    background: transparent;
+    position: relative;
+    z-index: 1;
   }
 
-  /* First column (always the first td in the row) */
-  .competition-table tr td:first-of-type {
-    background: transparent;
-    padding: 0 0 12px 0;
-    margin-bottom: 0;
-    display: flex;
+  /* Row 1: first + last — gray only; row height grows with title + warnings + actions */
+  .competition-table tr > td:first-of-type {
+    grid-column: 1;
+    grid-row: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: start;
+    padding: 0 8px 0 0;
+    justify-content: flex-start;
+    z-index: 2;
+    background: #F7F7F7;
+  }
+
+  .competition-table tr > td:last-of-type {
+    grid-column: 2;
+    grid-row: 1;
     align-items: center;
-    width: 50%;
-    order: 1;
+    align-self: start;
+    padding: 0 0 0 8px;
+    justify-content: flex-end;
+    z-index: 2;
+    background: #F7F7F7;
   }
 
-  /* Last column (always the last td in the row) */
-  .competition-table tr td:last-of-type {
-    order: 2;
-    width: 50%;
-    display: flex;
-    padding: 0 0 12px 0;
-    margin-bottom: 0;
-    background: transparent;
-    justify-content: flex-end;
+  .competition-table tr > td:only-of-type {
+    grid-column: 1 / -1;
+  }
+
+  html[dir="rtl"] .competition-table tr > td:first-of-type {
+    padding: 0 0 8px 8px;
+  }
+
+  html[dir="rtl"] .competition-table tr > td:last-of-type {
+    padding: 0 8px 8px 0;
   }
 
   .ellipse-text {
     max-width: 200px;
   }
 
-  /* Shared Styles for the Card Group (all middle cells) */
-  .competition-table tr td:not(:first-of-type):not(:last-of-type) {
-    background: #fff;
-    width: 100%;
-    display: flex;
+  /* Row 3+: middle columns on shared white panel (transparent — ::before paints once) */
+  .competition-table tr > td:not(:first-of-type):not(:last-of-type) {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    padding: 12px 16px;
+    background: transparent;
+    border-radius: 0;
+    padding: 10px 14px;
+    z-index: 1;
   }
 
-  /* Labels (data-label on each td — same as trsyat-tenders / SPG tables) */
-
-  .competition-table tr td[data-label]:not(:first-of-type):not(:last-of-type)::before {
-    content: attr(data-label);
-    font-size: 10px;
-    color: #A1A1A1;
-    margin-bottom: 8px;
-    display: block;
+  .competition-table tr > td:not(:first-of-type):not(:last-of-type):nth-of-type(even) {
+    margin-inline-start: var(--competition-mobile-panel-inset-x, 0);
   }
 
-  .competition-table tr td:last-of-type[data-label]:not(:has(button, .btn, .action-btn, .dropdown))::before {
+  .competition-table tr > td:not(:first-of-type):not(:last-of-type):nth-of-type(odd) {
+    margin-inline-end: var(--competition-mobile-panel-inset-x, 0);
+  }
+
+  .competition-table tr > td:nth-of-type(2):not(:last-of-type) {
+    grid-row: 3;
+    grid-column: 1;
+    padding-top: 14px;
+  }
+
+  .competition-table tr > td:nth-of-type(3):not(:last-of-type) {
+    grid-row: 3;
+    grid-column: 2;
+    padding-top: 14px;
+  }
+
+  .competition-table tr > td:nth-of-type(4):not(:last-of-type) {
+    grid-row: 4;
+    grid-column: 1;
+  }
+
+  .competition-table tr > td:nth-of-type(5):not(:last-of-type) {
+    grid-row: 4;
+    grid-column: 2;
+  }
+
+  .competition-table tr > td:nth-of-type(6):not(:last-of-type) {
+    grid-row: 5;
+    grid-column: 1;
+  }
+
+  .competition-table tr > td:nth-of-type(7):not(:last-of-type) {
+    grid-row: 5;
+    grid-column: 2;
+  }
+
+  .competition-table tr > td:nth-of-type(8):not(:last-of-type) {
+    grid-row: 6;
+    grid-column: 1;
+  }
+
+  .competition-table tr > td:nth-of-type(9):not(:last-of-type) {
+    grid-row: 6;
+    grid-column: 2;
+  }
+
+  .competition-table tr > td:nth-of-type(10):not(:last-of-type) {
+    grid-row: 7;
+    grid-column: 1;
+  }
+
+  .competition-table tr > td:nth-of-type(11):not(:last-of-type) {
+    grid-row: 7;
+    grid-column: 2;
+  }
+
+  .competition-table tr > td:nth-of-type(12):not(:last-of-type) {
+    grid-row: 8;
+    grid-column: 1;
+  }
+
+  .competition-table tr > td:nth-of-type(13):not(:last-of-type) {
+    grid-row: 8;
+    grid-column: 2;
+  }
+
+  /* Uploaded files: file path row (icon + name) uses full width; type/size pair below */
+  .competition-table tr:has(> td:nth-of-type(2) .sm-logo) > td:nth-of-type(2):not(:last-of-type) {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    padding-top: 14px;
+  }
+
+  .competition-table tr:has(> td:nth-of-type(2) .sm-logo) > td:nth-of-type(2) .d-flex {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .competition-table tr:has(> td:nth-of-type(2) .sm-logo) > td:nth-of-type(2) .sm-logo {
+    margin-inline-end: 0;
+  }
+
+  .competition-table tr:has(> td:nth-of-type(2) .sm-logo) > td:nth-of-type(2) .d-flex > :not(.sm-logo) {
+    flex: 0 1 auto;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    white-space: normal;
+  }
+
+  .competition-table tr:has(> td:nth-of-type(2) .sm-logo) > td:nth-of-type(3):not(:last-of-type) {
+    grid-row: 4;
+    grid-column: 1;
+    padding-top: 10px;
+  }
+
+  .competition-table tr:has(> td:nth-of-type(2) .sm-logo) > td:nth-of-type(4):not(:last-of-type) {
+    grid-row: 4;
+    grid-column: 2;
+  }
+
+  .competition-table tr:has(> td:nth-of-type(2) .sm-logo) > td:nth-of-type(5):not(:last-of-type) {
+    grid-row: 5;
+    grid-column: 1 / -1;
+  }
+
+  /* Manual / review line items: item name + specs full width; unit | quantity paired */
+  .competition-table tr:has(> td[data-label="اسم البند"]) > td[data-label="اسم البند"],
+  .competition-table tr:has(> td[data-label="Item Name"]) > td[data-label="Item Name"] {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    padding-top: 14px;
+  }
+
+  .competition-table tr:has(> td[data-label="اسم البند"]) > td[data-label="المواصفات"],
+  .competition-table tr:has(> td[data-label="Item Name"]) > td[data-label="Specifications"] {
+    grid-column: 1 / -1;
+    grid-row: 4;
+    padding-top: 10px;
+  }
+
+  .competition-table tr:has(> td[data-label="اسم البند"]) > td[data-label="الوحدة"],
+  .competition-table tr:has(> td[data-label="Item Name"]) > td[data-label="Unit"] {
+    grid-row: 5;
+    grid-column: 1;
+  }
+
+  .competition-table tr:has(> td[data-label="اسم البند"]) > td[data-label="الكمية"],
+  .competition-table tr:has(> td[data-label="Item Name"]) > td[data-label="Quantity"] {
+    grid-row: 5;
+    grid-column: 2;
+  }
+
+  .competition-table tr:has(> td[data-label="اسم البند"]) .ellipse-text,
+  .competition-table tr:has(> td[data-label="Item Name"]) .ellipse-text {
+    max-width: 100%;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+  }
+
+  /* Tender results — bidders (# + company): company full width; technical | financial paired */
+  .competition-table tr:has(> td[data-label="اسم الشركة"]) > td[data-label="اسم الشركة"]:not(:first-of-type),
+  .competition-table tr:has(> td[data-label="Company Name"]) > td[data-label="Company Name"]:not(:first-of-type) {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    padding-top: 14px;
+  }
+
+  .competition-table tr:has(> td[data-label="النتيجة الفنية"]) > td[data-label="النتيجة الفنية"],
+  .competition-table tr:has(> td[data-label="Technical Evaluation"]) > td[data-label="Technical Evaluation"] {
+    grid-row: 4;
+    grid-column: 1;
+    padding-top: 10px;
+  }
+
+  .competition-table tr:has(> td[data-label="قيمة العرض المالي"]) > td[data-label="قيمة العرض المالي"],
+  .competition-table tr:has(> td[data-label="Financial Bid Value"]) > td[data-label="Financial Bid Value"] {
+    grid-row: 4;
+    grid-column: 2;
+  }
+
+  .competition-table tr:has(> td[data-label="اسم الشركة"]) > td[data-label="اسم الشركة"] .black-text,
+  .competition-table tr:has(> td[data-label="Company Name"]) > td[data-label="Company Name"] .black-text {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  /* Ranked leaderboards (# column): name / entity full width; metric row below */
+  .competition-table tr:has(> td[data-label="#"]) > td[data-label="اسم الشركة"]:not(:first-of-type),
+  .competition-table tr:has(> td[data-label="#"]) > td[data-label="Company Name"]:not(:first-of-type),
+  .competition-table tr:has(> td[data-label="#"]) > td[data-label="الجهة"],
+  .competition-table tr:has(> td[data-label="#"]) > td[data-label="Entity"] {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    padding-top: 14px;
+  }
+
+  .competition-table tr:has(> td[data-label="#"]) > td[data-label="مرات الفوز"],
+  .competition-table tr:has(> td[data-label="#"]) > td[data-label="Win Count"],
+  .competition-table tr:has(> td[data-label="#"]) > td[data-label="عدد المناقصات"],
+  .competition-table tr:has(> td[data-label="#"]) > td[data-label="Tender Count"] {
+    grid-row: 4;
+    grid-column: 1;
+    padding-top: 10px;
+  }
+
+  /* Long primary titles in gray header row */
+  .competition-table tr:has(> td[data-label="المورد"]) > td:first-of-type .black-text,
+  .competition-table tr:has(> td[data-label="Supplier"]) > td:first-of-type .black-text,
+  .competition-table tr:has(> td[data-label="النشاط"]) > td:first-of-type .black-text,
+  .competition-table tr:has(> td[data-label="Activity"]) > td:first-of-type .black-text,
+  .competition-table tr:has(> td[data-label="متوسط الترسية"]) > td:first-of-type .black-text,
+  .competition-table tr:has(> td[data-label="Average Award Value"]) > td:first-of-type .black-text {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  /* Single middle column (3-column tables) */
+  .competition-table tr > td:nth-of-type(2):nth-last-of-type(2) {
+    grid-row: 3;
+    grid-column: 1 / -1;
+    margin-inline: var(--competition-mobile-panel-inset-x, 0);
+    padding-bottom: var(--competition-mobile-panel-inner-bottom, 22px);
+  }
+
+  .competition-table tr > td:nth-last-of-type(2):not(:first-of-type),
+  .competition-table tr > td:nth-last-of-type(3):not(:first-of-type) {
+    padding-bottom: var(--competition-mobile-panel-inner-bottom, 22px);
+  }
+
+  /* Labels — middle (white block) cells only; header row (first + last) never labeled */
+  .competition-table tr > td:first-of-type[data-label]::before,
+  .competition-table tr > td:last-of-type[data-label]::before {
+    content: none;
+    display: none;
+  }
+
+  .competition-table tr > td[data-label]:not(:first-of-type):not(:last-of-type)::before {
     content: attr(data-label);
     font-size: 10px;
     color: #A1A1A1;
     margin-bottom: 4px;
     display: block;
-    width: 100%;
-    text-align: end;
-  }
-
-  html[dir="rtl"] .competition-table tr td:last-of-type[data-label]:not(:has(button, .btn, .action-btn, .dropdown))::before {
-    text-align: start;
   }
 
   /* .boq-table tr td:first-of-type::before {
     margin-bottom: 0;
   } */
 
-  .competition-table tr td:not(:first-of-type):not(:last-of-type) {
-    order: 3;
-  }
-
-  /* First Item in Card -> Top Radius & Border */
-  .competition-table td:nth-of-type(2) {
-    order: 3;
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
-    margin-top: 4px;
-    padding-top: 24px;
-    position: relative;
-  }
-
-  /* Before-last cell in the row */
-  .competition-table tr td:nth-last-of-type(2) {
-    border-bottom-left-radius: 16px;
-    border-bottom-right-radius: 16px;
-    padding-bottom: 24px;
-    margin-bottom: 0;
-  }
 }
 
 /* Competition table — native row/cell layout so all cells share row height (borders align) */
@@ -6130,6 +6380,23 @@ body:has(.upgrade-stepper-wrapper) {
 .service-choice-icon.bell {
   background: var(--main-opacity-color);
   color: var(--primary-color);
+}
+
+@media (max-width: 767.98px) {
+  .service-choice-card .service-choice-icon {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+  }
+
+  .service-choice-card .service-choice-icon svg,
+  .service-choice-card .service-choice-icon img {
+    width: 18px;
+    height: 18px;
+    max-width: 18px;
+    max-height: 18px;
+    object-fit: contain;
+  }
 }
 
 .service-choice-info {
@@ -7379,17 +7646,6 @@ html[dir="ltr"] .input-icon-group input {
     word-break: break-word;
   }
 
-  .service-choice-icon {
-    width: 40px;
-    height: 40px;
-    min-width: 40px;
-  }
-
-  .service-choice-icon svg {
-    width: 20px;
-    height: 20px;
-  }
-
   #paymentMethodTabs .nav-item {
     flex: 1 1 50%;
     min-width: 0;
@@ -7742,7 +7998,6 @@ html[dir="ltr"] .input-icon-group input {
 @media (max-width: 767.98px) {
   .dash-widget.spg-root {
     overflow: visible;
-    padding: 12px !important;
   }
 
   .spg-root > .row.g-4 {
@@ -7818,7 +8073,7 @@ html[dir="ltr"] .input-icon-group input {
     min-height: 0;
     max-height: none;
     margin: 0;
-    padding: 12px !important;
+    padding: 0 !important;
     border-radius: 12px;
     overflow: visible;
     transform: none !important;
@@ -7833,7 +8088,7 @@ html[dir="ltr"] .input-icon-group input {
     flex-wrap: nowrap;
     align-items: stretch !important;
     gap: 8px !important;
-    margin-bottom: 0 !important;
+    margin-bottom: 16px !important;
   }
 
   .spg-root .spg-projects-mobile-toolbar {
@@ -7912,6 +8167,16 @@ html[dir="ltr"] .input-icon-group input {
 @media (max-width: 991.98px) {
   .spg-root .min-h-spg-main {
     min-height: 0;
+  }
+
+  /* Outer gray shells — keep inner .bg-white cards only */
+  .spg-root .tender-card.min-h-spg-main,
+  .spg-root.spg-production-root .tender-card.spg-production-panel,
+  .spg-root .tender-card.p-3.p-lg-4.d-flex.flex-column:not(.bg-white):not(.sm-0) {
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background-color: transparent !important;
   }
 }
 
@@ -8186,9 +8451,7 @@ html[dir="ltr"] .input-icon-group input {
 
 @media (max-width: 575.98px) {
   .spg-root .spg-template-footer .btn-main,
-  .spg-root .spg-template-footer button[type="submit"],
-  .spg-root .spg-section-review-actions .btn-main,
-  .spg-root .spg-section-review-actions a.btn-main {
+  .spg-root .spg-template-footer button[type="submit"] {
     width: 100%;
     justify-content: center;
   }
@@ -8655,6 +8918,28 @@ html[dir="ltr"] .input-icon-group input {
   align-self: center;
 }
 
+.spg-proposal-editor-root .spg-proposal-editor-toolbar-tools {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.spg-proposal-editor-root .spg-proposal-editor-inspector-details {
+  margin: 0;
+}
+
+.spg-proposal-editor-root .spg-proposal-editor-inspector-details > summary {
+  list-style: none;
+  cursor: default;
+}
+
+.spg-proposal-editor-root .spg-proposal-editor-inspector-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.spg-proposal-editor-root .spg-proposal-editor-inspector-details > summary::marker {
+  content: "";
+}
+
 .spg-proposal-editor-root .spg-proposal-editor-tool.is-active {
   background: rgba(107, 175, 184, 0.12);
   border-color: var(--primary-color, #6bafb8);
@@ -8808,9 +9093,40 @@ html[dir="ltr"] .input-icon-group input {
 }
 
 @media (max-width: 991.98px) {
+  .spg-proposal-editor-root .spg-proposal-editor-toolbar {
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .spg-proposal-editor-root .spg-proposal-editor-toolbar-tools,
+  .spg-proposal-editor-root .spg-proposal-editor-toolbar > [role="toolbar"] {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .spg-proposal-editor-root .spg-proposal-editor-toolbar-tools > .btn-main,
+  .spg-proposal-editor-root .spg-proposal-editor-toolbar > [role="toolbar"] > .btn-main {
+    flex: 1 1 calc(50% - 4px);
+    min-width: calc(50% - 4px);
+    justify-content: center;
+  }
+
+  .spg-proposal-editor-root .spg-proposal-editor-toolbar-divider {
+    flex: 1 1 100%;
+    width: 100%;
+    height: 1px;
+    margin-block: 2px;
+  }
+
+  .spg-proposal-editor-root .spg-proposal-editor-toolbar > .btn-main.btn-primary {
+    width: 100%;
+    margin-inline-start: 0 !important;
+    justify-content: center;
+  }
+
   .spg-proposal-editor-root .spg-proposal-editor-main {
     grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: auto 70vh auto;
+    grid-template-rows: auto minmax(220px, 52vh) auto;
   }
 
   .spg-proposal-editor-root .spg-proposal-editor-inspector {
@@ -8819,7 +9135,48 @@ html[dir="ltr"] .input-icon-group input {
     width: 100%;
     min-height: 0;
     height: auto;
-    max-height: min(320px, 40vh);
+    max-height: none;
+    padding: 0;
+    overflow: visible;
+    border-radius: 12px;
+    box-shadow: 0 -4px 16px rgba(12, 32, 48, 0.06);
+  }
+
+  .spg-proposal-editor-root .spg-proposal-editor-inspector-details > summary {
+    cursor: pointer;
+    padding: 12px 12px 12px;
+    margin-bottom: 0;
+    position: relative;
+    padding-inline-end: 36px;
+  }
+
+  .spg-proposal-editor-root .spg-proposal-editor-inspector-details > summary::after {
+    content: "";
+    position: absolute;
+    inset-inline-end: 12px;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    border-inline-end: 2px solid var(--primary-color, #6bafb8);
+    border-bottom: 2px solid var(--primary-color, #6bafb8);
+    transform: translateY(-65%) rotate(45deg);
+    transition: transform 0.2s ease;
+  }
+
+  .spg-proposal-editor-root .spg-proposal-editor-inspector-details[open] > summary::after {
+    transform: translateY(-35%) rotate(-135deg);
+  }
+
+  .spg-proposal-editor-root .spg-proposal-editor-inspector-details[open] .spg-proposal-editor-inspector-body {
+    max-height: min(48vh, 420px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 12px 12px;
+  }
+
+  .spg-proposal-editor-root .spg-proposal-editor-inspector-details:not([open]) .spg-proposal-editor-inspector-body {
+    display: none;
   }
 
   .spg-proposal-editor-root .spg-proposal-editor-workspace {
@@ -10199,28 +10556,64 @@ html[dir="ltr"] .input-icon-group input {
   text-align: end;
 }
 
-@media (max-width: 575.98px) {
-  .spg-root .tr-activity-value-row {
-    grid-template-columns: 1fr auto;
+.spg-root .tr-supplier-win-chart .tr-activity-value-row {
+  grid-template-columns: minmax(6.5rem, 11rem) 1fr minmax(4rem, auto);
+}
+
+@media (max-width: 767.98px) {
+  .spg-root .tr-activity-value-chart {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .spg-root .tr-activity-value-row,
+  .spg-root .tr-supplier-win-chart .tr-activity-value-row {
+    width: 100%;
+    max-width: 100%;
+    grid-template-columns: minmax(0, 1fr) auto;
     grid-template-rows: auto auto;
+    gap: 0.5rem 0.75rem;
+    align-items: start;
   }
 
   .spg-root .tr-activity-value-label {
-    grid-column: 1 / -1;
-  }
-
-  .spg-root .tr-activity-value-track {
     grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
   .spg-root .tr-activity-value-amount {
     grid-column: 2;
-    grid-row: 2;
+    grid-row: 1;
+    align-self: start;
+    flex-shrink: 0;
+    text-align: end;
   }
-}
 
-.spg-root .tr-supplier-win-chart .tr-activity-value-row {
-  grid-template-columns: minmax(6.5rem, 11rem) 1fr minmax(4rem, auto);
+  .spg-root .tr-activity-value-track {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .spg-root .d-flex.flex-wrap.align-items-start.justify-content-between.gap-3:has(> .sm-ele.prim-opacity-outlined.flex-shrink-0) {
+    position: relative;
+  }
+
+  .spg-root .d-flex.flex-wrap.align-items-start.justify-content-between.gap-3:has(> .sm-ele.prim-opacity-outlined.flex-shrink-0) > .sm-ele.prim-opacity-outlined.flex-shrink-0 {
+    position: absolute;
+    top: 0;
+    inset-inline-end: 0;
+  }
+
+  .spg-root .d-flex.flex-wrap.align-items-start.justify-content-between.gap-3:has(> .sm-ele.prim-opacity-outlined.flex-shrink-0) > div:first-of-type {
+    padding-inline-end: 7.25rem;
+    min-width: 0;
+  }
 }
 
 .spg-root .tr-supplier-chart-tabs .nav-link {
@@ -10256,11 +10649,11 @@ html[dir="ltr"] .input-icon-group input {
   .main-content .page-header .outline-primary-gray {
     margin-inline-start: auto;
   }
-
-  .spg-root .tp-flow-panel .tender-card.p-3,
-  .spg-root .tp-flow-panel .tender-card.p-3.p-lg-4 {
+/* 
+  .spg-root .tp-flow-panel .tender-card.p-3:not(.min-h-spg-main):not(.spg-production-panel),
+  .spg-root .tp-flow-panel .tender-card.p-3.p-lg-4:not(.min-h-spg-main):not(.spg-production-panel) {
     padding: 12px !important;
-  }
+  } */
 
   .spg-root .tr-list-item-card .tr-list-item-card__row {
     flex-direction: column;
@@ -10278,17 +10671,81 @@ html[dir="ltr"] .input-icon-group input {
     max-width: calc(100% + 8px);
   }
 
-  .spg-root .spg-wizard-actions {
+  .spg-root .spg-wizard-actions:not(.justify-content-between):not(:has(#spgWizardPrev)) {
     justify-content: stretch !important;
   }
 
-  .spg-root .spg-wizard-actions .btn-main,
-  .spg-root .spg-wizard-actions .outline-primary-gray,
-  .spg-root .spg-wizard-actions a.btn-main,
-  .spg-root .spg-wizard-actions a.outline-primary-gray {
+  .spg-root .spg-wizard-actions:not(.justify-content-between):not(:has(#spgWizardPrev)) .btn-main,
+  .spg-root .spg-wizard-actions:not(.justify-content-between):not(:has(#spgWizardPrev)) .outline-primary-gray,
+  .spg-root .spg-wizard-actions:not(.justify-content-between):not(:has(#spgWizardPrev)) a.btn-main,
+  .spg-root .spg-wizard-actions:not(.justify-content-between):not(:has(#spgWizardPrev)) a.outline-primary-gray {
     flex: 1 1 calc(50% - 0.375rem);
     justify-content: center;
     min-height: 44px;
+  }
+
+  .spg-root .tp-flow-panel .spg-wizard-actions.justify-content-between,
+  .spg-root .tp-flow-panel .spg-wizard-actions:has(#spgWizardPrev),
+  .spg-root .spg-wizard-actions.justify-content-between,
+  .spg-root .spg-wizard-actions:has(#spgWizardPrev) {
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .spg-root .spg-wizard-actions.justify-content-between > .btn-main,
+  .spg-root .spg-wizard-actions.justify-content-between > a.btn-main,
+  .spg-root .spg-wizard-actions.justify-content-between > button,
+  .spg-root .spg-wizard-actions:has(#spgWizardPrev) > .btn-main,
+  .spg-root .spg-wizard-actions:has(#spgWizardPrev) > button {
+    min-height: 44px;
+    justify-content: center;
+  }
+
+  .spg-root .spg-wizard-actions.justify-content-between > .outline-primary-gray,
+  .spg-root .spg-wizard-actions.justify-content-between > a.outline-primary-gray,
+  .spg-root .spg-wizard-actions.justify-content-between > button.outline-primary-gray,
+  .spg-root .spg-wizard-actions:has(#spgWizardPrev) > .outline-primary-gray,
+  .spg-root .spg-wizard-actions:has(#spgWizardPrev) > button.outline-primary-gray {
+    flex: 0 1 auto;
+    width: auto;
+    max-width: 42%;
+  }
+
+  .spg-root .spg-wizard-actions.justify-content-between > .btn-primary,
+  .spg-root .spg-wizard-actions.justify-content-between > a.btn-primary,
+  .spg-root .spg-wizard-actions:has(#spgWizardPrev) > .btn-primary,
+  .spg-root .spg-wizard-actions:has(#spgWizardPrev) > button.btn-primary {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .spg-root .spg-section-review-actions {
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .spg-root .spg-section-review-actions > .btn-main,
+  .spg-root .spg-section-review-actions > a.btn-main,
+  .spg-root .spg-section-review-actions > button {
+    min-height: 44px;
+    justify-content: center;
+  }
+
+  .spg-root .spg-section-review-actions > .outline-primary-gray,
+  .spg-root .spg-section-review-actions > button.outline-primary-gray {
+    flex: 0 1 auto;
+    width: auto;
+    max-width: 42%;
+  }
+
+  .spg-root .spg-section-review-actions > .btn-primary,
+  .spg-root .spg-section-review-actions > a.btn-primary {
+    flex: 1 1 0;
+    min-width: 0;
   }
 
   /* .spg-root.spg-production-root .spg-production-context {

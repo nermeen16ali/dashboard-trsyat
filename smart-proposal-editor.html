@@ -533,7 +533,7 @@
       </button>
     </div>
     <div class="dash-widget sm-0 p-lg-4 spg-root spg-production-root spg-proposal-editor-root">
-      <div class="row g-4">
+      <div class="row g-lg-4">
         <div class="col-12">
           <div class="tender-card p-3 p-lg-4 d-flex flex-column spg-production-panel spg-proposal-editor-panel">
 
@@ -593,7 +593,8 @@
 
             <div
               class="spg-proposal-editor-toolbar tender-card bg-white p-2 p-md-3 mb-2 d-flex flex-wrap align-items-center gap-2">
-              <div class="d-flex align-items-center gap-2" role="toolbar" aria-label="أدوات المحرر">
+              <div class="d-flex align-items-center gap-2 flex-wrap spg-proposal-editor-toolbar-tools" role="toolbar"
+                aria-label="أدوات المحرر">
                 <button type="button" class="btn-main outline-primary-gray fz-12 h-36 d-inline-flex align-items-center gap-2"
                   aria-label="تراجع">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none"
@@ -687,12 +688,13 @@
               </div>
               </div>
               <aside class="spg-proposal-editor-inspector tender-card bg-white p-3" aria-label="خصائص العنصر">
-                <header class="spg-proposal-editor-inspector-head mb-3 pb-3 brd-btm">
-                  <h6 class="black-text fw-medium mb-1">خصائص العنصر</h6>
-                  <p class="fz-12 text-gray mb-0">العنصر المحدد: <span class="black-text">عنوان</span></p>
-                </header>
+                <details class="spg-proposal-editor-inspector-details" open>
+                  <summary class="spg-proposal-editor-inspector-head mb-0 pb-3 brd-btm">
+                    <h6 class="black-text fw-medium mb-1">خصائص العنصر</h6>
+                    <p class="fz-12 text-gray mb-0">العنصر المحدد: <span class="black-text">عنوان</span></p>
+                  </summary>
 
-                <div class="spg-proposal-editor-inspector-body">
+                  <div class="spg-proposal-editor-inspector-body pt-3">
                   <section class="spg-proposal-editor-section mb-3 pb-3 brd-btm">
                     <h6 class="fz-12 black-text fw-medium mb-2">النص</h6>
                     <label class="form-label fz-12" for="spgEditorElementText">محتوى النص</label>
@@ -821,7 +823,8 @@
                       </button>
                     </div>
                   </section>
-                </div>
+                  </div>
+                </details>
               </aside>
 
               <div class="spg-proposal-editor-workspace tender-card bg-white p-0 d-flex flex-column min-w-0">

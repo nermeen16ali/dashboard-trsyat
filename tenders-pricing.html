@@ -538,7 +538,7 @@
     </div>
 
     <div class="dash-widget sm-0 p-lg-4 spg-root" data-flow-history-sidebar>
-      <div class="row g-4">
+      <div class="row g-lg-4">
         <div class="col-12 col-lg-3 spg-projects-sidebar-col tp-pricing-sidebar-col">
           <div class="spg-projects-drawer-backdrop d-md-none" data-history-backdrop tabindex="-1" aria-hidden="true"></div>
           <div class="tender-card sm-0 p-lg-3 spg-projects-sidebar-panel d-flex flex-column h-100" data-history-panel
@@ -1570,13 +1570,12 @@
                         </thead>
                         <tbody>
                           <tr>
-                            <td><span class="black-text fw-medium d-block">توريد وتركيب مكيفات سبليت 18 وحدة</span><span
-                                class="text-gray fz-12">12 حبة</span></td>
-                            <td><span class="ff-onest">12 حبة</span></td>
-                            <td class="ff-onest fz-12">2,850</td>
-                            <td class="ff-onest fz-12">3,150</td>
-                            <td class="ff-onest fz-12">3,420</td>
-                            <td><button type="button"
+                            <td data-label="البند"><span class="black-text fw-medium d-block">توريد وتركيب مكيفات سبليت 18 وحدة</span></td>
+                            <td data-label="الكمية"><span class="ff-onest">12 حبة</span></td>
+                            <td class="ff-onest fz-12" data-label="أقل سعر">2,850</td>
+                            <td class="ff-onest fz-12" data-label="متوسط السعر">3,150</td>
+                            <td class="ff-onest fz-12" data-label="أعلى سعر">3,420</td>
+                            <td data-label="المصادر"><button type="button"
                                 class="btn-main btn-primary-outline fz-12 h-36 d-inline-flex align-items-center gap-1"
                                 data-bs-toggle="modal" data-bs-target="#tpSourcesModal">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"
@@ -1596,26 +1595,25 @@
                                 </svg>
                                 4 مصادر
                               </button></td>
-                            <td><span class="sm-ele fz-10 bordered-8 text-nowrap badge-success">مكتمل</span></td>
-                            <td class="text-center">
+                            <td data-label="الحالة"><span class="sm-ele fz-10 bordered-8 text-nowrap badge-success">مكتمل</span></td>
+                            <td class="text-center" data-label="إجراءات">
                               <div class="d-flex justify-content-center gap-2 flex-wrap"><button type="button"
                                   class="icon-container gray-outline-btn" aria-label="عرض"><img src="images/eye.svg"
                                     alt=""></button></div>
                             </td>
                           </tr>
                           <tr>
-                            <td><span class="black-text fw-medium d-block">توريد أثاث مكتبي — كراسي هيدروليك</span><span
-                                class="text-gray fz-12">25 حبة</span>
+                            <td data-label="البند"><span class="black-text fw-medium d-block">توريد أثاث مكتبي — كراسي هيدروليك</span>
                               <p class="fz-11 red-colored mb-0 mt-1">مصادر غير كافية لتقدير دقيق</p>
                             </td>
-                            <td><span class="ff-onest">25 حبة</span></td>
-                            <td class="ff-onest fz-12">—</td>
-                            <td class="ff-onest fz-12">—</td>
-                            <td class="ff-onest fz-12">—</td>
-                            <td><span class="fz-12 text-gray">—</span></td>
-                            <td><span class="sm-ele fz-10 bordered-8 text-nowrap prim-opacity-outlined">يحتاج
+                            <td data-label="الكمية"><span class="ff-onest">25 حبة</span></td>
+                            <td class="ff-onest fz-12" data-label="أقل سعر">—</td>
+                            <td class="ff-onest fz-12" data-label="متوسط السعر">—</td>
+                            <td class="ff-onest fz-12" data-label="أعلى سعر">—</td>
+                            <td data-label="المصادر"><span class="fz-12 text-gray">—</span></td>
+                            <td data-label="الحالة"><span class="sm-ele fz-10 bordered-8 text-nowrap prim-opacity-outlined">يحتاج
                                 مراجعة</span></td>
-                            <td class="text-center">
+                            <td class="text-center" data-label="إجراءات">
                               <div class="d-flex justify-content-center gap-2 flex-wrap"><button type="button"
                                   class="btn-main btn-primary-outline fz-12 h-36">سعر يدوياً</button></div>
                             </td>
@@ -1765,12 +1763,12 @@
                             </thead>
                             <tbody>
                               <tr>
-                                <td><span class="ff-onest">1</span></td>
-                                <td>توريد وتركيب مكيفات سبليت 18 وحدة</td>
-                                <td>12 وحدة</td>
-                                <td class="ff-onest">3,150 ر.س</td>
-                                <td><span class="sm-ele fz-10 bordered-8 badge-success">مكتمل</span></td>
-                                <td><button type="button"
+                                <td data-label="#"><span class="ff-onest">1</span></td>
+                                <td data-label="البند">توريد وتركيب مكيفات سبليت 18 وحدة</td>
+                                <td data-label="الكمية">12 وحدة</td>
+                                <td class="ff-onest" data-label="السعر التقديري">3,150 ر.س</td>
+                                <td data-label="الحالة"><span class="sm-ele fz-10 bordered-8 badge-success">مكتمل</span></td>
+                                <td data-label="المصادر"><button type="button"
                                     class="btn-main btn-primary-outline fz-12 h-36 d-inline-flex align-items-center gap-1"
                                     data-bs-toggle="modal" data-bs-target="#tpSourcesModal">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"
@@ -1792,12 +1790,12 @@
                                   </button></td>
                               </tr>
                               <tr>
-                                <td><span class="ff-onest">2</span></td>
-                                <td>توريد كراسي هيدروليك</td>
-                                <td>25 وحدة</td>
-                                <td class="ff-onest">—</td>
-                                <td><span class="sm-ele fz-10 bordered-8 prim-opacity-outlined">غير مكتمل</span></td>
-                                <td class="fz-12 text-gray">مصدر واحد</td>
+                                <td data-label="#"><span class="ff-onest">2</span></td>
+                                <td data-label="البند">توريد كراسي هيدروليك</td>
+                                <td data-label="الكمية">25 وحدة</td>
+                                <td class="ff-onest" data-label="السعر التقديري">—</td>
+                                <td data-label="الحالة"><span class="sm-ele fz-10 bordered-8 prim-opacity-outlined">غير مكتمل</span></td>
+                                <td class="fz-12 text-gray" data-label="المصادر">مصدر واحد</td>
                               </tr>
                             </tbody>
                           </table>

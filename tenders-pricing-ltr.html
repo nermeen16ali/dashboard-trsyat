@@ -541,7 +541,7 @@
     </div>
 
     <div class="dash-widget sm-0 p-lg-4 spg-root" data-flow-history-sidebar>
-      <div class="row g-4">
+      <div class="row g-lg-4">
         <div class="col-12 col-lg-3 spg-projects-sidebar-col tp-pricing-sidebar-col">
           <div class="spg-projects-drawer-backdrop d-md-none" data-history-backdrop tabindex="-1" aria-hidden="true"></div>
           <div class="tender-card sm-0 p-lg-3 spg-projects-sidebar-panel d-flex flex-column h-100" data-history-panel
@@ -1549,13 +1549,12 @@
                         </thead>
                         <tbody>
                           <tr>
-                            <td><span class="black-text fw-medium d-block">Supply and Installation of 18,000 BTU Split AC Units</span><span
-                                class="text-gray fz-12">12 Pieces</span></td>
-                            <td><span class="ff-onest">12 Pieces</span></td>
-                            <td class="ff-onest fz-12">2,850</td>
-                            <td class="ff-onest fz-12">3,150</td>
-                            <td class="ff-onest fz-12">3,420</td>
-                            <td><button type="button"
+                            <td data-label="Item"><span class="black-text fw-medium d-block">Supply and Installation of 18,000 BTU Split AC Units</span></td>
+                            <td data-label="Quantity"><span class="ff-onest">12 Pieces</span></td>
+                            <td class="ff-onest fz-12" data-label="Lowest Price">2,850</td>
+                            <td class="ff-onest fz-12" data-label="Average Price">3,150</td>
+                            <td class="ff-onest fz-12" data-label="Highest Price">3,420</td>
+                            <td data-label="Sources"><button type="button"
                                 class="btn-main btn-primary-outline fz-12 h-36 d-inline-flex align-items-center gap-1"
                                 data-bs-toggle="modal" data-bs-target="#tpSourcesModal">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"
@@ -1575,25 +1574,24 @@
                                 </svg>
                                 4 Sources
                               </button></td>
-                            <td><span class="sm-ele fz-10 bordered-8 text-nowrap badge-success">Completed</span></td>
-                            <td class="text-center">
+                            <td data-label="Status"><span class="sm-ele fz-10 bordered-8 text-nowrap badge-success">Completed</span></td>
+                            <td class="text-center" data-label="Actions">
                               <div class="d-flex justify-content-center gap-2 flex-wrap"><button type="button"
                                   class="icon-container gray-outline-btn" aria-label="View"><img src="images/eye.svg"
                                     alt=""></button></div>
                             </td>
                           </tr>
                           <tr>
-                            <td><span class="black-text fw-medium d-block">Supply of Office Furniture – Hydraulic Chairs</span><span
-                                class="text-gray fz-12">25 Pieces</span>
+                            <td data-label="Item"><span class="black-text fw-medium d-block">Supply of Office Furniture – Hydraulic Chairs</span>
                               <p class="fz-11 red-colored mb-0 mt-1">Insufficient sources for an accurate estimate</p>
                             </td>
-                            <td><span class="ff-onest">25 Pieces</span></td>
-                            <td class="ff-onest fz-12">—</td>
-                            <td class="ff-onest fz-12">—</td>
-                            <td class="ff-onest fz-12">—</td>
-                            <td><span class="fz-12 text-gray">—</span></td>
-                            <td><span class="sm-ele fz-10 bordered-8 text-nowrap prim-opacity-outlined">Needs Review</span></td>
-                            <td class="text-center">
+                            <td data-label="Quantity"><span class="ff-onest">25 Pieces</span></td>
+                            <td class="ff-onest fz-12" data-label="Lowest Price">—</td>
+                            <td class="ff-onest fz-12" data-label="Average Price">—</td>
+                            <td class="ff-onest fz-12" data-label="Highest Price">—</td>
+                            <td data-label="Sources"><span class="fz-12 text-gray">—</span></td>
+                            <td data-label="Status"><span class="sm-ele fz-10 bordered-8 text-nowrap prim-opacity-outlined">Needs Review</span></td>
+                            <td class="text-center" data-label="Actions">
                               <div class="d-flex justify-content-center gap-2 flex-wrap"><button type="button"
                                   class="btn-main btn-primary-outline fz-12 h-36">Enter Price Manually</button></div>
                             </td>
@@ -1739,12 +1737,12 @@
                             </thead>
                             <tbody>
                               <tr>
-                                <td><span class="ff-onest">1</span></td>
-                                <td>Supply and Installation of 18,000 BTU Split AC Units</td>
-                                <td>12 Units</td>
-                                <td class="ff-onest">3,150 SAR</td>
-                                <td><span class="sm-ele fz-10 bordered-8 badge-success">Completed</span></td>
-                                <td><button type="button"
+                                <td data-label="#"><span class="ff-onest">1</span></td>
+                                <td data-label="Item">Supply and Installation of 18,000 BTU Split AC Units</td>
+                                <td data-label="Quantity">12 Units</td>
+                                <td class="ff-onest" data-label="Estimated Price">3,150 SAR</td>
+                                <td data-label="Status"><span class="sm-ele fz-10 bordered-8 badge-success">Completed</span></td>
+                                <td data-label="Sources"><button type="button"
                                     class="btn-main btn-primary-outline fz-12 h-36 d-inline-flex align-items-center gap-1"
                                     data-bs-toggle="modal" data-bs-target="#tpSourcesModal">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"
@@ -1766,12 +1764,12 @@
                                   </button></td>
                               </tr>
                               <tr>
-                                <td><span class="ff-onest">2</span></td>
-                                <td>Supply of Hydraulic Chairs</td>
-                                <td>25 Units</td>
-                                <td class="ff-onest">—</td>
-                                <td><span class="sm-ele fz-10 bordered-8 prim-opacity-outlined">Incomplete</span></td>
-                                <td class="fz-12 text-gray">1 Source</td>
+                                <td data-label="#"><span class="ff-onest">2</span></td>
+                                <td data-label="Item">Supply of Hydraulic Chairs</td>
+                                <td data-label="Quantity">25 Units</td>
+                                <td class="ff-onest" data-label="Estimated Price">—</td>
+                                <td data-label="Status"><span class="sm-ele fz-10 bordered-8 prim-opacity-outlined">Incomplete</span></td>
+                                <td class="fz-12 text-gray" data-label="Sources">1 Source</td>
                               </tr>
                             </tbody>
                           </table>
