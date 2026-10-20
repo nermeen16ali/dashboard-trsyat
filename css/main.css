@@ -10347,6 +10347,19 @@ html[dir="ltr"] .spg-root .spg-section-review-title {
 .spg-root #tr-detail-full .tr-detail-header-badge {
   top: 1rem;
   inset-inline-end: 1rem;
+  z-index: 1;
+  max-width: min(11rem, calc(50% - 0.75rem));
+  text-align: center;
+}
+
+.spg-root #tr-detail .tender-card.position-relative:has(> .tr-detail-header-badge) > h6,
+.spg-root #tr-detail-full .tender-card.position-relative:has(> .tr-detail-header-badge) > h6,
+.spg-root #tr-detail .tender-card.position-relative:has(> .tr-detail-header-badge) > h6 + p,
+.spg-root #tr-detail-full .tender-card.position-relative:has(> .tr-detail-header-badge) > h6 + p {
+  padding-inline-end: 4.25rem;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 @media (min-width: 992px) {
@@ -10354,6 +10367,14 @@ html[dir="ltr"] .spg-root .spg-section-review-title {
   .spg-root #tr-detail-full .tr-detail-header-badge {
     top: 1.5rem;
     inset-inline-end: 1.5rem;
+    max-width: min(12rem, calc(45% - 1rem));
+  }
+
+  .spg-root #tr-detail .tender-card.position-relative:has(> .tr-detail-header-badge) > h6,
+  .spg-root #tr-detail-full .tender-card.position-relative:has(> .tr-detail-header-badge) > h6,
+  .spg-root #tr-detail .tender-card.position-relative:has(> .tr-detail-header-badge) > h6 + p,
+  .spg-root #tr-detail-full .tender-card.position-relative:has(> .tr-detail-header-badge) > h6 + p {
+    padding-inline-end: 7rem;
   }
 }
 
