@@ -10686,6 +10686,19 @@ html[dir="ltr"] .input-icon-group input {
     max-width: calc(100% + 8px);
   }
 
+  .spg-root .tender-card.prim-opacity-outlined .d-flex:has(> a[href="#tr-entity-kfu"]) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .spg-root a.btn-main[href="#tr-entity-kfu"] {
+    flex: 1 1 100% !important;
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
   .spg-root .spg-wizard-actions:not(.justify-content-between):not(:has(#spgWizardPrev)) {
     justify-content: stretch !important;
   }
