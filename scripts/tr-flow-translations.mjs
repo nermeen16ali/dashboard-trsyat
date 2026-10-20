@@ -55,28 +55,28 @@ export const shared = {
   "السابق": "Previous",
   "التالي": "Next",
   'aria-label="إغلاق"': 'aria-label="Close"',
-  "<label class=\"form-label fz-12\">نوع المنافسة</label>":
-    "<label class=\"form-label fz-12\">Competition type</label>",
-  "<label class=\"form-label fz-12\">الجهة</label>":
-    "<label class=\"form-label fz-12\">Entity</label>",
-  "<label class=\"form-label fz-12\">النشاط</label>":
-    "<label class=\"form-label fz-12\">Activity</label>",
-  "<label class=\"form-label fz-12\">النشاط الفرعي</label>":
-    "<label class=\"form-label fz-12\">Sub-activity</label>",
-  "<label class=\"form-label fz-12\">المنطقة</label>":
-    "<label class=\"form-label fz-12\">Region</label>",
-  "<label class=\"form-label fz-12\">المدينة</label>":
-    "<label class=\"form-label fz-12\">City</label>",
-  "<label class=\"form-label fz-12\">الفترة الزمنية</label>":
-    "<label class=\"form-label fz-12\">Time period</label>",
-  "<label class=\"form-label fz-12\">عدد النتائج</label>":
-    "<label class=\"form-label fz-12\">Results count</label>",
-  "<label class=\"form-label fz-12 black-text fw-medium\">الجهة الحكومية</label>":
-    "<label class=\"form-label fz-12 black-text fw-medium\">Government entity</label>",
-  "<label class=\"form-label fz-12 black-text fw-medium\">نوع الاستعلام</label>":
-    "<label class=\"form-label fz-12 black-text fw-medium\">Query type</label>",
-  "<label class=\"form-label fz-12\">نوع المناقصة</label>":
-    "<label class=\"form-label fz-12\">Tender type</label>",
+  "<label class=\"form-label\">نوع المنافسة</label>":
+    "<label class=\"form-label\">Competition type</label>",
+  "<label class=\"form-label\">الجهة</label>":
+    "<label class=\"form-label\">Entity</label>",
+  "<label class=\"form-label\">النشاط</label>":
+    "<label class=\"form-label\">Activity</label>",
+  "<label class=\"form-label\">النشاط الفرعي</label>":
+    "<label class=\"form-label\">Sub-activity</label>",
+  "<label class=\"form-label\">المنطقة</label>":
+    "<label class=\"form-label\">Region</label>",
+  "<label class=\"form-label\">المدينة</label>":
+    "<label class=\"form-label\">City</label>",
+  "<label class=\"form-label\">الفترة الزمنية</label>":
+    "<label class=\"form-label\">Time period</label>",
+  "<label class=\"form-label\">عدد النتائج</label>":
+    "<label class=\"form-label\">Results count</label>",
+  "<label class=\"form-label black-text fw-medium\">الجهة الحكومية</label>":
+    "<label class=\"form-label black-text fw-medium\">Government entity</label>",
+  "<label class=\"form-label black-text fw-medium\">نوع الاستعلام</label>":
+    "<label class=\"form-label black-text fw-medium\">Query type</label>",
+  "<label class=\"form-label\">نوع المناقصة</label>":
+    "<label class=\"form-label\">Tender type</label>",
   "<label class=\"form-label black-text fw-medium\" for=\"tpTenderName\">اسم المناقصة</label>":
     "<label class=\"form-label black-text fw-medium\" for=\"tpTenderName\">Tender name</label>",
   "<label class=\"form-label\" for=\"trCompetitionName\">اسم المنافسة</label>":

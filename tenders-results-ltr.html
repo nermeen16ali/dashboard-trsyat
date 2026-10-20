@@ -838,7 +838,7 @@
                     <div>
                       <p class="fz-12 text-gray mb-1">Sector and Activity Analysis</p>
                       <h6 class="black-text fw-medium mb-2">Top Activities by Award Value</h6>
-                      <p class="fz-14 text-gray mb-0">Compare activity volume, entities, participating suppliers, and
+                      <p class="fz-14 text-gray">Compare activity volume, entities, participating suppliers, and
                         total award value to see where opportunities cluster.</p>
                     </div>
                     <span class="sm-ele fz-10 bordered-8 prim-opacity-outlined flex-shrink-0">Based on Platform
@@ -890,7 +890,7 @@
                   <h6 class="black-text fw-medium mb-3">Award Value by Activity</h6>
                   <div class="tr-activity-value-chart mb-4" id="trActivityValueChart" role="list"
                     aria-label="Award value by activity"></div>
-                  <div class="d-flex flex-wrap align-items-center justify-content-end gap-3 spg-wizard-actions">
+                  <div class="d-flex align-items-center justify-content-end gap-3 spg-wizard-actions">
                     <a href="#tr-entity"
                       class="btn-main btn-primary h-41 fw-medium fz-14 d-inline-flex align-items-center gap-2 flex-shrink-0">Largest
                       Entities
@@ -932,7 +932,7 @@
                     <div>
                       <p class="fz-12 text-gray mb-1">Award Results</p>
                       <h6 class="black-text fw-medium mb-2">Latest 10 Recorded Awards</h6>
-                      <p class="fz-14 text-gray mb-0">Explore the latest historical awards on the platform to understand
+                      <p class="fz-14 text-gray">Explore the latest historical awards on the platform to understand
                         market prices. These records are for reference only and are not open competitions.</p>
                     </div>
                     <span class="sm-ele fz-10 bordered-8 prim-opacity-outlined flex-shrink-0">Based on Platform
@@ -1576,7 +1576,7 @@
                   </div>
 
                   <div
-                    class="d-flex flex-wrap align-items-center justify-content-end gap-3 mt-4 pt-3 spg-wizard-actions">
+                    class="d-flex align-items-center justify-content-end gap-3 mt-4 pt-3 spg-wizard-actions">
                     <a href="#tr-entity"
                       class="btn-main btn-primary h-41 fw-medium fz-14 d-inline-flex align-items-center gap-2 flex-shrink-0">Top
                       Publishing Entities
@@ -1635,7 +1635,7 @@
                     <div>
                       <p class="fz-12 text-gray mb-1">Supplier Analysis</p>
                       <h6 class="black-text fw-medium mb-2">Top Winning Suppliers</h6>
-                      <p class="fz-14 text-gray mb-0">Rankings are based on award statistics recorded in the platform
+                      <p class="fz-14 fz-sm-12 text-gray mb-0">Rankings are based on award statistics recorded in the platform
                         database.</p>
                     </div>
                     <span class="sm-ele fz-10 bordered-8 prim-opacity-outlined flex-shrink-0">From platform data</span>
@@ -1797,7 +1797,7 @@
                 </div>
                 <div class="tender-card p-3 p-lg-4 mb-0 bg-white">
                   <h6 class="black-text fw-medium text-start mb-4">Search for a Past Tender</h6>
-                  <label class="form-label black-text fw-medium" for="trSearchQuery">Tender Name or Reference
+                  <label class="form-label" for="trSearchQuery">Tender Name or Reference
                     Number</label>
                   <p class="fz-12 text-gray mb-2">Enter the full tender name or reference number, such as IT-001-2024.
                   </p>
@@ -1839,7 +1839,7 @@
                 </div>
                 <div class="tender-card p-3 p-lg-4 mb-0 bg-white">
                   <h6 class="black-text fw-medium text-start mb-2">Was This Competition Published Before?</h6>
-                  <p class="fz-14 text-gray text-start mb-4">Enter the current competition details to search for a
+                  <p class="fz-14 text-gray text-start mb-4 fz-sm-12">Enter the current competition details to search for a
                     previous publication or similar competitions.</p>
                   <form id="trSearchPriorForm" novalidate>
                     <div class="row g-3 mb-4">
@@ -1878,10 +1878,10 @@
                   <a href="#tr-welcome" class="btn-main btn-primary-outline fz-12 h-36">Back to start</a>
                 </div>
                 <div class="tender-card p-3 p-lg-4 mb-0 bg-white">
-                  <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+                  <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4 tr-flow-head-row">
                     <div>
                       <h6 class="black-text fw-medium text-start mb-2">Was This Competition Published Before?</h6>
-                      <p class="fz-14 text-gray mb-0">We found <span class="black-text fw-medium">4</span> competitions
+                      <p class="fz-14 text-gray">We found <span class="black-text fw-medium">4</span> competitions
                         related to the current competition.</p>
                     </div>
                     <a href="#tr-search-prior"
@@ -2243,18 +2243,18 @@
                 </div>
                 <div class="tender-card p-3 p-lg-4 mb-0 bg-white">
                   <h6 class="black-text fw-medium text-start mb-2">Competitions by activity or sector</h6>
-                  <p class="fz-14 text-gray text-start mb-4">Filter results by entity, location, and activity to explore
+                  <p class="fz-14 fz-sm-12 text-gray text-start mb-4">Filter results by entity, location, and activity to explore
                     award history.</p>
                   <div class="row g-3 mb-4">
                     <div class="col-6 col-md-3">
-                      <label class="form-label fz-12">Competition type</label>
+                      <label class="form-label">Competition type</label>
                       <select class="form-select form-select-sm">
                         <option>All</option>
                         <option>Public tender</option>
                       </select>
                     </div>
                     <div class="col-6 col-md-3">
-                      <label class="form-label fz-12">Entity</label>
+                      <label class="form-label">Entity</label>
                       <select class="form-select form-select-sm">
                         <option>All</option>
                         <option>Ministry of Communications</option>
@@ -2262,45 +2262,45 @@
                       </select>
                     </div>
                     <div class="col-6 col-md-3">
-                      <label class="form-label fz-12">Activity</label>
+                      <label class="form-label">Activity</label>
                       <select class="form-select form-select-sm">
                         <option selected>Information Technology</option>
                       </select>
                     </div>
                     <div class="col-6 col-md-3">
-                      <label class="form-label fz-12">Sub-activity</label>
+                      <label class="form-label">Sub-activity</label>
                       <select class="form-select form-select-sm">
                         <option>All</option>
                       </select>
                     </div>
                     <div class="col-6 col-md-3">
-                      <label class="form-label fz-12">Region</label>
+                      <label class="form-label">Region</label>
                       <select class="form-select form-select-sm">
                         <option>All</option>
                         <option>Eastern Province</option>
                       </select>
                     </div>
                     <div class="col-6 col-md-3">
-                      <label class="form-label fz-12">City</label>
+                      <label class="form-label">City</label>
                       <select class="form-select form-select-sm">
                         <option>All</option>
                         <option>Al-Ahsa</option>
                       </select>
                     </div>
                     <div class="col-6 col-md-3">
-                      <label class="form-label fz-12">Time period</label>
+                      <label class="form-label">Time period</label>
                       <select class="form-select form-select-sm">
                         <option>Last 12 months</option>
                       </select>
                     </div>
                     <div class="col-6 col-md-3">
-                      <label class="form-label fz-12">Results count</label>
+                      <label class="form-label">Results count</label>
                       <select class="form-select form-select-sm">
                         <option selected>8 results</option>
                       </select>
                     </div>
                   </div>
-                  <div class="row tr-stat-card-row g-3 mb-4 justify-content-between">
+                  <div class="row tr-stat-card-row g-3 mb-4">
                     <div class="col-6 col-lg-2">
                       <div class="summary-card tr-stat-card tr-stat-card--total p-3 h-100">
                         <p class="summary-title">Total Competitions</p>
@@ -2325,7 +2325,7 @@
                         <span class="ff-onest fz-18 fw-medium black-text">5.7M</span>
                       </div>
                     </div>
-                    <div class="col-6 col-lg-2">
+                    <div class="col-12 col-lg-2">
                       <div class="summary-card tr-stat-card tr-stat-card--winners p-3 h-100">
                         <p class="summary-title">Winning Companies</p>
                         <span class="ff-onest fz-18 fw-medium black-text">3</span>
@@ -2962,42 +2962,42 @@
                   <a href="#tr-welcome" class="btn-main btn-primary-outline fz-12 h-36">Back to start</a>
                 </div>
                 <div class="tender-card p-3 p-lg-4 mb-0 bg-white d-flex flex-column">
-                  <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
-                    <div class="d-flex align-items-center gap-3">
-                      <div class="service-choice-icon crown flex-shrink-0">
-                        <svg class="tr-flow-icon" width="24" height="24" viewBox="0 0 16 16" fill="none"
-                          xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                          <path opacity="0.45"
-                            d="M7.99992 8.95297C9.14867 8.95297 10.0799 8.02172 10.0799 6.87297C10.0799 5.72422 9.14867 4.79297 7.99992 4.79297C6.85117 4.79297 5.91992 5.72422 5.91992 6.87297C5.91992 8.02172 6.85117 8.95297 7.99992 8.95297Z"
-                            stroke="currentColor" stroke-width="1.5" />
-                          <path
-                            d="M2.4133 5.65968C3.72664 -0.113657 12.28 -0.106991 13.5866 5.66634C14.3533 9.05301 12.2466 11.9197 10.4 13.693C9.05997 14.9863 6.93997 14.9863 5.5933 13.693C3.7533 11.9197 1.64664 9.04634 2.4133 5.65968Z"
-                            stroke="currentColor" stroke-width="1.5" />
-                        </svg>
-                      </div>
-                      <div>
-                        <h6 class="black-text fw-medium text-start mb-0">Government Entity Tenders</h6>
-                        <p class="fz-12 text-gray mb-0">Choose the entity and query type to view its related tenders and
-                          awards.</p>
-                      </div>
+                  <div class="d-flex align-items-center gap-3 mb-2">
+                    <div class="service-choice-icon crown flex-shrink-0">
+                      <svg class="tr-flow-icon" width="24" height="24" viewBox="0 0 16 16" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path opacity="0.45"
+                          d="M7.99992 8.95297C9.14867 8.95297 10.0799 8.02172 10.0799 6.87297C10.0799 5.72422 9.14867 4.79297 7.99992 4.79297C6.85117 4.79297 5.91992 5.72422 5.91992 6.87297C5.91992 8.02172 6.85117 8.95297 7.99992 8.95297Z"
+                          stroke="currentColor" stroke-width="1.5" />
+                        <path
+                          d="M2.4133 5.65968C3.72664 -0.113657 12.28 -0.106991 13.5866 5.66634C14.3533 9.05301 12.2466 11.9197 10.4 13.693C9.05997 14.9863 6.93997 14.9863 5.5933 13.693C3.7533 11.9197 1.64664 9.04634 2.4133 5.65968Z"
+                          stroke="currentColor" stroke-width="1.5" />
+                      </svg>
                     </div>
-                    <span class="sm-ele fz-10 bordered-8 prim-opacity-outlined">8 Results</span>
+                    <div>
+                      <h6 class="black-text fw-medium text-start mb-0">Government Entity Tenders</h6>
+                      <p class="fz-12 text-gray mb-0">Choose the entity and query type to view its related tenders and
+                        awards.</p>
+                    </div>
                   </div>
-                  <div class="row g-3 align-items-end mb-4">
-                    <div class="col-12 col-md-6">
-                      <label class="form-label fz-12 black-text fw-medium">Government Entity</label>
+                  <div class="row g-3 align-items-end justify-content-between align-items-center mb-4">
+                    <div class="col-12 col-md-5">
+                      <label class="form-label">Government Entity</label>
                       <select class="form-select form-select-sm">
                         <option selected>— Select an Entity —</option>
                         <option>King Faisal University</option>
                         <option>Ministry of Education</option>
                       </select>
                     </div>
-                    <div class="col-12 col-md-6">
-                      <label class="form-label fz-12 black-text fw-medium">Query Type</label>
+                    <div class="col-9 col-md-5">
+                      <label class="form-label">Query Type</label>
                       <select class="form-select form-select-sm">
                         <option selected>Tenders and Results</option>
                         <option>Winning Companies Only</option>
                       </select>
+                    </div>
+                    <div class="col-3 col-md-1">
+                      <span class="sm-ele fz-10 bordered-8 prim-opacity-outlined">8 Results</span>
                     </div>
                   </div>
                   <div class="row tr-stat-card-row g-3 mb-4">
@@ -3025,7 +3025,7 @@
                           class="ff-onest fz-18 fw-medium black-text">5.7M</span>
                       </div>
                     </div>
-                    <div class="col-6 col-lg-2">
+                    <div class="col-12 col-lg-2">
                       <div class="summary-card tr-stat-card tr-stat-card--winners p-3 h-100">
                         <p class="summary-title">Winning Companies</p><span
                           class="ff-onest fz-18 fw-medium black-text">3</span>
@@ -3047,10 +3047,10 @@
                         <path opacity="0.45" d="M12.3337 12.333L13.667 13.6663" stroke="currentColor"
                           stroke-width="1.25" stroke-linecap="round" />
                       </svg></span>
-                    <p class="fz-14 text-gray mb-0">No data available</p>
+                    <p class="fz-14 text-gray">No data available</p>
                   </div>
                   <div class="tender-card p-3 prim-opacity-outlined text-start mb-0 mt-auto">
-                    <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+                    <div class="d-flex align-items-center justify-content-between gap-3">
                       <p class="fz-14 black-text mb-0 flex-grow-1 min-w-0">Static sample: entity with complete data for
                         preview.</p>
                       <a href="#tr-entity-kfu" class="btn-main btn-primary h-41 fw-medium fz-14 flex-shrink-0">View King
@@ -3066,39 +3066,39 @@
                   <a href="#tr-entity" class="btn-main btn-primary-outline fz-12 h-36">Back to Entity Selection</a>
                 </div>
                 <div class="tender-card p-3 p-lg-4 mb-0 bg-white">
-                  <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
-                    <div class="d-flex align-items-center gap-3">
-                      <div class="service-choice-icon bell flex-shrink-0">
-                        <svg class="tr-flow-icon" width="24" height="24" viewBox="0 0 16 16" fill="none"
-                          xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                          <path opacity="0.45"
-                            d="M7.99992 8.95297C9.14867 8.95297 10.0799 8.02172 10.0799 6.87297C10.0799 5.72422 9.14867 4.79297 7.99992 4.79297C6.85117 4.79297 5.91992 5.72422 5.91992 6.87297C5.91992 8.02172 6.85117 8.95297 7.99992 8.95297Z"
-                            stroke="currentColor" stroke-width="1.5" />
-                          <path
-                            d="M2.4133 5.65968C3.72664 -0.113657 12.28 -0.106991 13.5866 5.66634C14.3533 9.05301 12.2466 11.9197 10.4 13.693C9.05997 14.9863 6.93997 14.9863 5.5933 13.693C3.7533 11.9197 1.64664 9.04634 2.4133 5.65968Z"
-                            stroke="currentColor" stroke-width="1.5" />
-                        </svg>
-                      </div>
-                      <div>
-                        <h6 class="black-text fw-medium text-start mb-0">King Faisal University</h6>
-                        <p class="fz-12 text-gray mb-0">Entity Tenders and Results</p>
-                      </div>
+                  <div class="d-flex align-items-center gap-3 mb-2">
+                    <div class="service-choice-icon bell flex-shrink-0">
+                      <svg class="tr-flow-icon" width="24" height="24" viewBox="0 0 16 16" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path opacity="0.45"
+                          d="M7.99992 8.95297C9.14867 8.95297 10.0799 8.02172 10.0799 6.87297C10.0799 5.72422 9.14867 4.79297 7.99992 4.79297C6.85117 4.79297 5.91992 5.72422 5.91992 6.87297C5.91992 8.02172 6.85117 8.95297 7.99992 8.95297Z"
+                          stroke="currentColor" stroke-width="1.5" />
+                        <path
+                          d="M2.4133 5.65968C3.72664 -0.113657 12.28 -0.106991 13.5866 5.66634C14.3533 9.05301 12.2466 11.9197 10.4 13.693C9.05997 14.9863 6.93997 14.9863 5.5933 13.693C3.7533 11.9197 1.64664 9.04634 2.4133 5.65968Z"
+                          stroke="currentColor" stroke-width="1.5" />
+                      </svg>
                     </div>
-                    <span class="sm-ele fz-10 bordered-8 prim-opacity-outlined">8 Results</span>
+                    <div>
+                      <h6 class="black-text fw-medium text-start mb-0">King Faisal University</h6>
+                      <p class="fz-12 text-gray mb-0">Entity Tenders and Results</p>
+                    </div>
                   </div>
-                  <div class="row g-3 mb-4">
-                    <div class="col-12 col-md-6">
-                      <label class="form-label fz-12">Entity</label>
+                  <div class="row g-3 align-items-end justify-content-between align-items-center mb-4">
+                    <div class="col-12 col-md-5">
+                      <label class="form-label">Entity</label>
                       <select class="form-select form-select-sm">
                         <option selected>King Faisal University</option>
                       </select>
                     </div>
-                    <div class="col-12 col-md-6">
-                      <label class="form-label fz-12">Tender Type</label>
+                    <div class="col-9 col-md-5">
+                      <label class="form-label">Tender Type</label>
                       <select class="form-select form-select-sm">
                         <option selected>All</option>
                         <option>Public Tender</option>
                       </select>
+                    </div>
+                    <div class="col-3 col-md-1">
+                      <span class="sm-ele fz-10 bordered-8 prim-opacity-outlined">8 Results</span>
                     </div>
                   </div>
                   <div class="row tr-stat-card-row g-3 mb-4">
@@ -3126,7 +3126,7 @@
                           class="ff-onest fz-18 fw-medium black-text">5.7M</span>
                       </div>
                     </div>
-                    <div class="col-6 col-lg-2">
+                    <div class="col-12 col-lg-2">
                       <div class="summary-card tr-stat-card tr-stat-card--winners p-3 h-100">
                         <p class="summary-title">Winning Companies</p><span
                           class="ff-onest fz-18 fw-medium black-text">3</span>
@@ -3463,11 +3463,11 @@
                   <a href="#tr-welcome" class="btn-main btn-primary-outline fz-12 h-36">Back to Start</a>
                 </div>
                 <div class="tender-card p-3 p-lg-4 mb-0 bg-white">
-                  <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+                  <div class="d-flex flex-wrap align-items-start justify-content-between gap-3 mb-4 tr-flow-head-row">
                     <p class="fz-14 text-gray mb-0">Search results for “Operation and Maintenance of IT Systems” · <span
                         class="black-text fw-medium">1 Result</span></p>
-                    <a href="#tr-search" class="btn-main base-outlined-btn fz-14 h-41 flex-shrink-0 d-inline-flex">Edit
-                      Search
+                    <a href="#tr-search"
+                      class="btn-main base-outlined-btn fz-14 h-41 flex-shrink-0 d-inline-flex align-items-center gap-2">Edit Search
                       <svg class="tr-flow-icon flex-shrink-0" width="18" height="18" viewBox="0 0 16 16" fill="none"
                         xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path
@@ -3583,10 +3583,8 @@
                 <div class="mb-4">
                   <a href="#tr-welcome" class="btn-main btn-primary-outline fz-12 h-36">Back to Start</a>
                 </div>
-                <div class="tender-card p-3 p-lg-4 mb-4 bg-white">
-                  <div class="d-flex flex-wrap align-items-start gap-2 mb-2">
-                    <span class="sm-ele fz-10 bordered-8 badge-success">Awarded</span>
-                  </div>
+                <div class="tender-card p-3 p-lg-4 mb-4 bg-white position-relative">
+                  <span class="sm-ele fz-10 bordered-8 badge-success tr-detail-header-badge position-absolute">Awarded</span>
                   <h6 class="black-text fw-medium text-start mb-1">Operation and Maintenance of IT Systems</h6>
                   <p class="fz-14 text-gray mb-4">King Faisal University · <span class="ff-onest"
                       dir="ltr">230139873561</span>
@@ -3717,7 +3715,7 @@
                         </div>
                         <h6 class="black-text mb-2">Scope of Work</h6>
                         <div class="tender-card p-3">
-                          <p class="fz-14 text-gray mb-0">Operation and maintenance of IT infrastructure, including data
+                          <p class="fz-14 text-gray">Operation and maintenance of IT infrastructure, including data
                             centers,
                             networks, electronic systems, technical support, and information security.</p>
                         </div>
@@ -3813,7 +3811,7 @@
                   </div>
                 </div>
                 <div
-                  class="d-flex flex-wrap align-items-center justify-content-end gap-3 spg-wizard-actions mt-auto pt-3">
+                  class="d-flex align-items-center justify-content-end gap-3 spg-wizard-actions mt-auto pt-3">
                   <a href="#tr-entity-kfu"
                     class="btn-main btn-primary h-41 fw-medium fz-14 d-inline-flex align-items-center gap-2 flex-shrink-0">Entity
                     Tenders
@@ -3860,12 +3858,10 @@
                 <div class="mb-4">
                   <a href="#tr-welcome" class="btn-main btn-primary-outline fz-12 h-36">Back to Start</a>
                 </div>
-                <div class="tender-card p-3 p-lg-4 mb-4 bg-white">
-                  <div class="d-flex flex-wrap align-items-start gap-2 mb-2">
-                    <span class="sm-ele fz-10 bordered-8 badge-success">Awarded</span>
-                  </div>
+                <div class="tender-card p-3 p-lg-4 mb-4 bg-white position-relative">
+                  <span class="sm-ele fz-10 bordered-8 badge-success tr-detail-header-badge position-absolute">Awarded</span>
                   <h6 class="black-text fw-medium text-start mb-1">Operation and Maintenance of IT Systems</h6>
-                  <p class="fz-14 text-gray mb-4">King Faisal University · <span class="ff-onest"
+                  <p class="fz-14 text-gray mb-4 fz-sm-12">King Faisal University · <span class="ff-onest"
                       dir="ltr">230139873561</span>
                   </p>
 
@@ -3995,7 +3991,7 @@
                         </div>
                         <h6 class="black-text mb-2">Scope of Work</h6>
                         <div class="tender-card p-3">
-                          <p class="fz-14 text-gray mb-0">Operation and maintenance of IT infrastructure, including data
+                          <p class="fz-14 text-gray">Operation and maintenance of IT infrastructure, including data
                             centers,
                             networks, electronic systems, technical support, and information security.</p>
                         </div>
@@ -4089,7 +4085,7 @@
                   </div>
                 </div>
                 <div
-                  class="d-flex flex-wrap align-items-center justify-content-end gap-3 spg-wizard-actions mt-auto pt-3">
+                  class="d-flex align-items-center justify-content-end gap-3 spg-wizard-actions mt-auto pt-3">
                   <a href="#tr-entity-kfu"
                     class="btn-main btn-primary h-41 fw-medium fz-14 d-inline-flex align-items-center gap-2 flex-shrink-0">Entity
                     Tenders

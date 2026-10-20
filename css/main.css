@@ -663,9 +663,9 @@ html[dir="ltr"] .btn-shadow-bottom {
   .page-tabs#tabsContainer,
   .nav.page-tabs#tabsContainer {
     overflow: visible;
-    width: calc(100% - 24px);
-    max-width: calc(100% - 24px);
-    margin-inline: 12px;
+    width: 100%;
+    max-width: 100%;
+    margin-inline: 0;
     gap: 0;
     padding: 0;
     background: transparent;
@@ -5790,24 +5790,24 @@ html[dir="rtl"] .wrapped-dropdown .dropdown .dropdown-menu {
 
 .wrapped-dropdown .dropdown-toggle::after {
   margin-left: auto;
+}
 
-  /* ============================
+/* ============================
    SortableJS Kanban Styles
    ============================ */
-  .sortable-ghost {
-    opacity: 0.4;
-    background-color: var(--primary-opacity) !important;
-    border: 2px dashed var(--primary-base-color) !important;
-  }
+.sortable-ghost {
+  opacity: 0.4;
+  background-color: var(--primary-opacity) !important;
+  border: 2px dashed var(--primary-base-color) !important;
+}
 
-  .sortable-drag {
-    opacity: 0.9;
-    cursor: grabbing !important;
-  }
+.sortable-drag {
+  opacity: 0.9;
+  cursor: grabbing !important;
+}
 
-  .kanban-column {
-    min-height: 200px;
-  }
+.kanban-column {
+  min-height: 200px;
 }
 
 /* ============================
@@ -6448,7 +6448,6 @@ body:has(.upgrade-stepper-wrapper) {
 
 .service-choice-card {
   width: 100%;
-  padding-inline: 16px !important;
 }
 
 /* .service-choice-card {
@@ -6504,14 +6503,14 @@ body:has(.upgrade-stepper-wrapper) {
 }
 
 @media (max-width: 767.98px) {
-  .service-choice-card .service-choice-icon {
+  .service-choice-icon {
     width: 36px;
     height: 36px;
     min-width: 36px;
   }
 
-  .service-choice-card .service-choice-icon svg,
-  .service-choice-card .service-choice-icon img {
+  .service-choice-icon svg,
+  .service-choice-icon img {
     width: 18px;
     height: 18px;
     max-width: 18px;
@@ -6521,7 +6520,8 @@ body:has(.upgrade-stepper-wrapper) {
 }
 
 .service-choice-info {
-  flex-grow: 1;
+  flex: 1 1 auto;
+  min-width: 0;
   /* padding: 0 14px; */
   text-align: start;
 }
@@ -6540,7 +6540,7 @@ body:has(.upgrade-stepper-wrapper) {
   line-height: 1.4;
 }
 
-/* .custom-radio-circle {
+.custom-radio-circle {
   width: 22px;
   height: 22px;
   min-width: 22px;
@@ -6549,6 +6549,7 @@ body:has(.upgrade-stepper-wrapper) {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   transition: all 0.2s ease;
 }
 
@@ -6569,7 +6570,7 @@ body:has(.upgrade-stepper-wrapper) {
   height: 10px;
   border-radius: 50%;
   background: var(--primary-color);
-} */
+}
 
 /* Plan Duration Choice Cards */
 .plan-choice-card {
@@ -7789,6 +7790,33 @@ html[dir="ltr"] .input-icon-group input {
   text-align: start;
 }
 
+/* Path cards: allow multi-line copy (flex + button nowrap defaults) */
+.spg-root button.service-choice-card.spg-path-card {
+  white-space: normal;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  align-items: flex-start;
+}
+
+.spg-root .service-choice-card.spg-path-card .service-choice-icon,
+.spg-root .service-choice-card.spg-path-card .custom-radio-circle {
+  flex-shrink: 0;
+}
+
+.spg-root .service-choice-card.spg-path-card .service-choice-info {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+.spg-root .service-choice-card.spg-path-card .service-choice-info h4,
+.spg-root .service-choice-card.spg-path-card .service-choice-info p {
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
 .spg-path-card--disabled {
   opacity: 0.55;
   cursor: not-allowed;
@@ -8117,24 +8145,28 @@ html[dir="ltr"] .input-icon-group input {
 }
 
 @media (max-width: 767.98px) {
-  .dash-widget.spg-root {
+  .dash-widget.spg-root:not(.spg-proposal-editor-root) {
     overflow: visible;
   }
 
-  .spg-root > .row.g-4 {
+  .spg-root > .row.g-4,
+  .spg-root > .row.g-lg-4 {
     flex-direction: column !important;
     margin-top: 0 !important;
   }
 
   .spg-root > .row.g-4 > [class*="col-lg-9"],
-  .spg-root > .row.g-4 > .tp-flow-main-col {
+  .spg-root > .row.g-lg-4 > [class*="col-lg-9"],
+  .spg-root > .row.g-4 > .tp-flow-main-col,
+  .spg-root > .row.g-lg-4 > .tp-flow-main-col {
     flex: 0 0 100%;
     max-width: 100%;
     width: 100%;
     order: 2;
   }
 
-  .spg-root > .row.g-4 > .spg-projects-sidebar-col {
+  .spg-root > .row.g-4 > .spg-projects-sidebar-col,
+  .spg-root > .row.g-lg-4 > .spg-projects-sidebar-col {
     position: relative;
     z-index: 30;
     width: 100% !important;
@@ -8206,15 +8238,32 @@ html[dir="ltr"] .input-icon-group input {
 
   .spg-root .spg-projects-sidebar-header {
     flex-direction: row !important;
-    flex-wrap: nowrap;
+    flex-wrap: nowrap !important;
     align-items: stretch !important;
     gap: 8px !important;
-    margin-bottom: 16px !important;
+    justify-content: flex-start !important;
   }
 
   .spg-root .spg-projects-mobile-toolbar {
     flex: 1 1 auto;
     min-width: 0;
+  }
+
+  .spg-root .spg-projects-sidebar-header > .btn-base.btn-main {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: none;
+    min-height: 44px;
+    align-self: stretch;
+  }
+
+  .spg-root .spg-path-card.service-choice-card {
+    align-items: flex-start !important;
+  }
+
+  .spg-root .spg-path-card .service-choice-info h4 {
+    font-size: 14px;
+    line-height: 1.35;
   }
 
   .spg-root .spg-projects-mobile-dropdown-toggle {
@@ -8286,6 +8335,11 @@ html[dir="ltr"] .input-icon-group input {
 }
 
 @media (max-width: 991.98px) {
+  /* .sm-0 removes card padding; restore horizontal inset to match other mobile tender pages */
+  .dash-widget.spg-root:not(.spg-proposal-editor-root).sm-0 {
+    padding-inline: 12px !important;
+  }
+
   .spg-root .min-h-spg-main {
     min-height: 0;
   }
@@ -9072,11 +9126,12 @@ html[dir="ltr"] .spg-root .spg-section-review-title {
 
 .spg-proposal-editor-root .spg-proposal-editor-main {
   display: grid;
-  grid-template-columns: 320px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
   grid-template-rows: auto 70vh;
   gap: 12px;
   flex: 0 0 auto;
   min-height: 0;
+  min-width: 0;
   width: 100%;
 }
 
@@ -9099,11 +9154,66 @@ html[dir="ltr"] .spg-root .spg-section-review-title {
   background: #f4f6f8;
   overflow: hidden;
   box-sizing: border-box;
-  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-rows: 0 minmax(0, 1fr);
+  position: relative;
+}
+
+.spg-proposal-editor-root .spg-proposal-editor-main.spg-pdf-viewer-workspace:fullscreen .spg-proposal-editor-helper-row {
+  position: absolute;
+  width: 0;
+  height: 0;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.spg-proposal-editor-root
+  .spg-proposal-editor-main.spg-pdf-viewer-workspace:fullscreen
+  .spg-proposal-editor-helper-row
+  .spg-pdf-extra-tools {
+  position: fixed;
+  top: calc(12px + env(safe-area-inset-top, 0px));
+  inset-inline-end: calc(12px + env(safe-area-inset-end, 0px));
+  pointer-events: auto;
+  z-index: 30;
+}
+
+.spg-proposal-editor-root
+  .spg-proposal-editor-main.spg-pdf-viewer-workspace:fullscreen
+  .spg-proposal-editor-helper {
+  display: none;
 }
 
 .spg-proposal-editor-root .spg-proposal-editor-main.spg-pdf-viewer-workspace:fullscreen .spg-proposal-editor-inspector {
   max-height: none;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.spg-proposal-editor-root
+  .spg-proposal-editor-main.spg-pdf-viewer-workspace:fullscreen
+  .spg-proposal-editor-inspector-details {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.spg-proposal-editor-root
+  .spg-proposal-editor-main.spg-pdf-viewer-workspace:fullscreen
+  .spg-proposal-editor-inspector-details
+  .spg-proposal-editor-inspector-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 .spg-proposal-editor-root
@@ -9127,8 +9237,9 @@ html[dir="ltr"] .spg-root .spg-section-review-title {
 .spg-proposal-editor-root .spg-proposal-editor-inspector {
   grid-column: 1;
   grid-row: 2;
-  width: 320px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 320px;
+  min-width: 0;
   min-height: 0;
   height: 100%;
   max-height: 100%;
@@ -9206,6 +9317,7 @@ html[dir="ltr"] .spg-root .spg-section-review-title {
 .spg-proposal-editor-root .spg-proposal-editor-viewport .spg-document-preview-viewport.spg-pdf-pages-scroll {
   flex: 1;
   min-height: 0;
+  min-width: 0;
   max-height: none;
   overflow: auto;
   overflow-x: hidden;
@@ -9218,34 +9330,59 @@ html[dir="ltr"] .spg-root .spg-section-review-title {
 
 @media (max-width: 991.98px) {
   .spg-proposal-editor-root .spg-proposal-editor-toolbar {
-    align-items: stretch;
-    gap: 10px;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
   }
 
   .spg-proposal-editor-root .spg-proposal-editor-toolbar-tools,
   .spg-proposal-editor-root .spg-proposal-editor-toolbar > [role="toolbar"] {
-    width: 100%;
-    gap: 8px;
+    display: grid !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-rows: auto;
+    gap: 6px;
+    flex: 1 1 auto;
+    min-width: 0;
+    width: auto;
   }
 
   .spg-proposal-editor-root .spg-proposal-editor-toolbar-tools > .btn-main,
   .spg-proposal-editor-root .spg-proposal-editor-toolbar > [role="toolbar"] > .btn-main {
-    flex: 1 1 calc(50% - 4px);
-    min-width: calc(50% - 4px);
+    display: flex;
+    flex: none;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    gap: 0;
+    padding-inline: 0;
     justify-content: center;
+    align-items: center;
+  }
+
+  .spg-proposal-editor-root .spg-proposal-editor-toolbar-tools .spg-proposal-editor-toolbar-label,
+  .spg-proposal-editor-root .spg-proposal-editor-toolbar > [role="toolbar"] .spg-proposal-editor-toolbar-label {
+    display: none;
   }
 
   .spg-proposal-editor-root .spg-proposal-editor-toolbar-divider {
-    flex: 1 1 100%;
-    width: 100%;
-    height: 1px;
-    margin-block: 2px;
+    display: none;
   }
 
   .spg-proposal-editor-root .spg-proposal-editor-toolbar > .btn-main.btn-primary {
-    width: 100%;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 42%;
     margin-inline-start: 0 !important;
     justify-content: center;
+    height: 36px;
+    min-height: 36px;
+    padding-inline: 10px;
+    font-size: 12px;
+    white-space: nowrap;
   }
 
   .spg-proposal-editor-root .spg-proposal-editor-main {
@@ -9261,14 +9398,13 @@ html[dir="ltr"] .spg-root .spg-section-review-title {
     height: auto;
     max-height: none;
     padding: 0;
-    overflow: visible;
     border-radius: 12px;
     box-shadow: 0 -4px 16px rgba(12, 32, 48, 0.06);
   }
 
   .spg-proposal-editor-root .spg-proposal-editor-inspector-details > summary {
     cursor: pointer;
-    padding: 12px 12px 12px;
+    /* padding: 12px 12px 12px; */
     margin-bottom: 0;
     position: relative;
     padding-inline-end: 36px;
@@ -9313,12 +9449,70 @@ html[dir="ltr"] .spg-root .spg-section-review-title {
 
   .spg-proposal-editor-root .spg-proposal-editor-main.spg-pdf-viewer-workspace:fullscreen {
     grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: auto minmax(0, 1fr) minmax(0, 35vh);
+    grid-template-rows: 0 minmax(0, 1fr);
+  }
+
+  .spg-proposal-editor-root .spg-proposal-editor-main.spg-pdf-viewer-workspace:fullscreen .spg-proposal-editor-workspace {
+    grid-column: 1;
+    grid-row: 2;
   }
 
   .spg-proposal-editor-root .spg-proposal-editor-main.spg-pdf-viewer-workspace:fullscreen .spg-proposal-editor-inspector {
-    height: 100%;
+    position: fixed;
+    inset-inline: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
     max-height: none;
+    grid-column: unset;
+    grid-row: unset;
+    align-self: auto;
+    z-index: 25;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 -8px 28px rgba(12, 32, 48, 0.14);
+  }
+
+  .spg-proposal-editor-root
+    .spg-proposal-editor-main.spg-pdf-viewer-workspace:fullscreen
+    .spg-proposal-editor-inspector-details {
+    flex: none;
+    display: block;
+    overflow: visible;
+  }
+
+  .spg-proposal-editor-root
+    .spg-proposal-editor-main.spg-pdf-viewer-workspace:fullscreen
+    .spg-proposal-editor-inspector-details
+    > summary {
+    cursor: pointer;
+    background: #fff;
+    border-radius: 12px 12px 0 0;
+    padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .spg-proposal-editor-root
+    .spg-proposal-editor-main.spg-pdf-viewer-workspace:fullscreen
+    .spg-proposal-editor-inspector-details:not([open])
+    > summary {
+    padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .spg-proposal-editor-root
+    .spg-proposal-editor-main.spg-pdf-viewer-workspace:fullscreen
+    .spg-proposal-editor-inspector-details[open]
+    > summary {
+    padding-bottom: 12px;
+  }
+
+  .spg-proposal-editor-root
+    .spg-proposal-editor-main.spg-pdf-viewer-workspace:fullscreen
+    .spg-proposal-editor-inspector-details[open]
+    .spg-proposal-editor-inspector-body {
+    max-height: min(52vh, 440px);
+    padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
   }
 }
 
@@ -10035,34 +10229,24 @@ html[dir="ltr"] .spg-root .spg-section-review-title {
   line-height: 1.2;
 }
 
-.spg-root .tr-stat-card-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: stretch;
-  gap: 0.75rem;
-  margin-left: 0;
-  margin-right: 0;
-  --bs-gutter-x: 0;
-  --bs-gutter-y: 0;
-}
-
-.spg-root .tr-stat-card-row > [class*="col-"] {
-  flex: 1 1 calc(50% - 0.375rem);
-  max-width: calc(50% - 0.375rem);
-  padding-left: 0;
-  padding-right: 0;
-}
-
 @media (min-width: 992px) {
-  .spg-root .tr-stat-card-row > .col-lg-3 {
-    flex: 1 1 calc(25% - 0.5625rem);
-    max-width: calc(25% - 0.5625rem);
+  .spg-root .tr-stat-card-row {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    margin-inline: 0;
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
   }
 
-  .spg-root .tr-stat-card-row > .col-lg-2 {
-    flex: 1 1 calc(20% - 0.6rem);
-    max-width: calc(20% - 0.6rem);
+  .spg-root .tr-stat-card-row > [class*="col-"] {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: none;
+    width: auto;
+    padding-inline: 0;
   }
 }
 
@@ -10159,6 +10343,20 @@ html[dir="ltr"] .spg-root .spg-section-review-title {
   color: #e7000b;
 }
 
+.spg-root #tr-detail .tr-detail-header-badge,
+.spg-root #tr-detail-full .tr-detail-header-badge {
+  top: 1rem;
+  inset-inline-end: 1rem;
+}
+
+@media (min-width: 992px) {
+  .spg-root #tr-detail .tr-detail-header-badge,
+  .spg-root #tr-detail-full .tr-detail-header-badge {
+    top: 1.5rem;
+    inset-inline-end: 1.5rem;
+  }
+}
+
 .spg-root .sub-nav-tabs.tr-detail-sub-nav-tabs {
   display: flex;
   width: 100%;
@@ -10177,6 +10375,18 @@ html[dir="ltr"] .spg-root .spg-section-review-title {
 
 .spg-root .tp-flow-panel .min-h-spg-main > .tender-card.bg-white:last-child {
   margin-bottom: 0;
+}
+
+/* Tender flow — title row + action; wrapped button at inline-end (left AR / right EN) */
+@media (max-width: 991.98px) {
+  .spg-root .tr-flow-head-row > :first-child {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .spg-root .tr-flow-head-row > a.btn-main {
+    margin-inline-start: auto;
+  }
 }
 
 /* Tender results — card footer actions align inline-end (left in RTL) */
@@ -10290,7 +10500,8 @@ html[dir="ltr"] .spg-root .spg-section-review-title {
   }
 
   /* Tender pricing — main flow panel matches sidebar column height */
-  .spg-root:has(.tp-flow-main-col):has(.tp-flow .tp-flow-panel[id^="tp-step-"]:target) > .row.g-4 {
+  .spg-root:has(.tp-flow-main-col):has(.tp-flow .tp-flow-panel[id^="tp-step-"]:target) > .row.g-4,
+  .spg-root:has(.tp-flow-main-col):has(.tp-flow .tp-flow-panel[id^="tp-step-"]:target) > .row.g-lg-4 {
     align-items: stretch;
   }
 
@@ -10749,10 +10960,10 @@ html[dir="ltr"] .spg-root .spg-section-review-title {
     inset-inline-end: 0;
   }
 
-  .spg-root .d-flex.flex-wrap.align-items-start.justify-content-between.gap-3:has(> .sm-ele.prim-opacity-outlined.flex-shrink-0) > div:first-of-type {
+  /* .spg-root .d-flex.flex-wrap.align-items-start.justify-content-between.gap-3:has(> .sm-ele.prim-opacity-outlined.flex-shrink-0) > div:first-of-type {
     padding-inline-end: 7.25rem;
     min-width: 0;
-  }
+  } */
 }
 
 .spg-root .tr-supplier-chart-tabs .nav-link {
@@ -10823,54 +11034,35 @@ html[dir="ltr"] .spg-root .spg-section-review-title {
     text-align: center;
   }
 
-  .spg-root .spg-wizard-actions:not(.justify-content-between):not(:has(#spgWizardPrev)) {
-    justify-content: stretch !important;
+  /*
+   * Wizard / flow footers (mobile): 2-column grid fills container width.
+   * 2 actions → side by side; 3 → two on top + last full width; 1 → full width.
+   */
+  .spg-root .spg-wizard-actions {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    max-width: 100%;
+    gap: 0.5rem !important;
+    align-items: stretch;
+    justify-content: stretch;
+    margin-inline: 0;
   }
 
-  .spg-root .spg-wizard-actions:not(.justify-content-between):not(:has(#spgWizardPrev)) .btn-main,
-  .spg-root .spg-wizard-actions:not(.justify-content-between):not(:has(#spgWizardPrev)) .outline-primary-gray,
-  .spg-root .spg-wizard-actions:not(.justify-content-between):not(:has(#spgWizardPrev)) a.btn-main,
-  .spg-root .spg-wizard-actions:not(.justify-content-between):not(:has(#spgWizardPrev)) a.outline-primary-gray {
-    flex: 1 1 calc(50% - 0.375rem);
-    justify-content: center;
-    min-height: 44px;
-  }
-
-  .spg-root .tp-flow-panel .spg-wizard-actions.justify-content-between,
-  .spg-root .tp-flow-panel .spg-wizard-actions:has(#spgWizardPrev),
-  .spg-root .spg-wizard-actions.justify-content-between,
-  .spg-root .spg-wizard-actions:has(#spgWizardPrev) {
-    flex-wrap: nowrap !important;
-    justify-content: space-between !important;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .spg-root .spg-wizard-actions.justify-content-between > .btn-main,
-  .spg-root .spg-wizard-actions.justify-content-between > a.btn-main,
-  .spg-root .spg-wizard-actions.justify-content-between > button,
-  .spg-root .spg-wizard-actions:has(#spgWizardPrev) > .btn-main,
-  .spg-root .spg-wizard-actions:has(#spgWizardPrev) > button {
-    min-height: 44px;
-    justify-content: center;
-  }
-
-  .spg-root .spg-wizard-actions.justify-content-between > .outline-primary-gray,
-  .spg-root .spg-wizard-actions.justify-content-between > a.outline-primary-gray,
-  .spg-root .spg-wizard-actions.justify-content-between > button.outline-primary-gray,
-  .spg-root .spg-wizard-actions:has(#spgWizardPrev) > .outline-primary-gray,
-  .spg-root .spg-wizard-actions:has(#spgWizardPrev) > button.outline-primary-gray {
-    flex: 0 1 auto;
-    width: auto;
-    max-width: 42%;
-  }
-
-  .spg-root .spg-wizard-actions.justify-content-between > .btn-primary,
-  .spg-root .spg-wizard-actions.justify-content-between > a.btn-primary,
-  .spg-root .spg-wizard-actions:has(#spgWizardPrev) > .btn-primary,
-  .spg-root .spg-wizard-actions:has(#spgWizardPrev) > button.btn-primary {
-    flex: 1 1 0;
+  .spg-root .spg-wizard-actions > .btn-main,
+  .spg-root .spg-wizard-actions > a.btn-main,
+  .spg-root .spg-wizard-actions > button.btn-main,
+  .spg-root .spg-wizard-actions > button {
+    width: 100%;
+    max-width: none;
     min-width: 0;
+    min-height: 44px;
+    flex: none !important;
+    justify-content: center;
+  }
+
+  .spg-root .spg-wizard-actions > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
   }
 
   .spg-root .spg-section-review-actions {
@@ -10912,25 +11104,5 @@ html[dir="ltr"] .spg-root .spg-section-review-title {
   .spg-root .spg-template-actions .btn-main,
   .spg-root .spg-template-actions label.btn-main {
     width: 100%;
-  }
-}
-
-@media (max-width: 767.98px) {
-  /* .spg-root .sidebar-header.spg-projects-sidebar-header {
-    flex-direction: row !important;
-    flex-wrap: wrap;
-    align-items: center !important;
-    gap: 8px !important;
-  }
-
-  .spg-root .sidebar-header.spg-projects-sidebar-header > .btn-base.btn-main {
-    flex: 0 0 auto;
-    min-height: 44px;
-    padding-inline: 12px;
-  } */
-
-  .spg-root .tr-stat-card-row > [class*="col-"] {
-    flex: 1 1 100%;
-    max-width: 100%;
   }
 }
