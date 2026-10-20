@@ -10384,7 +10384,20 @@ html[dir="ltr"] .spg-root .spg-section-review-title {
     min-width: 0;
   }
 
-  .spg-root .tr-flow-head-row > a.btn-main {
+  html[dir="ltr"] .spg-root .tr-flow-head-row > :first-child {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .spg-root .tr-flow-head-row h6,
+  .spg-root .tr-flow-head-row p {
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .spg-root .tr-flow-head-row > a.btn-main,
+  .spg-root .tr-flow-head-row > button.btn-main {
     margin-inline-start: auto;
   }
 }
@@ -11057,8 +11070,26 @@ html[dir="ltr"] .spg-root .spg-section-review-title {
     max-width: none;
     min-width: 0;
     min-height: 44px;
+    height: auto;
     flex: none !important;
+    flex-wrap: wrap;
     justify-content: center;
+    align-content: center;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.35;
+    padding-block: 0.625rem;
+    overflow-wrap: break-word;
+  }
+
+  /* Prev + primary (2-up): full-width rows so long EN labels fit */
+  .spg-root .spg-wizard-actions > .outline-primary-gray,
+  .spg-root .spg-wizard-actions > a.outline-primary-gray,
+  .spg-root .spg-wizard-actions > button.outline-primary-gray,
+  .spg-root .spg-wizard-actions > .btn-primary,
+  .spg-root .spg-wizard-actions > a.btn-primary,
+  .spg-root .spg-wizard-actions > button.btn-primary {
+    grid-column: 1 / -1;
   }
 
   .spg-root .spg-wizard-actions > :last-child:nth-child(odd) {
