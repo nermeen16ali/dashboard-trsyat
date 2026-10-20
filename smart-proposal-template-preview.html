@@ -598,7 +598,7 @@
               <div class="spg-pdf-viewer spg-pdf-viewer--standalone" id="spgProfessionalPdfViewer"
                 data-pdf-src="assets/spg/templates/professional-proposal.pdf" data-spg-pdf-standalone="1" dir="rtl">
                 <div
-                  class="spg-pdf-viewer-toolbar spg-document-preview-toolbar spg-pdf-fullscreen-chrome-host d-flex flex-wrap align-items-center gap-2 gap-md-3">
+                  class="spg-pdf-viewer-toolbar spg-document-preview-toolbar spg-pdf-fullscreen-chrome-host d-none d-md-flex flex-wrap align-items-center gap-2 gap-md-3">
                   <div class="d-flex flex-wrap align-items-center gap-2 spg-pdf-nav-group" role="group"
                     aria-label="التنقل بين الصفحات">
                     <button type="button"
@@ -693,7 +693,7 @@
                           stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round" />
                       </svg>
                     </button>
-                    <button type="button" class="icon-container gray-outline-btn spg-pdf-fullscreen"
+                    <button type="button" class="icon-container gray-outline-btn spg-pdf-fullscreen d-none d-md-inline-flex"
                       data-tooltip="ملء الشاشة" aria-label="ملء الشاشة">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none"
                         aria-hidden="true">
@@ -739,7 +739,22 @@
                     <p class="fz-10 text-gray mb-2 px-1">الصفحات</p>
                     <div class="spg-pdf-thumbnails-list" id="spgProfessionalPdfThumbnails" role="list"></div>
                   </aside>
-                  <div class="spg-pdf-stage flex-grow-1 min-w-0">
+                  <div class="spg-pdf-stage flex-grow-1 min-w-0 position-relative">
+                    <button type="button"
+                      class="icon-container gray-outline-btn spg-pdf-fullscreen spg-pdf-mobile-fullscreen-btn d-md-none position-absolute top-0 end-0 m-1"
+                      data-tooltip="ملء الشاشة" aria-label="ملء الشاشة">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none"
+                        aria-hidden="true">
+                        <path d="M2.5 7.5V5.83333C2.5 3.99238 4.02576 2.5 5.83333 2.5H7.5" stroke="#6BAFB8"
+                          stroke-width="1.5" stroke-linecap="round"></path>
+                        <path opacity="0.4" d="M12.5 2.5H14.1667C15.9742 2.5 17.5 3.99238 17.5 5.83333V7.5"
+                          stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round"></path>
+                        <path d="M17.5 12.5V14.1667C17.5 15.9742 15.9742 17.5 14.1667 17.5H12.5" stroke="#6BAFB8"
+                          stroke-width="1.5" stroke-linecap="round"></path>
+                        <path opacity="0.4" d="M7.5 17.5H5.83333C4.02576 17.5 2.5 15.9742 2.5 14.1667V12.5"
+                          stroke="#6BAFB8" stroke-width="1.5" stroke-linecap="round"></path>
+                      </svg>
+                    </button>
                     <div class="spg-pdf-loading fz-12 text-gray text-center py-4 d-none" id="spgProfessionalPdfLoading"
                       role="status">جاري تحميل المعاينة…</div>
                     <div class="spg-pdf-error red-colored fz-12 text-center py-3 d-none" id="spgProfessionalPdfError"

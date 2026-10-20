@@ -9087,6 +9087,13 @@ html[dir="ltr"] .spg-root .spg-section-review-title {
   display: none !important;
 }
 
+.spg-template-preview-page-root .spg-pdf-viewer-workspace:fullscreen .spg-pdf-mobile-fullscreen-btn {
+  position: fixed;
+  top: calc(12px + env(safe-area-inset-top, 0px));
+  inset-inline-end: calc(12px + env(safe-area-inset-end, 0px));
+  z-index: 30;
+}
+
 @media (max-width: 1199.98px) {
   .spg-template-preview-page-root .spg-template-preview-features-row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -9099,14 +9106,6 @@ html[dir="ltr"] .spg-root .spg-section-review-title {
     min-height: 52vh;
     max-height: 58vh;
   }
-
-  /* Full-width row on mobile only (Bootstrap build has no w-md-auto) */
-  .spg-template-preview-page-root .spg-pdf-extra-tools {
-    flex: 1 1 100%;
-    width: 100%;
-    max-width: 100%;
-  }
-
 }
 
 /* PDF preview toolbar — CSS tooltips (extra tools) */
