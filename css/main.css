@@ -8969,6 +8969,14 @@ html[dir="ltr"] .spg-root .spg-section-review-title {
   border: 1px solid var(--gray-200-color, #f2f2f2);
   border-radius: 12px;
 }
+
+@media (max-width: 991.98px) {
+  .spg-template-preview-page-root .spg-template-preview-page-actions {
+    align-self: flex-end;
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
 .spg-template-preview-page-root .spg-pdf-viewer--standalone .spg-pdf-viewer-toolbar {
   padding: 8px 10px;
   background: #fff;
